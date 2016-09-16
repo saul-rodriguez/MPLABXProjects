@@ -1,11 +1,17 @@
 Version 3.2 HI-TECH Software Intermediate Code
 [p mainexit ]
-"24 bio3.h
+"25 bio3.h
 [s S293 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S293 BIO3_bits_stuct RE FS GD0 GD1 GD2 NS CE GS0 GS1 GS2 GS3 IQ F0 F1 F2 F3 ]
-"43
+"44
 [u S294 `us 1 `S293 1 ]
 [n S294 . data data_bits ]
+"52
+[s S295 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S295 VIN_bits_stuct RE FS GD0 GD1 GD2 NS CE GS0 GS1 GS2 GS3 IQ F0 F1 F2 F3 CapSel0 CapSel1 CapSel2 CapSel3 CcompSel0 CcompSel1 EnRdegHF0 EnRdegHF1 EnRdeg DP0 DP1 DP2 DN0 DN1 EnHF EnMF EnLF ]
+"92
+[u S296 `us -> 3 `i `S295 1 ]
+[n S296 . data data_bits ]
 "66 mcc_generated_files/mcc.h
 [v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
 "6084 /pkg/microchip/xc8/v1.38/include/pic16lf1823.h
@@ -14,8 +20,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 "152 /pkg/microchip/xc8/v1.38/include/pic.h
 [v __delay `JF2438 ~T0 @X0 0 e ]
 [p i __delay ]
-"51 bio3.h
-[v _BIO_config `(v ~T0 @X0 0 ef2`ul`uc ]
+"102 bio3.h
+[v _BIO_config `(v ~T0 @X0 0 ef1`S294 ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -2390,29 +2396,69 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdbool.h: 12: typedef unsigned char bool;
 [; ;mcc.h: 66: void SYSTEM_Initialize(void);
 [; ;mcc.h: 79: void OSCILLATOR_Initialize(void);
-[; ;bio3.h: 24: typedef struct BIO3_bits_stuct {
-[; ;bio3.h: 25: unsigned RE :1;
-[; ;bio3.h: 26: unsigned FS :1;
-[; ;bio3.h: 27: unsigned GD0 :1;
-[; ;bio3.h: 28: unsigned GD1 :1;
-[; ;bio3.h: 29: unsigned GD2 :1;
-[; ;bio3.h: 30: unsigned NS :1;
-[; ;bio3.h: 31: unsigned CE :1;
-[; ;bio3.h: 32: unsigned GS0 :1;
-[; ;bio3.h: 33: unsigned GS1 :1;
-[; ;bio3.h: 34: unsigned GS2 :1;
-[; ;bio3.h: 35: unsigned GS3 :1;
-[; ;bio3.h: 36: unsigned IQ :1;
-[; ;bio3.h: 37: unsigned F0 :1;
-[; ;bio3.h: 38: unsigned F1 :1;
-[; ;bio3.h: 39: unsigned F2 :1;
-[; ;bio3.h: 40: unsigned F3 :1;
-[; ;bio3.h: 41: } BIO3_bits;
-[; ;bio3.h: 43: typedef union {
-[; ;bio3.h: 44: unsigned short data;
-[; ;bio3.h: 45: BIO3_bits data_bits;
-[; ;bio3.h: 46: } BIO3;
-[; ;bio3.h: 51: void BIO_config(unsigned long data, unsigned char length);
+[; ;bio3.h: 25: typedef struct BIO3_bits_stuct {
+[; ;bio3.h: 26: unsigned RE :1;
+[; ;bio3.h: 27: unsigned FS :1;
+[; ;bio3.h: 28: unsigned GD0 :1;
+[; ;bio3.h: 29: unsigned GD1 :1;
+[; ;bio3.h: 30: unsigned GD2 :1;
+[; ;bio3.h: 31: unsigned NS :1;
+[; ;bio3.h: 32: unsigned CE :1;
+[; ;bio3.h: 33: unsigned GS0 :1;
+[; ;bio3.h: 34: unsigned GS1 :1;
+[; ;bio3.h: 35: unsigned GS2 :1;
+[; ;bio3.h: 36: unsigned GS3 :1;
+[; ;bio3.h: 37: unsigned IQ :1;
+[; ;bio3.h: 38: unsigned F0 :1;
+[; ;bio3.h: 39: unsigned F1 :1;
+[; ;bio3.h: 40: unsigned F2 :1;
+[; ;bio3.h: 41: unsigned F3 :1;
+[; ;bio3.h: 42: } BIO3_bits;
+[; ;bio3.h: 44: typedef union {
+[; ;bio3.h: 45: unsigned short data;
+[; ;bio3.h: 46: BIO3_bits data_bits;
+[; ;bio3.h: 47: } BIO3;
+[; ;bio3.h: 52: typedef struct VIN_bits_stuct {
+[; ;bio3.h: 53: unsigned RE :1;
+[; ;bio3.h: 54: unsigned FS :1;
+[; ;bio3.h: 55: unsigned GD0 :1;
+[; ;bio3.h: 56: unsigned GD1 :1;
+[; ;bio3.h: 57: unsigned GD2 :1;
+[; ;bio3.h: 58: unsigned NS :1;
+[; ;bio3.h: 59: unsigned CE :1;
+[; ;bio3.h: 60: unsigned GS0 :1;
+[; ;bio3.h: 62: unsigned GS1 :1;
+[; ;bio3.h: 63: unsigned GS2 :1;
+[; ;bio3.h: 64: unsigned GS3 :1;
+[; ;bio3.h: 65: unsigned IQ :1;
+[; ;bio3.h: 66: unsigned F0 :1;
+[; ;bio3.h: 67: unsigned F1 :1;
+[; ;bio3.h: 68: unsigned F2 :1;
+[; ;bio3.h: 69: unsigned F3 :1;
+[; ;bio3.h: 71: unsigned CapSel0 :1;
+[; ;bio3.h: 72: unsigned CapSel1 :1;
+[; ;bio3.h: 73: unsigned CapSel2 :1;
+[; ;bio3.h: 74: unsigned CapSel3 :1;
+[; ;bio3.h: 75: unsigned CcompSel0 :1;
+[; ;bio3.h: 76: unsigned CcompSel1 :1;
+[; ;bio3.h: 77: unsigned EnRdegHF0 :1;
+[; ;bio3.h: 78: unsigned EnRdegHF1 :1;
+[; ;bio3.h: 80: unsigned EnRdeg :1;
+[; ;bio3.h: 81: unsigned DP0 :1;
+[; ;bio3.h: 82: unsigned DP1 :1;
+[; ;bio3.h: 83: unsigned DP2 :1;
+[; ;bio3.h: 84: unsigned DN0 :1;
+[; ;bio3.h: 85: unsigned DN1 :1;
+[; ;bio3.h: 86: unsigned EnHF :1;
+[; ;bio3.h: 87: unsigned EnMF :1;
+[; ;bio3.h: 89: unsigned EnLF :1;
+[; ;bio3.h: 90: } VIN_bits;
+[; ;bio3.h: 92: typedef union {
+[; ;bio3.h: 93: unsigned short data[3];
+[; ;bio3.h: 94: VIN_bits data_bits;
+[; ;bio3.h: 95: } VIN;
+[; ;bio3.h: 102: void BIO_config(BIO3 conf);
+[; ;bio3.h: 103: void VIN_config(VIN conf);
 "12 main.c
 [v _main `(v ~T0 @X0 1 ef ]
 {
@@ -2421,52 +2467,55 @@ Version 3.2 HI-TECH Software Intermediate Code
 [f ]
 "14
 [v _mybits `S294 ~T0 @X0 1 a ]
+"15
+[v _myVin `S296 ~T0 @X0 1 a ]
 [; ;main.c: 14: BIO3 mybits;
-[; ;main.c: 18: SYSTEM_Initialize();
-"18
+[; ;main.c: 15: VIN myVin;
+[; ;main.c: 19: SYSTEM_Initialize();
+"19
 [e ( _SYSTEM_Initialize ..  ]
-[; ;main.c: 21: RC1 = 0;
-"21
-[e = _RC1 -> -> 0 `i `b ]
-[; ;main.c: 22: _delay((unsigned long)((250)*(500000/4000.0)));
+[; ;main.c: 22: RC1 = 0;
 "22
-[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 500000 `l `d .4000.0 `ul ]
-[; ;main.c: 23: RC1 = 1;
+[e = _RC1 -> -> 0 `i `b ]
+[; ;main.c: 23: _delay((unsigned long)((250)*(500000/4000.0)));
 "23
-[e = _RC1 -> -> 1 `i `b ]
-[; ;main.c: 24: _delay((unsigned long)((250)*(500000/4000.0)));
+[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 500000 `l `d .4000.0 `ul ]
+[; ;main.c: 24: RC1 = 1;
 "24
+[e = _RC1 -> -> 1 `i `b ]
+[; ;main.c: 25: _delay((unsigned long)((250)*(500000/4000.0)));
+"25
 [e ( __delay (1 -> * -> -> 250 `i `d / -> -> 500000 `l `d .4000.0 `ul ]
-[; ;main.c: 26: while(1) {
-"26
-[e :U 297 ]
+[; ;main.c: 27: while(1) {
+"27
+[e :U 299 ]
 {
-[; ;main.c: 29: mybits.data = 0xF055;
-"29
-[e = . _mybits 0 -> -> 61525 `ui `us ]
-[; ;main.c: 30: BIO_config((unsigned long)mybits.data,16);
+[; ;main.c: 30: mybits.data = 0xF055;
 "30
-[e ( _BIO_config (2 , -> . _mybits 0 `ul -> -> 16 `i `uc ]
-[; ;main.c: 31: _delay((unsigned long)((250)*(500000/4000.0)));
+[e = . _mybits 0 -> -> 61525 `ui `us ]
+[; ;main.c: 31: BIO_config(mybits);
 "31
+[e ( _BIO_config (1 _mybits ]
+[; ;main.c: 38: _delay((unsigned long)((250)*(500000/4000.0)));
+"38
 [e ( __delay (1 -> * -> -> 250 `i `d / -> -> 500000 `l `d .4000.0 `ul ]
-[; ;main.c: 33: mybits.data = 0xAA0F;
-"33
+[; ;main.c: 40: mybits.data = 0xAA0F;
+"40
 [e = . _mybits 0 -> -> 43535 `ui `us ]
-[; ;main.c: 34: BIO_config((unsigned long)mybits.data,16);
-"34
-[e ( _BIO_config (2 , -> . _mybits 0 `ul -> -> 16 `i `uc ]
-[; ;main.c: 35: _delay((unsigned long)((250)*(500000/4000.0)));
-"35
+[; ;main.c: 41: BIO_config(mybits);
+"41
+[e ( _BIO_config (1 _mybits ]
+[; ;main.c: 43: _delay((unsigned long)((250)*(500000/4000.0)));
+"43
 [e ( __delay (1 -> * -> -> 250 `i `d / -> -> 500000 `l `d .4000.0 `ul ]
-"36
+"44
 }
-[e :U 296 ]
-"26
-[e $U 297  ]
 [e :U 298 ]
-[; ;main.c: 36: }
-[; ;main.c: 37: }
-"37
-[e :UE 295 ]
+"27
+[e $U 299  ]
+[e :U 300 ]
+[; ;main.c: 44: }
+[; ;main.c: 45: }
+"45
+[e :UE 297 ]
 }

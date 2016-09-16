@@ -12,6 +12,7 @@
 void main(void) {
     
     BIO3 mybits;
+    VIN myVin;
     
     
     
@@ -27,11 +28,18 @@ void main(void) {
                  
          
          mybits.data = 0xF055;
-         BIO_config((unsigned long)mybits.data,BIO3_LENGTH);         
+         BIO_config(mybits);    
+         
+       //  myVin.data[0] = 0xCCAA;
+       //  myVin.data[1] = 0x55FF;
+       //  myVin.data[2] = 0x00F1;
+       //  VIN_config(myVin);
+         
          __delay_ms(250);
          
          mybits.data = 0xAA0F;
-         BIO_config((unsigned long)mybits.data,BIO3_LENGTH);         
+         BIO_config(mybits);         
+         //VIN_config(myVin);
          __delay_ms(250);
      }
 }

@@ -31,7 +31,7 @@
  * 
  */
 
-void BIO_config(unsigned long data, unsigned char length)
+void BIO_config(BIO3 conf)
 {
     unsigned char i, out;
     
@@ -43,13 +43,13 @@ void BIO_config(unsigned long data, unsigned char length)
     
     RESETN_H;
         
-    for(i = 0; i < 16; i++) {
-        if (data & 0x00000001) { //DATA to H    
+    for(i = 0; i < BIO3_LENGTH; i++) {
+        if (conf.data & 0x0001) { //DATA to H    
             DATA_H;
         } else { //DATA to L            
             DATA_L;
         }        
-        data >>= 1;
+        conf.data >>= 1;
         
         WAIT;
                 
@@ -59,6 +59,66 @@ void BIO_config(unsigned long data, unsigned char length)
         
     }    
 }
+
+void VIN_config(VIN conf)
+{
+     unsigned char i,j,out;
+    
+    CLK_L;
+    WAIT;
+    
+    RESETN_L;
+    WAIT;
+    
+    RESETN_H;
+        
+    for(i = 0; i < 16; i++) {
+        if (conf.data[0] & 0x0001) { //DATA to H    
+            DATA_H;
+        } else { //DATA to L            
+            DATA_L;
+        }        
+        conf.data[0] >>= 1;
+        
+        WAIT;
+                
+        CLK_H;
+        WAIT;                
+        CLK_L;        
+    }
+    
+    for(i = 0; i < 16; i++) {
+        if (conf.data[1] & 0x0001) { //DATA to H    
+            DATA_H;
+        } else { //DATA to L            
+            DATA_L;
+        }        
+        conf.data[1] >>= 1;
+        
+        WAIT;
+                
+        CLK_H;
+        WAIT;                
+        CLK_L;        
+    }
+    
+    for(i = 0; i < 1; i++) {
+        if (conf.data[2] & 0x0001) { //DATA to H    
+            DATA_H;
+        } else { //DATA to L            
+            DATA_L;
+        }        
+        conf.data[2] >>= 1;
+        
+        WAIT;
+                
+        CLK_H;
+        WAIT;                
+        CLK_L;        
+    }
+       
+}
+
 
 /*
 void BIO_config(unsigned short data)
