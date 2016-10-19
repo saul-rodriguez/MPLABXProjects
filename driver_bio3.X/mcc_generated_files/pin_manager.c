@@ -52,13 +52,13 @@ void PIN_MANAGER_Initialize(void)
     LATC = 0x0;
     //ANSELA = 0x17;
     ANSELA = 0b00000000; //digital on A
-    ANSELC = 0xF;
+    ANSELC = 0x00; //digital on C
     WPUA = 0x3F;
     WPUC = 0x3F;
     //TRISC = 0x3F;
     
     TRISC = 0b01110001;
-    TRISA = 0b01111111;
+    TRISA = 0b01011111;
 
     OPTION_REGbits.nWPUEN = 0x0;
     APFCON = 0x00;

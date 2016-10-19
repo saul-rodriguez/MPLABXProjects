@@ -19,9 +19,9 @@ void main(void) {
     SYSTEM_Initialize();
        
     
-    DATA = 0;
+    RESET_BIO = 0;
     __delay_ms(250);
-    DATA = 1;
+    RESET_BIO = 1;
     __delay_ms(250);
      
      while(1) {   

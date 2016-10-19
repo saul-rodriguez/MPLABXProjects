@@ -59,12 +59,13 @@
 #define PULL_UP_ENABLED      1
 #define PULL_UP_DISABLED     0
 
-//#define LED RC1
+#define LED RA5
 
-#define RESETN RC3
-#define CLK_DATA RC2
-#define DATA RC1
+#define RESET_BIO RA5
+#define CFG_DATA  RC2
+#define CFG_CLK   RC1
 
+ 
 /**
  * @Param
     none

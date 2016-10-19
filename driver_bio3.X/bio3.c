@@ -2,23 +2,24 @@
 
 #define WAIT __delay_ms(1)
 
-#define CLK_L out &= 0b11111011;\
-              PORTC = out;
 
-#define CLK_H out |= 0b00000100;\
-              PORTC = out;
 
-#define RESETN_L out &= 0b11110111;\
+// RESETN in RA5
+#define RESETN_L RA5 = 0;
+#define RESETN_H RA5 = 1;
+
+// CFG_CLK in RC3 
+#define CLK_L out &= 0b11110111;\
+                 PORTC = out;
+#define CLK_H out |= 0b00001000;\
                  PORTC = out;
 
-#define RESETN_H out |= 0b00001000;\
-                 PORTC = out;
+// CFG_DAT in RC2
+#define DATA_L out &= 0b11111011;\
+              PORTC = out;
+#define DATA_H out |= 0b00000100;\
+              PORTC = out;
 
-#define DATA_H out |= 0b00000010;\
-               PORTC = out;
-
-#define DATA_L out &= 0b11111101;\
-               PORTC = out;
 
 
 

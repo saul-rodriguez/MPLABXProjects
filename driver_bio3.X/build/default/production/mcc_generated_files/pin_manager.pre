@@ -3183,7 +3183,7 @@ extern unsigned char __resetbits;
 extern __bit __powerdown;
 extern __bit __timeout;
 
-# 78 "mcc_generated_files/pin_manager.h"
+# 79 "mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
 
 # 49 "mcc_generated_files/pin_manager.c"
@@ -3193,13 +3193,13 @@ LATA = 0x0;
 LATC = 0x0;
 
 ANSELA = 0b00000000;
-ANSELC = 0xF;
+ANSELC = 0x00;
 WPUA = 0x3F;
 WPUC = 0x3F;
 
 
 TRISC = 0b01110001;
-TRISA = 0b01111111;
+TRISA = 0b01011111;
 
 OPTION_REGbits.nWPUEN = 0x0;
 APFCON = 0x00;
