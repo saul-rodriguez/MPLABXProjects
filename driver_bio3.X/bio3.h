@@ -6,9 +6,6 @@
  * 
  * Pin assignment:
  * 
- * RC1 -> DATA
- * RC2 -> CLOCK
- * RC3 -> RESETN
  * 
  * RA5 -> RESETN
  * RC2 -> DATA

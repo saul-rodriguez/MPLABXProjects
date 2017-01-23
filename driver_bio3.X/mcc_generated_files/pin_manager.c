@@ -53,11 +53,15 @@ void PIN_MANAGER_Initialize(void)
     //ANSELA = 0x17;
     ANSELA = 0b00000000; //digital on A
     ANSELC = 0x00; //digital on C
-    WPUA = 0x3F;
-    WPUC = 0x3F;
-    //TRISC = 0x3F;
-    
-    TRISC = 0b01110001;
+    //WPUA = 0x3F;
+    WPUA = 0x3B;
+    WPUC = 0x3C;
+         
+    RXDTSEL = 0; //USART Rx on pin RC5
+    TXCKSEL = 0; //USART Tx on pin RC4
+     
+    //TRISC = 0x3F;    
+    TRISC = 0b01100011;
     TRISA = 0b01011111;
 
     OPTION_REGbits.nWPUEN = 0x0;

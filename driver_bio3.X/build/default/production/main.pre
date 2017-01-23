@@ -3183,7 +3183,7 @@ extern unsigned char __resetbits;
 extern __bit __powerdown;
 extern __bit __timeout;
 
-# 79 "mcc_generated_files/pin_manager.h"
+# 82 "mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
 
 # 13 "/pkg/microchip/xc8/v1.38/include/stdint.h"
@@ -3285,7 +3285,7 @@ void SYSTEM_Initialize(void);
 # 79
 void OSCILLATOR_Initialize(void);
 
-# 30 "bio3.h"
+# 27 "bio3.h"
 typedef struct BIO3_bits_stuct {
 unsigned RE :1;
 unsigned FS :1;
@@ -3358,19 +3358,61 @@ unsigned short data[3];
 VIN_bits data_bits;
 } VIN;
 
-# 107
+# 104
 void BIO_config(BIO3 conf);
 void VIN_config(VIN conf);
 
-# 12 "main.c"
+# 6 "RCM1823.h"
+void start_RCM();
+void stop_RCM();
+
+# 4 "TMR0.h"
+void setup_TMR0();
+void run_TMR0(unsigned char val);
+void start_TMR0_ISR(unsigned char val);
+void stop_TMR0_ISR(void);
+
+extern volatile unsigned char TIMER0_flag;
+extern volatile unsigned short TIMER0_timeout;
+
+# 50 "USART1823.h"
+extern volatile unsigned char USART_rx_flag;
+extern volatile unsigned char USART_rx_index;
+
+
+extern volatile unsigned char USART_rx_data[15];
+
+extern volatile unsigned char USART_tx_flag;
+extern volatile unsigned char USART_tx_data[15];
+extern volatile unsigned char USART_tx_index;
+extern volatile unsigned char USART_tx_length;
+
+
+void start_TX_USART();
+void start_RX_USART();
+void close_USART();
+void close_RX_USART();
+void putch(unsigned char byte);
+int putch_ISR(unsigned char byte);
+unsigned char getch();
+void lputs(unsigned char* data, unsigned char length);
+void lputs_ISR(unsigned char* data, unsigned char length);
+
+void start_RX_USART_ISR();
+void start_TX_USART_ISR();
+
+# 18 "main.c"
 void main(void) {
 
 BIO3 mybits;
 VIN myVin;
 
 
-
 SYSTEM_Initialize();
+setup_TMR0();
+start_TX_USART_ISR();
+start_RX_USART_ISR();
+start_RCM();
 
 
 RA5 = 0;
@@ -3378,18 +3420,81 @@ _delay((unsigned long)((250)*(500000/4000.0)));
 RA5 = 1;
 _delay((unsigned long)((250)*(500000/4000.0)));
 
+# 40
 while(1) {
 
+# 49
+if (TIMER0_flag) {
+TIMER0_flag = 0;
 
-mybits.data = 0xF055;
-BIO_config(mybits);
+# 56
+lputs_ISR(USART_rx_data,USART_rx_index);
 
-# 38
-_delay((unsigned long)((250)*(500000/4000.0)));
 
-mybits.data = 0xAA0F;
-BIO_config(mybits);
 
-_delay((unsigned long)((250)*(500000/4000.0)));
 }
+
+
+
+
+}
+}
+
+
+void interrupt isr(void)
+{
+
+
+if (TMR0IF && TMR0IE) {
+
+TMR0IF = 0;
+TMR0 = TIMER0_timeout;
+
+
+TIMER0_flag = 1;
+
+
+
+
+stop_TMR0_ISR();
+
+return;
+}
+
+
+
+if (RCIF) {
+stop_TMR0_ISR();
+
+
+if (USART_rx_index >= 15) {
+USART_rx_index = 0;
+}
+
+USART_rx_data[USART_rx_index++] = RCREG;
+
+start_TMR0_ISR(98);
+
+return;
+}
+
+
+
+if (TXIF && TXIE) {
+
+TXREG = USART_tx_data[USART_tx_index++];
+
+if (USART_tx_index >= USART_tx_length) {
+TXIE = 0;
+USART_tx_flag = 0;
+
+
+_delay((unsigned long)((25)*(500000/4000.0)));
+start_RX_USART_ISR();
+}
+return;
+}
+
+
+
 }

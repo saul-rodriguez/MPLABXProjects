@@ -63,9 +63,12 @@
 
 #define RESET_BIO RA5
 #define CFG_DATA  RC2
-#define CFG_CLK   RC1
+#define CFG_CLK   RC3
 
- 
+#define SERIAL_TX RC4
+#define SERIAL_RX RC5
+
+
 /**
  * @Param
     none

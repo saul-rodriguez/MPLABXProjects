@@ -65,12 +65,14 @@
 #pragma config LVP = OFF    // Low-Voltage Programming Enable->High-voltage on MCLR/VPP must be used for programming
 
 #include "mcc.h"
+//#include "RCM1823.h"
 
 void SYSTEM_Initialize(void)
 {
     
     PIN_MANAGER_Initialize();
     OSCILLATOR_Initialize();
+  //  start_RCM();
 }
 
 void OSCILLATOR_Initialize(void)
