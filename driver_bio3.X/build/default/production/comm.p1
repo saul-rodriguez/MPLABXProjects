@@ -1,71 +1,17 @@
 Version 3.2 HI-TECH Software Intermediate Code
-[p mainexit ]
 "27 bio3.h
 [s S293 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S293 BIO3_bits_stuct RE FS GD0 GD1 GD2 NS CE GS0 GS1 GS2 GS3 IQ F0 F1 F2 F3 ]
 "46
 [u S294 `us 1 `S293 1 ]
 [n S294 . data data_bits ]
-"54
-[s S295 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S295 VIN_bits_stuct RE FS GD0 GD1 GD2 NS CE GS0 GS1 GS2 GS3 IQ F0 F1 F2 F3 CapSel0 CapSel1 CapSel2 CapSel3 CcompSel0 CcompSel1 EnRdegHF0 EnRdegHF1 EnRdeg DP0 DP1 DP2 DN0 DN1 EnHF EnMF EnLF ]
-"94
-[u S296 `us -> 3 `i `S295 1 ]
-[n S296 . data data_bits ]
-"66 mcc_generated_files/mcc.h
-[v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
-"4 TMR0.h
-[v _setup_TMR0 `(v ~T0 @X0 0 ef ]
-"73 USART1823.h
-[v _start_TX_USART_ISR `(v ~T0 @X0 0 ef ]
-"72
-[v _start_RX_USART_ISR `(v ~T0 @X0 0 ef ]
-"6 RCM1823.h
-[v _start_RCM `(v ~T0 @X0 0 ef ]
-"6080 /pkg/microchip/xc8/v1.38/include/pic16lf1823.h
-[v _RA5 `Vb ~T0 @X0 0 e@101 ]
-[v F2438 `(v ~T0 @X0 1 tf1`ul ]
-"152 /pkg/microchip/xc8/v1.38/include/pic.h
-[v __delay `JF2438 ~T0 @X0 0 e ]
-[p i __delay ]
-"9 TMR0.h
-[v _TIMER0_flag `Vuc ~T0 @X0 0 e ]
 "70 USART1823.h
 [v _lputs_ISR `(v ~T0 @X0 0 ef2`*uc`uc ]
-"54
-[v _USART_rx_data `Vuc ~T0 @X0 -> 0 `x e ]
-"51
-[v _USART_rx_index `Vuc ~T0 @X0 0 e ]
-"6288 /pkg/microchip/xc8/v1.38/include/pic16lf1823.h
-[v _TMR0IF `Vb ~T0 @X0 0 e@90 ]
-"6286
-[v _TMR0IE `Vb ~T0 @X0 0 e@93 ]
-"1039
-[v _TMR0 `Vuc ~T0 @X0 0 e@21 ]
-"10 TMR0.h
-[v _TIMER0_timeout `Vus ~T0 @X0 0 e ]
-"7
-[v _stop_TMR0_ISR `(v ~T0 @X0 0 ef ]
-"6100 /pkg/microchip/xc8/v1.38/include/pic16lf1823.h
-[v _RCIF `Vb ~T0 @X0 0 e@141 ]
-"3333
-[v _RCREG `Vuc ~T0 @X0 0 e@409 ]
-"6 TMR0.h
-[v _start_TMR0_ISR `(v ~T0 @X0 0 ef1`uc ]
-"6366 /pkg/microchip/xc8/v1.38/include/pic16lf1823.h
-[v _TXIF `Vb ~T0 @X0 0 e@140 ]
-"6364
-[v _TXIE `Vb ~T0 @X0 0 e@1164 ]
-"3352
-[v _TXREG `Vuc ~T0 @X0 0 e@410 ]
-"57 USART1823.h
-[v _USART_tx_data `Vuc ~T0 @X0 -> 0 `x e ]
-"58
-[v _USART_tx_index `Vuc ~T0 @X0 0 e ]
-"59
-[v _USART_tx_length `Vuc ~T0 @X0 0 e ]
-"56
-[v _USART_tx_flag `Vuc ~T0 @X0 0 e ]
+"104 bio3.h
+[v _BIO_config `(v ~T0 @X0 0 ef1`S294 ]
+[; ;comm.h: 16: extern volatile unsigned char mess_rec[3];
+[; ;comm.h: 17: extern volatile unsigned char mess_rec_size;
+[; ;comm.h: 19: void mess_handler();
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -2408,6 +2354,24 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic.h: 186: extern unsigned char __resetbits;
 [; ;pic.h: 187: extern __bit __powerdown;
 [; ;pic.h: 188: extern __bit __timeout;
+[; ;USART1823.h: 50: extern volatile unsigned char USART_rx_flag;
+[; ;USART1823.h: 51: extern volatile unsigned char USART_rx_index;
+[; ;USART1823.h: 54: extern volatile unsigned char USART_rx_data[15];
+[; ;USART1823.h: 56: extern volatile unsigned char USART_tx_flag;
+[; ;USART1823.h: 57: extern volatile unsigned char USART_tx_data[15];
+[; ;USART1823.h: 58: extern volatile unsigned char USART_tx_index;
+[; ;USART1823.h: 59: extern volatile unsigned char USART_tx_length;
+[; ;USART1823.h: 62: void start_TX_USART();
+[; ;USART1823.h: 63: void start_RX_USART();
+[; ;USART1823.h: 64: void close_USART();
+[; ;USART1823.h: 65: void close_RX_USART();
+[; ;USART1823.h: 66: void putch(unsigned char byte);
+[; ;USART1823.h: 67: int putch_ISR(unsigned char byte);
+[; ;USART1823.h: 68: unsigned char getch();
+[; ;USART1823.h: 69: void lputs(unsigned char* data, unsigned char length);
+[; ;USART1823.h: 70: void lputs_ISR(unsigned char* data, unsigned char length);
+[; ;USART1823.h: 72: void start_RX_USART_ISR();
+[; ;USART1823.h: 73: void start_TX_USART_ISR();
 [; ;pin_manager.h: 82: void PIN_MANAGER_Initialize (void);
 [; ;stdint.h: 13: typedef signed char int8_t;
 [; ;stdint.h: 20: typedef signed int int16_t;
@@ -2503,198 +2467,75 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;bio3.h: 97: } VIN;
 [; ;bio3.h: 104: void BIO_config(BIO3 conf);
 [; ;bio3.h: 105: void VIN_config(VIN conf);
-[; ;RCM1823.h: 6: void start_RCM();
-[; ;RCM1823.h: 7: void stop_RCM();
-[; ;TMR0.h: 4: void setup_TMR0();
-[; ;TMR0.h: 5: void run_TMR0(unsigned char val);
-[; ;TMR0.h: 6: void start_TMR0_ISR(unsigned char val);
-[; ;TMR0.h: 7: void stop_TMR0_ISR(void);
-[; ;TMR0.h: 9: extern volatile unsigned char TIMER0_flag;
-[; ;TMR0.h: 10: extern volatile unsigned short TIMER0_timeout;
-[; ;USART1823.h: 50: extern volatile unsigned char USART_rx_flag;
-[; ;USART1823.h: 51: extern volatile unsigned char USART_rx_index;
-[; ;USART1823.h: 54: extern volatile unsigned char USART_rx_data[15];
-[; ;USART1823.h: 56: extern volatile unsigned char USART_tx_flag;
-[; ;USART1823.h: 57: extern volatile unsigned char USART_tx_data[15];
-[; ;USART1823.h: 58: extern volatile unsigned char USART_tx_index;
-[; ;USART1823.h: 59: extern volatile unsigned char USART_tx_length;
-[; ;USART1823.h: 62: void start_TX_USART();
-[; ;USART1823.h: 63: void start_RX_USART();
-[; ;USART1823.h: 64: void close_USART();
-[; ;USART1823.h: 65: void close_RX_USART();
-[; ;USART1823.h: 66: void putch(unsigned char byte);
-[; ;USART1823.h: 67: int putch_ISR(unsigned char byte);
-[; ;USART1823.h: 68: unsigned char getch();
-[; ;USART1823.h: 69: void lputs(unsigned char* data, unsigned char length);
-[; ;USART1823.h: 70: void lputs_ISR(unsigned char* data, unsigned char length);
-[; ;USART1823.h: 72: void start_RX_USART_ISR();
-[; ;USART1823.h: 73: void start_TX_USART_ISR();
-"18 main.c
-[v _main `(v ~T0 @X0 1 ef ]
+"5 comm.c
+[v _mess_rec `Vuc ~T0 @X0 -> 3 `i e ]
+[; ;comm.c: 5: volatile unsigned char mess_rec[3];
+"6
+[v _mess_rec_size `Vuc ~T0 @X0 1 e ]
+[; ;comm.c: 6: volatile unsigned char mess_rec_size;
+"8
+[v _mess_handler `(v ~T0 @X0 1 ef ]
+"9
 {
-[; ;main.c: 18: void main(void) {
-[e :U _main ]
+[; ;comm.c: 8: void mess_handler()
+[; ;comm.c: 9: {
+[e :U _mess_handler ]
 [f ]
-"20
-[v _mybits `S294 ~T0 @X0 1 a ]
-"21
-[v _myVin `S296 ~T0 @X0 1 a ]
-[; ;main.c: 20: BIO3 mybits;
-[; ;main.c: 21: VIN myVin;
-[; ;main.c: 24: SYSTEM_Initialize();
-"24
-[e ( _SYSTEM_Initialize ..  ]
-[; ;main.c: 25: setup_TMR0();
-"25
-[e ( _setup_TMR0 ..  ]
-[; ;main.c: 26: start_TX_USART_ISR();
-"26
-[e ( _start_TX_USART_ISR ..  ]
-[; ;main.c: 27: start_RX_USART_ISR();
-"27
-[e ( _start_RX_USART_ISR ..  ]
-[; ;main.c: 28: start_RCM();
-"28
-[e ( _start_RCM ..  ]
-[; ;main.c: 31: RA5 = 0;
-"31
-[e = _RA5 -> -> 0 `i `b ]
-[; ;main.c: 32: _delay((unsigned long)((250)*(500000/4000.0)));
-"32
-[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 500000 `l `d .4000.0 `ul ]
-[; ;main.c: 33: RA5 = 1;
-"33
-[e = _RA5 -> -> 1 `i `b ]
-[; ;main.c: 34: _delay((unsigned long)((250)*(500000/4000.0)));
-"34
-[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 500000 `l `d .4000.0 `ul ]
-[; ;main.c: 40: while(1) {
-"40
-[e :U 299 ]
-{
-[; ;main.c: 49: if (TIMER0_flag) {
-"49
-[e $ ! != -> _TIMER0_flag `i -> -> -> 0 `i `Vuc `i 301  ]
-{
-[; ;main.c: 50: TIMER0_flag = 0;
-"50
-[e = _TIMER0_flag -> -> 0 `i `uc ]
-[; ;main.c: 56: lputs_ISR(USART_rx_data,USART_rx_index);
-"56
-[e ( _lputs_ISR (2 , -> &U _USART_rx_data `*uc _USART_rx_index ]
-"58
-}
-[e :U 301 ]
-"62
-}
-[e :U 298 ]
-"40
+"11
+[v _asic `S294 ~T0 @X0 1 a ]
+[; ;comm.c: 11: BIO3 asic;
+[; ;comm.c: 13: switch (mess_rec[0]) {
+"13
 [e $U 299  ]
+{
+[; ;comm.c: 14: case 't':
+"14
 [e :U 300 ]
-[; ;main.c: 58: }
-[; ;main.c: 62: }
-[; ;main.c: 63: }
-"63
+[; ;comm.c: 15: lputs_ISR(mess_rec,mess_rec_size);
+"15
+[e ( _lputs_ISR (2 , -> &U _mess_rec `*uc _mess_rec_size ]
+[; ;comm.c: 16: break;
+"16
+[e $U 298  ]
+[; ;comm.c: 18: case 'c':
+"18
+[e :U 301 ]
+[; ;comm.c: 19: asic.data = 0x0000;
+"19
+[e = . _asic 0 -> -> 0 `i `us ]
+[; ;comm.c: 20: asic.data |= (unsigned short)(mess_rec[2]<<8);
+"20
+[e =| . _asic 0 -> << -> *U + &U _mess_rec * -> -> -> 2 `i `ui `ux -> -> # *U &U _mess_rec `ui `ux `i -> 8 `i `us ]
+[; ;comm.c: 21: asic.data |= (unsigned short)(mess_rec[1]);
+"21
+[e =| . _asic 0 -> *U + &U _mess_rec * -> -> -> 1 `i `ui `ux -> -> # *U &U _mess_rec `ui `ux `us ]
+[; ;comm.c: 23: lputs_ISR(mess_rec,mess_rec_size);
+"23
+[e ( _lputs_ISR (2 , -> &U _mess_rec `*uc _mess_rec_size ]
+[; ;comm.c: 25: BIO_config(asic);
+"25
+[e ( _BIO_config (1 _asic ]
+[; ;comm.c: 26: break;
+"26
+[e $U 298  ]
+[; ;comm.c: 28: default:
+"28
+[e :U 302 ]
+[; ;comm.c: 29: break;
+"29
+[e $U 298  ]
+"30
+}
+[; ;comm.c: 30: }
+[e $U 298  ]
+"13
+[e :U 299 ]
+[e [\ *U + &U _mess_rec * -> -> -> 0 `i `ui `ux -> -> # *U &U _mess_rec `ui `ux , $ -> -> 116 `ui `uc 300
+ , $ -> -> 99 `ui `uc 301
+ 302 ]
+"30
+[e :U 298 ]
+[; ;comm.c: 31: }
+"31
 [e :UE 297 ]
-}
-[v F2585 `(v ~T0 @X0 1 tf ]
-"66
-[v _isr `IF2585 ~T0 @X0 1 e ]
-"67
-{
-[; ;main.c: 66: void interrupt isr(void)
-[; ;main.c: 67: {
-[e :U _isr ]
-[f ]
-[; ;main.c: 70: if (TMR0IF && TMR0IE) {
-"70
-[e $ ! && _TMR0IF _TMR0IE 303  ]
-{
-[; ;main.c: 72: TMR0IF = 0;
-"72
-[e = _TMR0IF -> -> 0 `i `b ]
-[; ;main.c: 73: TMR0 = TIMER0_timeout;
-"73
-[e = _TMR0 -> _TIMER0_timeout `uc ]
-[; ;main.c: 76: TIMER0_flag = 1;
-"76
-[e = _TIMER0_flag -> -> 1 `i `uc ]
-[; ;main.c: 81: stop_TMR0_ISR();
-"81
-[e ( _stop_TMR0_ISR ..  ]
-[; ;main.c: 83: return;
-"83
-[e $UE 302  ]
-"84
-}
-[e :U 303 ]
-[; ;main.c: 84: }
-[; ;main.c: 88: if (RCIF) {
-"88
-[e $ ! _RCIF 304  ]
-{
-[; ;main.c: 89: stop_TMR0_ISR();
-"89
-[e ( _stop_TMR0_ISR ..  ]
-[; ;main.c: 92: if (USART_rx_index >= 15) {
-"92
-[e $ ! >= -> _USART_rx_index `i -> 15 `i 305  ]
-{
-[; ;main.c: 93: USART_rx_index = 0;
-"93
-[e = _USART_rx_index -> -> 0 `i `uc ]
-"94
-}
-[e :U 305 ]
-[; ;main.c: 94: }
-[; ;main.c: 96: USART_rx_data[USART_rx_index++] = RCREG;
-"96
-[e = *U + &U _USART_rx_data * -> ++ _USART_rx_index -> -> 1 `i `uc `ux -> -> # *U &U _USART_rx_data `ui `ux _RCREG ]
-[; ;main.c: 98: start_TMR0_ISR(98);
-"98
-[e ( _start_TMR0_ISR (1 -> -> 98 `i `uc ]
-[; ;main.c: 100: return;
-"100
-[e $UE 302  ]
-"101
-}
-[e :U 304 ]
-[; ;main.c: 101: }
-[; ;main.c: 105: if (TXIF && TXIE) {
-"105
-[e $ ! && _TXIF _TXIE 306  ]
-{
-[; ;main.c: 107: TXREG = USART_tx_data[USART_tx_index++];
-"107
-[e = _TXREG *U + &U _USART_tx_data * -> ++ _USART_tx_index -> -> 1 `i `uc `ux -> -> # *U &U _USART_tx_data `ui `ux ]
-[; ;main.c: 109: if (USART_tx_index >= USART_tx_length) {
-"109
-[e $ ! >= -> _USART_tx_index `i -> _USART_tx_length `i 307  ]
-{
-[; ;main.c: 110: TXIE = 0;
-"110
-[e = _TXIE -> -> 0 `i `b ]
-[; ;main.c: 111: USART_tx_flag = 0;
-"111
-[e = _USART_tx_flag -> -> 0 `i `uc ]
-[; ;main.c: 114: _delay((unsigned long)((25)*(500000/4000.0)));
-"114
-[e ( __delay (1 -> * -> -> 25 `i `d / -> -> 500000 `l `d .4000.0 `ul ]
-[; ;main.c: 115: start_RX_USART_ISR();
-"115
-[e ( _start_RX_USART_ISR ..  ]
-"116
-}
-[e :U 307 ]
-[; ;main.c: 116: }
-[; ;main.c: 117: return;
-"117
-[e $UE 302  ]
-"118
-}
-[e :U 306 ]
-[; ;main.c: 118: }
-[; ;main.c: 122: }
-"122
-[e :UE 302 ]
 }

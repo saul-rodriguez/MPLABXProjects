@@ -11,15 +11,17 @@
 #include "RCM1823.h"
 #include "TMR0.h"
 #include "USART1823.h"
+#include "comm.h"
 
-#define BUFF_SIZE 3
+
 
 
 void main(void) {
     
+    unsigned char i;
+    
     BIO3 mybits;
-    VIN myVin;
-     
+    VIN myVin;    
     
     SYSTEM_Initialize();
     setup_TMR0(); 
@@ -34,8 +36,6 @@ void main(void) {
     __delay_ms(250);
      
     //RESET_BIO = 0; // Hold the chip on reset
-           
-                    
     
      while(1) {
                        
@@ -43,17 +43,30 @@ void main(void) {
       //   __delay_ms(250);
           if (TIMER0_flag) { // Serial RX data received
               TIMER0_flag = 0;
-              /* if (USART_rx_index != BUFF_SIZE) { // packet with wrong size, discard the data and continue                  
+              
+              if (USART_rx_index > BUFF_SIZE) { // packet with wrong size, discard the data and continue                  
                 USART_rx_index = 0;
                 continue;
-              }  */
+              }  
               
-              lputs_ISR(USART_rx_data,USART_rx_index);              
+              if(USART_rx_index == 0) // catches possible faulty rx timemout
+                  continue;
+              
+              //Rx packet is valid. Copy data from USART buffer and send it to the message handler
+              mess_rec_size = USART_rx_index;
+              
+              for (i = 0; i < mess_rec_size; i++)
+                  mess_rec[i] = USART_rx_data[i];
+              
+              //__delay_ms(50);  //Possible needed if harvester is used
+              mess_handler();            
+              
+              
+              
+              //lputs_ISR(USART_rx_data,USART_rx_index);              
               
           }
                  
-            
-         
      }
 }
 
@@ -111,7 +124,5 @@ void interrupt isr(void)
         }
         return;
     }
-
-
     
 }

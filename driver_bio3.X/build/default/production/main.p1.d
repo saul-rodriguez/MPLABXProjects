@@ -3,6 +3,7 @@
  main.c  \
 mcc_generated_files/mcc.h  \
 TMR0.h  \
+comm.h  \
 bio3.h  \
 mcc_generated_files/pin_manager.h  \
 USART1823.h  \

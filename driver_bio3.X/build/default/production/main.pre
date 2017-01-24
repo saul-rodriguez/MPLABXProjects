@@ -3401,12 +3401,19 @@ void lputs_ISR(unsigned char* data, unsigned char length);
 void start_RX_USART_ISR();
 void start_TX_USART_ISR();
 
-# 18 "main.c"
+# 16 "comm.h"
+extern volatile unsigned char mess_rec[3];
+extern volatile unsigned char mess_rec_size;
+
+void mess_handler();
+
+# 19 "main.c"
 void main(void) {
+
+unsigned char i;
 
 BIO3 mybits;
 VIN myVin;
-
 
 SYSTEM_Initialize();
 setup_TMR0();
@@ -3420,22 +3427,34 @@ _delay((unsigned long)((250)*(500000/4000.0)));
 RA5 = 1;
 _delay((unsigned long)((250)*(500000/4000.0)));
 
-# 40
+
+
 while(1) {
 
-# 49
+
+
 if (TIMER0_flag) {
 TIMER0_flag = 0;
 
-# 56
-lputs_ISR(USART_rx_data,USART_rx_index);
-
-
-
+if (USART_rx_index > 3) {
+USART_rx_index = 0;
+continue;
 }
 
+if(USART_rx_index == 0)
+continue;
 
 
+mess_rec_size = USART_rx_index;
+
+for (i = 0; i < mess_rec_size; i++)
+mess_rec[i] = USART_rx_data[i];
+
+
+mess_handler();
+
+# 68
+}
 
 }
 }
@@ -3494,7 +3513,5 @@ start_RX_USART_ISR();
 }
 return;
 }
-
-
 
 }

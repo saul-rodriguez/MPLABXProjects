@@ -1,5 +1,11 @@
 
-# 1 "main.c"
+# 1 "comm.c"
+
+# 16 "comm.h"
+extern volatile unsigned char mess_rec[3];
+extern volatile unsigned char mess_rec_size;
+
+void mess_handler();
 
 # 26 "/pkg/microchip/xc8/v1.38/include/htc.h"
 extern const char __xc8_OPTIM_SPEED;
@@ -3183,6 +3189,32 @@ extern unsigned char __resetbits;
 extern __bit __powerdown;
 extern __bit __timeout;
 
+# 50 "USART1823.h"
+extern volatile unsigned char USART_rx_flag;
+extern volatile unsigned char USART_rx_index;
+
+
+extern volatile unsigned char USART_rx_data[15];
+
+extern volatile unsigned char USART_tx_flag;
+extern volatile unsigned char USART_tx_data[15];
+extern volatile unsigned char USART_tx_index;
+extern volatile unsigned char USART_tx_length;
+
+
+void start_TX_USART();
+void start_RX_USART();
+void close_USART();
+void close_RX_USART();
+void putch(unsigned char byte);
+int putch_ISR(unsigned char byte);
+unsigned char getch();
+void lputs(unsigned char* data, unsigned char length);
+void lputs_ISR(unsigned char* data, unsigned char length);
+
+void start_RX_USART_ISR();
+void start_TX_USART_ISR();
+
 # 82 "mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
 
@@ -3362,136 +3394,31 @@ VIN_bits data_bits;
 void BIO_config(BIO3 conf);
 void VIN_config(VIN conf);
 
-# 6 "RCM1823.h"
-void start_RCM();
-void stop_RCM();
+# 5 "comm.c"
+volatile unsigned char mess_rec[3];
+volatile unsigned char mess_rec_size;
 
-# 4 "TMR0.h"
-void setup_TMR0();
-void run_TMR0(unsigned char val);
-void start_TMR0_ISR(unsigned char val);
-void stop_TMR0_ISR(void);
-
-extern volatile unsigned char TIMER0_flag;
-extern volatile unsigned short TIMER0_timeout;
-
-# 50 "USART1823.h"
-extern volatile unsigned char USART_rx_flag;
-extern volatile unsigned char USART_rx_index;
-
-
-extern volatile unsigned char USART_rx_data[15];
-
-extern volatile unsigned char USART_tx_flag;
-extern volatile unsigned char USART_tx_data[15];
-extern volatile unsigned char USART_tx_index;
-extern volatile unsigned char USART_tx_length;
-
-
-void start_TX_USART();
-void start_RX_USART();
-void close_USART();
-void close_RX_USART();
-void putch(unsigned char byte);
-int putch_ISR(unsigned char byte);
-unsigned char getch();
-void lputs(unsigned char* data, unsigned char length);
-void lputs_ISR(unsigned char* data, unsigned char length);
-
-void start_RX_USART_ISR();
-void start_TX_USART_ISR();
-
-# 18 "main.c"
-void main(void) {
-
-BIO3 mybits;
-VIN myVin;
-
-
-SYSTEM_Initialize();
-setup_TMR0();
-start_TX_USART_ISR();
-start_RX_USART_ISR();
-start_RCM();
-
-
-RA5 = 0;
-_delay((unsigned long)((250)*(500000/4000.0)));
-RA5 = 1;
-_delay((unsigned long)((250)*(500000/4000.0)));
-
-# 40
-while(1) {
-
-# 49
-if (TIMER0_flag) {
-TIMER0_flag = 0;
-
-# 56
-lputs_ISR(USART_rx_data,USART_rx_index);
-
-}
-
-
-
-}
-}
-
-
-void interrupt isr(void)
+void mess_handler()
 {
 
+BIO3 asic;
 
-if (TMR0IF && TMR0IE) {
+switch (mess_rec[0]) {
+case 't':
+lputs_ISR(mess_rec,mess_rec_size);
+break;
 
-TMR0IF = 0;
-TMR0 = TIMER0_timeout;
+case 'c':
+asic.data = 0x0000;
+asic.data |= (unsigned short)(mess_rec[2]<<8);
+asic.data |= (unsigned short)(mess_rec[1]);
 
+lputs_ISR(mess_rec,mess_rec_size);
 
-TIMER0_flag = 1;
+BIO_config(asic);
+break;
 
-
-
-
-stop_TMR0_ISR();
-
-return;
+default:
+break;
 }
-
-
-
-if (RCIF) {
-stop_TMR0_ISR();
-
-
-if (USART_rx_index >= 15) {
-USART_rx_index = 0;
-}
-
-USART_rx_data[USART_rx_index++] = RCREG;
-
-start_TMR0_ISR(98);
-
-return;
-}
-
-
-
-if (TXIF && TXIE) {
-
-TXREG = USART_tx_data[USART_tx_index++];
-
-if (USART_tx_index >= USART_tx_length) {
-TXIE = 0;
-USART_tx_flag = 0;
-
-
-_delay((unsigned long)((25)*(500000/4000.0)));
-start_RX_USART_ISR();
-}
-return;
-}
-
-
-
 }

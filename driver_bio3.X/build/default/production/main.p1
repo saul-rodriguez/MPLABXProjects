@@ -30,12 +30,16 @@ Version 3.2 HI-TECH Software Intermediate Code
 [p i __delay ]
 "9 TMR0.h
 [v _TIMER0_flag `Vuc ~T0 @X0 0 e ]
-"70 USART1823.h
-[v _lputs_ISR `(v ~T0 @X0 0 ef2`*uc`uc ]
-"54
-[v _USART_rx_data `Vuc ~T0 @X0 -> 0 `x e ]
-"51
+"51 USART1823.h
 [v _USART_rx_index `Vuc ~T0 @X0 0 e ]
+"17 comm.h
+[v _mess_rec_size `Vuc ~T0 @X0 0 e ]
+"16
+[v _mess_rec `Vuc ~T0 @X0 -> 0 `x e ]
+"54 USART1823.h
+[v _USART_rx_data `Vuc ~T0 @X0 -> 0 `x e ]
+"19 comm.h
+[v _mess_handler `(v ~T0 @X0 0 ef ]
 "6288 /pkg/microchip/xc8/v1.38/include/pic16lf1823.h
 [v _TMR0IF `Vb ~T0 @X0 0 e@90 ]
 "6286
@@ -2529,172 +2533,218 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;USART1823.h: 70: void lputs_ISR(unsigned char* data, unsigned char length);
 [; ;USART1823.h: 72: void start_RX_USART_ISR();
 [; ;USART1823.h: 73: void start_TX_USART_ISR();
-"18 main.c
+[; ;comm.h: 16: extern volatile unsigned char mess_rec[3];
+[; ;comm.h: 17: extern volatile unsigned char mess_rec_size;
+[; ;comm.h: 19: void mess_handler();
+"19 main.c
 [v _main `(v ~T0 @X0 1 ef ]
 {
-[; ;main.c: 18: void main(void) {
+[; ;main.c: 19: void main(void) {
 [e :U _main ]
 [f ]
-"20
-[v _mybits `S294 ~T0 @X0 1 a ]
 "21
-[v _myVin `S296 ~T0 @X0 1 a ]
-[; ;main.c: 20: BIO3 mybits;
-[; ;main.c: 21: VIN myVin;
-[; ;main.c: 24: SYSTEM_Initialize();
+[v _i `uc ~T0 @X0 1 a ]
+"23
+[v _mybits `S294 ~T0 @X0 1 a ]
 "24
-[e ( _SYSTEM_Initialize ..  ]
-[; ;main.c: 25: setup_TMR0();
-"25
-[e ( _setup_TMR0 ..  ]
-[; ;main.c: 26: start_TX_USART_ISR();
+[v _myVin `S296 ~T0 @X0 1 a ]
+[; ;main.c: 21: unsigned char i;
+[; ;main.c: 23: BIO3 mybits;
+[; ;main.c: 24: VIN myVin;
+[; ;main.c: 26: SYSTEM_Initialize();
 "26
-[e ( _start_TX_USART_ISR ..  ]
-[; ;main.c: 27: start_RX_USART_ISR();
+[e ( _SYSTEM_Initialize ..  ]
+[; ;main.c: 27: setup_TMR0();
 "27
-[e ( _start_RX_USART_ISR ..  ]
-[; ;main.c: 28: start_RCM();
+[e ( _setup_TMR0 ..  ]
+[; ;main.c: 28: start_TX_USART_ISR();
 "28
+[e ( _start_TX_USART_ISR ..  ]
+[; ;main.c: 29: start_RX_USART_ISR();
+"29
+[e ( _start_RX_USART_ISR ..  ]
+[; ;main.c: 30: start_RCM();
+"30
 [e ( _start_RCM ..  ]
-[; ;main.c: 31: RA5 = 0;
-"31
-[e = _RA5 -> -> 0 `i `b ]
-[; ;main.c: 32: _delay((unsigned long)((250)*(500000/4000.0)));
-"32
-[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 500000 `l `d .4000.0 `ul ]
-[; ;main.c: 33: RA5 = 1;
+[; ;main.c: 33: RA5 = 0;
 "33
-[e = _RA5 -> -> 1 `i `b ]
+[e = _RA5 -> -> 0 `i `b ]
 [; ;main.c: 34: _delay((unsigned long)((250)*(500000/4000.0)));
 "34
+[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 500000 `l `d .4000.0 `ul ]
+[; ;main.c: 35: RA5 = 1;
+"35
+[e = _RA5 -> -> 1 `i `b ]
+[; ;main.c: 36: _delay((unsigned long)((250)*(500000/4000.0)));
+"36
 [e ( __delay (1 -> * -> -> 250 `i `d / -> -> 500000 `l `d .4000.0 `ul ]
 [; ;main.c: 40: while(1) {
 "40
 [e :U 299 ]
 {
-[; ;main.c: 49: if (TIMER0_flag) {
-"49
+[; ;main.c: 44: if (TIMER0_flag) {
+"44
 [e $ ! != -> _TIMER0_flag `i -> -> -> 0 `i `Vuc `i 301  ]
 {
-[; ;main.c: 50: TIMER0_flag = 0;
-"50
+[; ;main.c: 45: TIMER0_flag = 0;
+"45
 [e = _TIMER0_flag -> -> 0 `i `uc ]
-[; ;main.c: 56: lputs_ISR(USART_rx_data,USART_rx_index);
+[; ;main.c: 47: if (USART_rx_index > 3) {
+"47
+[e $ ! > -> _USART_rx_index `i -> 3 `i 302  ]
+{
+[; ;main.c: 48: USART_rx_index = 0;
+"48
+[e = _USART_rx_index -> -> 0 `i `uc ]
+[; ;main.c: 49: continue;
+"49
+[e $U 298  ]
+"50
+}
+[e :U 302 ]
+[; ;main.c: 50: }
+[; ;main.c: 52: if(USART_rx_index == 0)
+"52
+[e $ ! == -> _USART_rx_index `i -> 0 `i 303  ]
+[; ;main.c: 53: continue;
+"53
+[e $U 298  ]
+[e :U 303 ]
+[; ;main.c: 56: mess_rec_size = USART_rx_index;
 "56
-[e ( _lputs_ISR (2 , -> &U _USART_rx_data `*uc _USART_rx_index ]
-"60
+[e = _mess_rec_size _USART_rx_index ]
+[; ;main.c: 58: for (i = 0; i < mess_rec_size; i++)
+"58
+{
+[e = _i -> -> 0 `i `uc ]
+[e $U 307  ]
+"59
+[e :U 304 ]
+[; ;main.c: 59: mess_rec[i] = USART_rx_data[i];
+[e = *U + &U _mess_rec * -> _i `ux -> -> # *U &U _mess_rec `ui `ux *U + &U _USART_rx_data * -> _i `ux -> -> # *U &U _USART_rx_data `ui `ux ]
+"58
+[e ++ _i -> -> 1 `i `uc ]
+[e :U 307 ]
+[e $ < -> _i `i -> _mess_rec_size `i 304  ]
+[e :U 305 ]
+"59
+}
+[; ;main.c: 62: mess_handler();
+"62
+[e ( _mess_handler ..  ]
+"68
 }
 [e :U 301 ]
-"65
+"70
 }
 [e :U 298 ]
 "40
 [e $U 299  ]
 [e :U 300 ]
-[; ;main.c: 60: }
-[; ;main.c: 65: }
-[; ;main.c: 66: }
-"66
+[; ;main.c: 68: }
+[; ;main.c: 70: }
+[; ;main.c: 71: }
+"71
 [e :UE 297 ]
 }
-[v F2585 `(v ~T0 @X0 1 tf ]
-"69
-[v _isr `IF2585 ~T0 @X0 1 e ]
-"70
+[v F2589 `(v ~T0 @X0 1 tf ]
+"74
+[v _isr `IF2589 ~T0 @X0 1 e ]
+"75
 {
-[; ;main.c: 69: void interrupt isr(void)
-[; ;main.c: 70: {
+[; ;main.c: 74: void interrupt isr(void)
+[; ;main.c: 75: {
 [e :U _isr ]
 [f ]
-[; ;main.c: 73: if (TMR0IF && TMR0IE) {
-"73
-[e $ ! && _TMR0IF _TMR0IE 303  ]
+[; ;main.c: 78: if (TMR0IF && TMR0IE) {
+"78
+[e $ ! && _TMR0IF _TMR0IE 309  ]
 {
-[; ;main.c: 75: TMR0IF = 0;
-"75
+[; ;main.c: 80: TMR0IF = 0;
+"80
 [e = _TMR0IF -> -> 0 `i `b ]
-[; ;main.c: 76: TMR0 = TIMER0_timeout;
-"76
+[; ;main.c: 81: TMR0 = TIMER0_timeout;
+"81
 [e = _TMR0 -> _TIMER0_timeout `uc ]
-[; ;main.c: 79: TIMER0_flag = 1;
-"79
-[e = _TIMER0_flag -> -> 1 `i `uc ]
-[; ;main.c: 84: stop_TMR0_ISR();
+[; ;main.c: 84: TIMER0_flag = 1;
 "84
+[e = _TIMER0_flag -> -> 1 `i `uc ]
+[; ;main.c: 89: stop_TMR0_ISR();
+"89
 [e ( _stop_TMR0_ISR ..  ]
-[; ;main.c: 86: return;
-"86
-[e $UE 302  ]
-"87
-}
-[e :U 303 ]
-[; ;main.c: 87: }
-[; ;main.c: 91: if (RCIF) {
+[; ;main.c: 91: return;
 "91
-[e $ ! _RCIF 304  ]
-{
-[; ;main.c: 92: stop_TMR0_ISR();
+[e $UE 308  ]
 "92
-[e ( _stop_TMR0_ISR ..  ]
-[; ;main.c: 95: if (USART_rx_index >= 15) {
-"95
-[e $ ! >= -> _USART_rx_index `i -> 15 `i 305  ]
-{
-[; ;main.c: 96: USART_rx_index = 0;
+}
+[e :U 309 ]
+[; ;main.c: 92: }
+[; ;main.c: 96: if (RCIF) {
 "96
-[e = _USART_rx_index -> -> 0 `i `uc ]
+[e $ ! _RCIF 310  ]
+{
+[; ;main.c: 97: stop_TMR0_ISR();
 "97
-}
-[e :U 305 ]
-[; ;main.c: 97: }
-[; ;main.c: 99: USART_rx_data[USART_rx_index++] = RCREG;
-"99
-[e = *U + &U _USART_rx_data * -> ++ _USART_rx_index -> -> 1 `i `uc `ux -> -> # *U &U _USART_rx_data `ui `ux _RCREG ]
-[; ;main.c: 101: start_TMR0_ISR(98);
+[e ( _stop_TMR0_ISR ..  ]
+[; ;main.c: 100: if (USART_rx_index >= 15) {
+"100
+[e $ ! >= -> _USART_rx_index `i -> 15 `i 311  ]
+{
+[; ;main.c: 101: USART_rx_index = 0;
 "101
-[e ( _start_TMR0_ISR (1 -> -> 98 `i `uc ]
-[; ;main.c: 103: return;
-"103
-[e $UE 302  ]
+[e = _USART_rx_index -> -> 0 `i `uc ]
+"102
+}
+[e :U 311 ]
+[; ;main.c: 102: }
+[; ;main.c: 104: USART_rx_data[USART_rx_index++] = RCREG;
 "104
-}
-[e :U 304 ]
-[; ;main.c: 104: }
-[; ;main.c: 108: if (TXIF && TXIE) {
+[e = *U + &U _USART_rx_data * -> ++ _USART_rx_index -> -> 1 `i `uc `ux -> -> # *U &U _USART_rx_data `ui `ux _RCREG ]
+[; ;main.c: 106: start_TMR0_ISR(98);
+"106
+[e ( _start_TMR0_ISR (1 -> -> 98 `i `uc ]
+[; ;main.c: 108: return;
 "108
-[e $ ! && _TXIF _TXIE 306  ]
-{
-[; ;main.c: 110: TXREG = USART_tx_data[USART_tx_index++];
-"110
-[e = _TXREG *U + &U _USART_tx_data * -> ++ _USART_tx_index -> -> 1 `i `uc `ux -> -> # *U &U _USART_tx_data `ui `ux ]
-[; ;main.c: 112: if (USART_tx_index >= USART_tx_length) {
-"112
-[e $ ! >= -> _USART_tx_index `i -> _USART_tx_length `i 307  ]
-{
-[; ;main.c: 113: TXIE = 0;
+[e $UE 308  ]
+"109
+}
+[e :U 310 ]
+[; ;main.c: 109: }
+[; ;main.c: 113: if (TXIF && TXIE) {
 "113
-[e = _TXIE -> -> 0 `i `b ]
-[; ;main.c: 114: USART_tx_flag = 0;
-"114
-[e = _USART_tx_flag -> -> 0 `i `uc ]
-[; ;main.c: 117: _delay((unsigned long)((25)*(500000/4000.0)));
+[e $ ! && _TXIF _TXIE 312  ]
+{
+[; ;main.c: 115: TXREG = USART_tx_data[USART_tx_index++];
+"115
+[e = _TXREG *U + &U _USART_tx_data * -> ++ _USART_tx_index -> -> 1 `i `uc `ux -> -> # *U &U _USART_tx_data `ui `ux ]
+[; ;main.c: 117: if (USART_tx_index >= USART_tx_length) {
 "117
-[e ( __delay (1 -> * -> -> 25 `i `d / -> -> 500000 `l `d .4000.0 `ul ]
-[; ;main.c: 118: start_RX_USART_ISR();
+[e $ ! >= -> _USART_tx_index `i -> _USART_tx_length `i 313  ]
+{
+[; ;main.c: 118: TXIE = 0;
 "118
-[e ( _start_RX_USART_ISR ..  ]
+[e = _TXIE -> -> 0 `i `b ]
+[; ;main.c: 119: USART_tx_flag = 0;
 "119
+[e = _USART_tx_flag -> -> 0 `i `uc ]
+[; ;main.c: 122: _delay((unsigned long)((25)*(500000/4000.0)));
+"122
+[e ( __delay (1 -> * -> -> 25 `i `d / -> -> 500000 `l `d .4000.0 `ul ]
+[; ;main.c: 123: start_RX_USART_ISR();
+"123
+[e ( _start_RX_USART_ISR ..  ]
+"124
 }
-[e :U 307 ]
-[; ;main.c: 119: }
-[; ;main.c: 120: return;
-"120
-[e $UE 302  ]
-"121
-}
-[e :U 306 ]
-[; ;main.c: 121: }
-[; ;main.c: 125: }
+[e :U 313 ]
+[; ;main.c: 124: }
+[; ;main.c: 125: return;
 "125
-[e :UE 302 ]
+[e $UE 308  ]
+"126
+}
+[e :U 312 ]
+[; ;main.c: 126: }
+[; ;main.c: 128: }
+"128
+[e :UE 308 ]
 }
