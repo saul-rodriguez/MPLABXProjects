@@ -2518,24 +2518,31 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;comm.c: 26: break;
 "26
 [e $U 298  ]
-[; ;comm.c: 28: default:
+[; ;comm.c: 28: case 'm':
 "28
 [e :U 302 ]
-[; ;comm.c: 29: break;
-"29
-[e $U 298  ]
+[; ;comm.c: 30: break;
 "30
+[e $U 298  ]
+[; ;comm.c: 32: default:
+"32
+[e :U 303 ]
+[; ;comm.c: 33: break;
+"33
+[e $U 298  ]
+"34
 }
-[; ;comm.c: 30: }
+[; ;comm.c: 34: }
 [e $U 298  ]
 "13
 [e :U 299 ]
 [e [\ *U + &U _mess_rec * -> -> -> 0 `i `ui `ux -> -> # *U &U _mess_rec `ui `ux , $ -> -> 116 `ui `uc 300
  , $ -> -> 99 `ui `uc 301
- 302 ]
-"30
+ , $ -> -> 109 `ui `uc 302
+ 303 ]
+"34
 [e :U 298 ]
-[; ;comm.c: 31: }
-"31
+[; ;comm.c: 35: }
+"35
 [e :UE 297 ]
 }

@@ -1,37 +1,17 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"2240 /pkg/microchip/xc8/v1.38/include/pic16lf1823.h
-[v _LATA `Vuc ~T0 @X0 0 e@268 ]
-"2284
-[v _LATC `Vuc ~T0 @X0 0 e@270 ]
-"3056
-[v _ANSELA `Vuc ~T0 @X0 0 e@396 ]
-"3102
-[v _ANSELC `Vuc ~T0 @X0 0 e@398 ]
-"3640
-[v _WPUA `Vuc ~T0 @X0 0 e@524 ]
-"3697
-[v _WPUC `Vuc ~T0 @X0 0 e@526 ]
-"6110
-[v _RXDTSEL `Vb ~T0 @X0 0 e@2287 ]
-"6360
-[v _TXCKSEL `Vb ~T0 @X0 0 e@2282 ]
-"1510
-[v _TRISC `Vuc ~T0 @X0 0 e@142 ]
-"1461
-[v _TRISA `Vuc ~T0 @X0 0 e@140 ]
-"1670
-[s S86 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S86 . PS0 PS1 PS2 PSA TMR0SE TMR0CS INTEDG nWPUEN ]
-"1680
-[s S87 :3 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S87 . PS . T0SE T0CS ]
-"1669
-[u S85 `S86 1 `S87 1 ]
-[n S85 . . . ]
-"1687
-[v _OPTION_REGbits `VS85 ~T0 @X0 0 e@149 ]
-"2937
-[v _APFCON `Vuc ~T0 @X0 0 e@285 ]
+"2175 /pkg/microchip/xc8/v1.38/include/pic16lf1823.h
+[v _ADCON1 `Vuc ~T0 @X0 0 e@158 ]
+"2087
+[v _ADCON0 `Vuc ~T0 @X0 0 e@157 ]
+"28 /pkg/microchip/xc8/v1.38/include/pic.h
+[v ___nop `(v ~T0 @X0 0 ef ]
+[p i ___nop ]
+"5558 /pkg/microchip/xc8/v1.38/include/pic16lf1823.h
+[v _ADGO `Vb ~T0 @X0 0 e@1257 ]
+"2068
+[v _ADRESH `Vuc ~T0 @X0 0 e@156 ]
+"2049
+[v _ADRESL `Vuc ~T0 @X0 0 e@155 ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -2374,52 +2354,188 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic.h: 186: extern unsigned char __resetbits;
 [; ;pic.h: 187: extern __bit __powerdown;
 [; ;pic.h: 188: extern __bit __timeout;
-[; ;pin_manager.h: 82: void PIN_MANAGER_Initialize (void);
-"49 mcc_generated_files/pin_manager.c
-[v _PIN_MANAGER_Initialize `(v ~T0 @X0 1 ef ]
-"50
+[; ;ADC1823.h: 21: void setup_ADC();
+[; ;ADC1823.h: 22: unsigned short ADC_2();
+[; ;ADC1823.h: 23: unsigned short ADC_4();
+[; ;ADC1823.h: 24: unsigned short ADC_5();
+[; ;ADC1823.h: 25: unsigned short ADC_6();
+"3 ADC1823.c
+[v _setup_ADC `(v ~T0 @X0 1 ef ]
+"4
 {
-[; ;pin_manager.c: 49: void PIN_MANAGER_Initialize(void)
-[; ;pin_manager.c: 50: {
-[e :U _PIN_MANAGER_Initialize ]
+[; ;ADC1823.c: 3: void setup_ADC()
+[; ;ADC1823.c: 4: {
+[e :U _setup_ADC ]
 [f ]
-[; ;pin_manager.c: 51: LATA = 0x0;
-"51
-[e = _LATA -> -> 0 `i `uc ]
-[; ;pin_manager.c: 52: LATC = 0x0;
-"52
-[e = _LATC -> -> 0 `i `uc ]
-[; ;pin_manager.c: 55: ANSELA = 0b00000100;
-"55
-[e = _ANSELA -> -> 4 `i `uc ]
-[; ;pin_manager.c: 56: ANSELC = 0b00000011;
-"56
-[e = _ANSELC -> -> 3 `i `uc ]
-[; ;pin_manager.c: 59: WPUA = 0x3B;
-"59
-[e = _WPUA -> -> 59 `i `uc ]
-[; ;pin_manager.c: 60: WPUC = 0x3C;
-"60
-[e = _WPUC -> -> 60 `i `uc ]
-[; ;pin_manager.c: 62: RXDTSEL = 0;
-"62
-[e = _RXDTSEL -> -> 0 `i `b ]
-[; ;pin_manager.c: 63: TXCKSEL = 0;
-"63
-[e = _TXCKSEL -> -> 0 `i `b ]
-[; ;pin_manager.c: 66: TRISC = 0b01100011;
-"66
-[e = _TRISC -> -> 99 `i `uc ]
-[; ;pin_manager.c: 67: TRISA = 0b01011111;
-"67
-[e = _TRISA -> -> 95 `i `uc ]
-[; ;pin_manager.c: 69: OPTION_REGbits.nWPUEN = 0x0;
-"69
-[e = . . _OPTION_REGbits 0 7 -> -> 0 `i `uc ]
-[; ;pin_manager.c: 70: APFCON = 0x00;
-"70
-[e = _APFCON -> -> 0 `i `uc ]
-[; ;pin_manager.c: 71: }
-"71
+[; ;ADC1823.c: 20: ADCON1 = 0b11110000;
+"20
+[e = _ADCON1 -> -> 240 `i `uc ]
+[; ;ADC1823.c: 21: { ADCON0 = 0b00100100;};
+"21
+{
+[e = _ADCON0 -> -> 36 `i `uc ]
+}
+[; ;ADC1823.c: 23: }
+"23
 [e :UE 293 ]
+}
+"25
+[v _ADC_2 `(us ~T0 @X0 1 ef ]
+"26
+{
+[; ;ADC1823.c: 25: unsigned short ADC_2()
+[; ;ADC1823.c: 26: {
+[e :U _ADC_2 ]
+[f ]
+"27
+[v _ADC_value `us ~T0 @X0 1 a ]
+[; ;ADC1823.c: 27: unsigned short ADC_value;
+[; ;ADC1823.c: 29: { ADCON0 = 0b00001001;};
+"29
+{
+[e = _ADCON0 -> -> 9 `i `uc ]
+}
+[; ;ADC1823.c: 30: __nop();
+"30
+[e ( ___nop ..  ]
+[; ;ADC1823.c: 31: { ADGO = 1; while (ADGO); ADC_value = ADRESH; ADC_value <<= 8; ADC_value |= ADRESL;};
+"31
+{
+[e = _ADGO -> -> 1 `i `b ]
+[e $U 295  ]
+[e :U 296 ]
+[e :U 295 ]
+[e $ _ADGO 296  ]
+[e :U 297 ]
+[e = _ADC_value -> _ADRESH `us ]
+[e =<< _ADC_value -> 8 `i ]
+[e =| _ADC_value -> _ADRESL `us ]
+}
+[; ;ADC1823.c: 32: return ADC_value;
+"32
+[e ) _ADC_value ]
+[e $UE 294  ]
+[; ;ADC1823.c: 33: }
+"33
+[e :UE 294 ]
+}
+"35
+[v _ADC_4 `(us ~T0 @X0 1 ef ]
+"36
+{
+[; ;ADC1823.c: 35: unsigned short ADC_4()
+[; ;ADC1823.c: 36: {
+[e :U _ADC_4 ]
+[f ]
+"37
+[v _ADC_value `us ~T0 @X0 1 a ]
+[; ;ADC1823.c: 37: unsigned short ADC_value;
+[; ;ADC1823.c: 39: { ADCON0 = 0b00010001;};
+"39
+{
+[e = _ADCON0 -> -> 17 `i `uc ]
+}
+[; ;ADC1823.c: 40: __nop();
+"40
+[e ( ___nop ..  ]
+[; ;ADC1823.c: 41: { ADGO = 1; while (ADGO); ADC_value = ADRESH; ADC_value <<= 8; ADC_value |= ADRESL;};
+"41
+{
+[e = _ADGO -> -> 1 `i `b ]
+[e $U 299  ]
+[e :U 300 ]
+[e :U 299 ]
+[e $ _ADGO 300  ]
+[e :U 301 ]
+[e = _ADC_value -> _ADRESH `us ]
+[e =<< _ADC_value -> 8 `i ]
+[e =| _ADC_value -> _ADRESL `us ]
+}
+[; ;ADC1823.c: 42: return ADC_value;
+"42
+[e ) _ADC_value ]
+[e $UE 298  ]
+[; ;ADC1823.c: 43: }
+"43
+[e :UE 298 ]
+}
+"45
+[v _ADC_5 `(us ~T0 @X0 1 ef ]
+"46
+{
+[; ;ADC1823.c: 45: unsigned short ADC_5()
+[; ;ADC1823.c: 46: {
+[e :U _ADC_5 ]
+[f ]
+"47
+[v _ADC_value `us ~T0 @X0 1 a ]
+[; ;ADC1823.c: 47: unsigned short ADC_value;
+[; ;ADC1823.c: 49: { ADCON0 = 0b00010101;};
+"49
+{
+[e = _ADCON0 -> -> 21 `i `uc ]
+}
+[; ;ADC1823.c: 50: __nop();
+"50
+[e ( ___nop ..  ]
+[; ;ADC1823.c: 51: { ADGO = 1; while (ADGO); ADC_value = ADRESH; ADC_value <<= 8; ADC_value |= ADRESL;};
+"51
+{
+[e = _ADGO -> -> 1 `i `b ]
+[e $U 303  ]
+[e :U 304 ]
+[e :U 303 ]
+[e $ _ADGO 304  ]
+[e :U 305 ]
+[e = _ADC_value -> _ADRESH `us ]
+[e =<< _ADC_value -> 8 `i ]
+[e =| _ADC_value -> _ADRESL `us ]
+}
+[; ;ADC1823.c: 52: return ADC_value;
+"52
+[e ) _ADC_value ]
+[e $UE 302  ]
+[; ;ADC1823.c: 53: }
+"53
+[e :UE 302 ]
+}
+"55
+[v _ADC_6 `(us ~T0 @X0 1 ef ]
+"56
+{
+[; ;ADC1823.c: 55: unsigned short ADC_6()
+[; ;ADC1823.c: 56: {
+[e :U _ADC_6 ]
+[f ]
+"57
+[v _ADC_value `us ~T0 @X0 1 a ]
+[; ;ADC1823.c: 57: unsigned short ADC_value;
+[; ;ADC1823.c: 59: { ADCON0 = 0b00011001;};
+"59
+{
+[e = _ADCON0 -> -> 25 `i `uc ]
+}
+[; ;ADC1823.c: 60: __nop();
+"60
+[e ( ___nop ..  ]
+[; ;ADC1823.c: 61: { ADGO = 1; while (ADGO); ADC_value = ADRESH; ADC_value <<= 8; ADC_value |= ADRESL;};
+"61
+{
+[e = _ADGO -> -> 1 `i `b ]
+[e $U 307  ]
+[e :U 308 ]
+[e :U 307 ]
+[e $ _ADGO 308  ]
+[e :U 309 ]
+[e = _ADC_value -> _ADRESH `us ]
+[e =<< _ADC_value -> 8 `i ]
+[e =| _ADC_value -> _ADRESL `us ]
+}
+[; ;ADC1823.c: 62: return ADC_value;
+"62
+[e ) _ADC_value ]
+[e $UE 306  ]
+[; ;ADC1823.c: 63: }
+"63
+[e :UE 306 ]
 }

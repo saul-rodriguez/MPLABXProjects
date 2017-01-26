@@ -3418,6 +3418,10 @@ lputs_ISR(mess_rec,mess_rec_size);
 BIO_config(asic);
 break;
 
+case 'm':
+
+break;
+
 default:
 break;
 }

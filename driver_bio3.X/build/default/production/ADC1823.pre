@@ -1,5 +1,5 @@
 
-# 1 "mcc_generated_files/pin_manager.c"
+# 1 "ADC1823.c"
 
 # 26 "/pkg/microchip/xc8/v1.38/include/htc.h"
 extern const char __xc8_OPTIM_SPEED;
@@ -3183,31 +3183,60 @@ extern unsigned char __resetbits;
 extern __bit __powerdown;
 extern __bit __timeout;
 
-# 82 "mcc_generated_files/pin_manager.h"
-void PIN_MANAGER_Initialize (void);
+# 21 "ADC1823.h"
+void setup_ADC();
+unsigned short ADC_2();
+unsigned short ADC_4();
+unsigned short ADC_5();
+unsigned short ADC_6();
 
-# 49 "mcc_generated_files/pin_manager.c"
-void PIN_MANAGER_Initialize(void)
+# 3 "ADC1823.c"
+void setup_ADC()
 {
-LATA = 0x0;
-LATC = 0x0;
 
+# 20
+ADCON1 = 0b11110000;
+{ ADCON0 = 0b00100100;};
 
-ANSELA = 0b00000100;
-ANSELC = 0b00000011;
+}
 
+unsigned short ADC_2()
+{
+unsigned short ADC_value;
 
-WPUA = 0x3B;
-WPUC = 0x3C;
+{ ADCON0 = 0b00001001;};
+__nop();
+{ ADGO = 1; while (ADGO); ADC_value = ADRESH; ADC_value <<= 8; ADC_value |= ADRESL;};
+return ADC_value;
+}
 
-RXDTSEL = 0;
-TXCKSEL = 0;
+unsigned short ADC_4()
+{
+unsigned short ADC_value;
 
+{ ADCON0 = 0b00010001;};
+__nop();
+{ ADGO = 1; while (ADGO); ADC_value = ADRESH; ADC_value <<= 8; ADC_value |= ADRESL;};
+return ADC_value;
+}
 
-TRISC = 0b01100011;
-TRISA = 0b01011111;
+unsigned short ADC_5()
+{
+unsigned short ADC_value;
 
-OPTION_REGbits.nWPUEN = 0x0;
-APFCON = 0x00;
+{ ADCON0 = 0b00010101;};
+__nop();
+{ ADGO = 1; while (ADGO); ADC_value = ADRESH; ADC_value <<= 8; ADC_value |= ADRESL;};
+return ADC_value;
+}
+
+unsigned short ADC_6()
+{
+unsigned short ADC_value;
+
+{ ADCON0 = 0b00011001;};
+__nop();
+{ ADGO = 1; while (ADGO); ADC_value = ADRESH; ADC_value <<= 8; ADC_value |= ADRESL;};
+return ADC_value;
 }
 

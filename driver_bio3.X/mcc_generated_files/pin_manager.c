@@ -50,9 +50,11 @@ void PIN_MANAGER_Initialize(void)
 {
     LATA = 0x0;
     LATC = 0x0;
-    //ANSELA = 0x17;
-    ANSELA = 0b00000000; //digital on A
-    ANSELC = 0x00; //digital on C
+    
+     //Analog pin configuration
+    ANSELA = 0b00000100; //Analog on RA2, others digital
+    ANSELC = 0b00000011; //Analog on RC1,RC0, others digital
+    
     //WPUA = 0x3F;
     WPUA = 0x3B;
     WPUC = 0x3C;

@@ -6,6 +6,7 @@
             <file>file:/home/saul/MPLABXProjects/driver_bio3.X/mcc_generated_files/pin_manager.h</file>
             <file>file:/home/saul/MPLABXProjects/driver_bio3.X/main.c</file>
             <file>file:/home/saul/MPLABXProjects/driver_bio3.X/comm.c</file>
+            <file>file:/home/saul/MPLABXProjects/driver_bio3.X/ADC1823.h</file>
             <file>file:/home/saul/MPLABXProjects/driver_bio3.X/TMR0.c</file>
             <file>file:/home/saul/MPLABXProjects/driver_bio3.X/USART1823.c</file>
             <file>file:/home/saul/MPLABXProjects/driver_bio3.X/mcc_generated_files/mcc.c</file>
@@ -13,6 +14,7 @@
             <file>file:/home/saul/MPLABXProjects/driver_bio3.X/mcc_generated_files/pin_manager.c</file>
             <file>file:/home/saul/MPLABXProjects/driver_bio3.X/USART1823.h</file>
             <file>file:/home/saul/MPLABXProjects/driver_bio3.X/bio3.h</file>
+            <file>file:/home/saul/MPLABXProjects/driver_bio3.X/ADC1823.c</file>
         </group>
     </open-files>
 </project-private>

@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=/pkg/microchip/xc8/v1.38/dat/en_msgs.txt -cs \
   -h+dist/default/production/driver_bio3.X.production.sym \
   --cmf=dist/default/production/driver_bio3.X.production.cmf -z -Q16LF1823 \
-  -o/tmp/xcXBAWMET -Mdist/default/production/driver_bio3.X.production.map \
+  -o/tmp/xcXtWLu9i -Mdist/default/production/driver_bio3.X.production.map \
   -E1 -ver=XC8 -ASTACK=02031h-0206fh -pstack=STACK -ACODE=00h-07FFh \
   -ASTRCODE=00h-07FFh -ASTRING=00h-0FFhx8 -ACONST=00h-0FFhx8 \
   -AENTRY=00h-0FFhx8 -ACOMMON=070h-07Fh -ABANK0=020h-06Fh -ABANK1=0A0h-0BFh \
@@ -25,7 +25,7 @@ Linker command line:
   -pfunctab=CODE -ACONFIG=08007h-08008h -pconfig=CONFIG -DCONFIG=2 \
   -AIDLOC=08000h-08003h -pidloc=IDLOC -DIDLOC=2 -AEEDATA=00h-0FFh/0F000h \
   -peeprom_data=EEDATA -DEEDATA=2 -DCODE=2 -DSTRCODE=2 -DSTRING=2 -DCONST=2 \
-  -DENTRY=2 -k /tmp/xcXnpo0Uv.obj \
+  -DENTRY=2 -k /tmp/xcXdPg0AG.obj \
   dist/default/production/driver_bio3.X.production.obj 
 
 Object code version is 3.11
@@ -35,30 +35,30 @@ Machine type is 16LF1823
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-/tmp/xcXnpo0Uv.obj
+/tmp/xcXdPg0AG.obj
                 end_init                             54       54        1        8       0
                 reset_vec                             0        0        1        0       0
                 config                             8007     8007        2    1000E       0
 dist/default/production/driver_bio3.X.production.obj
                 cinit                                55       55        F        8       0
                 intentry                              4        4       50        8       0
-                text14                              182      182       10        8       0
-                text13                              1BB      1BB        3        8       0
-                text12                              171      171       11        8       0
-                text10                              1AE      1AE        6        8       0
-                text9                               149      149       17        8       0
-                text8                               1B8      1B8        3        8       0
+                text14                              187      187       10        8       0
+                text13                              1C0      1C0        3        8       0
+                text12                              176      176       11        8       0
+                text10                              1B3      1B3        6        8       0
+                text9                               14C      14C       19        8       0
+                text8                               1BD      1BD        3        8       0
                 text7                                A9       A9       43        8       0
-                text6                               120      120       29        8       0
-                text5                                EC       EC       34        8       0
-                text4                               1A1      1A1        7        8       0
-                text3                               1B4      1B4        4        8       0
-                text2                               160      160       11        8       0
-                text1                               192      192        F        8       0
+                text6                               123      123       29        8       0
+                text5                                EC       EC       37        8       0
+                text4                               1A6      1A6        7        8       0
+                text3                               1B9      1B9        4        8       0
+                text2                               165      165       11        8       0
+                text1                               197      197        F        8       0
                 maintext                             64       64       45        8       0
                 cstackBANK0                          44       44        D       20       1
                 cstackCOMMON                         76       76        6       70       1
-                clrtext                             1A8      1A8        6        8       0
+                clrtext                             1AD      1AD        6        8       0
                 bssBANK0                             20       20       24       20       1
                 bssCOMMON                            70       70        6       70       1
 
@@ -70,21 +70,21 @@ TOTAL           Name                               Link     Load   Length     Sp
                 cinit                                55       55        F         0
                 intentry                              4        4       50         0
                 reset_vec                             0        0        1         0
-                text14                              182      182       10         0
-                text13                              1BB      1BB        3         0
-                text12                              171      171       11         0
-                text10                              1AE      1AE        6         0
-                text9                               149      149       17         0
-                text8                               1B8      1B8        3         0
+                text14                              187      187       10         0
+                text13                              1C0      1C0        3         0
+                text12                              176      176       11         0
+                text10                              1B3      1B3        6         0
+                text9                               14C      14C       19         0
+                text8                               1BD      1BD        3         0
                 text7                                A9       A9       43         0
-                text6                               120      120       29         0
-                text5                                EC       EC       34         0
-                text4                               1A1      1A1        7         0
-                text3                               1B4      1B4        4         0
-                text2                               160      160       11         0
-                text1                               192      192        F         0
+                text6                               123      123       29         0
+                text5                                EC       EC       37         0
+                text4                               1A6      1A6        7         0
+                text3                               1B9      1B9        4         0
+                text2                               165      165       11         0
+                text1                               197      197        F         0
                 maintext                             64       64       45         0
-                clrtext                             1A8      1A8        6         0
+                clrtext                             1AD      1AD        6         0
 
         CLASS   STRCODE        
 
@@ -247,7 +247,7 @@ TOTAL           Name                               Link     Load   Length     Sp
 SEGMENTS        Name                           Load    Length   Top    Selector   Space  Class     Delta
 
                 reset_vec                      000000  000001  000001         0       0  CODE        2
-                intentry                       000004  0001BA  0001BE         8       0  CODE        2
+                intentry                       000004  0001BF  0001C3         8       0  CODE        2
                 bssBANK0                       000020  000031  000051        20       1  BANK0       1
                 bssCOMMON                      000070  00000C  00007C        70       1  COMMON      1
                 config                         008007  000002  008009     1000E       0  CONFIG      2
@@ -260,13 +260,13 @@ UNUSED ADDRESS RANGES
         BANK1            000A0-000BF              20           1
         BIGRAM           02000-0206F              70           1
         CODE             00001-00003               3           2
-                         001BE-007FF             642
+                         001C3-007FF             63D
         COMMON           0007C-0007D               2           1
         CONST            00001-00003               3           2
-                         001BE-007FF             100
+                         001C3-007FF             100
         EEDATA           0F000-0F0FF             100           2
         ENTRY            00001-00003               3           2
-                         001BE-007FF             100
+                         001C3-007FF             100
         IDLOC            08000-08003               4           2
         RAM              00051-0006F              1F           1
                          000A0-000BF              20
@@ -304,15 +304,20 @@ UNUSED ADDRESS RANGES
         SFR9             00480-004EF              70           1
         STACK            02031-0206F              3F           1
         STRCODE          00001-00003               3           2
-                         001BE-007FF             642
+                         001C3-007FF             63D
         STRING           00001-00003               3           2
-                         001BE-007FF             100
+                         001C3-007FF             100
 
                                   Symbol Table
 
 BIO_config@conf                  cstackBANK0  00044
 BIO_config@i                     cstackBANK0  00047
 BIO_config@out                   cstackBANK0  00048
+_ADCON0                          (abs)        0009D
+_ADCON1                          (abs)        0009E
+_ADGO                            (abs)        004E9
+_ADRESH                          (abs)        0009C
+_ADRESL                          (abs)        0009B
 _ANSELA                          (abs)        0018C
 _ANSELC                          (abs)        0018E
 _APFCON                          (abs)        0011D
@@ -326,11 +331,11 @@ _LATA                            (abs)        0010C
 _LATC                            (abs)        0010E
 _OPTION_REGbits                  (abs)        00095
 _OSCCON                          (abs)        00099
-_OSCILLATOR_Initialize           text10       001AE
+_OSCILLATOR_Initialize           text10       001B3
 _OSCSTAT                         (abs)        0009A
 _OSCTUNE                         (abs)        00098
 _PEIE                            (abs)        0005E
-_PIN_MANAGER_Initialize          text9        00149
+_PIN_MANAGER_Initialize          text9        0014C
 _PORTC                           (abs)        0000E
 _PS0                             (abs)        004A8
 _PS1                             (abs)        004A9
@@ -345,7 +350,7 @@ _SPBRGH                          (abs)        0019C
 _SPBRGL                          (abs)        0019B
 _SPEN                            (abs)        00CEF
 _SYNC                            (abs)        00CF4
-_SYSTEM_Initialize               text8        001B8
+_SYSTEM_Initialize               text8        001BD
 _TIMER0_flag                     bssBANK0     0003E
 _TIMER0_timeout                  bssCOMMON    00070
 _TMR0                            (abs)        00015
@@ -575,21 +580,21 @@ ___int_sp                        stack        00000
 ___latbits                       (abs)        00000
 ___sp                            stack        00000
 __end_of_BIO_config              text7        000EC
-__end_of_OSCILLATOR_Initialize   text10       001B4
-__end_of_PIN_MANAGER_Initialize  text9        00160
-__end_of_SYSTEM_Initialize       text8        001BB
+__end_of_OSCILLATOR_Initialize   text10       001B9
+__end_of_PIN_MANAGER_Initialize  text9        00165
+__end_of_SYSTEM_Initialize       text8        001C0
 __end_of__initialization         cinit        00061
 __end_of_isr                     intentry     00054
-__end_of_lputs_ISR               text6        00149
+__end_of_lputs_ISR               text6        0014C
 __end_of_main                    maintext     000A9
-__end_of_mess_handler            text5        00120
-__end_of_setup_TMR0              text4        001A8
-__end_of_start_RCM               text3        001B8
-__end_of_start_RX_USART_ISR      text2        00171
-__end_of_start_TMR0_ISR          text14       00192
-__end_of_start_TX_USART_ISR      text1        001A1
-__end_of_stop_TMR0_ISR           text13       001BE
-__end_ofi1_start_RX_USART_ISR    text12       00182
+__end_of_mess_handler            text5        00123
+__end_of_setup_TMR0              text4        001AD
+__end_of_start_RCM               text3        001BD
+__end_of_start_RX_USART_ISR      text2        00176
+__end_of_start_TMR0_ISR          text14       00197
+__end_of_start_TX_USART_ISR      text1        001A6
+__end_of_stop_TMR0_ISR           text13       001C3
+__end_ofi1_start_RX_USART_ISR    text12       00187
 __initialization                 cinit        00055
 __pbssBANK0                      bssBANK0     00020
 __pbssCOMMON                     bssCOMMON    00070
@@ -597,19 +602,19 @@ __pcstackBANK0                   cstackBANK0  00044
 __pcstackCOMMON                  cstackCOMMON 00076
 __pintentry                      intentry     00004
 __pmaintext                      maintext     00064
-__ptext1                         text1        00192
-__ptext10                        text10       001AE
-__ptext12                        text12       00171
-__ptext13                        text13       001BB
-__ptext14                        text14       00182
-__ptext2                         text2        00160
-__ptext3                         text3        001B4
-__ptext4                         text4        001A1
+__ptext1                         text1        00197
+__ptext10                        text10       001B3
+__ptext12                        text12       00176
+__ptext13                        text13       001C0
+__ptext14                        text14       00187
+__ptext2                         text2        00165
+__ptext3                         text3        001B9
+__ptext4                         text4        001A6
 __ptext5                         text5        000EC
-__ptext6                         text6        00120
+__ptext6                         text6        00123
 __ptext7                         text7        000A9
-__ptext8                         text8        001B8
-__ptext9                         text9        00149
+__ptext8                         text8        001BD
+__ptext9                         text9        0014C
 __size_of_BIO_config             (abs)        00000
 __size_of_OSCILLATOR_Initialize  (abs)        00000
 __size_of_PIN_MANAGER_Initialize (abs)        00000
@@ -626,21 +631,21 @@ __size_of_start_TX_USART_ISR     (abs)        00000
 __size_of_stop_TMR0_ISR          (abs)        00000
 __size_ofi1_start_RX_USART_ISR   (abs)        00000
 _isr                             intentry     00004
-_lputs_ISR                       text6        00120
+_lputs_ISR                       text6        00123
 _main                            maintext     00064
 _mess_handler                    text5        000EC
 _mess_rec                        bssBANK0     00041
 _mess_rec_size                   bssBANK0     00040
-_setup_TMR0                      text4        001A1
-_start_RCM                       text3        001B4
-_start_RX_USART_ISR              text2        00160
-_start_TMR0_ISR                  text14       00182
-_start_TX_USART_ISR              text1        00192
-_stop_TMR0_ISR                   text13       001BB
+_setup_TMR0                      text4        001A6
+_start_RCM                       text3        001B9
+_start_RX_USART_ISR              text2        00165
+_start_TMR0_ISR                  text14       00187
+_start_TX_USART_ISR              text1        00197
+_stop_TMR0_ISR                   text13       001C0
 btemp                            (abs)        0007E
-clear_ram0                       clrtext      001A8
+clear_ram0                       clrtext      001AD
 end_of_initialization            cinit        00061
-i1_start_RX_USART_ISR            text12       00171
+i1_start_RX_USART_ISR            text12       00176
 int$flags                        (abs)        0007E
 intlevel0                        functab      00000
 intlevel1                        functab      00000
@@ -1154,38 +1159,38 @@ bio3.c
 bio3.c estimated size: 68
 
 mcc_generated_files/pin_manager.c
-		_PIN_MANAGER_Initialize		CODE           	0149	0000	24
+		_PIN_MANAGER_Initialize		CODE           	014C	0000	26
 
-mcc_generated_files/pin_manager.c estimated size: 24
+mcc_generated_files/pin_manager.c estimated size: 26
 
 USART1823.c
-		_lputs_ISR     		CODE           	0120	0000	42
-		_start_RX_USART_ISR		CODE           	0160	0000	18
-		_start_TX_USART_ISR		CODE           	0192	0000	16
+		_lputs_ISR     		CODE           	0123	0000	42
+		_start_RX_USART_ISR		CODE           	0165	0000	18
+		_start_TX_USART_ISR		CODE           	0197	0000	16
 
 USART1823.c estimated size: 76
 
 RCM1823.c
-		_start_RCM     		CODE           	01B4	0000	5
+		_start_RCM     		CODE           	01B9	0000	5
 
 RCM1823.c estimated size: 5
 
 TMR0.c
-		_setup_TMR0    		CODE           	01A1	0000	8
-		_start_TMR0_ISR		CODE           	0182	0000	17
-		_stop_TMR0_ISR 		CODE           	01BB	0000	4
+		_setup_TMR0    		CODE           	01A6	0000	8
+		_start_TMR0_ISR		CODE           	0187	0000	17
+		_stop_TMR0_ISR 		CODE           	01C0	0000	4
 
 TMR0.c estimated size: 29
 
 shared
-		i1_start_RX_USART_ISR		CODE           	0171	0000	18
+		i1_start_RX_USART_ISR		CODE           	0176	0000	18
 		__initialization		CODE           	0055	0000	13
 
 shared estimated size: 31
 
 mcc_generated_files/mcc.c
-		_OSCILLATOR_Initialize		CODE           	01AE	0000	7
-		_SYSTEM_Initialize		CODE           	01B8	0000	4
+		_OSCILLATOR_Initialize		CODE           	01B3	0000	7
+		_SYSTEM_Initialize		CODE           	01BD	0000	4
 
 mcc_generated_files/mcc.c estimated size: 11
 
@@ -1196,7 +1201,7 @@ main.c
 main.c estimated size: 151
 
 comm.c
-		_mess_handler  		CODE           	00EC	0000	53
+		_mess_handler  		CODE           	00EC	0000	56
 
-comm.c estimated size: 53
+comm.c estimated size: 56
 

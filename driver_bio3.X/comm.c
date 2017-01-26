@@ -24,6 +24,10 @@ void mess_handler()
             
             BIO_config(asic);                   
             break;
+            
+        case 'm': //Measure ADC channels
+            
+            break;
              
         default: 
             break;

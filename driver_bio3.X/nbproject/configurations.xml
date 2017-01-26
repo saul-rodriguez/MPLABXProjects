@@ -35,6 +35,8 @@
       <itemPath>USART1823.h</itemPath>
       <itemPath>comm.c</itemPath>
       <itemPath>comm.h</itemPath>
+      <itemPath>ADC1823.c</itemPath>
+      <itemPath>ADC1823.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
