@@ -28,6 +28,9 @@ unsigned short ADC_2()
 
     SEL_CH2();
     NOP();
+    //NOP();
+    //NOP();
+    //NOP();
     ADC_GO();
     return ADC_value;
 }

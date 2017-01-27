@@ -122,7 +122,7 @@ __size_of_start_TMR0_ISR 0 0 ABS 0
 __end_of_setup_TMR0 24C 0 CODE 0
 __Hcode 0 0 ABS 0
 __Lcode 0 0 ABS 0
-stackhi 206F 0 ABS 0
+stackhi 205F 0 ABS 0
 __size_of_BIO_config 0 0 ABS 0
 __HcstackBANK0 0 0 ABS 0
 __LcstackBANK0 0 0 ABS 0
@@ -340,7 +340,7 @@ __Lend_init 53 0 CODE 0
 __size_of_ADC_2 0 0 ABS 0
 _OSCILLATOR_Initialize 258 0 CODE 0
 __size_of_ADC_5 0 0 ABS 0
-__Hreset_vec 1 0 CODE 0
+__Hreset_vec 2 0 CODE 0
 __Lreset_vec 0 0 CODE 0
 __size_of_PIN_MANAGER_Initialize 0 0 ABS 0
 _lputs_ISR 159 0 CODE 0
@@ -384,14 +384,14 @@ __CFG_CP$OFF 0 0 ABS 0
 _read_ADC_channels 120 0 CODE 0
 __CFG_LVP$OFF 0 0 ABS 0
 %segments
-reset_vec 0 1 CODE 0 0
+reset_vec 0 3 CODE 0 0
 intentry 8 4CF CODE 8 0
 config 1000E 10011 CONFIG 1000E 0
 bssCOMMON 70 79 COMMON 70 1
 bssBANK0 20 5F BANK0 20 1
 %locals
-dist/default/production/driver_bio3.X.production.obj
-/tmp/xcXCmQkDh
+dist/default/debug/driver_bio3.X.debug.obj
+/tmp/xcXsWCFjU
 2408 54 0 CODE 0
 2411 54 0 CODE 0
 2468 54 0 CODE 0

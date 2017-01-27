@@ -12,9 +12,7 @@
 #include "TMR0.h"
 #include "USART1823.h"
 #include "comm.h"
-
-
-
+#include "ADC1823.h"
 
 void main(void) {
     
@@ -28,7 +26,7 @@ void main(void) {
     start_TX_USART_ISR(); 
     start_RX_USART_ISR(); 
     start_RCM();
-       
+    setup_ADC();       
     
     RESET_BIO = 0;
     __delay_ms(250);
@@ -59,10 +57,7 @@ void main(void) {
                   mess_rec[i] = USART_rx_data[i];
               
               //__delay_ms(50);  //Possible needed if harvester is used
-              mess_handler();            
-              
-              
-              
+              mess_handler();    
               //lputs_ISR(USART_rx_data,USART_rx_index);              
               
           }
