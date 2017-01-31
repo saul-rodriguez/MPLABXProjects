@@ -34,13 +34,13 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _TIMER0_flag `Vuc ~T0 @X0 0 e ]
 "51 USART1823.h
 [v _USART_rx_index `Vuc ~T0 @X0 0 e ]
-"17 comm.h
+"19 comm.h
 [v _mess_rec_size `Vuc ~T0 @X0 0 e ]
-"16
+"18
 [v _mess_rec `Vuc ~T0 @X0 -> 0 `x e ]
 "54 USART1823.h
 [v _USART_rx_data `Vuc ~T0 @X0 -> 0 `x e ]
-"19 comm.h
+"22 comm.h
 [v _mess_handler `(v ~T0 @X0 0 ef ]
 "6286 /opt/microchip/xc8/v1.40/include/pic16lf1823.h
 [v _TMR0IF `Vb ~T0 @X0 0 e@90 ]
@@ -2535,9 +2535,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;USART1823.h: 70: void lputs_ISR(unsigned char* data, unsigned char length);
 [; ;USART1823.h: 72: void start_RX_USART_ISR();
 [; ;USART1823.h: 73: void start_TX_USART_ISR();
-[; ;comm.h: 16: extern volatile unsigned char mess_rec[3];
-[; ;comm.h: 17: extern volatile unsigned char mess_rec_size;
-[; ;comm.h: 19: void mess_handler();
+[; ;comm.h: 18: extern volatile unsigned char mess_rec[3];
+[; ;comm.h: 19: extern volatile unsigned char mess_rec_size;
+[; ;comm.h: 22: void mess_handler();
+[; ;comm.h: 23: void config_ASIC();
+[; ;comm.h: 24: void read_ADC_channels();
+[; ;comm.h: 25: void measure_Impedance();
 [; ;ADC1823.h: 21: void setup_ADC();
 [; ;ADC1823.h: 22: unsigned short ADC_2();
 [; ;ADC1823.h: 23: unsigned short ADC_4();
@@ -2657,9 +2660,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 "66
 [e :UE 296 ]
 }
-[v F2598 `(v ~T0 @X0 1 tf ]
+[v F2601 `(v ~T0 @X0 1 tf ]
 "69
-[v _isr `IF2598 ~T0 @X0 1 e ]
+[v _isr `IF2601 ~T0 @X0 1 e ]
 "70
 {
 [; ;main.c: 69: void interrupt isr(void)

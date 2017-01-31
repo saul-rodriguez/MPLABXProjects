@@ -3404,11 +3404,15 @@ void lputs_ISR(unsigned char* data, unsigned char length);
 void start_RX_USART_ISR();
 void start_TX_USART_ISR();
 
-# 16 "comm.h"
+# 18 "comm.h"
 extern volatile unsigned char mess_rec[3];
 extern volatile unsigned char mess_rec_size;
 
+
 void mess_handler();
+void config_ASIC();
+void read_ADC_channels();
+void measure_Impedance();
 
 # 21 "ADC1823.h"
 void setup_ADC();

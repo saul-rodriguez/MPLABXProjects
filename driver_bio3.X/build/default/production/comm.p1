@@ -1,16 +1,20 @@
 Version 3.2 HI-TECH Software Intermediate Code
+"70 USART1823.h
+[v _lputs_ISR `(v ~T0 @X0 0 ef2`*uc`uc ]
+"23 comm.h
+[v _config_ASIC `(v ~T0 @X0 0 ef ]
+"24
+[v _read_ADC_channels `(v ~T0 @X0 0 ef ]
+"25
+[v _measure_Impedance `(v ~T0 @X0 0 ef ]
 "27 bio3.h
 [s S292 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S292 BIO3_bits_stuct RE FS GD0 GD1 GD2 NS CE GS0 GS1 GS2 GS3 IQ F0 F1 F2 F3 ]
 "46
 [u S293 `us 1 `S292 1 ]
 [n S293 . data data_bits ]
-"70 USART1823.h
-[v _lputs_ISR `(v ~T0 @X0 0 ef2`*uc`uc ]
-"104 bio3.h
+"104
 [v _BIO_config `(v ~T0 @X0 0 ef1`S293 ]
-"9 comm.c
-[v _read_ADC_channels `(v ~T0 @X0 0 ef ]
 "22 ADC1823.h
 [v _ADC_2 `(us ~T0 @X0 0 ef ]
 "23
@@ -19,9 +23,16 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _ADC_5 `(us ~T0 @X0 0 ef ]
 "2085 /opt/microchip/xc8/v1.40/include/pic16lf1823.h
 [v _ADCON0 `Vuc ~T0 @X0 0 e@157 ]
-[; ;comm.h: 16: extern volatile unsigned char mess_rec[3];
-[; ;comm.h: 17: extern volatile unsigned char mess_rec_size;
-[; ;comm.h: 19: void mess_handler();
+[v F2442 `(v ~T0 @X0 1 tf1`ul ]
+"152 /opt/microchip/xc8/v1.40/include/pic.h
+[v __delay `JF2442 ~T0 @X0 0 e ]
+[p i __delay ]
+[; ;comm.h: 18: extern volatile unsigned char mess_rec[3];
+[; ;comm.h: 19: extern volatile unsigned char mess_rec_size;
+[; ;comm.h: 22: void mess_handler();
+[; ;comm.h: 23: void config_ASIC();
+[; ;comm.h: 24: void read_ADC_channels();
+[; ;comm.h: 25: void measure_Impedance();
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -2488,7 +2499,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 "7
 [v _mess_rec_size `Vuc ~T0 @X0 1 e ]
 [; ;comm.c: 7: volatile unsigned char mess_rec_size;
-[; ;comm.c: 9: void read_ADC_channels();
 "11
 [v _mess_handler `(v ~T0 @X0 1 ef ]
 "12
@@ -2497,129 +2507,276 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;comm.c: 12: {
 [e :U _mess_handler ]
 [f ]
-"15
-[v _asic `S293 ~T0 @X0 1 a ]
-[; ;comm.c: 15: BIO3 asic;
-[; ;comm.c: 17: switch (mess_rec[0]) {
-"17
+[; ;comm.c: 16: switch (mess_rec[0]) {
+"16
 [e $U 298  ]
 {
-[; ;comm.c: 18: case 't':
-"18
+[; ;comm.c: 17: case 't':
+"17
 [e :U 299 ]
-[; ;comm.c: 19: lputs_ISR(mess_rec,mess_rec_size);
+[; ;comm.c: 18: lputs_ISR(mess_rec,mess_rec_size);
+"18
+[e ( _lputs_ISR (2 , -> &U _mess_rec `*uc _mess_rec_size ]
+[; ;comm.c: 19: break;
 "19
-[e ( _lputs_ISR (2 , -> &U _mess_rec `*uc _mess_rec_size ]
-[; ;comm.c: 20: break;
-"20
 [e $U 297  ]
-[; ;comm.c: 22: case 'c':
-"22
+[; ;comm.c: 21: case 'c':
+"21
 [e :U 300 ]
-[; ;comm.c: 23: asic.data = 0x0000;
+[; ;comm.c: 22: config_ASIC();
+"22
+[e ( _config_ASIC ..  ]
+[; ;comm.c: 23: break;
 "23
-[e = . _asic 0 -> -> 0 `i `us ]
-[; ;comm.c: 24: asic.data |= (unsigned short)(mess_rec[2]<<8);
-"24
-[e =| . _asic 0 -> << -> *U + &U _mess_rec * -> -> -> 2 `i `ui `ux -> -> # *U &U _mess_rec `ui `ux `i -> 8 `i `us ]
-[; ;comm.c: 25: asic.data |= (unsigned short)(mess_rec[1]);
-"25
-[e =| . _asic 0 -> *U + &U _mess_rec * -> -> -> 1 `i `ui `ux -> -> # *U &U _mess_rec `ui `ux `us ]
-[; ;comm.c: 27: lputs_ISR(mess_rec,mess_rec_size);
-"27
-[e ( _lputs_ISR (2 , -> &U _mess_rec `*uc _mess_rec_size ]
-[; ;comm.c: 29: BIO_config(asic);
-"29
-[e ( _BIO_config (1 _asic ]
-[; ;comm.c: 30: break;
-"30
 [e $U 297  ]
-[; ;comm.c: 32: case 'm':
-"32
+[; ;comm.c: 25: case 'm':
+"25
 [e :U 301 ]
-[; ;comm.c: 33: read_ADC_channels();
-"33
+[; ;comm.c: 26: read_ADC_channels();
+"26
 [e ( _read_ADC_channels ..  ]
+[; ;comm.c: 27: break;
+"27
+[e $U 297  ]
+[; ;comm.c: 29: case 'z':
+"29
+[e :U 302 ]
+[; ;comm.c: 30: measure_Impedance();
+"30
+[e ( _measure_Impedance ..  ]
+[; ;comm.c: 31: break;
+"31
+[e $U 297  ]
+[; ;comm.c: 33: default:
+"33
+[e :U 303 ]
 [; ;comm.c: 34: break;
 "34
 [e $U 297  ]
-[; ;comm.c: 36: default:
-"36
-[e :U 302 ]
-[; ;comm.c: 37: break;
-"37
-[e $U 297  ]
-"38
+"35
 }
-[; ;comm.c: 38: }
+[; ;comm.c: 35: }
 [e $U 297  ]
-"17
+"16
 [e :U 298 ]
 [e [\ *U + &U _mess_rec * -> -> -> 0 `i `ui `ux -> -> # *U &U _mess_rec `ui `ux , $ -> -> 116 `ui `uc 299
  , $ -> -> 99 `ui `uc 300
  , $ -> -> 109 `ui `uc 301
- 302 ]
-"38
+ , $ -> -> 122 `ui `uc 302
+ 303 ]
+"35
 [e :U 297 ]
-[; ;comm.c: 39: }
-"39
+[; ;comm.c: 36: }
+"36
 [e :UE 296 ]
 }
-"41
-[v _read_ADC_channels `(v ~T0 @X0 1 ef ]
-"42
+"38
+[v _config_ASIC `(v ~T0 @X0 1 ef ]
+"39
 {
-[; ;comm.c: 41: void read_ADC_channels()
-[; ;comm.c: 42: {
+[; ;comm.c: 38: void config_ASIC()
+[; ;comm.c: 39: {
+[e :U _config_ASIC ]
+[f ]
+"40
+[v _asic `S293 ~T0 @X0 1 a ]
+[; ;comm.c: 40: BIO3 asic;
+[; ;comm.c: 42: asic.data = 0x0000;
+"42
+[e = . _asic 0 -> -> 0 `i `us ]
+[; ;comm.c: 43: asic.data |= (unsigned short)(mess_rec[2]<<8);
+"43
+[e =| . _asic 0 -> << -> *U + &U _mess_rec * -> -> -> 2 `i `ui `ux -> -> # *U &U _mess_rec `ui `ux `i -> 8 `i `us ]
+[; ;comm.c: 44: asic.data |= (unsigned short)(mess_rec[1]);
+"44
+[e =| . _asic 0 -> *U + &U _mess_rec * -> -> -> 1 `i `ui `ux -> -> # *U &U _mess_rec `ui `ux `us ]
+[; ;comm.c: 46: lputs_ISR(mess_rec,mess_rec_size);
+"46
+[e ( _lputs_ISR (2 , -> &U _mess_rec `*uc _mess_rec_size ]
+[; ;comm.c: 48: BIO_config(asic);
+"48
+[e ( _BIO_config (1 _asic ]
+[; ;comm.c: 49: }
+"49
+[e :UE 304 ]
+}
+"51
+[v _read_ADC_channels `(v ~T0 @X0 1 ef ]
+"52
+{
+[; ;comm.c: 51: void read_ADC_channels()
+[; ;comm.c: 52: {
 [e :U _read_ADC_channels ]
 [f ]
-"43
+"53
 [v _aux `uc ~T0 @X0 -> 7 `i a ]
-"44
+"54
 [v _value1 `us ~T0 @X0 1 a ]
 [v _value2 `us ~T0 @X0 1 a ]
 [v _value3 `us ~T0 @X0 1 a ]
-[; ;comm.c: 43: unsigned char aux[7];
-[; ;comm.c: 44: unsigned short value1,value2,value3;
-[; ;comm.c: 47: value1 = ADC_2();
-"47
+[; ;comm.c: 53: unsigned char aux[7];
+[; ;comm.c: 54: unsigned short value1,value2,value3;
+[; ;comm.c: 57: value1 = ADC_2();
+"57
 [e = _value1 ( _ADC_2 ..  ]
-[; ;comm.c: 49: value2 = ADC_4();
-"49
+[; ;comm.c: 59: value2 = ADC_4();
+"59
 [e = _value2 ( _ADC_4 ..  ]
-[; ;comm.c: 51: value3 = ADC_5();
-"51
+[; ;comm.c: 61: value3 = ADC_5();
+"61
 [e = _value3 ( _ADC_5 ..  ]
-[; ;comm.c: 52: { ADCON0 = 0b00100100;};
-"52
+[; ;comm.c: 62: { ADCON0 = 0b00100100;};
+"62
 {
 [e = _ADCON0 -> -> 36 `i `uc ]
 }
-[; ;comm.c: 54: aux[0] = 'm';
-"54
+[; ;comm.c: 64: aux[0] = 'm';
+"64
 [e = *U + &U _aux * -> -> -> 0 `i `ui `ux -> -> # *U &U _aux `ui `ux -> -> 109 `ui `uc ]
-[; ;comm.c: 55: aux[1] = (unsigned char)(value1 & 0xff);
-"55
+[; ;comm.c: 65: aux[1] = (unsigned char)(value1 & 0xff);
+"65
 [e = *U + &U _aux * -> -> -> 1 `i `ui `ux -> -> # *U &U _aux `ui `ux -> & -> _value1 `ui -> -> 255 `i `ui `uc ]
-[; ;comm.c: 56: aux[2] = (unsigned char)((value1 >> 8) & 0xff);
-"56
+[; ;comm.c: 66: aux[2] = (unsigned char)((value1 >> 8) & 0xff);
+"66
 [e = *U + &U _aux * -> -> -> 2 `i `ui `ux -> -> # *U &U _aux `ui `ux -> & >> -> _value1 `ui -> 8 `i -> -> 255 `i `ui `uc ]
-[; ;comm.c: 57: aux[3] = (unsigned char)(value2 & 0xff);
-"57
+[; ;comm.c: 67: aux[3] = (unsigned char)(value2 & 0xff);
+"67
 [e = *U + &U _aux * -> -> -> 3 `i `ui `ux -> -> # *U &U _aux `ui `ux -> & -> _value2 `ui -> -> 255 `i `ui `uc ]
-[; ;comm.c: 58: aux[4] = (unsigned char)((value2 >> 8) & 0xff);
-"58
+[; ;comm.c: 68: aux[4] = (unsigned char)((value2 >> 8) & 0xff);
+"68
 [e = *U + &U _aux * -> -> -> 4 `i `ui `ux -> -> # *U &U _aux `ui `ux -> & >> -> _value2 `ui -> 8 `i -> -> 255 `i `ui `uc ]
-[; ;comm.c: 59: aux[5] = (unsigned char)(value3 & 0xff);
-"59
+[; ;comm.c: 69: aux[5] = (unsigned char)(value3 & 0xff);
+"69
 [e = *U + &U _aux * -> -> -> 5 `i `ui `ux -> -> # *U &U _aux `ui `ux -> & -> _value3 `ui -> -> 255 `i `ui `uc ]
-[; ;comm.c: 60: aux[6] = (unsigned char)((value3 >> 8) & 0xff);
-"60
+[; ;comm.c: 70: aux[6] = (unsigned char)((value3 >> 8) & 0xff);
+"70
 [e = *U + &U _aux * -> -> -> 6 `i `ui `ux -> -> # *U &U _aux `ui `ux -> & >> -> _value3 `ui -> 8 `i -> -> 255 `i `ui `uc ]
-[; ;comm.c: 62: lputs_ISR(aux,7);
-"62
+[; ;comm.c: 72: lputs_ISR(aux,7);
+"72
 [e ( _lputs_ISR (2 , &U _aux -> -> 7 `i `uc ]
-[; ;comm.c: 63: }
-"63
-[e :UE 303 ]
+[; ;comm.c: 73: }
+"73
+[e :UE 305 ]
+}
+"75
+[v _measure_Impedance `(v ~T0 @X0 1 ef ]
+"76
+{
+[; ;comm.c: 75: void measure_Impedance()
+[; ;comm.c: 76: {
+[e :U _measure_Impedance ]
+[f ]
+"77
+[v _aux `uc ~T0 @X0 -> 13 `i a ]
+"78
+[v _value1 `us ~T0 @X0 1 a ]
+[v _value2 `us ~T0 @X0 1 a ]
+[v _value3 `us ~T0 @X0 1 a ]
+"79
+[v _asic `S293 ~T0 @X0 1 a ]
+[; ;comm.c: 77: unsigned char aux[13];
+[; ;comm.c: 78: unsigned short value1,value2,value3;
+[; ;comm.c: 79: BIO3 asic;
+[; ;comm.c: 81: aux[0] = 'z';
+"81
+[e = *U + &U _aux * -> -> -> 0 `i `ui `ux -> -> # *U &U _aux `ui `ux -> -> 122 `ui `uc ]
+[; ;comm.c: 83: asic.data = 0x0000;
+"83
+[e = . _asic 0 -> -> 0 `i `us ]
+[; ;comm.c: 84: asic.data |= (unsigned short)(mess_rec[2]<<8);
+"84
+[e =| . _asic 0 -> << -> *U + &U _mess_rec * -> -> -> 2 `i `ui `ux -> -> # *U &U _mess_rec `ui `ux `i -> 8 `i `us ]
+[; ;comm.c: 85: asic.data |= (unsigned short)(mess_rec[1]);
+"85
+[e =| . _asic 0 -> *U + &U _mess_rec * -> -> -> 1 `i `ui `ux -> -> # *U &U _mess_rec `ui `ux `us ]
+[; ;comm.c: 88: asic.data_bits.CE = 0;
+"88
+[e = . . _asic 1 6 -> -> 0 `i `uc ]
+[; ;comm.c: 89: BIO_config(asic);
+"89
+[e ( _BIO_config (1 _asic ]
+[; ;comm.c: 90: _delay((unsigned long)((60)*(500000/4000.0)));
+"90
+[e ( __delay (1 -> * -> -> 60 `i `d / -> -> 500000 `l `d .4000.0 `ul ]
+[; ;comm.c: 92: value1 = ADC_2();
+"92
+[e = _value1 ( _ADC_2 ..  ]
+[; ;comm.c: 93: value2 = ADC_4();
+"93
+[e = _value2 ( _ADC_4 ..  ]
+[; ;comm.c: 95: aux[1] = (unsigned char)(value1 & 0xff);
+"95
+[e = *U + &U _aux * -> -> -> 1 `i `ui `ux -> -> # *U &U _aux `ui `ux -> & -> _value1 `ui -> -> 255 `i `ui `uc ]
+[; ;comm.c: 96: aux[2] = (unsigned char)((value1 >> 8) & 0xff);
+"96
+[e = *U + &U _aux * -> -> -> 2 `i `ui `ux -> -> # *U &U _aux `ui `ux -> & >> -> _value1 `ui -> 8 `i -> -> 255 `i `ui `uc ]
+[; ;comm.c: 97: aux[3] = (unsigned char)(value2 & 0xff);
+"97
+[e = *U + &U _aux * -> -> -> 3 `i `ui `ux -> -> # *U &U _aux `ui `ux -> & -> _value2 `ui -> -> 255 `i `ui `uc ]
+[; ;comm.c: 98: aux[4] = (unsigned char)((value2 >> 8) & 0xff);
+"98
+[e = *U + &U _aux * -> -> -> 4 `i `ui `ux -> -> # *U &U _aux `ui `ux -> & >> -> _value2 `ui -> 8 `i -> -> 255 `i `ui `uc ]
+[; ;comm.c: 101: asic.data_bits.CE = 1;
+"101
+[e = . . _asic 1 6 -> -> 1 `i `uc ]
+[; ;comm.c: 102: asic.data_bits.IQ = 0;
+"102
+[e = . . _asic 1 11 -> -> 0 `i `uc ]
+[; ;comm.c: 104: BIO_config(asic);
+"104
+[e ( _BIO_config (1 _asic ]
+[; ;comm.c: 105: _delay((unsigned long)((60)*(500000/4000.0)));
+"105
+[e ( __delay (1 -> * -> -> 60 `i `d / -> -> 500000 `l `d .4000.0 `ul ]
+[; ;comm.c: 107: value1 = ADC_2();
+"107
+[e = _value1 ( _ADC_2 ..  ]
+[; ;comm.c: 108: value2 = ADC_4();
+"108
+[e = _value2 ( _ADC_4 ..  ]
+[; ;comm.c: 110: aux[5] = (unsigned char)(value1 & 0xff);
+"110
+[e = *U + &U _aux * -> -> -> 5 `i `ui `ux -> -> # *U &U _aux `ui `ux -> & -> _value1 `ui -> -> 255 `i `ui `uc ]
+[; ;comm.c: 111: aux[6] = (unsigned char)((value1 >> 8) & 0xff);
+"111
+[e = *U + &U _aux * -> -> -> 6 `i `ui `ux -> -> # *U &U _aux `ui `ux -> & >> -> _value1 `ui -> 8 `i -> -> 255 `i `ui `uc ]
+[; ;comm.c: 112: aux[7] = (unsigned char)(value2 & 0xff);
+"112
+[e = *U + &U _aux * -> -> -> 7 `i `ui `ux -> -> # *U &U _aux `ui `ux -> & -> _value2 `ui -> -> 255 `i `ui `uc ]
+[; ;comm.c: 113: aux[8] = (unsigned char)((value2 >> 8) & 0xff);
+"113
+[e = *U + &U _aux * -> -> -> 8 `i `ui `ux -> -> # *U &U _aux `ui `ux -> & >> -> _value2 `ui -> 8 `i -> -> 255 `i `ui `uc ]
+[; ;comm.c: 116: asic.data_bits.IQ = 1;
+"116
+[e = . . _asic 1 11 -> -> 1 `i `uc ]
+[; ;comm.c: 118: BIO_config(asic);
+"118
+[e ( _BIO_config (1 _asic ]
+[; ;comm.c: 119: _delay((unsigned long)((60)*(500000/4000.0)));
+"119
+[e ( __delay (1 -> * -> -> 60 `i `d / -> -> 500000 `l `d .4000.0 `ul ]
+[; ;comm.c: 121: value1 = ADC_2();
+"121
+[e = _value1 ( _ADC_2 ..  ]
+[; ;comm.c: 122: value2 = ADC_4();
+"122
+[e = _value2 ( _ADC_4 ..  ]
+[; ;comm.c: 124: aux[9] = (unsigned char)(value1 & 0xff);
+"124
+[e = *U + &U _aux * -> -> -> 9 `i `ui `ux -> -> # *U &U _aux `ui `ux -> & -> _value1 `ui -> -> 255 `i `ui `uc ]
+[; ;comm.c: 125: aux[10] = (unsigned char)((value1 >> 8) & 0xff);
+"125
+[e = *U + &U _aux * -> -> -> 10 `i `ui `ux -> -> # *U &U _aux `ui `ux -> & >> -> _value1 `ui -> 8 `i -> -> 255 `i `ui `uc ]
+[; ;comm.c: 126: aux[11] = (unsigned char)(value2 & 0xff);
+"126
+[e = *U + &U _aux * -> -> -> 11 `i `ui `ux -> -> # *U &U _aux `ui `ux -> & -> _value2 `ui -> -> 255 `i `ui `uc ]
+[; ;comm.c: 127: aux[12] = (unsigned char)((value2 >> 8) & 0xff);
+"127
+[e = *U + &U _aux * -> -> -> 12 `i `ui `ux -> -> # *U &U _aux `ui `ux -> & >> -> _value2 `ui -> 8 `i -> -> 255 `i `ui `uc ]
+[; ;comm.c: 130: lputs_ISR(aux,13);
+"130
+[e ( _lputs_ISR (2 , &U _aux -> -> 13 `i `uc ]
+[; ;comm.c: 131: }
+"131
+[e :UE 306 ]
 }
