@@ -18,8 +18,8 @@ void main(void) {
     
     unsigned char i;
     
-    BIO3 mybits;
-    VIN myVin;    
+    //BIO3 mybits;
+    //VIN myVin;    
     
     SYSTEM_Initialize();
     setup_TMR0(); 

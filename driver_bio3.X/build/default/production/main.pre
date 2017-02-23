@@ -3288,7 +3288,7 @@ void SYSTEM_Initialize(void);
 # 79
 void OSCILLATOR_Initialize(void);
 
-# 27 "bio3.h"
+# 32 "bio3.h"
 typedef struct BIO3_bits_stuct {
 unsigned RE :1;
 unsigned FS :1;
@@ -3298,6 +3298,7 @@ unsigned GD2 :1;
 unsigned NS :1;
 unsigned CE :1;
 unsigned GS0 :1;
+
 unsigned GS1 :1;
 unsigned GS2 :1;
 unsigned GS3 :1;
@@ -3309,7 +3310,8 @@ unsigned F3 :1;
 } BIO3_bits;
 
 typedef union {
-unsigned short data;
+unsigned short datashort;
+unsigned char data[2];
 BIO3_bits data_bits;
 } BIO3;
 
@@ -3357,11 +3359,12 @@ unsigned EnLF :1;
 } VIN_bits;
 
 typedef union {
-unsigned short data[3];
+unsigned short datas[3];
+unsigned char data[5];
 VIN_bits data_bits;
 } VIN;
 
-# 104
+# 112
 void BIO_config(BIO3 conf);
 void VIN_config(VIN conf);
 
@@ -3405,7 +3408,7 @@ void start_RX_USART_ISR();
 void start_TX_USART_ISR();
 
 # 18 "comm.h"
-extern volatile unsigned char mess_rec[3];
+extern volatile unsigned char mess_rec[6];
 extern volatile unsigned char mess_rec_size;
 
 
@@ -3426,8 +3429,8 @@ void main(void) {
 
 unsigned char i;
 
-BIO3 mybits;
-VIN myVin;
+
+
 
 SYSTEM_Initialize();
 setup_TMR0();
@@ -3450,7 +3453,7 @@ while(1) {
 if (TIMER0_flag) {
 TIMER0_flag = 0;
 
-if (USART_rx_index > 3) {
+if (USART_rx_index > 6) {
 USART_rx_index = 0;
 continue;
 }

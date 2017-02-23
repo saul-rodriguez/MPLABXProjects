@@ -3288,7 +3288,7 @@ void SYSTEM_Initialize(void);
 # 79
 void OSCILLATOR_Initialize(void);
 
-# 27 "bio3.h"
+# 32 "bio3.h"
 typedef struct BIO3_bits_stuct {
 unsigned RE :1;
 unsigned FS :1;
@@ -3298,6 +3298,7 @@ unsigned GD2 :1;
 unsigned NS :1;
 unsigned CE :1;
 unsigned GS0 :1;
+
 unsigned GS1 :1;
 unsigned GS2 :1;
 unsigned GS3 :1;
@@ -3309,7 +3310,8 @@ unsigned F3 :1;
 } BIO3_bits;
 
 typedef union {
-unsigned short data;
+unsigned short datashort;
+unsigned char data[2];
 BIO3_bits data_bits;
 } BIO3;
 
@@ -3357,39 +3359,40 @@ unsigned EnLF :1;
 } VIN_bits;
 
 typedef union {
-unsigned short data[3];
+unsigned short datas[3];
+unsigned char data[5];
 VIN_bits data_bits;
 } VIN;
 
-# 104
+# 112
 void BIO_config(BIO3 conf);
 void VIN_config(VIN conf);
 
-# 35 "bio3.c"
+# 39 "bio3.c"
 void BIO_config(BIO3 conf)
 {
 unsigned char i, out;
 
 out &= 0b11110111; PORTC = out;;
-_delay((unsigned long)((1)*(500000/4000.0)));
+_delay((unsigned long)((100)*(500000/4000000.0)));
 
 RA5 = 0;;
-_delay((unsigned long)((1)*(500000/4000.0)));
+_delay((unsigned long)((100)*(500000/4000000.0)));
 
 RA5 = 1;;
 
 for(i = 0; i < 16; i++) {
-if (conf.data & 0x0001) {
+if (conf.datashort & 0x0001) {
 out |= 0b00000100; PORTC = out;;
 } else {
 out &= 0b11111011; PORTC = out;;
 }
-conf.data >>= 1;
+conf.datashort >>= 1;
 
-_delay((unsigned long)((1)*(500000/4000.0)));
+_delay((unsigned long)((100)*(500000/4000000.0)));
 
 out |= 0b00001000; PORTC = out;;
-_delay((unsigned long)((1)*(500000/4000.0)));
+_delay((unsigned long)((100)*(500000/4000000.0)));
 out &= 0b11110111; PORTC = out;;
 
 }
@@ -3397,60 +3400,62 @@ out &= 0b11110111; PORTC = out;;
 
 void VIN_config(VIN conf)
 {
+
 unsigned char i,j,out;
 
 out &= 0b11110111; PORTC = out;;
-_delay((unsigned long)((1)*(500000/4000.0)));
+_delay((unsigned long)((100)*(500000/4000000.0)));
 
 RA5 = 0;;
-_delay((unsigned long)((1)*(500000/4000.0)));
+_delay((unsigned long)((100)*(500000/4000000.0)));
 
 RA5 = 1;;
 
 for(i = 0; i < 16; i++) {
-if (conf.data[0] & 0x0001) {
+if (conf.datas[0] & 0x0001) {
 out |= 0b00000100; PORTC = out;;
 } else {
 out &= 0b11111011; PORTC = out;;
 }
-conf.data[0] >>= 1;
+conf.datas[0] >>= 1;
 
-_delay((unsigned long)((1)*(500000/4000.0)));
+_delay((unsigned long)((100)*(500000/4000000.0)));
 
 out |= 0b00001000; PORTC = out;;
-_delay((unsigned long)((1)*(500000/4000.0)));
+_delay((unsigned long)((100)*(500000/4000000.0)));
 out &= 0b11110111; PORTC = out;;
 }
 
 for(i = 0; i < 16; i++) {
-if (conf.data[1] & 0x0001) {
+if (conf.datas[1] & 0x0001) {
 out |= 0b00000100; PORTC = out;;
 } else {
 out &= 0b11111011; PORTC = out;;
 }
-conf.data[1] >>= 1;
+conf.datas[1] >>= 1;
 
-_delay((unsigned long)((1)*(500000/4000.0)));
+_delay((unsigned long)((100)*(500000/4000000.0)));
 
 out |= 0b00001000; PORTC = out;;
-_delay((unsigned long)((1)*(500000/4000.0)));
+_delay((unsigned long)((100)*(500000/4000000.0)));
 out &= 0b11110111; PORTC = out;;
 }
 
 for(i = 0; i < 1; i++) {
-if (conf.data[2] & 0x0001) {
+if (conf.datas[2] & 0x0001) {
 out |= 0b00000100; PORTC = out;;
 } else {
 out &= 0b11111011; PORTC = out;;
 }
-conf.data[2] >>= 1;
+conf.datas[2] >>= 1;
 
-_delay((unsigned long)((1)*(500000/4000.0)));
+_delay((unsigned long)((100)*(500000/4000000.0)));
 
 out |= 0b00001000; PORTC = out;;
-_delay((unsigned long)((1)*(500000/4000.0)));
+_delay((unsigned long)((100)*(500000/4000000.0)));
 out &= 0b11110111; PORTC = out;;
 }
 
+# 167
 }
 

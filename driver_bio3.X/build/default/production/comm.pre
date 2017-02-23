@@ -2,7 +2,7 @@
 # 1 "comm.c"
 
 # 18 "comm.h"
-extern volatile unsigned char mess_rec[3];
+extern volatile unsigned char mess_rec[6];
 extern volatile unsigned char mess_rec_size;
 
 
@@ -3324,7 +3324,7 @@ void SYSTEM_Initialize(void);
 # 79
 void OSCILLATOR_Initialize(void);
 
-# 27 "bio3.h"
+# 32 "bio3.h"
 typedef struct BIO3_bits_stuct {
 unsigned RE :1;
 unsigned FS :1;
@@ -3334,6 +3334,7 @@ unsigned GD2 :1;
 unsigned NS :1;
 unsigned CE :1;
 unsigned GS0 :1;
+
 unsigned GS1 :1;
 unsigned GS2 :1;
 unsigned GS3 :1;
@@ -3345,7 +3346,8 @@ unsigned F3 :1;
 } BIO3_bits;
 
 typedef union {
-unsigned short data;
+unsigned short datashort;
+unsigned char data[2];
 BIO3_bits data_bits;
 } BIO3;
 
@@ -3393,11 +3395,12 @@ unsigned EnLF :1;
 } VIN_bits;
 
 typedef union {
-unsigned short data[3];
+unsigned short datas[3];
+unsigned char data[5];
 VIN_bits data_bits;
 } VIN;
 
-# 104
+# 112
 void BIO_config(BIO3 conf);
 void VIN_config(VIN conf);
 
@@ -3409,7 +3412,7 @@ unsigned short ADC_5();
 unsigned short ADC_6();
 
 # 6 "comm.c"
-volatile unsigned char mess_rec[3];
+volatile unsigned char mess_rec[6];
 volatile unsigned char mess_rec_size;
 
 
@@ -3443,15 +3446,21 @@ break;
 
 void config_ASIC()
 {
-BIO3 asic;
 
-asic.data = 0x0000;
-asic.data |= (unsigned short)(mess_rec[2]<<8);
-asic.data |= (unsigned short)(mess_rec[1]);
+# 54
+VIN asic;
+
+
+asic.data[0] = mess_rec[1];
+asic.data[1] = mess_rec[2];
+asic.data[2] = mess_rec[3];
+asic.data[3] = mess_rec[4];
+asic.data[4] = mess_rec[5];
 
 lputs_ISR(mess_rec,mess_rec_size);
 
-BIO_config(asic);
+VIN_config(asic);
+
 }
 
 void read_ADC_channels()
@@ -3482,17 +3491,27 @@ void measure_Impedance()
 {
 unsigned char aux[13];
 unsigned short value1,value2,value3;
-BIO3 asic;
+
+
+
+
+VIN asic;
+
+
 
 aux[0] = 'z';
 
-asic.data = 0x0000;
-asic.data |= (unsigned short)(mess_rec[2]<<8);
-asic.data |= (unsigned short)(mess_rec[1]);
-
+# 117
+asic.data[0] = mess_rec[1];
+asic.data[1] = mess_rec[2];
+asic.data[2] = mess_rec[3];
+asic.data[3] = mess_rec[4];
+asic.data[4] = mess_rec[5];
 
 asic.data_bits.CE = 0;
-BIO_config(asic);
+VIN_config(asic);
+
+
 _delay((unsigned long)((60)*(500000/4000.0)));
 
 value1 = ADC_2();
@@ -3507,7 +3526,11 @@ aux[4] = (unsigned char)((value2 >> 8) & 0xff);
 asic.data_bits.CE = 1;
 asic.data_bits.IQ = 0;
 
-BIO_config(asic);
+
+
+
+VIN_config(asic);
+
 _delay((unsigned long)((60)*(500000/4000.0)));
 
 value1 = ADC_2();
@@ -3521,7 +3544,11 @@ aux[8] = (unsigned char)((value2 >> 8) & 0xff);
 
 asic.data_bits.IQ = 1;
 
-BIO_config(asic);
+
+
+
+VIN_config(asic);
+
 _delay((unsigned long)((60)*(500000/4000.0)));
 
 value1 = ADC_2();

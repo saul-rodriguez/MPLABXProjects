@@ -1,6 +1,10 @@
 #include "bio3.h"
 
-#define WAIT __delay_ms(1)
+//#define WAIT __delay_ms(1)
+//#define WAIT __delay_ms(2)
+//#define WAIT __delay_us(2)
+#define WAIT __delay_us(100)
+
 
 
 
@@ -45,12 +49,12 @@ void BIO_config(BIO3 conf)
     RESETN_H;
         
     for(i = 0; i < BIO3_LENGTH; i++) {
-        if (conf.data & 0x0001) { //DATA to H    
+        if (conf.datashort & 0x0001) { //DATA to H    
             DATA_H;
         } else { //DATA to L            
             DATA_L;
         }        
-        conf.data >>= 1;
+        conf.datashort >>= 1;
         
         WAIT;
                 
@@ -63,7 +67,8 @@ void BIO_config(BIO3 conf)
 
 void VIN_config(VIN conf)
 {
-     unsigned char i,j,out;
+    
+      unsigned char i,j,out;
     
     CLK_L;
     WAIT;
@@ -74,12 +79,12 @@ void VIN_config(VIN conf)
     RESETN_H;
         
     for(i = 0; i < 16; i++) {
-        if (conf.data[0] & 0x0001) { //DATA to H    
+        if (conf.datas[0] & 0x0001) { //DATA to H    
             DATA_H;
         } else { //DATA to L            
             DATA_L;
         }        
-        conf.data[0] >>= 1;
+        conf.datas[0] >>= 1;
         
         WAIT;
                 
@@ -89,12 +94,12 @@ void VIN_config(VIN conf)
     }
     
     for(i = 0; i < 16; i++) {
-        if (conf.data[1] & 0x0001) { //DATA to H    
+        if (conf.datas[1] & 0x0001) { //DATA to H    
             DATA_H;
         } else { //DATA to L            
             DATA_L;
         }        
-        conf.data[1] >>= 1;
+        conf.datas[1] >>= 1;
         
         WAIT;
                 
@@ -104,12 +109,12 @@ void VIN_config(VIN conf)
     }
     
     for(i = 0; i < 1; i++) {
-        if (conf.data[2] & 0x0001) { //DATA to H    
+        if (conf.datas[2] & 0x0001) { //DATA to H    
             DATA_H;
         } else { //DATA to L            
             DATA_L;
         }        
-        conf.data[2] >>= 1;
+        conf.datas[2] >>= 1;
         
         WAIT;
                 
@@ -117,7 +122,48 @@ void VIN_config(VIN conf)
         WAIT;                
         CLK_L;        
     }
-       
+    
+    /* unsigned char i,j,out;
+    
+    CLK_L;
+    WAIT;
+    
+    RESETN_L;
+    WAIT;
+    
+    RESETN_H;
+        
+    for(i = 0; i < 32; i++) {
+        if (conf.datalong & 0x00000001) { //DATA to H    
+            DATA_H;
+        } else { //DATA to L            
+            DATA_L;
+        }        
+        conf.datalong >>= 1;
+        
+        WAIT;
+                
+        CLK_H;
+        WAIT;                
+        CLK_L;        
+    }
+    
+        
+    for(i = 0; i < 1; i++) {
+        if (conf.data[4] & 0x01) { //DATA to H    
+            DATA_H;
+        } else { //DATA to L            
+            DATA_L;
+        }        
+        conf.data[4] >>= 1;
+        
+        WAIT;
+                
+        CLK_H;
+        WAIT;                
+        CLK_L;        
+    }
+       */
 }
 
 

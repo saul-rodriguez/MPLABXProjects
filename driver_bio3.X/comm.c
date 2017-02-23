@@ -37,15 +37,33 @@ void mess_handler()
 
 void config_ASIC()
 {
+#ifdef BIOASIC
     BIO3 asic;
     
-    asic.data = 0x0000;
-    asic.data |= (unsigned short)(mess_rec[2]<<8);
-    asic.data |= (unsigned short)(mess_rec[1]);
+   // asic.data = 0x0000;
+   // asic.data |= (unsigned short)(mess_rec[2]<<8);
+   // asic.data |= (unsigned short)(mess_rec[1]);
+    
+    asic.data[0] = mess_rec[1];
+    asic.data[1] = mess_rec[2];
             
     lputs_ISR(mess_rec,mess_rec_size);
             
-    BIO_config(asic);                   
+    BIO_config(asic);   
+#else
+    VIN asic;
+    
+    
+    asic.data[0] = mess_rec[1];
+    asic.data[1] = mess_rec[2];
+    asic.data[2] = mess_rec[3];
+    asic.data[3] = mess_rec[4];
+    asic.data[4] = mess_rec[5];
+    
+    lputs_ISR(mess_rec,mess_rec_size);
+    
+    VIN_config(asic);
+#endif
 }
 
 void read_ADC_channels()
@@ -76,17 +94,36 @@ void measure_Impedance()
 {
     unsigned char aux[13];
     unsigned short value1,value2,value3;
-    BIO3 asic;
+    
+    #ifdef BIOASIC
+        BIO3 asic;
+    #else
+        VIN asic;
+    #endif
+    
     
     aux[0] = 'z'; //message identifier
     
-    asic.data = 0x0000;
-    asic.data |= (unsigned short)(mess_rec[2]<<8);
-    asic.data |= (unsigned short)(mess_rec[1]);
+    
+    #ifdef BIOASIC
+    asic.data[0] = (unsigned short)(mess_rec[1]);
+    asic.data[1] = (unsigned short)(mess_rec[2]);
     
     //extract Offset
     asic.data_bits.CE = 0; //Disable the signal generator
     BIO_config(asic);                   
+    #else    
+
+    asic.data[0] = mess_rec[1];
+    asic.data[1] = mess_rec[2];
+    asic.data[2] = mess_rec[3];
+    asic.data[3] = mess_rec[4];
+    asic.data[4] = mess_rec[5];
+   
+    asic.data_bits.CE = 0; //Disable the signal generator
+    VIN_config(asic);
+    #endif
+    
     __delay_ms(CONF_DELAY);
      
     value1 = ADC_2(); //read channel 2 (VOUT_P)     
@@ -101,7 +138,11 @@ void measure_Impedance()
      asic.data_bits.CE = 1; //Enable the signal generator
      asic.data_bits.IQ = 0; //Select I reference
     
+#ifdef BIOASIC
      BIO_config(asic);                   
+#else
+     VIN_config(asic);
+#endif
     __delay_ms(CONF_DELAY);
     
     value1 = ADC_2(); //read channel 2 (VOUT_P)     
@@ -115,7 +156,11 @@ void measure_Impedance()
     //extract Q
     asic.data_bits.IQ = 1; //Select Q reference
     
+#ifdef BIOASIC
      BIO_config(asic);                   
+#else
+     VIN_config(asic);
+#endif
     __delay_ms(CONF_DELAY);
     
     value1 = ADC_2(); //read channel 2 (VOUT_P)     

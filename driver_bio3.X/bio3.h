@@ -22,6 +22,11 @@ extern "C" {
 #endif
 
 #include "mcc_generated_files/mcc.h"
+    
+    
+//Here uncomment one of the ASICs to use
+//#define BIOASIC
+#define VINASIC  
 
 //Implantable structure    
 typedef struct BIO3_bits_stuct {
@@ -33,6 +38,7 @@ typedef struct BIO3_bits_stuct {
     unsigned NS     :1;
     unsigned CE     :1;
     unsigned GS0    :1;
+    
     unsigned GS1    :1;
     unsigned GS2    :1;
     unsigned GS3    :1;
@@ -44,7 +50,8 @@ typedef struct BIO3_bits_stuct {
 } BIO3_bits;
 
 typedef union {
-    unsigned short data;
+    unsigned short datashort;
+    unsigned char data[2];
     BIO3_bits data_bits;
 } BIO3;
 
@@ -92,7 +99,8 @@ typedef struct VIN_bits_stuct {
 } VIN_bits;
 
 typedef union {
-    unsigned short data[3];
+    unsigned short datas[3];
+    unsigned char data[5];
     VIN_bits data_bits;
 } VIN;
 
