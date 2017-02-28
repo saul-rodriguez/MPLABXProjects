@@ -2,7 +2,7 @@
 # 1 "comm.c"
 
 # 18 "comm.h"
-extern volatile unsigned char mess_rec[6];
+extern volatile unsigned char mess_rec[10];
 extern volatile unsigned char mess_rec_size;
 
 
@@ -3412,7 +3412,7 @@ unsigned short ADC_5();
 unsigned short ADC_6();
 
 # 6 "comm.c"
-volatile unsigned char mess_rec[6];
+volatile unsigned char mess_rec[10];
 volatile unsigned char mess_rec_size;
 
 
@@ -3449,7 +3449,6 @@ void config_ASIC()
 
 # 54
 VIN asic;
-
 
 asic.data[0] = mess_rec[1];
 asic.data[1] = mess_rec[2];
@@ -3501,7 +3500,7 @@ VIN asic;
 
 aux[0] = 'z';
 
-# 117
+# 116
 asic.data[0] = mess_rec[1];
 asic.data[1] = mess_rec[2];
 asic.data[2] = mess_rec[3];

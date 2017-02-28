@@ -25,13 +25,13 @@
 [v _mess_handler mess_handler `(v  1 e 1 0 ]
 "38
 [v _config_ASIC config_ASIC `(v  1 e 1 0 ]
-"69
+"68
 [v _read_ADC_channels read_ADC_channels `(v  1 e 1 0 ]
-"93
+"92
 [v _measure_Impedance measure_Impedance `(v  1 e 1 0 ]
 "17 /home/saul/MPLABXProjects/driver_bio3.X/main.c
 [v _main main `(v  1 e 1 0 ]
-"69
+"65
 [v _isr isr `II(v  1 e 1 0 ]
 "70 /home/saul/MPLABXProjects/driver_bio3.X/mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
@@ -129,6 +129,8 @@
 [v _CREN CREN `VEb  1 e 0 @3308 ]
 "5852
 [v _GIE GIE `VEb  1 e 0 @95 ]
+"6004
+[v _OERR OERR `VEb  1 e 0 @3305 ]
 "6046
 [v _PEIE PEIE `VEb  1 e 0 @94 ]
 "6052
@@ -166,7 +168,7 @@
 "6364
 [v _TXIF TXIF `VEb  1 e 0 @140 ]
 "6 /home/saul/MPLABXProjects/driver_bio3.X/comm.c
-[v _mess_rec mess_rec `VE[6]uc  1 e 6 0 ]
+[v _mess_rec mess_rec `VE[10]uc  1 e 10 0 ]
 "7
 [v _mess_rec_size mess_rec_size `VEuc  1 e 1 0 ]
 "3 /home/saul/MPLABXProjects/driver_bio3.X/TMR0.c
@@ -192,7 +194,7 @@
 {
 "19
 [v main@i i `uc  1 a 1 35 ]
-"66
+"62
 } 0
 "100 /home/saul/MPLABXProjects/driver_bio3.X/USART1823.c
 [v _start_TX_USART_ISR start_TX_USART_ISR `(v  1 e 1 0 ]
@@ -224,16 +226,16 @@
 {
 "36
 } 0
-"69
+"68
 [v _read_ADC_channels read_ADC_channels `(v  1 e 1 0 ]
 {
-"71
+"70
 [v read_ADC_channels@aux aux `[7]uc  1 a 7 7 ]
-"72
+"71
 [v read_ADC_channels@value3 value3 `us  1 a 2 18 ]
 [v read_ADC_channels@value2 value2 `us  1 a 2 16 ]
 [v read_ADC_channels@value1 value1 `us  1 a 2 14 ]
-"91
+"90
 } 0
 "48 /home/saul/MPLABXProjects/driver_bio3.X/ADC1823.c
 [v _ADC_5 ADC_5 `(us  1 e 2 0 ]
@@ -242,12 +244,12 @@
 [v ADC_5@ADC_value ADC_value `us  1 a 2 4 ]
 "56
 } 0
-"93 /home/saul/MPLABXProjects/driver_bio3.X/comm.c
+"92 /home/saul/MPLABXProjects/driver_bio3.X/comm.c
 [v _measure_Impedance measure_Impedance `(v  1 e 1 0 ]
 {
-"95
+"94
 [v measure_Impedance@aux aux `[13]uc  1 a 13 10 ]
-[s S171 VIN_bits_stuct 5 `uc 1 RE 1 0 :1:0 
+[s S173 VIN_bits_stuct 5 `uc 1 RE 1 0 :1:0 
 `uc 1 FS 1 0 :1:1 
 `uc 1 GD0 1 0 :1:2 
 `uc 1 GD1 1 0 :1:3 
@@ -281,13 +283,13 @@
 `uc 1 EnMF 1 3 :1:7 
 `uc 1 EnLF 1 4 :1:0 
 ]
-"101
-[u S205 . 6 `[3]us 1 datas 6 0 `[5]uc 1 data 5 0 `S171 1 data_bits 5 0 ]
-[v measure_Impedance@asic asic `S205  1 a 6 27 ]
-"96
+"100
+[u S207 . 6 `[3]us 1 datas 6 0 `[5]uc 1 data 5 0 `S173 1 data_bits 5 0 ]
+[v measure_Impedance@asic asic `S207  1 a 6 27 ]
+"95
 [v measure_Impedance@value2 value2 `us  1 a 2 25 ]
 [v measure_Impedance@value1 value1 `us  1 a 2 23 ]
-"176
+"175
 } 0
 "38 /home/saul/MPLABXProjects/driver_bio3.X/ADC1823.c
 [v _ADC_4 ADC_4 `(us  1 e 2 0 ]
@@ -306,7 +308,7 @@
 "38 /home/saul/MPLABXProjects/driver_bio3.X/comm.c
 [v _config_ASIC config_ASIC `(v  1 e 1 0 ]
 {
-[s S171 VIN_bits_stuct 5 `uc 1 RE 1 0 :1:0 
+[s S173 VIN_bits_stuct 5 `uc 1 RE 1 0 :1:0 
 `uc 1 FS 1 0 :1:1 
 `uc 1 GD0 1 0 :1:2 
 `uc 1 GD1 1 0 :1:3 
@@ -341,9 +343,9 @@
 `uc 1 EnLF 1 4 :1:0 
 ]
 "54
-[u S205 . 6 `[3]us 1 datas 6 0 `[5]uc 1 data 5 0 `S171 1 data_bits 5 0 ]
-[v config_ASIC@asic asic `S205  1 a 6 10 ]
-"67
+[u S207 . 6 `[3]us 1 datas 6 0 `[5]uc 1 data 5 0 `S173 1 data_bits 5 0 ]
+[v config_ASIC@asic asic `S207  1 a 6 10 ]
+"66
 } 0
 "131 /home/saul/MPLABXProjects/driver_bio3.X/USART1823.c
 [v _lputs_ISR lputs_ISR `(v  1 e 1 0 ]
@@ -364,7 +366,7 @@
 "71
 [v VIN_config@out out `uc  1 a 1 8 ]
 [v VIN_config@i i `uc  1 a 1 7 ]
-[s S171 VIN_bits_stuct 5 `uc 1 RE 1 0 :1:0 
+[s S173 VIN_bits_stuct 5 `uc 1 RE 1 0 :1:0 
 `uc 1 FS 1 0 :1:1 
 `uc 1 GD0 1 0 :1:2 
 `uc 1 GD1 1 0 :1:3 
@@ -399,8 +401,8 @@
 `uc 1 EnLF 1 4 :1:0 
 ]
 "68
-[u S205 . 6 `[3]us 1 datas 6 0 `[5]uc 1 data 5 0 `S171 1 data_bits 5 0 ]
-[v VIN_config@conf conf `S205  1 p 6 0 ]
+[u S207 . 6 `[3]us 1 datas 6 0 `[5]uc 1 data 5 0 `S173 1 data_bits 5 0 ]
+[v VIN_config@conf conf `S207  1 p 6 0 ]
 "167
 } 0
 "70 /home/saul/MPLABXProjects/driver_bio3.X/mcc_generated_files/mcc.c
@@ -418,10 +420,10 @@
 {
 "88
 } 0
-"69 /home/saul/MPLABXProjects/driver_bio3.X/main.c
+"65 /home/saul/MPLABXProjects/driver_bio3.X/main.c
 [v _isr isr `II(v  1 e 1 0 ]
 {
-"123
+"127
 } 0
 "82 /home/saul/MPLABXProjects/driver_bio3.X/USART1823.c
 [v i1_start_RX_USART_ISR start_RX_USART_ISR `(v  1 e 1 0 ]

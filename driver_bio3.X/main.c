@@ -18,9 +18,6 @@ void main(void) {
     
     unsigned char i;
     
-    //BIO3 mybits;
-    //VIN myVin;    
-    
     SYSTEM_Initialize();
     setup_TMR0(); 
     start_TX_USART_ISR(); 
@@ -29,16 +26,16 @@ void main(void) {
     setup_ADC();       
     
     RESET_BIO = 0;
-    __delay_ms(250);
+    __delay_ms(150);
     RESET_BIO = 1;
-    __delay_ms(250);
+   // __delay_ms(250);
      
     //RESET_BIO = 0; // Hold the chip on reset
     
      while(1) {
-                       
+           CLRWDT();       
     
-      //   __delay_ms(250);
+  
           if (TIMER0_flag) { // Serial RX data received
               TIMER0_flag = 0;
               
@@ -56,9 +53,8 @@ void main(void) {
               for (i = 0; i < mess_rec_size; i++)
                   mess_rec[i] = USART_rx_data[i];
               
-              //__delay_ms(50);  //Possible needed if harvester is used
-              mess_handler();    
-              //lputs_ISR(USART_rx_data,USART_rx_index);              
+              //__delay_ms(50);  //Possible needed if harvester is used            
+              mess_handler();                  
               
           }
                  
@@ -90,6 +86,14 @@ void interrupt isr(void)
     //USART RX ISR routine
     if (RCIF) {
         stop_TMR0_ISR();
+        
+        //Reset the RX usart if an overrun error is detected
+       if (OERR) {           
+            
+            CREN = 0;
+            CREN = 1;
+            return;
+        }
       
         //USART_rx_flag = RX_RECEIVED;
         if (USART_rx_index >= RX_BUF_SIZE) { //  buffer overflow. Reset the index

@@ -52,8 +52,7 @@ void config_ASIC()
     BIO_config(asic);   
 #else
     VIN asic;
-    
-    
+        
     asic.data[0] = mess_rec[1];
     asic.data[1] = mess_rec[2];
     asic.data[2] = mess_rec[3];

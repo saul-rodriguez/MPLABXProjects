@@ -3408,7 +3408,7 @@ void start_RX_USART_ISR();
 void start_TX_USART_ISR();
 
 # 18 "comm.h"
-extern volatile unsigned char mess_rec[6];
+extern volatile unsigned char mess_rec[10];
 extern volatile unsigned char mess_rec_size;
 
 
@@ -3429,9 +3429,6 @@ void main(void) {
 
 unsigned char i;
 
-
-
-
 SYSTEM_Initialize();
 setup_TMR0();
 start_TX_USART_ISR();
@@ -3440,20 +3437,20 @@ start_RCM();
 setup_ADC();
 
 RA5 = 0;
-_delay((unsigned long)((250)*(500000/4000.0)));
+_delay((unsigned long)((150)*(500000/4000.0)));
 RA5 = 1;
-_delay((unsigned long)((250)*(500000/4000.0)));
+
 
 
 
 while(1) {
-
+asm("clrwdt");
 
 
 if (TIMER0_flag) {
 TIMER0_flag = 0;
 
-if (USART_rx_index > 6) {
+if (USART_rx_index > 10) {
 USART_rx_index = 0;
 continue;
 }
@@ -3469,7 +3466,6 @@ mess_rec[i] = USART_rx_data[i];
 
 
 mess_handler();
-
 
 }
 
@@ -3501,6 +3497,14 @@ return;
 
 if (RCIF) {
 stop_TMR0_ISR();
+
+
+if (OERR) {
+
+CREN = 0;
+CREN = 1;
+return;
+}
 
 
 if (USART_rx_index >= 15) {

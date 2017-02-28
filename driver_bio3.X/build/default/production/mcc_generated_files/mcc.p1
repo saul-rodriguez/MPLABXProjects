@@ -12,7 +12,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 "49 mcc_generated_files/mcc.c
 [p x FOSC=INTOSC ]
 "50
-[p x WDTE=OFF ]
+[p x WDTE=ON ]
 "51
 [p x PWRTE=OFF ]
 "52
