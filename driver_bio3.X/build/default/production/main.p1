@@ -2535,6 +2535,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;comm.h: 24: void config_ASIC();
 [; ;comm.h: 25: void read_ADC_channels();
 [; ;comm.h: 26: void measure_Impedance();
+[; ;comm.h: 27: void measure_Impedance_no_offset();
 [; ;ADC1823.h: 21: void setup_ADC();
 [; ;ADC1823.h: 22: unsigned short ADC_2();
 [; ;ADC1823.h: 23: unsigned short ADC_4();
@@ -2648,9 +2649,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 "62
 [e :UE 296 ]
 }
-[v F2600 `(v ~T0 @X0 1 tf ]
+[v F2601 `(v ~T0 @X0 1 tf ]
 "65
-[v _isr `IF2600 ~T0 @X0 1 e ]
+[v _isr `IF2601 ~T0 @X0 1 e ]
 "66
 {
 [; ;main.c: 65: void interrupt isr(void)

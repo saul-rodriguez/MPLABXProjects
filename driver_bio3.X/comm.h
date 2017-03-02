@@ -13,7 +13,7 @@ extern "C" {
 #endif
 
 //#define CONF_DELAY 60
-#define CONF_DELAY 15
+#define CONF_DELAY 10
     
 #define BUFF_SIZE 10
 extern volatile unsigned char mess_rec[BUFF_SIZE];   //Buffer to store USART RX data

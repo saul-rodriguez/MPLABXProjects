@@ -10,6 +10,7 @@ void mess_handler();
 void config_ASIC();
 void read_ADC_channels();
 void measure_Impedance();
+void measure_Impedance_no_offset();
 
 # 26 "/opt/microchip/xc8/v1.40/include/htc.h"
 extern const char __xc8_OPTIM_SPEED;
@@ -3439,6 +3440,10 @@ case 'z':
 measure_Impedance();
 break;
 
+case 'y':
+measure_Impedance_no_offset();
+break;
+
 default:
 break;
 }
@@ -3447,7 +3452,7 @@ break;
 void config_ASIC()
 {
 
-# 54
+# 58
 VIN asic;
 
 asic.data[0] = mess_rec[1];
@@ -3500,7 +3505,7 @@ VIN asic;
 
 aux[0] = 'z';
 
-# 116
+# 120
 asic.data[0] = mess_rec[1];
 asic.data[1] = mess_rec[2];
 asic.data[2] = mess_rec[3];
@@ -3511,7 +3516,7 @@ asic.data_bits.CE = 0;
 VIN_config(asic);
 
 
-_delay((unsigned long)((15)*(500000/4000.0)));
+_delay((unsigned long)((10)*(500000/4000.0)));
 
 value1 = ADC_2();
 value2 = ADC_4();
@@ -3530,7 +3535,7 @@ asic.data_bits.IQ = 0;
 
 VIN_config(asic);
 
-_delay((unsigned long)((15)*(500000/4000.0)));
+_delay((unsigned long)((10)*(500000/4000.0)));
 
 value1 = ADC_2();
 value2 = ADC_4();
@@ -3548,7 +3553,7 @@ asic.data_bits.IQ = 1;
 
 VIN_config(asic);
 
-_delay((unsigned long)((15)*(500000/4000.0)));
+_delay((unsigned long)((10)*(500000/4000.0)));
 
 value1 = ADC_2();
 value2 = ADC_4();
@@ -3560,4 +3565,66 @@ aux[12] = (unsigned char)((value2 >> 8) & 0xff);
 
 
 lputs_ISR(aux,13);
+}
+
+void measure_Impedance_no_offset()
+{
+unsigned char aux[13];
+unsigned short value1,value2,value3;
+
+
+
+
+VIN asic;
+
+
+aux[0] = 'y';
+
+# 198
+asic.data[0] = mess_rec[1];
+asic.data[1] = mess_rec[2];
+asic.data[2] = mess_rec[3];
+asic.data[3] = mess_rec[4];
+asic.data[4] = mess_rec[5];
+
+
+
+asic.data_bits.CE = 1;
+asic.data_bits.IQ = 0;
+
+
+
+
+VIN_config(asic);
+
+_delay((unsigned long)((10)*(500000/4000.0)));
+
+value1 = ADC_2();
+value2 = ADC_4();
+
+aux[1] = (unsigned char)(value1 & 0xff);
+aux[2] = (unsigned char)((value1 >> 8) & 0xff);
+aux[3] = (unsigned char)(value2 & 0xff);
+aux[4] = (unsigned char)((value2 >> 8) & 0xff);
+
+
+asic.data_bits.IQ = 1;
+
+
+
+
+VIN_config(asic);
+
+_delay((unsigned long)((10)*(500000/4000.0)));
+
+value1 = ADC_2();
+value2 = ADC_4();
+
+aux[5] = (unsigned char)(value1 & 0xff);
+aux[6] = (unsigned char)((value1 >> 8) & 0xff);
+aux[7] = (unsigned char)(value2 & 0xff);
+aux[8] = (unsigned char)((value2 >> 8) & 0xff);
+
+
+lputs_ISR(aux,9);
 }
