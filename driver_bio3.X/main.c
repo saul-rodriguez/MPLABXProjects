@@ -118,7 +118,7 @@ void interrupt isr(void)
             USART_tx_flag = TX_FREE;
 
             //Uncomment these lines if re-enabling of Rx circuitry is needed
-            __delay_ms(25);
+            __delay_ms(2);
             start_RX_USART_ISR();
         }
         return;

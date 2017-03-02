@@ -2750,19 +2750,22 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e :U 314 ]
 "139
 }
-[; ;USART1823.c: 141: USART_tx_index = 0;
+[; ;USART1823.c: 141: close_RX_USART();
 "141
+[e ( _close_RX_USART ..  ]
+[; ;USART1823.c: 143: USART_tx_index = 0;
+"143
 [e = _USART_tx_index -> -> 0 `i `uc ]
-[; ;USART1823.c: 142: USART_tx_length = length;
-"142
-[e = _USART_tx_length _length ]
-[; ;USART1823.c: 144: USART_tx_flag = 1;
+[; ;USART1823.c: 144: USART_tx_length = length;
 "144
-[e = _USART_tx_flag -> -> 1 `i `uc ]
-[; ;USART1823.c: 145: TXIE = 1;
-"145
-[e = _TXIE -> -> 1 `i `b ]
-[; ;USART1823.c: 146: }
+[e = _USART_tx_length _length ]
+[; ;USART1823.c: 146: USART_tx_flag = 1;
 "146
+[e = _USART_tx_flag -> -> 1 `i `uc ]
+[; ;USART1823.c: 147: TXIE = 1;
+"147
+[e = _TXIE -> -> 1 `i `b ]
+[; ;USART1823.c: 148: }
+"148
 [e :UE 311 ]
 }

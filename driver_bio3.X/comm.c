@@ -30,6 +30,9 @@ void mess_handler()
             measure_Impedance();
             break; 
             
+        case 'y': //Impedance without offset
+            measure_Impedance_no_offset();
+            break
         default: 
             break;
     }
@@ -172,4 +175,9 @@ void measure_Impedance()
     
     //transmit Data
     lputs_ISR(aux,13);
+}
+
+void measure_Impedance_no_offset()
+{
+
 }

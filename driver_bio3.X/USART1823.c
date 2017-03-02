@@ -137,6 +137,8 @@ void lputs_ISR(unsigned char* data, unsigned char length)
     
     for (i = 0; i < length; i++)
         USART_tx_data[i] = data[i];
+    
+    close_RX_USART(); // Disables the RX part during transmission!
 
     USART_tx_index = 0;
     USART_tx_length = length;

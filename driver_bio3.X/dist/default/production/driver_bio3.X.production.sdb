@@ -47,7 +47,9 @@
 [v _start_TMR0_ISR start_TMR0_ISR `(v  1 e 1 0 ]
 "44
 [v _stop_TMR0_ISR stop_TMR0_ISR `(v  1 e 1 0 ]
-"52 /home/saul/MPLABXProjects/driver_bio3.X/USART1823.c
+"35 /home/saul/MPLABXProjects/driver_bio3.X/USART1823.c
+[v _close_RX_USART close_RX_USART `(v  1 e 1 0 ]
+"52
 [v _putch putch `(v  1 e 1 0 ]
 "82
 [v _start_RX_USART_ISR start_RX_USART_ISR `(v  1 e 1 0 ]
@@ -358,7 +360,12 @@
 [v lputs_ISR@length length `uc  1 p 1 0 ]
 "135
 [v lputs_ISR@data data `*.4uc  1 a 1 3 ]
-"146
+"148
+} 0
+"35
+[v _close_RX_USART close_RX_USART `(v  1 e 1 0 ]
+{
+"43
 } 0
 "68 /home/saul/MPLABXProjects/driver_bio3.X/bio3.c
 [v _VIN_config VIN_config `(v  1 e 1 0 ]

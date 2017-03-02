@@ -1,11 +1,11 @@
 Version 3.2 HI-TECH Software Intermediate Code
 "70 USART1823.h
 [v _lputs_ISR `(v ~T0 @X0 0 ef2`*uc`uc ]
-"23 comm.h
+"24 comm.h
 [v _config_ASIC `(v ~T0 @X0 0 ef ]
-"24
-[v _read_ADC_channels `(v ~T0 @X0 0 ef ]
 "25
+[v _read_ADC_channels `(v ~T0 @X0 0 ef ]
+"26
 [v _measure_Impedance `(v ~T0 @X0 0 ef ]
 "61 bio3.h
 [s S294 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -27,12 +27,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 "152 /opt/microchip/xc8/v1.40/include/pic.h
 [v __delay `JF2442 ~T0 @X0 0 e ]
 [p i __delay ]
-[; ;comm.h: 18: extern volatile unsigned char mess_rec[10];
-[; ;comm.h: 19: extern volatile unsigned char mess_rec_size;
-[; ;comm.h: 22: void mess_handler();
-[; ;comm.h: 23: void config_ASIC();
-[; ;comm.h: 24: void read_ADC_channels();
-[; ;comm.h: 25: void measure_Impedance();
+[; ;comm.h: 19: extern volatile unsigned char mess_rec[10];
+[; ;comm.h: 20: extern volatile unsigned char mess_rec_size;
+[; ;comm.h: 23: void mess_handler();
+[; ;comm.h: 24: void config_ASIC();
+[; ;comm.h: 25: void read_ADC_channels();
+[; ;comm.h: 26: void measure_Impedance();
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -2709,9 +2709,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;comm.c: 123: VIN_config(asic);
 "123
 [e ( _VIN_config (1 _asic ]
-[; ;comm.c: 126: _delay((unsigned long)((60)*(500000/4000.0)));
+[; ;comm.c: 126: _delay((unsigned long)((15)*(500000/4000.0)));
 "126
-[e ( __delay (1 -> * -> -> 60 `i `d / -> -> 500000 `l `d .4000.0 `ul ]
+[e ( __delay (1 -> * -> -> 15 `i `d / -> -> 500000 `l `d .4000.0 `ul ]
 [; ;comm.c: 128: value1 = ADC_2();
 "128
 [e = _value1 ( _ADC_2 ..  ]
@@ -2739,9 +2739,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;comm.c: 143: VIN_config(asic);
 "143
 [e ( _VIN_config (1 _asic ]
-[; ;comm.c: 145: _delay((unsigned long)((60)*(500000/4000.0)));
+[; ;comm.c: 145: _delay((unsigned long)((15)*(500000/4000.0)));
 "145
-[e ( __delay (1 -> * -> -> 60 `i `d / -> -> 500000 `l `d .4000.0 `ul ]
+[e ( __delay (1 -> * -> -> 15 `i `d / -> -> 500000 `l `d .4000.0 `ul ]
 [; ;comm.c: 147: value1 = ADC_2();
 "147
 [e = _value1 ( _ADC_2 ..  ]
@@ -2766,9 +2766,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;comm.c: 161: VIN_config(asic);
 "161
 [e ( _VIN_config (1 _asic ]
-[; ;comm.c: 163: _delay((unsigned long)((60)*(500000/4000.0)));
+[; ;comm.c: 163: _delay((unsigned long)((15)*(500000/4000.0)));
 "163
-[e ( __delay (1 -> * -> -> 60 `i `d / -> -> 500000 `l `d .4000.0 `ul ]
+[e ( __delay (1 -> * -> -> 15 `i `d / -> -> 500000 `l `d .4000.0 `ul ]
 [; ;comm.c: 165: value1 = ADC_2();
 "165
 [e = _value1 ( _ADC_2 ..  ]

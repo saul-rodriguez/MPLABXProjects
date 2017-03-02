@@ -1,7 +1,7 @@
 
 # 1 "comm.c"
 
-# 18 "comm.h"
+# 19 "comm.h"
 extern volatile unsigned char mess_rec[10];
 extern volatile unsigned char mess_rec_size;
 
@@ -3511,7 +3511,7 @@ asic.data_bits.CE = 0;
 VIN_config(asic);
 
 
-_delay((unsigned long)((60)*(500000/4000.0)));
+_delay((unsigned long)((15)*(500000/4000.0)));
 
 value1 = ADC_2();
 value2 = ADC_4();
@@ -3530,7 +3530,7 @@ asic.data_bits.IQ = 0;
 
 VIN_config(asic);
 
-_delay((unsigned long)((60)*(500000/4000.0)));
+_delay((unsigned long)((15)*(500000/4000.0)));
 
 value1 = ADC_2();
 value2 = ADC_4();
@@ -3548,7 +3548,7 @@ asic.data_bits.IQ = 1;
 
 VIN_config(asic);
 
-_delay((unsigned long)((60)*(500000/4000.0)));
+_delay((unsigned long)((15)*(500000/4000.0)));
 
 value1 = ADC_2();
 value2 = ADC_4();
