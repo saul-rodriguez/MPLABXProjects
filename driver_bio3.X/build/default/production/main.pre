@@ -3417,6 +3417,7 @@ void config_ASIC();
 void read_ADC_channels();
 void measure_Impedance();
 void measure_Impedance_no_offset();
+void measure_Offset();
 
 # 21 "ADC1823.h"
 void setup_ADC();

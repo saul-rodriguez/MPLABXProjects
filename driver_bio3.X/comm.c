@@ -34,6 +34,10 @@ void mess_handler()
             measure_Impedance_no_offset();
             break;
             
+        case 'o': //Offset measurement
+            measure_Offset();
+            break;
+            
         default: 
             break;
     }
@@ -241,4 +245,52 @@ void measure_Impedance_no_offset()
     
     //transmit Data
     lputs_ISR(aux,9);
+}
+
+void measure_Offset()
+{
+    unsigned char aux[5];
+    unsigned short value1,value2;
+    
+    #ifdef BIOASIC
+        BIO3 asic;
+    #else
+        VIN asic;
+    #endif
+    
+    
+    aux[0] = 'o'; //message identifier    
+    
+    #ifdef BIOASIC
+    asic.data[0] = (unsigned short)(mess_rec[1]);
+    asic.data[1] = (unsigned short)(mess_rec[2]);
+    
+    //extract Offset
+    asic.data_bits.CE = 0; //Disable the signal generator
+    BIO_config(asic);                   
+    #else    
+
+    asic.data[0] = mess_rec[1];
+    asic.data[1] = mess_rec[2];
+    asic.data[2] = mess_rec[3];
+    asic.data[3] = mess_rec[4];
+    asic.data[4] = mess_rec[5];
+   
+    asic.data_bits.CE = 0; //Disable the signal generator
+    VIN_config(asic);
+    #endif
+    
+    __delay_ms(CONF_DELAY);
+     
+    value1 = ADC_2(); //read channel 2 (VOUT_P)     
+    value2 = ADC_4(); //read channel 4 (VOUT_N)
+    
+    aux[1] = (unsigned char)(value1 & 0xff);
+    aux[2] = (unsigned char)((value1 >> 8) & 0xff);
+    aux[3] = (unsigned char)(value2 & 0xff);
+    aux[4] = (unsigned char)((value2 >> 8) & 0xff);
+    
+    //transmit Data
+    lputs_ISR(aux,5);
+
 }

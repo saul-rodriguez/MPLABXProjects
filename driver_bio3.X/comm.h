@@ -25,6 +25,7 @@ void config_ASIC();
 void read_ADC_channels();
 void measure_Impedance();
 void measure_Impedance_no_offset();
+void measure_Offset();
 
 
 #ifdef	__cplusplus
