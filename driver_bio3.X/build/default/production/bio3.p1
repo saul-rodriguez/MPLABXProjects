@@ -2477,15 +2477,15 @@ Version 3.2 HI-TECH Software Intermediate Code
 "43
 [e =& _out -> -> 247 `i `uc ]
 [e = _PORTC _out ]
-[; ;bio3.c: 44: _delay((unsigned long)((100)*(500000/4000000.0)));
+[; ;bio3.c: 44: _delay((unsigned long)((5)*(500000/4000000.0)));
 "44
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 500000 `l `d .4000000.0 `ul ]
+[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 500000 `l `d .4000000.0 `ul ]
 [; ;bio3.c: 46: RA5 = 0;;
 "46
 [e = _RA5 -> -> 0 `i `b ]
-[; ;bio3.c: 47: _delay((unsigned long)((100)*(500000/4000000.0)));
+[; ;bio3.c: 47: _delay((unsigned long)((5)*(500000/4000000.0)));
 "47
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 500000 `l `d .4000000.0 `ul ]
+[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 500000 `l `d .4000000.0 `ul ]
 [; ;bio3.c: 49: RA5 = 1;;
 "49
 [e = _RA5 -> -> 1 `i `b ]
@@ -2522,16 +2522,16 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;bio3.c: 57: conf.datashort >>= 1;
 "57
 [e =>> . _conf 0 -> 1 `i ]
-[; ;bio3.c: 59: _delay((unsigned long)((100)*(500000/4000000.0)));
+[; ;bio3.c: 59: _delay((unsigned long)((5)*(500000/4000000.0)));
 "59
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 500000 `l `d .4000000.0 `ul ]
+[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 500000 `l `d .4000000.0 `ul ]
 [; ;bio3.c: 61: out |= 0b00001000; PORTC = out;;
 "61
 [e =| _out -> -> 8 `i `uc ]
 [e = _PORTC _out ]
-[; ;bio3.c: 62: _delay((unsigned long)((100)*(500000/4000000.0)));
+[; ;bio3.c: 62: _delay((unsigned long)((5)*(500000/4000000.0)));
 "62
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 500000 `l `d .4000000.0 `ul ]
+[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 500000 `l `d .4000000.0 `ul ]
 [; ;bio3.c: 63: out &= 0b11110111; PORTC = out;;
 "63
 [e =& _out -> -> 247 `i `uc ]
@@ -2569,15 +2569,15 @@ Version 3.2 HI-TECH Software Intermediate Code
 "73
 [e =& _out -> -> 247 `i `uc ]
 [e = _PORTC _out ]
-[; ;bio3.c: 74: _delay((unsigned long)((100)*(500000/4000000.0)));
+[; ;bio3.c: 74: _delay((unsigned long)((5)*(500000/4000000.0)));
 "74
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 500000 `l `d .4000000.0 `ul ]
+[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 500000 `l `d .4000000.0 `ul ]
 [; ;bio3.c: 76: RA5 = 0;;
 "76
 [e = _RA5 -> -> 0 `i `b ]
-[; ;bio3.c: 77: _delay((unsigned long)((100)*(500000/4000000.0)));
+[; ;bio3.c: 77: _delay((unsigned long)((5)*(500000/4000000.0)));
 "77
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 500000 `l `d .4000000.0 `ul ]
+[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 500000 `l `d .4000000.0 `ul ]
 [; ;bio3.c: 79: RA5 = 1;;
 "79
 [e = _RA5 -> -> 1 `i `b ]
@@ -2614,16 +2614,16 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;bio3.c: 87: conf.datas[0] >>= 1;
 "87
 [e =>> *U + &U . _conf 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _conf 0 `ui `ux -> 1 `i ]
-[; ;bio3.c: 89: _delay((unsigned long)((100)*(500000/4000000.0)));
+[; ;bio3.c: 89: _delay((unsigned long)((5)*(500000/4000000.0)));
 "89
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 500000 `l `d .4000000.0 `ul ]
+[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 500000 `l `d .4000000.0 `ul ]
 [; ;bio3.c: 91: out |= 0b00001000; PORTC = out;;
 "91
 [e =| _out -> -> 8 `i `uc ]
 [e = _PORTC _out ]
-[; ;bio3.c: 92: _delay((unsigned long)((100)*(500000/4000000.0)));
+[; ;bio3.c: 92: _delay((unsigned long)((5)*(500000/4000000.0)));
 "92
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 500000 `l `d .4000000.0 `ul ]
+[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 500000 `l `d .4000000.0 `ul ]
 [; ;bio3.c: 93: out &= 0b11110111; PORTC = out;;
 "93
 [e =& _out -> -> 247 `i `uc ]
@@ -2670,16 +2670,16 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;bio3.c: 102: conf.datas[1] >>= 1;
 "102
 [e =>> *U + &U . _conf 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _conf 0 `ui `ux -> 1 `i ]
-[; ;bio3.c: 104: _delay((unsigned long)((100)*(500000/4000000.0)));
+[; ;bio3.c: 104: _delay((unsigned long)((5)*(500000/4000000.0)));
 "104
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 500000 `l `d .4000000.0 `ul ]
+[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 500000 `l `d .4000000.0 `ul ]
 [; ;bio3.c: 106: out |= 0b00001000; PORTC = out;;
 "106
 [e =| _out -> -> 8 `i `uc ]
 [e = _PORTC _out ]
-[; ;bio3.c: 107: _delay((unsigned long)((100)*(500000/4000000.0)));
+[; ;bio3.c: 107: _delay((unsigned long)((5)*(500000/4000000.0)));
 "107
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 500000 `l `d .4000000.0 `ul ]
+[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 500000 `l `d .4000000.0 `ul ]
 [; ;bio3.c: 108: out &= 0b11110111; PORTC = out;;
 "108
 [e =& _out -> -> 247 `i `uc ]
@@ -2726,16 +2726,16 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;bio3.c: 117: conf.datas[2] >>= 1;
 "117
 [e =>> *U + &U . _conf 0 * -> -> -> 2 `i `ui `ux -> -> # *U &U . _conf 0 `ui `ux -> 1 `i ]
-[; ;bio3.c: 119: _delay((unsigned long)((100)*(500000/4000000.0)));
+[; ;bio3.c: 119: _delay((unsigned long)((5)*(500000/4000000.0)));
 "119
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 500000 `l `d .4000000.0 `ul ]
+[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 500000 `l `d .4000000.0 `ul ]
 [; ;bio3.c: 121: out |= 0b00001000; PORTC = out;;
 "121
 [e =| _out -> -> 8 `i `uc ]
 [e = _PORTC _out ]
-[; ;bio3.c: 122: _delay((unsigned long)((100)*(500000/4000000.0)));
+[; ;bio3.c: 122: _delay((unsigned long)((5)*(500000/4000000.0)));
 "122
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 500000 `l `d .4000000.0 `ul ]
+[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 500000 `l `d .4000000.0 `ul ]
 [; ;bio3.c: 123: out &= 0b11110111; PORTC = out;;
 "123
 [e =& _out -> -> 247 `i `uc ]
