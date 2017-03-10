@@ -1,7 +1,7 @@
 
 # 1 "comm.c"
 
-# 19 "comm.h"
+# 18 "comm.h"
 extern volatile unsigned char mess_rec[10];
 extern volatile unsigned char mess_rec_size;
 
@@ -12,6 +12,7 @@ void read_ADC_channels();
 void measure_Impedance();
 void measure_Impedance_no_offset();
 void measure_Offset();
+void measure_Impedance_SE();
 
 # 26 "/opt/microchip/xc8/v1.40/include/htc.h"
 extern const char __xc8_OPTIM_SPEED;
@@ -3326,7 +3327,7 @@ void SYSTEM_Initialize(void);
 # 79
 void OSCILLATOR_Initialize(void);
 
-# 32 "bio3.h"
+# 37 "bio3.h"
 typedef struct BIO3_bits_stuct {
 unsigned RE :1;
 unsigned FS :1;
@@ -3402,7 +3403,7 @@ unsigned char data[5];
 VIN_bits data_bits;
 } VIN;
 
-# 112
+# 117
 void BIO_config(BIO3 conf);
 void VIN_config(VIN conf);
 
@@ -3449,6 +3450,10 @@ case 'o':
 measure_Offset();
 break;
 
+case 's':
+measure_Impedance_SE();
+break;
+
 default:
 break;
 }
@@ -3457,19 +3462,17 @@ break;
 void config_ASIC()
 {
 
-# 62
-VIN asic;
+BIO3 asic;
 
+# 59
 asic.data[0] = mess_rec[1];
 asic.data[1] = mess_rec[2];
-asic.data[2] = mess_rec[3];
-asic.data[3] = mess_rec[4];
-asic.data[4] = mess_rec[5];
 
 lputs_ISR(mess_rec,mess_rec_size);
 
-VIN_config(asic);
+BIO_config(asic);
 
+# 78
 }
 
 void read_ADC_channels()
@@ -3502,26 +3505,22 @@ unsigned char aux[13];
 unsigned short value1,value2,value3;
 
 
+BIO3 asic;
 
-
-VIN asic;
-
-
-
+# 116
 aux[0] = 'z';
 
-# 124
-asic.data[0] = mess_rec[1];
-asic.data[1] = mess_rec[2];
-asic.data[2] = mess_rec[3];
-asic.data[3] = mess_rec[4];
-asic.data[4] = mess_rec[5];
+
+
+asic.data[0] = (unsigned short)(mess_rec[1]);
+asic.data[1] = (unsigned short)(mess_rec[2]);
+
 
 asic.data_bits.CE = 0;
-VIN_config(asic);
+BIO_config(asic);
 
-
-_delay((unsigned long)((10)*(500000/4000.0)));
+# 138
+_delay((unsigned long)((20)*(500000/4000.0)));
 
 value1 = ADC_2();
 value2 = ADC_4();
@@ -3536,11 +3535,10 @@ asic.data_bits.CE = 1;
 asic.data_bits.IQ = 0;
 
 
+BIO_config(asic);
 
-
-VIN_config(asic);
-
-_delay((unsigned long)((10)*(500000/4000.0)));
+# 157
+_delay((unsigned long)((20)*(500000/4000.0)));
 
 value1 = ADC_2();
 value2 = ADC_4();
@@ -3554,11 +3552,10 @@ aux[8] = (unsigned char)((value2 >> 8) & 0xff);
 asic.data_bits.IQ = 1;
 
 
+BIO_config(asic);
 
-
-VIN_config(asic);
-
-_delay((unsigned long)((10)*(500000/4000.0)));
+# 175
+_delay((unsigned long)((20)*(500000/4000.0)));
 
 value1 = ADC_2();
 value2 = ADC_4();
@@ -3578,31 +3575,24 @@ unsigned char aux[13];
 unsigned short value1,value2,value3;
 
 
+BIO3 asic;
 
-
-VIN asic;
-
-
+# 200
 aux[0] = 'y';
 
-# 202
-asic.data[0] = mess_rec[1];
-asic.data[1] = mess_rec[2];
-asic.data[2] = mess_rec[3];
-asic.data[3] = mess_rec[4];
-asic.data[4] = mess_rec[5];
 
+asic.data[0] = (unsigned short)(mess_rec[1]);
+asic.data[1] = (unsigned short)(mess_rec[2]);
 
-
+# 214
 asic.data_bits.CE = 1;
 asic.data_bits.IQ = 0;
 
 
+BIO_config(asic);
 
-
-VIN_config(asic);
-
-_delay((unsigned long)((10)*(500000/4000.0)));
+# 222
+_delay((unsigned long)((20)*(500000/4000.0)));
 
 value1 = ADC_2();
 value2 = ADC_4();
@@ -3616,11 +3606,10 @@ aux[4] = (unsigned char)((value2 >> 8) & 0xff);
 asic.data_bits.IQ = 1;
 
 
+BIO_config(asic);
 
-
-VIN_config(asic);
-
-_delay((unsigned long)((10)*(500000/4000.0)));
+# 240
+_delay((unsigned long)((20)*(500000/4000.0)));
 
 value1 = ADC_2();
 value2 = ADC_4();
@@ -3640,26 +3629,21 @@ unsigned char aux[5];
 unsigned short value1,value2;
 
 
+BIO3 asic;
 
-
-VIN asic;
-
-
-
+# 266
 aux[0] = 'o';
 
-# 273
-asic.data[0] = mess_rec[1];
-asic.data[1] = mess_rec[2];
-asic.data[2] = mess_rec[3];
-asic.data[3] = mess_rec[4];
-asic.data[4] = mess_rec[5];
+
+asic.data[0] = (unsigned short)(mess_rec[1]);
+asic.data[1] = (unsigned short)(mess_rec[2]);
+
 
 asic.data_bits.CE = 0;
-VIN_config(asic);
+BIO_config(asic);
 
-
-_delay((unsigned long)((10)*(500000/4000.0)));
+# 287
+_delay((unsigned long)((20)*(500000/4000.0)));
 
 value1 = ADC_2();
 value2 = ADC_4();
@@ -3671,5 +3655,67 @@ aux[4] = (unsigned char)((value2 >> 8) & 0xff);
 
 
 lputs_ISR(aux,5);
+
+}
+
+
+void measure_Impedance_SE()
+{
+unsigned char aux[13];
+unsigned short value1,value2,value3;
+
+
+BIO3 asic;
+
+# 314
+aux[0] = 's';
+
+
+asic.data[0] = (unsigned short)(mess_rec[1]);
+asic.data[1] = (unsigned short)(mess_rec[2]);
+
+
+asic.data_bits.CE = 0;
+BIO_config(asic);
+
+# 335
+_delay((unsigned long)((20)*(500000/4000.0)));
+
+value1 = ADC_5();
+
+aux[1] = (unsigned char)(value1 & 0xff);
+aux[2] = (unsigned char)((value1 >> 8) & 0xff);
+
+
+asic.data_bits.CE = 1;
+asic.data_bits.IQ = 0;
+
+
+BIO_config(asic);
+
+# 351
+_delay((unsigned long)((20)*(500000/4000.0)));
+
+value1 = ADC_5();
+
+aux[3] = (unsigned char)(value1 & 0xff);
+aux[4] = (unsigned char)((value1 >> 8) & 0xff);
+
+
+asic.data_bits.IQ = 1;
+
+
+BIO_config(asic);
+
+# 366
+_delay((unsigned long)((20)*(500000/4000.0)));
+
+value1 = ADC_5();
+
+aux[5] = (unsigned char)(value1 & 0xff);
+aux[6] = (unsigned char)((value1 >> 8) & 0xff);
+
+
+lputs_ISR(aux,7);
 
 }

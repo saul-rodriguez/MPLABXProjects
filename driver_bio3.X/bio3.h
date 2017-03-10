@@ -25,8 +25,13 @@ extern "C" {
     
     
 //Here uncomment one of the ASICs to use
-//#define BIOASIC
-#define VINASIC  
+#define BIOASIC
+//#define VINASIC  
+
+//Demodulator transient delay after a valid configuration
+//#define CONF_DELAY 60
+//#define CONF_DELAY 30
+    #define CONF_DELAY 20
 
 //Implantable structure    
 typedef struct BIO3_bits_stuct {

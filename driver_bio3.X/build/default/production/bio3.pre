@@ -3288,7 +3288,7 @@ void SYSTEM_Initialize(void);
 # 79
 void OSCILLATOR_Initialize(void);
 
-# 32 "bio3.h"
+# 37 "bio3.h"
 typedef struct BIO3_bits_stuct {
 unsigned RE :1;
 unsigned FS :1;
@@ -3364,20 +3364,20 @@ unsigned char data[5];
 VIN_bits data_bits;
 } VIN;
 
-# 112
+# 117
 void BIO_config(BIO3 conf);
 void VIN_config(VIN conf);
 
-# 39 "bio3.c"
+# 41 "bio3.c"
 void BIO_config(BIO3 conf)
 {
 unsigned char i, out;
 
 out &= 0b11110111; PORTC = out;;
-_delay((unsigned long)((5)*(500000/4000000.0)));
+;;
 
 RA5 = 0;;
-_delay((unsigned long)((5)*(500000/4000000.0)));
+;;
 
 RA5 = 1;;
 
@@ -3389,10 +3389,10 @@ out &= 0b11111011; PORTC = out;;
 }
 conf.datashort >>= 1;
 
-_delay((unsigned long)((5)*(500000/4000000.0)));
+;;
 
 out |= 0b00001000; PORTC = out;;
-_delay((unsigned long)((5)*(500000/4000000.0)));
+;;
 out &= 0b11110111; PORTC = out;;
 
 }
@@ -3404,10 +3404,10 @@ void VIN_config(VIN conf)
 unsigned char i,j,out;
 
 out &= 0b11110111; PORTC = out;;
-_delay((unsigned long)((5)*(500000/4000000.0)));
+;;
 
 RA5 = 0;;
-_delay((unsigned long)((5)*(500000/4000000.0)));
+;;
 
 RA5 = 1;;
 
@@ -3419,10 +3419,10 @@ out &= 0b11111011; PORTC = out;;
 }
 conf.datas[0] >>= 1;
 
-_delay((unsigned long)((5)*(500000/4000000.0)));
+;;
 
 out |= 0b00001000; PORTC = out;;
-_delay((unsigned long)((5)*(500000/4000000.0)));
+;;
 out &= 0b11110111; PORTC = out;;
 }
 
@@ -3434,10 +3434,10 @@ out &= 0b11111011; PORTC = out;;
 }
 conf.datas[1] >>= 1;
 
-_delay((unsigned long)((5)*(500000/4000000.0)));
+;;
 
 out |= 0b00001000; PORTC = out;;
-_delay((unsigned long)((5)*(500000/4000000.0)));
+;;
 out &= 0b11110111; PORTC = out;;
 }
 
@@ -3449,13 +3449,13 @@ out &= 0b11111011; PORTC = out;;
 }
 conf.datas[2] >>= 1;
 
-_delay((unsigned long)((5)*(500000/4000000.0)));
+;;
 
 out |= 0b00001000; PORTC = out;;
-_delay((unsigned long)((5)*(500000/4000000.0)));
+;;
 out &= 0b11110111; PORTC = out;;
 }
 
-# 167
+# 169
 }
 

@@ -12,8 +12,7 @@
 extern "C" {
 #endif
 
-//#define CONF_DELAY 60
-#define CONF_DELAY 10
+
     
 #define BUFF_SIZE 10
 extern volatile unsigned char mess_rec[BUFF_SIZE];   //Buffer to store USART RX data
@@ -26,6 +25,7 @@ void read_ADC_channels();
 void measure_Impedance();
 void measure_Impedance_no_offset();
 void measure_Offset();
+void measure_Impedance_SE();
 
 
 #ifdef	__cplusplus

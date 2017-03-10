@@ -1,22 +1,18 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"32 bio3.h
+"37 bio3.h
 [s S292 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S292 BIO3_bits_stuct RE FS GD0 GD1 GD2 NS CE GS0 GS1 GS2 GS3 IQ F0 F1 F2 F3 ]
-"52
+"57
 [u S293 `us 1 `uc -> 2 `i `S292 1 ]
 [n S293 . datashort data data_bits ]
 "666 /opt/microchip/xc8/v1.40/include/pic16lf1823.h
 [v _PORTC `Vuc ~T0 @X0 0 e@14 ]
-[v F2436 `(v ~T0 @X0 1 tf1`ul ]
-"152 /opt/microchip/xc8/v1.40/include/pic.h
-[v __delay `JF2436 ~T0 @X0 0 e ]
-[p i __delay ]
-"6078 /opt/microchip/xc8/v1.40/include/pic16lf1823.h
+"6078
 [v _RA5 `Vb ~T0 @X0 0 e@101 ]
-"61 bio3.h
+"66 bio3.h
 [s S294 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S294 VIN_bits_stuct RE FS GD0 GD1 GD2 NS CE GS0 GS1 GS2 GS3 IQ F0 F1 F2 F3 CapSel0 CapSel1 CapSel2 CapSel3 CcompSel0 CcompSel1 EnRdegHF0 EnRdegHF1 EnRdeg DP0 DP1 DP2 DN0 DN1 EnHF EnMF EnLF ]
-"101
+"106
 [u S295 `us -> 3 `i `uc -> 5 `i `S294 1 ]
 [n S295 . datas data data_bits ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
@@ -2393,363 +2389,339 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdbool.h: 12: typedef unsigned char bool;
 [; ;mcc.h: 66: void SYSTEM_Initialize(void);
 [; ;mcc.h: 79: void OSCILLATOR_Initialize(void);
-[; ;bio3.h: 32: typedef struct BIO3_bits_stuct {
-[; ;bio3.h: 33: unsigned RE :1;
-[; ;bio3.h: 34: unsigned FS :1;
-[; ;bio3.h: 35: unsigned GD0 :1;
-[; ;bio3.h: 36: unsigned GD1 :1;
-[; ;bio3.h: 37: unsigned GD2 :1;
-[; ;bio3.h: 38: unsigned NS :1;
-[; ;bio3.h: 39: unsigned CE :1;
-[; ;bio3.h: 40: unsigned GS0 :1;
-[; ;bio3.h: 42: unsigned GS1 :1;
-[; ;bio3.h: 43: unsigned GS2 :1;
-[; ;bio3.h: 44: unsigned GS3 :1;
-[; ;bio3.h: 45: unsigned IQ :1;
-[; ;bio3.h: 46: unsigned F0 :1;
-[; ;bio3.h: 47: unsigned F1 :1;
-[; ;bio3.h: 48: unsigned F2 :1;
-[; ;bio3.h: 49: unsigned F3 :1;
-[; ;bio3.h: 50: } BIO3_bits;
-[; ;bio3.h: 52: typedef union {
-[; ;bio3.h: 53: unsigned short datashort;
-[; ;bio3.h: 54: unsigned char data[2];
-[; ;bio3.h: 55: BIO3_bits data_bits;
-[; ;bio3.h: 56: } BIO3;
-[; ;bio3.h: 61: typedef struct VIN_bits_stuct {
-[; ;bio3.h: 62: unsigned RE :1;
-[; ;bio3.h: 63: unsigned FS :1;
-[; ;bio3.h: 64: unsigned GD0 :1;
-[; ;bio3.h: 65: unsigned GD1 :1;
-[; ;bio3.h: 66: unsigned GD2 :1;
-[; ;bio3.h: 67: unsigned NS :1;
-[; ;bio3.h: 68: unsigned CE :1;
-[; ;bio3.h: 69: unsigned GS0 :1;
-[; ;bio3.h: 71: unsigned GS1 :1;
-[; ;bio3.h: 72: unsigned GS2 :1;
-[; ;bio3.h: 73: unsigned GS3 :1;
-[; ;bio3.h: 74: unsigned IQ :1;
-[; ;bio3.h: 75: unsigned F0 :1;
-[; ;bio3.h: 76: unsigned F1 :1;
-[; ;bio3.h: 77: unsigned F2 :1;
-[; ;bio3.h: 78: unsigned F3 :1;
-[; ;bio3.h: 80: unsigned CapSel0 :1;
-[; ;bio3.h: 81: unsigned CapSel1 :1;
-[; ;bio3.h: 82: unsigned CapSel2 :1;
-[; ;bio3.h: 83: unsigned CapSel3 :1;
-[; ;bio3.h: 84: unsigned CcompSel0 :1;
-[; ;bio3.h: 85: unsigned CcompSel1 :1;
-[; ;bio3.h: 86: unsigned EnRdegHF0 :1;
-[; ;bio3.h: 87: unsigned EnRdegHF1 :1;
-[; ;bio3.h: 89: unsigned EnRdeg :1;
-[; ;bio3.h: 90: unsigned DP0 :1;
-[; ;bio3.h: 91: unsigned DP1 :1;
-[; ;bio3.h: 92: unsigned DP2 :1;
-[; ;bio3.h: 93: unsigned DN0 :1;
-[; ;bio3.h: 94: unsigned DN1 :1;
-[; ;bio3.h: 95: unsigned EnHF :1;
-[; ;bio3.h: 96: unsigned EnMF :1;
-[; ;bio3.h: 98: unsigned EnLF :1;
-[; ;bio3.h: 99: } VIN_bits;
-[; ;bio3.h: 101: typedef union {
-[; ;bio3.h: 102: unsigned short datas[3];
-[; ;bio3.h: 103: unsigned char data[5];
-[; ;bio3.h: 104: VIN_bits data_bits;
-[; ;bio3.h: 105: } VIN;
-[; ;bio3.h: 112: void BIO_config(BIO3 conf);
-[; ;bio3.h: 113: void VIN_config(VIN conf);
-"39 bio3.c
+[; ;bio3.h: 37: typedef struct BIO3_bits_stuct {
+[; ;bio3.h: 38: unsigned RE :1;
+[; ;bio3.h: 39: unsigned FS :1;
+[; ;bio3.h: 40: unsigned GD0 :1;
+[; ;bio3.h: 41: unsigned GD1 :1;
+[; ;bio3.h: 42: unsigned GD2 :1;
+[; ;bio3.h: 43: unsigned NS :1;
+[; ;bio3.h: 44: unsigned CE :1;
+[; ;bio3.h: 45: unsigned GS0 :1;
+[; ;bio3.h: 47: unsigned GS1 :1;
+[; ;bio3.h: 48: unsigned GS2 :1;
+[; ;bio3.h: 49: unsigned GS3 :1;
+[; ;bio3.h: 50: unsigned IQ :1;
+[; ;bio3.h: 51: unsigned F0 :1;
+[; ;bio3.h: 52: unsigned F1 :1;
+[; ;bio3.h: 53: unsigned F2 :1;
+[; ;bio3.h: 54: unsigned F3 :1;
+[; ;bio3.h: 55: } BIO3_bits;
+[; ;bio3.h: 57: typedef union {
+[; ;bio3.h: 58: unsigned short datashort;
+[; ;bio3.h: 59: unsigned char data[2];
+[; ;bio3.h: 60: BIO3_bits data_bits;
+[; ;bio3.h: 61: } BIO3;
+[; ;bio3.h: 66: typedef struct VIN_bits_stuct {
+[; ;bio3.h: 67: unsigned RE :1;
+[; ;bio3.h: 68: unsigned FS :1;
+[; ;bio3.h: 69: unsigned GD0 :1;
+[; ;bio3.h: 70: unsigned GD1 :1;
+[; ;bio3.h: 71: unsigned GD2 :1;
+[; ;bio3.h: 72: unsigned NS :1;
+[; ;bio3.h: 73: unsigned CE :1;
+[; ;bio3.h: 74: unsigned GS0 :1;
+[; ;bio3.h: 76: unsigned GS1 :1;
+[; ;bio3.h: 77: unsigned GS2 :1;
+[; ;bio3.h: 78: unsigned GS3 :1;
+[; ;bio3.h: 79: unsigned IQ :1;
+[; ;bio3.h: 80: unsigned F0 :1;
+[; ;bio3.h: 81: unsigned F1 :1;
+[; ;bio3.h: 82: unsigned F2 :1;
+[; ;bio3.h: 83: unsigned F3 :1;
+[; ;bio3.h: 85: unsigned CapSel0 :1;
+[; ;bio3.h: 86: unsigned CapSel1 :1;
+[; ;bio3.h: 87: unsigned CapSel2 :1;
+[; ;bio3.h: 88: unsigned CapSel3 :1;
+[; ;bio3.h: 89: unsigned CcompSel0 :1;
+[; ;bio3.h: 90: unsigned CcompSel1 :1;
+[; ;bio3.h: 91: unsigned EnRdegHF0 :1;
+[; ;bio3.h: 92: unsigned EnRdegHF1 :1;
+[; ;bio3.h: 94: unsigned EnRdeg :1;
+[; ;bio3.h: 95: unsigned DP0 :1;
+[; ;bio3.h: 96: unsigned DP1 :1;
+[; ;bio3.h: 97: unsigned DP2 :1;
+[; ;bio3.h: 98: unsigned DN0 :1;
+[; ;bio3.h: 99: unsigned DN1 :1;
+[; ;bio3.h: 100: unsigned EnHF :1;
+[; ;bio3.h: 101: unsigned EnMF :1;
+[; ;bio3.h: 103: unsigned EnLF :1;
+[; ;bio3.h: 104: } VIN_bits;
+[; ;bio3.h: 106: typedef union {
+[; ;bio3.h: 107: unsigned short datas[3];
+[; ;bio3.h: 108: unsigned char data[5];
+[; ;bio3.h: 109: VIN_bits data_bits;
+[; ;bio3.h: 110: } VIN;
+[; ;bio3.h: 117: void BIO_config(BIO3 conf);
+[; ;bio3.h: 118: void VIN_config(VIN conf);
+"41 bio3.c
 [v _BIO_config `(v ~T0 @X0 1 ef1`S293 ]
-"40
+"42
 {
-[; ;bio3.c: 39: void BIO_config(BIO3 conf)
-[; ;bio3.c: 40: {
+[; ;bio3.c: 41: void BIO_config(BIO3 conf)
+[; ;bio3.c: 42: {
 [e :U _BIO_config ]
-"39
-[v _conf `S293 ~T0 @X0 1 r1 ]
-"40
-[f ]
 "41
+[v _conf `S293 ~T0 @X0 1 r1 ]
+"42
+[f ]
+"43
 [v _i `uc ~T0 @X0 1 a ]
 [v _out `uc ~T0 @X0 1 a ]
-[; ;bio3.c: 41: unsigned char i, out;
-[; ;bio3.c: 43: out &= 0b11110111; PORTC = out;;
-"43
+[; ;bio3.c: 43: unsigned char i, out;
+[; ;bio3.c: 45: out &= 0b11110111; PORTC = out;;
+"45
 [e =& _out -> -> 247 `i `uc ]
 [e = _PORTC _out ]
-[; ;bio3.c: 44: _delay((unsigned long)((5)*(500000/4000000.0)));
-"44
-[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 500000 `l `d .4000000.0 `ul ]
-[; ;bio3.c: 46: RA5 = 0;;
-"46
+[; ;bio3.c: 46: ;;
+[; ;bio3.c: 48: RA5 = 0;;
+"48
 [e = _RA5 -> -> 0 `i `b ]
-[; ;bio3.c: 47: _delay((unsigned long)((5)*(500000/4000000.0)));
-"47
-[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 500000 `l `d .4000000.0 `ul ]
-[; ;bio3.c: 49: RA5 = 1;;
-"49
-[e = _RA5 -> -> 1 `i `b ]
-[; ;bio3.c: 51: for(i = 0; i < 16; i++) {
+[; ;bio3.c: 49: ;;
+[; ;bio3.c: 51: RA5 = 1;;
 "51
+[e = _RA5 -> -> 1 `i `b ]
+[; ;bio3.c: 53: for(i = 0; i < 16; i++) {
+"53
 {
 [e = _i -> -> 0 `i `uc ]
 [e $ < -> _i `i -> 16 `i 297  ]
 [e $U 298  ]
 [e :U 297 ]
 {
-[; ;bio3.c: 52: if (conf.datashort & 0x0001) {
-"52
+[; ;bio3.c: 54: if (conf.datashort & 0x0001) {
+"54
 [e $ ! != & -> . _conf 0 `ui -> -> 1 `i `ui -> -> 0 `i `ui 300  ]
 {
-[; ;bio3.c: 53: out |= 0b00000100; PORTC = out;;
-"53
-[e =| _out -> -> 4 `i `uc ]
-[e = _PORTC _out ]
-"54
-}
-[; ;bio3.c: 54: } else {
-[e $U 301  ]
-[e :U 300 ]
-{
-[; ;bio3.c: 55: out &= 0b11111011; PORTC = out;;
+[; ;bio3.c: 55: out |= 0b00000100; PORTC = out;;
 "55
-[e =& _out -> -> 251 `i `uc ]
+[e =| _out -> -> 4 `i `uc ]
 [e = _PORTC _out ]
 "56
 }
-[e :U 301 ]
-[; ;bio3.c: 56: }
-[; ;bio3.c: 57: conf.datashort >>= 1;
+[; ;bio3.c: 56: } else {
+[e $U 301  ]
+[e :U 300 ]
+{
+[; ;bio3.c: 57: out &= 0b11111011; PORTC = out;;
 "57
-[e =>> . _conf 0 -> 1 `i ]
-[; ;bio3.c: 59: _delay((unsigned long)((5)*(500000/4000000.0)));
+[e =& _out -> -> 251 `i `uc ]
+[e = _PORTC _out ]
+"58
+}
+[e :U 301 ]
+[; ;bio3.c: 58: }
+[; ;bio3.c: 59: conf.datashort >>= 1;
 "59
-[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 500000 `l `d .4000000.0 `ul ]
-[; ;bio3.c: 61: out |= 0b00001000; PORTC = out;;
-"61
+[e =>> . _conf 0 -> 1 `i ]
+[; ;bio3.c: 61: ;;
+[; ;bio3.c: 63: out |= 0b00001000; PORTC = out;;
+"63
 [e =| _out -> -> 8 `i `uc ]
 [e = _PORTC _out ]
-[; ;bio3.c: 62: _delay((unsigned long)((5)*(500000/4000000.0)));
-"62
-[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 500000 `l `d .4000000.0 `ul ]
-[; ;bio3.c: 63: out &= 0b11110111; PORTC = out;;
-"63
+[; ;bio3.c: 64: ;;
+[; ;bio3.c: 65: out &= 0b11110111; PORTC = out;;
+"65
 [e =& _out -> -> 247 `i `uc ]
 [e = _PORTC _out ]
-"65
+"67
 }
-"51
+"53
 [e ++ _i -> -> 1 `i `uc ]
 [e $ < -> _i `i -> 16 `i 297  ]
 [e :U 298 ]
-"65
+"67
 }
-[; ;bio3.c: 65: }
-[; ;bio3.c: 66: }
-"66
+[; ;bio3.c: 67: }
+[; ;bio3.c: 68: }
+"68
 [e :UE 296 ]
 }
-"68
+"70
 [v _VIN_config `(v ~T0 @X0 1 ef1`S295 ]
-"69
-{
-[; ;bio3.c: 68: void VIN_config(VIN conf)
-[; ;bio3.c: 69: {
-[e :U _VIN_config ]
-"68
-[v _conf `S295 ~T0 @X0 1 r1 ]
-"69
-[f ]
 "71
+{
+[; ;bio3.c: 70: void VIN_config(VIN conf)
+[; ;bio3.c: 71: {
+[e :U _VIN_config ]
+"70
+[v _conf `S295 ~T0 @X0 1 r1 ]
+"71
+[f ]
+"73
 [v _i `uc ~T0 @X0 1 a ]
 [v _j `uc ~T0 @X0 1 a ]
 [v _out `uc ~T0 @X0 1 a ]
-[; ;bio3.c: 71: unsigned char i,j,out;
-[; ;bio3.c: 73: out &= 0b11110111; PORTC = out;;
-"73
+[; ;bio3.c: 73: unsigned char i,j,out;
+[; ;bio3.c: 75: out &= 0b11110111; PORTC = out;;
+"75
 [e =& _out -> -> 247 `i `uc ]
 [e = _PORTC _out ]
-[; ;bio3.c: 74: _delay((unsigned long)((5)*(500000/4000000.0)));
-"74
-[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 500000 `l `d .4000000.0 `ul ]
-[; ;bio3.c: 76: RA5 = 0;;
-"76
+[; ;bio3.c: 76: ;;
+[; ;bio3.c: 78: RA5 = 0;;
+"78
 [e = _RA5 -> -> 0 `i `b ]
-[; ;bio3.c: 77: _delay((unsigned long)((5)*(500000/4000000.0)));
-"77
-[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 500000 `l `d .4000000.0 `ul ]
-[; ;bio3.c: 79: RA5 = 1;;
-"79
-[e = _RA5 -> -> 1 `i `b ]
-[; ;bio3.c: 81: for(i = 0; i < 16; i++) {
+[; ;bio3.c: 79: ;;
+[; ;bio3.c: 81: RA5 = 1;;
 "81
+[e = _RA5 -> -> 1 `i `b ]
+[; ;bio3.c: 83: for(i = 0; i < 16; i++) {
+"83
 {
 [e = _i -> -> 0 `i `uc ]
 [e $ < -> _i `i -> 16 `i 303  ]
 [e $U 304  ]
 [e :U 303 ]
 {
-[; ;bio3.c: 82: if (conf.datas[0] & 0x0001) {
-"82
+[; ;bio3.c: 84: if (conf.datas[0] & 0x0001) {
+"84
 [e $ ! != & -> *U + &U . _conf 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _conf 0 `ui `ux `ui -> -> 1 `i `ui -> -> 0 `i `ui 306  ]
 {
-[; ;bio3.c: 83: out |= 0b00000100; PORTC = out;;
-"83
-[e =| _out -> -> 4 `i `uc ]
-[e = _PORTC _out ]
-"84
-}
-[; ;bio3.c: 84: } else {
-[e $U 307  ]
-[e :U 306 ]
-{
-[; ;bio3.c: 85: out &= 0b11111011; PORTC = out;;
+[; ;bio3.c: 85: out |= 0b00000100; PORTC = out;;
 "85
-[e =& _out -> -> 251 `i `uc ]
+[e =| _out -> -> 4 `i `uc ]
 [e = _PORTC _out ]
 "86
 }
-[e :U 307 ]
-[; ;bio3.c: 86: }
-[; ;bio3.c: 87: conf.datas[0] >>= 1;
+[; ;bio3.c: 86: } else {
+[e $U 307  ]
+[e :U 306 ]
+{
+[; ;bio3.c: 87: out &= 0b11111011; PORTC = out;;
 "87
-[e =>> *U + &U . _conf 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _conf 0 `ui `ux -> 1 `i ]
-[; ;bio3.c: 89: _delay((unsigned long)((5)*(500000/4000000.0)));
+[e =& _out -> -> 251 `i `uc ]
+[e = _PORTC _out ]
+"88
+}
+[e :U 307 ]
+[; ;bio3.c: 88: }
+[; ;bio3.c: 89: conf.datas[0] >>= 1;
 "89
-[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 500000 `l `d .4000000.0 `ul ]
-[; ;bio3.c: 91: out |= 0b00001000; PORTC = out;;
-"91
+[e =>> *U + &U . _conf 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _conf 0 `ui `ux -> 1 `i ]
+[; ;bio3.c: 91: ;;
+[; ;bio3.c: 93: out |= 0b00001000; PORTC = out;;
+"93
 [e =| _out -> -> 8 `i `uc ]
 [e = _PORTC _out ]
-[; ;bio3.c: 92: _delay((unsigned long)((5)*(500000/4000000.0)));
-"92
-[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 500000 `l `d .4000000.0 `ul ]
-[; ;bio3.c: 93: out &= 0b11110111; PORTC = out;;
-"93
+[; ;bio3.c: 94: ;;
+[; ;bio3.c: 95: out &= 0b11110111; PORTC = out;;
+"95
 [e =& _out -> -> 247 `i `uc ]
 [e = _PORTC _out ]
-"94
+"96
 }
-"81
+"83
 [e ++ _i -> -> 1 `i `uc ]
 [e $ < -> _i `i -> 16 `i 303  ]
 [e :U 304 ]
-"94
-}
-[; ;bio3.c: 94: }
-[; ;bio3.c: 96: for(i = 0; i < 16; i++) {
 "96
+}
+[; ;bio3.c: 96: }
+[; ;bio3.c: 98: for(i = 0; i < 16; i++) {
+"98
 {
 [e = _i -> -> 0 `i `uc ]
 [e $ < -> _i `i -> 16 `i 308  ]
 [e $U 309  ]
 [e :U 308 ]
 {
-[; ;bio3.c: 97: if (conf.datas[1] & 0x0001) {
-"97
+[; ;bio3.c: 99: if (conf.datas[1] & 0x0001) {
+"99
 [e $ ! != & -> *U + &U . _conf 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _conf 0 `ui `ux `ui -> -> 1 `i `ui -> -> 0 `i `ui 311  ]
 {
-[; ;bio3.c: 98: out |= 0b00000100; PORTC = out;;
-"98
-[e =| _out -> -> 4 `i `uc ]
-[e = _PORTC _out ]
-"99
-}
-[; ;bio3.c: 99: } else {
-[e $U 312  ]
-[e :U 311 ]
-{
-[; ;bio3.c: 100: out &= 0b11111011; PORTC = out;;
+[; ;bio3.c: 100: out |= 0b00000100; PORTC = out;;
 "100
-[e =& _out -> -> 251 `i `uc ]
+[e =| _out -> -> 4 `i `uc ]
 [e = _PORTC _out ]
 "101
 }
-[e :U 312 ]
-[; ;bio3.c: 101: }
-[; ;bio3.c: 102: conf.datas[1] >>= 1;
+[; ;bio3.c: 101: } else {
+[e $U 312  ]
+[e :U 311 ]
+{
+[; ;bio3.c: 102: out &= 0b11111011; PORTC = out;;
 "102
-[e =>> *U + &U . _conf 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _conf 0 `ui `ux -> 1 `i ]
-[; ;bio3.c: 104: _delay((unsigned long)((5)*(500000/4000000.0)));
+[e =& _out -> -> 251 `i `uc ]
+[e = _PORTC _out ]
+"103
+}
+[e :U 312 ]
+[; ;bio3.c: 103: }
+[; ;bio3.c: 104: conf.datas[1] >>= 1;
 "104
-[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 500000 `l `d .4000000.0 `ul ]
-[; ;bio3.c: 106: out |= 0b00001000; PORTC = out;;
-"106
+[e =>> *U + &U . _conf 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _conf 0 `ui `ux -> 1 `i ]
+[; ;bio3.c: 106: ;;
+[; ;bio3.c: 108: out |= 0b00001000; PORTC = out;;
+"108
 [e =| _out -> -> 8 `i `uc ]
 [e = _PORTC _out ]
-[; ;bio3.c: 107: _delay((unsigned long)((5)*(500000/4000000.0)));
-"107
-[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 500000 `l `d .4000000.0 `ul ]
-[; ;bio3.c: 108: out &= 0b11110111; PORTC = out;;
-"108
+[; ;bio3.c: 109: ;;
+[; ;bio3.c: 110: out &= 0b11110111; PORTC = out;;
+"110
 [e =& _out -> -> 247 `i `uc ]
 [e = _PORTC _out ]
-"109
+"111
 }
-"96
+"98
 [e ++ _i -> -> 1 `i `uc ]
 [e $ < -> _i `i -> 16 `i 308  ]
 [e :U 309 ]
-"109
-}
-[; ;bio3.c: 109: }
-[; ;bio3.c: 111: for(i = 0; i < 1; i++) {
 "111
+}
+[; ;bio3.c: 111: }
+[; ;bio3.c: 113: for(i = 0; i < 1; i++) {
+"113
 {
 [e = _i -> -> 0 `i `uc ]
 [e $ < -> _i `i -> 1 `i 313  ]
 [e $U 314  ]
 [e :U 313 ]
 {
-[; ;bio3.c: 112: if (conf.datas[2] & 0x0001) {
-"112
+[; ;bio3.c: 114: if (conf.datas[2] & 0x0001) {
+"114
 [e $ ! != & -> *U + &U . _conf 0 * -> -> -> 2 `i `ui `ux -> -> # *U &U . _conf 0 `ui `ux `ui -> -> 1 `i `ui -> -> 0 `i `ui 316  ]
 {
-[; ;bio3.c: 113: out |= 0b00000100; PORTC = out;;
-"113
-[e =| _out -> -> 4 `i `uc ]
-[e = _PORTC _out ]
-"114
-}
-[; ;bio3.c: 114: } else {
-[e $U 317  ]
-[e :U 316 ]
-{
-[; ;bio3.c: 115: out &= 0b11111011; PORTC = out;;
+[; ;bio3.c: 115: out |= 0b00000100; PORTC = out;;
 "115
-[e =& _out -> -> 251 `i `uc ]
+[e =| _out -> -> 4 `i `uc ]
 [e = _PORTC _out ]
 "116
 }
-[e :U 317 ]
-[; ;bio3.c: 116: }
-[; ;bio3.c: 117: conf.datas[2] >>= 1;
+[; ;bio3.c: 116: } else {
+[e $U 317  ]
+[e :U 316 ]
+{
+[; ;bio3.c: 117: out &= 0b11111011; PORTC = out;;
 "117
-[e =>> *U + &U . _conf 0 * -> -> -> 2 `i `ui `ux -> -> # *U &U . _conf 0 `ui `ux -> 1 `i ]
-[; ;bio3.c: 119: _delay((unsigned long)((5)*(500000/4000000.0)));
+[e =& _out -> -> 251 `i `uc ]
+[e = _PORTC _out ]
+"118
+}
+[e :U 317 ]
+[; ;bio3.c: 118: }
+[; ;bio3.c: 119: conf.datas[2] >>= 1;
 "119
-[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 500000 `l `d .4000000.0 `ul ]
-[; ;bio3.c: 121: out |= 0b00001000; PORTC = out;;
-"121
+[e =>> *U + &U . _conf 0 * -> -> -> 2 `i `ui `ux -> -> # *U &U . _conf 0 `ui `ux -> 1 `i ]
+[; ;bio3.c: 121: ;;
+[; ;bio3.c: 123: out |= 0b00001000; PORTC = out;;
+"123
 [e =| _out -> -> 8 `i `uc ]
 [e = _PORTC _out ]
-[; ;bio3.c: 122: _delay((unsigned long)((5)*(500000/4000000.0)));
-"122
-[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 500000 `l `d .4000000.0 `ul ]
-[; ;bio3.c: 123: out &= 0b11110111; PORTC = out;;
-"123
+[; ;bio3.c: 124: ;;
+[; ;bio3.c: 125: out &= 0b11110111; PORTC = out;;
+"125
 [e =& _out -> -> 247 `i `uc ]
 [e = _PORTC _out ]
-"124
+"126
 }
-"111
+"113
 [e ++ _i -> -> 1 `i `uc ]
 [e $ < -> _i `i -> 1 `i 313  ]
 [e :U 314 ]
-"124
+"126
 }
-[; ;bio3.c: 124: }
-[; ;bio3.c: 167: }
-"167
+[; ;bio3.c: 126: }
+[; ;bio3.c: 169: }
+"169
 [e :UE 302 ]
 }
