@@ -35,14 +35,18 @@
 [v _measure_Offset measure_Offset `(v  1 e 1 0 ]
 "303
 [v _measure_Impedance_SE measure_Impedance_SE `(v  1 e 1 0 ]
-"17 /home/saul/MPLABXProjects/driver_bio3.X/main.c
+"386
+[v _calculate_checksum calculate_checksum `(uc  1 e 1 0 ]
+"20 /home/saul/MPLABXProjects/driver_bio3.X/main.c
 [v _main main `(v  1 e 1 0 ]
-"65
+"139
 [v _isr isr `II(v  1 e 1 0 ]
 "70 /home/saul/MPLABXProjects/driver_bio3.X/mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
 "78
 [v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
+"90
+[v _USARTX_change_pol USARTX_change_pol `(v  1 e 1 0 ]
 "49 /home/saul/MPLABXProjects/driver_bio3.X/mcc_generated_files/pin_manager.c
 [v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
 "4 /home/saul/MPLABXProjects/driver_bio3.X/RCM1823.c
@@ -55,14 +59,14 @@
 [v _stop_TMR0_ISR stop_TMR0_ISR `(v  1 e 1 0 ]
 "35 /home/saul/MPLABXProjects/driver_bio3.X/USART1823.c
 [v _close_RX_USART close_RX_USART `(v  1 e 1 0 ]
-"52
+"53
 [v _putch putch `(v  1 e 1 0 ]
-"82
+"83
 [v _start_RX_USART_ISR start_RX_USART_ISR `(v  1 e 1 0 ]
 [v i1_start_RX_USART_ISR start_RX_USART_ISR `(v  1 e 1 0 ]
-"100
+"101
 [v _start_TX_USART_ISR start_TX_USART_ISR `(v  1 e 1 0 ]
-"131
+"132
 [v _lputs_ISR lputs_ISR `(v  1 e 1 0 ]
 "666 /opt/microchip/xc8/v1.40/include/pic16lf1823.h
 [v _PORTC PORTC `VEuc  1 e 1 @14 ]
@@ -157,6 +161,8 @@
 [v _RCIF RCIF `VEb  1 e 0 @141 ]
 "6108
 [v _RXDTSEL RXDTSEL `VEb  1 e 0 @2287 ]
+"6120
+[v _SCKP SCKP `VEb  1 e 0 @3324 ]
 "6144
 [v _SPEN SPEN `VEb  1 e 0 @3311 ]
 "6224
@@ -197,22 +203,22 @@
 [v _USART_tx_index USART_tx_index `VEuc  1 e 1 0 ]
 "14
 [v _USART_tx_length USART_tx_length `VEuc  1 e 1 0 ]
-"17 /home/saul/MPLABXProjects/driver_bio3.X/main.c
+"20 /home/saul/MPLABXProjects/driver_bio3.X/main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"19
+"22
 [v main@i i `uc  1 a 1 28 ]
-"62
+"136
 } 0
-"100 /home/saul/MPLABXProjects/driver_bio3.X/USART1823.c
+"101 /home/saul/MPLABXProjects/driver_bio3.X/USART1823.c
 [v _start_TX_USART_ISR start_TX_USART_ISR `(v  1 e 1 0 ]
 {
-"114
+"115
 } 0
-"82
+"83
 [v _start_RX_USART_ISR start_RX_USART_ISR `(v  1 e 1 0 ]
 {
-"98
+"99
 } 0
 "4 /home/saul/MPLABXProjects/driver_bio3.X/RCM1823.c
 [v _start_RCM start_RCM `(v  1 e 1 0 ]
@@ -250,7 +256,7 @@
 {
 "256
 [v measure_Offset@aux aux `[5]uc  1 a 5 7 ]
-[s S148 BIO3_bits_stuct 2 `uc 1 RE 1 0 :1:0 
+[s S152 BIO3_bits_stuct 2 `uc 1 RE 1 0 :1:0 
 `uc 1 FS 1 0 :1:1 
 `uc 1 GD0 1 0 :1:2 
 `uc 1 GD1 1 0 :1:3 
@@ -268,8 +274,8 @@
 `uc 1 F3 1 1 :1:7 
 ]
 "260
-[u S165 . 2 `us 1 datashort 2 0 `[2]uc 1 data 2 0 `S148 1 data_bits 2 0 ]
-[v measure_Offset@asic asic `S165  1 a 2 16 ]
+[u S169 . 2 `us 1 datashort 2 0 `[2]uc 1 data 2 0 `S152 1 data_bits 2 0 ]
+[v measure_Offset@asic asic `S169  1 a 2 16 ]
 "257
 [v measure_Offset@value2 value2 `us  1 a 2 14 ]
 [v measure_Offset@value1 value1 `us  1 a 2 12 ]
@@ -280,7 +286,7 @@
 {
 "191
 [v measure_Impedance_no_offset@aux aux `[13]uc  1 a 13 7 ]
-[s S148 BIO3_bits_stuct 2 `uc 1 RE 1 0 :1:0 
+[s S152 BIO3_bits_stuct 2 `uc 1 RE 1 0 :1:0 
 `uc 1 FS 1 0 :1:1 
 `uc 1 GD0 1 0 :1:2 
 `uc 1 GD1 1 0 :1:3 
@@ -298,8 +304,8 @@
 `uc 1 F3 1 1 :1:7 
 ]
 "195
-[u S165 . 2 `us 1 datashort 2 0 `[2]uc 1 data 2 0 `S148 1 data_bits 2 0 ]
-[v measure_Impedance_no_offset@asic asic `S165  1 a 2 24 ]
+[u S169 . 2 `us 1 datashort 2 0 `[2]uc 1 data 2 0 `S152 1 data_bits 2 0 ]
+[v measure_Impedance_no_offset@asic asic `S169  1 a 2 24 ]
 "192
 [v measure_Impedance_no_offset@value2 value2 `us  1 a 2 22 ]
 [v measure_Impedance_no_offset@value1 value1 `us  1 a 2 20 ]
@@ -309,8 +315,8 @@
 [v _measure_Impedance_SE measure_Impedance_SE `(v  1 e 1 0 ]
 {
 "305
-[v measure_Impedance_SE@aux aux `[13]uc  1 a 13 7 ]
-[s S148 BIO3_bits_stuct 2 `uc 1 RE 1 0 :1:0 
+[v measure_Impedance_SE@aux aux `[13]uc  1 a 13 8 ]
+[s S152 BIO3_bits_stuct 2 `uc 1 RE 1 0 :1:0 
 `uc 1 FS 1 0 :1:1 
 `uc 1 GD0 1 0 :1:2 
 `uc 1 GD1 1 0 :1:3 
@@ -327,12 +333,28 @@
 `uc 1 F2 1 1 :1:6 
 `uc 1 F3 1 1 :1:7 
 ]
-"309
-[u S165 . 2 `us 1 datashort 2 0 `[2]uc 1 data 2 0 `S148 1 data_bits 2 0 ]
-[v measure_Impedance_SE@asic asic `S165  1 a 2 22 ]
-"306
-[v measure_Impedance_SE@value1 value1 `us  1 a 2 20 ]
-"376
+"310
+[u S169 . 2 `us 1 datashort 2 0 `[2]uc 1 data 2 0 `S152 1 data_bits 2 0 ]
+[v measure_Impedance_SE@asic asic `S169  1 a 2 24 ]
+"307
+[v measure_Impedance_SE@value1 value1 `us  1 a 2 22 ]
+"305
+[v measure_Impedance_SE@check check `uc  1 a 1 21 ]
+"384
+} 0
+"386
+[v _calculate_checksum calculate_checksum `(uc  1 e 1 0 ]
+{
+[v calculate_checksum@data data `*.4uc  1 a 1 wreg ]
+"388
+[v calculate_checksum@i i `uc  1 a 1 5 ]
+[v calculate_checksum@check check `uc  1 a 1 4 ]
+"386
+[v calculate_checksum@data data `*.4uc  1 a 1 wreg ]
+[v calculate_checksum@num num `uc  1 p 1 0 ]
+"390
+[v calculate_checksum@data data `*.4uc  1 a 1 3 ]
+"398
 } 0
 "48 /home/saul/MPLABXProjects/driver_bio3.X/ADC1823.c
 [v _ADC_5 ADC_5 `(us  1 e 2 0 ]
@@ -346,7 +368,7 @@
 {
 "106
 [v measure_Impedance@aux aux `[13]uc  1 a 13 7 ]
-[s S148 BIO3_bits_stuct 2 `uc 1 RE 1 0 :1:0 
+[s S152 BIO3_bits_stuct 2 `uc 1 RE 1 0 :1:0 
 `uc 1 FS 1 0 :1:1 
 `uc 1 GD0 1 0 :1:2 
 `uc 1 GD1 1 0 :1:3 
@@ -364,8 +386,8 @@
 `uc 1 F3 1 1 :1:7 
 ]
 "110
-[u S165 . 2 `us 1 datashort 2 0 `[2]uc 1 data 2 0 `S148 1 data_bits 2 0 ]
-[v measure_Impedance@asic asic `S165  1 a 2 24 ]
+[u S169 . 2 `us 1 datashort 2 0 `[2]uc 1 data 2 0 `S152 1 data_bits 2 0 ]
+[v measure_Impedance@asic asic `S169  1 a 2 24 ]
 "107
 [v measure_Impedance@value2 value2 `us  1 a 2 22 ]
 [v measure_Impedance@value1 value1 `us  1 a 2 20 ]
@@ -388,7 +410,7 @@
 "50 /home/saul/MPLABXProjects/driver_bio3.X/comm.c
 [v _config_ASIC config_ASIC `(v  1 e 1 0 ]
 {
-[s S148 BIO3_bits_stuct 2 `uc 1 RE 1 0 :1:0 
+[s S152 BIO3_bits_stuct 2 `uc 1 RE 1 0 :1:0 
 `uc 1 FS 1 0 :1:1 
 `uc 1 GD0 1 0 :1:2 
 `uc 1 GD1 1 0 :1:3 
@@ -406,27 +428,27 @@
 `uc 1 F3 1 1 :1:7 
 ]
 "53
-[u S165 . 2 `us 1 datashort 2 0 `[2]uc 1 data 2 0 `S148 1 data_bits 2 0 ]
-[v config_ASIC@asic asic `S165  1 a 2 6 ]
+[u S169 . 2 `us 1 datashort 2 0 `[2]uc 1 data 2 0 `S152 1 data_bits 2 0 ]
+[v config_ASIC@asic asic `S169  1 a 2 6 ]
 "78
 } 0
-"131 /home/saul/MPLABXProjects/driver_bio3.X/USART1823.c
+"132 /home/saul/MPLABXProjects/driver_bio3.X/USART1823.c
 [v _lputs_ISR lputs_ISR `(v  1 e 1 0 ]
 {
 [v lputs_ISR@data data `*.4uc  1 a 1 wreg ]
-"133
+"134
 [v lputs_ISR@i i `uc  1 a 1 4 ]
-"131
+"132
 [v lputs_ISR@data data `*.4uc  1 a 1 wreg ]
 [v lputs_ISR@length length `uc  1 p 1 0 ]
-"135
+"136
 [v lputs_ISR@data data `*.4uc  1 a 1 3 ]
-"148
+"149
 } 0
 "35
 [v _close_RX_USART close_RX_USART `(v  1 e 1 0 ]
 {
-"43
+"44
 } 0
 "41 /home/saul/MPLABXProjects/driver_bio3.X/bio3.c
 [v _BIO_config BIO_config `(v  1 e 1 0 ]
@@ -434,7 +456,7 @@
 "43
 [v BIO_config@out out `uc  1 a 1 4 ]
 [v BIO_config@i i `uc  1 a 1 3 ]
-[s S148 BIO3_bits_stuct 2 `uc 1 RE 1 0 :1:0 
+[s S152 BIO3_bits_stuct 2 `uc 1 RE 1 0 :1:0 
 `uc 1 FS 1 0 :1:1 
 `uc 1 GD0 1 0 :1:2 
 `uc 1 GD1 1 0 :1:3 
@@ -452,11 +474,16 @@
 `uc 1 F3 1 1 :1:7 
 ]
 "41
-[u S165 . 2 `us 1 datashort 2 0 `[2]uc 1 data 2 0 `S148 1 data_bits 2 0 ]
-[v BIO_config@conf conf `S165  1 p 2 0 ]
+[u S169 . 2 `us 1 datashort 2 0 `[2]uc 1 data 2 0 `S152 1 data_bits 2 0 ]
+[v BIO_config@conf conf `S169  1 p 2 0 ]
 "68
 } 0
-"70 /home/saul/MPLABXProjects/driver_bio3.X/mcc_generated_files/mcc.c
+"90 /home/saul/MPLABXProjects/driver_bio3.X/mcc_generated_files/mcc.c
+[v _USARTX_change_pol USARTX_change_pol `(v  1 e 1 0 ]
+{
+"93
+} 0
+"70
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
 {
 "76
@@ -464,22 +491,22 @@
 "49 /home/saul/MPLABXProjects/driver_bio3.X/mcc_generated_files/pin_manager.c
 [v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
 {
-"71
+"72
 } 0
 "78 /home/saul/MPLABXProjects/driver_bio3.X/mcc_generated_files/mcc.c
 [v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
 {
 "88
 } 0
-"65 /home/saul/MPLABXProjects/driver_bio3.X/main.c
+"139 /home/saul/MPLABXProjects/driver_bio3.X/main.c
 [v _isr isr `II(v  1 e 1 0 ]
 {
-"127
+"204
 } 0
-"82 /home/saul/MPLABXProjects/driver_bio3.X/USART1823.c
+"83 /home/saul/MPLABXProjects/driver_bio3.X/USART1823.c
 [v i1_start_RX_USART_ISR start_RX_USART_ISR `(v  1 e 1 0 ]
 {
-"98
+"99
 } 0
 "44 /home/saul/MPLABXProjects/driver_bio3.X/TMR0.c
 [v _stop_TMR0_ISR stop_TMR0_ISR `(v  1 e 1 0 ]

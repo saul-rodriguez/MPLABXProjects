@@ -77,6 +77,7 @@ void SYSTEM_Initialize(void);
     OSCILLATOR_Initialize(void);
  */
 void OSCILLATOR_Initialize(void);
+void USARTX_change_pol(void);
 
 
 #endif	/* MCC_H */

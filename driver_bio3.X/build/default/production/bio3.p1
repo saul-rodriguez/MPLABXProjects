@@ -2389,6 +2389,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdbool.h: 12: typedef unsigned char bool;
 [; ;mcc.h: 66: void SYSTEM_Initialize(void);
 [; ;mcc.h: 79: void OSCILLATOR_Initialize(void);
+[; ;mcc.h: 80: void USARTX_change_pol(void);
 [; ;bio3.h: 37: typedef struct BIO3_bits_stuct {
 [; ;bio3.h: 38: unsigned RE :1;
 [; ;bio3.h: 39: unsigned FS :1;

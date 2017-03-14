@@ -3249,6 +3249,7 @@ void close_RX_USART()
 
 RCIE = 0;
 CREN = 0;
+USART_rx_index = 0;
 
 
 }
@@ -3328,7 +3329,7 @@ GIE = 1;
 int putch_ISR(unsigned char byte)
 {
 
-# 127
+# 128
 return 1;
 
 }

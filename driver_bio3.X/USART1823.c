@@ -38,6 +38,7 @@ void close_RX_USART()
 //    TXEN = 0;
     RCIE = 0;  // RX Interrupt enable
     CREN = 0;
+    USART_rx_index = 0;
 
 
 }

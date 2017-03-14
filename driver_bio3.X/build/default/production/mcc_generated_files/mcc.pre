@@ -3307,6 +3307,7 @@ void SYSTEM_Initialize(void);
 
 # 79
 void OSCILLATOR_Initialize(void);
+void USARTX_change_pol(void);
 
 # 70 "mcc_generated_files/mcc.c"
 void SYSTEM_Initialize(void)
@@ -3327,5 +3328,10 @@ OSCSTAT = 0x00;
 OSCTUNE = 0x00;
 
 
+}
+
+void USARTX_change_pol(void)
+{
+SCKP = 1;
 }
 

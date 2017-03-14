@@ -9,6 +9,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _OSCSTAT `Vuc ~T0 @X0 0 e@154 ]
 "1852
 [v _OSCTUNE `Vuc ~T0 @X0 0 e@152 ]
+"6120
+[v _SCKP `Vb ~T0 @X0 0 e@3324 ]
 "49 mcc_generated_files/mcc.c
 [p x FOSC=INTOSC ]
 "50
@@ -2413,6 +2415,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdbool.h: 12: typedef unsigned char bool;
 [; ;mcc.h: 66: void SYSTEM_Initialize(void);
 [; ;mcc.h: 79: void OSCILLATOR_Initialize(void);
+[; ;mcc.h: 80: void USARTX_change_pol(void);
 "70 mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize `(v ~T0 @X0 1 ef ]
 "71
@@ -2451,4 +2454,19 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;mcc.c: 88: }
 "88
 [e :UE 293 ]
+}
+"90
+[v _USARTX_change_pol `(v ~T0 @X0 1 ef ]
+"91
+{
+[; ;mcc.c: 90: void USARTX_change_pol(void)
+[; ;mcc.c: 91: {
+[e :U _USARTX_change_pol ]
+[f ]
+[; ;mcc.c: 92: SCKP = 1;
+"92
+[e = _SCKP -> -> 1 `i `b ]
+[; ;mcc.c: 93: }
+"93
+[e :UE 294 ]
 }

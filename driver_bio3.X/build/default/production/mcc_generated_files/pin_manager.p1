@@ -2398,28 +2398,28 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pin_manager.c: 59: WPUA = 0x3B;
 "59
 [e = _WPUA -> -> 59 `i `uc ]
-[; ;pin_manager.c: 60: WPUC = 0x3C;
-"60
-[e = _WPUC -> -> 60 `i `uc ]
-[; ;pin_manager.c: 62: RXDTSEL = 0;
-"62
-[e = _RXDTSEL -> -> 0 `i `b ]
-[; ;pin_manager.c: 63: TXCKSEL = 0;
+[; ;pin_manager.c: 61: WPUC = 0x1C;
+"61
+[e = _WPUC -> -> 28 `i `uc ]
+[; ;pin_manager.c: 63: RXDTSEL = 0;
 "63
+[e = _RXDTSEL -> -> 0 `i `b ]
+[; ;pin_manager.c: 64: TXCKSEL = 0;
+"64
 [e = _TXCKSEL -> -> 0 `i `b ]
-[; ;pin_manager.c: 66: TRISC = 0b01100011;
-"66
-[e = _TRISC -> -> 99 `i `uc ]
-[; ;pin_manager.c: 67: TRISA = 0b01011111;
+[; ;pin_manager.c: 67: TRISC = 0b01100011;
 "67
+[e = _TRISC -> -> 99 `i `uc ]
+[; ;pin_manager.c: 68: TRISA = 0b01011111;
+"68
 [e = _TRISA -> -> 95 `i `uc ]
-[; ;pin_manager.c: 69: OPTION_REGbits.nWPUEN = 0x0;
-"69
-[e = . . _OPTION_REGbits 0 7 -> -> 0 `i `uc ]
-[; ;pin_manager.c: 70: APFCON = 0x00;
+[; ;pin_manager.c: 70: OPTION_REGbits.nWPUEN = 0x0;
 "70
-[e = _APFCON -> -> 0 `i `uc ]
-[; ;pin_manager.c: 71: }
+[e = . . _OPTION_REGbits 0 7 -> -> 0 `i `uc ]
+[; ;pin_manager.c: 71: APFCON = 0x00;
 "71
+[e = _APFCON -> -> 0 `i `uc ]
+[; ;pin_manager.c: 72: }
+"72
 [e :UE 292 ]
 }

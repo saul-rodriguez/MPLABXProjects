@@ -57,7 +57,8 @@ void PIN_MANAGER_Initialize(void)
     
     //WPUA = 0x3F;
     WPUA = 0x3B;
-    WPUC = 0x3C;
+    //WPUC = 0x3C;
+    WPUC = 0x1C;
          
     RXDTSEL = 0; //USART Rx on pin RC5
     TXCKSEL = 0; //USART Tx on pin RC4

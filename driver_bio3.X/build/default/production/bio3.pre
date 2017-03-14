@@ -3287,6 +3287,7 @@ void SYSTEM_Initialize(void);
 
 # 79
 void OSCILLATOR_Initialize(void);
+void USARTX_change_pol(void);
 
 # 37 "bio3.h"
 typedef struct BIO3_bits_stuct {

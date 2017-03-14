@@ -3287,6 +3287,7 @@ void SYSTEM_Initialize(void);
 
 # 79
 void OSCILLATOR_Initialize(void);
+void USARTX_change_pol(void);
 
 # 37 "bio3.h"
 typedef struct BIO3_bits_stuct {
@@ -3407,7 +3408,7 @@ void lputs_ISR(unsigned char* data, unsigned char length);
 void start_RX_USART_ISR();
 void start_TX_USART_ISR();
 
-# 18 "comm.h"
+# 20 "comm.h"
 extern volatile unsigned char mess_rec[10];
 extern volatile unsigned char mess_rec_size;
 
@@ -3419,6 +3420,7 @@ void measure_Impedance();
 void measure_Impedance_no_offset();
 void measure_Offset();
 void measure_Impedance_SE();
+unsigned char calculate_checksum(unsigned char* data, unsigned char num);
 
 # 21 "ADC1823.h"
 void setup_ADC();
@@ -3427,25 +3429,27 @@ unsigned short ADC_4();
 unsigned short ADC_5();
 unsigned short ADC_6();
 
-# 17 "main.c"
+# 20 "main.c"
 void main(void) {
 
 unsigned char i;
 
 SYSTEM_Initialize();
+
+USARTX_change_pol();
+
 setup_TMR0();
 start_TX_USART_ISR();
 start_RX_USART_ISR();
 start_RCM();
 setup_ADC();
 
+
 RA5 = 0;
 _delay((unsigned long)((150)*(500000/4000.0)));
 RA5 = 1;
 
-
-
-
+# 106
 while(1) {
 asm("clrwdt");
 
@@ -3463,6 +3467,7 @@ continue;
 
 
 mess_rec_size = USART_rx_index;
+USART_rx_index = 0;
 
 for (i = 0; i < mess_rec_size; i++)
 mess_rec[i] = USART_rx_data[i];
@@ -3473,6 +3478,8 @@ mess_handler();
 }
 
 }
+
+
 }
 
 
@@ -3506,6 +3513,7 @@ if (OERR) {
 
 CREN = 0;
 CREN = 1;
+USART_rx_index = 0;
 return;
 }
 
@@ -3532,7 +3540,9 @@ TXIE = 0;
 USART_tx_flag = 0;
 
 
-_delay((unsigned long)((2)*(500000/4000.0)));
+
+_delay((unsigned long)((3)*(500000/4000.0)));
+
 start_RX_USART_ISR();
 }
 return;

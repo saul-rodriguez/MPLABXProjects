@@ -87,6 +87,11 @@ void OSCILLATOR_Initialize(void)
     
 }
 
+void USARTX_change_pol(void)
+{
+    SCKP = 1;   // Change polarity of TX pin (page 296)
+}
+
 
 /**
  End of File

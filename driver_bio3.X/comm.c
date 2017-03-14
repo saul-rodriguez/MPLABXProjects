@@ -302,8 +302,9 @@ void measure_Offset()
 
 void measure_Impedance_SE()
 {
-     unsigned char aux[13];
-    unsigned short value1,value2,value3;
+     unsigned char aux[13], check;
+    //unsigned short value1,value2,value3;
+     unsigned short value1;
     
     #ifdef BIOASIC
         BIO3 asic;
@@ -371,6 +372,27 @@ void measure_Impedance_SE()
     aux[6] = (unsigned char)((value1 >> 8) & 0xff);    
     
     //transmit Data
+#ifdef INDUCTIVE_POW
+    check = calculate_checksum(aux,7);
+    aux[7] = check;
+    lputs_ISR(aux,8);
+#else
     lputs_ISR(aux,7);
+#endif
     
+    
+}
+
+unsigned char calculate_checksum(unsigned char* data, unsigned char num)
+{
+    unsigned char check, i;
+    
+    check = 0;
+    for (i = 0; i < num; i++) {
+        check ^= data[i];
+    }
+    
+    return check;
+
+     
 }

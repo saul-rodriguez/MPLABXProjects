@@ -1,7 +1,7 @@
 
 # 1 "comm.c"
 
-# 18 "comm.h"
+# 20 "comm.h"
 extern volatile unsigned char mess_rec[10];
 extern volatile unsigned char mess_rec_size;
 
@@ -13,6 +13,7 @@ void measure_Impedance();
 void measure_Impedance_no_offset();
 void measure_Offset();
 void measure_Impedance_SE();
+unsigned char calculate_checksum(unsigned char* data, unsigned char num);
 
 # 26 "/opt/microchip/xc8/v1.40/include/htc.h"
 extern const char __xc8_OPTIM_SPEED;
@@ -3326,6 +3327,7 @@ void SYSTEM_Initialize(void);
 
 # 79
 void OSCILLATOR_Initialize(void);
+void USARTX_change_pol(void);
 
 # 37 "bio3.h"
 typedef struct BIO3_bits_stuct {
@@ -3661,13 +3663,14 @@ lputs_ISR(aux,5);
 
 void measure_Impedance_SE()
 {
-unsigned char aux[13];
-unsigned short value1,value2,value3;
+unsigned char aux[13], check;
+
+unsigned short value1;
 
 
 BIO3 asic;
 
-# 314
+# 315
 aux[0] = 's';
 
 
@@ -3678,7 +3681,7 @@ asic.data[1] = (unsigned short)(mess_rec[2]);
 asic.data_bits.CE = 0;
 BIO_config(asic);
 
-# 335
+# 336
 _delay((unsigned long)((20)*(500000/4000.0)));
 
 value1 = ADC_5();
@@ -3693,7 +3696,7 @@ asic.data_bits.IQ = 0;
 
 BIO_config(asic);
 
-# 351
+# 352
 _delay((unsigned long)((20)*(500000/4000.0)));
 
 value1 = ADC_5();
@@ -3707,7 +3710,7 @@ asic.data_bits.IQ = 1;
 
 BIO_config(asic);
 
-# 366
+# 367
 _delay((unsigned long)((20)*(500000/4000.0)));
 
 value1 = ADC_5();
@@ -3716,6 +3719,24 @@ aux[5] = (unsigned char)(value1 & 0xff);
 aux[6] = (unsigned char)((value1 >> 8) & 0xff);
 
 
-lputs_ISR(aux,7);
+
+check = calculate_checksum(aux,7);
+aux[7] = check;
+lputs_ISR(aux,8);
+
+# 384
+}
+
+unsigned char calculate_checksum(unsigned char* data, unsigned char num)
+{
+unsigned char check, i;
+
+check = 0;
+for (i = 0; i < num; i++) {
+check ^= data[i];
+}
+
+return check;
+
 
 }

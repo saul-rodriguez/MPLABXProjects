@@ -2,6 +2,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [p mainexit ]
 "66 mcc_generated_files/mcc.h
 [v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
+"80
+[v _USARTX_change_pol `(v ~T0 @X0 0 ef ]
 "4 TMR0.h
 [v _setup_TMR0 `(v ~T0 @X0 0 ef ]
 "73 USART1823.h
@@ -22,13 +24,13 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _TIMER0_flag `Vuc ~T0 @X0 0 e ]
 "51 USART1823.h
 [v _USART_rx_index `Vuc ~T0 @X0 0 e ]
-"19 comm.h
+"21 comm.h
 [v _mess_rec_size `Vuc ~T0 @X0 0 e ]
-"18
+"20
 [v _mess_rec `Vuc ~T0 @X0 -> 0 `x e ]
 "54 USART1823.h
 [v _USART_rx_data `Vuc ~T0 @X0 -> 0 `x e ]
-"22 comm.h
+"24 comm.h
 [v _mess_handler `(v ~T0 @X0 0 ef ]
 "6286 /opt/microchip/xc8/v1.40/include/pic16lf1823.h
 [v _TMR0IF `Vb ~T0 @X0 0 e@90 ]
@@ -2438,6 +2440,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdbool.h: 12: typedef unsigned char bool;
 [; ;mcc.h: 66: void SYSTEM_Initialize(void);
 [; ;mcc.h: 79: void OSCILLATOR_Initialize(void);
+[; ;mcc.h: 80: void USARTX_change_pol(void);
 [; ;bio3.h: 37: typedef struct BIO3_bits_stuct {
 [; ;bio3.h: 38: unsigned RE :1;
 [; ;bio3.h: 39: unsigned FS :1;
@@ -2529,243 +2532,253 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;USART1823.h: 70: void lputs_ISR(unsigned char* data, unsigned char length);
 [; ;USART1823.h: 72: void start_RX_USART_ISR();
 [; ;USART1823.h: 73: void start_TX_USART_ISR();
-[; ;comm.h: 18: extern volatile unsigned char mess_rec[10];
-[; ;comm.h: 19: extern volatile unsigned char mess_rec_size;
-[; ;comm.h: 22: void mess_handler();
-[; ;comm.h: 23: void config_ASIC();
-[; ;comm.h: 24: void read_ADC_channels();
-[; ;comm.h: 25: void measure_Impedance();
-[; ;comm.h: 26: void measure_Impedance_no_offset();
-[; ;comm.h: 27: void measure_Offset();
-[; ;comm.h: 28: void measure_Impedance_SE();
+[; ;comm.h: 20: extern volatile unsigned char mess_rec[10];
+[; ;comm.h: 21: extern volatile unsigned char mess_rec_size;
+[; ;comm.h: 24: void mess_handler();
+[; ;comm.h: 25: void config_ASIC();
+[; ;comm.h: 26: void read_ADC_channels();
+[; ;comm.h: 27: void measure_Impedance();
+[; ;comm.h: 28: void measure_Impedance_no_offset();
+[; ;comm.h: 29: void measure_Offset();
+[; ;comm.h: 30: void measure_Impedance_SE();
+[; ;comm.h: 31: unsigned char calculate_checksum(unsigned char* data, unsigned char num);
 [; ;ADC1823.h: 21: void setup_ADC();
 [; ;ADC1823.h: 22: unsigned short ADC_2();
 [; ;ADC1823.h: 23: unsigned short ADC_4();
 [; ;ADC1823.h: 24: unsigned short ADC_5();
 [; ;ADC1823.h: 25: unsigned short ADC_6();
-"17 main.c
+"20 main.c
 [v _main `(v ~T0 @X0 1 ef ]
 {
-[; ;main.c: 17: void main(void) {
+[; ;main.c: 20: void main(void) {
 [e :U _main ]
 [f ]
-"19
-[v _i `uc ~T0 @X0 1 a ]
-[; ;main.c: 19: unsigned char i;
-[; ;main.c: 21: SYSTEM_Initialize();
-"21
-[e ( _SYSTEM_Initialize ..  ]
-[; ;main.c: 22: setup_TMR0();
 "22
-[e ( _setup_TMR0 ..  ]
-[; ;main.c: 23: start_TX_USART_ISR();
-"23
-[e ( _start_TX_USART_ISR ..  ]
-[; ;main.c: 24: start_RX_USART_ISR();
+[v _i `uc ~T0 @X0 1 a ]
+[; ;main.c: 22: unsigned char i;
+[; ;main.c: 24: SYSTEM_Initialize();
 "24
-[e ( _start_RX_USART_ISR ..  ]
-[; ;main.c: 25: start_RCM();
-"25
-[e ( _start_RCM ..  ]
-[; ;main.c: 26: setup_ADC();
+[e ( _SYSTEM_Initialize ..  ]
+[; ;main.c: 26: USARTX_change_pol();
 "26
-[e ( _setup_ADC ..  ]
-[; ;main.c: 28: RA5 = 0;
+[e ( _USARTX_change_pol ..  ]
+[; ;main.c: 28: setup_TMR0();
 "28
-[e = _RA5 -> -> 0 `i `b ]
-[; ;main.c: 29: _delay((unsigned long)((150)*(500000/4000.0)));
+[e ( _setup_TMR0 ..  ]
+[; ;main.c: 29: start_TX_USART_ISR();
 "29
-[e ( __delay (1 -> * -> -> 150 `i `d / -> -> 500000 `l `d .4000.0 `ul ]
-[; ;main.c: 30: RA5 = 1;
+[e ( _start_TX_USART_ISR ..  ]
+[; ;main.c: 30: start_RX_USART_ISR();
 "30
-[e = _RA5 -> -> 1 `i `b ]
-[; ;main.c: 35: while(1) {
+[e ( _start_RX_USART_ISR ..  ]
+[; ;main.c: 31: start_RCM();
+"31
+[e ( _start_RCM ..  ]
+[; ;main.c: 32: setup_ADC();
+"32
+[e ( _setup_ADC ..  ]
+[; ;main.c: 35: RA5 = 0;
 "35
+[e = _RA5 -> -> 0 `i `b ]
+[; ;main.c: 36: _delay((unsigned long)((150)*(500000/4000.0)));
+"36
+[e ( __delay (1 -> * -> -> 150 `i `d / -> -> 500000 `l `d .4000.0 `ul ]
+[; ;main.c: 37: RA5 = 1;
+"37
+[e = _RA5 -> -> 1 `i `b ]
+[; ;main.c: 106: while(1) {
+"106
 [e :U 298 ]
 {
-[; ;main.c: 36: asm("clrwdt");
-"36
+[; ;main.c: 107: asm("clrwdt");
+"107
 [; <" clrwdt ;# ">
-[; ;main.c: 39: if (TIMER0_flag) {
-"39
+[; ;main.c: 110: if (TIMER0_flag) {
+"110
 [e $ ! != -> _TIMER0_flag `i -> -> -> 0 `i `Vuc `i 300  ]
 {
-[; ;main.c: 40: TIMER0_flag = 0;
-"40
+[; ;main.c: 111: TIMER0_flag = 0;
+"111
 [e = _TIMER0_flag -> -> 0 `i `uc ]
-[; ;main.c: 42: if (USART_rx_index > 10) {
-"42
+[; ;main.c: 113: if (USART_rx_index > 10) {
+"113
 [e $ ! > -> _USART_rx_index `i -> 10 `i 301  ]
 {
-[; ;main.c: 43: USART_rx_index = 0;
-"43
+[; ;main.c: 114: USART_rx_index = 0;
+"114
 [e = _USART_rx_index -> -> 0 `i `uc ]
-[; ;main.c: 44: continue;
-"44
+[; ;main.c: 115: continue;
+"115
 [e $U 297  ]
-"45
+"116
 }
 [e :U 301 ]
-[; ;main.c: 45: }
-[; ;main.c: 47: if(USART_rx_index == 0)
-"47
+[; ;main.c: 116: }
+[; ;main.c: 118: if(USART_rx_index == 0)
+"118
 [e $ ! == -> _USART_rx_index `i -> 0 `i 302  ]
-[; ;main.c: 48: continue;
-"48
+[; ;main.c: 119: continue;
+"119
 [e $U 297  ]
 [e :U 302 ]
-[; ;main.c: 51: mess_rec_size = USART_rx_index;
-"51
+[; ;main.c: 122: mess_rec_size = USART_rx_index;
+"122
 [e = _mess_rec_size _USART_rx_index ]
-[; ;main.c: 53: for (i = 0; i < mess_rec_size; i++)
-"53
+[; ;main.c: 123: USART_rx_index = 0;
+"123
+[e = _USART_rx_index -> -> 0 `i `uc ]
+[; ;main.c: 125: for (i = 0; i < mess_rec_size; i++)
+"125
 {
 [e = _i -> -> 0 `i `uc ]
 [e $U 306  ]
-"54
+"126
 [e :U 303 ]
-[; ;main.c: 54: mess_rec[i] = USART_rx_data[i];
+[; ;main.c: 126: mess_rec[i] = USART_rx_data[i];
 [e = *U + &U _mess_rec * -> _i `ux -> -> # *U &U _mess_rec `ui `ux *U + &U _USART_rx_data * -> _i `ux -> -> # *U &U _USART_rx_data `ui `ux ]
-"53
+"125
 [e ++ _i -> -> 1 `i `uc ]
 [e :U 306 ]
 [e $ < -> _i `i -> _mess_rec_size `i 303  ]
 [e :U 304 ]
-"54
+"126
 }
-[; ;main.c: 57: mess_handler();
-"57
+[; ;main.c: 129: mess_handler();
+"129
 [e ( _mess_handler ..  ]
-"59
+"131
 }
 [e :U 300 ]
-"61
+"133
 }
 [e :U 297 ]
-"35
+"106
 [e $U 298  ]
 [e :U 299 ]
-[; ;main.c: 59: }
-[; ;main.c: 61: }
-[; ;main.c: 62: }
-"62
+[; ;main.c: 131: }
+[; ;main.c: 133: }
+[; ;main.c: 136: }
+"136
 [e :UE 296 ]
 }
-[v F2603 `(v ~T0 @X0 1 tf ]
-"65
-[v _isr `IF2603 ~T0 @X0 1 e ]
-"66
+[v F2608 `(v ~T0 @X0 1 tf ]
+"139
+[v _isr `IF2608 ~T0 @X0 1 e ]
+"140
 {
-[; ;main.c: 65: void interrupt isr(void)
-[; ;main.c: 66: {
+[; ;main.c: 139: void interrupt isr(void)
+[; ;main.c: 140: {
 [e :U _isr ]
 [f ]
-[; ;main.c: 69: if (TMR0IF && TMR0IE) {
-"69
+[; ;main.c: 143: if (TMR0IF && TMR0IE) {
+"143
 [e $ ! && _TMR0IF _TMR0IE 308  ]
 {
-[; ;main.c: 71: TMR0IF = 0;
-"71
+[; ;main.c: 145: TMR0IF = 0;
+"145
 [e = _TMR0IF -> -> 0 `i `b ]
-[; ;main.c: 72: TMR0 = TIMER0_timeout;
-"72
+[; ;main.c: 146: TMR0 = TIMER0_timeout;
+"146
 [e = _TMR0 -> _TIMER0_timeout `uc ]
-[; ;main.c: 75: TIMER0_flag = 1;
-"75
+[; ;main.c: 149: TIMER0_flag = 1;
+"149
 [e = _TIMER0_flag -> -> 1 `i `uc ]
-[; ;main.c: 80: stop_TMR0_ISR();
-"80
+[; ;main.c: 154: stop_TMR0_ISR();
+"154
 [e ( _stop_TMR0_ISR ..  ]
-[; ;main.c: 82: return;
-"82
+[; ;main.c: 156: return;
+"156
 [e $UE 307  ]
-"83
+"157
 }
 [e :U 308 ]
-[; ;main.c: 83: }
-[; ;main.c: 87: if (RCIF) {
-"87
+[; ;main.c: 157: }
+[; ;main.c: 161: if (RCIF) {
+"161
 [e $ ! _RCIF 309  ]
 {
-[; ;main.c: 88: stop_TMR0_ISR();
-"88
+[; ;main.c: 162: stop_TMR0_ISR();
+"162
 [e ( _stop_TMR0_ISR ..  ]
-[; ;main.c: 91: if (OERR) {
-"91
+[; ;main.c: 165: if (OERR) {
+"165
 [e $ ! _OERR 310  ]
 {
-[; ;main.c: 93: CREN = 0;
-"93
+[; ;main.c: 167: CREN = 0;
+"167
 [e = _CREN -> -> 0 `i `b ]
-[; ;main.c: 94: CREN = 1;
-"94
+[; ;main.c: 168: CREN = 1;
+"168
 [e = _CREN -> -> 1 `i `b ]
-[; ;main.c: 95: return;
-"95
+[; ;main.c: 169: USART_rx_index = 0;
+"169
+[e = _USART_rx_index -> -> 0 `i `uc ]
+[; ;main.c: 170: return;
+"170
 [e $UE 307  ]
-"96
+"171
 }
 [e :U 310 ]
-[; ;main.c: 96: }
-[; ;main.c: 99: if (USART_rx_index >= 15) {
-"99
+[; ;main.c: 171: }
+[; ;main.c: 174: if (USART_rx_index >= 15) {
+"174
 [e $ ! >= -> _USART_rx_index `i -> 15 `i 311  ]
 {
-[; ;main.c: 100: USART_rx_index = 0;
-"100
+[; ;main.c: 175: USART_rx_index = 0;
+"175
 [e = _USART_rx_index -> -> 0 `i `uc ]
-"101
+"176
 }
 [e :U 311 ]
-[; ;main.c: 101: }
-[; ;main.c: 103: USART_rx_data[USART_rx_index++] = RCREG;
-"103
+[; ;main.c: 176: }
+[; ;main.c: 178: USART_rx_data[USART_rx_index++] = RCREG;
+"178
 [e = *U + &U _USART_rx_data * -> ++ _USART_rx_index -> -> 1 `i `uc `ux -> -> # *U &U _USART_rx_data `ui `ux _RCREG ]
-[; ;main.c: 105: start_TMR0_ISR(98);
-"105
+[; ;main.c: 180: start_TMR0_ISR(98);
+"180
 [e ( _start_TMR0_ISR (1 -> -> 98 `i `uc ]
-[; ;main.c: 107: return;
-"107
+[; ;main.c: 182: return;
+"182
 [e $UE 307  ]
-"108
+"183
 }
 [e :U 309 ]
-[; ;main.c: 108: }
-[; ;main.c: 112: if (TXIF && TXIE) {
-"112
+[; ;main.c: 183: }
+[; ;main.c: 187: if (TXIF && TXIE) {
+"187
 [e $ ! && _TXIF _TXIE 312  ]
 {
-[; ;main.c: 114: TXREG = USART_tx_data[USART_tx_index++];
-"114
+[; ;main.c: 189: TXREG = USART_tx_data[USART_tx_index++];
+"189
 [e = _TXREG *U + &U _USART_tx_data * -> ++ _USART_tx_index -> -> 1 `i `uc `ux -> -> # *U &U _USART_tx_data `ui `ux ]
-[; ;main.c: 116: if (USART_tx_index >= USART_tx_length) {
-"116
+[; ;main.c: 191: if (USART_tx_index >= USART_tx_length) {
+"191
 [e $ ! >= -> _USART_tx_index `i -> _USART_tx_length `i 313  ]
 {
-[; ;main.c: 117: TXIE = 0;
-"117
+[; ;main.c: 192: TXIE = 0;
+"192
 [e = _TXIE -> -> 0 `i `b ]
-[; ;main.c: 118: USART_tx_flag = 0;
-"118
+[; ;main.c: 193: USART_tx_flag = 0;
+"193
 [e = _USART_tx_flag -> -> 0 `i `uc ]
-[; ;main.c: 121: _delay((unsigned long)((2)*(500000/4000.0)));
-"121
-[e ( __delay (1 -> * -> -> 2 `i `d / -> -> 500000 `l `d .4000.0 `ul ]
-[; ;main.c: 122: start_RX_USART_ISR();
-"122
+[; ;main.c: 197: _delay((unsigned long)((3)*(500000/4000.0)));
+"197
+[e ( __delay (1 -> * -> -> 3 `i `d / -> -> 500000 `l `d .4000.0 `ul ]
+[; ;main.c: 199: start_RX_USART_ISR();
+"199
 [e ( _start_RX_USART_ISR ..  ]
-"123
+"200
 }
 [e :U 313 ]
-[; ;main.c: 123: }
-[; ;main.c: 124: return;
-"124
+[; ;main.c: 200: }
+[; ;main.c: 201: return;
+"201
 [e $UE 307  ]
-"125
+"202
 }
 [e :U 312 ]
-[; ;main.c: 125: }
-[; ;main.c: 127: }
-"127
+[; ;main.c: 202: }
+[; ;main.c: 204: }
+"204
 [e :UE 307 ]
 }

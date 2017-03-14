@@ -11,7 +11,9 @@
 #ifdef	__cplusplus
 extern "C" {
 #endif
-
+    
+//uncomment if inductive coupling is used for power and communications
+#define INDUCTIVE_POW
 
     
 #define BUFF_SIZE 10
@@ -26,7 +28,7 @@ void measure_Impedance();
 void measure_Impedance_no_offset();
 void measure_Offset();
 void measure_Impedance_SE();
-
+unsigned char calculate_checksum(unsigned char* data, unsigned char num);
 
 #ifdef	__cplusplus
 }
