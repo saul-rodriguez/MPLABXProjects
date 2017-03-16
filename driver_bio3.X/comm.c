@@ -42,6 +42,13 @@ void mess_handler()
             measure_Impedance_SE();
             break;
             
+        #ifdef INDUCTIVE_POW
+        case '&': //Tx loop to calibrate the reader
+            calibrate_reader();
+            break;
+        #endif
+                  
+            
         default: 
             break;
     }
@@ -311,6 +318,16 @@ void measure_Impedance_SE()
     #else
         VIN asic;
     #endif    
+
+    #ifdef INDUCTIVE_POW
+        //check checksum
+        check = calculate_checksum(mess_rec,4);
+        if (check) { //error detected
+            aux[0] = 'e';
+            lputs_ISR(aux,1);
+            return;
+        }
+    #endif
     
     aux[0] = 's'; //message identifier    
     
@@ -392,7 +409,27 @@ unsigned char calculate_checksum(unsigned char* data, unsigned char num)
         check ^= data[i];
     }
     
-    return check;
+    return check;     
+}
 
-     
+void calibrate_reader()
+{
+    unsigned char aux[8];
+    
+    aux[0] = 'h';
+    aux[1] = 'o';
+    aux[2] = 'l';
+    aux[3] = 'a';
+    aux[4] = 0x00;
+    aux[5] = 0xaa;
+    aux[6] = 0xfe;
+    aux[7] = '@';
+    
+    while (1) {
+        CLRWDT();
+         __delay_ms(250);
+         lputs_ISR(aux,8);
+        
+    }
+    
 }

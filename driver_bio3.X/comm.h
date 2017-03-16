@@ -29,6 +29,7 @@ void measure_Impedance_no_offset();
 void measure_Offset();
 void measure_Impedance_SE();
 unsigned char calculate_checksum(unsigned char* data, unsigned char num);
+void calibrate_reader();
 
 #ifdef	__cplusplus
 }

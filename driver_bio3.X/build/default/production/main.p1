@@ -2542,6 +2542,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;comm.h: 29: void measure_Offset();
 [; ;comm.h: 30: void measure_Impedance_SE();
 [; ;comm.h: 31: unsigned char calculate_checksum(unsigned char* data, unsigned char num);
+[; ;comm.h: 32: void calibrate_reader();
 [; ;ADC1823.h: 21: void setup_ADC();
 [; ;ADC1823.h: 22: unsigned short ADC_2();
 [; ;ADC1823.h: 23: unsigned short ADC_4();
@@ -2661,9 +2662,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 "136
 [e :UE 296 ]
 }
-[v F2608 `(v ~T0 @X0 1 tf ]
+[v F2609 `(v ~T0 @X0 1 tf ]
 "139
-[v _isr `IF2608 ~T0 @X0 1 e ]
+[v _isr `IF2609 ~T0 @X0 1 e ]
 "140
 {
 [; ;main.c: 139: void interrupt isr(void)
