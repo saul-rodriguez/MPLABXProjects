@@ -215,3 +215,28 @@ void BIO_config(unsigned short data)
 }
  */
 
+void setGain(BIO3* asic, unsigned char gain_index)
+{
+    RADIO_gain aux;
+    aux.data = gains[gain_index];
+    
+    asic->data_bits.GD0 = aux.data_bits.GD0;
+    asic->data_bits.GD1 = aux.data_bits.GD1;
+    asic->data_bits.GD2 = aux.data_bits.GD2;
+    asic->data_bits.GS0 = aux.data_bits.GS0;
+    asic->data_bits.GS1 = aux.data_bits.GS1;
+    asic->data_bits.GS2 = aux.data_bits.GS2;
+    asic->data_bits.GS3 = aux.data_bits.GS3;
+}
+
+void setFreq(BIO3* asic, unsigned char freq_index)
+{
+    RADIO_freq aux;
+    aux.data = freqs[freq_index];
+    
+    asic->data_bits.F0 = aux.data_bits.F0;
+    asic->data_bits.F1 = aux.data_bits.F1;
+    asic->data_bits.F2 = aux.data_bits.F2;
+    asic->data_bits.F3 = aux.data_bits.F3;
+        
+}

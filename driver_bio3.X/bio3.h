@@ -30,8 +30,12 @@ extern "C" {
 
 //Demodulator transient delay after a valid configuration
 //#define CONF_DELAY 60
-//#define CONF_DELAY 30
-    #define CONF_DELAY 20
+
+//vinnova    
+//#define CONF_DELAY 15
+    
+//Tested with bio
+#define CONF_DELAY 20
 
 //Implantable structure    
 typedef struct BIO3_bits_stuct {
@@ -61,6 +65,86 @@ typedef union {
 } BIO3;
 
 #define BIO3_LENGTH 16
+
+
+
+typedef struct RADIO_gain_bits_struct {
+    unsigned GD0     :1;
+    unsigned GD1     :1;
+    unsigned GD2     :1;
+    unsigned GS0     :1;
+    unsigned GS1     :1;
+    unsigned GS2     :1;
+    unsigned GS3     :1;
+    unsigned NOTUSED :1;
+
+} RADIO_gain_bits;
+
+typedef union {
+    unsigned char data;
+    RADIO_gain_bits data_bits;
+} RADIO_gain;
+
+
+//Radio gain bit states (GAIN0 is lowest gain, GAIN7 is highest gain)
+#define GAIN0 0b00000100
+#define GAIN1 0b00000101
+#define GAIN2 0b00000111
+#define GAIN3 0b00000011
+#define GAIN4 0b00100011
+#define GAIN5 0b01100011
+#define GAIN6 0b01101011
+#define GAIN7 0b01111011
+
+const unsigned char gains[8] = {
+    GAIN0,
+    GAIN1,
+    GAIN2,
+    GAIN3,
+    GAIN4,
+    GAIN5,
+    GAIN6,
+    GAIN7
+};
+
+typedef struct RADIO_freq_bits_struct {
+    unsigned F0     :1;
+    unsigned F1     :1;
+    unsigned F2     :1;
+    unsigned F3     :1;
+} RADIO_freq_bits;
+
+typedef union {
+    unsigned char data;
+    RADIO_freq_bits data_bits;
+} RADIO_freq;
+
+//Radio frequency bit states (FREQ0 = 1 MHz, FREQ10 = 1 kHZ))
+#define FREQ0  0b00000000
+#define FREQ1  0b00000001
+#define FREQ2  0b00000010
+#define FREQ3  0b00000011
+#define FREQ4  0b00000100
+#define FREQ5  0b00000101
+#define FREQ6  0b00000110
+#define FREQ7  0b00000111
+#define FREQ8  0b00001000
+#define FREQ9  0b00001001
+#define FREQ10 0b00001010
+
+const unsigned char freqs[11] = {
+    FREQ0,
+    FREQ1,
+    FREQ2,
+    FREQ3,
+    FREQ4,
+    FREQ5,
+    FREQ6,
+    FREQ7,
+    FREQ8,
+    FREQ9,
+    FREQ10    
+};
 
 //Vinnova structure
 typedef struct VIN_bits_stuct {
@@ -111,11 +195,13 @@ typedef union {
 
 #define VIN_LENGTH 33
 
-
-
-
 void BIO_config(BIO3 conf);
 void VIN_config(VIN conf);
+void setGain(BIO3* asic, unsigned char gain_index);
+void setFreq(BIO3* asic, unsigned char freq_index);
+
+
+
 
 #ifdef	__cplusplus
 }

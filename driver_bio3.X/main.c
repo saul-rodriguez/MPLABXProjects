@@ -36,6 +36,9 @@ void main(void) {
     __delay_ms(150);
     RESET_BIO = 1;
    
+    //TEST FOR SIMULATION
+    //sweep();
+    
     //TEST USART INDUCTIVE STARTS HERE
     
     //TEST SIMPLE TX SUCCESSFUL

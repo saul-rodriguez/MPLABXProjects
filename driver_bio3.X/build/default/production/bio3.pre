@@ -3289,7 +3289,7 @@ void SYSTEM_Initialize(void);
 void OSCILLATOR_Initialize(void);
 void USARTX_change_pol(void);
 
-# 37 "bio3.h"
+# 41 "bio3.h"
 typedef struct BIO3_bits_stuct {
 unsigned RE :1;
 unsigned FS :1;
@@ -3316,7 +3316,62 @@ unsigned char data[2];
 BIO3_bits data_bits;
 } BIO3;
 
+# 71
+typedef struct RADIO_gain_bits_struct {
+unsigned GD0 :1;
+unsigned GD1 :1;
+unsigned GD2 :1;
+unsigned GS0 :1;
+unsigned GS1 :1;
+unsigned GS2 :1;
+unsigned GS3 :1;
+unsigned NOTUSED :1;
 
+} RADIO_gain_bits;
+
+typedef union {
+unsigned char data;
+RADIO_gain_bits data_bits;
+} RADIO_gain;
+
+# 99
+const unsigned char gains[8] = {
+0b00000100,
+0b00000101,
+0b00000111,
+0b00000011,
+0b00100011,
+0b01100011,
+0b01101011,
+0b01111011
+};
+
+typedef struct RADIO_freq_bits_struct {
+unsigned F0 :1;
+unsigned F1 :1;
+unsigned F2 :1;
+unsigned F3 :1;
+} RADIO_freq_bits;
+
+typedef union {
+unsigned char data;
+RADIO_freq_bits data_bits;
+} RADIO_freq;
+
+# 135
+const unsigned char freqs[11] = {
+0b00000000,
+0b00000001,
+0b00000010,
+0b00000011,
+0b00000100,
+0b00000101,
+0b00000110,
+0b00000111,
+0b00001000,
+0b00001001,
+0b00001010
+};
 
 
 typedef struct VIN_bits_stuct {
@@ -3365,9 +3420,12 @@ unsigned char data[5];
 VIN_bits data_bits;
 } VIN;
 
-# 117
+
+
 void BIO_config(BIO3 conf);
 void VIN_config(VIN conf);
+void setGain(BIO3* asic, unsigned char gain_index);
+void setFreq(BIO3* asic, unsigned char freq_index);
 
 # 41 "bio3.c"
 void BIO_config(BIO3 conf)
@@ -3460,3 +3518,29 @@ out &= 0b11110111; PORTC = out;;
 # 169
 }
 
+# 218
+void setGain(BIO3* asic, unsigned char gain_index)
+{
+RADIO_gain aux;
+aux.data = gains[gain_index];
+
+asic->data_bits.GD0 = aux.data_bits.GD0;
+asic->data_bits.GD1 = aux.data_bits.GD1;
+asic->data_bits.GD2 = aux.data_bits.GD2;
+asic->data_bits.GS0 = aux.data_bits.GS0;
+asic->data_bits.GS1 = aux.data_bits.GS1;
+asic->data_bits.GS2 = aux.data_bits.GS2;
+asic->data_bits.GS3 = aux.data_bits.GS3;
+}
+
+void setFreq(BIO3* asic, unsigned char freq_index)
+{
+RADIO_freq aux;
+aux.data = freqs[freq_index];
+
+asic->data_bits.F0 = aux.data_bits.F0;
+asic->data_bits.F1 = aux.data_bits.F1;
+asic->data_bits.F2 = aux.data_bits.F2;
+asic->data_bits.F3 = aux.data_bits.F3;
+
+}

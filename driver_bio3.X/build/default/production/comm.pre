@@ -1,21 +1,6 @@
 
 # 1 "comm.c"
 
-# 20 "comm.h"
-extern volatile unsigned char mess_rec[10];
-extern volatile unsigned char mess_rec_size;
-
-
-void mess_handler();
-void config_ASIC();
-void read_ADC_channels();
-void measure_Impedance();
-void measure_Impedance_no_offset();
-void measure_Offset();
-void measure_Impedance_SE();
-unsigned char calculate_checksum(unsigned char* data, unsigned char num);
-void calibrate_reader();
-
 # 26 "/opt/microchip/xc8/v1.40/include/htc.h"
 extern const char __xc8_OPTIM_SPEED;
 
@@ -3201,32 +3186,6 @@ extern unsigned char __resetbits;
 extern __bit __powerdown;
 extern __bit __timeout;
 
-# 50 "USART1823.h"
-extern volatile unsigned char USART_rx_flag;
-extern volatile unsigned char USART_rx_index;
-
-
-extern volatile unsigned char USART_rx_data[15];
-
-extern volatile unsigned char USART_tx_flag;
-extern volatile unsigned char USART_tx_data[15];
-extern volatile unsigned char USART_tx_index;
-extern volatile unsigned char USART_tx_length;
-
-
-void start_TX_USART();
-void start_RX_USART();
-void close_USART();
-void close_RX_USART();
-void putch(unsigned char byte);
-int putch_ISR(unsigned char byte);
-unsigned char getch();
-void lputs(unsigned char* data, unsigned char length);
-void lputs_ISR(unsigned char* data, unsigned char length);
-
-void start_RX_USART_ISR();
-void start_TX_USART_ISR();
-
 # 82 "mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
 
@@ -3330,7 +3289,7 @@ void SYSTEM_Initialize(void);
 void OSCILLATOR_Initialize(void);
 void USARTX_change_pol(void);
 
-# 37 "bio3.h"
+# 41 "bio3.h"
 typedef struct BIO3_bits_stuct {
 unsigned RE :1;
 unsigned FS :1;
@@ -3357,7 +3316,62 @@ unsigned char data[2];
 BIO3_bits data_bits;
 } BIO3;
 
+# 71
+typedef struct RADIO_gain_bits_struct {
+unsigned GD0 :1;
+unsigned GD1 :1;
+unsigned GD2 :1;
+unsigned GS0 :1;
+unsigned GS1 :1;
+unsigned GS2 :1;
+unsigned GS3 :1;
+unsigned NOTUSED :1;
 
+} RADIO_gain_bits;
+
+typedef union {
+unsigned char data;
+RADIO_gain_bits data_bits;
+} RADIO_gain;
+
+# 99
+const unsigned char gains[8] = {
+0b00000100,
+0b00000101,
+0b00000111,
+0b00000011,
+0b00100011,
+0b01100011,
+0b01101011,
+0b01111011
+};
+
+typedef struct RADIO_freq_bits_struct {
+unsigned F0 :1;
+unsigned F1 :1;
+unsigned F2 :1;
+unsigned F3 :1;
+} RADIO_freq_bits;
+
+typedef union {
+unsigned char data;
+RADIO_freq_bits data_bits;
+} RADIO_freq;
+
+# 135
+const unsigned char freqs[11] = {
+0b00000000,
+0b00000001,
+0b00000010,
+0b00000011,
+0b00000100,
+0b00000101,
+0b00000110,
+0b00000111,
+0b00001000,
+0b00001001,
+0b00001010
+};
 
 
 typedef struct VIN_bits_stuct {
@@ -3406,9 +3420,57 @@ unsigned char data[5];
 VIN_bits data_bits;
 } VIN;
 
-# 117
+
+
 void BIO_config(BIO3 conf);
 void VIN_config(VIN conf);
+void setGain(BIO3* asic, unsigned char gain_index);
+void setFreq(BIO3* asic, unsigned char freq_index);
+
+# 22 "comm.h"
+extern volatile unsigned char mess_rec[10];
+extern volatile unsigned char mess_rec_size;
+
+
+
+
+void mess_handler();
+void config_ASIC();
+void read_ADC_channels();
+void measure_Impedance();
+void measure_Impedance_no_offset();
+void measure_Offset();
+void measure_Impedance_SE();
+unsigned char calculate_checksum(unsigned char* data, unsigned char num);
+void calibrate_reader();
+void sweep();
+unsigned char measure(short* I, short* Q, BIO3 asic);
+
+# 50 "USART1823.h"
+extern volatile unsigned char USART_rx_flag;
+extern volatile unsigned char USART_rx_index;
+
+
+extern volatile unsigned char USART_rx_data[15];
+
+extern volatile unsigned char USART_tx_flag;
+extern volatile unsigned char USART_tx_data[15];
+extern volatile unsigned char USART_tx_index;
+extern volatile unsigned char USART_tx_length;
+
+
+void start_TX_USART();
+void start_RX_USART();
+void close_USART();
+void close_RX_USART();
+void putch(unsigned char byte);
+int putch_ISR(unsigned char byte);
+unsigned char getch();
+void lputs(unsigned char* data, unsigned char length);
+void lputs_ISR(unsigned char* data, unsigned char length);
+
+void start_RX_USART_ISR();
+void start_TX_USART_ISR();
 
 # 21 "ADC1823.h"
 void setup_ADC();
@@ -3431,6 +3493,10 @@ void mess_handler()
 switch (mess_rec[0]) {
 case 't':
 lputs_ISR(mess_rec,mess_rec_size);
+break;
+
+case 'f':
+sweep();
 break;
 
 case 'c':
@@ -3457,13 +3523,7 @@ case 's':
 measure_Impedance_SE();
 break;
 
-
-case '&':
-calibrate_reader();
-break;
-
-
-
+# 56
 default:
 break;
 }
@@ -3474,7 +3534,7 @@ void config_ASIC()
 
 BIO3 asic;
 
-# 66
+# 70
 asic.data[0] = mess_rec[1];
 asic.data[1] = mess_rec[2];
 
@@ -3482,7 +3542,7 @@ lputs_ISR(mess_rec,mess_rec_size);
 
 BIO_config(asic);
 
-# 85
+# 89
 }
 
 void read_ADC_channels()
@@ -3517,7 +3577,7 @@ unsigned short value1,value2,value3;
 
 BIO3 asic;
 
-# 123
+# 127
 aux[0] = 'z';
 
 
@@ -3529,7 +3589,7 @@ asic.data[1] = (unsigned short)(mess_rec[2]);
 asic.data_bits.CE = 0;
 BIO_config(asic);
 
-# 145
+# 149
 _delay((unsigned long)((20)*(500000/4000.0)));
 
 value1 = ADC_2();
@@ -3547,7 +3607,7 @@ asic.data_bits.IQ = 0;
 
 BIO_config(asic);
 
-# 164
+# 168
 _delay((unsigned long)((20)*(500000/4000.0)));
 
 value1 = ADC_2();
@@ -3564,7 +3624,7 @@ asic.data_bits.IQ = 1;
 
 BIO_config(asic);
 
-# 182
+# 186
 _delay((unsigned long)((20)*(500000/4000.0)));
 
 value1 = ADC_2();
@@ -3587,21 +3647,21 @@ unsigned short value1,value2,value3;
 
 BIO3 asic;
 
-# 207
+# 211
 aux[0] = 'y';
 
 
 asic.data[0] = (unsigned short)(mess_rec[1]);
 asic.data[1] = (unsigned short)(mess_rec[2]);
 
-# 221
+# 225
 asic.data_bits.CE = 1;
 asic.data_bits.IQ = 0;
 
 
 BIO_config(asic);
 
-# 229
+# 233
 _delay((unsigned long)((20)*(500000/4000.0)));
 
 value1 = ADC_2();
@@ -3618,7 +3678,7 @@ asic.data_bits.IQ = 1;
 
 BIO_config(asic);
 
-# 247
+# 251
 _delay((unsigned long)((20)*(500000/4000.0)));
 
 value1 = ADC_2();
@@ -3641,7 +3701,7 @@ unsigned short value1,value2;
 
 BIO3 asic;
 
-# 273
+# 277
 aux[0] = 'o';
 
 
@@ -3652,7 +3712,7 @@ asic.data[1] = (unsigned short)(mess_rec[2]);
 asic.data_bits.CE = 0;
 BIO_config(asic);
 
-# 294
+# 298
 _delay((unsigned long)((20)*(500000/4000.0)));
 
 value1 = ADC_2();
@@ -3671,22 +3731,14 @@ lputs_ISR(aux,5);
 
 void measure_Impedance_SE()
 {
-unsigned char aux[13], check;
+unsigned char aux[8], check;
 
 unsigned short value1;
 
 
 BIO3 asic;
 
-# 324
-check = calculate_checksum(mess_rec,4);
-if (check) {
-aux[0] = 'e';
-lputs_ISR(aux,1);
-return;
-}
-
-
+# 336
 aux[0] = 's';
 
 
@@ -3697,7 +3749,7 @@ asic.data[1] = (unsigned short)(mess_rec[2]);
 asic.data_bits.CE = 0;
 BIO_config(asic);
 
-# 353
+# 357
 _delay((unsigned long)((20)*(500000/4000.0)));
 
 value1 = ADC_5();
@@ -3712,7 +3764,7 @@ asic.data_bits.IQ = 0;
 
 BIO_config(asic);
 
-# 369
+# 373
 _delay((unsigned long)((20)*(500000/4000.0)));
 
 value1 = ADC_5();
@@ -3726,7 +3778,7 @@ asic.data_bits.IQ = 1;
 
 BIO_config(asic);
 
-# 384
+# 388
 _delay((unsigned long)((20)*(500000/4000.0)));
 
 value1 = ADC_5();
@@ -3734,13 +3786,11 @@ value1 = ADC_5();
 aux[5] = (unsigned char)(value1 & 0xff);
 aux[6] = (unsigned char)((value1 >> 8) & 0xff);
 
-
-
-check = calculate_checksum(aux,7);
-aux[7] = check;
-lputs_ISR(aux,8);
-
 # 401
+lputs_ISR(aux,7);
+
+
+
 }
 
 unsigned char calculate_checksum(unsigned char* data, unsigned char num)
@@ -3776,3 +3826,145 @@ lputs_ISR(aux,8);
 }
 
 }
+
+void sweep()
+{
+unsigned char gain_index;
+unsigned char freq_index;
+unsigned char i, ret, count;
+short I,Q;
+unsigned char aux[7], check;
+
+BIO3 asic;
+asic.datashort = 0;
+
+
+freq_index = 10;
+gain_index = 0;
+setGain(&asic,gain_index);
+
+
+for (i = 0; i < 11; i++) {
+setFreq(&asic,freq_index);
+
+
+count = 0;
+ret = 0;
+
+do {
+
+ret = measure(&I,&Q,asic);
+
+if (ret == 1) {
+
+if (count == 2) break;
+count = ret;
+
+if (gain_index < 7) {
+gain_index++;
+setGain(&asic,gain_index);
+} else {
+break;
+}
+
+continue;
+
+} else if (ret == 2) {
+
+if (count == 1) break;
+count = ret;
+
+if (gain_index > 0) {
+gain_index--;
+setGain(&asic,gain_index);
+} else {
+break;
+}
+
+continue;
+}
+
+} while (ret);
+
+# 504
+ret = (freq_index << 4) & 0xf0;
+ret |= (gain_index & 0xff);
+
+aux[0] = 'f';
+aux[1] = (unsigned char)(I & 0xff);
+aux[2] = (unsigned char)((I >> 8) & 0xff);
+aux[3] = (unsigned char)(Q & 0xff);
+aux[4] = (unsigned char)((Q >> 8) & 0xff);
+aux[5] = ret;
+
+check = calculate_checksum(aux,6);
+aux[6] = check;
+
+
+lputs_ISR(aux,7);
+
+freq_index--;
+}
+
+}
+
+
+
+
+unsigned char measure(short* I, short* Q, BIO3 asic)
+{
+unsigned short offset, value;
+short aux1,aux2;
+
+
+
+asic.data_bits.CE = 0;
+BIO_config(asic);
+_delay((unsigned long)((20)*(500000/4000.0)));
+
+offset = ADC_5();
+
+
+asic.data_bits.CE = 1;
+asic.data_bits.IQ = 0;
+
+BIO_config(asic);
+_delay((unsigned long)((20)*(500000/4000.0)));
+
+value = ADC_5();
+*I = (value - offset);
+aux1 = *I;
+
+if (aux1 < 0) {
+aux1 = -aux1;
+}
+
+
+
+
+asic.data_bits.IQ = 1;
+
+BIO_config(asic);
+_delay((unsigned long)((20)*(500000/4000.0)));
+
+value = ADC_5();
+*Q = (value - offset);
+aux2 = *Q;
+
+if (aux2 < 0) {
+aux2 = -aux2;
+}
+
+if (aux2 > aux1) {
+aux1 = aux2;
+}
+
+if (aux1 > 370) {
+return 2;
+} else if (aux1 < 86) {
+return 1;
+}
+
+return 0;
+}
+

@@ -13,9 +13,13 @@ void mess_handler()
        
     //BIO3 asic;
     
-    switch (mess_rec[0]) {
+    switch (mess_rec[0]) {        
         case 't': //test comm
             lputs_ISR(mess_rec,mess_rec_size);
+            break;
+        
+        case 'f': //single shot sweep measurement SE no offset, crc
+            sweep();
             break;
              
         case 'c': //config            
@@ -309,7 +313,7 @@ void measure_Offset()
 
 void measure_Impedance_SE()
 {
-     unsigned char aux[13], check;
+     unsigned char aux[8], check;
     //unsigned short value1,value2,value3;
      unsigned short value1;
     
@@ -433,3 +437,166 @@ void calibrate_reader()
     }
     
 }
+
+void sweep()
+{
+    unsigned char gain_index;
+    unsigned char freq_index;
+    unsigned char i, ret, count;
+    short I,Q;
+    unsigned char aux[7], check;
+
+    BIO3 asic;    
+    asic.datashort = 0; //Clears all bits: NS = 0 (32 steps), CE = 0 (disabled)
+        
+    //Initial ASIC configuration
+    freq_index = 10; // Starts from 1kHz   
+    gain_index = 0; // Starts with lowest gain    
+    setGain(&asic,gain_index); // Set initial gain
+       
+    //Sweep all frequencies
+    for (i = 0; i < 11; i++) {
+        setFreq(&asic,freq_index);
+        
+        //Measure and check if it is in range
+        count = 0;
+        ret = 0;
+        
+        do {            
+        
+            ret = measure(&I,&Q,asic);
+            
+            if (ret == 1) { //Increase Gain and repeat
+                
+                if (count == 2) break; // Previous decrease of gain, stops now!
+                count = ret;                
+                
+                if (gain_index < 7) {
+                    gain_index++;
+                    setGain(&asic,gain_index);
+                } else {
+                    break; 
+                }   
+                                
+                continue;
+                
+            } else if (ret == 2) { //Decrease Gain and repeat
+            
+                if (count == 1) break; // Previous increase of gain, stops now!
+                count = ret;
+                
+                if (gain_index > 0) {
+                    gain_index--;
+                    setGain(&asic,gain_index);
+                } else {
+                    break; 
+                }
+                
+                continue;
+            }
+                        
+        } while (ret);
+         
+              
+        //Transmit I,Q, and current gain/freq config
+        
+        //merge gain and freq in one byte [freq_index : gain_index ]
+        ret = (freq_index << 4) & 0xf0;
+        ret |= (gain_index & 0xff);
+        
+        aux[0] = 'f';
+        aux[1] = (unsigned char)(I & 0xff);
+        aux[2] = (unsigned char)((I >> 8) & 0xff);
+        aux[3] = (unsigned char)(Q & 0xff);
+        aux[4] = (unsigned char)((Q >> 8) & 0xff);
+        aux[5] = ret;
+        
+        check = calculate_checksum(aux,6);
+        aux[6] = check;
+        
+        
+        lputs_ISR(aux,7);
+        
+        freq_index--;
+    }
+    
+}
+
+
+//Return 0 if correct, 1 if measurement is too small, 2 if it is too large
+
+unsigned char measure(short* I, short* Q, BIO3 asic)
+{
+    unsigned short offset, value;
+    short aux1,aux2;
+    //Measurements done using Single Ended output
+        
+    //Extract DC offset (expected value around 512 ~ 0.9V)
+    asic.data_bits.CE = 0; //Disable the signal generator
+    BIO_config(asic); 
+     __delay_ms(CONF_DELAY);
+     
+    offset = ADC_5(); //read channel 5 (VOUT_SE)   
+    
+    //extract I
+    asic.data_bits.CE = 1; //Enable the signal generator
+    asic.data_bits.IQ = 0; //Select I reference
+    
+    BIO_config(asic); 
+     __delay_ms(CONF_DELAY);
+     
+    value = ADC_5(); //read channel 5 (VOUT_SE)   
+    *I = (value - offset);
+    aux1 = *I;
+        
+    if (aux1 < 0) {
+        aux1 = -aux1;
+    }
+      
+    
+      //extract Q
+    //asic.data_bits.CE = 1; //Enable the signal generator
+    asic.data_bits.IQ = 1; //Select I reference
+    
+    BIO_config(asic); 
+     __delay_ms(CONF_DELAY);
+     
+    value = ADC_5(); //read channel 5 (VOUT_SE)   
+    *Q = (value - offset);
+    aux2 = *Q;
+    
+    if (aux2 < 0) {
+        aux2 = -aux2;
+    }
+    
+    if (aux2 > aux1) {
+        aux1 = aux2;
+    }
+    
+    if (aux1 > MEAS_MAX) {
+        return 2;
+    } else if (aux1 < MEAS_MIN) {
+        return 1;
+    }
+         
+    return 0;    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
