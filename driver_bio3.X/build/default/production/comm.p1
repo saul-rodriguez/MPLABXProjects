@@ -15,6 +15,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _measure_Offset `(v ~T0 @X0 0 ef ]
 "34
 [v _measure_Impedance_SE `(v ~T0 @X0 0 ef ]
+"36
+[v _calibrate_reader `(v ~T0 @X0 0 ef ]
 "41 bio3.h
 [s S292 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S292 BIO3_bits_stuct RE FS GD0 GD1 GD2 NS CE GS0 GS1 GS2 GS3 IQ F0 F1 F2 F3 ]
@@ -35,6 +37,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 "152 /opt/microchip/xc8/v1.40/include/pic.h
 [v __delay `JF2436 ~T0 @X0 0 e ]
 [p i __delay ]
+"35 comm.h
+[v _calculate_checksum `(uc ~T0 @X0 0 ef2`*uc`uc ]
 "200 bio3.h
 [v _setGain `(v ~T0 @X0 0 ef2`*S293`uc ]
 "201
@@ -2706,9 +2710,18 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;comm.c: 47: break;
 "47
 [e $U 301  ]
+[; ;comm.c: 50: case '&':
+"50
+[e :U 311 ]
+[; ;comm.c: 51: calibrate_reader();
+"51
+[e ( _calibrate_reader ..  ]
+[; ;comm.c: 52: break;
+"52
+[e $U 301  ]
 [; ;comm.c: 56: default:
 "56
-[e :U 311 ]
+[e :U 312 ]
 [; ;comm.c: 57: break;
 "57
 [e $U 301  ]
@@ -2726,7 +2739,8 @@ Version 3.2 HI-TECH Software Intermediate Code
  , $ -> -> 121 `ui `uc 308
  , $ -> -> 111 `ui `uc 309
  , $ -> -> 115 `ui `uc 310
- 311 ]
+ , $ -> -> 38 `ui `uc 311
+ 312 ]
 "58
 [e :U 301 ]
 [; ;comm.c: 59: }
@@ -2758,7 +2772,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ( _BIO_config (1 _asic ]
 [; ;comm.c: 89: }
 "89
-[e :UE 312 ]
+[e :UE 313 ]
 }
 "91
 [v _read_ADC_channels `(v ~T0 @X0 1 ef ]
@@ -2816,7 +2830,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ( _lputs_ISR (2 , &U _aux -> -> 7 `i `uc ]
 [; ;comm.c: 113: }
 "113
-[e :UE 313 ]
+[e :UE 314 ]
 }
 "115
 [v _measure_Impedance `(v ~T0 @X0 1 ef ]
@@ -2935,7 +2949,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ( _lputs_ISR (2 , &U _aux -> -> 13 `i `uc ]
 [; ;comm.c: 198: }
 "198
-[e :UE 314 ]
+[e :UE 315 ]
 }
 "200
 [v _measure_Impedance_no_offset `(v ~T0 @X0 1 ef ]
@@ -3027,7 +3041,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ( _lputs_ISR (2 , &U _aux -> -> 9 `i `uc ]
 [; ;comm.c: 263: }
 "263
-[e :UE 315 ]
+[e :UE 316 ]
 }
 "265
 [v _measure_Offset `(v ~T0 @X0 1 ef ]
@@ -3088,7 +3102,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ( _lputs_ISR (2 , &U _aux -> -> 5 `i `uc ]
 [; ;comm.c: 311: }
 "311
-[e :UE 316 ]
+[e :UE 317 ]
 }
 "314
 [v _measure_Impedance_SE `(v ~T0 @X0 1 ef ]
@@ -3108,6 +3122,26 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;comm.c: 316: unsigned char aux[8], check;
 [; ;comm.c: 318: unsigned short value1;
 [; ;comm.c: 321: BIO3 asic;
+[; ;comm.c: 328: check = calculate_checksum(mess_rec,4);
+"328
+[e = _check ( _calculate_checksum (2 , -> &U _mess_rec `*uc -> -> 4 `i `uc ]
+[; ;comm.c: 329: if (check) {
+"329
+[e $ ! != -> _check `i -> -> -> 0 `i `uc `i 319  ]
+{
+[; ;comm.c: 330: aux[0] = 'e';
+"330
+[e = *U + &U _aux * -> -> -> 0 `i `ui `ux -> -> # *U &U _aux `ui `ux -> -> 101 `ui `uc ]
+[; ;comm.c: 331: lputs_ISR(aux,1);
+"331
+[e ( _lputs_ISR (2 , &U _aux -> -> 1 `i `uc ]
+[; ;comm.c: 332: return;
+"332
+[e $UE 318  ]
+"333
+}
+[e :U 319 ]
+[; ;comm.c: 333: }
 [; ;comm.c: 336: aux[0] = 's';
 "336
 [e = *U + &U _aux * -> -> -> 0 `i `ui `ux -> -> # *U &U _aux `ui `ux -> -> 115 `ui `uc ]
@@ -3174,12 +3208,18 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;comm.c: 393: aux[6] = (unsigned char)((value1 >> 8) & 0xff);
 "393
 [e = *U + &U _aux * -> -> -> 6 `i `ui `ux -> -> # *U &U _aux `ui `ux -> & >> -> _value1 `ui -> 8 `i -> -> 255 `i `ui `uc ]
-[; ;comm.c: 401: lputs_ISR(aux,7);
-"401
-[e ( _lputs_ISR (2 , &U _aux -> -> 7 `i `uc ]
+[; ;comm.c: 397: check = calculate_checksum(aux,7);
+"397
+[e = _check ( _calculate_checksum (2 , &U _aux -> -> 7 `i `uc ]
+[; ;comm.c: 398: aux[7] = check;
+"398
+[e = *U + &U _aux * -> -> -> 7 `i `ui `ux -> -> # *U &U _aux `ui `ux _check ]
+[; ;comm.c: 399: lputs_ISR(aux,8);
+"399
+[e ( _lputs_ISR (2 , &U _aux -> -> 8 `i `uc ]
 [; ;comm.c: 405: }
 "405
-[e :UE 317 ]
+[e :UE 318 ]
 }
 "407
 [v _calculate_checksum `(uc ~T0 @X0 1 ef2`*uc`uc ]
@@ -3204,8 +3244,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 "412
 {
 [e = _i -> -> 0 `i `uc ]
-[e $U 322  ]
-[e :U 319 ]
+[e $U 324  ]
+[e :U 321 ]
 {
 [; ;comm.c: 413: check ^= data[i];
 "413
@@ -3214,19 +3254,19 @@ Version 3.2 HI-TECH Software Intermediate Code
 }
 "412
 [e ++ _i -> -> 1 `i `uc ]
+[e :U 324 ]
+[e $ < -> _i `i -> _num `i 321  ]
 [e :U 322 ]
-[e $ < -> _i `i -> _num `i 319  ]
-[e :U 320 ]
 "414
 }
 [; ;comm.c: 414: }
 [; ;comm.c: 416: return check;
 "416
 [e ) _check ]
-[e $UE 318  ]
+[e $UE 320  ]
 [; ;comm.c: 417: }
 "417
-[e :UE 318 ]
+[e :UE 320 ]
 }
 "419
 [v _calibrate_reader `(v ~T0 @X0 1 ef ]
@@ -3265,7 +3305,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = *U + &U _aux * -> -> -> 7 `i `ui `ux -> -> # *U &U _aux `ui `ux -> -> 64 `ui `uc ]
 [; ;comm.c: 432: while (1) {
 "432
-[e :U 325 ]
+[e :U 327 ]
 {
 [; ;comm.c: 433: asm("clrwdt");
 "433
@@ -3278,14 +3318,14 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ( _lputs_ISR (2 , &U _aux -> -> 8 `i `uc ]
 "437
 }
-[e :U 324 ]
-"432
-[e $U 325  ]
 [e :U 326 ]
+"432
+[e $U 327  ]
+[e :U 328 ]
 [; ;comm.c: 437: }
 [; ;comm.c: 439: }
 "439
-[e :UE 323 ]
+[e :UE 325 ]
 }
 "441
 [v _sweep `(v ~T0 @X0 1 ef ]
@@ -3333,9 +3373,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 "458
 {
 [e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 11 `i 328  ]
-[e $U 329  ]
-[e :U 328 ]
+[e $ < -> _i `i -> 11 `i 330  ]
+[e $U 331  ]
+[e :U 330 ]
 {
 [; ;comm.c: 459: setFreq(&asic,freq_index);
 "459
@@ -3348,26 +3388,26 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _ret -> -> 0 `i `uc ]
 [; ;comm.c: 465: do {
 "465
-[e :U 333 ]
+[e :U 335 ]
 {
 [; ;comm.c: 467: ret = measure(&I,&Q,asic);
 "467
 [e = _ret ( _measure (3 , , &U _I &U _Q _asic ]
 [; ;comm.c: 469: if (ret == 1) {
 "469
-[e $ ! == -> _ret `i -> 1 `i 334  ]
+[e $ ! == -> _ret `i -> 1 `i 336  ]
 {
 [; ;comm.c: 471: if (count == 2) break;
 "471
-[e $ ! == -> _count `i -> 2 `i 335  ]
-[e $U 332  ]
-[e :U 335 ]
+[e $ ! == -> _count `i -> 2 `i 337  ]
+[e $U 334  ]
+[e :U 337 ]
 [; ;comm.c: 472: count = ret;
 "472
 [e = _count _ret ]
 [; ;comm.c: 474: if (gain_index < 7) {
 "474
-[e $ ! < -> _gain_index `i -> 7 `i 336  ]
+[e $ ! < -> _gain_index `i -> 7 `i 338  ]
 {
 [; ;comm.c: 475: gain_index++;
 "475
@@ -3378,37 +3418,37 @@ Version 3.2 HI-TECH Software Intermediate Code
 "477
 }
 [; ;comm.c: 477: } else {
-[e $U 337  ]
-[e :U 336 ]
+[e $U 339  ]
+[e :U 338 ]
 {
 [; ;comm.c: 478: break;
 "478
-[e $U 332  ]
+[e $U 334  ]
 "479
 }
-[e :U 337 ]
+[e :U 339 ]
 [; ;comm.c: 479: }
 [; ;comm.c: 481: continue;
 "481
-[e $U 331  ]
+[e $U 333  ]
 "483
 }
 [; ;comm.c: 483: } else if (ret == 2) {
-[e $U 338  ]
-[e :U 334 ]
-[e $ ! == -> _ret `i -> 2 `i 339  ]
+[e $U 340  ]
+[e :U 336 ]
+[e $ ! == -> _ret `i -> 2 `i 341  ]
 {
 [; ;comm.c: 485: if (count == 1) break;
 "485
-[e $ ! == -> _count `i -> 1 `i 340  ]
-[e $U 332  ]
-[e :U 340 ]
+[e $ ! == -> _count `i -> 1 `i 342  ]
+[e $U 334  ]
+[e :U 342 ]
 [; ;comm.c: 486: count = ret;
 "486
 [e = _count _ret ]
 [; ;comm.c: 488: if (gain_index > 0) {
 "488
-[e $ ! > -> _gain_index `i -> 0 `i 341  ]
+[e $ ! > -> _gain_index `i -> 0 `i 343  ]
 {
 [; ;comm.c: 489: gain_index--;
 "489
@@ -3419,30 +3459,30 @@ Version 3.2 HI-TECH Software Intermediate Code
 "491
 }
 [; ;comm.c: 491: } else {
-[e $U 342  ]
-[e :U 341 ]
+[e $U 344  ]
+[e :U 343 ]
 {
 [; ;comm.c: 492: break;
 "492
-[e $U 332  ]
+[e $U 334  ]
 "493
 }
-[e :U 342 ]
+[e :U 344 ]
 [; ;comm.c: 493: }
 [; ;comm.c: 495: continue;
 "495
-[e $U 331  ]
+[e $U 333  ]
 "496
 }
-[e :U 339 ]
+[e :U 341 ]
 "498
-[e :U 338 ]
+[e :U 340 ]
 }
-[e :U 331 ]
+[e :U 333 ]
 [; ;comm.c: 496: }
 [; ;comm.c: 498: } while (ret);
-[e $ != -> _ret `i -> -> -> 0 `i `uc `i 333  ]
-[e :U 332 ]
+[e $ != -> _ret `i -> -> -> 0 `i `uc `i 335  ]
+[e :U 334 ]
 [; ;comm.c: 504: ret = (freq_index << 4) & 0xf0;
 "504
 [e = _ret -> & << -> _freq_index `i -> 4 `i -> 240 `i `uc ]
@@ -3483,14 +3523,14 @@ Version 3.2 HI-TECH Software Intermediate Code
 }
 "458
 [e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 11 `i 328  ]
-[e :U 329 ]
+[e $ < -> _i `i -> 11 `i 330  ]
+[e :U 331 ]
 "521
 }
 [; ;comm.c: 521: }
 [; ;comm.c: 523: }
 "523
-[e :UE 327 ]
+[e :UE 329 ]
 }
 "528
 [v _measure `(uc ~T0 @X0 1 ef3`*s`*s`S293 ]
@@ -3548,14 +3588,14 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _aux1 *U _I ]
 [; ;comm.c: 552: if (aux1 < 0) {
 "552
-[e $ ! < -> _aux1 `i -> 0 `i 344  ]
+[e $ ! < -> _aux1 `i -> 0 `i 346  ]
 {
 [; ;comm.c: 553: aux1 = -aux1;
 "553
 [e = _aux1 -> -U -> _aux1 `i `s ]
 "554
 }
-[e :U 344 ]
+[e :U 346 ]
 [; ;comm.c: 554: }
 [; ;comm.c: 559: asic.data_bits.IQ = 1;
 "559
@@ -3577,55 +3617,55 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _aux2 *U _Q ]
 [; ;comm.c: 568: if (aux2 < 0) {
 "568
-[e $ ! < -> _aux2 `i -> 0 `i 345  ]
+[e $ ! < -> _aux2 `i -> 0 `i 347  ]
 {
 [; ;comm.c: 569: aux2 = -aux2;
 "569
 [e = _aux2 -> -U -> _aux2 `i `s ]
 "570
 }
-[e :U 345 ]
+[e :U 347 ]
 [; ;comm.c: 570: }
 [; ;comm.c: 572: if (aux2 > aux1) {
 "572
-[e $ ! > -> _aux2 `i -> _aux1 `i 346  ]
+[e $ ! > -> _aux2 `i -> _aux1 `i 348  ]
 {
 [; ;comm.c: 573: aux1 = aux2;
 "573
 [e = _aux1 _aux2 ]
 "574
 }
-[e :U 346 ]
+[e :U 348 ]
 [; ;comm.c: 574: }
 [; ;comm.c: 576: if (aux1 > 370) {
 "576
-[e $ ! > -> _aux1 `i -> 370 `i 347  ]
+[e $ ! > -> _aux1 `i -> 370 `i 349  ]
 {
 [; ;comm.c: 577: return 2;
 "577
 [e ) -> -> 2 `i `uc ]
-[e $UE 343  ]
+[e $UE 345  ]
 "578
 }
 [; ;comm.c: 578: } else if (aux1 < 86) {
-[e $U 348  ]
-[e :U 347 ]
-[e $ ! < -> _aux1 `i -> 86 `i 349  ]
+[e $U 350  ]
+[e :U 349 ]
+[e $ ! < -> _aux1 `i -> 86 `i 351  ]
 {
 [; ;comm.c: 579: return 1;
 "579
 [e ) -> -> 1 `i `uc ]
-[e $UE 343  ]
+[e $UE 345  ]
 "580
 }
-[e :U 349 ]
+[e :U 351 ]
 "582
-[e :U 348 ]
+[e :U 350 ]
 [; ;comm.c: 580: }
 [; ;comm.c: 582: return 0;
 [e ) -> -> 0 `i `uc ]
-[e $UE 343  ]
+[e $UE 345  ]
 [; ;comm.c: 583: }
 "583
-[e :UE 343 ]
+[e :UE 345 ]
 }

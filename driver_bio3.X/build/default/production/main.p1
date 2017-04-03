@@ -2,6 +2,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [p mainexit ]
 "66 mcc_generated_files/mcc.h
 [v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
+"80
+[v _USARTX_change_pol `(v ~T0 @X0 0 ef ]
 "4 TMR0.h
 [v _setup_TMR0 `(v ~T0 @X0 0 ef ]
 "73 USART1823.h
@@ -2659,6 +2661,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 24: SYSTEM_Initialize();
 "24
 [e ( _SYSTEM_Initialize ..  ]
+[; ;main.c: 26: USARTX_change_pol();
+"26
+[e ( _USARTX_change_pol ..  ]
 [; ;main.c: 28: setup_TMR0();
 "28
 [e ( _setup_TMR0 ..  ]

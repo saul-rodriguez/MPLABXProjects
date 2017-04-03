@@ -3523,7 +3523,13 @@ case 's':
 measure_Impedance_SE();
 break;
 
-# 56
+
+case '&':
+calibrate_reader();
+break;
+
+
+
 default:
 break;
 }
@@ -3738,7 +3744,15 @@ unsigned short value1;
 
 BIO3 asic;
 
-# 336
+# 328
+check = calculate_checksum(mess_rec,4);
+if (check) {
+aux[0] = 'e';
+lputs_ISR(aux,1);
+return;
+}
+
+
 aux[0] = 's';
 
 
@@ -3786,11 +3800,13 @@ value1 = ADC_5();
 aux[5] = (unsigned char)(value1 & 0xff);
 aux[6] = (unsigned char)((value1 >> 8) & 0xff);
 
-# 401
-lputs_ISR(aux,7);
 
 
+check = calculate_checksum(aux,7);
+aux[7] = check;
+lputs_ISR(aux,8);
 
+# 405
 }
 
 unsigned char calculate_checksum(unsigned char* data, unsigned char num)
