@@ -3289,7 +3289,7 @@ void SYSTEM_Initialize(void);
 void OSCILLATOR_Initialize(void);
 void USARTX_change_pol(void);
 
-# 41 "bio3.h"
+# 45 "bio3.h"
 typedef struct BIO3_bits_stuct {
 unsigned RE :1;
 unsigned FS :1;
@@ -3316,7 +3316,7 @@ unsigned char data[2];
 BIO3_bits data_bits;
 } BIO3;
 
-# 71
+# 75
 typedef struct RADIO_gain_bits_struct {
 unsigned GD0 :1;
 unsigned GD1 :1;
@@ -3334,7 +3334,7 @@ unsigned char data;
 RADIO_gain_bits data_bits;
 } RADIO_gain;
 
-# 99
+# 103
 const unsigned char gains[8] = {
 0b00000100,
 0b00000101,
@@ -3358,7 +3358,7 @@ unsigned char data;
 RADIO_freq_bits data_bits;
 } RADIO_freq;
 
-# 135
+# 139
 const unsigned char freqs[11] = {
 0b00000000,
 0b00000001,
@@ -3420,44 +3420,57 @@ unsigned char data[5];
 VIN_bits data_bits;
 } VIN;
 
+# 215
+typedef struct VINfilt_bits_struct {
+unsigned CapSel0 :1;
+unsigned CapSel1 :1;
+unsigned CapSel2 :1;
+unsigned CapSel3 :1;
+unsigned CcompSel0 :1;
+unsigned CcompSel1 :1;
+unsigned EnRdegHF0 :1;
+unsigned EnRdegHF1 :1;
 
+unsigned EnRdeg :1;
+unsigned DP0 :1;
+unsigned DP1 :1;
+unsigned DP2 :1;
+unsigned DN0 :1;
+unsigned DN1 :1;
+unsigned EnHF :1;
+unsigned EnMF :1;
 
-void BIO_config(BIO3 conf);
-void VIN_config(VIN conf);
-void setGain(BIO3* asic, unsigned char gain_index);
-void setFreq(BIO3* asic, unsigned char freq_index);
+unsigned EnLF :1;
+} VINfilt_bits;
 
-# 41 "bio3.c"
-void BIO_config(BIO3 conf)
-{
-unsigned char i, out;
+typedef union {
+unsigned short long datal;
+unsigned char data[3];
+VINfilt_bits data_bits;
+} VINfilt;
 
-out &= 0b11110111; PORTC = out;;
-;;
+const unsigned short long filt[11] = {
+0b00100000011000111,
+0b00100000011001111,
+0b00100000001101111,
+0b00100000000111111,
+0b01000100100001111,
+0b01000100000001111,
+0b01010010000001111,
+0b10000100100001111,
+0b10000100000001111,
+0b10010010000001111,
+0b10011001000001111
+};
 
-RA5 = 0;;
-;;
+# 266
+void config(VIN conf);
+void setGain(VIN* asic, unsigned char gain_index);
+void setFreq(VIN* asic, unsigned char freq_index);
+void setFilt(VIN* asic, unsigned char freq_index);
 
-RA5 = 1;;
-
-for(i = 0; i < 16; i++) {
-if (conf.datashort & 0x0001) {
-out |= 0b00000100; PORTC = out;;
-} else {
-out &= 0b11111011; PORTC = out;;
-}
-conf.datashort >>= 1;
-
-;;
-
-out |= 0b00001000; PORTC = out;;
-;;
-out &= 0b11110111; PORTC = out;;
-
-}
-}
-
-void VIN_config(VIN conf)
+# 189 "bio3.c"
+void config(VIN conf)
 {
 
 unsigned char i,j,out;
@@ -3515,11 +3528,10 @@ out |= 0b00001000; PORTC = out;;
 out &= 0b11110111; PORTC = out;;
 }
 
-# 169
 }
 
-# 218
-void setGain(BIO3* asic, unsigned char gain_index)
+
+void setGain(VIN* asic, unsigned char gain_index)
 {
 RADIO_gain aux;
 aux.data = gains[gain_index];
@@ -3533,7 +3545,7 @@ asic->data_bits.GS2 = aux.data_bits.GS2;
 asic->data_bits.GS3 = aux.data_bits.GS3;
 }
 
-void setFreq(BIO3* asic, unsigned char freq_index)
+void setFreq(VIN* asic, unsigned char freq_index)
 {
 RADIO_freq aux;
 aux.data = freqs[freq_index];
@@ -3544,3 +3556,15 @@ asic->data_bits.F2 = aux.data_bits.F2;
 asic->data_bits.F3 = aux.data_bits.F3;
 
 }
+
+void setFilt(VIN* asic, unsigned char freq_index)
+{
+VINfilt aux;
+aux.datal = filt[freq_index];
+
+asic->data[2] = aux.data[0];
+asic->data[3] = aux.data[1];
+asic->data[4] = aux.data[2];
+
+}
+

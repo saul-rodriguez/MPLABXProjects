@@ -25,17 +25,21 @@ extern "C" {
     
     
 //Here uncomment one of the ASICs to use
-#define BIOASIC
-//#define VINASIC  
+//#define BIOASIC
+#define VINASIC  
 
 //Demodulator transient delay after a valid configuration
 //#define CONF_DELAY 60
 
-//vinnova    
-//#define CONF_DELAY 15
+//vinnova 
+#ifdef VINASIC
+#define CONF_DELAY 15
+#endif
     
 //Tested with bio
+#ifdef BIOASIC    
 #define CONF_DELAY 20
+#endif
 
 //Implantable structure    
 typedef struct BIO3_bits_stuct {
@@ -195,10 +199,79 @@ typedef union {
 
 #define VIN_LENGTH 33
 
-void BIO_config(BIO3 conf);
-void VIN_config(VIN conf);
+#define FILT_FREQ0  0b00100000011000111
+#define FILT_FREQ1  0b00100000011001111
+#define FILT_FREQ2  0b00100000001101111
+#define FILT_FREQ3  0b00100000000111111
+#define FILT_FREQ4  0b01000100100001111
+#define FILT_FREQ5  0b01000100000001111
+#define FILT_FREQ6  0b01010010000001111
+//#define FILT_FREQ7  0b01011001000001111
+#define FILT_FREQ7  0b10000100100001111
+#define FILT_FREQ8  0b10000100000001111
+#define FILT_FREQ9  0b10010010000001111
+#define FILT_FREQ10 0b10011001000001111
+
+typedef struct VINfilt_bits_struct {
+    unsigned CapSel0    :1;
+    unsigned CapSel1    :1;
+    unsigned CapSel2    :1;
+    unsigned CapSel3    :1;
+    unsigned CcompSel0  :1;
+    unsigned CcompSel1  :1;
+    unsigned EnRdegHF0  :1;
+    unsigned EnRdegHF1  :1;
+
+    unsigned EnRdeg     :1;
+    unsigned DP0        :1;
+    unsigned DP1        :1;
+    unsigned DP2        :1;
+    unsigned DN0        :1;
+    unsigned DN1        :1;
+    unsigned EnHF       :1;
+    unsigned EnMF       :1;
+
+    unsigned EnLF       :1;
+} VINfilt_bits;
+
+typedef union {
+    unsigned short long datal;
+    unsigned char data[3];
+    VINfilt_bits data_bits;
+} VINfilt;
+
+const unsigned short long filt[11] = {
+    FILT_FREQ0,
+    FILT_FREQ1,
+    FILT_FREQ2,
+    FILT_FREQ3,
+    FILT_FREQ4,
+    FILT_FREQ5,
+    FILT_FREQ6,
+    FILT_FREQ7,
+    FILT_FREQ8,
+    FILT_FREQ9,
+    FILT_FREQ10    
+};
+
+
+//void BIO_config(BIO3 conf);
+//void VIN_config(VIN conf);
+
+#ifdef BIOASIC
+void config(BIO3 conf);
 void setGain(BIO3* asic, unsigned char gain_index);
 void setFreq(BIO3* asic, unsigned char freq_index);
+#else
+void config(VIN conf);
+void setGain(VIN* asic, unsigned char gain_index);
+void setFreq(VIN* asic, unsigned char freq_index);
+void setFilt(VIN* asic, unsigned char freq_index);
+#endif
+
+
+
+
 
 
 

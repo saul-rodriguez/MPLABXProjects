@@ -45,7 +45,7 @@
 #define RX_RECEIVED_TIMEOUT 2
 
 #define TX_BUF_SIZE 15
-#define RX_BUF_SIZE 15
+#define RX_BUF_SIZE 10
 
 extern volatile unsigned char USART_rx_flag;
 extern volatile unsigned char USART_rx_index;

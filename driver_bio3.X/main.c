@@ -37,7 +37,7 @@ void main(void) {
     RESET_BIO = 1;
    
     //TEST FOR SIMULATION
-    //sweep();
+ //   sweep();
     
     //TEST USART INDUCTIVE STARTS HERE
     

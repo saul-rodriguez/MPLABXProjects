@@ -15,7 +15,7 @@ extern "C" {
 #include "bio3.h"
     
 //uncomment if inductive coupling is used for power and communications
-#define INDUCTIVE_POW
+//#define INDUCTIVE_POW
 
     
 #define BUFF_SIZE 10
@@ -35,7 +35,12 @@ void measure_Impedance_SE();
 unsigned char calculate_checksum(unsigned char* data, unsigned char num);
 void calibrate_reader();
 void sweep();
-unsigned char measure(short* I, short* Q, BIO3 asic);
+
+//#ifdef BIOASIC
+//unsigned char measure(short* I, short* Q, BIO3 asic);
+//#else
+unsigned char measure(short* I, short* Q, VIN asic);
+//#endif
 
 #ifdef	__cplusplus
 }

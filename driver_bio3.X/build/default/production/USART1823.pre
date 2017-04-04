@@ -3191,7 +3191,7 @@ extern volatile unsigned char USART_rx_flag;
 extern volatile unsigned char USART_rx_index;
 
 
-extern volatile unsigned char USART_rx_data[15];
+extern volatile unsigned char USART_rx_data[10];
 
 extern volatile unsigned char USART_tx_flag;
 extern volatile unsigned char USART_tx_data[15];
@@ -3217,7 +3217,7 @@ volatile unsigned char USART_rx_flag;
 volatile unsigned char USART_rx_index;
 
 
-volatile unsigned char USART_rx_data[15];
+volatile unsigned char USART_rx_data[10];
 
 volatile unsigned char USART_tx_flag;
 volatile unsigned char USART_tx_data[15];

@@ -2375,7 +2375,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic.h: 194: extern __bit __timeout;
 [; ;USART1823.h: 50: extern volatile unsigned char USART_rx_flag;
 [; ;USART1823.h: 51: extern volatile unsigned char USART_rx_index;
-[; ;USART1823.h: 54: extern volatile unsigned char USART_rx_data[15];
+[; ;USART1823.h: 54: extern volatile unsigned char USART_rx_data[10];
 [; ;USART1823.h: 56: extern volatile unsigned char USART_tx_flag;
 [; ;USART1823.h: 57: extern volatile unsigned char USART_tx_data[15];
 [; ;USART1823.h: 58: extern volatile unsigned char USART_tx_index;
@@ -2398,8 +2398,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _USART_rx_index `Vuc ~T0 @X0 1 e ]
 [; ;USART1823.c: 6: volatile unsigned char USART_rx_index;
 "9
-[v _USART_rx_data `Vuc ~T0 @X0 -> 15 `i e ]
-[; ;USART1823.c: 9: volatile unsigned char USART_rx_data[15];
+[v _USART_rx_data `Vuc ~T0 @X0 -> 10 `i e ]
+[; ;USART1823.c: 9: volatile unsigned char USART_rx_data[10];
 "11
 [v _USART_tx_flag `Vuc ~T0 @X0 1 e ]
 [; ;USART1823.c: 11: volatile unsigned char USART_tx_flag;

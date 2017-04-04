@@ -84,7 +84,7 @@ void config_ASIC()
     
     lputs_ISR(mess_rec,mess_rec_size);
     
-    VIN_config(asic);
+    config(asic);
 #endif
 }
 
@@ -143,7 +143,7 @@ void measure_Impedance()
     asic.data[4] = mess_rec[5];
    
     asic.data_bits.CE = 0; //Disable the signal generator
-    VIN_config(asic);
+    config(asic);
     #endif
     
     __delay_ms(CONF_DELAY);
@@ -163,7 +163,7 @@ void measure_Impedance()
 #ifdef BIOASIC
      BIO_config(asic);                   
 #else
-     VIN_config(asic);
+     config(asic);
 #endif
     __delay_ms(CONF_DELAY);
     
@@ -181,7 +181,7 @@ void measure_Impedance()
 #ifdef BIOASIC
      BIO_config(asic);                   
 #else
-     VIN_config(asic);
+     config(asic);
 #endif
     __delay_ms(CONF_DELAY);
     
@@ -228,7 +228,7 @@ void measure_Impedance_no_offset()
     #ifdef BIOASIC
         BIO_config(asic);                   
     #else
-        VIN_config(asic);
+        config(asic);
     #endif
     __delay_ms(CONF_DELAY);
     
@@ -246,7 +246,7 @@ void measure_Impedance_no_offset()
     #ifdef BIOASIC
         BIO_config(asic);                   
     #else
-        VIN_config(asic);
+        config(asic);
     #endif
     __delay_ms(CONF_DELAY);
     
@@ -292,7 +292,7 @@ void measure_Offset()
     asic.data[4] = mess_rec[5];
    
     asic.data_bits.CE = 0; //Disable the signal generator
-    VIN_config(asic);
+    config(asic);
     #endif
     
     __delay_ms(CONF_DELAY);
@@ -351,7 +351,7 @@ void measure_Impedance_SE()
     asic.data[4] = mess_rec[5];
    
     asic.data_bits.CE = 0; //Disable the signal generator
-    VIN_config(asic);
+    config(asic);
     #endif
     
     __delay_ms(CONF_DELAY);
@@ -368,7 +368,7 @@ void measure_Impedance_SE()
 #ifdef BIOASIC
      BIO_config(asic);                   
 #else
-     VIN_config(asic);
+     config(asic);
 #endif
     __delay_ms(CONF_DELAY);
     
@@ -383,7 +383,7 @@ void measure_Impedance_SE()
 #ifdef BIOASIC
      BIO_config(asic);                   
 #else
-     VIN_config(asic);
+     config(asic);
 #endif
     __delay_ms(CONF_DELAY);
     
@@ -446,8 +446,17 @@ void sweep()
     short I,Q;
     unsigned char aux[7], check;
 
+#ifdef BIOASIC
     BIO3 asic;    
     asic.datashort = 0; //Clears all bits: NS = 0 (32 steps), CE = 0 (disabled)
+#else
+    VIN asic;
+    asic.datas[0] = 0;
+    asic.datas[1] = 0;
+    asic.datas[2] = 0;
+    
+#endif
+    
         
     //Initial ASIC configuration
     freq_index = 10; // Starts from 1kHz   
@@ -456,7 +465,13 @@ void sweep()
        
     //Sweep all frequencies
     for (i = 0; i < 11; i++) {
+        
+        #ifdef BIOASIC
+        setFreq(&asic,freq_index);        
+        #else
         setFreq(&asic,freq_index);
+        setFilt(&asic,freq_index);
+        #endif
         
         //Measure and check if it is in range
         count = 0;
@@ -517,6 +532,12 @@ void sweep()
         
         lputs_ISR(aux,7);
         
+        #ifndef BIOASIC
+        __delay_ms(50);
+        #endif
+      
+        
+        
         freq_index--;
     }
     
@@ -525,7 +546,11 @@ void sweep()
 
 //Return 0 if correct, 1 if measurement is too small, 2 if it is too large
 
+#ifdef BIOASIC
 unsigned char measure(short* I, short* Q, BIO3 asic)
+#else
+unsigned char measure(short* I, short* Q, VIN asic)
+#endif
 {
     unsigned short offset, value;
     short aux1,aux2;
@@ -533,7 +558,7 @@ unsigned char measure(short* I, short* Q, BIO3 asic)
         
     //Extract DC offset (expected value around 512 ~ 0.9V)
     asic.data_bits.CE = 0; //Disable the signal generator
-    BIO_config(asic); 
+    config(asic); 
      __delay_ms(CONF_DELAY);
      
     offset = ADC_5(); //read channel 5 (VOUT_SE)   
@@ -542,7 +567,7 @@ unsigned char measure(short* I, short* Q, BIO3 asic)
     asic.data_bits.CE = 1; //Enable the signal generator
     asic.data_bits.IQ = 0; //Select I reference
     
-    BIO_config(asic); 
+    config(asic); 
      __delay_ms(CONF_DELAY);
      
     value = ADC_5(); //read channel 5 (VOUT_SE)   
@@ -558,7 +583,7 @@ unsigned char measure(short* I, short* Q, BIO3 asic)
     //asic.data_bits.CE = 1; //Enable the signal generator
     asic.data_bits.IQ = 1; //Select I reference
     
-    BIO_config(asic); 
+    config(asic); 
      __delay_ms(CONF_DELAY);
      
     value = ADC_5(); //read channel 5 (VOUT_SE)   
@@ -581,6 +606,7 @@ unsigned char measure(short* I, short* Q, BIO3 asic)
          
     return 0;    
 }
+
 
 
 

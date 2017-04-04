@@ -3289,7 +3289,7 @@ void SYSTEM_Initialize(void);
 void OSCILLATOR_Initialize(void);
 void USARTX_change_pol(void);
 
-# 41 "bio3.h"
+# 45 "bio3.h"
 typedef struct BIO3_bits_stuct {
 unsigned RE :1;
 unsigned FS :1;
@@ -3316,7 +3316,7 @@ unsigned char data[2];
 BIO3_bits data_bits;
 } BIO3;
 
-# 71
+# 75
 typedef struct RADIO_gain_bits_struct {
 unsigned GD0 :1;
 unsigned GD1 :1;
@@ -3334,7 +3334,7 @@ unsigned char data;
 RADIO_gain_bits data_bits;
 } RADIO_gain;
 
-# 99
+# 103
 const unsigned char gains[8] = {
 0b00000100,
 0b00000101,
@@ -3358,7 +3358,7 @@ unsigned char data;
 RADIO_freq_bits data_bits;
 } RADIO_freq;
 
-# 135
+# 139
 const unsigned char freqs[11] = {
 0b00000000,
 0b00000001,
@@ -3420,12 +3420,54 @@ unsigned char data[5];
 VIN_bits data_bits;
 } VIN;
 
+# 215
+typedef struct VINfilt_bits_struct {
+unsigned CapSel0 :1;
+unsigned CapSel1 :1;
+unsigned CapSel2 :1;
+unsigned CapSel3 :1;
+unsigned CcompSel0 :1;
+unsigned CcompSel1 :1;
+unsigned EnRdegHF0 :1;
+unsigned EnRdegHF1 :1;
 
+unsigned EnRdeg :1;
+unsigned DP0 :1;
+unsigned DP1 :1;
+unsigned DP2 :1;
+unsigned DN0 :1;
+unsigned DN1 :1;
+unsigned EnHF :1;
+unsigned EnMF :1;
 
-void BIO_config(BIO3 conf);
-void VIN_config(VIN conf);
-void setGain(BIO3* asic, unsigned char gain_index);
-void setFreq(BIO3* asic, unsigned char freq_index);
+unsigned EnLF :1;
+} VINfilt_bits;
+
+typedef union {
+unsigned short long datal;
+unsigned char data[3];
+VINfilt_bits data_bits;
+} VINfilt;
+
+const unsigned short long filt[11] = {
+0b00100000011000111,
+0b00100000011001111,
+0b00100000001101111,
+0b00100000000111111,
+0b01000100100001111,
+0b01000100000001111,
+0b01010010000001111,
+0b10000100100001111,
+0b10000100000001111,
+0b10010010000001111,
+0b10011001000001111
+};
+
+# 266
+void config(VIN conf);
+void setGain(VIN* asic, unsigned char gain_index);
+void setFreq(VIN* asic, unsigned char freq_index);
+void setFilt(VIN* asic, unsigned char freq_index);
 
 # 6 "RCM1823.h"
 void start_RCM();
@@ -3445,7 +3487,7 @@ extern volatile unsigned char USART_rx_flag;
 extern volatile unsigned char USART_rx_index;
 
 
-extern volatile unsigned char USART_rx_data[15];
+extern volatile unsigned char USART_rx_data[10];
 
 extern volatile unsigned char USART_tx_flag;
 extern volatile unsigned char USART_tx_data[15];
@@ -3483,7 +3525,11 @@ void measure_Impedance_SE();
 unsigned char calculate_checksum(unsigned char* data, unsigned char num);
 void calibrate_reader();
 void sweep();
-unsigned char measure(short* I, short* Q, BIO3 asic);
+
+
+
+
+unsigned char measure(short* I, short* Q, VIN asic);
 
 # 21 "ADC1823.h"
 void setup_ADC();
@@ -3499,8 +3545,7 @@ unsigned char i;
 
 SYSTEM_Initialize();
 
-USARTX_change_pol();
-
+# 28
 setup_TMR0();
 start_TX_USART_ISR();
 start_RX_USART_ISR();
@@ -3581,7 +3626,7 @@ return;
 }
 
 
-if (USART_rx_index >= 15) {
+if (USART_rx_index >= 10) {
 USART_rx_index = 0;
 }
 
