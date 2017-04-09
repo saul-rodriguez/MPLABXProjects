@@ -1,8 +1,8 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"154 bio3.h
+"169 bio3.h
 [s S298 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S298 VIN_bits_stuct RE FS GD0 GD1 GD2 NS CE GS0 GS1 GS2 GS3 IQ F0 F1 F2 F3 CapSel0 CapSel1 CapSel2 CapSel3 CcompSel0 CcompSel1 EnRdegHF0 EnRdegHF1 EnRdeg DP0 DP1 DP2 DN0 DN1 EnHF EnMF EnLF ]
-"194
+"209
 [u S299 `us -> 3 `i `uc -> 5 `i `S298 1 ]
 [n S299 . datas data data_bits ]
 "666 /opt/microchip/xc8/v1.40/include/pic16lf1823.h
@@ -15,16 +15,16 @@ Version 3.2 HI-TECH Software Intermediate Code
 "87
 [u S295 `uc 1 `S294 1 ]
 [n S295 . data data_bits ]
-"114
+"129
 [s S296 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S296 RADIO_freq_bits_struct F0 F1 F2 F3 ]
-"121
+"136
 [u S297 `uc 1 `S296 1 ]
 [n S297 . data data_bits ]
-"215
+"230
 [s S300 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S300 VINfilt_bits_struct CapSel0 CapSel1 CapSel2 CapSel3 CcompSel0 CcompSel1 EnRdegHF0 EnRdegHF1 EnRdeg DP0 DP1 DP2 DN0 DN1 EnHF EnMF EnLF ]
-"237
+"252
 [u S301 `um 1 `uc -> 3 `i `S300 1 ]
 [n S301 . datal data data_bits ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
@@ -2439,198 +2439,198 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;bio3.h: 88: unsigned char data;
 [; ;bio3.h: 89: RADIO_gain_bits data_bits;
 [; ;bio3.h: 90: } RADIO_gain;
-"103 bio3.h
+"118 bio3.h
 [v _gains `Cuc ~T0 @X0 -> 8 `i e ]
 [i _gains
 :U ..
-"104
+"119
 -> -> 4 `i `uc
-"105
--> -> 5 `i `uc
-"106
--> -> 7 `i `uc
-"107
--> -> 3 `i `uc
-"108
--> -> 35 `i `uc
-"109
--> -> 99 `i `uc
-"110
--> -> 107 `i `uc
-"112
+"120
+-> -> 36 `i `uc
+"121
+-> -> 100 `i `uc
+"122
+-> -> 108 `i `uc
+"123
+-> -> 124 `i `uc
+"124
+-> -> 125 `i `uc
+"125
+-> -> 127 `i `uc
+"127
 -> -> 123 `i `uc
 ..
 ]
-[; ;bio3.h: 103: const unsigned char gains[8] = {
-[; ;bio3.h: 104: 0b00000100,
-[; ;bio3.h: 105: 0b00000101,
-[; ;bio3.h: 106: 0b00000111,
-[; ;bio3.h: 107: 0b00000011,
-[; ;bio3.h: 108: 0b00100011,
-[; ;bio3.h: 109: 0b01100011,
-[; ;bio3.h: 110: 0b01101011,
-[; ;bio3.h: 111: 0b01111011
-[; ;bio3.h: 112: };
-[; ;bio3.h: 114: typedef struct RADIO_freq_bits_struct {
-[; ;bio3.h: 115: unsigned F0 :1;
-[; ;bio3.h: 116: unsigned F1 :1;
-[; ;bio3.h: 117: unsigned F2 :1;
-[; ;bio3.h: 118: unsigned F3 :1;
-[; ;bio3.h: 119: } RADIO_freq_bits;
-[; ;bio3.h: 121: typedef union {
-[; ;bio3.h: 122: unsigned char data;
-[; ;bio3.h: 123: RADIO_freq_bits data_bits;
-[; ;bio3.h: 124: } RADIO_freq;
-"139
+[; ;bio3.h: 118: const unsigned char gains[8] = {
+[; ;bio3.h: 119: 0b00000100,
+[; ;bio3.h: 120: 0b00100100,
+[; ;bio3.h: 121: 0b01100100,
+[; ;bio3.h: 122: 0b01101100,
+[; ;bio3.h: 123: 0b01111100,
+[; ;bio3.h: 124: 0b01111101,
+[; ;bio3.h: 125: 0b01111111,
+[; ;bio3.h: 126: 0b01111011
+[; ;bio3.h: 127: };
+[; ;bio3.h: 129: typedef struct RADIO_freq_bits_struct {
+[; ;bio3.h: 130: unsigned F0 :1;
+[; ;bio3.h: 131: unsigned F1 :1;
+[; ;bio3.h: 132: unsigned F2 :1;
+[; ;bio3.h: 133: unsigned F3 :1;
+[; ;bio3.h: 134: } RADIO_freq_bits;
+[; ;bio3.h: 136: typedef union {
+[; ;bio3.h: 137: unsigned char data;
+[; ;bio3.h: 138: RADIO_freq_bits data_bits;
+[; ;bio3.h: 139: } RADIO_freq;
+"154
 [v _freqs `Cuc ~T0 @X0 -> 11 `i e ]
 [i _freqs
 :U ..
-"140
+"155
 -> -> 0 `i `uc
-"141
+"156
 -> -> 1 `i `uc
-"142
+"157
 -> -> 2 `i `uc
-"143
+"158
 -> -> 3 `i `uc
-"144
+"159
 -> -> 4 `i `uc
-"145
+"160
 -> -> 5 `i `uc
-"146
+"161
 -> -> 6 `i `uc
-"147
+"162
 -> -> 7 `i `uc
-"148
+"163
 -> -> 8 `i `uc
-"149
+"164
 -> -> 9 `i `uc
-"151
+"166
 -> -> 10 `i `uc
 ..
 ]
-[; ;bio3.h: 139: const unsigned char freqs[11] = {
-[; ;bio3.h: 140: 0b00000000,
-[; ;bio3.h: 141: 0b00000001,
-[; ;bio3.h: 142: 0b00000010,
-[; ;bio3.h: 143: 0b00000011,
-[; ;bio3.h: 144: 0b00000100,
-[; ;bio3.h: 145: 0b00000101,
-[; ;bio3.h: 146: 0b00000110,
-[; ;bio3.h: 147: 0b00000111,
-[; ;bio3.h: 148: 0b00001000,
-[; ;bio3.h: 149: 0b00001001,
-[; ;bio3.h: 150: 0b00001010
-[; ;bio3.h: 151: };
-[; ;bio3.h: 154: typedef struct VIN_bits_stuct {
-[; ;bio3.h: 155: unsigned RE :1;
-[; ;bio3.h: 156: unsigned FS :1;
-[; ;bio3.h: 157: unsigned GD0 :1;
-[; ;bio3.h: 158: unsigned GD1 :1;
-[; ;bio3.h: 159: unsigned GD2 :1;
-[; ;bio3.h: 160: unsigned NS :1;
-[; ;bio3.h: 161: unsigned CE :1;
-[; ;bio3.h: 162: unsigned GS0 :1;
-[; ;bio3.h: 164: unsigned GS1 :1;
-[; ;bio3.h: 165: unsigned GS2 :1;
-[; ;bio3.h: 166: unsigned GS3 :1;
-[; ;bio3.h: 167: unsigned IQ :1;
-[; ;bio3.h: 168: unsigned F0 :1;
-[; ;bio3.h: 169: unsigned F1 :1;
-[; ;bio3.h: 170: unsigned F2 :1;
-[; ;bio3.h: 171: unsigned F3 :1;
-[; ;bio3.h: 173: unsigned CapSel0 :1;
-[; ;bio3.h: 174: unsigned CapSel1 :1;
-[; ;bio3.h: 175: unsigned CapSel2 :1;
-[; ;bio3.h: 176: unsigned CapSel3 :1;
-[; ;bio3.h: 177: unsigned CcompSel0 :1;
-[; ;bio3.h: 178: unsigned CcompSel1 :1;
-[; ;bio3.h: 179: unsigned EnRdegHF0 :1;
-[; ;bio3.h: 180: unsigned EnRdegHF1 :1;
-[; ;bio3.h: 182: unsigned EnRdeg :1;
-[; ;bio3.h: 183: unsigned DP0 :1;
-[; ;bio3.h: 184: unsigned DP1 :1;
-[; ;bio3.h: 185: unsigned DP2 :1;
-[; ;bio3.h: 186: unsigned DN0 :1;
-[; ;bio3.h: 187: unsigned DN1 :1;
-[; ;bio3.h: 188: unsigned EnHF :1;
-[; ;bio3.h: 189: unsigned EnMF :1;
-[; ;bio3.h: 191: unsigned EnLF :1;
-[; ;bio3.h: 192: } VIN_bits;
-[; ;bio3.h: 194: typedef union {
-[; ;bio3.h: 195: unsigned short datas[3];
-[; ;bio3.h: 196: unsigned char data[5];
-[; ;bio3.h: 197: VIN_bits data_bits;
-[; ;bio3.h: 198: } VIN;
-[; ;bio3.h: 215: typedef struct VINfilt_bits_struct {
-[; ;bio3.h: 216: unsigned CapSel0 :1;
-[; ;bio3.h: 217: unsigned CapSel1 :1;
-[; ;bio3.h: 218: unsigned CapSel2 :1;
-[; ;bio3.h: 219: unsigned CapSel3 :1;
-[; ;bio3.h: 220: unsigned CcompSel0 :1;
-[; ;bio3.h: 221: unsigned CcompSel1 :1;
-[; ;bio3.h: 222: unsigned EnRdegHF0 :1;
-[; ;bio3.h: 223: unsigned EnRdegHF1 :1;
-[; ;bio3.h: 225: unsigned EnRdeg :1;
-[; ;bio3.h: 226: unsigned DP0 :1;
-[; ;bio3.h: 227: unsigned DP1 :1;
-[; ;bio3.h: 228: unsigned DP2 :1;
-[; ;bio3.h: 229: unsigned DN0 :1;
-[; ;bio3.h: 230: unsigned DN1 :1;
-[; ;bio3.h: 231: unsigned EnHF :1;
-[; ;bio3.h: 232: unsigned EnMF :1;
-[; ;bio3.h: 234: unsigned EnLF :1;
-[; ;bio3.h: 235: } VINfilt_bits;
-[; ;bio3.h: 237: typedef union {
-[; ;bio3.h: 238: unsigned short long datal;
-[; ;bio3.h: 239: unsigned char data[3];
-[; ;bio3.h: 240: VINfilt_bits data_bits;
-[; ;bio3.h: 241: } VINfilt;
-"243
+[; ;bio3.h: 154: const unsigned char freqs[11] = {
+[; ;bio3.h: 155: 0b00000000,
+[; ;bio3.h: 156: 0b00000001,
+[; ;bio3.h: 157: 0b00000010,
+[; ;bio3.h: 158: 0b00000011,
+[; ;bio3.h: 159: 0b00000100,
+[; ;bio3.h: 160: 0b00000101,
+[; ;bio3.h: 161: 0b00000110,
+[; ;bio3.h: 162: 0b00000111,
+[; ;bio3.h: 163: 0b00001000,
+[; ;bio3.h: 164: 0b00001001,
+[; ;bio3.h: 165: 0b00001010
+[; ;bio3.h: 166: };
+[; ;bio3.h: 169: typedef struct VIN_bits_stuct {
+[; ;bio3.h: 170: unsigned RE :1;
+[; ;bio3.h: 171: unsigned FS :1;
+[; ;bio3.h: 172: unsigned GD0 :1;
+[; ;bio3.h: 173: unsigned GD1 :1;
+[; ;bio3.h: 174: unsigned GD2 :1;
+[; ;bio3.h: 175: unsigned NS :1;
+[; ;bio3.h: 176: unsigned CE :1;
+[; ;bio3.h: 177: unsigned GS0 :1;
+[; ;bio3.h: 179: unsigned GS1 :1;
+[; ;bio3.h: 180: unsigned GS2 :1;
+[; ;bio3.h: 181: unsigned GS3 :1;
+[; ;bio3.h: 182: unsigned IQ :1;
+[; ;bio3.h: 183: unsigned F0 :1;
+[; ;bio3.h: 184: unsigned F1 :1;
+[; ;bio3.h: 185: unsigned F2 :1;
+[; ;bio3.h: 186: unsigned F3 :1;
+[; ;bio3.h: 188: unsigned CapSel0 :1;
+[; ;bio3.h: 189: unsigned CapSel1 :1;
+[; ;bio3.h: 190: unsigned CapSel2 :1;
+[; ;bio3.h: 191: unsigned CapSel3 :1;
+[; ;bio3.h: 192: unsigned CcompSel0 :1;
+[; ;bio3.h: 193: unsigned CcompSel1 :1;
+[; ;bio3.h: 194: unsigned EnRdegHF0 :1;
+[; ;bio3.h: 195: unsigned EnRdegHF1 :1;
+[; ;bio3.h: 197: unsigned EnRdeg :1;
+[; ;bio3.h: 198: unsigned DP0 :1;
+[; ;bio3.h: 199: unsigned DP1 :1;
+[; ;bio3.h: 200: unsigned DP2 :1;
+[; ;bio3.h: 201: unsigned DN0 :1;
+[; ;bio3.h: 202: unsigned DN1 :1;
+[; ;bio3.h: 203: unsigned EnHF :1;
+[; ;bio3.h: 204: unsigned EnMF :1;
+[; ;bio3.h: 206: unsigned EnLF :1;
+[; ;bio3.h: 207: } VIN_bits;
+[; ;bio3.h: 209: typedef union {
+[; ;bio3.h: 210: unsigned short datas[3];
+[; ;bio3.h: 211: unsigned char data[5];
+[; ;bio3.h: 212: VIN_bits data_bits;
+[; ;bio3.h: 213: } VIN;
+[; ;bio3.h: 230: typedef struct VINfilt_bits_struct {
+[; ;bio3.h: 231: unsigned CapSel0 :1;
+[; ;bio3.h: 232: unsigned CapSel1 :1;
+[; ;bio3.h: 233: unsigned CapSel2 :1;
+[; ;bio3.h: 234: unsigned CapSel3 :1;
+[; ;bio3.h: 235: unsigned CcompSel0 :1;
+[; ;bio3.h: 236: unsigned CcompSel1 :1;
+[; ;bio3.h: 237: unsigned EnRdegHF0 :1;
+[; ;bio3.h: 238: unsigned EnRdegHF1 :1;
+[; ;bio3.h: 240: unsigned EnRdeg :1;
+[; ;bio3.h: 241: unsigned DP0 :1;
+[; ;bio3.h: 242: unsigned DP1 :1;
+[; ;bio3.h: 243: unsigned DP2 :1;
+[; ;bio3.h: 244: unsigned DN0 :1;
+[; ;bio3.h: 245: unsigned DN1 :1;
+[; ;bio3.h: 246: unsigned EnHF :1;
+[; ;bio3.h: 247: unsigned EnMF :1;
+[; ;bio3.h: 249: unsigned EnLF :1;
+[; ;bio3.h: 250: } VINfilt_bits;
+[; ;bio3.h: 252: typedef union {
+[; ;bio3.h: 253: unsigned short long datal;
+[; ;bio3.h: 254: unsigned char data[3];
+[; ;bio3.h: 255: VINfilt_bits data_bits;
+[; ;bio3.h: 256: } VINfilt;
+"258
 [v _filt `Cum ~T0 @X0 -> 11 `i e ]
 [i _filt
 :U ..
-"244
+"259
 -> -> -> 16583 `i `m `um
-"245
+"260
 -> -> -> 16591 `i `m `um
-"246
+"261
 -> -> -> 16495 `i `m `um
-"247
+"262
 -> -> -> 16447 `i `m `um
-"248
+"263
 -> -> 35087 `ui `um
-"249
+"264
 -> -> 34831 `ui `um
-"250
+"265
 -> -> 41999 `ui `um
-"251
+"266
 -> -> 67855 `l `um
-"252
+"267
 -> -> 67599 `l `um
-"253
+"268
 -> -> 74767 `l `um
-"255
+"270
 -> -> 78351 `l `um
 ..
 ]
-[; ;bio3.h: 243: const unsigned short long filt[11] = {
-[; ;bio3.h: 244: 0b00100000011000111,
-[; ;bio3.h: 245: 0b00100000011001111,
-[; ;bio3.h: 246: 0b00100000001101111,
-[; ;bio3.h: 247: 0b00100000000111111,
-[; ;bio3.h: 248: 0b01000100100001111,
-[; ;bio3.h: 249: 0b01000100000001111,
-[; ;bio3.h: 250: 0b01010010000001111,
-[; ;bio3.h: 251: 0b10000100100001111,
-[; ;bio3.h: 252: 0b10000100000001111,
-[; ;bio3.h: 253: 0b10010010000001111,
-[; ;bio3.h: 254: 0b10011001000001111
-[; ;bio3.h: 255: };
-[; ;bio3.h: 266: void config(VIN conf);
-[; ;bio3.h: 267: void setGain(VIN* asic, unsigned char gain_index);
-[; ;bio3.h: 268: void setFreq(VIN* asic, unsigned char freq_index);
-[; ;bio3.h: 269: void setFilt(VIN* asic, unsigned char freq_index);
+[; ;bio3.h: 258: const unsigned short long filt[11] = {
+[; ;bio3.h: 259: 0b00100000011000111,
+[; ;bio3.h: 260: 0b00100000011001111,
+[; ;bio3.h: 261: 0b00100000001101111,
+[; ;bio3.h: 262: 0b00100000000111111,
+[; ;bio3.h: 263: 0b01000100100001111,
+[; ;bio3.h: 264: 0b01000100000001111,
+[; ;bio3.h: 265: 0b01010010000001111,
+[; ;bio3.h: 266: 0b10000100100001111,
+[; ;bio3.h: 267: 0b10000100000001111,
+[; ;bio3.h: 268: 0b10010010000001111,
+[; ;bio3.h: 269: 0b10011001000001111
+[; ;bio3.h: 270: };
+[; ;bio3.h: 281: void config(VIN conf);
+[; ;bio3.h: 282: void setGain(VIN* asic, unsigned char gain_index);
+[; ;bio3.h: 283: void setFreq(VIN* asic, unsigned char freq_index);
+[; ;bio3.h: 284: void setFilt(VIN* asic, unsigned char freq_index);
 "189 bio3.c
 [v _config `(v ~T0 @X0 1 ef1`S299 ]
 "190

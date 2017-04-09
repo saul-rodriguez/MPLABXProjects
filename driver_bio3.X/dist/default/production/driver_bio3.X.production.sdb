@@ -47,7 +47,7 @@
 [v _calculate_checksum calculate_checksum `(uc  1 e 1 0 ]
 "441
 [v _sweep sweep `(v  1 e 1 0 ]
-"552
+"556
 [v _measure measure `(uc  1 e 1 0 ]
 "20 /home/saul/MPLABXProjects/driver_bio3.X/main.c
 [v _main main `(v  1 e 1 0 ]
@@ -191,11 +191,11 @@
 [v _TXIE TXIE `VEb  1 e 0 @1164 ]
 "6364
 [v _TXIF TXIF `VEb  1 e 0 @140 ]
-"103 /home/saul/MPLABXProjects/driver_bio3.X/bio3.h
+"118 /home/saul/MPLABXProjects/driver_bio3.X/bio3.h
 [v _gains gains `DCC[8]uc  1 e 8 0 ]
-"139
+"154
 [v _freqs freqs `DCC[11]uc  1 e 11 0 ]
-"243
+"258
 [v _filt filt `DCC[11]um  1 e 33 0 ]
 "6 /home/saul/MPLABXProjects/driver_bio3.X/comm.c
 [v _mess_rec mess_rec `VE[10]uc  1 e 10 0 ]
@@ -312,7 +312,7 @@
 [v sweep@i i `uc  1 a 1 39 ]
 "447
 [v sweep@check check `uc  1 a 1 31 ]
-"544
+"548
 } 0
 "250 /home/saul/MPLABXProjects/driver_bio3.X/bio3.c
 [v _setGain setGain `(v  1 e 1 0 ]
@@ -506,17 +506,17 @@
 [v ___wmul@multiplicand multiplicand `ui  1 p 2 2 ]
 "53
 } 0
-"552 /home/saul/MPLABXProjects/driver_bio3.X/comm.c
+"556 /home/saul/MPLABXProjects/driver_bio3.X/comm.c
 [v _measure measure `(uc  1 e 1 0 ]
 {
 [v measure@I I `*.4s  1 a 1 wreg ]
-"556
+"560
 [v measure@aux1 aux1 `s  1 a 2 27 ]
 [v measure@aux2 aux2 `s  1 a 2 25 ]
-"555
+"559
 [v measure@value value `us  1 a 2 23 ]
 [v measure@offset offset `us  1 a 2 20 ]
-"552
+"556
 [v measure@I I `*.4s  1 a 1 wreg ]
 [v measure@Q Q `*.4s  1 p 1 9 ]
 [s S153 VIN_bits_stuct 5 `uc 1 RE 1 0 :1:0 
@@ -555,9 +555,9 @@
 ]
 [u S187 . 6 `[3]us 1 datas 6 0 `[5]uc 1 data 5 0 `S153 1 data_bits 5 0 ]
 [v measure@asic asic `S187  1 p 6 10 ]
-"560
+"564
 [v measure@I I `*.4s  1 a 1 22 ]
-"608
+"612
 } 0
 "407
 [v _calculate_checksum calculate_checksum `(uc  1 e 1 0 ]

@@ -485,8 +485,12 @@ void sweep()
                 
                 if (count == 2) break; // Previous decrease of gain, stops now!
                 count = ret;                
-                
+
+                #ifdef BIOASIC
                 if (gain_index < 7) {
+                #else
+                if (gain_index < 5) {
+                #endif                
                     gain_index++;
                     setGain(&asic,gain_index);
                 } else {

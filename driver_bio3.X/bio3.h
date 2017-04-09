@@ -90,7 +90,9 @@ typedef union {
 } RADIO_gain;
 
 
-//Radio gain bit states (GAIN0 is lowest gain, GAIN7 is highest gain)
+
+#ifdef BIOASIC
+//Radio gain bit states (GAIN0 is lowest gain, GAIN7 is highest gain) Demodulator gain first!
 #define GAIN0 0b00000100
 #define GAIN1 0b00000101
 #define GAIN2 0b00000111
@@ -99,6 +101,19 @@ typedef union {
 #define GAIN5 0b01100011
 #define GAIN6 0b01101011
 #define GAIN7 0b01111011
+#else
+//Radio gain bit states (GAIN0 is lowest gain, GAIN7 is highest gain) Generator gain first!
+#define GAIN0 0b00000100
+#define GAIN1 0b00100100
+#define GAIN2 0b01100100
+#define GAIN3 0b01101100
+#define GAIN4 0b01111100
+#define GAIN5 0b01111101
+#define GAIN6 0b01111111
+#define GAIN7 0b01111011
+
+#endif
+
 
 const unsigned char gains[8] = {
     GAIN0,
@@ -113,7 +128,7 @@ const unsigned char gains[8] = {
 
 typedef struct RADIO_freq_bits_struct {
     unsigned F0     :1;
-    unsigned F1     :1;
+    unsigned F1     :1;  
     unsigned F2     :1;
     unsigned F3     :1;
 } RADIO_freq_bits;

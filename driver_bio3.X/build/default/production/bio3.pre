@@ -3334,15 +3334,15 @@ unsigned char data;
 RADIO_gain_bits data_bits;
 } RADIO_gain;
 
-# 103
+# 118
 const unsigned char gains[8] = {
 0b00000100,
-0b00000101,
-0b00000111,
-0b00000011,
-0b00100011,
-0b01100011,
-0b01101011,
+0b00100100,
+0b01100100,
+0b01101100,
+0b01111100,
+0b01111101,
+0b01111111,
 0b01111011
 };
 
@@ -3358,7 +3358,7 @@ unsigned char data;
 RADIO_freq_bits data_bits;
 } RADIO_freq;
 
-# 139
+# 154
 const unsigned char freqs[11] = {
 0b00000000,
 0b00000001,
@@ -3420,7 +3420,7 @@ unsigned char data[5];
 VIN_bits data_bits;
 } VIN;
 
-# 215
+# 230
 typedef struct VINfilt_bits_struct {
 unsigned CapSel0 :1;
 unsigned CapSel1 :1;
@@ -3463,7 +3463,7 @@ const unsigned short long filt[11] = {
 0b10011001000001111
 };
 
-# 266
+# 281
 void config(VIN conf);
 void setGain(VIN* asic, unsigned char gain_index);
 void setFreq(VIN* asic, unsigned char freq_index);
