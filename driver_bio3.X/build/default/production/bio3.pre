@@ -3337,12 +3337,12 @@ RADIO_gain_bits data_bits;
 # 118
 const unsigned char gains[8] = {
 0b00000100,
-0b00100100,
-0b01100100,
-0b01101100,
-0b01111100,
-0b01111101,
-0b01111111,
+0b00000101,
+0b00000111,
+0b00000011,
+0b00100011,
+0b01100011,
+0b01101011,
 0b01111011
 };
 
@@ -3463,75 +3463,43 @@ const unsigned short long filt[11] = {
 0b10011001000001111
 };
 
-# 281
-void config(VIN conf);
-void setGain(VIN* asic, unsigned char gain_index);
-void setFreq(VIN* asic, unsigned char freq_index);
-void setFilt(VIN* asic, unsigned char freq_index);
+# 277
+void config(BIO3 conf);
+void setGain(BIO3* asic, unsigned char gain_index);
+void setFreq(BIO3* asic, unsigned char freq_index);
 
-# 189 "bio3.c"
-void config(VIN conf)
+# 131 "bio3.c"
+void config(BIO3 conf)
 {
-
-unsigned char i,j,out;
+unsigned char i, out;
 
 out &= 0b11110111; PORTC = out;;
-;;
+_delay((unsigned long)((5)*(500000/4000000.0)));
 
 RA5 = 0;;
-;;
+_delay((unsigned long)((5)*(500000/4000000.0)));
 
 RA5 = 1;;
 
 for(i = 0; i < 16; i++) {
-if (conf.datas[0] & 0x0001) {
+if (conf.datashort & 0x0001) {
 out |= 0b00000100; PORTC = out;;
 } else {
 out &= 0b11111011; PORTC = out;;
 }
-conf.datas[0] >>= 1;
+conf.datashort >>= 1;
 
-;;
-
-out |= 0b00001000; PORTC = out;;
-;;
-out &= 0b11110111; PORTC = out;;
-}
-
-for(i = 0; i < 16; i++) {
-if (conf.datas[1] & 0x0001) {
-out |= 0b00000100; PORTC = out;;
-} else {
-out &= 0b11111011; PORTC = out;;
-}
-conf.datas[1] >>= 1;
-
-;;
+_delay((unsigned long)((5)*(500000/4000000.0)));
 
 out |= 0b00001000; PORTC = out;;
-;;
+_delay((unsigned long)((5)*(500000/4000000.0)));
 out &= 0b11110111; PORTC = out;;
+
 }
-
-for(i = 0; i < 1; i++) {
-if (conf.datas[2] & 0x0001) {
-out |= 0b00000100; PORTC = out;;
-} else {
-out &= 0b11111011; PORTC = out;;
-}
-conf.datas[2] >>= 1;
-
-;;
-
-out |= 0b00001000; PORTC = out;;
-;;
-out &= 0b11110111; PORTC = out;;
-}
-
 }
 
 
-void setGain(VIN* asic, unsigned char gain_index)
+void setGain(BIO3* asic, unsigned char gain_index)
 {
 RADIO_gain aux;
 aux.data = gains[gain_index];
@@ -3545,7 +3513,7 @@ asic->data_bits.GS2 = aux.data_bits.GS2;
 asic->data_bits.GS3 = aux.data_bits.GS3;
 }
 
-void setFreq(VIN* asic, unsigned char freq_index)
+void setFreq(BIO3* asic, unsigned char freq_index)
 {
 RADIO_freq aux;
 aux.data = freqs[freq_index];
@@ -3554,17 +3522,6 @@ asic->data_bits.F0 = aux.data_bits.F0;
 asic->data_bits.F1 = aux.data_bits.F1;
 asic->data_bits.F2 = aux.data_bits.F2;
 asic->data_bits.F3 = aux.data_bits.F3;
-
-}
-
-void setFilt(VIN* asic, unsigned char freq_index)
-{
-VINfilt aux;
-aux.datal = filt[freq_index];
-
-asic->data[2] = aux.data[0];
-asic->data[3] = aux.data[1];
-asic->data[4] = aux.data[2];
 
 }
 

@@ -15,7 +15,7 @@ extern "C" {
 #include "bio3.h"
     
 //uncomment if inductive coupling is used for power and communications
-//#define INDUCTIVE_POW
+#define INDUCTIVE_POW
 
     
 #define BUFF_SIZE 10
@@ -24,6 +24,10 @@ extern volatile unsigned char mess_rec_size;
 
 #define MEAS_MAX 370
 #define MEAS_MIN  86
+
+//#define MEAS_MAX 300
+//#define MEAS_MIN  60
+
 
 void mess_handler(); //Process data received from the USART
 void config_ASIC();
@@ -36,11 +40,11 @@ unsigned char calculate_checksum(unsigned char* data, unsigned char num);
 void calibrate_reader();
 void sweep();
 
-//#ifdef BIOASIC
-//unsigned char measure(short* I, short* Q, BIO3 asic);
-//#else
+#ifdef BIOASIC
+unsigned char measure(short* I, short* Q, BIO3 asic);
+#else
 unsigned char measure(short* I, short* Q, VIN asic);
-//#endif
+#endif
 
 #ifdef	__cplusplus
 }

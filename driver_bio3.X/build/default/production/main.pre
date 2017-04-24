@@ -3337,12 +3337,12 @@ RADIO_gain_bits data_bits;
 # 118
 const unsigned char gains[8] = {
 0b00000100,
-0b00100100,
-0b01100100,
-0b01101100,
-0b01111100,
-0b01111101,
-0b01111111,
+0b00000101,
+0b00000111,
+0b00000011,
+0b00100011,
+0b01100011,
+0b01101011,
 0b01111011
 };
 
@@ -3463,11 +3463,10 @@ const unsigned short long filt[11] = {
 0b10011001000001111
 };
 
-# 281
-void config(VIN conf);
-void setGain(VIN* asic, unsigned char gain_index);
-void setFreq(VIN* asic, unsigned char freq_index);
-void setFilt(VIN* asic, unsigned char freq_index);
+# 277
+void config(BIO3 conf);
+void setGain(BIO3* asic, unsigned char gain_index);
+void setFreq(BIO3* asic, unsigned char freq_index);
 
 # 6 "RCM1823.h"
 void start_RCM();
@@ -3512,9 +3511,7 @@ void start_TX_USART_ISR();
 extern volatile unsigned char mess_rec[10];
 extern volatile unsigned char mess_rec_size;
 
-
-
-
+# 32
 void mess_handler();
 void config_ASIC();
 void read_ADC_channels();
@@ -3527,9 +3524,7 @@ void calibrate_reader();
 void sweep();
 
 
-
-
-unsigned char measure(short* I, short* Q, VIN asic);
+unsigned char measure(short* I, short* Q, BIO3 asic);
 
 # 21 "ADC1823.h"
 void setup_ADC();
@@ -3545,7 +3540,8 @@ unsigned char i;
 
 SYSTEM_Initialize();
 
-# 28
+USARTX_change_pol();
+
 setup_TMR0();
 start_TX_USART_ISR();
 start_RX_USART_ISR();

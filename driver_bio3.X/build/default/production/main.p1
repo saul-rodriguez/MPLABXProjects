@@ -2,6 +2,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [p mainexit ]
 "66 mcc_generated_files/mcc.h
 [v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
+"80
+[v _USARTX_change_pol `(v ~T0 @X0 0 ef ]
 "4 TMR0.h
 [v _setup_TMR0 `(v ~T0 @X0 0 ef ]
 "73 USART1823.h
@@ -28,7 +30,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _mess_rec `Vuc ~T0 @X0 -> 0 `x e ]
 "54 USART1823.h
 [v _USART_rx_data `Vuc ~T0 @X0 -> 0 `x e ]
-"28 comm.h
+"32 comm.h
 [v _mess_handler `(v ~T0 @X0 0 ef ]
 "6286 /opt/microchip/xc8/v1.40/include/pic16lf1823.h
 [v _TMR0IF `Vb ~T0 @X0 0 e@90 ]
@@ -2483,29 +2485,29 @@ Version 3.2 HI-TECH Software Intermediate Code
 "119
 -> -> 4 `i `uc
 "120
--> -> 36 `i `uc
+-> -> 5 `i `uc
 "121
--> -> 100 `i `uc
+-> -> 7 `i `uc
 "122
--> -> 108 `i `uc
+-> -> 3 `i `uc
 "123
--> -> 124 `i `uc
+-> -> 35 `i `uc
 "124
--> -> 125 `i `uc
+-> -> 99 `i `uc
 "125
--> -> 127 `i `uc
+-> -> 107 `i `uc
 "127
 -> -> 123 `i `uc
 ..
 ]
 [; ;bio3.h: 118: const unsigned char gains[8] = {
 [; ;bio3.h: 119: 0b00000100,
-[; ;bio3.h: 120: 0b00100100,
-[; ;bio3.h: 121: 0b01100100,
-[; ;bio3.h: 122: 0b01101100,
-[; ;bio3.h: 123: 0b01111100,
-[; ;bio3.h: 124: 0b01111101,
-[; ;bio3.h: 125: 0b01111111,
+[; ;bio3.h: 120: 0b00000101,
+[; ;bio3.h: 121: 0b00000111,
+[; ;bio3.h: 122: 0b00000011,
+[; ;bio3.h: 123: 0b00100011,
+[; ;bio3.h: 124: 0b01100011,
+[; ;bio3.h: 125: 0b01101011,
 [; ;bio3.h: 126: 0b01111011
 [; ;bio3.h: 127: };
 [; ;bio3.h: 129: typedef struct RADIO_freq_bits_struct {
@@ -2664,10 +2666,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;bio3.h: 268: 0b10010010000001111,
 [; ;bio3.h: 269: 0b10011001000001111
 [; ;bio3.h: 270: };
-[; ;bio3.h: 281: void config(VIN conf);
-[; ;bio3.h: 282: void setGain(VIN* asic, unsigned char gain_index);
-[; ;bio3.h: 283: void setFreq(VIN* asic, unsigned char freq_index);
-[; ;bio3.h: 284: void setFilt(VIN* asic, unsigned char freq_index);
+[; ;bio3.h: 277: void config(BIO3 conf);
+[; ;bio3.h: 278: void setGain(BIO3* asic, unsigned char gain_index);
+[; ;bio3.h: 279: void setFreq(BIO3* asic, unsigned char freq_index);
 [; ;RCM1823.h: 6: void start_RCM();
 [; ;RCM1823.h: 7: void stop_RCM();
 [; ;TMR0.h: 4: void setup_TMR0();
@@ -2696,17 +2697,17 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;USART1823.h: 73: void start_TX_USART_ISR();
 [; ;comm.h: 22: extern volatile unsigned char mess_rec[10];
 [; ;comm.h: 23: extern volatile unsigned char mess_rec_size;
-[; ;comm.h: 28: void mess_handler();
-[; ;comm.h: 29: void config_ASIC();
-[; ;comm.h: 30: void read_ADC_channels();
-[; ;comm.h: 31: void measure_Impedance();
-[; ;comm.h: 32: void measure_Impedance_no_offset();
-[; ;comm.h: 33: void measure_Offset();
-[; ;comm.h: 34: void measure_Impedance_SE();
-[; ;comm.h: 35: unsigned char calculate_checksum(unsigned char* data, unsigned char num);
-[; ;comm.h: 36: void calibrate_reader();
-[; ;comm.h: 37: void sweep();
-[; ;comm.h: 42: unsigned char measure(short* I, short* Q, VIN asic);
+[; ;comm.h: 32: void mess_handler();
+[; ;comm.h: 33: void config_ASIC();
+[; ;comm.h: 34: void read_ADC_channels();
+[; ;comm.h: 35: void measure_Impedance();
+[; ;comm.h: 36: void measure_Impedance_no_offset();
+[; ;comm.h: 37: void measure_Offset();
+[; ;comm.h: 38: void measure_Impedance_SE();
+[; ;comm.h: 39: unsigned char calculate_checksum(unsigned char* data, unsigned char num);
+[; ;comm.h: 40: void calibrate_reader();
+[; ;comm.h: 41: void sweep();
+[; ;comm.h: 44: unsigned char measure(short* I, short* Q, BIO3 asic);
 [; ;ADC1823.h: 21: void setup_ADC();
 [; ;ADC1823.h: 22: unsigned short ADC_2();
 [; ;ADC1823.h: 23: unsigned short ADC_4();
@@ -2724,6 +2725,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 24: SYSTEM_Initialize();
 "24
 [e ( _SYSTEM_Initialize ..  ]
+[; ;main.c: 26: USARTX_change_pol();
+"26
+[e ( _USARTX_change_pol ..  ]
 [; ;main.c: 28: setup_TMR0();
 "28
 [e ( _setup_TMR0 ..  ]
@@ -2823,9 +2827,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 "139
 [e :UE 302 ]
 }
-[v F2672 `(v ~T0 @X0 1 tf ]
+[v F2669 `(v ~T0 @X0 1 tf ]
 "142
-[v _isr `IF2672 ~T0 @X0 1 e ]
+[v _isr `IF2669 ~T0 @X0 1 e ]
 "143
 {
 [; ;main.c: 142: void interrupt isr(void)

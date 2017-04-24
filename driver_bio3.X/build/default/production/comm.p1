@@ -1,28 +1,30 @@
 Version 3.2 HI-TECH Software Intermediate Code
 "70 USART1823.h
 [v _lputs_ISR `(v ~T0 @X0 0 ef2`*uc`uc ]
-"37 comm.h
+"41 comm.h
 [v _sweep `(v ~T0 @X0 0 ef ]
-"29
-[v _config_ASIC `(v ~T0 @X0 0 ef ]
-"30
-[v _read_ADC_channels `(v ~T0 @X0 0 ef ]
-"31
-[v _measure_Impedance `(v ~T0 @X0 0 ef ]
-"32
-[v _measure_Impedance_no_offset `(v ~T0 @X0 0 ef ]
 "33
-[v _measure_Offset `(v ~T0 @X0 0 ef ]
+[v _config_ASIC `(v ~T0 @X0 0 ef ]
 "34
+[v _read_ADC_channels `(v ~T0 @X0 0 ef ]
+"35
+[v _measure_Impedance `(v ~T0 @X0 0 ef ]
+"36
+[v _measure_Impedance_no_offset `(v ~T0 @X0 0 ef ]
+"37
+[v _measure_Offset `(v ~T0 @X0 0 ef ]
+"38
 [v _measure_Impedance_SE `(v ~T0 @X0 0 ef ]
-"169 bio3.h
-[s S298 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S298 VIN_bits_stuct RE FS GD0 GD1 GD2 NS CE GS0 GS1 GS2 GS3 IQ F0 F1 F2 F3 CapSel0 CapSel1 CapSel2 CapSel3 CcompSel0 CcompSel1 EnRdegHF0 EnRdegHF1 EnRdeg DP0 DP1 DP2 DN0 DN1 EnHF EnMF EnLF ]
-"209
-[u S299 `us -> 3 `i `uc -> 5 `i `S298 1 ]
-[n S299 . datas data data_bits ]
-"281
-[v _config `(v ~T0 @X0 0 ef1`S299 ]
+"40
+[v _calibrate_reader `(v ~T0 @X0 0 ef ]
+"45 bio3.h
+[s S292 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S292 BIO3_bits_stuct RE FS GD0 GD1 GD2 NS CE GS0 GS1 GS2 GS3 IQ F0 F1 F2 F3 ]
+"65
+[u S293 `us 1 `uc -> 2 `i `S292 1 ]
+[n S293 . datashort data data_bits ]
+"277
+[v _config `(v ~T0 @X0 0 ef1`S293 ]
 "22 ADC1823.h
 [v _ADC_2 `(us ~T0 @X0 0 ef ]
 "23
@@ -35,14 +37,14 @@ Version 3.2 HI-TECH Software Intermediate Code
 "152 /opt/microchip/xc8/v1.40/include/pic.h
 [v __delay `JF2436 ~T0 @X0 0 e ]
 [p i __delay ]
-"282 bio3.h
-[v _setGain `(v ~T0 @X0 0 ef2`*S299`uc ]
-"283
-[v _setFreq `(v ~T0 @X0 0 ef2`*S299`uc ]
-"284
-[v _setFilt `(v ~T0 @X0 0 ef2`*S299`uc ]
-"42 comm.h
-[v _measure `(uc ~T0 @X0 0 ef3`*s`*s`S299 ]
+"39 comm.h
+[v _calculate_checksum `(uc ~T0 @X0 0 ef2`*uc`uc ]
+"278 bio3.h
+[v _setGain `(v ~T0 @X0 0 ef2`*S293`uc ]
+"279
+[v _setFreq `(v ~T0 @X0 0 ef2`*S293`uc ]
+"44 comm.h
+[v _measure `(uc ~T0 @X0 0 ef3`*s`*s`S293 ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -2462,29 +2464,29 @@ Version 3.2 HI-TECH Software Intermediate Code
 "119
 -> -> 4 `i `uc
 "120
--> -> 36 `i `uc
+-> -> 5 `i `uc
 "121
--> -> 100 `i `uc
+-> -> 7 `i `uc
 "122
--> -> 108 `i `uc
+-> -> 3 `i `uc
 "123
--> -> 124 `i `uc
+-> -> 35 `i `uc
 "124
--> -> 125 `i `uc
+-> -> 99 `i `uc
 "125
--> -> 127 `i `uc
+-> -> 107 `i `uc
 "127
 -> -> 123 `i `uc
 ..
 ]
 [; ;bio3.h: 118: const unsigned char gains[8] = {
 [; ;bio3.h: 119: 0b00000100,
-[; ;bio3.h: 120: 0b00100100,
-[; ;bio3.h: 121: 0b01100100,
-[; ;bio3.h: 122: 0b01101100,
-[; ;bio3.h: 123: 0b01111100,
-[; ;bio3.h: 124: 0b01111101,
-[; ;bio3.h: 125: 0b01111111,
+[; ;bio3.h: 120: 0b00000101,
+[; ;bio3.h: 121: 0b00000111,
+[; ;bio3.h: 122: 0b00000011,
+[; ;bio3.h: 123: 0b00100011,
+[; ;bio3.h: 124: 0b01100011,
+[; ;bio3.h: 125: 0b01101011,
 [; ;bio3.h: 126: 0b01111011
 [; ;bio3.h: 127: };
 [; ;bio3.h: 129: typedef struct RADIO_freq_bits_struct {
@@ -2643,23 +2645,22 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;bio3.h: 268: 0b10010010000001111,
 [; ;bio3.h: 269: 0b10011001000001111
 [; ;bio3.h: 270: };
-[; ;bio3.h: 281: void config(VIN conf);
-[; ;bio3.h: 282: void setGain(VIN* asic, unsigned char gain_index);
-[; ;bio3.h: 283: void setFreq(VIN* asic, unsigned char freq_index);
-[; ;bio3.h: 284: void setFilt(VIN* asic, unsigned char freq_index);
+[; ;bio3.h: 277: void config(BIO3 conf);
+[; ;bio3.h: 278: void setGain(BIO3* asic, unsigned char gain_index);
+[; ;bio3.h: 279: void setFreq(BIO3* asic, unsigned char freq_index);
 [; ;comm.h: 22: extern volatile unsigned char mess_rec[10];
 [; ;comm.h: 23: extern volatile unsigned char mess_rec_size;
-[; ;comm.h: 28: void mess_handler();
-[; ;comm.h: 29: void config_ASIC();
-[; ;comm.h: 30: void read_ADC_channels();
-[; ;comm.h: 31: void measure_Impedance();
-[; ;comm.h: 32: void measure_Impedance_no_offset();
-[; ;comm.h: 33: void measure_Offset();
-[; ;comm.h: 34: void measure_Impedance_SE();
-[; ;comm.h: 35: unsigned char calculate_checksum(unsigned char* data, unsigned char num);
-[; ;comm.h: 36: void calibrate_reader();
-[; ;comm.h: 37: void sweep();
-[; ;comm.h: 42: unsigned char measure(short* I, short* Q, VIN asic);
+[; ;comm.h: 32: void mess_handler();
+[; ;comm.h: 33: void config_ASIC();
+[; ;comm.h: 34: void read_ADC_channels();
+[; ;comm.h: 35: void measure_Impedance();
+[; ;comm.h: 36: void measure_Impedance_no_offset();
+[; ;comm.h: 37: void measure_Offset();
+[; ;comm.h: 38: void measure_Impedance_SE();
+[; ;comm.h: 39: unsigned char calculate_checksum(unsigned char* data, unsigned char num);
+[; ;comm.h: 40: void calibrate_reader();
+[; ;comm.h: 41: void sweep();
+[; ;comm.h: 44: unsigned char measure(short* I, short* Q, BIO3 asic);
 [; ;USART1823.h: 50: extern volatile unsigned char USART_rx_flag;
 [; ;USART1823.h: 51: extern volatile unsigned char USART_rx_index;
 [; ;USART1823.h: 54: extern volatile unsigned char USART_rx_data[10];
@@ -2773,9 +2774,18 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;comm.c: 47: break;
 "47
 [e $U 303  ]
+[; ;comm.c: 50: case '&':
+"50
+[e :U 313 ]
+[; ;comm.c: 51: calibrate_reader();
+"51
+[e ( _calibrate_reader ..  ]
+[; ;comm.c: 52: break;
+"52
+[e $U 303  ]
 [; ;comm.c: 56: default:
 "56
-[e :U 313 ]
+[e :U 314 ]
 [; ;comm.c: 57: break;
 "57
 [e $U 303  ]
@@ -2793,7 +2803,8 @@ Version 3.2 HI-TECH Software Intermediate Code
  , $ -> -> 121 `ui `uc 310
  , $ -> -> 111 `ui `uc 311
  , $ -> -> 115 `ui `uc 312
- 313 ]
+ , $ -> -> 38 `ui `uc 313
+ 314 ]
 "58
 [e :U 303 ]
 [; ;comm.c: 59: }
@@ -2808,33 +2819,24 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;comm.c: 62: {
 [e :U _config_ASIC ]
 [f ]
-"77
-[v _asic `S299 ~T0 @X0 1 a ]
-[; ;comm.c: 77: VIN asic;
-[; ;comm.c: 79: asic.data[0] = mess_rec[1];
-"79
+"64
+[v _asic `S293 ~T0 @X0 1 a ]
+[; ;comm.c: 64: BIO3 asic;
+[; ;comm.c: 70: asic.data[0] = mess_rec[1];
+"70
 [e = *U + &U . _asic 1 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _asic 1 `ui `ux *U + &U _mess_rec * -> -> -> 1 `i `ui `ux -> -> # *U &U _mess_rec `ui `ux ]
-[; ;comm.c: 80: asic.data[1] = mess_rec[2];
-"80
+[; ;comm.c: 71: asic.data[1] = mess_rec[2];
+"71
 [e = *U + &U . _asic 1 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _asic 1 `ui `ux *U + &U _mess_rec * -> -> -> 2 `i `ui `ux -> -> # *U &U _mess_rec `ui `ux ]
-[; ;comm.c: 81: asic.data[2] = mess_rec[3];
-"81
-[e = *U + &U . _asic 1 * -> -> -> 2 `i `ui `ux -> -> # *U &U . _asic 1 `ui `ux *U + &U _mess_rec * -> -> -> 3 `i `ui `ux -> -> # *U &U _mess_rec `ui `ux ]
-[; ;comm.c: 82: asic.data[3] = mess_rec[4];
-"82
-[e = *U + &U . _asic 1 * -> -> -> 3 `i `ui `ux -> -> # *U &U . _asic 1 `ui `ux *U + &U _mess_rec * -> -> -> 4 `i `ui `ux -> -> # *U &U _mess_rec `ui `ux ]
-[; ;comm.c: 83: asic.data[4] = mess_rec[5];
-"83
-[e = *U + &U . _asic 1 * -> -> -> 4 `i `ui `ux -> -> # *U &U . _asic 1 `ui `ux *U + &U _mess_rec * -> -> -> 5 `i `ui `ux -> -> # *U &U _mess_rec `ui `ux ]
-[; ;comm.c: 85: lputs_ISR(mess_rec,mess_rec_size);
-"85
+[; ;comm.c: 73: lputs_ISR(mess_rec,mess_rec_size);
+"73
 [e ( _lputs_ISR (2 , -> &U _mess_rec `*uc _mess_rec_size ]
-[; ;comm.c: 87: config(asic);
-"87
+[; ;comm.c: 75: config(asic);
+"75
 [e ( _config (1 _asic ]
 [; ;comm.c: 89: }
 "89
-[e :UE 314 ]
+[e :UE 315 ]
 }
 "91
 [v _read_ADC_channels `(v ~T0 @X0 1 ef ]
@@ -2892,7 +2894,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ( _lputs_ISR (2 , &U _aux -> -> 7 `i `uc ]
 [; ;comm.c: 113: }
 "113
-[e :UE 315 ]
+[e :UE 316 ]
 }
 "115
 [v _measure_Impedance `(v ~T0 @X0 1 ef ]
@@ -2908,38 +2910,29 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _value1 `us ~T0 @X0 1 a ]
 [v _value2 `us ~T0 @X0 1 a ]
 [v _value3 `us ~T0 @X0 1 a ]
-"123
-[v _asic `S299 ~T0 @X0 1 a ]
+"121
+[v _asic `S293 ~T0 @X0 1 a ]
 [; ;comm.c: 117: unsigned char aux[13];
 [; ;comm.c: 118: unsigned short value1,value2,value3;
-[; ;comm.c: 123: VIN asic;
+[; ;comm.c: 121: BIO3 asic;
 [; ;comm.c: 127: aux[0] = 'z';
 "127
 [e = *U + &U _aux * -> -> -> 0 `i `ui `ux -> -> # *U &U _aux `ui `ux -> -> 122 `ui `uc ]
-[; ;comm.c: 139: asic.data[0] = mess_rec[1];
-"139
-[e = *U + &U . _asic 1 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _asic 1 `ui `ux *U + &U _mess_rec * -> -> -> 1 `i `ui `ux -> -> # *U &U _mess_rec `ui `ux ]
-[; ;comm.c: 140: asic.data[1] = mess_rec[2];
-"140
-[e = *U + &U . _asic 1 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _asic 1 `ui `ux *U + &U _mess_rec * -> -> -> 2 `i `ui `ux -> -> # *U &U _mess_rec `ui `ux ]
-[; ;comm.c: 141: asic.data[2] = mess_rec[3];
-"141
-[e = *U + &U . _asic 1 * -> -> -> 2 `i `ui `ux -> -> # *U &U . _asic 1 `ui `ux *U + &U _mess_rec * -> -> -> 3 `i `ui `ux -> -> # *U &U _mess_rec `ui `ux ]
-[; ;comm.c: 142: asic.data[3] = mess_rec[4];
-"142
-[e = *U + &U . _asic 1 * -> -> -> 3 `i `ui `ux -> -> # *U &U . _asic 1 `ui `ux *U + &U _mess_rec * -> -> -> 4 `i `ui `ux -> -> # *U &U _mess_rec `ui `ux ]
-[; ;comm.c: 143: asic.data[4] = mess_rec[5];
-"143
-[e = *U + &U . _asic 1 * -> -> -> 4 `i `ui `ux -> -> # *U &U . _asic 1 `ui `ux *U + &U _mess_rec * -> -> -> 5 `i `ui `ux -> -> # *U &U _mess_rec `ui `ux ]
-[; ;comm.c: 145: asic.data_bits.CE = 0;
-"145
+[; ;comm.c: 131: asic.data[0] = (unsigned short)(mess_rec[1]);
+"131
+[e = *U + &U . _asic 1 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _asic 1 `ui `ux -> -> *U + &U _mess_rec * -> -> -> 1 `i `ui `ux -> -> # *U &U _mess_rec `ui `ux `us `uc ]
+[; ;comm.c: 132: asic.data[1] = (unsigned short)(mess_rec[2]);
+"132
+[e = *U + &U . _asic 1 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _asic 1 `ui `ux -> -> *U + &U _mess_rec * -> -> -> 2 `i `ui `ux -> -> # *U &U _mess_rec `ui `ux `us `uc ]
+[; ;comm.c: 135: asic.data_bits.CE = 0;
+"135
 [e = . . _asic 2 6 -> -> 0 `i `uc ]
-[; ;comm.c: 146: config(asic);
-"146
+[; ;comm.c: 136: config(asic);
+"136
 [e ( _config (1 _asic ]
-[; ;comm.c: 149: _delay((unsigned long)((15)*(500000/4000.0)));
+[; ;comm.c: 149: _delay((unsigned long)((20)*(500000/4000.0)));
 "149
-[e ( __delay (1 -> * -> -> 15 `i `d / -> -> 500000 `l `d .4000.0 `ul ]
+[e ( __delay (1 -> * -> -> 20 `i `d / -> -> 500000 `l `d .4000.0 `ul ]
 [; ;comm.c: 151: value1 = ADC_2();
 "151
 [e = _value1 ( _ADC_2 ..  ]
@@ -2964,12 +2957,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;comm.c: 161: asic.data_bits.IQ = 0;
 "161
 [e = . . _asic 2 11 -> -> 0 `i `uc ]
-[; ;comm.c: 166: config(asic);
-"166
+[; ;comm.c: 164: config(asic);
+"164
 [e ( _config (1 _asic ]
-[; ;comm.c: 168: _delay((unsigned long)((15)*(500000/4000.0)));
+[; ;comm.c: 168: _delay((unsigned long)((20)*(500000/4000.0)));
 "168
-[e ( __delay (1 -> * -> -> 15 `i `d / -> -> 500000 `l `d .4000.0 `ul ]
+[e ( __delay (1 -> * -> -> 20 `i `d / -> -> 500000 `l `d .4000.0 `ul ]
 [; ;comm.c: 170: value1 = ADC_2();
 "170
 [e = _value1 ( _ADC_2 ..  ]
@@ -2991,12 +2984,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;comm.c: 179: asic.data_bits.IQ = 1;
 "179
 [e = . . _asic 2 11 -> -> 1 `i `uc ]
-[; ;comm.c: 184: config(asic);
-"184
+[; ;comm.c: 182: config(asic);
+"182
 [e ( _config (1 _asic ]
-[; ;comm.c: 186: _delay((unsigned long)((15)*(500000/4000.0)));
+[; ;comm.c: 186: _delay((unsigned long)((20)*(500000/4000.0)));
 "186
-[e ( __delay (1 -> * -> -> 15 `i `d / -> -> 500000 `l `d .4000.0 `ul ]
+[e ( __delay (1 -> * -> -> 20 `i `d / -> -> 500000 `l `d .4000.0 `ul ]
 [; ;comm.c: 188: value1 = ADC_2();
 "188
 [e = _value1 ( _ADC_2 ..  ]
@@ -3020,7 +3013,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ( _lputs_ISR (2 , &U _aux -> -> 13 `i `uc ]
 [; ;comm.c: 198: }
 "198
-[e :UE 316 ]
+[e :UE 317 ]
 }
 "200
 [v _measure_Impedance_no_offset `(v ~T0 @X0 1 ef ]
@@ -3036,41 +3029,32 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _value1 `us ~T0 @X0 1 a ]
 [v _value2 `us ~T0 @X0 1 a ]
 [v _value3 `us ~T0 @X0 1 a ]
-"208
-[v _asic `S299 ~T0 @X0 1 a ]
+"206
+[v _asic `S293 ~T0 @X0 1 a ]
 [; ;comm.c: 202: unsigned char aux[13];
 [; ;comm.c: 203: unsigned short value1,value2,value3;
-[; ;comm.c: 208: VIN asic;
+[; ;comm.c: 206: BIO3 asic;
 [; ;comm.c: 211: aux[0] = 'y';
 "211
 [e = *U + &U _aux * -> -> -> 0 `i `ui `ux -> -> # *U &U _aux `ui `ux -> -> 121 `ui `uc ]
-[; ;comm.c: 217: asic.data[0] = mess_rec[1];
-"217
-[e = *U + &U . _asic 1 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _asic 1 `ui `ux *U + &U _mess_rec * -> -> -> 1 `i `ui `ux -> -> # *U &U _mess_rec `ui `ux ]
-[; ;comm.c: 218: asic.data[1] = mess_rec[2];
-"218
-[e = *U + &U . _asic 1 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _asic 1 `ui `ux *U + &U _mess_rec * -> -> -> 2 `i `ui `ux -> -> # *U &U _mess_rec `ui `ux ]
-[; ;comm.c: 219: asic.data[2] = mess_rec[3];
-"219
-[e = *U + &U . _asic 1 * -> -> -> 2 `i `ui `ux -> -> # *U &U . _asic 1 `ui `ux *U + &U _mess_rec * -> -> -> 3 `i `ui `ux -> -> # *U &U _mess_rec `ui `ux ]
-[; ;comm.c: 220: asic.data[3] = mess_rec[4];
-"220
-[e = *U + &U . _asic 1 * -> -> -> 3 `i `ui `ux -> -> # *U &U . _asic 1 `ui `ux *U + &U _mess_rec * -> -> -> 4 `i `ui `ux -> -> # *U &U _mess_rec `ui `ux ]
-[; ;comm.c: 221: asic.data[4] = mess_rec[5];
-"221
-[e = *U + &U . _asic 1 * -> -> -> 4 `i `ui `ux -> -> # *U &U . _asic 1 `ui `ux *U + &U _mess_rec * -> -> -> 5 `i `ui `ux -> -> # *U &U _mess_rec `ui `ux ]
+[; ;comm.c: 214: asic.data[0] = (unsigned short)(mess_rec[1]);
+"214
+[e = *U + &U . _asic 1 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _asic 1 `ui `ux -> -> *U + &U _mess_rec * -> -> -> 1 `i `ui `ux -> -> # *U &U _mess_rec `ui `ux `us `uc ]
+[; ;comm.c: 215: asic.data[1] = (unsigned short)(mess_rec[2]);
+"215
+[e = *U + &U . _asic 1 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _asic 1 `ui `ux -> -> *U + &U _mess_rec * -> -> -> 2 `i `ui `ux -> -> # *U &U _mess_rec `ui `ux `us `uc ]
 [; ;comm.c: 225: asic.data_bits.CE = 1;
 "225
 [e = . . _asic 2 6 -> -> 1 `i `uc ]
 [; ;comm.c: 226: asic.data_bits.IQ = 0;
 "226
 [e = . . _asic 2 11 -> -> 0 `i `uc ]
-[; ;comm.c: 231: config(asic);
-"231
+[; ;comm.c: 229: config(asic);
+"229
 [e ( _config (1 _asic ]
-[; ;comm.c: 233: _delay((unsigned long)((15)*(500000/4000.0)));
+[; ;comm.c: 233: _delay((unsigned long)((20)*(500000/4000.0)));
 "233
-[e ( __delay (1 -> * -> -> 15 `i `d / -> -> 500000 `l `d .4000.0 `ul ]
+[e ( __delay (1 -> * -> -> 20 `i `d / -> -> 500000 `l `d .4000.0 `ul ]
 [; ;comm.c: 235: value1 = ADC_2();
 "235
 [e = _value1 ( _ADC_2 ..  ]
@@ -3092,12 +3076,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;comm.c: 244: asic.data_bits.IQ = 1;
 "244
 [e = . . _asic 2 11 -> -> 1 `i `uc ]
-[; ;comm.c: 249: config(asic);
-"249
+[; ;comm.c: 247: config(asic);
+"247
 [e ( _config (1 _asic ]
-[; ;comm.c: 251: _delay((unsigned long)((15)*(500000/4000.0)));
+[; ;comm.c: 251: _delay((unsigned long)((20)*(500000/4000.0)));
 "251
-[e ( __delay (1 -> * -> -> 15 `i `d / -> -> 500000 `l `d .4000.0 `ul ]
+[e ( __delay (1 -> * -> -> 20 `i `d / -> -> 500000 `l `d .4000.0 `ul ]
 [; ;comm.c: 253: value1 = ADC_2();
 "253
 [e = _value1 ( _ADC_2 ..  ]
@@ -3121,7 +3105,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ( _lputs_ISR (2 , &U _aux -> -> 9 `i `uc ]
 [; ;comm.c: 263: }
 "263
-[e :UE 317 ]
+[e :UE 318 ]
 }
 "265
 [v _measure_Offset `(v ~T0 @X0 1 ef ]
@@ -3136,38 +3120,29 @@ Version 3.2 HI-TECH Software Intermediate Code
 "268
 [v _value1 `us ~T0 @X0 1 a ]
 [v _value2 `us ~T0 @X0 1 a ]
-"273
-[v _asic `S299 ~T0 @X0 1 a ]
+"271
+[v _asic `S293 ~T0 @X0 1 a ]
 [; ;comm.c: 267: unsigned char aux[5];
 [; ;comm.c: 268: unsigned short value1,value2;
-[; ;comm.c: 273: VIN asic;
+[; ;comm.c: 271: BIO3 asic;
 [; ;comm.c: 277: aux[0] = 'o';
 "277
 [e = *U + &U _aux * -> -> -> 0 `i `ui `ux -> -> # *U &U _aux `ui `ux -> -> 111 `ui `uc ]
-[; ;comm.c: 288: asic.data[0] = mess_rec[1];
-"288
-[e = *U + &U . _asic 1 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _asic 1 `ui `ux *U + &U _mess_rec * -> -> -> 1 `i `ui `ux -> -> # *U &U _mess_rec `ui `ux ]
-[; ;comm.c: 289: asic.data[1] = mess_rec[2];
-"289
-[e = *U + &U . _asic 1 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _asic 1 `ui `ux *U + &U _mess_rec * -> -> -> 2 `i `ui `ux -> -> # *U &U _mess_rec `ui `ux ]
-[; ;comm.c: 290: asic.data[2] = mess_rec[3];
-"290
-[e = *U + &U . _asic 1 * -> -> -> 2 `i `ui `ux -> -> # *U &U . _asic 1 `ui `ux *U + &U _mess_rec * -> -> -> 3 `i `ui `ux -> -> # *U &U _mess_rec `ui `ux ]
-[; ;comm.c: 291: asic.data[3] = mess_rec[4];
-"291
-[e = *U + &U . _asic 1 * -> -> -> 3 `i `ui `ux -> -> # *U &U . _asic 1 `ui `ux *U + &U _mess_rec * -> -> -> 4 `i `ui `ux -> -> # *U &U _mess_rec `ui `ux ]
-[; ;comm.c: 292: asic.data[4] = mess_rec[5];
-"292
-[e = *U + &U . _asic 1 * -> -> -> 4 `i `ui `ux -> -> # *U &U . _asic 1 `ui `ux *U + &U _mess_rec * -> -> -> 5 `i `ui `ux -> -> # *U &U _mess_rec `ui `ux ]
-[; ;comm.c: 294: asic.data_bits.CE = 0;
-"294
+[; ;comm.c: 280: asic.data[0] = (unsigned short)(mess_rec[1]);
+"280
+[e = *U + &U . _asic 1 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _asic 1 `ui `ux -> -> *U + &U _mess_rec * -> -> -> 1 `i `ui `ux -> -> # *U &U _mess_rec `ui `ux `us `uc ]
+[; ;comm.c: 281: asic.data[1] = (unsigned short)(mess_rec[2]);
+"281
+[e = *U + &U . _asic 1 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _asic 1 `ui `ux -> -> *U + &U _mess_rec * -> -> -> 2 `i `ui `ux -> -> # *U &U _mess_rec `ui `ux `us `uc ]
+[; ;comm.c: 284: asic.data_bits.CE = 0;
+"284
 [e = . . _asic 2 6 -> -> 0 `i `uc ]
-[; ;comm.c: 295: config(asic);
-"295
+[; ;comm.c: 285: config(asic);
+"285
 [e ( _config (1 _asic ]
-[; ;comm.c: 298: _delay((unsigned long)((15)*(500000/4000.0)));
+[; ;comm.c: 298: _delay((unsigned long)((20)*(500000/4000.0)));
 "298
-[e ( __delay (1 -> * -> -> 15 `i `d / -> -> 500000 `l `d .4000.0 `ul ]
+[e ( __delay (1 -> * -> -> 20 `i `d / -> -> 500000 `l `d .4000.0 `ul ]
 [; ;comm.c: 300: value1 = ADC_2();
 "300
 [e = _value1 ( _ADC_2 ..  ]
@@ -3191,7 +3166,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ( _lputs_ISR (2 , &U _aux -> -> 5 `i `uc ]
 [; ;comm.c: 311: }
 "311
-[e :UE 318 ]
+[e :UE 319 ]
 }
 "314
 [v _measure_Impedance_SE `(v ~T0 @X0 1 ef ]
@@ -3206,38 +3181,49 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _check `uc ~T0 @X0 1 a ]
 "318
 [v _value1 `us ~T0 @X0 1 a ]
-"323
-[v _asic `S299 ~T0 @X0 1 a ]
+"321
+[v _asic `S293 ~T0 @X0 1 a ]
 [; ;comm.c: 316: unsigned char aux[8], check;
 [; ;comm.c: 318: unsigned short value1;
-[; ;comm.c: 323: VIN asic;
+[; ;comm.c: 321: BIO3 asic;
+[; ;comm.c: 328: check = calculate_checksum(mess_rec,4);
+"328
+[e = _check ( _calculate_checksum (2 , -> &U _mess_rec `*uc -> -> 4 `i `uc ]
+[; ;comm.c: 329: if (check) {
+"329
+[e $ ! != -> _check `i -> -> -> 0 `i `uc `i 321  ]
+{
+[; ;comm.c: 330: aux[0] = 'e';
+"330
+[e = *U + &U _aux * -> -> -> 0 `i `ui `ux -> -> # *U &U _aux `ui `ux -> -> 101 `ui `uc ]
+[; ;comm.c: 331: lputs_ISR(aux,1);
+"331
+[e ( _lputs_ISR (2 , &U _aux -> -> 1 `i `uc ]
+[; ;comm.c: 332: return;
+"332
+[e $UE 320  ]
+"333
+}
+[e :U 321 ]
+[; ;comm.c: 333: }
 [; ;comm.c: 336: aux[0] = 's';
 "336
 [e = *U + &U _aux * -> -> -> 0 `i `ui `ux -> -> # *U &U _aux `ui `ux -> -> 115 `ui `uc ]
-[; ;comm.c: 347: asic.data[0] = mess_rec[1];
-"347
-[e = *U + &U . _asic 1 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _asic 1 `ui `ux *U + &U _mess_rec * -> -> -> 1 `i `ui `ux -> -> # *U &U _mess_rec `ui `ux ]
-[; ;comm.c: 348: asic.data[1] = mess_rec[2];
-"348
-[e = *U + &U . _asic 1 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _asic 1 `ui `ux *U + &U _mess_rec * -> -> -> 2 `i `ui `ux -> -> # *U &U _mess_rec `ui `ux ]
-[; ;comm.c: 349: asic.data[2] = mess_rec[3];
-"349
-[e = *U + &U . _asic 1 * -> -> -> 2 `i `ui `ux -> -> # *U &U . _asic 1 `ui `ux *U + &U _mess_rec * -> -> -> 3 `i `ui `ux -> -> # *U &U _mess_rec `ui `ux ]
-[; ;comm.c: 350: asic.data[3] = mess_rec[4];
-"350
-[e = *U + &U . _asic 1 * -> -> -> 3 `i `ui `ux -> -> # *U &U . _asic 1 `ui `ux *U + &U _mess_rec * -> -> -> 4 `i `ui `ux -> -> # *U &U _mess_rec `ui `ux ]
-[; ;comm.c: 351: asic.data[4] = mess_rec[5];
-"351
-[e = *U + &U . _asic 1 * -> -> -> 4 `i `ui `ux -> -> # *U &U . _asic 1 `ui `ux *U + &U _mess_rec * -> -> -> 5 `i `ui `ux -> -> # *U &U _mess_rec `ui `ux ]
-[; ;comm.c: 353: asic.data_bits.CE = 0;
-"353
+[; ;comm.c: 339: asic.data[0] = (unsigned short)(mess_rec[1]);
+"339
+[e = *U + &U . _asic 1 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _asic 1 `ui `ux -> -> *U + &U _mess_rec * -> -> -> 1 `i `ui `ux -> -> # *U &U _mess_rec `ui `ux `us `uc ]
+[; ;comm.c: 340: asic.data[1] = (unsigned short)(mess_rec[2]);
+"340
+[e = *U + &U . _asic 1 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _asic 1 `ui `ux -> -> *U + &U _mess_rec * -> -> -> 2 `i `ui `ux -> -> # *U &U _mess_rec `ui `ux `us `uc ]
+[; ;comm.c: 343: asic.data_bits.CE = 0;
+"343
 [e = . . _asic 2 6 -> -> 0 `i `uc ]
-[; ;comm.c: 354: config(asic);
-"354
+[; ;comm.c: 344: config(asic);
+"344
 [e ( _config (1 _asic ]
-[; ;comm.c: 357: _delay((unsigned long)((15)*(500000/4000.0)));
+[; ;comm.c: 357: _delay((unsigned long)((20)*(500000/4000.0)));
 "357
-[e ( __delay (1 -> * -> -> 15 `i `d / -> -> 500000 `l `d .4000.0 `ul ]
+[e ( __delay (1 -> * -> -> 20 `i `d / -> -> 500000 `l `d .4000.0 `ul ]
 [; ;comm.c: 359: value1 = ADC_5();
 "359
 [e = _value1 ( _ADC_5 ..  ]
@@ -3253,12 +3239,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;comm.c: 366: asic.data_bits.IQ = 0;
 "366
 [e = . . _asic 2 11 -> -> 0 `i `uc ]
-[; ;comm.c: 371: config(asic);
-"371
+[; ;comm.c: 369: config(asic);
+"369
 [e ( _config (1 _asic ]
-[; ;comm.c: 373: _delay((unsigned long)((15)*(500000/4000.0)));
+[; ;comm.c: 373: _delay((unsigned long)((20)*(500000/4000.0)));
 "373
-[e ( __delay (1 -> * -> -> 15 `i `d / -> -> 500000 `l `d .4000.0 `ul ]
+[e ( __delay (1 -> * -> -> 20 `i `d / -> -> 500000 `l `d .4000.0 `ul ]
 [; ;comm.c: 375: value1 = ADC_5();
 "375
 [e = _value1 ( _ADC_5 ..  ]
@@ -3271,12 +3257,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;comm.c: 381: asic.data_bits.IQ = 1;
 "381
 [e = . . _asic 2 11 -> -> 1 `i `uc ]
-[; ;comm.c: 386: config(asic);
-"386
+[; ;comm.c: 384: config(asic);
+"384
 [e ( _config (1 _asic ]
-[; ;comm.c: 388: _delay((unsigned long)((15)*(500000/4000.0)));
+[; ;comm.c: 388: _delay((unsigned long)((20)*(500000/4000.0)));
 "388
-[e ( __delay (1 -> * -> -> 15 `i `d / -> -> 500000 `l `d .4000.0 `ul ]
+[e ( __delay (1 -> * -> -> 20 `i `d / -> -> 500000 `l `d .4000.0 `ul ]
 [; ;comm.c: 390: value1 = ADC_5();
 "390
 [e = _value1 ( _ADC_5 ..  ]
@@ -3286,12 +3272,18 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;comm.c: 393: aux[6] = (unsigned char)((value1 >> 8) & 0xff);
 "393
 [e = *U + &U _aux * -> -> -> 6 `i `ui `ux -> -> # *U &U _aux `ui `ux -> & >> -> _value1 `ui -> 8 `i -> -> 255 `i `ui `uc ]
-[; ;comm.c: 401: lputs_ISR(aux,7);
-"401
-[e ( _lputs_ISR (2 , &U _aux -> -> 7 `i `uc ]
+[; ;comm.c: 397: check = calculate_checksum(aux,7);
+"397
+[e = _check ( _calculate_checksum (2 , &U _aux -> -> 7 `i `uc ]
+[; ;comm.c: 398: aux[7] = check;
+"398
+[e = *U + &U _aux * -> -> -> 7 `i `ui `ux -> -> # *U &U _aux `ui `ux _check ]
+[; ;comm.c: 399: lputs_ISR(aux,8);
+"399
+[e ( _lputs_ISR (2 , &U _aux -> -> 8 `i `uc ]
 [; ;comm.c: 405: }
 "405
-[e :UE 319 ]
+[e :UE 320 ]
 }
 "407
 [v _calculate_checksum `(uc ~T0 @X0 1 ef2`*uc`uc ]
@@ -3316,8 +3308,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 "412
 {
 [e = _i -> -> 0 `i `uc ]
-[e $U 324  ]
-[e :U 321 ]
+[e $U 326  ]
+[e :U 323 ]
 {
 [; ;comm.c: 413: check ^= data[i];
 "413
@@ -3326,19 +3318,19 @@ Version 3.2 HI-TECH Software Intermediate Code
 }
 "412
 [e ++ _i -> -> 1 `i `uc ]
+[e :U 326 ]
+[e $ < -> _i `i -> _num `i 323  ]
 [e :U 324 ]
-[e $ < -> _i `i -> _num `i 321  ]
-[e :U 322 ]
 "414
 }
 [; ;comm.c: 414: }
 [; ;comm.c: 416: return check;
 "416
 [e ) _check ]
-[e $UE 320  ]
+[e $UE 322  ]
 [; ;comm.c: 417: }
 "417
-[e :UE 320 ]
+[e :UE 322 ]
 }
 "419
 [v _calibrate_reader `(v ~T0 @X0 1 ef ]
@@ -3377,7 +3369,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = *U + &U _aux * -> -> -> 7 `i `ui `ux -> -> # *U &U _aux `ui `ux -> -> 64 `ui `uc ]
 [; ;comm.c: 432: while (1) {
 "432
-[e :U 327 ]
+[e :U 329 ]
 {
 [; ;comm.c: 433: asm("clrwdt");
 "433
@@ -3390,14 +3382,14 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ( _lputs_ISR (2 , &U _aux -> -> 8 `i `uc ]
 "437
 }
-[e :U 326 ]
-"432
-[e $U 327  ]
 [e :U 328 ]
+"432
+[e $U 329  ]
+[e :U 330 ]
 [; ;comm.c: 437: }
 [; ;comm.c: 439: }
 "439
-[e :UE 325 ]
+[e :UE 327 ]
 }
 "441
 [v _sweep `(v ~T0 @X0 1 ef ]
@@ -3421,23 +3413,17 @@ Version 3.2 HI-TECH Software Intermediate Code
 "447
 [v _aux `uc ~T0 @X0 -> 7 `i a ]
 [v _check `uc ~T0 @X0 1 a ]
-"453
-[v _asic `S299 ~T0 @X0 1 a ]
+"450
+[v _asic `S293 ~T0 @X0 1 a ]
 [; ;comm.c: 443: unsigned char gain_index;
 [; ;comm.c: 444: unsigned char freq_index;
 [; ;comm.c: 445: unsigned char i, ret, count;
 [; ;comm.c: 446: short I,Q;
 [; ;comm.c: 447: unsigned char aux[7], check;
-[; ;comm.c: 453: VIN asic;
-[; ;comm.c: 454: asic.datas[0] = 0;
-"454
-[e = *U + &U . _asic 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _asic 0 `ui `ux -> -> 0 `i `us ]
-[; ;comm.c: 455: asic.datas[1] = 0;
-"455
-[e = *U + &U . _asic 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _asic 0 `ui `ux -> -> 0 `i `us ]
-[; ;comm.c: 456: asic.datas[2] = 0;
-"456
-[e = *U + &U . _asic 0 * -> -> -> 2 `i `ui `ux -> -> # *U &U . _asic 0 `ui `ux -> -> 0 `i `us ]
+[; ;comm.c: 450: BIO3 asic;
+[; ;comm.c: 451: asic.datashort = 0;
+"451
+[e = . _asic 0 -> -> 0 `i `us ]
 [; ;comm.c: 462: freq_index = 10;
 "462
 [e = _freq_index -> -> 10 `i `uc ]
@@ -3451,16 +3437,13 @@ Version 3.2 HI-TECH Software Intermediate Code
 "467
 {
 [e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 11 `i 330  ]
-[e $U 331  ]
-[e :U 330 ]
+[e $ < -> _i `i -> 11 `i 332  ]
+[e $U 333  ]
+[e :U 332 ]
 {
-[; ;comm.c: 472: setFreq(&asic,freq_index);
-"472
+[; ;comm.c: 470: setFreq(&asic,freq_index);
+"470
 [e ( _setFreq (2 , &U _asic _freq_index ]
-[; ;comm.c: 473: setFilt(&asic,freq_index);
-"473
-[e ( _setFilt (2 , &U _asic _freq_index ]
 [; ;comm.c: 477: count = 0;
 "477
 [e = _count -> -> 0 `i `uc ]
@@ -3469,26 +3452,26 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _ret -> -> 0 `i `uc ]
 [; ;comm.c: 480: do {
 "480
-[e :U 335 ]
+[e :U 337 ]
 {
 [; ;comm.c: 482: ret = measure(&I,&Q,asic);
 "482
 [e = _ret ( _measure (3 , , &U _I &U _Q _asic ]
 [; ;comm.c: 484: if (ret == 1) {
 "484
-[e $ ! == -> _ret `i -> 1 `i 336  ]
+[e $ ! == -> _ret `i -> 1 `i 338  ]
 {
 [; ;comm.c: 486: if (count == 2) break;
 "486
-[e $ ! == -> _count `i -> 2 `i 337  ]
-[e $U 334  ]
-[e :U 337 ]
+[e $ ! == -> _count `i -> 2 `i 339  ]
+[e $U 336  ]
+[e :U 339 ]
 [; ;comm.c: 487: count = ret;
 "487
 [e = _count _ret ]
-[; ;comm.c: 492: if (gain_index < 5) {
-"492
-[e $ ! < -> _gain_index `i -> 5 `i 338  ]
+[; ;comm.c: 490: if (gain_index < 7) {
+"490
+[e $ ! < -> _gain_index `i -> 7 `i 340  ]
 {
 [; ;comm.c: 494: gain_index++;
 "494
@@ -3499,37 +3482,37 @@ Version 3.2 HI-TECH Software Intermediate Code
 "496
 }
 [; ;comm.c: 496: } else {
-[e $U 339  ]
-[e :U 338 ]
+[e $U 341  ]
+[e :U 340 ]
 {
 [; ;comm.c: 497: break;
 "497
-[e $U 334  ]
+[e $U 336  ]
 "498
 }
-[e :U 339 ]
+[e :U 341 ]
 [; ;comm.c: 498: }
 [; ;comm.c: 500: continue;
 "500
-[e $U 333  ]
+[e $U 335  ]
 "502
 }
 [; ;comm.c: 502: } else if (ret == 2) {
-[e $U 340  ]
-[e :U 336 ]
-[e $ ! == -> _ret `i -> 2 `i 341  ]
+[e $U 342  ]
+[e :U 338 ]
+[e $ ! == -> _ret `i -> 2 `i 343  ]
 {
 [; ;comm.c: 504: if (count == 1) break;
 "504
-[e $ ! == -> _count `i -> 1 `i 342  ]
-[e $U 334  ]
-[e :U 342 ]
+[e $ ! == -> _count `i -> 1 `i 344  ]
+[e $U 336  ]
+[e :U 344 ]
 [; ;comm.c: 505: count = ret;
 "505
 [e = _count _ret ]
 [; ;comm.c: 507: if (gain_index > 0) {
 "507
-[e $ ! > -> _gain_index `i -> 0 `i 343  ]
+[e $ ! > -> _gain_index `i -> 0 `i 345  ]
 {
 [; ;comm.c: 508: gain_index--;
 "508
@@ -3540,30 +3523,30 @@ Version 3.2 HI-TECH Software Intermediate Code
 "510
 }
 [; ;comm.c: 510: } else {
-[e $U 344  ]
-[e :U 343 ]
+[e $U 346  ]
+[e :U 345 ]
 {
 [; ;comm.c: 511: break;
 "511
-[e $U 334  ]
+[e $U 336  ]
 "512
 }
-[e :U 344 ]
+[e :U 346 ]
 [; ;comm.c: 512: }
 [; ;comm.c: 514: continue;
 "514
-[e $U 333  ]
+[e $U 335  ]
 "515
 }
-[e :U 341 ]
+[e :U 343 ]
 "517
-[e :U 340 ]
+[e :U 342 ]
 }
-[e :U 333 ]
+[e :U 335 ]
 [; ;comm.c: 515: }
 [; ;comm.c: 517: } while (ret);
-[e $ != -> _ret `i -> -> -> 0 `i `uc `i 335  ]
-[e :U 334 ]
+[e $ != -> _ret `i -> -> -> 0 `i `uc `i 337  ]
+[e :U 336 ]
 [; ;comm.c: 523: ret = (freq_index << 4) & 0xf0;
 "523
 [e = _ret -> & << -> _freq_index `i -> 4 `i -> 240 `i `uc ]
@@ -3597,9 +3580,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;comm.c: 537: lputs_ISR(aux,7);
 "537
 [e ( _lputs_ISR (2 , &U _aux -> -> 7 `i `uc ]
-[; ;comm.c: 540: _delay((unsigned long)((50)*(500000/4000.0)));
-"540
-[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 500000 `l `d .4000.0 `ul ]
 [; ;comm.c: 545: freq_index--;
 "545
 [e -- _freq_index -> -> 1 `i `uc ]
@@ -3607,26 +3587,26 @@ Version 3.2 HI-TECH Software Intermediate Code
 }
 "467
 [e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 11 `i 330  ]
-[e :U 331 ]
+[e $ < -> _i `i -> 11 `i 332  ]
+[e :U 333 ]
 "546
 }
 [; ;comm.c: 546: }
 [; ;comm.c: 548: }
 "548
-[e :UE 329 ]
+[e :UE 331 ]
 }
-"556
-[v _measure `(uc ~T0 @X0 1 ef3`*s`*s`S299 ]
+"554
+[v _measure `(uc ~T0 @X0 1 ef3`*s`*s`S293 ]
 "558
 {
-[; ;comm.c: 556: unsigned char measure(short* I, short* Q, VIN asic)
+[; ;comm.c: 554: unsigned char measure(short* I, short* Q, BIO3 asic)
 [; ;comm.c: 558: {
 [e :U _measure ]
-"556
+"554
 [v _I `*s ~T0 @X0 1 r1 ]
 [v _Q `*s ~T0 @X0 1 r2 ]
-[v _asic `S299 ~T0 @X0 1 r3 ]
+[v _asic `S293 ~T0 @X0 1 r3 ]
 "558
 [f ]
 "559
@@ -3643,9 +3623,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;comm.c: 565: config(asic);
 "565
 [e ( _config (1 _asic ]
-[; ;comm.c: 566: _delay((unsigned long)((15)*(500000/4000.0)));
+[; ;comm.c: 566: _delay((unsigned long)((20)*(500000/4000.0)));
 "566
-[e ( __delay (1 -> * -> -> 15 `i `d / -> -> 500000 `l `d .4000.0 `ul ]
+[e ( __delay (1 -> * -> -> 20 `i `d / -> -> 500000 `l `d .4000.0 `ul ]
 [; ;comm.c: 568: offset = ADC_5();
 "568
 [e = _offset ( _ADC_5 ..  ]
@@ -3658,9 +3638,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;comm.c: 574: config(asic);
 "574
 [e ( _config (1 _asic ]
-[; ;comm.c: 575: _delay((unsigned long)((15)*(500000/4000.0)));
+[; ;comm.c: 575: _delay((unsigned long)((20)*(500000/4000.0)));
 "575
-[e ( __delay (1 -> * -> -> 15 `i `d / -> -> 500000 `l `d .4000.0 `ul ]
+[e ( __delay (1 -> * -> -> 20 `i `d / -> -> 500000 `l `d .4000.0 `ul ]
 [; ;comm.c: 577: value = ADC_5();
 "577
 [e = _value ( _ADC_5 ..  ]
@@ -3672,14 +3652,14 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _aux1 *U _I ]
 [; ;comm.c: 581: if (aux1 < 0) {
 "581
-[e $ ! < -> _aux1 `i -> 0 `i 346  ]
+[e $ ! < -> _aux1 `i -> 0 `i 348  ]
 {
 [; ;comm.c: 582: aux1 = -aux1;
 "582
 [e = _aux1 -> -U -> _aux1 `i `s ]
 "583
 }
-[e :U 346 ]
+[e :U 348 ]
 [; ;comm.c: 583: }
 [; ;comm.c: 588: asic.data_bits.IQ = 1;
 "588
@@ -3687,9 +3667,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;comm.c: 590: config(asic);
 "590
 [e ( _config (1 _asic ]
-[; ;comm.c: 591: _delay((unsigned long)((15)*(500000/4000.0)));
+[; ;comm.c: 591: _delay((unsigned long)((20)*(500000/4000.0)));
 "591
-[e ( __delay (1 -> * -> -> 15 `i `d / -> -> 500000 `l `d .4000.0 `ul ]
+[e ( __delay (1 -> * -> -> 20 `i `d / -> -> 500000 `l `d .4000.0 `ul ]
 [; ;comm.c: 593: value = ADC_5();
 "593
 [e = _value ( _ADC_5 ..  ]
@@ -3701,55 +3681,55 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _aux2 *U _Q ]
 [; ;comm.c: 597: if (aux2 < 0) {
 "597
-[e $ ! < -> _aux2 `i -> 0 `i 347  ]
+[e $ ! < -> _aux2 `i -> 0 `i 349  ]
 {
 [; ;comm.c: 598: aux2 = -aux2;
 "598
 [e = _aux2 -> -U -> _aux2 `i `s ]
 "599
 }
-[e :U 347 ]
+[e :U 349 ]
 [; ;comm.c: 599: }
 [; ;comm.c: 601: if (aux2 > aux1) {
 "601
-[e $ ! > -> _aux2 `i -> _aux1 `i 348  ]
+[e $ ! > -> _aux2 `i -> _aux1 `i 350  ]
 {
 [; ;comm.c: 602: aux1 = aux2;
 "602
 [e = _aux1 _aux2 ]
 "603
 }
-[e :U 348 ]
+[e :U 350 ]
 [; ;comm.c: 603: }
 [; ;comm.c: 605: if (aux1 > 370) {
 "605
-[e $ ! > -> _aux1 `i -> 370 `i 349  ]
+[e $ ! > -> _aux1 `i -> 370 `i 351  ]
 {
 [; ;comm.c: 606: return 2;
 "606
 [e ) -> -> 2 `i `uc ]
-[e $UE 345  ]
+[e $UE 347  ]
 "607
 }
 [; ;comm.c: 607: } else if (aux1 < 86) {
-[e $U 350  ]
-[e :U 349 ]
-[e $ ! < -> _aux1 `i -> 86 `i 351  ]
+[e $U 352  ]
+[e :U 351 ]
+[e $ ! < -> _aux1 `i -> 86 `i 353  ]
 {
 [; ;comm.c: 608: return 1;
 "608
 [e ) -> -> 1 `i `uc ]
-[e $UE 345  ]
+[e $UE 347  ]
 "609
 }
-[e :U 351 ]
+[e :U 353 ]
 "611
-[e :U 350 ]
+[e :U 352 ]
 [; ;comm.c: 609: }
 [; ;comm.c: 611: return 0;
 [e ) -> -> 0 `i `uc ]
-[e $UE 345  ]
+[e $UE 347  ]
 [; ;comm.c: 612: }
 "612
-[e :UE 345 ]
+[e :UE 347 ]
 }

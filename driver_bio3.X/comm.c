@@ -72,7 +72,7 @@ void config_ASIC()
             
     lputs_ISR(mess_rec,mess_rec_size);
             
-    BIO_config(asic);   
+    config(asic);   
 #else
     VIN asic;
         
@@ -133,7 +133,7 @@ void measure_Impedance()
     
     //extract Offset
     asic.data_bits.CE = 0; //Disable the signal generator
-    BIO_config(asic);                   
+    config(asic);                   
     #else    
 
     asic.data[0] = mess_rec[1];
@@ -161,7 +161,7 @@ void measure_Impedance()
      asic.data_bits.IQ = 0; //Select I reference
     
 #ifdef BIOASIC
-     BIO_config(asic);                   
+     config(asic);                   
 #else
      config(asic);
 #endif
@@ -179,7 +179,7 @@ void measure_Impedance()
     asic.data_bits.IQ = 1; //Select Q reference
     
 #ifdef BIOASIC
-     BIO_config(asic);                   
+     config(asic);                   
 #else
      config(asic);
 #endif
@@ -226,7 +226,7 @@ void measure_Impedance_no_offset()
      asic.data_bits.IQ = 0; //Select I reference
     
     #ifdef BIOASIC
-        BIO_config(asic);                   
+        config(asic);                   
     #else
         config(asic);
     #endif
@@ -244,7 +244,7 @@ void measure_Impedance_no_offset()
     asic.data_bits.IQ = 1; //Select Q reference
     
     #ifdef BIOASIC
-        BIO_config(asic);                   
+        config(asic);                   
     #else
         config(asic);
     #endif
@@ -282,7 +282,7 @@ void measure_Offset()
     
     //extract Offset
     asic.data_bits.CE = 0; //Disable the signal generator
-    BIO_config(asic);                   
+    config(asic);                   
     #else    
 
     asic.data[0] = mess_rec[1];
@@ -341,7 +341,7 @@ void measure_Impedance_SE()
     
     //extract Offset
     asic.data_bits.CE = 0; //Disable the signal generator
-    BIO_config(asic);                   
+    config(asic);                   
     #else    
 
     asic.data[0] = mess_rec[1];
@@ -366,7 +366,7 @@ void measure_Impedance_SE()
      asic.data_bits.IQ = 0; //Select I reference
     
 #ifdef BIOASIC
-     BIO_config(asic);                   
+     config(asic);                   
 #else
      config(asic);
 #endif
@@ -381,7 +381,7 @@ void measure_Impedance_SE()
     asic.data_bits.IQ = 1; //Select Q reference
     
 #ifdef BIOASIC
-     BIO_config(asic);                   
+     config(asic);                   
 #else
      config(asic);
 #endif
