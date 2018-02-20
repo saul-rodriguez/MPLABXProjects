@@ -25,9 +25,7 @@
 [v _setGain setGain `(v  1 e 1 0 ]
 "175
 [v _setFreq setFreq `(v  1 e 1 0 ]
-"11 /home/saul/MPLABXProjects/driver_bio3.X/comm.c
-[v _mess_handler mess_handler `(v  1 e 1 0 ]
-"61
+"61 /home/saul/MPLABXProjects/driver_bio3.X/comm.c
 [v _config_ASIC config_ASIC `(v  1 e 1 0 ]
 "91
 [v _read_ADC_channels read_ADC_channels `(v  1 e 1 0 ]
@@ -220,9 +218,231 @@
 "28 /home/saul/MPLABXProjects/driver_bio3.X/main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"30
-[v main@i i `uc  1 a 1 45 ]
 "147
+} 0
+"441 /home/saul/MPLABXProjects/driver_bio3.X/comm.c
+[v _sweep sweep `(v  1 e 1 0 ]
+{
+"447
+[v sweep@aux aux `[7]uc  1 a 7 1 ]
+[s S154 BIO3_bits_stuct 2 `uc 1 RE 1 0 :1:0 
+`uc 1 FS 1 0 :1:1 
+`uc 1 GD0 1 0 :1:2 
+`uc 1 GD1 1 0 :1:3 
+`uc 1 GD2 1 0 :1:4 
+`uc 1 NS 1 0 :1:5 
+`uc 1 CE 1 0 :1:6 
+`uc 1 GS0 1 0 :1:7 
+`uc 1 GS1 1 1 :1:0 
+`uc 1 GS2 1 1 :1:1 
+`uc 1 GS3 1 1 :1:2 
+`uc 1 IQ 1 1 :1:3 
+`uc 1 F0 1 1 :1:4 
+`uc 1 F1 1 1 :1:5 
+`uc 1 F2 1 1 :1:6 
+`uc 1 F3 1 1 :1:7 
+]
+"450
+[u S171 . 2 `us 1 datashort 2 0 `[2]uc 1 data 2 0 `S154 1 data_bits 2 0 ]
+[v sweep@asic asic `S171  1 a 2 17 ]
+"446
+[v sweep@Q Q `s  1 a 2 13 ]
+[v sweep@I I `s  1 a 2 11 ]
+"445
+[v sweep@ret ret `uc  1 a 1 16 ]
+"443
+[v sweep@gain_index gain_index `uc  1 a 1 15 ]
+"445
+[v sweep@count count `uc  1 a 1 10 ]
+[v sweep@i i `uc  1 a 1 9 ]
+"444
+[v sweep@freq_index freq_index `uc  1 a 1 8 ]
+"447
+[v sweep@check check `uc  1 a 1 0 ]
+"550
+} 0
+"161 /home/saul/MPLABXProjects/driver_bio3.X/bio3.c
+[v _setGain setGain `(v  1 e 1 0 ]
+{
+[s S154 BIO3_bits_stuct 2 `uc 1 RE 1 0 :1:0 
+`uc 1 FS 1 0 :1:1 
+`uc 1 GD0 1 0 :1:2 
+`uc 1 GD1 1 0 :1:3 
+`uc 1 GD2 1 0 :1:4 
+`uc 1 NS 1 0 :1:5 
+`uc 1 CE 1 0 :1:6 
+`uc 1 GS0 1 0 :1:7 
+`uc 1 GS1 1 1 :1:0 
+`uc 1 GS2 1 1 :1:1 
+`uc 1 GS3 1 1 :1:2 
+`uc 1 IQ 1 1 :1:3 
+`uc 1 F0 1 1 :1:4 
+`uc 1 F1 1 1 :1:5 
+`uc 1 F2 1 1 :1:6 
+`uc 1 F3 1 1 :1:7 
+]
+[u S171 . 2 `us 1 datashort 2 0 `[2]uc 1 data 2 0 `S154 1 data_bits 2 0 ]
+[v setGain@asic asic `*.4S171  1 a 1 wreg ]
+[s S179 RADIO_gain_bits_struct 1 `uc 1 GD0 1 0 :1:0 
+`uc 1 GD1 1 0 :1:1 
+`uc 1 GD2 1 0 :1:2 
+`uc 1 GS0 1 0 :1:3 
+`uc 1 GS1 1 0 :1:4 
+`uc 1 GS2 1 0 :1:5 
+`uc 1 GS3 1 0 :1:6 
+`uc 1 NOTUSED 1 0 :1:7 
+]
+"163
+[u S188 . 1 `uc 1 data 1 0 `S179 1 data_bits 1 0 ]
+[v setGain@aux aux `S188  1 a 1 2 ]
+"161
+[v setGain@asic asic `*.4S171  1 a 1 wreg ]
+[v setGain@gain_index gain_index `uc  1 p 1 0 ]
+"164
+"161
+[v setGain@asic asic `*.4S171  1 a 1 3 ]
+"173
+} 0
+"175
+[v _setFreq setFreq `(v  1 e 1 0 ]
+{
+[s S154 BIO3_bits_stuct 2 `uc 1 RE 1 0 :1:0 
+`uc 1 FS 1 0 :1:1 
+`uc 1 GD0 1 0 :1:2 
+`uc 1 GD1 1 0 :1:3 
+`uc 1 GD2 1 0 :1:4 
+`uc 1 NS 1 0 :1:5 
+`uc 1 CE 1 0 :1:6 
+`uc 1 GS0 1 0 :1:7 
+`uc 1 GS1 1 1 :1:0 
+`uc 1 GS2 1 1 :1:1 
+`uc 1 GS3 1 1 :1:2 
+`uc 1 IQ 1 1 :1:3 
+`uc 1 F0 1 1 :1:4 
+`uc 1 F1 1 1 :1:5 
+`uc 1 F2 1 1 :1:6 
+`uc 1 F3 1 1 :1:7 
+]
+[u S171 . 2 `us 1 datashort 2 0 `[2]uc 1 data 2 0 `S154 1 data_bits 2 0 ]
+[v setFreq@asic asic `*.4S171  1 a 1 wreg ]
+[s S191 RADIO_freq_bits_struct 1 `uc 1 F0 1 0 :1:0 
+`uc 1 F1 1 0 :1:1 
+`uc 1 F2 1 0 :1:2 
+`uc 1 F3 1 0 :1:3 
+]
+"177
+[u S196 . 1 `uc 1 data 1 0 `S191 1 data_bits 1 0 ]
+[v setFreq@aux aux `S196  1 a 1 3 ]
+"175
+[v setFreq@asic asic `*.4S171  1 a 1 wreg ]
+[v setFreq@freq_index freq_index `uc  1 p 1 0 ]
+"178
+"175
+[v setFreq@asic asic `*.4S171  1 a 1 2 ]
+"185
+} 0
+"556 /home/saul/MPLABXProjects/driver_bio3.X/comm.c
+[v _measure measure `(uc  1 e 1 0 ]
+{
+[v measure@I I `*.4s  1 a 1 wreg ]
+"562
+[v measure@aux1 aux1 `s  1 a 2 20 ]
+[v measure@aux2 aux2 `s  1 a 2 18 ]
+"561
+[v measure@value value `us  1 a 2 16 ]
+[v measure@offset offset `us  1 a 2 13 ]
+"556
+[v measure@I I `*.4s  1 a 1 wreg ]
+[v measure@Q Q `*.4s  1 p 1 6 ]
+[s S154 BIO3_bits_stuct 2 `uc 1 RE 1 0 :1:0 
+`uc 1 FS 1 0 :1:1 
+`uc 1 GD0 1 0 :1:2 
+`uc 1 GD1 1 0 :1:3 
+`uc 1 GD2 1 0 :1:4 
+`uc 1 NS 1 0 :1:5 
+`uc 1 CE 1 0 :1:6 
+`uc 1 GS0 1 0 :1:7 
+`uc 1 GS1 1 1 :1:0 
+`uc 1 GS2 1 1 :1:1 
+`uc 1 GS3 1 1 :1:2 
+`uc 1 IQ 1 1 :1:3 
+`uc 1 F0 1 1 :1:4 
+`uc 1 F1 1 1 :1:5 
+`uc 1 F2 1 1 :1:6 
+`uc 1 F3 1 1 :1:7 
+]
+[u S171 . 2 `us 1 datashort 2 0 `[2]uc 1 data 2 0 `S154 1 data_bits 2 0 ]
+[v measure@asic asic `S171  1 p 2 7 ]
+"566
+[v measure@I I `*.4s  1 a 1 15 ]
+"614
+} 0
+"131 /home/saul/MPLABXProjects/driver_bio3.X/bio3.c
+[v _config config `(v  1 e 1 0 ]
+{
+"133
+[v config@out out `uc  1 a 1 4 ]
+[v config@i i `uc  1 a 1 3 ]
+[s S154 BIO3_bits_stuct 2 `uc 1 RE 1 0 :1:0 
+`uc 1 FS 1 0 :1:1 
+`uc 1 GD0 1 0 :1:2 
+`uc 1 GD1 1 0 :1:3 
+`uc 1 GD2 1 0 :1:4 
+`uc 1 NS 1 0 :1:5 
+`uc 1 CE 1 0 :1:6 
+`uc 1 GS0 1 0 :1:7 
+`uc 1 GS1 1 1 :1:0 
+`uc 1 GS2 1 1 :1:1 
+`uc 1 GS3 1 1 :1:2 
+`uc 1 IQ 1 1 :1:3 
+`uc 1 F0 1 1 :1:4 
+`uc 1 F1 1 1 :1:5 
+`uc 1 F2 1 1 :1:6 
+`uc 1 F3 1 1 :1:7 
+]
+"131
+[u S171 . 2 `us 1 datashort 2 0 `[2]uc 1 data 2 0 `S154 1 data_bits 2 0 ]
+[v config@conf conf `S171  1 p 2 0 ]
+"158
+} 0
+"48 /home/saul/MPLABXProjects/driver_bio3.X/ADC1823.c
+[v _ADC_5 ADC_5 `(us  1 e 2 0 ]
+{
+"50
+[v ADC_5@ADC_value ADC_value `us  1 a 2 4 ]
+"56
+} 0
+"132 /home/saul/MPLABXProjects/driver_bio3.X/USART1823.c
+[v _lputs_ISR lputs_ISR `(v  1 e 1 0 ]
+{
+[v lputs_ISR@data data `*.4uc  1 a 1 wreg ]
+"134
+[v lputs_ISR@i i `uc  1 a 1 3 ]
+"132
+[v lputs_ISR@data data `*.4uc  1 a 1 wreg ]
+[v lputs_ISR@length length `uc  1 p 1 0 ]
+"136
+[v lputs_ISR@data data `*.4uc  1 a 1 4 ]
+"149
+} 0
+"35
+[v _close_RX_USART close_RX_USART `(v  1 e 1 0 ]
+{
+"44
+} 0
+"407 /home/saul/MPLABXProjects/driver_bio3.X/comm.c
+[v _calculate_checksum calculate_checksum `(uc  1 e 1 0 ]
+{
+[v calculate_checksum@data data `*.4uc  1 a 1 wreg ]
+"409
+[v calculate_checksum@i i `uc  1 a 1 5 ]
+[v calculate_checksum@check check `uc  1 a 1 3 ]
+"407
+[v calculate_checksum@data data `*.4uc  1 a 1 wreg ]
+[v calculate_checksum@num num `uc  1 p 1 0 ]
+"411
+[v calculate_checksum@data data `*.4uc  1 a 1 4 ]
+"417
 } 0
 "101 /home/saul/MPLABXProjects/driver_bio3.X/USART1823.c
 [v _start_TX_USART_ISR start_TX_USART_ISR `(v  1 e 1 0 ]
@@ -248,413 +468,6 @@
 [v _setup_ADC setup_ADC `(v  1 e 1 0 ]
 {
 "23
-} 0
-"11 /home/saul/MPLABXProjects/driver_bio3.X/comm.c
-[v _mess_handler mess_handler `(v  1 e 1 0 ]
-{
-"59
-} 0
-"441
-[v _sweep sweep `(v  1 e 1 0 ]
-{
-"447
-[v sweep@aux aux `[7]uc  1 a 7 25 ]
-[s S155 BIO3_bits_stuct 2 `uc 1 RE 1 0 :1:0 
-`uc 1 FS 1 0 :1:1 
-`uc 1 GD0 1 0 :1:2 
-`uc 1 GD1 1 0 :1:3 
-`uc 1 GD2 1 0 :1:4 
-`uc 1 NS 1 0 :1:5 
-`uc 1 CE 1 0 :1:6 
-`uc 1 GS0 1 0 :1:7 
-`uc 1 GS1 1 1 :1:0 
-`uc 1 GS2 1 1 :1:1 
-`uc 1 GS3 1 1 :1:2 
-`uc 1 IQ 1 1 :1:3 
-`uc 1 F0 1 1 :1:4 
-`uc 1 F1 1 1 :1:5 
-`uc 1 F2 1 1 :1:6 
-`uc 1 F3 1 1 :1:7 
-]
-"450
-[u S172 . 2 `us 1 datashort 2 0 `[2]uc 1 data 2 0 `S155 1 data_bits 2 0 ]
-[v sweep@asic asic `S172  1 a 2 41 ]
-"446
-[v sweep@Q Q `s  1 a 2 37 ]
-[v sweep@I I `s  1 a 2 35 ]
-"445
-[v sweep@ret ret `uc  1 a 1 40 ]
-"443
-[v sweep@gain_index gain_index `uc  1 a 1 39 ]
-"445
-[v sweep@count count `uc  1 a 1 34 ]
-[v sweep@i i `uc  1 a 1 33 ]
-"444
-[v sweep@freq_index freq_index `uc  1 a 1 32 ]
-"447
-[v sweep@check check `uc  1 a 1 24 ]
-"550
-} 0
-"161 /home/saul/MPLABXProjects/driver_bio3.X/bio3.c
-[v _setGain setGain `(v  1 e 1 0 ]
-{
-[s S155 BIO3_bits_stuct 2 `uc 1 RE 1 0 :1:0 
-`uc 1 FS 1 0 :1:1 
-`uc 1 GD0 1 0 :1:2 
-`uc 1 GD1 1 0 :1:3 
-`uc 1 GD2 1 0 :1:4 
-`uc 1 NS 1 0 :1:5 
-`uc 1 CE 1 0 :1:6 
-`uc 1 GS0 1 0 :1:7 
-`uc 1 GS1 1 1 :1:0 
-`uc 1 GS2 1 1 :1:1 
-`uc 1 GS3 1 1 :1:2 
-`uc 1 IQ 1 1 :1:3 
-`uc 1 F0 1 1 :1:4 
-`uc 1 F1 1 1 :1:5 
-`uc 1 F2 1 1 :1:6 
-`uc 1 F3 1 1 :1:7 
-]
-[u S172 . 2 `us 1 datashort 2 0 `[2]uc 1 data 2 0 `S155 1 data_bits 2 0 ]
-[v setGain@asic asic `*.4S172  1 a 1 wreg ]
-[s S180 RADIO_gain_bits_struct 1 `uc 1 GD0 1 0 :1:0 
-`uc 1 GD1 1 0 :1:1 
-`uc 1 GD2 1 0 :1:2 
-`uc 1 GS0 1 0 :1:3 
-`uc 1 GS1 1 0 :1:4 
-`uc 1 GS2 1 0 :1:5 
-`uc 1 GS3 1 0 :1:6 
-`uc 1 NOTUSED 1 0 :1:7 
-]
-"163
-[u S189 . 1 `uc 1 data 1 0 `S180 1 data_bits 1 0 ]
-[v setGain@aux aux `S189  1 a 1 2 ]
-"161
-[v setGain@asic asic `*.4S172  1 a 1 wreg ]
-[v setGain@gain_index gain_index `uc  1 p 1 0 ]
-"164
-"161
-[v setGain@asic asic `*.4S172  1 a 1 3 ]
-"173
-} 0
-"175
-[v _setFreq setFreq `(v  1 e 1 0 ]
-{
-[s S155 BIO3_bits_stuct 2 `uc 1 RE 1 0 :1:0 
-`uc 1 FS 1 0 :1:1 
-`uc 1 GD0 1 0 :1:2 
-`uc 1 GD1 1 0 :1:3 
-`uc 1 GD2 1 0 :1:4 
-`uc 1 NS 1 0 :1:5 
-`uc 1 CE 1 0 :1:6 
-`uc 1 GS0 1 0 :1:7 
-`uc 1 GS1 1 1 :1:0 
-`uc 1 GS2 1 1 :1:1 
-`uc 1 GS3 1 1 :1:2 
-`uc 1 IQ 1 1 :1:3 
-`uc 1 F0 1 1 :1:4 
-`uc 1 F1 1 1 :1:5 
-`uc 1 F2 1 1 :1:6 
-`uc 1 F3 1 1 :1:7 
-]
-[u S172 . 2 `us 1 datashort 2 0 `[2]uc 1 data 2 0 `S155 1 data_bits 2 0 ]
-[v setFreq@asic asic `*.4S172  1 a 1 wreg ]
-[s S192 RADIO_freq_bits_struct 1 `uc 1 F0 1 0 :1:0 
-`uc 1 F1 1 0 :1:1 
-`uc 1 F2 1 0 :1:2 
-`uc 1 F3 1 0 :1:3 
-]
-"177
-[u S197 . 1 `uc 1 data 1 0 `S192 1 data_bits 1 0 ]
-[v setFreq@aux aux `S197  1 a 1 3 ]
-"175
-[v setFreq@asic asic `*.4S172  1 a 1 wreg ]
-[v setFreq@freq_index freq_index `uc  1 p 1 0 ]
-"178
-"175
-[v setFreq@asic asic `*.4S172  1 a 1 2 ]
-"185
-} 0
-"556 /home/saul/MPLABXProjects/driver_bio3.X/comm.c
-[v _measure measure `(uc  1 e 1 0 ]
-{
-[v measure@I I `*.4s  1 a 1 wreg ]
-"562
-[v measure@aux1 aux1 `s  1 a 2 20 ]
-[v measure@aux2 aux2 `s  1 a 2 18 ]
-"561
-[v measure@value value `us  1 a 2 16 ]
-[v measure@offset offset `us  1 a 2 13 ]
-"556
-[v measure@I I `*.4s  1 a 1 wreg ]
-[v measure@Q Q `*.4s  1 p 1 6 ]
-[s S155 BIO3_bits_stuct 2 `uc 1 RE 1 0 :1:0 
-`uc 1 FS 1 0 :1:1 
-`uc 1 GD0 1 0 :1:2 
-`uc 1 GD1 1 0 :1:3 
-`uc 1 GD2 1 0 :1:4 
-`uc 1 NS 1 0 :1:5 
-`uc 1 CE 1 0 :1:6 
-`uc 1 GS0 1 0 :1:7 
-`uc 1 GS1 1 1 :1:0 
-`uc 1 GS2 1 1 :1:1 
-`uc 1 GS3 1 1 :1:2 
-`uc 1 IQ 1 1 :1:3 
-`uc 1 F0 1 1 :1:4 
-`uc 1 F1 1 1 :1:5 
-`uc 1 F2 1 1 :1:6 
-`uc 1 F3 1 1 :1:7 
-]
-[u S172 . 2 `us 1 datashort 2 0 `[2]uc 1 data 2 0 `S155 1 data_bits 2 0 ]
-[v measure@asic asic `S172  1 p 2 7 ]
-"566
-[v measure@I I `*.4s  1 a 1 15 ]
-"614
-} 0
-"91
-[v _read_ADC_channels read_ADC_channels `(v  1 e 1 0 ]
-{
-"93
-[v read_ADC_channels@aux aux `[7]uc  1 a 7 7 ]
-"94
-[v read_ADC_channels@value3 value3 `us  1 a 2 18 ]
-[v read_ADC_channels@value2 value2 `us  1 a 2 16 ]
-[v read_ADC_channels@value1 value1 `us  1 a 2 14 ]
-"113
-} 0
-"265
-[v _measure_Offset measure_Offset `(v  1 e 1 0 ]
-{
-"267
-[v measure_Offset@aux aux `[5]uc  1 a 5 7 ]
-[s S155 BIO3_bits_stuct 2 `uc 1 RE 1 0 :1:0 
-`uc 1 FS 1 0 :1:1 
-`uc 1 GD0 1 0 :1:2 
-`uc 1 GD1 1 0 :1:3 
-`uc 1 GD2 1 0 :1:4 
-`uc 1 NS 1 0 :1:5 
-`uc 1 CE 1 0 :1:6 
-`uc 1 GS0 1 0 :1:7 
-`uc 1 GS1 1 1 :1:0 
-`uc 1 GS2 1 1 :1:1 
-`uc 1 GS3 1 1 :1:2 
-`uc 1 IQ 1 1 :1:3 
-`uc 1 F0 1 1 :1:4 
-`uc 1 F1 1 1 :1:5 
-`uc 1 F2 1 1 :1:6 
-`uc 1 F3 1 1 :1:7 
-]
-"271
-[u S172 . 2 `us 1 datashort 2 0 `[2]uc 1 data 2 0 `S155 1 data_bits 2 0 ]
-[v measure_Offset@asic asic `S172  1 a 2 16 ]
-"268
-[v measure_Offset@value2 value2 `us  1 a 2 14 ]
-[v measure_Offset@value1 value1 `us  1 a 2 12 ]
-"311
-} 0
-"200
-[v _measure_Impedance_no_offset measure_Impedance_no_offset `(v  1 e 1 0 ]
-{
-"202
-[v measure_Impedance_no_offset@aux aux `[13]uc  1 a 13 7 ]
-[s S155 BIO3_bits_stuct 2 `uc 1 RE 1 0 :1:0 
-`uc 1 FS 1 0 :1:1 
-`uc 1 GD0 1 0 :1:2 
-`uc 1 GD1 1 0 :1:3 
-`uc 1 GD2 1 0 :1:4 
-`uc 1 NS 1 0 :1:5 
-`uc 1 CE 1 0 :1:6 
-`uc 1 GS0 1 0 :1:7 
-`uc 1 GS1 1 1 :1:0 
-`uc 1 GS2 1 1 :1:1 
-`uc 1 GS3 1 1 :1:2 
-`uc 1 IQ 1 1 :1:3 
-`uc 1 F0 1 1 :1:4 
-`uc 1 F1 1 1 :1:5 
-`uc 1 F2 1 1 :1:6 
-`uc 1 F3 1 1 :1:7 
-]
-"206
-[u S172 . 2 `us 1 datashort 2 0 `[2]uc 1 data 2 0 `S155 1 data_bits 2 0 ]
-[v measure_Impedance_no_offset@asic asic `S172  1 a 2 24 ]
-"203
-[v measure_Impedance_no_offset@value2 value2 `us  1 a 2 22 ]
-[v measure_Impedance_no_offset@value1 value1 `us  1 a 2 20 ]
-"263
-} 0
-"314
-[v _measure_Impedance_SE measure_Impedance_SE `(v  1 e 1 0 ]
-{
-"316
-[v measure_Impedance_SE@aux aux `[8]uc  1 a 8 8 ]
-[s S155 BIO3_bits_stuct 2 `uc 1 RE 1 0 :1:0 
-`uc 1 FS 1 0 :1:1 
-`uc 1 GD0 1 0 :1:2 
-`uc 1 GD1 1 0 :1:3 
-`uc 1 GD2 1 0 :1:4 
-`uc 1 NS 1 0 :1:5 
-`uc 1 CE 1 0 :1:6 
-`uc 1 GS0 1 0 :1:7 
-`uc 1 GS1 1 1 :1:0 
-`uc 1 GS2 1 1 :1:1 
-`uc 1 GS3 1 1 :1:2 
-`uc 1 IQ 1 1 :1:3 
-`uc 1 F0 1 1 :1:4 
-`uc 1 F1 1 1 :1:5 
-`uc 1 F2 1 1 :1:6 
-`uc 1 F3 1 1 :1:7 
-]
-"321
-[u S172 . 2 `us 1 datashort 2 0 `[2]uc 1 data 2 0 `S155 1 data_bits 2 0 ]
-[v measure_Impedance_SE@asic asic `S172  1 a 2 19 ]
-"318
-[v measure_Impedance_SE@value1 value1 `us  1 a 2 17 ]
-"316
-[v measure_Impedance_SE@check check `uc  1 a 1 16 ]
-"405
-} 0
-"407
-[v _calculate_checksum calculate_checksum `(uc  1 e 1 0 ]
-{
-[v calculate_checksum@data data `*.4uc  1 a 1 wreg ]
-"409
-[v calculate_checksum@i i `uc  1 a 1 5 ]
-[v calculate_checksum@check check `uc  1 a 1 3 ]
-"407
-[v calculate_checksum@data data `*.4uc  1 a 1 wreg ]
-[v calculate_checksum@num num `uc  1 p 1 0 ]
-"411
-[v calculate_checksum@data data `*.4uc  1 a 1 4 ]
-"417
-} 0
-"48 /home/saul/MPLABXProjects/driver_bio3.X/ADC1823.c
-[v _ADC_5 ADC_5 `(us  1 e 2 0 ]
-{
-"50
-[v ADC_5@ADC_value ADC_value `us  1 a 2 4 ]
-"56
-} 0
-"115 /home/saul/MPLABXProjects/driver_bio3.X/comm.c
-[v _measure_Impedance measure_Impedance `(v  1 e 1 0 ]
-{
-"117
-[v measure_Impedance@aux aux `[13]uc  1 a 13 7 ]
-[s S155 BIO3_bits_stuct 2 `uc 1 RE 1 0 :1:0 
-`uc 1 FS 1 0 :1:1 
-`uc 1 GD0 1 0 :1:2 
-`uc 1 GD1 1 0 :1:3 
-`uc 1 GD2 1 0 :1:4 
-`uc 1 NS 1 0 :1:5 
-`uc 1 CE 1 0 :1:6 
-`uc 1 GS0 1 0 :1:7 
-`uc 1 GS1 1 1 :1:0 
-`uc 1 GS2 1 1 :1:1 
-`uc 1 GS3 1 1 :1:2 
-`uc 1 IQ 1 1 :1:3 
-`uc 1 F0 1 1 :1:4 
-`uc 1 F1 1 1 :1:5 
-`uc 1 F2 1 1 :1:6 
-`uc 1 F3 1 1 :1:7 
-]
-"121
-[u S172 . 2 `us 1 datashort 2 0 `[2]uc 1 data 2 0 `S155 1 data_bits 2 0 ]
-[v measure_Impedance@asic asic `S172  1 a 2 24 ]
-"118
-[v measure_Impedance@value2 value2 `us  1 a 2 22 ]
-[v measure_Impedance@value1 value1 `us  1 a 2 20 ]
-"198
-} 0
-"38 /home/saul/MPLABXProjects/driver_bio3.X/ADC1823.c
-[v _ADC_4 ADC_4 `(us  1 e 2 0 ]
-{
-"40
-[v ADC_4@ADC_value ADC_value `us  1 a 2 4 ]
-"46
-} 0
-"25
-[v _ADC_2 ADC_2 `(us  1 e 2 0 ]
-{
-"27
-[v ADC_2@ADC_value ADC_value `us  1 a 2 4 ]
-"36
-} 0
-"61 /home/saul/MPLABXProjects/driver_bio3.X/comm.c
-[v _config_ASIC config_ASIC `(v  1 e 1 0 ]
-{
-[s S155 BIO3_bits_stuct 2 `uc 1 RE 1 0 :1:0 
-`uc 1 FS 1 0 :1:1 
-`uc 1 GD0 1 0 :1:2 
-`uc 1 GD1 1 0 :1:3 
-`uc 1 GD2 1 0 :1:4 
-`uc 1 NS 1 0 :1:5 
-`uc 1 CE 1 0 :1:6 
-`uc 1 GS0 1 0 :1:7 
-`uc 1 GS1 1 1 :1:0 
-`uc 1 GS2 1 1 :1:1 
-`uc 1 GS3 1 1 :1:2 
-`uc 1 IQ 1 1 :1:3 
-`uc 1 F0 1 1 :1:4 
-`uc 1 F1 1 1 :1:5 
-`uc 1 F2 1 1 :1:6 
-`uc 1 F3 1 1 :1:7 
-]
-"64
-[u S172 . 2 `us 1 datashort 2 0 `[2]uc 1 data 2 0 `S155 1 data_bits 2 0 ]
-[v config_ASIC@asic asic `S172  1 a 2 6 ]
-"89
-} 0
-"131 /home/saul/MPLABXProjects/driver_bio3.X/bio3.c
-[v _config config `(v  1 e 1 0 ]
-{
-"133
-[v config@out out `uc  1 a 1 4 ]
-[v config@i i `uc  1 a 1 3 ]
-[s S155 BIO3_bits_stuct 2 `uc 1 RE 1 0 :1:0 
-`uc 1 FS 1 0 :1:1 
-`uc 1 GD0 1 0 :1:2 
-`uc 1 GD1 1 0 :1:3 
-`uc 1 GD2 1 0 :1:4 
-`uc 1 NS 1 0 :1:5 
-`uc 1 CE 1 0 :1:6 
-`uc 1 GS0 1 0 :1:7 
-`uc 1 GS1 1 1 :1:0 
-`uc 1 GS2 1 1 :1:1 
-`uc 1 GS3 1 1 :1:2 
-`uc 1 IQ 1 1 :1:3 
-`uc 1 F0 1 1 :1:4 
-`uc 1 F1 1 1 :1:5 
-`uc 1 F2 1 1 :1:6 
-`uc 1 F3 1 1 :1:7 
-]
-"131
-[u S172 . 2 `us 1 datashort 2 0 `[2]uc 1 data 2 0 `S155 1 data_bits 2 0 ]
-[v config@conf conf `S172  1 p 2 0 ]
-"158
-} 0
-"419 /home/saul/MPLABXProjects/driver_bio3.X/comm.c
-[v _calibrate_reader calibrate_reader `(v  1 e 1 0 ]
-{
-"421
-[v calibrate_reader@aux aux `[8]uc  1 a 8 6 ]
-"439
-} 0
-"132 /home/saul/MPLABXProjects/driver_bio3.X/USART1823.c
-[v _lputs_ISR lputs_ISR `(v  1 e 1 0 ]
-{
-[v lputs_ISR@data data `*.4uc  1 a 1 wreg ]
-"134
-[v lputs_ISR@i i `uc  1 a 1 3 ]
-"132
-[v lputs_ISR@data data `*.4uc  1 a 1 wreg ]
-[v lputs_ISR@length length `uc  1 p 1 0 ]
-"136
-[v lputs_ISR@data data `*.4uc  1 a 1 4 ]
-"149
-} 0
-"35
-[v _close_RX_USART close_RX_USART `(v  1 e 1 0 ]
-{
-"44
 } 0
 "90 /home/saul/MPLABXProjects/driver_bio3.X/mcc_generated_files/mcc.c
 [v _USARTX_change_pol USARTX_change_pol `(v  1 e 1 0 ]
