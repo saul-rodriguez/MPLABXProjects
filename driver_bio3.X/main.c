@@ -3,6 +3,17 @@
  * Author: saul
  *
  * Created on September 15, 2016, 3:22 PM
+ * 
+ * CONFIGURATION:
+ * 
+ * - To select between BIO_ASIC and VIN_ASIC, comment/uncomment one of the following lines in bio3.h
+ * //#define BIOASIC
+*  //#define VINASIC  
+ * 
+ * - if inductive coupling is used for power and communications (only BIO_ASIC) uncomment the following line in in comm.h
+ * //#define INDUCTIVE_POW 
+ * 
+
  */
 #include "mcc_generated_files/mcc.h"
 
@@ -13,9 +24,6 @@
 #include "USART1823.h"
 #include "comm.h"
 #include "ADC1823.h"
-
-//uncomment if inductive coupling is used for power and communications
-//#define INDUCTIVE_POW
 
 void main(void) {
     

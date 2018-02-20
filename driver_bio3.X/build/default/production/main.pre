@@ -3533,7 +3533,7 @@ unsigned short ADC_4();
 unsigned short ADC_5();
 unsigned short ADC_6();
 
-# 20 "main.c"
+# 28 "main.c"
 void main(void) {
 
 unsigned char i;
@@ -3553,7 +3553,7 @@ RA5 = 0;
 _delay((unsigned long)((150)*(500000/4000.0)));
 RA5 = 1;
 
-# 109
+# 117
 while(1) {
 asm("clrwdt");
 

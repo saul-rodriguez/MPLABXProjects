@@ -3580,156 +3580,156 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;comm.c: 537: lputs_ISR(aux,7);
 "537
 [e ( _lputs_ISR (2 , &U _aux -> -> 7 `i `uc ]
-[; ;comm.c: 545: freq_index--;
-"545
+[; ;comm.c: 547: freq_index--;
+"547
 [e -- _freq_index -> -> 1 `i `uc ]
-"546
+"548
 }
 "467
 [e ++ _i -> -> 1 `i `uc ]
 [e $ < -> _i `i -> 11 `i 332  ]
 [e :U 333 ]
-"546
-}
-[; ;comm.c: 546: }
-[; ;comm.c: 548: }
 "548
+}
+[; ;comm.c: 548: }
+[; ;comm.c: 550: }
+"550
 [e :UE 331 ]
 }
-"554
+"556
 [v _measure `(uc ~T0 @X0 1 ef3`*s`*s`S293 ]
-"558
+"560
 {
-[; ;comm.c: 554: unsigned char measure(short* I, short* Q, BIO3 asic)
-[; ;comm.c: 558: {
+[; ;comm.c: 556: unsigned char measure(short* I, short* Q, BIO3 asic)
+[; ;comm.c: 560: {
 [e :U _measure ]
-"554
+"556
 [v _I `*s ~T0 @X0 1 r1 ]
 [v _Q `*s ~T0 @X0 1 r2 ]
 [v _asic `S293 ~T0 @X0 1 r3 ]
-"558
+"560
 [f ]
-"559
+"561
 [v _offset `us ~T0 @X0 1 a ]
 [v _value `us ~T0 @X0 1 a ]
-"560
+"562
 [v _aux1 `s ~T0 @X0 1 a ]
 [v _aux2 `s ~T0 @X0 1 a ]
-[; ;comm.c: 559: unsigned short offset, value;
-[; ;comm.c: 560: short aux1,aux2;
-[; ;comm.c: 564: asic.data_bits.CE = 0;
-"564
-[e = . . _asic 2 6 -> -> 0 `i `uc ]
-[; ;comm.c: 565: config(asic);
-"565
-[e ( _config (1 _asic ]
-[; ;comm.c: 566: _delay((unsigned long)((20)*(500000/4000.0)));
+[; ;comm.c: 561: unsigned short offset, value;
+[; ;comm.c: 562: short aux1,aux2;
+[; ;comm.c: 566: asic.data_bits.CE = 0;
 "566
-[e ( __delay (1 -> * -> -> 20 `i `d / -> -> 500000 `l `d .4000.0 `ul ]
-[; ;comm.c: 568: offset = ADC_5();
-"568
-[e = _offset ( _ADC_5 ..  ]
-[; ;comm.c: 571: asic.data_bits.CE = 1;
-"571
-[e = . . _asic 2 6 -> -> 1 `i `uc ]
-[; ;comm.c: 572: asic.data_bits.IQ = 0;
-"572
-[e = . . _asic 2 11 -> -> 0 `i `uc ]
-[; ;comm.c: 574: config(asic);
-"574
+[e = . . _asic 2 6 -> -> 0 `i `uc ]
+[; ;comm.c: 567: config(asic);
+"567
 [e ( _config (1 _asic ]
-[; ;comm.c: 575: _delay((unsigned long)((20)*(500000/4000.0)));
-"575
+[; ;comm.c: 568: _delay((unsigned long)((20)*(500000/4000.0)));
+"568
 [e ( __delay (1 -> * -> -> 20 `i `d / -> -> 500000 `l `d .4000.0 `ul ]
-[; ;comm.c: 577: value = ADC_5();
+[; ;comm.c: 570: offset = ADC_5();
+"570
+[e = _offset ( _ADC_5 ..  ]
+[; ;comm.c: 573: asic.data_bits.CE = 1;
+"573
+[e = . . _asic 2 6 -> -> 1 `i `uc ]
+[; ;comm.c: 574: asic.data_bits.IQ = 0;
+"574
+[e = . . _asic 2 11 -> -> 0 `i `uc ]
+[; ;comm.c: 576: config(asic);
+"576
+[e ( _config (1 _asic ]
+[; ;comm.c: 577: _delay((unsigned long)((20)*(500000/4000.0)));
 "577
-[e = _value ( _ADC_5 ..  ]
-[; ;comm.c: 578: *I = (value - offset);
-"578
-[e = *U _I -> - -> _value `ui -> _offset `ui `s ]
-[; ;comm.c: 579: aux1 = *I;
+[e ( __delay (1 -> * -> -> 20 `i `d / -> -> 500000 `l `d .4000.0 `ul ]
+[; ;comm.c: 579: value = ADC_5();
 "579
-[e = _aux1 *U _I ]
-[; ;comm.c: 581: if (aux1 < 0) {
+[e = _value ( _ADC_5 ..  ]
+[; ;comm.c: 580: *I = (value - offset);
+"580
+[e = *U _I -> - -> _value `ui -> _offset `ui `s ]
+[; ;comm.c: 581: aux1 = *I;
 "581
+[e = _aux1 *U _I ]
+[; ;comm.c: 583: if (aux1 < 0) {
+"583
 [e $ ! < -> _aux1 `i -> 0 `i 348  ]
 {
-[; ;comm.c: 582: aux1 = -aux1;
-"582
+[; ;comm.c: 584: aux1 = -aux1;
+"584
 [e = _aux1 -> -U -> _aux1 `i `s ]
-"583
+"585
 }
 [e :U 348 ]
-[; ;comm.c: 583: }
-[; ;comm.c: 588: asic.data_bits.IQ = 1;
-"588
-[e = . . _asic 2 11 -> -> 1 `i `uc ]
-[; ;comm.c: 590: config(asic);
+[; ;comm.c: 585: }
+[; ;comm.c: 590: asic.data_bits.IQ = 1;
 "590
+[e = . . _asic 2 11 -> -> 1 `i `uc ]
+[; ;comm.c: 592: config(asic);
+"592
 [e ( _config (1 _asic ]
-[; ;comm.c: 591: _delay((unsigned long)((20)*(500000/4000.0)));
-"591
-[e ( __delay (1 -> * -> -> 20 `i `d / -> -> 500000 `l `d .4000.0 `ul ]
-[; ;comm.c: 593: value = ADC_5();
+[; ;comm.c: 593: _delay((unsigned long)((20)*(500000/4000.0)));
 "593
-[e = _value ( _ADC_5 ..  ]
-[; ;comm.c: 594: *Q = (value - offset);
-"594
-[e = *U _Q -> - -> _value `ui -> _offset `ui `s ]
-[; ;comm.c: 595: aux2 = *Q;
+[e ( __delay (1 -> * -> -> 20 `i `d / -> -> 500000 `l `d .4000.0 `ul ]
+[; ;comm.c: 595: value = ADC_5();
 "595
-[e = _aux2 *U _Q ]
-[; ;comm.c: 597: if (aux2 < 0) {
+[e = _value ( _ADC_5 ..  ]
+[; ;comm.c: 596: *Q = (value - offset);
+"596
+[e = *U _Q -> - -> _value `ui -> _offset `ui `s ]
+[; ;comm.c: 597: aux2 = *Q;
 "597
+[e = _aux2 *U _Q ]
+[; ;comm.c: 599: if (aux2 < 0) {
+"599
 [e $ ! < -> _aux2 `i -> 0 `i 349  ]
 {
-[; ;comm.c: 598: aux2 = -aux2;
-"598
+[; ;comm.c: 600: aux2 = -aux2;
+"600
 [e = _aux2 -> -U -> _aux2 `i `s ]
-"599
+"601
 }
 [e :U 349 ]
-[; ;comm.c: 599: }
-[; ;comm.c: 601: if (aux2 > aux1) {
-"601
+[; ;comm.c: 601: }
+[; ;comm.c: 603: if (aux2 > aux1) {
+"603
 [e $ ! > -> _aux2 `i -> _aux1 `i 350  ]
 {
-[; ;comm.c: 602: aux1 = aux2;
-"602
+[; ;comm.c: 604: aux1 = aux2;
+"604
 [e = _aux1 _aux2 ]
-"603
+"605
 }
 [e :U 350 ]
-[; ;comm.c: 603: }
-[; ;comm.c: 605: if (aux1 > 370) {
-"605
+[; ;comm.c: 605: }
+[; ;comm.c: 607: if (aux1 > 370) {
+"607
 [e $ ! > -> _aux1 `i -> 370 `i 351  ]
 {
-[; ;comm.c: 606: return 2;
-"606
+[; ;comm.c: 608: return 2;
+"608
 [e ) -> -> 2 `i `uc ]
 [e $UE 347  ]
-"607
+"609
 }
-[; ;comm.c: 607: } else if (aux1 < 86) {
+[; ;comm.c: 609: } else if (aux1 < 86) {
 [e $U 352  ]
 [e :U 351 ]
 [e $ ! < -> _aux1 `i -> 86 `i 353  ]
 {
-[; ;comm.c: 608: return 1;
-"608
+[; ;comm.c: 610: return 1;
+"610
 [e ) -> -> 1 `i `uc ]
 [e $UE 347  ]
-"609
+"611
 }
 [e :U 353 ]
-"611
+"613
 [e :U 352 ]
-[; ;comm.c: 609: }
-[; ;comm.c: 611: return 0;
+[; ;comm.c: 611: }
+[; ;comm.c: 613: return 0;
 [e ) -> -> 0 `i `uc ]
 [e $UE 347  ]
-[; ;comm.c: 612: }
-"612
+[; ;comm.c: 614: }
+"614
 [e :UE 347 ]
 }

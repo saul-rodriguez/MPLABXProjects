@@ -3966,16 +3966,16 @@ aux[6] = check;
 
 lputs_ISR(aux,7);
 
-# 545
+# 547
 freq_index--;
 }
 
 }
 
-# 554
+# 556
 unsigned char measure(short* I, short* Q, BIO3 asic)
 
-# 558
+# 560
 {
 unsigned short offset, value;
 short aux1,aux2;

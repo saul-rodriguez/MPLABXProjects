@@ -536,11 +536,13 @@ void sweep()
         
         lputs_ISR(aux,7);
         
+        
+        //This delay is to avoid to start a new measurement when 
+        //the BT transmitter is sending.
         #ifndef BIOASIC
         __delay_ms(50);
         #endif
-      
-        
+              
         
         freq_index--;
     }

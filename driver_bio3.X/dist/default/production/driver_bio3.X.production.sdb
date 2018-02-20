@@ -45,11 +45,11 @@
 [v _calibrate_reader calibrate_reader `(v  1 e 1 0 ]
 "441
 [v _sweep sweep `(v  1 e 1 0 ]
-"554
+"556
 [v _measure measure `(uc  1 e 1 0 ]
-"20 /home/saul/MPLABXProjects/driver_bio3.X/main.c
+"28 /home/saul/MPLABXProjects/driver_bio3.X/main.c
 [v _main main `(v  1 e 1 0 ]
-"142
+"150
 [v _isr isr `II(v  1 e 1 0 ]
 "70 /home/saul/MPLABXProjects/driver_bio3.X/mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
@@ -217,12 +217,12 @@
 [v _USART_tx_index USART_tx_index `VEuc  1 e 1 0 ]
 "14
 [v _USART_tx_length USART_tx_length `VEuc  1 e 1 0 ]
-"20 /home/saul/MPLABXProjects/driver_bio3.X/main.c
+"28 /home/saul/MPLABXProjects/driver_bio3.X/main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"22
+"30
 [v main@i i `uc  1 a 1 45 ]
-"139
+"147
 } 0
 "101 /home/saul/MPLABXProjects/driver_bio3.X/USART1823.c
 [v _start_TX_USART_ISR start_TX_USART_ISR `(v  1 e 1 0 ]
@@ -293,7 +293,7 @@
 [v sweep@freq_index freq_index `uc  1 a 1 32 ]
 "447
 [v sweep@check check `uc  1 a 1 24 ]
-"548
+"550
 } 0
 "161 /home/saul/MPLABXProjects/driver_bio3.X/bio3.c
 [v _setGain setGain `(v  1 e 1 0 ]
@@ -375,17 +375,17 @@
 [v setFreq@asic asic `*.4S172  1 a 1 2 ]
 "185
 } 0
-"554 /home/saul/MPLABXProjects/driver_bio3.X/comm.c
+"556 /home/saul/MPLABXProjects/driver_bio3.X/comm.c
 [v _measure measure `(uc  1 e 1 0 ]
 {
 [v measure@I I `*.4s  1 a 1 wreg ]
-"560
+"562
 [v measure@aux1 aux1 `s  1 a 2 20 ]
 [v measure@aux2 aux2 `s  1 a 2 18 ]
-"559
+"561
 [v measure@value value `us  1 a 2 16 ]
 [v measure@offset offset `us  1 a 2 13 ]
-"554
+"556
 [v measure@I I `*.4s  1 a 1 wreg ]
 [v measure@Q Q `*.4s  1 p 1 6 ]
 [s S155 BIO3_bits_stuct 2 `uc 1 RE 1 0 :1:0 
@@ -407,9 +407,9 @@
 ]
 [u S172 . 2 `us 1 datashort 2 0 `[2]uc 1 data 2 0 `S155 1 data_bits 2 0 ]
 [v measure@asic asic `S172  1 p 2 7 ]
-"564
+"566
 [v measure@I I `*.4s  1 a 1 15 ]
-"612
+"614
 } 0
 "91
 [v _read_ADC_channels read_ADC_channels `(v  1 e 1 0 ]
@@ -676,10 +676,10 @@
 {
 "88
 } 0
-"142 /home/saul/MPLABXProjects/driver_bio3.X/main.c
+"150 /home/saul/MPLABXProjects/driver_bio3.X/main.c
 [v _isr isr `II(v  1 e 1 0 ]
 {
-"207
+"215
 } 0
 "83 /home/saul/MPLABXProjects/driver_bio3.X/USART1823.c
 [v i1_start_RX_USART_ISR start_RX_USART_ISR `(v  1 e 1 0 ]
