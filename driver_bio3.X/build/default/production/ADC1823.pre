@@ -3233,6 +3233,7 @@ unsigned short ADC_value;
 { ADCON0 = 0b00010101;};
 __nop();
 { ADGO = 1; while (ADGO); ADC_value = ADRESH; ADC_value <<= 8; ADC_value |= ADRESL;};
+
 return ADC_value;
 }
 

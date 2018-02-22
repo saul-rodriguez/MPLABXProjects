@@ -52,6 +52,7 @@ unsigned short ADC_5()
     SEL_CH5();
     NOP();
     ADC_GO();
+  //  ADC_OFF()
     return ADC_value;
 }
 

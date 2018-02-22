@@ -533,6 +533,8 @@ void sweep()
         check = calculate_checksum(aux,6);
         aux[6] = check;
         
+        //TODO Here is a good idea to disable the ADC
+        ADC_OFF();
         
         lputs_ISR(aux,7);
         

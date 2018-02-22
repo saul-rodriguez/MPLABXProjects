@@ -11,42 +11,42 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$/tmp/xcXoyxgX3.obj
-reset_vec CODE 0 0 0 1 2
-end_init CODE 0 56 56 1 2
-config CONFIG 0 8007 8007 2 2
 $dist/default/production/driver_bio3.X.production.obj
 cinit CODE 0 57 57 E 2
-text1 CODE 0 65 65 C7 2
-text2 CODE 0 1E1 1E1 3E 2
-text3 CODE 0 2D7 2D7 29 2
-text4 CODE 0 12C 12C B5 2
-text5 CODE 0 253 253 2F 2
-text6 CODE 0 300 300 23 2
-text7 CODE 0 282 282 2B 2
-text8 CODE 0 396 396 7 2
-text9 CODE 0 323 323 19 2
-text10 CODE 0 387 387 F 2
-text11 CODE 0 355 355 11 2
-text12 CODE 0 3B6 3B6 4 2
-text13 CODE 0 39D 39D 7 2
-text14 CODE 0 3AA 3AA 6 2
-text15 CODE 0 3BA 3BA 3 2
-text16 CODE 0 3BD 3BD 3 2
-text17 CODE 0 33C 33C 19 2
-text18 CODE 0 3B0 3B0 6 2
-text20 CODE 0 366 366 11 2
-text21 CODE 0 3C0 3C0 3 2
-text22 CODE 0 377 377 10 2
-maintext CODE 0 2AD 2AD 2A 2
+text1 CODE 0 65 65 C9 2
+text2 CODE 0 1E3 1E3 3E 2
+text3 CODE 0 2D9 2D9 29 2
+text4 CODE 0 12E 12E B5 2
+text5 CODE 0 255 255 2F 2
+text6 CODE 0 302 302 23 2
+text7 CODE 0 284 284 2B 2
+text8 CODE 0 398 398 7 2
+text9 CODE 0 325 325 19 2
+text10 CODE 0 389 389 F 2
+text11 CODE 0 357 357 11 2
+text12 CODE 0 3B8 3B8 4 2
+text13 CODE 0 39F 39F 7 2
+text14 CODE 0 3AC 3AC 6 2
+text15 CODE 0 3BC 3BC 3 2
+text16 CODE 0 3BF 3BF 3 2
+text17 CODE 0 33E 33E 19 2
+text18 CODE 0 3B2 3B2 6 2
+text20 CODE 0 368 368 11 2
+text21 CODE 0 3C2 3C2 3 2
+text22 CODE 0 379 379 10 2
+maintext CODE 0 2AF 2AF 2A 2
 cstackCOMMON COMMON 1 75 75 5 1
 cstackBANK0 BANK0 1 47 47 19 1
 cstackBANK1 BANK1 1 A0 A0 13 1
 intentry CODE 0 4 4 52 2
 bssBANK0 BANK0 1 20 20 27 1
-stringtext STRCODE 0 21F 21F 34 2
-clrtext CODE 0 3A4 3A4 6 2
+stringtext STRCODE 0 221 221 34 2
+clrtext CODE 0 3A6 3A6 6 2
 bssCOMMON COMMON 1 70 70 5 1
+$/tmp/xcXw9HP2f.obj
+reset_vec CODE 0 0 0 1 2
+end_init CODE 0 56 56 1 2
+config CONFIG 0 8007 8007 2 2
 # %UNUSED Section
 # This section enumerates the unused ranges of each CLASS. Each entry
 # is described on a single line as follows:
@@ -58,9 +58,9 @@ RAM B3-BF 1
 BANK0 60-6F 1
 BANK1 B3-BF 1
 CONST 1-3 2
-CONST 3C3-7FF 2
+CONST 3C5-7FF 2
 ENTRY 1-3 2
-ENTRY 3C3-7FF 2
+ENTRY 3C5-7FF 2
 IDLOC 8000-8003 2
 SFR10 500-56F 1
 SFR11 580-5EF 1
@@ -86,7 +86,7 @@ SFR30 F00-F6F 1
 SFR31 F80-FEF 1
 STACK 2040-204F 1
 CODE 1-3 2
-CODE 3C3-7FF 2
+CODE 3C5-7FF 2
 SFR0 0-1F 1
 SFR1 80-9F 1
 SFR2 100-16F 1
@@ -101,9 +101,9 @@ BIGRAM 2000-206F 1
 COMMON 7A-7D 1
 EEDATA F000-F0FF 2
 STRCODE 1-3 2
-STRCODE 3C3-7FF 2
+STRCODE 3C5-7FF 2
 STRING 1-3 2
-STRING 3C3-7FF 2
+STRING 3C5-7FF 2
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
 # The beginning of the section is indicated by %LINETAB.
@@ -118,23 +118,23 @@ STRING 3C3-7FF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production/driver_bio3.X.production.obj
-57 cinit CODE >2501:/tmp/xcXz9xozW
-57 cinit CODE >2504:/tmp/xcXz9xozW
-57 cinit CODE >2561:/tmp/xcXz9xozW
-58 cinit CODE >2562:/tmp/xcXz9xozW
-59 cinit CODE >2563:/tmp/xcXz9xozW
-5A cinit CODE >2564:/tmp/xcXz9xozW
-5B cinit CODE >2565:/tmp/xcXz9xozW
-5C cinit CODE >2569:/tmp/xcXz9xozW
-5D cinit CODE >2570:/tmp/xcXz9xozW
-5E cinit CODE >2571:/tmp/xcXz9xozW
-5F cinit CODE >2572:/tmp/xcXz9xozW
-60 cinit CODE >2573:/tmp/xcXz9xozW
-61 cinit CODE >2574:/tmp/xcXz9xozW
-62 cinit CODE >2580:/tmp/xcXz9xozW
-62 cinit CODE >2582:/tmp/xcXz9xozW
-63 cinit CODE >2583:/tmp/xcXz9xozW
-64 cinit CODE >2584:/tmp/xcXz9xozW
+57 cinit CODE >2501:/tmp/xcXweedN1
+57 cinit CODE >2504:/tmp/xcXweedN1
+57 cinit CODE >2561:/tmp/xcXweedN1
+58 cinit CODE >2562:/tmp/xcXweedN1
+59 cinit CODE >2563:/tmp/xcXweedN1
+5A cinit CODE >2564:/tmp/xcXweedN1
+5B cinit CODE >2565:/tmp/xcXweedN1
+5C cinit CODE >2569:/tmp/xcXweedN1
+5D cinit CODE >2570:/tmp/xcXweedN1
+5E cinit CODE >2571:/tmp/xcXweedN1
+5F cinit CODE >2572:/tmp/xcXweedN1
+60 cinit CODE >2573:/tmp/xcXweedN1
+61 cinit CODE >2574:/tmp/xcXweedN1
+62 cinit CODE >2580:/tmp/xcXweedN1
+62 cinit CODE >2582:/tmp/xcXweedN1
+63 cinit CODE >2583:/tmp/xcXweedN1
+64 cinit CODE >2584:/tmp/xcXweedN1
 4 intentry CODE >150:/home/saul/MPLABXProjects/driver_bio3.X/main.c
 9 intentry CODE >154:/home/saul/MPLABXProjects/driver_bio3.X/main.c
 C intentry CODE >156:/home/saul/MPLABXProjects/driver_bio3.X/main.c
@@ -164,175 +164,175 @@ F intentry CODE >160:/home/saul/MPLABXProjects/driver_bio3.X/main.c
 4D intentry CODE >208:/home/saul/MPLABXProjects/driver_bio3.X/main.c
 50 intentry CODE >210:/home/saul/MPLABXProjects/driver_bio3.X/main.c
 51 intentry CODE >215:/home/saul/MPLABXProjects/driver_bio3.X/main.c
-377 text22 CODE >30:/home/saul/MPLABXProjects/driver_bio3.X/TMR0.c
-378 text22 CODE >32:/home/saul/MPLABXProjects/driver_bio3.X/TMR0.c
-37F text22 CODE >33:/home/saul/MPLABXProjects/driver_bio3.X/TMR0.c
-381 text22 CODE >36:/home/saul/MPLABXProjects/driver_bio3.X/TMR0.c
-383 text22 CODE >39:/home/saul/MPLABXProjects/driver_bio3.X/TMR0.c
-384 text22 CODE >40:/home/saul/MPLABXProjects/driver_bio3.X/TMR0.c
-385 text22 CODE >41:/home/saul/MPLABXProjects/driver_bio3.X/TMR0.c
-386 text22 CODE >42:/home/saul/MPLABXProjects/driver_bio3.X/TMR0.c
-3C0 text21 CODE >44:/home/saul/MPLABXProjects/driver_bio3.X/TMR0.c
-3C0 text21 CODE >47:/home/saul/MPLABXProjects/driver_bio3.X/TMR0.c
-3C1 text21 CODE >48:/home/saul/MPLABXProjects/driver_bio3.X/TMR0.c
-3C2 text21 CODE >49:/home/saul/MPLABXProjects/driver_bio3.X/TMR0.c
-366 text20 CODE >83:/home/saul/MPLABXProjects/driver_bio3.X/USART1823.c
-366 text20 CODE >86:/home/saul/MPLABXProjects/driver_bio3.X/USART1823.c
-36C text20 CODE >88:/home/saul/MPLABXProjects/driver_bio3.X/USART1823.c
-36D text20 CODE >89:/home/saul/MPLABXProjects/driver_bio3.X/USART1823.c
-36E text20 CODE >90:/home/saul/MPLABXProjects/driver_bio3.X/USART1823.c
-36F text20 CODE >92:/home/saul/MPLABXProjects/driver_bio3.X/USART1823.c
-371 text20 CODE >93:/home/saul/MPLABXProjects/driver_bio3.X/USART1823.c
-372 text20 CODE >95:/home/saul/MPLABXProjects/driver_bio3.X/USART1823.c
-374 text20 CODE >96:/home/saul/MPLABXProjects/driver_bio3.X/USART1823.c
-375 text20 CODE >97:/home/saul/MPLABXProjects/driver_bio3.X/USART1823.c
-376 text20 CODE >99:/home/saul/MPLABXProjects/driver_bio3.X/USART1823.c
-3B0 text18 CODE >78:/home/saul/MPLABXProjects/driver_bio3.X/mcc_generated_files/mcc.c
-3B0 text18 CODE >81:/home/saul/MPLABXProjects/driver_bio3.X/mcc_generated_files/mcc.c
-3B3 text18 CODE >83:/home/saul/MPLABXProjects/driver_bio3.X/mcc_generated_files/mcc.c
-3B4 text18 CODE >85:/home/saul/MPLABXProjects/driver_bio3.X/mcc_generated_files/mcc.c
-3B5 text18 CODE >88:/home/saul/MPLABXProjects/driver_bio3.X/mcc_generated_files/mcc.c
-33C text17 CODE >49:/home/saul/MPLABXProjects/driver_bio3.X/mcc_generated_files/pin_manager.c
-33C text17 CODE >51:/home/saul/MPLABXProjects/driver_bio3.X/mcc_generated_files/pin_manager.c
-33E text17 CODE >52:/home/saul/MPLABXProjects/driver_bio3.X/mcc_generated_files/pin_manager.c
-33F text17 CODE >55:/home/saul/MPLABXProjects/driver_bio3.X/mcc_generated_files/pin_manager.c
-342 text17 CODE >56:/home/saul/MPLABXProjects/driver_bio3.X/mcc_generated_files/pin_manager.c
-344 text17 CODE >59:/home/saul/MPLABXProjects/driver_bio3.X/mcc_generated_files/pin_manager.c
-347 text17 CODE >61:/home/saul/MPLABXProjects/driver_bio3.X/mcc_generated_files/pin_manager.c
-349 text17 CODE >63:/home/saul/MPLABXProjects/driver_bio3.X/mcc_generated_files/pin_manager.c
-34B text17 CODE >64:/home/saul/MPLABXProjects/driver_bio3.X/mcc_generated_files/pin_manager.c
-34C text17 CODE >67:/home/saul/MPLABXProjects/driver_bio3.X/mcc_generated_files/pin_manager.c
-34F text17 CODE >68:/home/saul/MPLABXProjects/driver_bio3.X/mcc_generated_files/pin_manager.c
-351 text17 CODE >70:/home/saul/MPLABXProjects/driver_bio3.X/mcc_generated_files/pin_manager.c
-352 text17 CODE >71:/home/saul/MPLABXProjects/driver_bio3.X/mcc_generated_files/pin_manager.c
-354 text17 CODE >72:/home/saul/MPLABXProjects/driver_bio3.X/mcc_generated_files/pin_manager.c
-3BD text16 CODE >70:/home/saul/MPLABXProjects/driver_bio3.X/mcc_generated_files/mcc.c
-3BD text16 CODE >73:/home/saul/MPLABXProjects/driver_bio3.X/mcc_generated_files/mcc.c
-3BE text16 CODE >74:/home/saul/MPLABXProjects/driver_bio3.X/mcc_generated_files/mcc.c
-3BF text16 CODE >76:/home/saul/MPLABXProjects/driver_bio3.X/mcc_generated_files/mcc.c
-3BA text15 CODE >90:/home/saul/MPLABXProjects/driver_bio3.X/mcc_generated_files/mcc.c
-3BA text15 CODE >92:/home/saul/MPLABXProjects/driver_bio3.X/mcc_generated_files/mcc.c
-3BC text15 CODE >93:/home/saul/MPLABXProjects/driver_bio3.X/mcc_generated_files/mcc.c
-3AA text14 CODE >3:/home/saul/MPLABXProjects/driver_bio3.X/ADC1823.c
-3AA text14 CODE >20:/home/saul/MPLABXProjects/driver_bio3.X/ADC1823.c
-3AD text14 CODE >21:/home/saul/MPLABXProjects/driver_bio3.X/ADC1823.c
-3AF text14 CODE >23:/home/saul/MPLABXProjects/driver_bio3.X/ADC1823.c
-39D text13 CODE >10:/home/saul/MPLABXProjects/driver_bio3.X/TMR0.c
-39D text13 CODE >13:/home/saul/MPLABXProjects/driver_bio3.X/TMR0.c
-3A1 text13 CODE >16:/home/saul/MPLABXProjects/driver_bio3.X/TMR0.c
-3A2 text13 CODE >18:/home/saul/MPLABXProjects/driver_bio3.X/TMR0.c
-3A3 text13 CODE >19:/home/saul/MPLABXProjects/driver_bio3.X/TMR0.c
-3B6 text12 CODE >4:/home/saul/MPLABXProjects/driver_bio3.X/RCM1823.c
-3B6 text12 CODE >6:/home/saul/MPLABXProjects/driver_bio3.X/RCM1823.c
-3B9 text12 CODE >7:/home/saul/MPLABXProjects/driver_bio3.X/RCM1823.c
-355 text11 CODE >83:/home/saul/MPLABXProjects/driver_bio3.X/USART1823.c
-355 text11 CODE >86:/home/saul/MPLABXProjects/driver_bio3.X/USART1823.c
-35B text11 CODE >88:/home/saul/MPLABXProjects/driver_bio3.X/USART1823.c
-35C text11 CODE >89:/home/saul/MPLABXProjects/driver_bio3.X/USART1823.c
-35D text11 CODE >90:/home/saul/MPLABXProjects/driver_bio3.X/USART1823.c
-35E text11 CODE >92:/home/saul/MPLABXProjects/driver_bio3.X/USART1823.c
-360 text11 CODE >93:/home/saul/MPLABXProjects/driver_bio3.X/USART1823.c
-361 text11 CODE >95:/home/saul/MPLABXProjects/driver_bio3.X/USART1823.c
-363 text11 CODE >96:/home/saul/MPLABXProjects/driver_bio3.X/USART1823.c
-364 text11 CODE >97:/home/saul/MPLABXProjects/driver_bio3.X/USART1823.c
-365 text11 CODE >99:/home/saul/MPLABXProjects/driver_bio3.X/USART1823.c
-387 text10 CODE >101:/home/saul/MPLABXProjects/driver_bio3.X/USART1823.c
-387 text10 CODE >103:/home/saul/MPLABXProjects/driver_bio3.X/USART1823.c
-38D text10 CODE >104:/home/saul/MPLABXProjects/driver_bio3.X/USART1823.c
-38E text10 CODE >105:/home/saul/MPLABXProjects/driver_bio3.X/USART1823.c
-38F text10 CODE >106:/home/saul/MPLABXProjects/driver_bio3.X/USART1823.c
-390 text10 CODE >108:/home/saul/MPLABXProjects/driver_bio3.X/USART1823.c
-391 text10 CODE >109:/home/saul/MPLABXProjects/driver_bio3.X/USART1823.c
-392 text10 CODE >110:/home/saul/MPLABXProjects/driver_bio3.X/USART1823.c
-393 text10 CODE >113:/home/saul/MPLABXProjects/driver_bio3.X/USART1823.c
-394 text10 CODE >114:/home/saul/MPLABXProjects/driver_bio3.X/USART1823.c
-395 text10 CODE >115:/home/saul/MPLABXProjects/driver_bio3.X/USART1823.c
-323 text9 CODE >407:/home/saul/MPLABXProjects/driver_bio3.X/comm.c
-325 text9 CODE >411:/home/saul/MPLABXProjects/driver_bio3.X/comm.c
-326 text9 CODE >412:/home/saul/MPLABXProjects/driver_bio3.X/comm.c
-32B text9 CODE >413:/home/saul/MPLABXProjects/driver_bio3.X/comm.c
-335 text9 CODE >412:/home/saul/MPLABXProjects/driver_bio3.X/comm.c
-33A text9 CODE >416:/home/saul/MPLABXProjects/driver_bio3.X/comm.c
-396 text8 CODE >35:/home/saul/MPLABXProjects/driver_bio3.X/USART1823.c
-396 text8 CODE >39:/home/saul/MPLABXProjects/driver_bio3.X/USART1823.c
-398 text8 CODE >40:/home/saul/MPLABXProjects/driver_bio3.X/USART1823.c
-39A text8 CODE >41:/home/saul/MPLABXProjects/driver_bio3.X/USART1823.c
-39C text8 CODE >44:/home/saul/MPLABXProjects/driver_bio3.X/USART1823.c
-282 text7 CODE >132:/home/saul/MPLABXProjects/driver_bio3.X/USART1823.c
-284 text7 CODE >136:/home/saul/MPLABXProjects/driver_bio3.X/USART1823.c
-287 text7 CODE >139:/home/saul/MPLABXProjects/driver_bio3.X/USART1823.c
-28C text7 CODE >140:/home/saul/MPLABXProjects/driver_bio3.X/USART1823.c
-29A text7 CODE >139:/home/saul/MPLABXProjects/driver_bio3.X/USART1823.c
-29F text7 CODE >142:/home/saul/MPLABXProjects/driver_bio3.X/USART1823.c
-2A0 text7 CODE >144:/home/saul/MPLABXProjects/driver_bio3.X/USART1823.c
-2A1 text7 CODE >145:/home/saul/MPLABXProjects/driver_bio3.X/USART1823.c
-2A6 text7 CODE >147:/home/saul/MPLABXProjects/driver_bio3.X/USART1823.c
-2AA text7 CODE >148:/home/saul/MPLABXProjects/driver_bio3.X/USART1823.c
-2AC text7 CODE >149:/home/saul/MPLABXProjects/driver_bio3.X/USART1823.c
-300 text6 CODE >48:/home/saul/MPLABXProjects/driver_bio3.X/ADC1823.c
-300 text6 CODE >52:/home/saul/MPLABXProjects/driver_bio3.X/ADC1823.c
-303 text6 CODE >53:/home/saul/MPLABXProjects/driver_bio3.X/ADC1823.c
-304 text6 CODE >54:/home/saul/MPLABXProjects/driver_bio3.X/ADC1823.c
-31E text6 CODE >55:/home/saul/MPLABXProjects/driver_bio3.X/ADC1823.c
-253 text5 CODE >131:/home/saul/MPLABXProjects/driver_bio3.X/bio3.c
-253 text5 CODE >135:/home/saul/MPLABXProjects/driver_bio3.X/bio3.c
-25A text5 CODE >138:/home/saul/MPLABXProjects/driver_bio3.X/bio3.c
-25C text5 CODE >141:/home/saul/MPLABXProjects/driver_bio3.X/bio3.c
-25E text5 CODE >143:/home/saul/MPLABXProjects/driver_bio3.X/bio3.c
-263 text5 CODE >144:/home/saul/MPLABXProjects/driver_bio3.X/bio3.c
-265 text5 CODE >145:/home/saul/MPLABXProjects/driver_bio3.X/bio3.c
-267 text5 CODE >147:/home/saul/MPLABXProjects/driver_bio3.X/bio3.c
-26D text5 CODE >149:/home/saul/MPLABXProjects/driver_bio3.X/bio3.c
-272 text5 CODE >153:/home/saul/MPLABXProjects/driver_bio3.X/bio3.c
-276 text5 CODE >155:/home/saul/MPLABXProjects/driver_bio3.X/bio3.c
-27D text5 CODE >143:/home/saul/MPLABXProjects/driver_bio3.X/bio3.c
-12C text4 CODE >556:/home/saul/MPLABXProjects/driver_bio3.X/comm.c
-12E text4 CODE >566:/home/saul/MPLABXProjects/driver_bio3.X/comm.c
-12F text4 CODE >567:/home/saul/MPLABXProjects/driver_bio3.X/comm.c
-134 text4 CODE >568:/home/saul/MPLABXProjects/driver_bio3.X/comm.c
-13D text4 CODE >570:/home/saul/MPLABXProjects/driver_bio3.X/comm.c
-143 text4 CODE >573:/home/saul/MPLABXProjects/driver_bio3.X/comm.c
-144 text4 CODE >574:/home/saul/MPLABXProjects/driver_bio3.X/comm.c
-145 text4 CODE >576:/home/saul/MPLABXProjects/driver_bio3.X/comm.c
-14A text4 CODE >577:/home/saul/MPLABXProjects/driver_bio3.X/comm.c
-153 text4 CODE >579:/home/saul/MPLABXProjects/driver_bio3.X/comm.c
-159 text4 CODE >580:/home/saul/MPLABXProjects/driver_bio3.X/comm.c
-16D text4 CODE >581:/home/saul/MPLABXProjects/driver_bio3.X/comm.c
-174 text4 CODE >583:/home/saul/MPLABXProjects/driver_bio3.X/comm.c
-176 text4 CODE >584:/home/saul/MPLABXProjects/driver_bio3.X/comm.c
-17B text4 CODE >590:/home/saul/MPLABXProjects/driver_bio3.X/comm.c
-17C text4 CODE >592:/home/saul/MPLABXProjects/driver_bio3.X/comm.c
-181 text4 CODE >593:/home/saul/MPLABXProjects/driver_bio3.X/comm.c
-18A text4 CODE >595:/home/saul/MPLABXProjects/driver_bio3.X/comm.c
-190 text4 CODE >596:/home/saul/MPLABXProjects/driver_bio3.X/comm.c
-1A4 text4 CODE >597:/home/saul/MPLABXProjects/driver_bio3.X/comm.c
-1AB text4 CODE >599:/home/saul/MPLABXProjects/driver_bio3.X/comm.c
-1AD text4 CODE >600:/home/saul/MPLABXProjects/driver_bio3.X/comm.c
-1B2 text4 CODE >603:/home/saul/MPLABXProjects/driver_bio3.X/comm.c
-1BE text4 CODE >604:/home/saul/MPLABXProjects/driver_bio3.X/comm.c
-1C3 text4 CODE >605:/home/saul/MPLABXProjects/driver_bio3.X/comm.c
-1C3 text4 CODE >607:/home/saul/MPLABXProjects/driver_bio3.X/comm.c
-1CF text4 CODE >608:/home/saul/MPLABXProjects/driver_bio3.X/comm.c
-1D1 text4 CODE >609:/home/saul/MPLABXProjects/driver_bio3.X/comm.c
-1DD text4 CODE >610:/home/saul/MPLABXProjects/driver_bio3.X/comm.c
-1DF text4 CODE >613:/home/saul/MPLABXProjects/driver_bio3.X/comm.c
-2D7 text3 CODE >175:/home/saul/MPLABXProjects/driver_bio3.X/bio3.c
-2D9 text3 CODE >178:/home/saul/MPLABXProjects/driver_bio3.X/bio3.c
-2E4 text3 CODE >180:/home/saul/MPLABXProjects/driver_bio3.X/bio3.c
-2EA text3 CODE >181:/home/saul/MPLABXProjects/driver_bio3.X/bio3.c
-2F1 text3 CODE >182:/home/saul/MPLABXProjects/driver_bio3.X/bio3.c
-2F8 text3 CODE >183:/home/saul/MPLABXProjects/driver_bio3.X/bio3.c
-2FF text3 CODE >185:/home/saul/MPLABXProjects/driver_bio3.X/bio3.c
-1E1 text2 CODE >161:/home/saul/MPLABXProjects/driver_bio3.X/bio3.c
-1E3 text2 CODE >164:/home/saul/MPLABXProjects/driver_bio3.X/bio3.c
-1EE text2 CODE >166:/home/saul/MPLABXProjects/driver_bio3.X/bio3.c
-1F4 text2 CODE >167:/home/saul/MPLABXProjects/driver_bio3.X/bio3.c
-1FB text2 CODE >168:/home/saul/MPLABXProjects/driver_bio3.X/bio3.c
-202 text2 CODE >169:/home/saul/MPLABXProjects/driver_bio3.X/bio3.c
-209 text2 CODE >170:/home/saul/MPLABXProjects/driver_bio3.X/bio3.c
-210 text2 CODE >171:/home/saul/MPLABXProjects/driver_bio3.X/bio3.c
-217 text2 CODE >172:/home/saul/MPLABXProjects/driver_bio3.X/bio3.c
-21E text2 CODE >173:/home/saul/MPLABXProjects/driver_bio3.X/bio3.c
+379 text22 CODE >30:/home/saul/MPLABXProjects/driver_bio3.X/TMR0.c
+37A text22 CODE >32:/home/saul/MPLABXProjects/driver_bio3.X/TMR0.c
+381 text22 CODE >33:/home/saul/MPLABXProjects/driver_bio3.X/TMR0.c
+383 text22 CODE >36:/home/saul/MPLABXProjects/driver_bio3.X/TMR0.c
+385 text22 CODE >39:/home/saul/MPLABXProjects/driver_bio3.X/TMR0.c
+386 text22 CODE >40:/home/saul/MPLABXProjects/driver_bio3.X/TMR0.c
+387 text22 CODE >41:/home/saul/MPLABXProjects/driver_bio3.X/TMR0.c
+388 text22 CODE >42:/home/saul/MPLABXProjects/driver_bio3.X/TMR0.c
+3C2 text21 CODE >44:/home/saul/MPLABXProjects/driver_bio3.X/TMR0.c
+3C2 text21 CODE >47:/home/saul/MPLABXProjects/driver_bio3.X/TMR0.c
+3C3 text21 CODE >48:/home/saul/MPLABXProjects/driver_bio3.X/TMR0.c
+3C4 text21 CODE >49:/home/saul/MPLABXProjects/driver_bio3.X/TMR0.c
+368 text20 CODE >83:/home/saul/MPLABXProjects/driver_bio3.X/USART1823.c
+368 text20 CODE >86:/home/saul/MPLABXProjects/driver_bio3.X/USART1823.c
+36E text20 CODE >88:/home/saul/MPLABXProjects/driver_bio3.X/USART1823.c
+36F text20 CODE >89:/home/saul/MPLABXProjects/driver_bio3.X/USART1823.c
+370 text20 CODE >90:/home/saul/MPLABXProjects/driver_bio3.X/USART1823.c
+371 text20 CODE >92:/home/saul/MPLABXProjects/driver_bio3.X/USART1823.c
+373 text20 CODE >93:/home/saul/MPLABXProjects/driver_bio3.X/USART1823.c
+374 text20 CODE >95:/home/saul/MPLABXProjects/driver_bio3.X/USART1823.c
+376 text20 CODE >96:/home/saul/MPLABXProjects/driver_bio3.X/USART1823.c
+377 text20 CODE >97:/home/saul/MPLABXProjects/driver_bio3.X/USART1823.c
+378 text20 CODE >99:/home/saul/MPLABXProjects/driver_bio3.X/USART1823.c
+3B2 text18 CODE >78:/home/saul/MPLABXProjects/driver_bio3.X/mcc_generated_files/mcc.c
+3B2 text18 CODE >81:/home/saul/MPLABXProjects/driver_bio3.X/mcc_generated_files/mcc.c
+3B5 text18 CODE >83:/home/saul/MPLABXProjects/driver_bio3.X/mcc_generated_files/mcc.c
+3B6 text18 CODE >85:/home/saul/MPLABXProjects/driver_bio3.X/mcc_generated_files/mcc.c
+3B7 text18 CODE >88:/home/saul/MPLABXProjects/driver_bio3.X/mcc_generated_files/mcc.c
+33E text17 CODE >49:/home/saul/MPLABXProjects/driver_bio3.X/mcc_generated_files/pin_manager.c
+33E text17 CODE >51:/home/saul/MPLABXProjects/driver_bio3.X/mcc_generated_files/pin_manager.c
+340 text17 CODE >52:/home/saul/MPLABXProjects/driver_bio3.X/mcc_generated_files/pin_manager.c
+341 text17 CODE >55:/home/saul/MPLABXProjects/driver_bio3.X/mcc_generated_files/pin_manager.c
+344 text17 CODE >56:/home/saul/MPLABXProjects/driver_bio3.X/mcc_generated_files/pin_manager.c
+346 text17 CODE >59:/home/saul/MPLABXProjects/driver_bio3.X/mcc_generated_files/pin_manager.c
+349 text17 CODE >61:/home/saul/MPLABXProjects/driver_bio3.X/mcc_generated_files/pin_manager.c
+34B text17 CODE >63:/home/saul/MPLABXProjects/driver_bio3.X/mcc_generated_files/pin_manager.c
+34D text17 CODE >64:/home/saul/MPLABXProjects/driver_bio3.X/mcc_generated_files/pin_manager.c
+34E text17 CODE >67:/home/saul/MPLABXProjects/driver_bio3.X/mcc_generated_files/pin_manager.c
+351 text17 CODE >68:/home/saul/MPLABXProjects/driver_bio3.X/mcc_generated_files/pin_manager.c
+353 text17 CODE >70:/home/saul/MPLABXProjects/driver_bio3.X/mcc_generated_files/pin_manager.c
+354 text17 CODE >71:/home/saul/MPLABXProjects/driver_bio3.X/mcc_generated_files/pin_manager.c
+356 text17 CODE >72:/home/saul/MPLABXProjects/driver_bio3.X/mcc_generated_files/pin_manager.c
+3BF text16 CODE >70:/home/saul/MPLABXProjects/driver_bio3.X/mcc_generated_files/mcc.c
+3BF text16 CODE >73:/home/saul/MPLABXProjects/driver_bio3.X/mcc_generated_files/mcc.c
+3C0 text16 CODE >74:/home/saul/MPLABXProjects/driver_bio3.X/mcc_generated_files/mcc.c
+3C1 text16 CODE >76:/home/saul/MPLABXProjects/driver_bio3.X/mcc_generated_files/mcc.c
+3BC text15 CODE >90:/home/saul/MPLABXProjects/driver_bio3.X/mcc_generated_files/mcc.c
+3BC text15 CODE >92:/home/saul/MPLABXProjects/driver_bio3.X/mcc_generated_files/mcc.c
+3BE text15 CODE >93:/home/saul/MPLABXProjects/driver_bio3.X/mcc_generated_files/mcc.c
+3AC text14 CODE >3:/home/saul/MPLABXProjects/driver_bio3.X/ADC1823.c
+3AC text14 CODE >20:/home/saul/MPLABXProjects/driver_bio3.X/ADC1823.c
+3AF text14 CODE >21:/home/saul/MPLABXProjects/driver_bio3.X/ADC1823.c
+3B1 text14 CODE >23:/home/saul/MPLABXProjects/driver_bio3.X/ADC1823.c
+39F text13 CODE >10:/home/saul/MPLABXProjects/driver_bio3.X/TMR0.c
+39F text13 CODE >13:/home/saul/MPLABXProjects/driver_bio3.X/TMR0.c
+3A3 text13 CODE >16:/home/saul/MPLABXProjects/driver_bio3.X/TMR0.c
+3A4 text13 CODE >18:/home/saul/MPLABXProjects/driver_bio3.X/TMR0.c
+3A5 text13 CODE >19:/home/saul/MPLABXProjects/driver_bio3.X/TMR0.c
+3B8 text12 CODE >4:/home/saul/MPLABXProjects/driver_bio3.X/RCM1823.c
+3B8 text12 CODE >6:/home/saul/MPLABXProjects/driver_bio3.X/RCM1823.c
+3BB text12 CODE >7:/home/saul/MPLABXProjects/driver_bio3.X/RCM1823.c
+357 text11 CODE >83:/home/saul/MPLABXProjects/driver_bio3.X/USART1823.c
+357 text11 CODE >86:/home/saul/MPLABXProjects/driver_bio3.X/USART1823.c
+35D text11 CODE >88:/home/saul/MPLABXProjects/driver_bio3.X/USART1823.c
+35E text11 CODE >89:/home/saul/MPLABXProjects/driver_bio3.X/USART1823.c
+35F text11 CODE >90:/home/saul/MPLABXProjects/driver_bio3.X/USART1823.c
+360 text11 CODE >92:/home/saul/MPLABXProjects/driver_bio3.X/USART1823.c
+362 text11 CODE >93:/home/saul/MPLABXProjects/driver_bio3.X/USART1823.c
+363 text11 CODE >95:/home/saul/MPLABXProjects/driver_bio3.X/USART1823.c
+365 text11 CODE >96:/home/saul/MPLABXProjects/driver_bio3.X/USART1823.c
+366 text11 CODE >97:/home/saul/MPLABXProjects/driver_bio3.X/USART1823.c
+367 text11 CODE >99:/home/saul/MPLABXProjects/driver_bio3.X/USART1823.c
+389 text10 CODE >101:/home/saul/MPLABXProjects/driver_bio3.X/USART1823.c
+389 text10 CODE >103:/home/saul/MPLABXProjects/driver_bio3.X/USART1823.c
+38F text10 CODE >104:/home/saul/MPLABXProjects/driver_bio3.X/USART1823.c
+390 text10 CODE >105:/home/saul/MPLABXProjects/driver_bio3.X/USART1823.c
+391 text10 CODE >106:/home/saul/MPLABXProjects/driver_bio3.X/USART1823.c
+392 text10 CODE >108:/home/saul/MPLABXProjects/driver_bio3.X/USART1823.c
+393 text10 CODE >109:/home/saul/MPLABXProjects/driver_bio3.X/USART1823.c
+394 text10 CODE >110:/home/saul/MPLABXProjects/driver_bio3.X/USART1823.c
+395 text10 CODE >113:/home/saul/MPLABXProjects/driver_bio3.X/USART1823.c
+396 text10 CODE >114:/home/saul/MPLABXProjects/driver_bio3.X/USART1823.c
+397 text10 CODE >115:/home/saul/MPLABXProjects/driver_bio3.X/USART1823.c
+325 text9 CODE >407:/home/saul/MPLABXProjects/driver_bio3.X/comm.c
+327 text9 CODE >411:/home/saul/MPLABXProjects/driver_bio3.X/comm.c
+328 text9 CODE >412:/home/saul/MPLABXProjects/driver_bio3.X/comm.c
+32D text9 CODE >413:/home/saul/MPLABXProjects/driver_bio3.X/comm.c
+337 text9 CODE >412:/home/saul/MPLABXProjects/driver_bio3.X/comm.c
+33C text9 CODE >416:/home/saul/MPLABXProjects/driver_bio3.X/comm.c
+398 text8 CODE >35:/home/saul/MPLABXProjects/driver_bio3.X/USART1823.c
+398 text8 CODE >39:/home/saul/MPLABXProjects/driver_bio3.X/USART1823.c
+39A text8 CODE >40:/home/saul/MPLABXProjects/driver_bio3.X/USART1823.c
+39C text8 CODE >41:/home/saul/MPLABXProjects/driver_bio3.X/USART1823.c
+39E text8 CODE >44:/home/saul/MPLABXProjects/driver_bio3.X/USART1823.c
+284 text7 CODE >132:/home/saul/MPLABXProjects/driver_bio3.X/USART1823.c
+286 text7 CODE >136:/home/saul/MPLABXProjects/driver_bio3.X/USART1823.c
+289 text7 CODE >139:/home/saul/MPLABXProjects/driver_bio3.X/USART1823.c
+28E text7 CODE >140:/home/saul/MPLABXProjects/driver_bio3.X/USART1823.c
+29C text7 CODE >139:/home/saul/MPLABXProjects/driver_bio3.X/USART1823.c
+2A1 text7 CODE >142:/home/saul/MPLABXProjects/driver_bio3.X/USART1823.c
+2A2 text7 CODE >144:/home/saul/MPLABXProjects/driver_bio3.X/USART1823.c
+2A3 text7 CODE >145:/home/saul/MPLABXProjects/driver_bio3.X/USART1823.c
+2A8 text7 CODE >147:/home/saul/MPLABXProjects/driver_bio3.X/USART1823.c
+2AC text7 CODE >148:/home/saul/MPLABXProjects/driver_bio3.X/USART1823.c
+2AE text7 CODE >149:/home/saul/MPLABXProjects/driver_bio3.X/USART1823.c
+302 text6 CODE >48:/home/saul/MPLABXProjects/driver_bio3.X/ADC1823.c
+302 text6 CODE >52:/home/saul/MPLABXProjects/driver_bio3.X/ADC1823.c
+305 text6 CODE >53:/home/saul/MPLABXProjects/driver_bio3.X/ADC1823.c
+306 text6 CODE >54:/home/saul/MPLABXProjects/driver_bio3.X/ADC1823.c
+320 text6 CODE >56:/home/saul/MPLABXProjects/driver_bio3.X/ADC1823.c
+255 text5 CODE >131:/home/saul/MPLABXProjects/driver_bio3.X/bio3.c
+255 text5 CODE >135:/home/saul/MPLABXProjects/driver_bio3.X/bio3.c
+25C text5 CODE >138:/home/saul/MPLABXProjects/driver_bio3.X/bio3.c
+25E text5 CODE >141:/home/saul/MPLABXProjects/driver_bio3.X/bio3.c
+260 text5 CODE >143:/home/saul/MPLABXProjects/driver_bio3.X/bio3.c
+265 text5 CODE >144:/home/saul/MPLABXProjects/driver_bio3.X/bio3.c
+267 text5 CODE >145:/home/saul/MPLABXProjects/driver_bio3.X/bio3.c
+269 text5 CODE >147:/home/saul/MPLABXProjects/driver_bio3.X/bio3.c
+26F text5 CODE >149:/home/saul/MPLABXProjects/driver_bio3.X/bio3.c
+274 text5 CODE >153:/home/saul/MPLABXProjects/driver_bio3.X/bio3.c
+278 text5 CODE >155:/home/saul/MPLABXProjects/driver_bio3.X/bio3.c
+27F text5 CODE >143:/home/saul/MPLABXProjects/driver_bio3.X/bio3.c
+12E text4 CODE >558:/home/saul/MPLABXProjects/driver_bio3.X/comm.c
+130 text4 CODE >568:/home/saul/MPLABXProjects/driver_bio3.X/comm.c
+131 text4 CODE >569:/home/saul/MPLABXProjects/driver_bio3.X/comm.c
+136 text4 CODE >570:/home/saul/MPLABXProjects/driver_bio3.X/comm.c
+13F text4 CODE >572:/home/saul/MPLABXProjects/driver_bio3.X/comm.c
+145 text4 CODE >575:/home/saul/MPLABXProjects/driver_bio3.X/comm.c
+146 text4 CODE >576:/home/saul/MPLABXProjects/driver_bio3.X/comm.c
+147 text4 CODE >578:/home/saul/MPLABXProjects/driver_bio3.X/comm.c
+14C text4 CODE >579:/home/saul/MPLABXProjects/driver_bio3.X/comm.c
+155 text4 CODE >581:/home/saul/MPLABXProjects/driver_bio3.X/comm.c
+15B text4 CODE >582:/home/saul/MPLABXProjects/driver_bio3.X/comm.c
+16F text4 CODE >583:/home/saul/MPLABXProjects/driver_bio3.X/comm.c
+176 text4 CODE >585:/home/saul/MPLABXProjects/driver_bio3.X/comm.c
+178 text4 CODE >586:/home/saul/MPLABXProjects/driver_bio3.X/comm.c
+17D text4 CODE >592:/home/saul/MPLABXProjects/driver_bio3.X/comm.c
+17E text4 CODE >594:/home/saul/MPLABXProjects/driver_bio3.X/comm.c
+183 text4 CODE >595:/home/saul/MPLABXProjects/driver_bio3.X/comm.c
+18C text4 CODE >597:/home/saul/MPLABXProjects/driver_bio3.X/comm.c
+192 text4 CODE >598:/home/saul/MPLABXProjects/driver_bio3.X/comm.c
+1A6 text4 CODE >599:/home/saul/MPLABXProjects/driver_bio3.X/comm.c
+1AD text4 CODE >601:/home/saul/MPLABXProjects/driver_bio3.X/comm.c
+1AF text4 CODE >602:/home/saul/MPLABXProjects/driver_bio3.X/comm.c
+1B4 text4 CODE >605:/home/saul/MPLABXProjects/driver_bio3.X/comm.c
+1C0 text4 CODE >606:/home/saul/MPLABXProjects/driver_bio3.X/comm.c
+1C5 text4 CODE >607:/home/saul/MPLABXProjects/driver_bio3.X/comm.c
+1C5 text4 CODE >609:/home/saul/MPLABXProjects/driver_bio3.X/comm.c
+1D1 text4 CODE >610:/home/saul/MPLABXProjects/driver_bio3.X/comm.c
+1D3 text4 CODE >611:/home/saul/MPLABXProjects/driver_bio3.X/comm.c
+1DF text4 CODE >612:/home/saul/MPLABXProjects/driver_bio3.X/comm.c
+1E1 text4 CODE >615:/home/saul/MPLABXProjects/driver_bio3.X/comm.c
+2D9 text3 CODE >175:/home/saul/MPLABXProjects/driver_bio3.X/bio3.c
+2DB text3 CODE >178:/home/saul/MPLABXProjects/driver_bio3.X/bio3.c
+2E6 text3 CODE >180:/home/saul/MPLABXProjects/driver_bio3.X/bio3.c
+2EC text3 CODE >181:/home/saul/MPLABXProjects/driver_bio3.X/bio3.c
+2F3 text3 CODE >182:/home/saul/MPLABXProjects/driver_bio3.X/bio3.c
+2FA text3 CODE >183:/home/saul/MPLABXProjects/driver_bio3.X/bio3.c
+301 text3 CODE >185:/home/saul/MPLABXProjects/driver_bio3.X/bio3.c
+1E3 text2 CODE >161:/home/saul/MPLABXProjects/driver_bio3.X/bio3.c
+1E5 text2 CODE >164:/home/saul/MPLABXProjects/driver_bio3.X/bio3.c
+1F0 text2 CODE >166:/home/saul/MPLABXProjects/driver_bio3.X/bio3.c
+1F6 text2 CODE >167:/home/saul/MPLABXProjects/driver_bio3.X/bio3.c
+1FD text2 CODE >168:/home/saul/MPLABXProjects/driver_bio3.X/bio3.c
+204 text2 CODE >169:/home/saul/MPLABXProjects/driver_bio3.X/bio3.c
+20B text2 CODE >170:/home/saul/MPLABXProjects/driver_bio3.X/bio3.c
+212 text2 CODE >171:/home/saul/MPLABXProjects/driver_bio3.X/bio3.c
+219 text2 CODE >172:/home/saul/MPLABXProjects/driver_bio3.X/bio3.c
+220 text2 CODE >173:/home/saul/MPLABXProjects/driver_bio3.X/bio3.c
 65 text1 CODE >441:/home/saul/MPLABXProjects/driver_bio3.X/comm.c
 65 text1 CODE >451:/home/saul/MPLABXProjects/driver_bio3.X/comm.c
 68 text1 CODE >462:/home/saul/MPLABXProjects/driver_bio3.X/comm.c
@@ -366,40 +366,41 @@ FD text1 CODE >530:/home/saul/MPLABXProjects/driver_bio3.X/comm.c
 109 text1 CODE >533:/home/saul/MPLABXProjects/driver_bio3.X/comm.c
 115 text1 CODE >534:/home/saul/MPLABXProjects/driver_bio3.X/comm.c
 11B text1 CODE >537:/home/saul/MPLABXProjects/driver_bio3.X/comm.c
-122 text1 CODE >547:/home/saul/MPLABXProjects/driver_bio3.X/comm.c
-125 text1 CODE >467:/home/saul/MPLABXProjects/driver_bio3.X/comm.c
-2AD maintext CODE >28:/home/saul/MPLABXProjects/driver_bio3.X/main.c
-2AD maintext CODE >32:/home/saul/MPLABXProjects/driver_bio3.X/main.c
-2AE maintext CODE >34:/home/saul/MPLABXProjects/driver_bio3.X/main.c
-2AF maintext CODE >36:/home/saul/MPLABXProjects/driver_bio3.X/main.c
-2B0 maintext CODE >37:/home/saul/MPLABXProjects/driver_bio3.X/main.c
-2B1 maintext CODE >38:/home/saul/MPLABXProjects/driver_bio3.X/main.c
-2B2 maintext CODE >39:/home/saul/MPLABXProjects/driver_bio3.X/main.c
-2B3 maintext CODE >40:/home/saul/MPLABXProjects/driver_bio3.X/main.c
-2B4 maintext CODE >43:/home/saul/MPLABXProjects/driver_bio3.X/main.c
-2B6 maintext CODE >44:/home/saul/MPLABXProjects/driver_bio3.X/main.c
-2BF maintext CODE >45:/home/saul/MPLABXProjects/driver_bio3.X/main.c
-2C1 maintext CODE >117:/home/saul/MPLABXProjects/driver_bio3.X/main.c
-2C1 maintext CODE >118:/home/saul/MPLABXProjects/driver_bio3.X/main.c
-2C2 maintext CODE >120:/home/saul/MPLABXProjects/driver_bio3.X/main.c
-2C6 maintext CODE >121:/home/saul/MPLABXProjects/driver_bio3.X/main.c
-2C7 maintext CODE >123:/home/saul/MPLABXProjects/driver_bio3.X/main.c
-2CB maintext CODE >124:/home/saul/MPLABXProjects/driver_bio3.X/main.c
-2CC maintext CODE >125:/home/saul/MPLABXProjects/driver_bio3.X/main.c
-2CD maintext CODE >128:/home/saul/MPLABXProjects/driver_bio3.X/main.c
-2CF maintext CODE >129:/home/saul/MPLABXProjects/driver_bio3.X/main.c
-2D0 maintext CODE >132:/home/saul/MPLABXProjects/driver_bio3.X/main.c
-2D4 maintext CODE >133:/home/saul/MPLABXProjects/driver_bio3.X/main.c
-2D5 maintext CODE >138:/home/saul/MPLABXProjects/driver_bio3.X/main.c
-2D6 maintext CODE >117:/home/saul/MPLABXProjects/driver_bio3.X/main.c
-3A4 clrtext CODE >2550:/tmp/xcXz9xozW
-3A4 clrtext CODE >2551:/tmp/xcXz9xozW
-3A5 clrtext CODE >2552:/tmp/xcXz9xozW
-3A5 clrtext CODE >2553:/tmp/xcXz9xozW
-3A6 clrtext CODE >2554:/tmp/xcXz9xozW
-3A7 clrtext CODE >2555:/tmp/xcXz9xozW
-3A8 clrtext CODE >2556:/tmp/xcXz9xozW
-3A9 clrtext CODE >2557:/tmp/xcXz9xozW
+11D text1 CODE >539:/home/saul/MPLABXProjects/driver_bio3.X/comm.c
+124 text1 CODE >549:/home/saul/MPLABXProjects/driver_bio3.X/comm.c
+127 text1 CODE >467:/home/saul/MPLABXProjects/driver_bio3.X/comm.c
+2AF maintext CODE >28:/home/saul/MPLABXProjects/driver_bio3.X/main.c
+2AF maintext CODE >32:/home/saul/MPLABXProjects/driver_bio3.X/main.c
+2B0 maintext CODE >34:/home/saul/MPLABXProjects/driver_bio3.X/main.c
+2B1 maintext CODE >36:/home/saul/MPLABXProjects/driver_bio3.X/main.c
+2B2 maintext CODE >37:/home/saul/MPLABXProjects/driver_bio3.X/main.c
+2B3 maintext CODE >38:/home/saul/MPLABXProjects/driver_bio3.X/main.c
+2B4 maintext CODE >39:/home/saul/MPLABXProjects/driver_bio3.X/main.c
+2B5 maintext CODE >40:/home/saul/MPLABXProjects/driver_bio3.X/main.c
+2B6 maintext CODE >43:/home/saul/MPLABXProjects/driver_bio3.X/main.c
+2B8 maintext CODE >44:/home/saul/MPLABXProjects/driver_bio3.X/main.c
+2C1 maintext CODE >45:/home/saul/MPLABXProjects/driver_bio3.X/main.c
+2C3 maintext CODE >117:/home/saul/MPLABXProjects/driver_bio3.X/main.c
+2C3 maintext CODE >118:/home/saul/MPLABXProjects/driver_bio3.X/main.c
+2C4 maintext CODE >120:/home/saul/MPLABXProjects/driver_bio3.X/main.c
+2C8 maintext CODE >121:/home/saul/MPLABXProjects/driver_bio3.X/main.c
+2C9 maintext CODE >123:/home/saul/MPLABXProjects/driver_bio3.X/main.c
+2CD maintext CODE >124:/home/saul/MPLABXProjects/driver_bio3.X/main.c
+2CE maintext CODE >125:/home/saul/MPLABXProjects/driver_bio3.X/main.c
+2CF maintext CODE >128:/home/saul/MPLABXProjects/driver_bio3.X/main.c
+2D1 maintext CODE >129:/home/saul/MPLABXProjects/driver_bio3.X/main.c
+2D2 maintext CODE >132:/home/saul/MPLABXProjects/driver_bio3.X/main.c
+2D6 maintext CODE >133:/home/saul/MPLABXProjects/driver_bio3.X/main.c
+2D7 maintext CODE >138:/home/saul/MPLABXProjects/driver_bio3.X/main.c
+2D8 maintext CODE >117:/home/saul/MPLABXProjects/driver_bio3.X/main.c
+3A6 clrtext CODE >2550:/tmp/xcXweedN1
+3A6 clrtext CODE >2551:/tmp/xcXweedN1
+3A7 clrtext CODE >2552:/tmp/xcXweedN1
+3A7 clrtext CODE >2553:/tmp/xcXweedN1
+3A8 clrtext CODE >2554:/tmp/xcXweedN1
+3A9 clrtext CODE >2555:/tmp/xcXweedN1
+3AA clrtext CODE >2556:/tmp/xcXweedN1
+3AB clrtext CODE >2557:/tmp/xcXweedN1
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -443,12 +444,12 @@ _TXIE 48C 0 ABS 0 - dist/default/production/driver_bio3.X.production.obj
 _TXIF 8C 0 ABS 0 - dist/default/production/driver_bio3.X.production.obj
 _WPUA 20C 0 ABS 0 - dist/default/production/driver_bio3.X.production.obj
 _WPUC 20E 0 ABS 0 - dist/default/production/driver_bio3.X.production.obj
-___sp 0 0 STACK 2 stack /tmp/xcXoyxgX3.obj
-_main 55A 0 CODE 0 maintext dist/default/production/driver_bio3.X.production.obj
+___sp 0 0 STACK 2 stack /tmp/xcXw9HP2f.obj
+_main 55E 0 CODE 0 maintext dist/default/production/driver_bio3.X.production.obj
 btemp 7E 0 ABS 0 - dist/default/production/driver_bio3.X.production.obj
-start AC 0 CODE 0 init /tmp/xcXoyxgX3.obj
+start AC 0 CODE 0 init /tmp/xcXw9HP2f.obj
 __CFG_BOREN$OFF 0 0 ABS 0 - dist/default/production/driver_bio3.X.production.obj
-i1_start_RX_USART_ISR 6CC 0 CODE 0 text20 dist/default/production/driver_bio3.X.production.obj
+i1_start_RX_USART_ISR 6D0 0 CODE 0 text20 dist/default/production/driver_bio3.X.production.obj
 __size_of_main 0 0 ABS 0 - dist/default/production/driver_bio3.X.production.obj
 __HbssCOMMON 0 0 ABS 0 bssCOMMON -
 _OPTION_REGbits 95 0 ABS 0 - dist/default/production/driver_bio3.X.production.obj
@@ -456,13 +457,13 @@ setGain@gain_index 47 0 BANK0 1 cstackBANK0 dist/default/production/driver_bio3.
 __Hpowerup 0 0 CODE 0 powerup -
 __size_of_close_RX_USART 0 0 ABS 0 - dist/default/production/driver_bio3.X.production.obj
 __size_of_SYSTEM_Initialize 0 0 ABS 0 - dist/default/production/driver_bio3.X.production.obj
-_stop_TMR0_ISR 780 0 CODE 0 text21 dist/default/production/driver_bio3.X.production.obj
-intlevel0 0 0 CODE 0 functab /tmp/xcXoyxgX3.obj
-intlevel1 0 0 CODE 0 functab /tmp/xcXoyxgX3.obj
-intlevel2 0 0 CODE 0 functab /tmp/xcXoyxgX3.obj
-intlevel3 0 0 CODE 0 functab /tmp/xcXoyxgX3.obj
-intlevel4 0 0 CODE 0 functab /tmp/xcXoyxgX3.obj
-intlevel5 0 0 CODE 0 functab /tmp/xcXoyxgX3.obj
+_stop_TMR0_ISR 784 0 CODE 0 text21 dist/default/production/driver_bio3.X.production.obj
+intlevel0 0 0 CODE 0 functab /tmp/xcXw9HP2f.obj
+intlevel1 0 0 CODE 0 functab /tmp/xcXw9HP2f.obj
+intlevel2 0 0 CODE 0 functab /tmp/xcXw9HP2f.obj
+intlevel3 0 0 CODE 0 functab /tmp/xcXw9HP2f.obj
+intlevel4 0 0 CODE 0 functab /tmp/xcXw9HP2f.obj
+intlevel5 0 0 CODE 0 functab /tmp/xcXw9HP2f.obj
 __LbssCOMMON 0 0 ABS 0 bssCOMMON -
 sweep@freq_index A8 0 BANK1 1 cstackBANK1 dist/default/production/driver_bio3.X.production.obj
 __size_of_setFreq 0 0 ABS 0 - dist/default/production/driver_bio3.X.production.obj
@@ -473,7 +474,7 @@ __Hfunctab 0 0 CODE 0 functab -
 sweep@check A0 0 BANK1 1 cstackBANK1 dist/default/production/driver_bio3.X.production.obj
 sweep@count AA 0 BANK1 1 cstackBANK1 dist/default/production/driver_bio3.X.production.obj
 __Hclrtext 0 0 ABS 0 clrtext -
-__end_of_setup_ADC 760 0 CODE 0 text14 dist/default/production/driver_bio3.X.production.obj
+__end_of_setup_ADC 764 0 CODE 0 text14 dist/default/production/driver_bio3.X.production.obj
 __size_of_setup_ADC 0 0 ABS 0 - dist/default/production/driver_bio3.X.production.obj
 _ADCON0 9D 0 ABS 0 - dist/default/production/driver_bio3.X.production.obj
 _ADCON1 9E 0 ABS 0 - dist/default/production/driver_bio3.X.production.obj
@@ -483,41 +484,41 @@ _ANSELA 18C 0 ABS 0 - dist/default/production/driver_bio3.X.production.obj
 _ANSELC 18E 0 ABS 0 - dist/default/production/driver_bio3.X.production.obj
 _APFCON 11D 0 ABS 0 - dist/default/production/driver_bio3.X.production.obj
 setGain@asic 4A 0 BANK0 1 cstackBANK0 dist/default/production/driver_bio3.X.production.obj
-_start_TMR0_ISR 6EE 0 CODE 0 text22 dist/default/production/driver_bio3.X.production.obj
+_start_TMR0_ISR 6F2 0 CODE 0 text22 dist/default/production/driver_bio3.X.production.obj
 sweep@gain_index AF 0 BANK1 1 cstackBANK1 dist/default/production/driver_bio3.X.production.obj
 start_TMR0_ISR@val 77 0 COMMON 1 cstackCOMMON dist/default/production/driver_bio3.X.production.obj
 _mess_rec 3D 0 BANK0 1 bssBANK0 dist/default/production/driver_bio3.X.production.obj
-_setup_ADC 754 0 CODE 0 text14 dist/default/production/driver_bio3.X.production.obj
+_setup_ADC 758 0 CODE 0 text14 dist/default/production/driver_bio3.X.production.obj
 _TXCKSEL 8EA 0 ABS 0 - dist/default/production/driver_bio3.X.production.obj
 __Lmaintext 0 0 ABS 0 maintext -
 config@i 4A 0 BANK0 1 cstackBANK0 dist/default/production/driver_bio3.X.production.obj
 _TIMER0_flag 39 0 BANK0 1 bssBANK0 dist/default/production/driver_bio3.X.production.obj
 setFreq@asic 49 0 BANK0 1 cstackBANK0 dist/default/production/driver_bio3.X.production.obj
-__end_of_config 504 0 CODE 0 text5 dist/default/production/driver_bio3.X.production.obj
+__end_of_config 508 0 CODE 0 text5 dist/default/production/driver_bio3.X.production.obj
 measure@offset 54 0 BANK0 1 cstackBANK0 dist/default/production/driver_bio3.X.production.obj
 calculate_checksum@num 47 0 BANK0 1 cstackBANK0 dist/default/production/driver_bio3.X.production.obj
 __size_of_USARTX_change_pol 0 0 ABS 0 - dist/default/production/driver_bio3.X.production.obj
-__end_of_start_RCM 774 0 CODE 0 text12 dist/default/production/driver_bio3.X.production.obj
+__end_of_start_RCM 778 0 CODE 0 text12 dist/default/production/driver_bio3.X.production.obj
 __size_of_ADC_5 0 0 ABS 0 - dist/default/production/driver_bio3.X.production.obj
 __size_of_start_RCM 0 0 ABS 0 - dist/default/production/driver_bio3.X.production.obj
 __size_of_sweep 0 0 ABS 0 - dist/default/production/driver_bio3.X.production.obj
 __CFG_FCMEN$OFF 0 0 ABS 0 - dist/default/production/driver_bio3.X.production.obj
-_PIN_MANAGER_Initialize 678 0 CODE 0 text17 dist/default/production/driver_bio3.X.production.obj
+_PIN_MANAGER_Initialize 67C 0 CODE 0 text17 dist/default/production/driver_bio3.X.production.obj
 measure@value 57 0 BANK0 1 cstackBANK0 dist/default/production/driver_bio3.X.production.obj
 _USART_tx_data 20 0 BANK0 1 bssBANK0 dist/default/production/driver_bio3.X.production.obj
 _USART_tx_flag 72 0 COMMON 1 bssCOMMON dist/default/production/driver_bio3.X.production.obj
 start_initialization AE 0 CODE 0 cinit dist/default/production/driver_bio3.X.production.obj
-__end_of_start_TMR0_ISR 70E 0 CODE 0 text22 dist/default/production/driver_bio3.X.production.obj
+__end_of_start_TMR0_ISR 712 0 CODE 0 text22 dist/default/production/driver_bio3.X.production.obj
 __size_of_start_TX_USART_ISR 0 0 ABS 0 - dist/default/production/driver_bio3.X.production.obj
 _OSCCON 99 0 ABS 0 - dist/default/production/driver_bio3.X.production.obj
-__end_of_setFreq 600 0 CODE 0 text3 dist/default/production/driver_bio3.X.production.obj
-__end_of_setGain 43E 0 CODE 0 text2 dist/default/production/driver_bio3.X.production.obj
+__end_of_setFreq 604 0 CODE 0 text3 dist/default/production/driver_bio3.X.production.obj
+__end_of_setGain 442 0 CODE 0 text2 dist/default/production/driver_bio3.X.production.obj
 __size_of_stop_TMR0_ISR 0 0 ABS 0 - dist/default/production/driver_bio3.X.production.obj
 _USART_tx_index 73 0 COMMON 1 bssCOMMON dist/default/production/driver_bio3.X.production.obj
-_start_RCM 76C 0 CODE 0 text12 dist/default/production/driver_bio3.X.production.obj
+_start_RCM 770 0 CODE 0 text12 dist/default/production/driver_bio3.X.production.obj
 __size_of_measure 0 0 ABS 0 - dist/default/production/driver_bio3.X.production.obj
-__end_of_SYSTEM_Initialize 780 0 CODE 0 text16 dist/default/production/driver_bio3.X.production.obj
-clear_ram0 748 0 CODE 0 clrtext dist/default/production/driver_bio3.X.production.obj
+__end_of_SYSTEM_Initialize 784 0 CODE 0 text16 dist/default/production/driver_bio3.X.production.obj
+clear_ram0 74C 0 CODE 0 clrtext dist/default/production/driver_bio3.X.production.obj
 _SPBRGH 19C 0 ABS 0 - dist/default/production/driver_bio3.X.production.obj
 _SPBRGL 19B 0 ABS 0 - dist/default/production/driver_bio3.X.production.obj
 __pcstackBANK0 47 0 BANK0 1 cstackBANK0 dist/default/production/driver_bio3.X.production.obj
@@ -526,8 +527,8 @@ _TMR0CS 4AD 0 ABS 0 - dist/default/production/driver_bio3.X.production.obj
 _TMR0IE 5D 0 ABS 0 - dist/default/production/driver_bio3.X.production.obj
 _TMR0IF 5A 0 ABS 0 - dist/default/production/driver_bio3.X.production.obj
 calculate_checksum@i 4C 0 BANK0 1 cstackBANK0 dist/default/production/driver_bio3.X.production.obj
-___int_sp 0 0 STACK 2 stack /tmp/xcXoyxgX3.obj
-__end_of_stop_TMR0_ISR 786 0 CODE 0 text21 dist/default/production/driver_bio3.X.production.obj
+___int_sp 0 0 STACK 2 stack /tmp/xcXw9HP2f.obj
+__end_of_stop_TMR0_ISR 78A 0 CODE 0 text21 dist/default/production/driver_bio3.X.production.obj
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 BANK2 1 bank2 -
@@ -590,7 +591,7 @@ sweep@aux A1 0 BANK1 1 cstackBANK1 dist/default/production/driver_bio3.X.product
 sweep@ret B0 0 BANK1 1 cstackBANK1 dist/default/production/driver_bio3.X.production.obj
 __Hbigram 0 0 ABS 0 bigram -
 __Hmaintext 0 0 ABS 0 maintext -
-__end_of_lputs_ISR 55A 0 CODE 0 text7 dist/default/production/driver_bio3.X.production.obj
+__end_of_lputs_ISR 55E 0 CODE 0 text7 dist/default/production/driver_bio3.X.production.obj
 __CFG_FOSC$INTOSC 0 0 ABS 0 - dist/default/production/driver_bio3.X.production.obj
 __Hcommon 0 0 ABS 0 common -
 __Hconfig 10012 0 CONFIG 0 config -
@@ -632,7 +633,7 @@ __Lsfr31 0 0 ABS 0 sfr31 -
 __Lstack 0 0 STACK 2 stack -
 config@out 4B 0 BANK0 1 cstackBANK0 dist/default/production/driver_bio3.X.production.obj
 calculate_checksum@check 4A 0 BANK0 1 cstackBANK0 dist/default/production/driver_bio3.X.production.obj
-_setup_TMR0 73A 0 CODE 0 text13 dist/default/production/driver_bio3.X.production.obj
+_setup_TMR0 73E 0 CODE 0 text13 dist/default/production/driver_bio3.X.production.obj
 __Habs1 0 0 ABS 0 abs1 -
 __Hcode 0 0 ABS 0 code -
 __Hinit AC 0 CODE 0 init -
@@ -666,7 +667,7 @@ __LcstackBANK1 0 0 ABS 0 cstackBANK1 -
 int$flags 7E 0 ABS 0 - dist/default/production/driver_bio3.X.production.obj
 __HcstackCOMMON 0 0 ABS 0 cstackCOMMON -
 _USART_rx_index 3B 0 BANK0 1 bssBANK0 dist/default/production/driver_bio3.X.production.obj
-_lputs_ISR 504 0 CODE 0 text7 dist/default/production/driver_bio3.X.production.obj
+_lputs_ISR 508 0 CODE 0 text7 dist/default/production/driver_bio3.X.production.obj
 _GIE 5F 0 ABS 0 - dist/default/production/driver_bio3.X.production.obj
 _PS0 4A8 0 ABS 0 - dist/default/production/driver_bio3.X.production.obj
 _PS1 4A9 0 ABS 0 - dist/default/production/driver_bio3.X.production.obj
@@ -678,34 +679,34 @@ __S1 B3 0 ABS 0 - -
 __S2 0 0 ABS 0 - -
 __S3 0 0 ABS 0 - -
 _isr 8 0 CODE 0 intentry dist/default/production/driver_bio3.X.production.obj
-__end_of_start_RX_USART_ISR 6CC 0 CODE 0 text11 dist/default/production/driver_bio3.X.production.obj
-__end_of_USARTX_change_pol 77A 0 CODE 0 text15 dist/default/production/driver_bio3.X.production.obj
-_config 4A6 0 CODE 0 text5 dist/default/production/driver_bio3.X.production.obj
-__end_of_measure 3C2 0 CODE 0 text4 dist/default/production/driver_bio3.X.production.obj
-_SYSTEM_Initialize 77A 0 CODE 0 text16 dist/default/production/driver_bio3.X.production.obj
+__end_of_start_RX_USART_ISR 6D0 0 CODE 0 text11 dist/default/production/driver_bio3.X.production.obj
+__end_of_USARTX_change_pol 77E 0 CODE 0 text15 dist/default/production/driver_bio3.X.production.obj
+_config 4AA 0 CODE 0 text5 dist/default/production/driver_bio3.X.production.obj
+__end_of_measure 3C6 0 CODE 0 text4 dist/default/production/driver_bio3.X.production.obj
+_SYSTEM_Initialize 77E 0 CODE 0 text16 dist/default/production/driver_bio3.X.production.obj
 __end_of_isr AC 0 CODE 0 intentry dist/default/production/driver_bio3.X.production.obj
 __Lintentry 8 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec /tmp/xcXoyxgX3.obj
-_close_RX_USART 72C 0 CODE 0 text8 dist/default/production/driver_bio3.X.production.obj
-_start_RX_USART_ISR 6AA 0 CODE 0 text11 dist/default/production/driver_bio3.X.production.obj
+reset_vec 0 0 CODE 0 reset_vec /tmp/xcXw9HP2f.obj
+_close_RX_USART 730 0 CODE 0 text8 dist/default/production/driver_bio3.X.production.obj
+_start_RX_USART_ISR 6AE 0 CODE 0 text11 dist/default/production/driver_bio3.X.production.obj
 __LbssBANK0 0 0 ABS 0 bssBANK0 -
 __size_ofi1_start_RX_USART_ISR 0 0 ABS 0 - dist/default/production/driver_bio3.X.production.obj
-__end_of_setup_TMR0 748 0 CODE 0 text13 dist/default/production/driver_bio3.X.production.obj
+__end_of_setup_TMR0 74C 0 CODE 0 text13 dist/default/production/driver_bio3.X.production.obj
 _mess_rec_size 3C 0 BANK0 1 bssBANK0 dist/default/production/driver_bio3.X.production.obj
-__ptext10 70E 0 CODE 0 text10 dist/default/production/driver_bio3.X.production.obj
-__ptext11 6AA 0 CODE 0 text11 dist/default/production/driver_bio3.X.production.obj
-__ptext12 76C 0 CODE 0 text12 dist/default/production/driver_bio3.X.production.obj
-__ptext13 73A 0 CODE 0 text13 dist/default/production/driver_bio3.X.production.obj
-__ptext14 754 0 CODE 0 text14 dist/default/production/driver_bio3.X.production.obj
-__ptext15 774 0 CODE 0 text15 dist/default/production/driver_bio3.X.production.obj
-__ptext16 77A 0 CODE 0 text16 dist/default/production/driver_bio3.X.production.obj
-__ptext17 678 0 CODE 0 text17 dist/default/production/driver_bio3.X.production.obj
-__ptext18 760 0 CODE 0 text18 dist/default/production/driver_bio3.X.production.obj
-__ptext20 6CC 0 CODE 0 text20 dist/default/production/driver_bio3.X.production.obj
-__ptext21 780 0 CODE 0 text21 dist/default/production/driver_bio3.X.production.obj
-__ptext22 6EE 0 CODE 0 text22 dist/default/production/driver_bio3.X.production.obj
+__ptext10 712 0 CODE 0 text10 dist/default/production/driver_bio3.X.production.obj
+__ptext11 6AE 0 CODE 0 text11 dist/default/production/driver_bio3.X.production.obj
+__ptext12 770 0 CODE 0 text12 dist/default/production/driver_bio3.X.production.obj
+__ptext13 73E 0 CODE 0 text13 dist/default/production/driver_bio3.X.production.obj
+__ptext14 758 0 CODE 0 text14 dist/default/production/driver_bio3.X.production.obj
+__ptext15 778 0 CODE 0 text15 dist/default/production/driver_bio3.X.production.obj
+__ptext16 77E 0 CODE 0 text16 dist/default/production/driver_bio3.X.production.obj
+__ptext17 67C 0 CODE 0 text17 dist/default/production/driver_bio3.X.production.obj
+__ptext18 764 0 CODE 0 text18 dist/default/production/driver_bio3.X.production.obj
+__ptext20 6D0 0 CODE 0 text20 dist/default/production/driver_bio3.X.production.obj
+__ptext21 784 0 CODE 0 text21 dist/default/production/driver_bio3.X.production.obj
+__ptext22 6F2 0 CODE 0 text22 dist/default/production/driver_bio3.X.production.obj
 _TIMER0_timeout 70 0 COMMON 1 bssCOMMON dist/default/production/driver_bio3.X.production.obj
-__end_of_PIN_MANAGER_Initialize 6AA 0 CODE 0 text17 dist/default/production/driver_bio3.X.production.obj
+__end_of_PIN_MANAGER_Initialize 6AE 0 CODE 0 text17 dist/default/production/driver_bio3.X.production.obj
 __size_of_config 0 0 ABS 0 - dist/default/production/driver_bio3.X.production.obj
 __Lbank10 0 0 BANK10 1 bank10 -
 __Lbank11 0 0 BANK11 1 bank11 -
@@ -729,7 +730,7 @@ __Lbank28 0 0 BANK28 1 bank28 -
 __Lbank29 0 0 BANK29 1 bank29 -
 __Lbank30 0 0 BANK30 1 bank30 -
 __Lbank31 0 0 BANK31 1 bank31 -
-__pmaintext 55A 0 CODE 0 maintext dist/default/production/driver_bio3.X.production.obj
+__pmaintext 55E 0 CODE 0 maintext dist/default/production/driver_bio3.X.production.obj
 __Lbigram 0 0 ABS 0 bigram -
 __CFG_BORV$HI 0 0 ABS 0 - dist/default/production/driver_bio3.X.production.obj
 __Lcommon 0 0 ABS 0 common -
@@ -737,19 +738,19 @@ __Lconfig 1000E 0 CONFIG 0 config -
 __CFG_CP$OFF 0 0 ABS 0 - dist/default/production/driver_bio3.X.production.obj
 _RXDTSEL 8EF 0 ABS 0 - dist/default/production/driver_bio3.X.production.obj
 __CFG_IESO$ON 0 0 ABS 0 - dist/default/production/driver_bio3.X.production.obj
-__end_ofi1_start_RX_USART_ISR 6EE 0 CODE 0 text20 dist/default/production/driver_bio3.X.production.obj
+__end_ofi1_start_RX_USART_ISR 6F2 0 CODE 0 text20 dist/default/production/driver_bio3.X.production.obj
 setFreq@freq_index 47 0 BANK0 1 cstackBANK0 dist/default/production/driver_bio3.X.production.obj
-stackhi 204F 0 ABS 0 - /tmp/xcXoyxgX3.obj
-stacklo 2040 0 ABS 0 - /tmp/xcXoyxgX3.obj
-_USARTX_change_pol 774 0 CODE 0 text15 dist/default/production/driver_bio3.X.production.obj
+stackhi 204F 0 ABS 0 - /tmp/xcXw9HP2f.obj
+stacklo 2040 0 ABS 0 - /tmp/xcXw9HP2f.obj
+_USARTX_change_pol 778 0 CODE 0 text15 dist/default/production/driver_bio3.X.production.obj
 _OSCSTAT 9A 0 ABS 0 - dist/default/production/driver_bio3.X.production.obj
 _OSCTUNE 98 0 ABS 0 - dist/default/production/driver_bio3.X.production.obj
-__end_of_close_RX_USART 73A 0 CODE 0 text8 dist/default/production/driver_bio3.X.production.obj
-_setFreq 5AE 0 CODE 0 text3 dist/default/production/driver_bio3.X.production.obj
-_setGain 3C2 0 CODE 0 text2 dist/default/production/driver_bio3.X.production.obj
+__end_of_close_RX_USART 73E 0 CODE 0 text8 dist/default/production/driver_bio3.X.production.obj
+_setFreq 5B2 0 CODE 0 text3 dist/default/production/driver_bio3.X.production.obj
+_setGain 3C6 0 CODE 0 text2 dist/default/production/driver_bio3.X.production.obj
 __CFG_LVP$OFF 0 0 ABS 0 - dist/default/production/driver_bio3.X.production.obj
 lputs_ISR@length 47 0 BANK0 1 cstackBANK0 dist/default/production/driver_bio3.X.production.obj
-__end_of_calculate_checksum 678 0 CODE 0 text9 dist/default/production/driver_bio3.X.production.obj
+__end_of_calculate_checksum 67C 0 CODE 0 text9 dist/default/production/driver_bio3.X.production.obj
 __Lspace_0 0 0 ABS 0 - -
 __Lspace_1 0 0 ABS 0 - -
 __Lspace_2 0 0 ABS 0 - -
@@ -775,19 +776,19 @@ __size_of_start_TMR0_ISR 0 0 ABS 0 - dist/default/production/driver_bio3.X.produ
 __Hreset_vec 2 0 CODE 0 reset_vec -
 __HbssBANK0 0 0 ABS 0 bssBANK0 -
 __ptext1 CA 0 CODE 0 text1 dist/default/production/driver_bio3.X.production.obj
-__ptext2 3C2 0 CODE 0 text2 dist/default/production/driver_bio3.X.production.obj
-__ptext3 5AE 0 CODE 0 text3 dist/default/production/driver_bio3.X.production.obj
-__ptext4 258 0 CODE 0 text4 dist/default/production/driver_bio3.X.production.obj
-__ptext5 4A6 0 CODE 0 text5 dist/default/production/driver_bio3.X.production.obj
-__ptext6 600 0 CODE 0 text6 dist/default/production/driver_bio3.X.production.obj
-__ptext7 504 0 CODE 0 text7 dist/default/production/driver_bio3.X.production.obj
-__ptext8 72C 0 CODE 0 text8 dist/default/production/driver_bio3.X.production.obj
-__ptext9 646 0 CODE 0 text9 dist/default/production/driver_bio3.X.production.obj
-_calculate_checksum 646 0 CODE 0 text9 dist/default/production/driver_bio3.X.production.obj
+__ptext2 3C6 0 CODE 0 text2 dist/default/production/driver_bio3.X.production.obj
+__ptext3 5B2 0 CODE 0 text3 dist/default/production/driver_bio3.X.production.obj
+__ptext4 25C 0 CODE 0 text4 dist/default/production/driver_bio3.X.production.obj
+__ptext5 4AA 0 CODE 0 text5 dist/default/production/driver_bio3.X.production.obj
+__ptext6 604 0 CODE 0 text6 dist/default/production/driver_bio3.X.production.obj
+__ptext7 508 0 CODE 0 text7 dist/default/production/driver_bio3.X.production.obj
+__ptext8 730 0 CODE 0 text8 dist/default/production/driver_bio3.X.production.obj
+__ptext9 64A 0 CODE 0 text9 dist/default/production/driver_bio3.X.production.obj
+_calculate_checksum 64A 0 CODE 0 text9 dist/default/production/driver_bio3.X.production.obj
 sweep@asic B1 0 BANK1 1 cstackBANK1 dist/default/production/driver_bio3.X.production.obj
 __Lpowerup 0 0 CODE 0 powerup -
 __Leeprom_data 0 0 EEDATA 3 eeprom_data -
-__pstringtext 43E 0 STRCODE 0 stringtext dist/default/production/driver_bio3.X.production.obj
+__pstringtext 442 0 STRCODE 0 stringtext dist/default/production/driver_bio3.X.production.obj
 __Lreset_vec 0 0 CODE 0 reset_vec -
 calculate_checksum@data 4B 0 BANK0 1 cstackBANK0 dist/default/production/driver_bio3.X.production.obj
 __CFG_CLKOUTEN$OFF 0 0 ABS 0 - dist/default/production/driver_bio3.X.production.obj
@@ -800,45 +801,45 @@ measure@aux1 5B 0 BANK0 1 cstackBANK0 dist/default/production/driver_bio3.X.prod
 measure@aux2 59 0 BANK0 1 cstackBANK0 dist/default/production/driver_bio3.X.production.obj
 __Lclrtext 0 0 ABS 0 clrtext -
 __CFG_PLLEN$OFF 0 0 ABS 0 - dist/default/production/driver_bio3.X.production.obj
-__end_of_start_TX_USART_ISR 72C 0 CODE 0 text10 dist/default/production/driver_bio3.X.production.obj
-_measure 258 0 CODE 0 text4 dist/default/production/driver_bio3.X.production.obj
+__end_of_start_TX_USART_ISR 730 0 CODE 0 text10 dist/default/production/driver_bio3.X.production.obj
+_measure 25C 0 CODE 0 text4 dist/default/production/driver_bio3.X.production.obj
 __pcstackCOMMON 75 0 COMMON 1 cstackCOMMON dist/default/production/driver_bio3.X.production.obj
 setGain@aux 49 0 BANK0 1 cstackBANK0 dist/default/production/driver_bio3.X.production.obj
 _USART_tx_length 74 0 COMMON 1 bssCOMMON dist/default/production/driver_bio3.X.production.obj
 __Hend_init AE 0 CODE 0 end_init -
-__end_of_filt 480 0 STRCODE 0 stringtext dist/default/production/driver_bio3.X.production.obj
-__end_of_main 5AE 0 CODE 0 maintext dist/default/production/driver_bio3.X.production.obj
-__end_of_ADC_5 646 0 CODE 0 text6 dist/default/production/driver_bio3.X.production.obj
+__end_of_filt 484 0 STRCODE 0 stringtext dist/default/production/driver_bio3.X.production.obj
+__end_of_main 5B2 0 CODE 0 maintext dist/default/production/driver_bio3.X.production.obj
+__end_of_ADC_5 64A 0 CODE 0 text6 dist/default/production/driver_bio3.X.production.obj
 __size_of_setup_TMR0 0 0 ABS 0 - dist/default/production/driver_bio3.X.production.obj
-_ADC_5 600 0 CODE 0 text6 dist/default/production/driver_bio3.X.production.obj
+_ADC_5 604 0 CODE 0 text6 dist/default/production/driver_bio3.X.production.obj
 _BRG16 CFB 0 ABS 0 - dist/default/production/driver_bio3.X.production.obj
-__end_of_freqs 496 0 STRCODE 0 stringtext dist/default/production/driver_bio3.X.production.obj
-__end_of_gains 4A6 0 STRCODE 0 stringtext dist/default/production/driver_bio3.X.production.obj
+__end_of_freqs 49A 0 STRCODE 0 stringtext dist/default/production/driver_bio3.X.production.obj
+__end_of_gains 4AA 0 STRCODE 0 stringtext dist/default/production/driver_bio3.X.production.obj
 _PORTC E 0 ABS 0 - dist/default/production/driver_bio3.X.production.obj
 _RCREG 199 0 ABS 0 - dist/default/production/driver_bio3.X.production.obj
 _TRISA 8C 0 ABS 0 - dist/default/production/driver_bio3.X.production.obj
 _TRISC 8E 0 ABS 0 - dist/default/production/driver_bio3.X.production.obj
 _TXREG 19A 0 ABS 0 - dist/default/production/driver_bio3.X.production.obj
-__end_of_sweep 258 0 CODE 0 text1 dist/default/production/driver_bio3.X.production.obj
+__end_of_sweep 25C 0 CODE 0 text1 dist/default/production/driver_bio3.X.production.obj
 __Hram 0 0 ABS 0 ram -
 __Lram 0 0 ABS 0 ram -
-_freqs 480 0 STRCODE 0 stringtext dist/default/production/driver_bio3.X.production.obj
-_gains 496 0 STRCODE 0 stringtext dist/default/production/driver_bio3.X.production.obj
+_freqs 484 0 STRCODE 0 stringtext dist/default/production/driver_bio3.X.production.obj
+_gains 49A 0 STRCODE 0 stringtext dist/default/production/driver_bio3.X.production.obj
 __CFG_CPD$OFF 0 0 ABS 0 - dist/default/production/driver_bio3.X.production.obj
 _sweep CA 0 CODE 0 text1 dist/default/production/driver_bio3.X.production.obj
 __size_of_PIN_MANAGER_Initialize 0 0 ABS 0 - dist/default/production/driver_bio3.X.production.obj
 __pintentry 8 0 CODE 0 intentry dist/default/production/driver_bio3.X.production.obj
 __size_of_start_RX_USART_ISR 0 0 ABS 0 - dist/default/production/driver_bio3.X.production.obj
 __size_of_isr 0 0 ABS 0 - dist/default/production/driver_bio3.X.production.obj
-__end_of_OSCILLATOR_Initialize 76C 0 CODE 0 text18 dist/default/production/driver_bio3.X.production.obj
+__end_of_OSCILLATOR_Initialize 770 0 CODE 0 text18 dist/default/production/driver_bio3.X.production.obj
 __initialization AE 0 CODE 0 cinit dist/default/production/driver_bio3.X.production.obj
 __CFG_PWRTE$OFF 0 0 ABS 0 - dist/default/production/driver_bio3.X.production.obj
 __pbssBANK0 20 0 BANK0 1 bssBANK0 dist/default/production/driver_bio3.X.production.obj
-_start_TX_USART_ISR 70E 0 CODE 0 text10 dist/default/production/driver_bio3.X.production.obj
+_start_TX_USART_ISR 712 0 CODE 0 text10 dist/default/production/driver_bio3.X.production.obj
 config@conf 47 0 BANK0 1 cstackBANK0 dist/default/production/driver_bio3.X.production.obj
 __Hstringtext 0 0 ABS 0 stringtext -
 __CFG_WRT$OFF 0 0 ABS 0 - dist/default/production/driver_bio3.X.production.obj
-_OSCILLATOR_Initialize 760 0 CODE 0 text18 dist/default/production/driver_bio3.X.production.obj
+_OSCILLATOR_Initialize 764 0 CODE 0 text18 dist/default/production/driver_bio3.X.production.obj
 # %SPLITSTAB Section
 # This section enumerates all the psect splits performed by the assembler.
 # The beginning of the section is indicated by %SPLITSTAB.
@@ -864,11 +865,11 @@ _OSCILLATOR_Initialize 760 0 CODE 0 text18 dist/default/production/driver_bio3.X
 # and size are in units of delta. The file address is in units of bytes.
 # All other numeric quantities are in decimal.
 %SEGMENTS
-text5 0 253 4A6 170 2
+text5 0 255 4AA 170 2
 cstackBANK1 1 A0 A0 13 1
-intentry 0 4 8 21B 2
+intentry 0 4 8 21D 2
 reset_vec 0 0 0 1 2
 bssBANK0 1 20 20 40 1
-stringtext 0 21F 43E 34 2
+stringtext 0 221 442 34 2
 bssCOMMON 1 70 70 A 1
 config 0 8007 1000E 2 2

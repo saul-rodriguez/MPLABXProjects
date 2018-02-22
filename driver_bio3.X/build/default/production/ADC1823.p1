@@ -2491,35 +2491,35 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e =<< _ADC_value -> 8 `i ]
 [e =| _ADC_value -> _ADRESL `us ]
 }
-[; ;ADC1823.c: 55: return ADC_value;
-"55
+[; ;ADC1823.c: 56: return ADC_value;
+"56
 [e ) _ADC_value ]
 [e $UE 301  ]
-[; ;ADC1823.c: 56: }
-"56
+[; ;ADC1823.c: 57: }
+"57
 [e :UE 301 ]
 }
-"58
-[v _ADC_6 `(us ~T0 @X0 1 ef ]
 "59
+[v _ADC_6 `(us ~T0 @X0 1 ef ]
+"60
 {
-[; ;ADC1823.c: 58: unsigned short ADC_6()
-[; ;ADC1823.c: 59: {
+[; ;ADC1823.c: 59: unsigned short ADC_6()
+[; ;ADC1823.c: 60: {
 [e :U _ADC_6 ]
 [f ]
-"60
+"61
 [v _ADC_value `us ~T0 @X0 1 a ]
-[; ;ADC1823.c: 60: unsigned short ADC_value;
-[; ;ADC1823.c: 62: { ADCON0 = 0b00011001;};
-"62
+[; ;ADC1823.c: 61: unsigned short ADC_value;
+[; ;ADC1823.c: 63: { ADCON0 = 0b00011001;};
+"63
 {
 [e = _ADCON0 -> -> 25 `i `uc ]
 }
-[; ;ADC1823.c: 63: __nop();
-"63
-[e ( ___nop ..  ]
-[; ;ADC1823.c: 64: { ADGO = 1; while (ADGO); ADC_value = ADRESH; ADC_value <<= 8; ADC_value |= ADRESL;};
+[; ;ADC1823.c: 64: __nop();
 "64
+[e ( ___nop ..  ]
+[; ;ADC1823.c: 65: { ADGO = 1; while (ADGO); ADC_value = ADRESH; ADC_value <<= 8; ADC_value |= ADRESL;};
+"65
 {
 [e = _ADGO -> -> 1 `i `b ]
 [e $U 306  ]
@@ -2531,11 +2531,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e =<< _ADC_value -> 8 `i ]
 [e =| _ADC_value -> _ADRESL `us ]
 }
-[; ;ADC1823.c: 65: return ADC_value;
-"65
+[; ;ADC1823.c: 66: return ADC_value;
+"66
 [e ) _ADC_value ]
 [e $UE 305  ]
-[; ;ADC1823.c: 66: }
-"66
+[; ;ADC1823.c: 67: }
+"67
 [e :UE 305 ]
 }

@@ -3964,18 +3964,20 @@ check = calculate_checksum(aux,6);
 aux[6] = check;
 
 
+{ ADCON0 = 0b00100100;};
+
 lputs_ISR(aux,7);
 
-# 547
+# 549
 freq_index--;
 }
 
 }
 
-# 556
+# 558
 unsigned char measure(short* I, short* Q, BIO3 asic)
 
-# 560
+# 562
 {
 unsigned short offset, value;
 short aux1,aux2;
