@@ -41,9 +41,9 @@
 [v _calculate_checksum calculate_checksum `(uc  1 e 1 0 ]
 "419
 [v _calibrate_reader calibrate_reader `(v  1 e 1 0 ]
-"441
+"444
 [v _sweep sweep `(v  1 e 1 0 ]
-"558
+"561
 [v _measure measure `(uc  1 e 1 0 ]
 "28 /home/saul/MPLABXProjects/driver_bio3.X/main.c
 [v _main main `(v  1 e 1 0 ]
@@ -220,10 +220,10 @@
 {
 "147
 } 0
-"441 /home/saul/MPLABXProjects/driver_bio3.X/comm.c
+"444 /home/saul/MPLABXProjects/driver_bio3.X/comm.c
 [v _sweep sweep `(v  1 e 1 0 ]
 {
-"447
+"450
 [v sweep@aux aux `[7]uc  1 a 7 1 ]
 [s S154 BIO3_bits_stuct 2 `uc 1 RE 1 0 :1:0 
 `uc 1 FS 1 0 :1:1 
@@ -242,24 +242,24 @@
 `uc 1 F2 1 1 :1:6 
 `uc 1 F3 1 1 :1:7 
 ]
-"450
+"453
 [u S171 . 2 `us 1 datashort 2 0 `[2]uc 1 data 2 0 `S154 1 data_bits 2 0 ]
 [v sweep@asic asic `S171  1 a 2 17 ]
-"446
+"449
 [v sweep@Q Q `s  1 a 2 13 ]
 [v sweep@I I `s  1 a 2 11 ]
-"445
+"448
 [v sweep@ret ret `uc  1 a 1 16 ]
-"443
+"446
 [v sweep@gain_index gain_index `uc  1 a 1 15 ]
-"445
+"448
 [v sweep@count count `uc  1 a 1 10 ]
 [v sweep@i i `uc  1 a 1 9 ]
-"444
-[v sweep@freq_index freq_index `uc  1 a 1 8 ]
 "447
+[v sweep@freq_index freq_index `uc  1 a 1 8 ]
+"450
 [v sweep@check check `uc  1 a 1 0 ]
-"552
+"555
 } 0
 "161 /home/saul/MPLABXProjects/driver_bio3.X/bio3.c
 [v _setGain setGain `(v  1 e 1 0 ]
@@ -341,17 +341,17 @@
 [v setFreq@asic asic `*.4S171  1 a 1 2 ]
 "185
 } 0
-"558 /home/saul/MPLABXProjects/driver_bio3.X/comm.c
+"561 /home/saul/MPLABXProjects/driver_bio3.X/comm.c
 [v _measure measure `(uc  1 e 1 0 ]
 {
 [v measure@I I `*.4s  1 a 1 wreg ]
-"564
+"567
 [v measure@aux1 aux1 `s  1 a 2 20 ]
 [v measure@aux2 aux2 `s  1 a 2 18 ]
-"563
+"566
 [v measure@value value `us  1 a 2 16 ]
 [v measure@offset offset `us  1 a 2 13 ]
-"558
+"561
 [v measure@I I `*.4s  1 a 1 wreg ]
 [v measure@Q Q `*.4s  1 p 1 6 ]
 [s S154 BIO3_bits_stuct 2 `uc 1 RE 1 0 :1:0 
@@ -373,9 +373,9 @@
 ]
 [u S171 . 2 `us 1 datashort 2 0 `[2]uc 1 data 2 0 `S154 1 data_bits 2 0 ]
 [v measure@asic asic `S171  1 p 2 7 ]
-"568
+"571
 [v measure@I I `*.4s  1 a 1 15 ]
-"616
+"619
 } 0
 "131 /home/saul/MPLABXProjects/driver_bio3.X/bio3.c
 [v _config config `(v  1 e 1 0 ]

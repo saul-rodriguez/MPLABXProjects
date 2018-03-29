@@ -432,6 +432,9 @@ void calibrate_reader()
     while (1) {
         CLRWDT();
          __delay_ms(250);
+         __delay_ms(250);
+         __delay_ms(250);
+         __delay_ms(250);
          lputs_ISR(aux,8);
         
     }

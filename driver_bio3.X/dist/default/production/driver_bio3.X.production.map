@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=/opt/microchip/xc8/v1.40/dat/en_msgs.txt -cs \
   -h+dist/default/production/driver_bio3.X.production.sym \
   --cmf=dist/default/production/driver_bio3.X.production.cmf -z -Q16LF1823 \
-  -o/tmp/xcXKnPGaJ -Mdist/default/production/driver_bio3.X.production.map \
+  -o/tmp/xcXFjrppA -Mdist/default/production/driver_bio3.X.production.map \
   -E1 -ver=XC8 -ASTACK=02040h-0204fh -pstack=STACK -ACODE=00h-07FFh \
   -ASTRCODE=00h-07FFh -ASTRING=00h-0FFhx8 -ACONST=00h-0FFhx8 \
   -AENTRY=00h-0FFhx8 -ACOMMON=070h-07Fh -ABANK0=020h-06Fh -ABANK1=0A0h-0BFh \
@@ -25,7 +25,7 @@ Linker command line:
   -pfunctab=CODE -ACONFIG=08007h-08008h -pconfig=CONFIG -DCONFIG=2 \
   -AIDLOC=08000h-08003h -pidloc=IDLOC -DIDLOC=2 -AEEDATA=00h-0FFh/0F000h \
   -peeprom_data=EEDATA -DEEDATA=2 -DCODE=2 -DSTRCODE=2 -DSTRING=2 -DCONST=2 \
-  -DENTRY=2 -k /tmp/xcXw9HP2f.obj \
+  -DENTRY=2 -k /tmp/xcXIHlUIg.obj \
   dist/default/production/driver_bio3.X.production.obj 
 
 Object code version is 3.11
@@ -35,7 +35,7 @@ Machine type is 16LF1823
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-/tmp/xcXw9HP2f.obj
+/tmp/xcXIHlUIg.obj
                 end_init                             56       56        1        8       0
                 reset_vec                             0        0        1        0       0
                 config                             8007     8007        2    1000E       0
@@ -802,7 +802,7 @@ Total ram usage:        1 bytes
 
  *************** function _sweep *****************
  Defined at:
-		line 441 in file "comm.c"
+		line 444 in file "comm.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -914,7 +914,7 @@ Total ram usage:        4 bytes
 
  *************** function _measure *****************
  Defined at:
-		line 558 in file "comm.c"
+		line 561 in file "comm.c"
  Parameters:    Size  Location     Type
   I               1    wreg     PTR short 
 		 -> sweep@I(2), 

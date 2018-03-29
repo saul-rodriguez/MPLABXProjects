@@ -1,7 +1,7 @@
 
 
 Microchip Technology PIC LITE Macro Assembler V1.40 build -251452761 
-                                                                                               Thu Feb 22 14:08:16 2018
+                                                                                               Tue Feb 27 16:27:51 2018
 
 Microchip Technology Omniscient Code Generator v1.40 (Free mode) build 201612010151
      1                           	processor	16LF1823
@@ -1757,14 +1757,14 @@ Microchip Technology Omniscient Code Generator v1.40 (Free mode) build 201612010
   1743  02C9  300B               	movlw	11
   1744  02CA  023B               	subwf	_USART_rx_index,w	;volatile
   1745  02CB  1C03               	skipc
-  1746  02CC  2ACF               	goto	l2743
+  1746  02CC  2ACF               	goto	l2755
   1747                           
   1748                           ;main.c: 124: USART_rx_index = 0;
   1749  02CD  01BB               	clrf	_USART_rx_index	;volatile
   1750                           
   1751                           ;main.c: 125: continue;
   1752  02CE  2AC3               	goto	l119
-  1753  02CF                     l2743:	
+  1753  02CF                     l2755:	
   1754                           
   1755                           ;main.c: 126: }
   1756                           ;main.c: 128: if(USART_rx_index == 0)
@@ -1792,7 +1792,7 @@ Microchip Technology Omniscient Code Generator v1.40 (Free mode) build 201612010
   1778  0065                     __ptext1:	
   1779 ;; *************** function _sweep *****************
   1780 ;; Defined at:
-  1781 ;;		line 441 in file "comm.c"
+  1781 ;;		line 444 in file "comm.c"
   1782 ;; Parameters:    Size  Location     Type
   1783 ;;		None
   1784 ;; Auto vars:     Size  Location     Type
@@ -1838,13 +1838,13 @@ Microchip Technology Omniscient Code Generator v1.40 (Free mode) build 201612010
   1824                           ;psect for function _sweep
   1825  0065                     _sweep:	
   1826                           
-  1827                           ;comm.c: 443: unsigned char gain_index;
-  1828                           ;comm.c: 444: unsigned char freq_index;
-  1829                           ;comm.c: 445: unsigned char i, ret, count;
-  1830                           ;comm.c: 446: short I,Q;
-  1831                           ;comm.c: 447: unsigned char aux[7], check;
-  1832                           ;comm.c: 450: BIO3 asic;
-  1833                           ;comm.c: 451: asic.datashort = 0;
+  1827                           ;comm.c: 446: unsigned char gain_index;
+  1828                           ;comm.c: 447: unsigned char freq_index;
+  1829                           ;comm.c: 448: unsigned char i, ret, count;
+  1830                           ;comm.c: 449: short I,Q;
+  1831                           ;comm.c: 450: unsigned char aux[7], check;
+  1832                           ;comm.c: 453: BIO3 asic;
+  1833                           ;comm.c: 454: asic.datashort = 0;
   1834                           
   1835                           ;incstack = 0
   1836                           ; Regs used in _sweep: [wreg-fsr1h+status,2+status,0+pclath+cstack]
@@ -1852,7 +1852,7 @@ Microchip Technology Omniscient Code Generator v1.40 (Free mode) build 201612010
   1838  0066  01B1               	clrf	sweep@asic^(0+128)
   1839  0067  01B2               	clrf	(sweep@asic+1)^(0+128)
   1840                           
-  1841                           ;comm.c: 462: freq_index = 10;
+  1841                           ;comm.c: 465: freq_index = 10;
   1842  0068  300A               	movlw	10
   1843  0069  0020               	movlb	0	; select bank0
   1844  006A  00DD               	movwf	??_sweep
@@ -1860,10 +1860,10 @@ Microchip Technology Omniscient Code Generator v1.40 (Free mode) build 201612010
   1846  006C  0021               	movlb	1	; select bank1
   1847  006D  00A8               	movwf	sweep@freq_index^(0+128)
   1848                           
-  1849                           ;comm.c: 463: gain_index = 0;
+  1849                           ;comm.c: 466: gain_index = 0;
   1850  006E  01AF               	clrf	sweep@gain_index^(0+128)
   1851                           
-  1852                           ;comm.c: 464: setGain(&asic,gain_index);
+  1852                           ;comm.c: 467: setGain(&asic,gain_index);
   1853  006F  082F               	movf	sweep@gain_index^(0+128),w
   1854  0070  0020               	movlb	0	; select bank0
   1855  0071  00DD               	movwf	??_sweep
@@ -1872,7 +1872,7 @@ Microchip Technology Omniscient Code Generator v1.40 (Free mode) build 201612010
   1858  0074  30B1               	movlw	(low (sweep@asic| 0))& (0+255)
   1859  0075  21E3               	fcall	_setGain
   1860                           
-  1861                           ;comm.c: 467: for (i = 0; i < 11; i++) {
+  1861                           ;comm.c: 470: for (i = 0; i < 11; i++) {
   1862  0076  0021               	movlb	1	; select bank1
   1863  0077  01A9               	clrf	sweep@i^(0+128)
   1864  0078                     L1:	
@@ -1881,7 +1881,7 @@ Microchip Technology Omniscient Code Generator v1.40 (Free mode) build 201612010
   1867  007A  1803               	btfsc	3,0
   1868  007B  0008               	return
   1869                           
-  1870                           ;comm.c: 470: setFreq(&asic,freq_index);
+  1870                           ;comm.c: 473: setFreq(&asic,freq_index);
   1871  007C  0828               	movf	sweep@freq_index^(0+128),w
   1872  007D  0020               	movlb	0	; select bank0
   1873  007E  00DD               	movwf	??_sweep
@@ -1890,17 +1890,17 @@ Microchip Technology Omniscient Code Generator v1.40 (Free mode) build 201612010
   1876  0081  30B1               	movlw	(low (sweep@asic| 0))& (0+255)
   1877  0082  22D9               	fcall	_setFreq
   1878                           
-  1879                           ;comm.c: 477: count = 0;
+  1879                           ;comm.c: 480: count = 0;
   1880  0083  0021               	movlb	1	; select bank1
   1881  0084  01AA               	clrf	sweep@count^(0+128)
   1882                           
-  1883                           ;comm.c: 478: ret = 0;
+  1883                           ;comm.c: 481: ret = 0;
   1884  0085  01B0               	clrf	sweep@ret^(0+128)
-  1885  0086                     l2667:	
-  1886                           ;comm.c: 480: do {
+  1885  0086                     l2679:	
+  1886                           ;comm.c: 483: do {
   1887                           
   1888                           
-  1889                           ;comm.c: 482: ret = measure(&I,&Q,asic);
+  1889                           ;comm.c: 485: ret = measure(&I,&Q,asic);
   1890  0086  30AD               	movlw	(low (sweep@Q| 0))& (0+255)
   1891  0087  0020               	movlb	0	; select bank0
   1892  0088  00DD               	movwf	??_sweep
@@ -1922,18 +1922,18 @@ Microchip Technology Omniscient Code Generator v1.40 (Free mode) build 201612010
   1908  0098  0021               	movlb	1	; select bank1
   1909  0099  00B0               	movwf	sweep@ret^(0+128)
   1910                           
-  1911                           ;comm.c: 484: if (ret == 1) {
+  1911                           ;comm.c: 487: if (ret == 1) {
   1912  009A  0330               	decf	sweep@ret^(0+128),w
   1913  009B  1D03               	btfss	3,2
-  1914  009C  28B2               	goto	l2683
+  1914  009C  28B2               	goto	l2695
   1915                           
-  1916                           ;comm.c: 486: if (count == 2) break;
+  1916                           ;comm.c: 489: if (count == 2) break;
   1917  009D  3002               	movlw	2
   1918  009E  062A               	xorwf	sweep@count^(0+128),w
   1919  009F  1903               	btfsc	3,2
-  1920  00A0  28D0               	goto	l2699
+  1920  00A0  28D0               	goto	l2711
   1921                           
-  1922                           ;comm.c: 487: count = ret;
+  1922                           ;comm.c: 490: count = ret;
   1923  00A1  0830               	movf	sweep@ret^(0+128),w
   1924  00A2  0020               	movlb	0	; select bank0
   1925  00A3  00DD               	movwf	??_sweep
@@ -1941,13 +1941,13 @@ Microchip Technology Omniscient Code Generator v1.40 (Free mode) build 201612010
   1927  00A5  0021               	movlb	1	; select bank1
   1928  00A6  00AA               	movwf	sweep@count^(0+128)
   1929                           
-  1930                           ;comm.c: 490: if (gain_index < 7) {
+  1930                           ;comm.c: 493: if (gain_index < 7) {
   1931  00A7  3007               	movlw	7
   1932  00A8  022F               	subwf	sweep@gain_index^(0+128),w
   1933  00A9  1803               	skipnc
-  1934  00AA  28D0               	goto	l2699
+  1934  00AA  28D0               	goto	l2711
   1935                           
-  1936                           ;comm.c: 494: gain_index++;
+  1936                           ;comm.c: 497: gain_index++;
   1937  00AB  3001               	movlw	1
   1938  00AC  0020               	movlb	0	; select bank0
   1939  00AD  00DD               	movwf	??_sweep
@@ -1955,30 +1955,30 @@ Microchip Technology Omniscient Code Generator v1.40 (Free mode) build 201612010
   1941  00AF  0021               	movlb	1	; select bank1
   1942  00B0  07AF               	addwf	sweep@gain_index^(0+128),f
   1943  00B1  28C5               	goto	L2
-  1944  00B2                     l2683:	
-  1945                           ;comm.c: 502: } else if (ret == 2) {
+  1944  00B2                     l2695:	
+  1945                           ;comm.c: 505: } else if (ret == 2) {
   1946                           
-  1947                           ;comm.c: 498: }
-  1948                           ;comm.c: 500: continue;
+  1947                           ;comm.c: 501: }
+  1948                           ;comm.c: 503: continue;
   1949                           
-  1950                           ;comm.c: 497: break;
+  1950                           ;comm.c: 500: break;
   1951                           
-  1952                           ;comm.c: 496: } else {
+  1952                           ;comm.c: 499: } else {
   1953                           
-  1954                           ;comm.c: 495: setGain(&asic,gain_index);
+  1954                           ;comm.c: 498: setGain(&asic,gain_index);
   1955                           
   1956  00B2  3002               	movlw	2
   1957  00B3  0021               	movlb	1	; select bank1
   1958  00B4  0630               	xorwf	sweep@ret^(0+128),w
   1959  00B5  1D03               	btfss	3,2
-  1960  00B6  28CC               	goto	l2697
+  1960  00B6  28CC               	goto	l2709
   1961                           
-  1962                           ;comm.c: 504: if (count == 1) break;
+  1962                           ;comm.c: 507: if (count == 1) break;
   1963  00B7  032A               	decf	sweep@count^(0+128),w
   1964  00B8  1903               	btfsc	3,2
-  1965  00B9  28D0               	goto	l2699
+  1965  00B9  28D0               	goto	l2711
   1966                           
-  1967                           ;comm.c: 505: count = ret;
+  1967                           ;comm.c: 508: count = ret;
   1968  00BA  0830               	movf	sweep@ret^(0+128),w
   1969  00BB  0020               	movlb	0	; select bank0
   1970  00BC  00DD               	movwf	??_sweep
@@ -1986,17 +1986,17 @@ Microchip Technology Omniscient Code Generator v1.40 (Free mode) build 201612010
   1972  00BE  0021               	movlb	1	; select bank1
   1973  00BF  00AA               	movwf	sweep@count^(0+128)
   1974                           
-  1975                           ;comm.c: 507: if (gain_index > 0) {
+  1975                           ;comm.c: 510: if (gain_index > 0) {
   1976  00C0  082F               	movf	sweep@gain_index^(0+128),w
   1977  00C1  1903               	btfsc	3,2
-  1978  00C2  28D0               	goto	l2699
+  1978  00C2  28D0               	goto	l2711
   1979                           
-  1980                           ;comm.c: 508: gain_index--;
+  1980                           ;comm.c: 511: gain_index--;
   1981  00C3  3001               	movlw	1
   1982  00C4  02AF               	subwf	sweep@gain_index^(0+128),f
   1983  00C5                     L2:	
   1984                           
-  1985                           ;comm.c: 509: setGain(&asic,gain_index);
+  1985                           ;comm.c: 512: setGain(&asic,gain_index);
   1986  00C5  082F               	movf	sweep@gain_index^(0+128),w
   1987  00C6  0020               	movlb	0	; select bank0
   1988  00C7  00DD               	movwf	??_sweep
@@ -2004,24 +2004,24 @@ Microchip Technology Omniscient Code Generator v1.40 (Free mode) build 201612010
   1990  00C9  00C7               	movwf	setGain@gain_index
   1991  00CA  30B1               	movlw	(low (sweep@asic| 0))& (0+255)
   1992  00CB  21E3               	fcall	_setGain
-  1993  00CC                     l2697:	
-  1994                           ;comm.c: 512: }
-  1995                           ;comm.c: 514: continue;
+  1993  00CC                     l2709:	
+  1994                           ;comm.c: 515: }
+  1995                           ;comm.c: 517: continue;
   1996                           
-  1997                           ;comm.c: 511: break;
+  1997                           ;comm.c: 514: break;
   1998                           
-  1999                           ;comm.c: 510: } else {
+  1999                           ;comm.c: 513: } else {
   2000                           
   2001                           
-  2002                           ;comm.c: 515: }
-  2003                           ;comm.c: 517: } while (ret);
+  2002                           ;comm.c: 518: }
+  2003                           ;comm.c: 520: } while (ret);
   2004  00CC  0021               	movlb	1	; select bank1
   2005  00CD  0830               	movf	sweep@ret^(0+128),w
   2006  00CE  1D03               	btfss	3,2
-  2007  00CF  2886               	goto	l2667
-  2008  00D0                     l2699:	
+  2007  00CF  2886               	goto	l2679
+  2008  00D0                     l2711:	
   2009                           
-  2010                           ;comm.c: 523: ret = (freq_index << 4) & 0xf0;
+  2010                           ;comm.c: 526: ret = (freq_index << 4) & 0xf0;
   2011  00D0  0021               	movlb	1	; select bank1
   2012  00D1  0828               	movf	sweep@freq_index^(0+128),w
   2013  00D2  0020               	movlb	0	; select bank0
@@ -2039,7 +2039,7 @@ Microchip Technology Omniscient Code Generator v1.40 (Free mode) build 201612010
   2025  00DD  0021               	movlb	1	; select bank1
   2026  00DE  00B0               	movwf	sweep@ret^(0+128)
   2027                           
-  2028                           ;comm.c: 524: ret |= (gain_index & 0xff);
+  2028                           ;comm.c: 527: ret |= (gain_index & 0xff);
   2029  00DF  082F               	movf	sweep@gain_index^(0+128),w
   2030  00E0  0020               	movlb	0	; select bank0
   2031  00E1  00DD               	movwf	??_sweep
@@ -2047,7 +2047,7 @@ Microchip Technology Omniscient Code Generator v1.40 (Free mode) build 201612010
   2033  00E3  0021               	movlb	1	; select bank1
   2034  00E4  04B0               	iorwf	sweep@ret^(0+128),f
   2035                           
-  2036                           ;comm.c: 526: aux[0] = 'f';
+  2036                           ;comm.c: 529: aux[0] = 'f';
   2037  00E5  3066               	movlw	102
   2038  00E6  0020               	movlb	0	; select bank0
   2039  00E7  00DD               	movwf	??_sweep
@@ -2055,7 +2055,7 @@ Microchip Technology Omniscient Code Generator v1.40 (Free mode) build 201612010
   2041  00E9  0021               	movlb	1	; select bank1
   2042  00EA  00A1               	movwf	sweep@aux^(0+128)
   2043                           
-  2044                           ;comm.c: 527: aux[1] = (unsigned char)(I & 0xff);
+  2044                           ;comm.c: 530: aux[1] = (unsigned char)(I & 0xff);
   2045  00EB  082B               	movf	sweep@I^(0+128),w
   2046  00EC  0020               	movlb	0	; select bank0
   2047  00ED  00DD               	movwf	??_sweep
@@ -2063,7 +2063,7 @@ Microchip Technology Omniscient Code Generator v1.40 (Free mode) build 201612010
   2049  00EF  0021               	movlb	1	; select bank1
   2050  00F0  00A2               	movwf	(sweep@aux^(0+128)+1)
   2051                           
-  2052                           ;comm.c: 528: aux[2] = (unsigned char)((I >> 8) & 0xff);
+  2052                           ;comm.c: 531: aux[2] = (unsigned char)((I >> 8) & 0xff);
   2053  00F1  082C               	movf	(sweep@I+1)^(0+128),w
   2054  00F2  0020               	movlb	0	; select bank0
   2055  00F3  00DD               	movwf	??_sweep
@@ -2071,7 +2071,7 @@ Microchip Technology Omniscient Code Generator v1.40 (Free mode) build 201612010
   2057  00F5  0021               	movlb	1	; select bank1
   2058  00F6  00A3               	movwf	(sweep@aux^(0+128)+2)
   2059                           
-  2060                           ;comm.c: 529: aux[3] = (unsigned char)(Q & 0xff);
+  2060                           ;comm.c: 532: aux[3] = (unsigned char)(Q & 0xff);
   2061  00F7  082D               	movf	sweep@Q^(0+128),w
   2062  00F8  0020               	movlb	0	; select bank0
   2063  00F9  00DD               	movwf	??_sweep
@@ -2079,7 +2079,7 @@ Microchip Technology Omniscient Code Generator v1.40 (Free mode) build 201612010
   2065  00FB  0021               	movlb	1	; select bank1
   2066  00FC  00A4               	movwf	(sweep@aux^(0+128)+3)
   2067                           
-  2068                           ;comm.c: 530: aux[4] = (unsigned char)((Q >> 8) & 0xff);
+  2068                           ;comm.c: 533: aux[4] = (unsigned char)((Q >> 8) & 0xff);
   2069  00FD  082E               	movf	(sweep@Q+1)^(0+128),w
   2070  00FE  0020               	movlb	0	; select bank0
   2071  00FF  00DD               	movwf	??_sweep
@@ -2087,7 +2087,7 @@ Microchip Technology Omniscient Code Generator v1.40 (Free mode) build 201612010
   2073  0101  0021               	movlb	1	; select bank1
   2074  0102  00A5               	movwf	(sweep@aux^(0+128)+4)
   2075                           
-  2076                           ;comm.c: 531: aux[5] = ret;
+  2076                           ;comm.c: 534: aux[5] = ret;
   2077  0103  0830               	movf	sweep@ret^(0+128),w
   2078  0104  0020               	movlb	0	; select bank0
   2079  0105  00DD               	movwf	??_sweep
@@ -2095,7 +2095,7 @@ Microchip Technology Omniscient Code Generator v1.40 (Free mode) build 201612010
   2081  0107  0021               	movlb	1	; select bank1
   2082  0108  00A6               	movwf	(sweep@aux^(0+128)+5)
   2083                           
-  2084                           ;comm.c: 533: check = calculate_checksum(aux,6);
+  2084                           ;comm.c: 536: check = calculate_checksum(aux,6);
   2085  0109  3006               	movlw	6
   2086  010A  0020               	movlb	0	; select bank0
   2087  010B  00DD               	movwf	??_sweep
@@ -2109,7 +2109,7 @@ Microchip Technology Omniscient Code Generator v1.40 (Free mode) build 201612010
   2095  0113  0021               	movlb	1	; select bank1
   2096  0114  00A0               	movwf	sweep@check^(0+128)
   2097                           
-  2098                           ;comm.c: 534: aux[6] = check;
+  2098                           ;comm.c: 537: aux[6] = check;
   2099  0115  0820               	movf	sweep@check^(0+128),w
   2100  0116  0020               	movlb	0	; select bank0
   2101  0117  00DD               	movwf	??_sweep
@@ -2117,11 +2117,11 @@ Microchip Technology Omniscient Code Generator v1.40 (Free mode) build 201612010
   2103  0119  0021               	movlb	1	; select bank1
   2104  011A  00A7               	movwf	(sweep@aux^(0+128)+6)
   2105                           
-  2106                           ;comm.c: 537: { ADCON0 = 0b00100100;};
+  2106                           ;comm.c: 540: { ADCON0 = 0b00100100;};
   2107  011B  3024               	movlw	36
   2108  011C  009D               	movwf	29	;volatile
   2109                           
-  2110                           ;comm.c: 539: lputs_ISR(aux,7);
+  2110                           ;comm.c: 542: lputs_ISR(aux,7);
   2111  011D  3007               	movlw	7
   2112  011E  0020               	movlb	0	; select bank0
   2113  011F  00DD               	movwf	??_sweep
@@ -2130,7 +2130,7 @@ Microchip Technology Omniscient Code Generator v1.40 (Free mode) build 201612010
   2116  0122  30A1               	movlw	(low (sweep@aux| 0))& (0+255)
   2117  0123  2284               	fcall	_lputs_ISR
   2118                           
-  2119                           ;comm.c: 549: freq_index--;
+  2119                           ;comm.c: 552: freq_index--;
   2120  0124  3001               	movlw	1
   2121  0125  0021               	movlb	1	; select bank1
   2122  0126  02A8               	subwf	sweep@freq_index^(0+128),f
@@ -2368,7 +2368,7 @@ Microchip Technology Omniscient Code Generator v1.40 (Free mode) build 201612010
   2354  012E                     __ptext4:	
   2355 ;; *************** function _measure *****************
   2356 ;; Defined at:
-  2357 ;;		line 558 in file "comm.c"
+  2357 ;;		line 561 in file "comm.c"
   2358 ;; Parameters:    Size  Location     Type
   2359 ;;  I               1    wreg     PTR short 
   2360 ;;		 -> sweep@I(2), 
@@ -2416,19 +2416,19 @@ Microchip Technology Omniscient Code Generator v1.40 (Free mode) build 201612010
   2402  012E  0020               	movlb	0	; select bank0
   2403  012F  00D6               	movwf	measure@I
   2404                           
-  2405                           ;comm.c: 563: unsigned short offset, value;
-  2406                           ;comm.c: 564: short aux1,aux2;
-  2407                           ;comm.c: 568: asic.data_bits.CE = 0;
+  2405                           ;comm.c: 566: unsigned short offset, value;
+  2406                           ;comm.c: 567: short aux1,aux2;
+  2407                           ;comm.c: 571: asic.data_bits.CE = 0;
   2408  0130  134E               	bcf	measure@asic,6
   2409                           
-  2410                           ;comm.c: 569: config(asic);
+  2410                           ;comm.c: 572: config(asic);
   2411  0131  084F               	movf	measure@asic+1,w
   2412  0132  00C8               	movwf	config@conf+1
   2413  0133  084E               	movf	measure@asic,w
   2414  0134  00C7               	movwf	config@conf
   2415  0135  2255               	fcall	_config
   2416                           
-  2417                           ;comm.c: 570: _delay((unsigned long)((20)*(500000/4000.0)));
+  2417                           ;comm.c: 573: _delay((unsigned long)((20)*(500000/4000.0)));
   2418  0136  3004               	movlw	4
   2419  0137  0020               	movlb	0	; select bank0
   2420  0138  00D0               	movwf	??_measure
@@ -2440,7 +2440,7 @@ Microchip Technology Omniscient Code Generator v1.40 (Free mode) build 201612010
   2426  013D  293A               	goto	u1497
   2427  013E  3200               	nop2
   2428                           
-  2429                           ;comm.c: 572: offset = ADC_5();
+  2429                           ;comm.c: 575: offset = ADC_5();
   2430  013F  2302               	fcall	_ADC_5
   2431  0140  0020               	movlb	0	; select bank0
   2432  0141  0848               	movf	?_ADC_5+1,w
@@ -2448,20 +2448,20 @@ Microchip Technology Omniscient Code Generator v1.40 (Free mode) build 201612010
   2434  0143  0847               	movf	?_ADC_5,w
   2435  0144  00D4               	movwf	measure@offset
   2436                           
-  2437                           ;comm.c: 575: asic.data_bits.CE = 1;
+  2437                           ;comm.c: 578: asic.data_bits.CE = 1;
   2438  0145  174E               	bsf	measure@asic,6
   2439                           
-  2440                           ;comm.c: 576: asic.data_bits.IQ = 0;
+  2440                           ;comm.c: 579: asic.data_bits.IQ = 0;
   2441  0146  11CF               	bcf	measure@asic+1,3
   2442                           
-  2443                           ;comm.c: 578: config(asic);
+  2443                           ;comm.c: 581: config(asic);
   2444  0147  084F               	movf	measure@asic+1,w
   2445  0148  00C8               	movwf	config@conf+1
   2446  0149  084E               	movf	measure@asic,w
   2447  014A  00C7               	movwf	config@conf
   2448  014B  2255               	fcall	_config
   2449                           
-  2450                           ;comm.c: 579: _delay((unsigned long)((20)*(500000/4000.0)));
+  2450                           ;comm.c: 582: _delay((unsigned long)((20)*(500000/4000.0)));
   2451  014C  3004               	movlw	4
   2452  014D  0020               	movlb	0	; select bank0
   2453  014E  00D0               	movwf	??_measure
@@ -2473,7 +2473,7 @@ Microchip Technology Omniscient Code Generator v1.40 (Free mode) build 201612010
   2459  0153  2950               	goto	u1507
   2460  0154  3200               	nop2
   2461                           
-  2462                           ;comm.c: 581: value = ADC_5();
+  2462                           ;comm.c: 584: value = ADC_5();
   2463  0155  2302               	fcall	_ADC_5
   2464  0156  0020               	movlb	0	; select bank0
   2465  0157  0848               	movf	?_ADC_5+1,w
@@ -2481,7 +2481,7 @@ Microchip Technology Omniscient Code Generator v1.40 (Free mode) build 201612010
   2467  0159  0847               	movf	?_ADC_5,w
   2468  015A  00D7               	movwf	measure@value
   2469                           
-  2470                           ;comm.c: 582: *I = (value - offset);
+  2470                           ;comm.c: 585: *I = (value - offset);
   2471  015B  0954               	comf	measure@offset,w
   2472  015C  00D0               	movwf	??_measure
   2473  015D  0955               	comf	measure@offset+1,w
@@ -2503,7 +2503,7 @@ Microchip Technology Omniscient Code Generator v1.40 (Free mode) build 201612010
   2489  016D  0853               	movf	??_measure+3,w
   2490  016E  3FC1               	movwi [1]fsr1
   2491                           
-  2492                           ;comm.c: 583: aux1 = *I;
+  2492                           ;comm.c: 586: aux1 = *I;
   2493  016F  0856               	movf	measure@I,w
   2494  0170  0086               	movwf	6
   2495  0171  0187               	clrf	7
@@ -2512,30 +2512,30 @@ Microchip Technology Omniscient Code Generator v1.40 (Free mode) build 201612010
   2498  0174  3F41               	moviw [1]fsr1
   2499  0175  00DC               	movwf	measure@aux1+1
   2500                           
-  2501                           ;comm.c: 585: if (aux1 < 0) {
+  2501                           ;comm.c: 588: if (aux1 < 0) {
   2502  0176  1FDC               	btfss	measure@aux1+1,7
-  2503  0177  297D               	goto	l2557
+  2503  0177  297D               	goto	l2569
   2504                           
-  2505                           ;comm.c: 586: aux1 = -aux1;
+  2505                           ;comm.c: 589: aux1 = -aux1;
   2506  0178  09DB               	comf	measure@aux1,f
   2507  0179  09DC               	comf	measure@aux1+1,f
   2508  017A  0ADB               	incf	measure@aux1,f
   2509  017B  1903               	skipnz
   2510  017C  0ADC               	incf	measure@aux1+1,f
-  2511  017D                     l2557:	
+  2511  017D                     l2569:	
   2512                           
-  2513                           ;comm.c: 587: }
-  2514                           ;comm.c: 592: asic.data_bits.IQ = 1;
+  2513                           ;comm.c: 590: }
+  2514                           ;comm.c: 595: asic.data_bits.IQ = 1;
   2515  017D  15CF               	bsf	measure@asic+1,3
   2516                           
-  2517                           ;comm.c: 594: config(asic);
+  2517                           ;comm.c: 597: config(asic);
   2518  017E  084F               	movf	measure@asic+1,w
   2519  017F  00C8               	movwf	config@conf+1
   2520  0180  084E               	movf	measure@asic,w
   2521  0181  00C7               	movwf	config@conf
   2522  0182  2255               	fcall	_config
   2523                           
-  2524                           ;comm.c: 595: _delay((unsigned long)((20)*(500000/4000.0)));
+  2524                           ;comm.c: 598: _delay((unsigned long)((20)*(500000/4000.0)));
   2525  0183  3004               	movlw	4
   2526  0184  0020               	movlb	0	; select bank0
   2527  0185  00D0               	movwf	??_measure
@@ -2547,7 +2547,7 @@ Microchip Technology Omniscient Code Generator v1.40 (Free mode) build 201612010
   2533  018A  2987               	goto	u1517
   2534  018B  3200               	nop2
   2535                           
-  2536                           ;comm.c: 597: value = ADC_5();
+  2536                           ;comm.c: 600: value = ADC_5();
   2537  018C  2302               	fcall	_ADC_5
   2538  018D  0020               	movlb	0	; select bank0
   2539  018E  0848               	movf	?_ADC_5+1,w
@@ -2555,7 +2555,7 @@ Microchip Technology Omniscient Code Generator v1.40 (Free mode) build 201612010
   2541  0190  0847               	movf	?_ADC_5,w
   2542  0191  00D7               	movwf	measure@value
   2543                           
-  2544                           ;comm.c: 598: *Q = (value - offset);
+  2544                           ;comm.c: 601: *Q = (value - offset);
   2545  0192  0954               	comf	measure@offset,w
   2546  0193  00D0               	movwf	??_measure
   2547  0194  0955               	comf	measure@offset+1,w
@@ -2577,7 +2577,7 @@ Microchip Technology Omniscient Code Generator v1.40 (Free mode) build 201612010
   2563  01A4  0853               	movf	??_measure+3,w
   2564  01A5  3FC1               	movwi [1]fsr1
   2565                           
-  2566                           ;comm.c: 599: aux2 = *Q;
+  2566                           ;comm.c: 602: aux2 = *Q;
   2567  01A6  084D               	movf	measure@Q,w
   2568  01A7  0086               	movwf	6
   2569  01A8  0187               	clrf	7
@@ -2586,20 +2586,20 @@ Microchip Technology Omniscient Code Generator v1.40 (Free mode) build 201612010
   2572  01AB  3F41               	moviw [1]fsr1
   2573  01AC  00DA               	movwf	measure@aux2+1
   2574                           
-  2575                           ;comm.c: 601: if (aux2 < 0) {
+  2575                           ;comm.c: 604: if (aux2 < 0) {
   2576  01AD  1FDA               	btfss	measure@aux2+1,7
-  2577  01AE  29B4               	goto	l2573
+  2577  01AE  29B4               	goto	l2585
   2578                           
-  2579                           ;comm.c: 602: aux2 = -aux2;
+  2579                           ;comm.c: 605: aux2 = -aux2;
   2580  01AF  09D9               	comf	measure@aux2,f
   2581  01B0  09DA               	comf	measure@aux2+1,f
   2582  01B1  0AD9               	incf	measure@aux2,f
   2583  01B2  1903               	skipnz
   2584  01B3  0ADA               	incf	measure@aux2+1,f
-  2585  01B4                     l2573:	
+  2585  01B4                     l2585:	
   2586                           
-  2587                           ;comm.c: 603: }
-  2588                           ;comm.c: 605: if (aux2 > aux1) {
+  2587                           ;comm.c: 606: }
+  2588                           ;comm.c: 608: if (aux2 > aux1) {
   2589  01B4  085C               	movf	measure@aux1+1,w
   2590  01B5  3A80               	xorlw	128
   2591  01B6  00D0               	movwf	??_measure
@@ -2614,7 +2614,7 @@ Microchip Technology Omniscient Code Generator v1.40 (Free mode) build 201612010
   2600  01BE  1803               	skipnc
   2601  01BF  29C5               	goto	l412
   2602                           
-  2603                           ;comm.c: 606: aux1 = aux2;
+  2603                           ;comm.c: 609: aux1 = aux2;
   2604  01C0  0020               	movlb	0	; select bank0
   2605  01C1  085A               	movf	measure@aux2+1,w
   2606  01C2  00DC               	movwf	measure@aux1+1
@@ -2622,8 +2622,8 @@ Microchip Technology Omniscient Code Generator v1.40 (Free mode) build 201612010
   2608  01C4  00DB               	movwf	measure@aux1
   2609  01C5                     l412:	
   2610                           
-  2611                           ;comm.c: 607: }
-  2612                           ;comm.c: 609: if (aux1 > 370) {
+  2611                           ;comm.c: 610: }
+  2612                           ;comm.c: 612: if (aux1 > 370) {
   2613  01C5  0020               	movlb	0	; select bank0
   2614  01C6  085C               	movf	measure@aux1+1,w
   2615  01C7  3A80               	xorlw	128
@@ -2636,13 +2636,13 @@ Microchip Technology Omniscient Code Generator v1.40 (Free mode) build 201612010
   2622  01CE  025B               	subwf	measure@aux1,w
   2623  01CF                     u1325:	
   2624  01CF  1C03               	skipc
-  2625  01D0  29D3               	goto	l2583
+  2625  01D0  29D3               	goto	l2595
   2626                           
-  2627                           ;comm.c: 610: return 2;
+  2627                           ;comm.c: 613: return 2;
   2628  01D1  3002               	movlw	2
   2629  01D2  0008               	return
-  2630  01D3                     l2583:	
-  2631                           ;comm.c: 611: } else if (aux1 < 86) {
+  2630  01D3                     l2595:	
+  2631                           ;comm.c: 614: } else if (aux1 < 86) {
   2632                           
   2633  01D3  0020               	movlb	0	; select bank0
   2634  01D4  085C               	movf	measure@aux1+1,w
@@ -2656,15 +2656,15 @@ Microchip Technology Omniscient Code Generator v1.40 (Free mode) build 201612010
   2642  01DC  025B               	subwf	measure@aux1,w
   2643  01DD                     u1335:	
   2644  01DD  1803               	skipnc
-  2645  01DE  29E1               	goto	l2589
+  2645  01DE  29E1               	goto	l2601
   2646                           
-  2647                           ;comm.c: 612: return 1;
+  2647                           ;comm.c: 615: return 1;
   2648  01DF  3001               	movlw	1
   2649  01E0  0008               	return
-  2650  01E1                     l2589:	
+  2650  01E1                     l2601:	
   2651                           
-  2652                           ;comm.c: 613: }
-  2653                           ;comm.c: 615: return 0;
+  2652                           ;comm.c: 616: }
+  2653                           ;comm.c: 618: return 0;
   2654  01E1  3000               	movlw	0
   2655  01E2  0008               	return
   2656  01E3                     __end_of_measure:	
@@ -2746,12 +2746,12 @@ Microchip Technology Omniscient Code Generator v1.40 (Free mode) build 201612010
   2732                           
   2733                           ;bio3.c: 144: if (conf.datashort & 0x0001) {
   2734  0265  1C47               	btfss	config@conf,0
-  2735  0266  2A69               	goto	l2415
+  2735  0266  2A69               	goto	l2427
   2736                           
   2737                           ;bio3.c: 145: out |= 0b00000100; PORTC = out;;
   2738  0267  154B               	bsf	config@out,2
-  2739  0268  2A6D               	goto	l2417
-  2740  0269                     l2415:	
+  2739  0268  2A6D               	goto	l2429
+  2740  0269                     l2427:	
   2741                           ;bio3.c: 146: } else {
   2742                           
   2743                           
@@ -2760,7 +2760,7 @@ Microchip Technology Omniscient Code Generator v1.40 (Free mode) build 201612010
   2746  026A  00C9               	movwf	??_config
   2747  026B  0849               	movf	??_config,w
   2748  026C  05CB               	andwf	config@out,f
-  2749  026D                     l2417:	
+  2749  026D                     l2429:	
   2750  026D  084B               	movf	config@out,w
   2751  026E  008E               	movwf	14	;volatile
   2752                           
@@ -2953,11 +2953,11 @@ Microchip Technology Omniscient Code Generator v1.40 (Free mode) build 201612010
   2938                           
   2939                           ;USART1823.c: 137: return;
   2940  0289  01CA               	clrf	lputs_ISR@i
-  2941  028A                     l2509:	
+  2941  028A                     l2521:	
   2942  028A  0847               	movf	lputs_ISR@length,w
   2943  028B  024A               	subwf	lputs_ISR@i,w
   2944  028C  1803               	btfsc	3,0
-  2945  028D  2AA1               	goto	l2511
+  2945  028D  2AA1               	goto	l2523
   2946                           
   2947                           ;USART1823.c: 140: USART_tx_data[i] = data[i];
   2948  028E  084A               	movf	lputs_ISR@i,w
@@ -2978,8 +2978,8 @@ Microchip Technology Omniscient Code Generator v1.40 (Free mode) build 201612010
   2963  029D  00C8               	movwf	??_lputs_ISR
   2964  029E  0848               	movf	??_lputs_ISR,w
   2965  029F  07CA               	addwf	lputs_ISR@i,f
-  2966  02A0  2A8A               	goto	l2509
-  2967  02A1                     l2511:	
+  2966  02A0  2A8A               	goto	l2521
+  2967  02A1                     l2523:	
   2968                           
   2969                           ;USART1823.c: 142: close_RX_USART();
   2970  02A1  2398               	fcall	_close_RX_USART
@@ -3113,11 +3113,11 @@ Microchip Technology Omniscient Code Generator v1.40 (Free mode) build 201612010
   3098                           
   3099                           ;comm.c: 412: for (i = 0; i < num; i++) {
   3100  0328  01CC               	clrf	calculate_checksum@i
-  3101  0329                     l2527:	
+  3101  0329                     l2539:	
   3102  0329  0847               	movf	calculate_checksum@num,w
   3103  032A  024C               	subwf	calculate_checksum@i,w
   3104  032B  1803               	btfsc	3,0
-  3105  032C  2B3C               	goto	l2529
+  3105  032C  2B3C               	goto	l2541
   3106                           
   3107                           ;comm.c: 413: check ^= data[i];
   3108  032D  084C               	movf	calculate_checksum@i,w
@@ -3134,8 +3134,8 @@ Microchip Technology Omniscient Code Generator v1.40 (Free mode) build 201612010
   3119  0338  00C8               	movwf	??_calculate_checksum
   3120  0339  0848               	movf	??_calculate_checksum,w
   3121  033A  07CC               	addwf	calculate_checksum@i,f
-  3122  033B  2B29               	goto	l2527
-  3123  033C                     l2529:	
+  3122  033B  2B29               	goto	l2539
+  3123  033C                     l2541:	
   3124                           
   3125                           ;comm.c: 414: }
   3126                           ;comm.c: 416: return check;
@@ -3755,7 +3755,7 @@ Microchip Technology Omniscient Code Generator v1.40 (Free mode) build 201612010
   3740                           ;main.c: 176: if (OERR) {
   3741  0018  0023               	movlb	3	; select bank3
   3742  0019  1C9D               	btfss	29,1	;volatile
-  3743  001A  2820               	goto	i1l2109
+  3743  001A  2820               	goto	i1l2115
   3744                           
   3745                           ;main.c: 178: CREN = 0;
   3746  001B  121D               	bcf	29,4	;volatile
@@ -3769,7 +3769,7 @@ Microchip Technology Omniscient Code Generator v1.40 (Free mode) build 201612010
   3754                           
   3755                           ;main.c: 181: return;
   3756  001F  2851               	goto	i1l129
-  3757  0020                     i1l2109:	
+  3757  0020                     i1l2115:	
   3758                           
   3759                           ;main.c: 182: }
   3760                           ;main.c: 185: if (USART_rx_index >= 10) {
@@ -4313,7 +4313,7 @@ SFR31                0      0       0      32        0.0%
 
 
 Microchip Technology PIC Macro Assembler V1.40 build -251452761 
-Symbol Table                                                                                   Thu Feb 22 14:08:16 2018
+Symbol Table                                                                                   Tue Feb 27 16:27:51 2018
 
                     __CFG_CP$OFF 0000                    _USART_rx_data 002F                    _USART_rx_flag 003A  
                   _USART_tx_data 0020                    _USART_tx_flag 0072                              l119 02C3  
@@ -4322,12 +4322,12 @@ Symbol Table                                                                    
                             _PS2 04AA                     __CFG_CPD$OFF 0000                              _PSA 04AB  
                             _isr 0004                     __CFG_BORV$HI 0000                              wreg 0009  
                    __CFG_IESO$ON 0000                   _USART_rx_index 003B                     __CFG_LVP$OFF 0000  
-                 _USART_tx_index 0073                             l2511 02A1                             l2415 0269  
-                           l2417 026D                             l2509 028A                             l2527 0329  
-                           l2529 033C                             l2573 01B4                             l2557 017D  
-                           l2583 01D3                             l2743 02CF                             l2683 00B2  
-                           l2667 0086                             l2589 01E1                             l2697 00CC  
-                           l2699 00D0                             ?_isr 0075                             _ADGO 04E9  
+                 _USART_tx_index 0073                             l2521 028A                             l2601 01E1  
+                           l2523 02A1                             l2427 0269                             l2541 033C  
+                           l2429 026D                             l2711 00D0                             l2539 0329  
+                           l2709 00CC                             l2585 01B4                             l2569 017D  
+                           l2595 01D3                             l2755 02CF                             l2695 00B2  
+                           l2679 0086                             ?_isr 0075                             _ADGO 04E9  
                    __CFG_WDTE$ON 0000                             _BRGH 0CF2                             _CREN 0CEC  
                            u1115 0270                             u1145 0313                             u1315 01BE  
                            u1325 01CF                             _LATA 010C                             u1335 01DD  
@@ -4358,7 +4358,7 @@ Symbol Table                                                                    
                     measure@aux1 005B                      measure@aux2 0059                      measure@asic 004E  
                          _ADRESH 009C                           _ADRESL 009B                           _APFCON 011D  
                          _ANSELA 018C                           _ANSELC 018E                           ?_sweep 0075  
-                         i1l2109 0020                           u152_27 004E                           _OSCCON 0099  
+                         i1l2115 0020                           u152_27 004E                           _OSCCON 0099  
                          _TMR0IE 005D                           _TMR0IF 005A                           _TMR0CS 04AD  
                          _SPBRGH 019C                           _SPBRGL 019B                   __CFG_PWRTE$OFF 0000  
                  __CFG_STVREN$ON 0000                   ?_stop_TMR0_ISR 0075                           _config 0255  

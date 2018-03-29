@@ -3878,6 +3878,9 @@ aux[7] = '@';
 while (1) {
 asm("clrwdt");
 _delay((unsigned long)((250)*(500000/4000.0)));
+_delay((unsigned long)((250)*(500000/4000.0)));
+_delay((unsigned long)((250)*(500000/4000.0)));
+_delay((unsigned long)((250)*(500000/4000.0)));
 lputs_ISR(aux,8);
 
 }
@@ -3896,7 +3899,7 @@ unsigned char aux[7], check;
 BIO3 asic;
 asic.datashort = 0;
 
-# 462
+# 465
 freq_index = 10;
 gain_index = 0;
 setGain(&asic,gain_index);
@@ -3907,7 +3910,7 @@ for (i = 0; i < 11; i++) {
 
 setFreq(&asic,freq_index);
 
-# 477
+# 480
 count = 0;
 ret = 0;
 
@@ -3923,7 +3926,7 @@ count = ret;
 
 if (gain_index < 7) {
 
-# 494
+# 497
 gain_index++;
 setGain(&asic,gain_index);
 } else {
@@ -3949,7 +3952,7 @@ continue;
 
 } while (ret);
 
-# 523
+# 526
 ret = (freq_index << 4) & 0xf0;
 ret |= (gain_index & 0xff);
 
@@ -3968,16 +3971,16 @@ aux[6] = check;
 
 lputs_ISR(aux,7);
 
-# 549
+# 552
 freq_index--;
 }
 
 }
 
-# 558
+# 561
 unsigned char measure(short* I, short* Q, BIO3 asic)
 
-# 562
+# 565
 {
 unsigned short offset, value;
 short aux1,aux2;
