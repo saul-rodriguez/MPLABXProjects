@@ -25,6 +25,8 @@
 #include "comm.h"
 #include "ADC1823.h"
 
+//void interrupt isr(void);
+
 void main(void) {
     
     unsigned char i;
@@ -147,7 +149,7 @@ void main(void) {
 }
 
 
-void interrupt isr(void)
+void __interrupt() isr(void)
 {
 
      //TMR0 ISRservice routine

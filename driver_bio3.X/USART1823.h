@@ -59,7 +59,7 @@ extern volatile unsigned char USART_tx_index;
 extern volatile unsigned char USART_tx_length;
 
 
-void start_TX_USART(); 
+void start_TX_USART(void); 
 void start_RX_USART();
 void close_USART();
 void close_RX_USART();
@@ -69,7 +69,7 @@ unsigned char getch();
 void lputs(unsigned char* data, unsigned char length);
 void lputs_ISR(unsigned char* data, unsigned char length);
 
-void start_RX_USART_ISR();
-void start_TX_USART_ISR();
+void start_RX_USART_ISR(void);
+void start_TX_USART_ISR(void);
 
 #endif

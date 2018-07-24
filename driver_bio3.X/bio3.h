@@ -250,12 +250,12 @@ typedef struct VINfilt_bits_struct {
 } VINfilt_bits;
 
 typedef union {
-    unsigned short long datal;
+    unsigned long datal;
     unsigned char data[3];
     VINfilt_bits data_bits;
 } VINfilt;
 
-const unsigned short long filt[11] = {
+const unsigned long filt[11] = {
     FILT_FREQ0,
     FILT_FREQ1,
     FILT_FREQ2,
