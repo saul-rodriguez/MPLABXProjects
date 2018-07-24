@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=alfa.X
+PROJECTNAME=analog_logger.X
 
 # Active Configuration
 DEFAULTCONF=default

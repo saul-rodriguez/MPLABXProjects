@@ -47,17 +47,26 @@
 /*
                          Main application
  */
+
+typedef enum 
+{
+ ADC_IDLE = 0,
+ ADC_BUSY = 1
+} adc_state;
+
 void main(void)
 {
     unsigned char data;
     unsigned short adc_val;
     char mess[9];
-    unsigned long val_l;;
+    unsigned long val_l;
+    unsigned char ADC_state; // 0 idle, 1 conversion
     
     // initialize the device
     SYSTEM_Initialize();
     
     ADC_SelectChannel(channel_AN4);
+    ADC_state = ADC_IDLE;
 
     // When using interrupts, you need to set the Global and Peripheral Interrupt Enable bits
     // Use the following macros to:
@@ -97,11 +106,13 @@ void main(void)
         }
         */
         
-        //Test of ADC using interrupt. It sends value of AN4 in text format
+        // Process control commands 
         if(EUSART_is_rx_ready()) {
             data = EUSART_Read();          
           
-            if(data == 'c') { //Read converter
+            if(data == 'c') { //Read converter by polling the conversion flag
+                
+                //This code locks the thread until conversion is done
                 adc_val = ADC_GetConversion(channel_AN4);
                                                 
                 /*
@@ -133,9 +144,35 @@ void main(void)
                     EUSART_Write(mess[data++]);
                 }                
                   
-            }            
-          
+            }    
+            
+            if (data == 'i') { // Activates the ADC interrupt
+                if(ADC_state == ADC_IDLE) { // check if a conversion is already been triggered
+                    ADC_StartConversion();
+                    ADC_state = ADC_BUSY;
+                }            
+            }
         }
+        
+        if (ADC_state == ADC_BUSY) {
+            if (ADC_IsConversionDone()) {
+                ADC_state = ADC_IDLE;
+                adc_val = ADC_GetConversionResult();   
+                                            
+                // This code converts AN4 to mV
+                val_l = ((unsigned long)adc_val*3300UL/1024UL);   //VREF = VDD = 3.3V             
+                sprintf(mess,"%u mV\n",val_l);
+                
+                data = 0;
+                while(mess[data]) {
+                    while(!EUSART_is_tx_ready()); // This will lock the thread until bytes in the tx buffer are available
+                    
+                    EUSART_Write(mess[data++]);
+                }  
+                
+            }
+        }
+        
     }
 }
 /**

@@ -3,12 +3,12 @@
     <type>com.microchip.mplab.nbide.embedded.makeproject</type>
     <configuration>
         <data xmlns="http://www.netbeans.org/ns/make-project/1">
-            <name>alfa</name>
-            <creation-uuid>05ac7002-1f91-4b3a-9087-53dd60a76124</creation-uuid>
+            <name>analog_logger</name>
+            <creation-uuid>628b06a4-a23c-49f8-bd4e-57611c791f50</creation-uuid>
             <make-project-type>0</make-project-type>
             <c-extensions>c</c-extensions>
             <cpp-extensions/>
-            <header-extensions/>
+            <header-extensions>h</header-extensions>
             <asminc-extensions/>
             <sourceEncoding>ISO-8859-1</sourceEncoding>
             <make-dep-projects/>
