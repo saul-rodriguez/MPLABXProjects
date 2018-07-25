@@ -48,6 +48,19 @@
                          Main application
  */
 
+void TMR0_Ready(void);
+void TMR0_Start(void);
+void TMR0_Stop(void);
+
+volatile unsigned char timer;
+
+typedef enum
+{
+    TMR0_STOP = 0,
+    TMR0_RUNNING = 1,
+    TMR0_READY = 2
+} tmr0_state;
+
 typedef enum 
 {
  ADC_IDLE = 0,
@@ -65,8 +78,14 @@ void main(void)
     // initialize the device
     SYSTEM_Initialize();
     
+    //Custom initialization
     ADC_SelectChannel(channel_AN4);
     ADC_state = ADC_IDLE;
+    
+    TMR0_Stop();       
+    TMR0_SetInterruptHandler(TMR0_Ready);
+    
+    data = 'a';
 
     // When using interrupts, you need to set the Global and Peripheral Interrupt Enable bits
     // Use the following macros to:
@@ -152,6 +171,15 @@ void main(void)
                     ADC_state = ADC_BUSY;
                 }            
             }
+            
+            if (data == 't') { //  Start timer0
+                TMR0_Start();
+                
+            }
+            
+            if (data == 'T') { // Stop timer0
+                TMR0_Stop();
+            }
         }
         
         if (ADC_state == ADC_BUSY) {
@@ -173,8 +201,39 @@ void main(void)
             }
         }
         
+        if (timer == TMR0_READY) {            
+            timer = TMR0_RUNNING;
+             
+            while(!EUSART_is_tx_ready()); // This will lock the thread until bytes in the tx buffer are available
+            EUSART_Write(data++);
+        }
+        
     }
 }
+
+void TMR0_Ready(void)
+{
+    timer = TMR0_READY;
+}
+
+void TMR0_Start(void)
+{
+    // Clear Interrupt flag before enabling the interrupt
+    INTCONbits.TMR0IF = 0;
+    // Enabling TMR0 interrupt
+    INTCONbits.TMR0IE = 1;
+    timer = TMR0_RUNNING;
+}
+
+void TMR0_Stop(void)
+{
+// Clear Interrupt flag before enabling the interrupt
+    INTCONbits.TMR0IF = 0;
+    // Enabling TMR0 interrupt
+    INTCONbits.TMR0IE = 0;
+    timer = TMR0_STOP;
+}
+
 /**
  End of File
 */

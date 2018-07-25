@@ -66,6 +66,10 @@ void __interrupt() INTERRUPT_InterruptManager (void)
         {
             EUSART_RxDefaultInterruptHandler();
         } 
+        else if(PIE1bits.TMR1IE == 1 && PIR1bits.TMR1IF == 1)
+        {
+            TMR1_ISR();
+        } 
         else
         {
             //Unhandled Interrupt

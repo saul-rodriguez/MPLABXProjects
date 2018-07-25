@@ -58,6 +58,9 @@
 
 #define ACQ_US_DELAY 5
 
+
+volatile unsigned char ADC_state;
+volatile unsigned short ADC_value;
 /**
   Section: ADC Module APIs
 */
@@ -80,6 +83,9 @@ void ADC_Initialize(void)
     
     // Enabling ADC interrupt.
     PIE1bits.ADIE = 1;
+    
+    //Custom initialization
+    ADC_state = ADC_IDLE;
 }
 
 void ADC_SelectChannel(adc_channel_t channel)
@@ -140,7 +146,9 @@ void ADC_TemperatureAcquisitionDelay(void)
 void ADC_ISR(void)
 {
     // Clear the ADC interrupt flag
+    ADC_value = ADC_GetConversionResult();
     PIR1bits.ADIF = 0;
+    ADC_state = ADC_READY;
 }
 /**
  End of File

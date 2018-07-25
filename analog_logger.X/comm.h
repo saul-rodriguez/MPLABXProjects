@@ -43,11 +43,6 @@ extern "C" {
     // linkage so the functions can be used by the c code. 
 
 // TODO Insert C++ class definitions if appropriate
-typedef enum 
-{
-    ADC_IDLE = 0,
-    ADC_BUSY = 1
-} adc_state;
 
 typedef enum
 {
@@ -55,9 +50,21 @@ typedef enum
     MESSAGE_TEXT = 1
 } mess_format;
 
+typedef enum
+{
+    TMR1_STOP = 0,
+    TMR1_RUNNING = 1,
+    TMR1_READY = 2
+} tmr1_state;
+
+
 // TODO Insert declarations
-extern volatile unsigned char ADC_state;
+
 extern volatile unsigned char message_format;
+
+//TIMER1 related
+extern volatile unsigned char TMR1_state;
+
 // Comment a function and leverage automatic documentation with slash star star
 /**
     <p><b>Function prototype:</b></p>
@@ -178,6 +185,8 @@ void read_analog(void);
 void start_sampling(void);
 
 void stop_sampling(void);
+
+void _TMR1_Ready(void);
 
 #ifdef	__cplusplus
 }

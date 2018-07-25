@@ -52,9 +52,15 @@ void main(void)
     // initialize the device
     SYSTEM_Initialize();
     
-    ADC_SelectChannel(channel_AN2);
-    ADC_state = ADC_IDLE;
+    
+    //custom initialization
+    ADC_SelectChannel(channel_AN2);   
     message_format = MESSAGE_BINARY; //ADC transmitted values default to binary
+    
+    TMR1_StopTimer();
+    TMR1_state = TMR1_STOP;
+    TMR1_SetInterruptHandler(_TMR1_Ready); //Redirect TMR1_ISR_handler to custom function
+   // TMR1_state = TMR1_STOP;
 
     // When using interrupts, you need to set the Global and Peripheral Interrupt Enable bits
     // Use the following macros to:
@@ -82,9 +88,15 @@ void main(void)
         }
         
         //Converter ISR
-        if (ADC_state == ADC_BUSY && ADC_IsConversionDone()) {
+       // if (ADC_state == ADC_BUSY && ADC_IsConversionDone()) {
+        if (ADC_state == ADC_READY) {
             read_analog();
         }
+        
+       /* if (TMR1_state == TMR1_READY) {
+            TMR1_state = TMR1_RUNNING;
+            ADC_StartConversion();
+        }*/
         
     }
 }

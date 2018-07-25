@@ -4,9 +4,12 @@
 volatile unsigned char ADC_state;
 volatile unsigned char message_format;
 
+volatile unsigned char TMR1_state;
+
 void process_message(void)
 {
     unsigned char message;
+    unsigned char aux[3];
     
     message = EUSART_Read();
     
@@ -17,7 +20,8 @@ void process_message(void)
             break;
             
         case 'a': //Ask analog value 
-            read_analog();
+            //read_analog();
+            ADC_StartConversion();
             break;
             
         case 'T': //toggle between binary data or text mode
@@ -26,13 +30,36 @@ void process_message(void)
             break;
             
         case 's': //start continuous analog monitoring
-            start_sampling();
+            if (TMR1_state == TMR1_RUNNING)
+                return;
+            start_sampling();            
+            TMR1_StartTimer();
+            TMR1_state = TMR1_RUNNING;
+            
             break;
             
-        case 'S': //stop continuous analog sampling    
+        case 'S': //stop continuous analog sampling              
+            
             stop_sampling();
+            TMR1_StopTimer();
+            TMR1_state = TMR1_STOP;
             break;
             
+        case 'd':
+            aux[0] = ADC_state+'0';
+            aux[1] = 0x0d;
+            write(aux,2);
+            break;
+            
+        case 'D':
+            aux[0] = TMR1_state+'0';
+            aux[1] = 0x0d;
+            write(aux,2);
+            break;
+        case 'r':
+            ADCON0bits.ADON = 0;
+            ADCON0bits.ADON = 1;
+            break;
         default:
             break;
             
@@ -66,11 +93,20 @@ void read_analog()
     unsigned long  aux1;
     char mess[6];
     
-    if (ADC_state == ADC_IDLE) { //single ADC request
-        adc_val = ADC_GetConversion(channel_AN2); 
-    } else { //ADC_STATE = ADC_BUSY, ADC value is already converted
-        adc_val = ADC_GetConversionResult();
+   
+    /*
+    if (ADC_state == ADC_BUSY) { //ADC_STATE = ADC_BUSY, ADC value is already converted
+        adc_val = ADC_GetConversionResult();        
+    } else { //single ADC request
+        PIE1bits.ADIE = 0;
+        adc_val = ADC_GetConversion(channel_AN2);
+        PIE1bits.ADIE = 1;
     }
+     */
+    
+    //adc_val = ADC_GetConversionResult();
+    adc_val = ADC_value;
+    ADC_state = ADC_IDLE;
     
     if (message_format == MESSAGE_BINARY) {    
         mess[0] = (unsigned char)(adc_val & 0xff);
@@ -88,11 +124,12 @@ void read_analog()
         _puts(mess);
         _puts("\n");  
     }
-    
-    if (ADC_state == ADC_BUSY) {
-        __delay_ms(100);
-        ADC_StartConversion();
-    }
+       
+    //if (ADC_state == ADC_BUSY) {
+    //    __delay_ms(100);
+    //    ADC_StartConversion();
+    //}
+     
     
 }
 
@@ -136,13 +173,26 @@ void toggle_format()
 
 void start_sampling(void)
 {
-    if(ADC_state == ADC_IDLE) { // check if a conversion is already been triggered
-        ADC_StartConversion();
-        ADC_state = ADC_BUSY;
-    }     
+    ADC_state = ADC_BUSY; 
+//    ADC_StartConversion();    
 }
 
 void stop_sampling(void)
 {
     ADC_state = ADC_IDLE;
+}
+
+void _TMR1_Ready(void)
+{
+   // TMR1_state = TMR1_READY;
+    if (TMR1_state == TMR1_RUNNING) {
+        if (ADC_IsConversionDone())
+            ADC_StartConversion(); 
+        else {
+            ADCON0bits.ADON = 0;
+            ADCON0bits.ADON = 1;            
+        }
+    }
+        
+    
 }
