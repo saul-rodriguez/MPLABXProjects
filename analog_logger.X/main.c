@@ -86,17 +86,11 @@ void main(void)
         if (EUSART_is_rx_ready()) {
             process_message();
         }
-        
-        //Converter ISR
-       // if (ADC_state == ADC_BUSY && ADC_IsConversionDone()) {
+                
+       //ADC-TMR1 
         if (ADC_state == ADC_READY) {
             read_analog();
         }
-        
-       /* if (TMR1_state == TMR1_READY) {
-            TMR1_state = TMR1_RUNNING;
-            ADC_StartConversion();
-        }*/
         
     }
 }

@@ -146,9 +146,11 @@ void ADC_TemperatureAcquisitionDelay(void)
 void ADC_ISR(void)
 {
     // Clear the ADC interrupt flag
+    PIR1bits.ADIF = 0;
+    /*
     ADC_value = ADC_GetConversionResult();
     PIR1bits.ADIF = 0;
-    ADC_state = ADC_READY;
+    ADC_state = ADC_READY;    */
 }
 /**
  End of File
