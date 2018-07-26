@@ -60,7 +60,10 @@ void main(void)
     TMR1_StopTimer();
     TMR1_state = TMR1_STOP;
     TMR1_SetInterruptHandler(_TMR1_Ready); //Redirect TMR1_ISR_handler to custom function
-   // TMR1_state = TMR1_STOP;
+   
+    IOCAF4_SetInterruptHandler(_IOC_Ready); //Redirect IOC in A4 to custom function
+    IOC_state = IOC_IDLE;
+    IOC_value = 1; // R4 has pull-up resistor enabled;
 
     // When using interrupts, you need to set the Global and Peripheral Interrupt Enable bits
     // Use the following macros to:
@@ -90,6 +93,10 @@ void main(void)
        //ADC-TMR1 
         if (ADC_state == ADC_READY) {
             read_analog();
+        }
+        
+        if (IOC_state == IOC_READY) {
+            process_ioc();
         }
         
     }

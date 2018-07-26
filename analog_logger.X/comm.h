@@ -57,13 +57,22 @@ typedef enum
     TMR1_READY = 2
 } tmr1_state;
 
-
+typedef enum
+{
+    IOC_IDLE = 0,
+    IOC_READY = 1
+} ioc_state;
+                                   
 // TODO Insert declarations
 
 extern volatile unsigned char message_format;
 
 //TIMER1 related
 extern volatile unsigned char TMR1_state;
+
+//IOC State
+extern volatile unsigned char IOC_state;
+extern volatile unsigned char IOC_value;
 
 // Comment a function and leverage automatic documentation with slash star star
 /**
@@ -187,6 +196,10 @@ void start_sampling(void);
 void stop_sampling(void);
 
 void _TMR1_Ready(void);
+
+void _IOC_Ready(void);
+
+void process_ioc(void);
 
 #ifdef	__cplusplus
 }

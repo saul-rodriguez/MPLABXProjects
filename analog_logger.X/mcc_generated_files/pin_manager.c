@@ -53,6 +53,8 @@
 
 
 
+void (*IOCAF4_InterruptHandler)(void);
+
 
 void PIN_MANAGER_Initialize(void)
 {
@@ -65,21 +67,21 @@ void PIN_MANAGER_Initialize(void)
     /**
     TRISx registers
     */
-    TRISA = 0x3F;
+    TRISA = 0x1F;
     TRISC = 0x2F;
 
     /**
     ANSELx registers
     */
     ANSELC = 0x0F;
-    ANSELA = 0x17;
+    ANSELA = 0x07;
 
     /**
     WPUx registers
     */
-    WPUA = 0x00;
+    WPUA = 0x10;
     WPUC = 0x00;
-    OPTION_REGbits.nWPUEN = 1;
+    OPTION_REGbits.nWPUEN = 0;
 
     /**
     ODx registers
@@ -90,15 +92,63 @@ void PIN_MANAGER_Initialize(void)
     */
     APFCON = 0x00;
 
+    /**
+    IOCx registers 
+    */
+    //interrupt on change for group IOCAF - flag
+    IOCAFbits.IOCAF4 = 0;
+    //interrupt on change for group IOCAN - negative
+    IOCANbits.IOCAN4 = 1;
+    //interrupt on change for group IOCAP - positive
+    IOCAPbits.IOCAP4 = 1;
 
 
 
+    // register default IOC callback functions at runtime; use these methods to register a custom function
+    IOCAF4_SetInterruptHandler(IOCAF4_DefaultInterruptHandler);
    
+    // Enable IOCI interrupt 
+    INTCONbits.IOCIE = 1; 
     
 }
   
 void PIN_MANAGER_IOC(void)
 {   
+	// interrupt on change for pin IOCAF4
+    if(IOCAFbits.IOCAF4 == 1)
+    {
+        IOCAF4_ISR();  
+    }	
+}
+
+/**
+   IOCAF4 Interrupt Service Routine
+*/
+void IOCAF4_ISR(void) {
+
+    // Add custom IOCAF4 code
+
+    // Call the interrupt handler for the callback registered at runtime
+    if(IOCAF4_InterruptHandler)
+    {
+        IOCAF4_InterruptHandler();
+    }
+    IOCAFbits.IOCAF4 = 0;
+}
+
+/**
+  Allows selecting an interrupt handler for IOCAF4 at application runtime
+*/
+void IOCAF4_SetInterruptHandler(void (* InterruptHandler)(void)){
+    IOCAF4_InterruptHandler = InterruptHandler;
+}
+
+/**
+  Default interrupt handler for IOCAF4
+*/
+void IOCAF4_DefaultInterruptHandler(void){
+    // add your IOCAF4 interrupt custom code
+    // or set custom function using IOCAF4_SetInterruptHandler()
 }
 
 /**

@@ -5,6 +5,8 @@ volatile unsigned char ADC_state;
 volatile unsigned char message_format;
 
 volatile unsigned char TMR1_state;
+volatile unsigned char IOC_state;
+volatile unsigned char IOC_value;
 
 void process_message(void)
 {
@@ -32,35 +34,28 @@ void process_message(void)
             
         case 's': //start continuous analog monitoring
             if (TMR1_state == TMR1_RUNNING)
-                return;
-           // start_sampling();            
+                return;                     
             TMR1_StartTimer();
             TMR1_state = TMR1_RUNNING;
             
             break;
             
         case 'S': //stop continuous analog sampling              
-            
-          //  stop_sampling();
+                    
             TMR1_StopTimer();
             TMR1_state = TMR1_STOP;
             break;
+                           
+        case 'o': // Change digital output to low 
             
-        case 'd':
-            aux[0] = ADC_state+'0';
-            aux[1] = 0x0d;
-            write(aux,2);
+            IO_RA5_SetLow();
             break;
             
-        case 'D':
-            aux[0] = TMR1_state+'0';
-            aux[1] = 0x0d;
-            write(aux,2);
+        case 'O': // Change digital output to high
+            
+            IO_RA5_SetHigh();
             break;
-        case 'r':
-            ADCON0bits.ADON = 0;
-            ADCON0bits.ADON = 1;
-            break;
+                        
         default:
             break;
             
@@ -170,7 +165,33 @@ void _TMR1_Ready(void)
 {   
     if (TMR1_state == TMR1_RUNNING) {
         ADC_value = ADC_GetConversion(channel_AN2); 
-        ADC_state = ADC_READY;
-    }
+        ADC_state = ADC_READY;        
+    }    
+}
+
+void _IOC_Ready(void)
+{
+        
+    //__delay_ms(2); //Timeout for filter bouncing/noise
     
+    IOC_value = IO_RA4_GetValue();
+    
+    IOC_state = IOC_READY;
+    //if (aux == IO_RA4_GetValue()) {
+    /*
+     if (aux) {
+        _puts("CH");
+    } else {
+        _puts("CL");    
+    } */
+}
+
+void process_ioc(void)
+{
+    IOC_state = IOC_IDLE;
+     if (IOC_value) {
+        _puts("CH");
+    } else {
+        _puts("CL");    
+    }
 }

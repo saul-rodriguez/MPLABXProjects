@@ -52,23 +52,27 @@
 void __interrupt() INTERRUPT_InterruptManager (void)
 {
     // interrupt handler
-    if(INTCONbits.PEIE == 1)
+    if(INTCONbits.IOCIE == 1 && INTCONbits.IOCIF == 1)
     {
-        if(PIE1bits.ADIE == 1 && PIR1bits.ADIF == 1)
+        PIN_MANAGER_IOC();
+    }
+    else if(INTCONbits.PEIE == 1)
+    {
+        if(PIE1bits.TMR1IE == 1 && PIR1bits.TMR1IF == 1)
+        {
+            TMR1_ISR();
+        } 
+        else if(PIE1bits.ADIE == 1 && PIR1bits.ADIF == 1)
         {
             ADC_ISR();
-        } 
-        else if(PIE1bits.TXIE == 1 && PIR1bits.TXIF == 1)
-        {
-            EUSART_TxDefaultInterruptHandler();
         } 
         else if(PIE1bits.RCIE == 1 && PIR1bits.RCIF == 1)
         {
             EUSART_RxDefaultInterruptHandler();
         } 
-        else if(PIE1bits.TMR1IE == 1 && PIR1bits.TMR1IF == 1)
+        else if(PIE1bits.TXIE == 1 && PIR1bits.TXIF == 1)
         {
-            TMR1_ISR();
+            EUSART_TxDefaultInterruptHandler();
         } 
         else
         {
