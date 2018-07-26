@@ -56,6 +56,7 @@ void main(void)
     //custom initialization
     ADC_SelectChannel(channel_AN2);   
     message_format = MESSAGE_BINARY; //ADC transmitted values default to binary
+    ADC_state = ADC_IDLE;
     
     TMR1_StopTimer();
     TMR1_state = TMR1_STOP;

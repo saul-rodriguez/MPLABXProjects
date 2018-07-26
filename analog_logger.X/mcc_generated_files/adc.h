@@ -100,15 +100,6 @@ typedef enum
     channel_FVR =  0x1F
 } adc_channel_t;
 
-typedef enum 
-{
-    ADC_IDLE = 0,
-    ADC_BUSY = 1,
-    ADC_READY = 2        
-} adc_state;
-
-extern volatile unsigned char ADC_state;
-extern volatile unsigned short ADC_value;
 /**
   Section: ADC Module APIs
 */

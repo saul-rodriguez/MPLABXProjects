@@ -53,9 +53,15 @@ typedef enum
 typedef enum
 {
     TMR1_STOP = 0,
-    TMR1_RUNNING = 1,
-    TMR1_READY = 2
+    TMR1_RUNNING = 1
+   // TMR1_READY = 2
 } tmr1_state;
+
+typedef enum 
+{
+    ADC_IDLE = 0,    
+    ADC_READY = 1        
+} adc_state;
 
 typedef enum
 {
@@ -66,6 +72,10 @@ typedef enum
 // TODO Insert declarations
 
 extern volatile unsigned char message_format;
+
+//ADC related
+extern volatile unsigned short ADC_value;
+extern volatile unsigned char ADC_state;
 
 //TIMER1 related
 extern volatile unsigned char TMR1_state;
@@ -191,9 +201,9 @@ void toggle_format(void);
 
 void read_analog(void);
 
-void start_sampling(void);
+//void start_sampling(void);
 
-void stop_sampling(void);
+//void stop_sampling(void);
 
 void _TMR1_Ready(void);
 
