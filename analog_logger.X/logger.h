@@ -28,26 +28,16 @@
 
 // This is a guard condition so that contents of this file are not included
 // more than once.  
-#ifndef COMM_H
-#define	COMM_H
+#ifndef LOGGER_H
+#define	LOGGER_H
 
-#include <xc.h> // include processor files - each processor file is guarded. 
+#include <xc.h> // include processor files - each processor file is guarded.  
 
 // TODO Insert appropriate #include <>
 
-#ifdef	__cplusplus
-extern "C" {
-#endif /* __cplusplus */
-
-    // TODO If C++ is being used, regular C code needs function names to have C 
-    // linkage so the functions can be used by the c code. 
-
 // TODO Insert C++ class definitions if appropriate
 
-                                   
 // TODO Insert declarations
-
-
 
 // Comment a function and leverage automatic documentation with slash star star
 /**
@@ -73,6 +63,51 @@ extern "C" {
 // TODO Insert declarations or function prototypes (right here) to leverage 
 // live documentation
 
+#ifdef	__cplusplus
+extern "C" {
+#endif /* __cplusplus */
+
+    // TODO If C++ is being used, regular C code needs function names to have C 
+    // linkage so the functions can be used by the c code. 
+    
+typedef enum
+{
+    MESSAGE_BINARY = 0,
+    MESSAGE_TEXT = 1
+} mess_format;
+
+typedef enum
+{
+    TMR1_STOP = 0,
+    TMR1_RUNNING = 1  
+} tmr1_state;
+
+typedef enum 
+{
+    ADC_IDLE = 0,    
+    ADC_READY = 1        
+} adc_state;
+
+typedef enum
+{
+    IOC_IDLE = 0,
+    IOC_READY = 1
+} ioc_state;
+    
+//serial comm. related
+extern volatile unsigned char message_format;
+
+//ADC related
+extern volatile unsigned short ADC_value;
+extern volatile unsigned char ADC_state;
+
+//TIMER1 related
+extern volatile unsigned char TMR1_state;
+
+//IOC State
+extern volatile unsigned char IOC_state;
+extern volatile unsigned char IOC_value;
+
 
 /**
     <p><b>Function prototype:</b></p>
@@ -94,53 +129,17 @@ extern "C" {
 
     <p><b>Remarks:</b></p>
  */
-void _puts(char *pt);
+void process_message(void);
 
-/**
-    <p><b>Function prototype:</b></p>
-  
-    <p><b>Summary:</b></p>
+void toggle_format(void);
 
-    <p><b>Description:</b></p>
+void read_analog(void);
 
-    <p><b>Precondition:</b></p>
+void _TMR1_Ready(void);
 
-    <p><b>Parameters:</b></p>
+void _IOC_Ready(void);
 
-    <p><b>Returns:</b></p>
-
-    <p><b>Example:</b></p>
-    <code>
- 
-    </code>
-
-    <p><b>Remarks:</b></p>
- */
-void write(unsigned char *pt, unsigned char lenght);
-
-/**
-    <p><b>Function prototype:</b></p>
-  
-    <p><b>Summary:</b></p>
-
-    <p><b>Description:</b></p>
-
-    <p><b>Precondition:</b></p>
-
-    <p><b>Parameters:</b></p>
-
-    <p><b>Returns:</b></p>
-
-    <p><b>Example:</b></p>
-    <code>
- 
-    </code>
-
-    <p><b>Remarks:</b></p>
- */
-void _sprintf(char *mess, unsigned short val);
-
-
+void process_ioc(void);
 
 #ifdef	__cplusplus
 }
