@@ -14,7 +14,7 @@
     This header file provides implementations for driver APIs for all modules selected in the GUI.
     Generation Information :
         Product Revision  :  PIC10 / PIC12 / PIC16 / PIC18 MCUs - 1.65.2
-        Device            :  PIC16F1823
+        Device            :  PIC12LF1822
         Driver Version    :  2.00
 */
 
@@ -53,20 +53,9 @@ void main(void)
     // initialize the device
     SYSTEM_Initialize();
     
+     //custom initialization 
+    logger_initialize();
     
-    //custom initialization
-    ADC_SelectChannel(channel_AN2);   
-    message_format = MESSAGE_BINARY; //ADC transmitted values default to binary
-    ADC_state = ADC_IDLE;
-    
-    TMR1_StopTimer();
-    TMR1_state = TMR1_STOP;
-    TMR1_SetInterruptHandler(_TMR1_Ready); //Redirect TMR1_ISR_handler to custom function
-   
-    IOCAF4_SetInterruptHandler(_IOC_Ready); //Redirect IOC in A4 to custom function
-    IOC_state = IOC_IDLE;
-    IOC_value = 1; // R4 has pull-up resistor enabled;
-
     // When using interrupts, you need to set the Global and Peripheral Interrupt Enable bits
     // Use the following macros to:
 
@@ -81,13 +70,10 @@ void main(void)
 
     // Disable the Peripheral Interrupts
     //INTERRUPT_PeripheralInterruptDisable();
-    
 
     while (1)
     {
         // Add your application code
-        
-        //Communications
         if (EUSART_is_rx_ready()) {
             process_message();
         }
@@ -100,7 +86,6 @@ void main(void)
         if (IOC_state == IOC_READY) {
             process_ioc();
         }
-        
     }
 }
 /**

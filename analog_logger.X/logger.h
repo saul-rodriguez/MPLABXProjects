@@ -129,6 +129,8 @@ extern volatile unsigned char IOC_value;
 
     <p><b>Remarks:</b></p>
  */
+void logger_initialize(void);
+
 void process_message(void);
 
 void toggle_format(void);

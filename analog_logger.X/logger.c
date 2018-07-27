@@ -10,6 +10,20 @@ volatile unsigned char TMR1_state;
 volatile unsigned char IOC_state;
 volatile unsigned char IOC_value;
 
+void logger_initialize(void)
+{
+    ADC_SelectChannel(channel_AN2);   
+    message_format = MESSAGE_BINARY; //ADC transmitted values default to binary
+    ADC_state = ADC_IDLE;
+    
+    TMR1_StopTimer();
+    TMR1_state = TMR1_STOP;
+    TMR1_SetInterruptHandler(_TMR1_Ready); //Redirect TMR1_ISR_handler to custom function
+   
+    IOCAF4_SetInterruptHandler(_IOC_Ready); //Redirect IOC in A4 to custom function
+    IOC_state = IOC_IDLE;
+    IOC_value = 1; // R4 has pull-up resistor enabled;
+}
 
 void process_message(void)
 {
