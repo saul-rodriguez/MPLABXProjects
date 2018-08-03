@@ -7,6 +7,7 @@ volatile unsigned char message_format;
 
 volatile unsigned short ADC_value;
 volatile unsigned char ADC_state;
+volatile unsigned char ADC_count;
 
 volatile unsigned char TMR1_state;
 
@@ -19,6 +20,8 @@ void logger_initialize(void)
       
     ADC1_SelectChannel(channel_AN2);       
     ADC_state = ADC_IDLE;
+    ADC_value = 0;
+    ADC_count = 0;
     
     TMR1_StopTimer();
     TMR1_state = TMR1_STOP;
@@ -106,9 +109,19 @@ void read_analog()
     
         #ifdef BT
         write((unsigned char*)mess,2);
-        #else
-        ESP_write(mess,2);
-        ESP_wait_for(ESP_SEND_OK);
+        #else   
+        
+        ESP_tx_buf[ESP_tx_buf_ind++] = mess[0];
+        ESP_tx_buf[ESP_tx_buf_ind++] = mess[1];
+        
+        if (ESP_tx_buf_ind == ESP_TX_BUFFER_SIZE) {
+            ESP_write(ESP_tx_buf,ESP_TX_BUFFER_SIZE);
+            ESP_wait_for(ESP_SEND_OK);
+            ESP_tx_buf_ind = 0;
+        }
+        
+        //ESP_write(mess,2);
+        //ESP_wait_for(ESP_SEND_OK);
         #endif
     
     } else {
@@ -117,16 +130,15 @@ void read_analog()
         adc_val = (unsigned short)(aux1 >> 10); //divides by 1024. Result is in mV
     
         _sprintf(mess,adc_val); // Takes a value in mV and returns a string in V with 3 decimals
-            
+        mess[5] = '\n';
         #ifdef BT
             _puts(mess);        
             _puts("\n");
         #else
-            ESP_write(mess,5);
+     
+            ESP_write(mess,6);
             ESP_wait_for(ESP_SEND_OK);
-        
-        //IO_RA5_SetLow();
-        //__delay_ms(50);
+       
         #endif
         
     }    

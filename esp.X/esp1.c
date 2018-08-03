@@ -10,6 +10,8 @@ volatile unsigned char esp_read_data_index;
 volatile unsigned char esp_channel;
 volatile unsigned char ESP_wait_exception;
 //volatile unsigned char esp_counter;
+volatile unsigned char ESP_tx_buf[ESP_TX_BUFFER_SIZE];
+volatile unsigned char ESP_tx_buf_ind;
 
 void (*ESP_external_message_handler)(unsigned char);
 

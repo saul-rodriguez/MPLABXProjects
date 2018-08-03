@@ -72,6 +72,13 @@ void __interrupt() INTERRUPT_InterruptManager (void)
         else if(PIE1bits.ADIE == 1 && PIR1bits.ADIF == 1)
         {
             ADC_value = ADC1_GetConversionResult();
+            ADC_count++;
+            
+            //Only for testing purposes
+           /* ADC_value++; 
+            if (ADC_value == 1024)
+                ADC_value = 0;*/
+            
             ADC_state = ADC_READY;
             ADC1_ISR();
         } 

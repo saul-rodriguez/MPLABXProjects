@@ -74,6 +74,7 @@ extern volatile unsigned char message_format;
 //ADC related
 extern volatile unsigned short ADC_value;
 extern volatile unsigned char ADC_state;
+extern volatile unsigned char ADC_count;
 
 //TIMER1 related
 extern volatile unsigned char TMR1_state;

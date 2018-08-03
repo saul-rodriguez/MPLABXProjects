@@ -52,10 +52,16 @@ typedef enum
     ESP_ERROR
 } esp_mess;
 
+#define ESP_BUFFER_SIZE 16
+#define ESP_TX_BUFFER_SIZE 64
+
 extern volatile unsigned char esp_channel;
 extern volatile unsigned char ESP_wait_exception;
 
-#define ESP_BUFFER_SIZE 16
+extern volatile unsigned char ESP_tx_buf[ESP_TX_BUFFER_SIZE];
+extern volatile unsigned char ESP_tx_buf_ind;
+
+
 
 // Comment a function and leverage automatic documentation with slash star star
 /**
