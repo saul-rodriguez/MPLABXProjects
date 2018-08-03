@@ -48,6 +48,7 @@
 
 #include "interrupt_manager.h"
 #include "mcc.h"
+#include "../logger.h"
 
 void  INTERRUPT_Initialize (void)
 {
@@ -58,9 +59,23 @@ void  INTERRUPT_Initialize (void)
 void __interrupt() INTERRUPT_InterruptManager (void)
 {
     // interrupt handler
-    if(INTCONbits.PEIE == 1)
+    if(INTCONbits.RABIE == 1 && INTCONbits.RABIF == 1)
     {
-        if(PIE1bits.TXIE == 1 && PIR1bits.TXIF == 1)
+        PIN_MANAGER_IOC();
+    }
+    else if(INTCONbits.PEIE == 1)
+    {
+        if(PIE1bits.TMR1IE == 1 && PIR1bits.TMR1IF == 1)
+        {
+            TMR1_ISR();
+        } 
+        else if(PIE1bits.ADIE == 1 && PIR1bits.ADIF == 1)
+        {
+            ADC_value = ADC1_GetConversionResult();
+            ADC_state = ADC_READY;
+            ADC1_ISR();
+        } 
+        else if(PIE1bits.TXIE == 1 && PIR1bits.TXIF == 1)
         {
             EUSART_TxDefaultInterruptHandler();
         } 

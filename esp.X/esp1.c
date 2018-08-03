@@ -3,6 +3,7 @@
 #include "mcc_generated_files/mcc.h"
 #include "mcc_generated_files/eusart.h"
 #include <string.h>
+#include "logger.h"
 
 volatile unsigned char esp_read_data[ESP_BUFFER_SIZE];
 volatile unsigned char esp_read_data_index;
@@ -15,13 +16,13 @@ unsigned char ESP_read(void)
     
     esp_read_data[esp_read_data_index] = EUSART_Read();  //read 1 character   
     
-    //Check if it is end of line
+    //Check if it is end of line '\n'
     if (esp_read_data[esp_read_data_index] == 0x0a) {
         //check if it is a breakline 
         if (esp_read_data_index <= 1) { //break line            
             ret =  ESP_EOL;
         } else { // it is a message, parse it
-            esp_read_data[(esp_read_data_index-1)] = 0x00;            
+            esp_read_data[(esp_read_data_index-1)] = 0x00; //limit the string           
             ret = ESP_process_message();
         }
         
@@ -121,13 +122,18 @@ void ESP_message_handler(void)
     ret = ESP_read(); 
     
     switch (ret) {
+        case ESP_OTHER:
+            break;
+            
         case ESP_RX: // Data received from the client/channel
             esp_channel = esp_read_data[5]; //Update the current channel
             index = strstr(esp_read_data,":");            
             aux = *(++index); 
+                        
+            //HERE call to an application message handler to consume the data
+            process_message(aux);
             break;
             
-            //process_message(aux);
         case ESP_CONNECT: // A new connection is available
             esp_channel = esp_read_data[0]; //save current channel (0-9)
             break;

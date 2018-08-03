@@ -43,6 +43,7 @@
 
 #include "mcc_generated_files/mcc.h"
 #include "esp1.h"
+#include "logger.h"
 
 /*
                          Main application
@@ -52,6 +53,9 @@ void main(void)
     unsigned char message[6];
     // Initialize the device
     SYSTEM_Initialize();
+    
+    //custom initialization
+    logger_initialize();
 
     // If using interrupts in PIC18 High/Low Priority Mode you need to enable the Global High and Low Interrupts
     // If using interrupts in PIC Mid-Range Compatibility Mode you need to enable the Global and Peripheral Interrupts
@@ -69,17 +73,17 @@ void main(void)
     // Disable the Peripheral Interrupts
     //INTERRUPT_PeripheralInterruptDisable();
    
-    LED_SetHigh();
-    __delay_ms(200);
-    LED_SetLow();
+    IO_RA5_SetHigh();
+        __delay_ms(200);
+    IO_RA5_SetLow();
     __delay_ms(200);
     
     message[0] = '0';
     message[1] = '1';
     message[2] = '2';
-    message[3] = '0';
-    message[4] = '1';
-    message[5] = '2';
+    message[3] = '4';
+    message[4] = '5';
+    message[5] = '6';
     
     ESP_config();
     
@@ -88,13 +92,23 @@ void main(void)
          //EUSART_Write(a++);
         // Add your application code
         if (EUSART_is_rx_ready()) {
-            ESP_message_handler();        
+            #ifdef BT
+                bt_message_handler();
+            #else
+                ESP_message_handler();        
+            #endif      
         }
         
+        if (ADC_state == ADC_READY) {
+            read_analog();        
+        }
+        
+        /*
         if(esp_channel) {
             ESP_write(message,2);
             ESP_wait_for(ESP_SEND_OK);
-        }
+        }*/
+        
         
         CLRWDT();
         

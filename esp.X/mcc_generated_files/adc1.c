@@ -76,6 +76,8 @@ void ADC1_Initialize(void)
     // ADRESH 0; 
     ADRESH = 0x00;
     
+    // Enabling ADC1 interrupt.
+    PIE1bits.ADIE = 1;
 }
 
 void ADC1_SelectChannel(adc_channel_t channel)
@@ -128,6 +130,12 @@ adc_result_t ADC1_GetConversion(adc_channel_t channel)
 void ADC1_TemperatureAcquisitionDelay(void)
 {
     __delay_us(200);
+}
+
+void ADC1_ISR(void)
+{
+    // Clear the ADC interrupt flag
+    PIR1bits.ADIF = 0;
 }
 /**
  End of File

@@ -53,6 +53,8 @@
 
 
 
+void (*IOCA4_InterruptHandler)(void);
+
 
 void PIN_MANAGER_Initialize(void)
 {
@@ -73,31 +75,76 @@ void PIN_MANAGER_Initialize(void)
     /**
     ANSELx registers
     */
-    ANSELHbits.ANS11 = 0; //This was not added by MCC
+    ANSELHbits.ANS11 = 0; //RX serial. This was not added by MCC
+    ANSELbits.ANS3 = 0; //RA4
+
 
     /**
     WPUx registers
     */
     WPUB = 0x00;
-    WPUA = 0x00;
-    INTCON2bits.nRBPU = 1;
+    WPUA = 0x10;
+    INTCON2bits.nRBPU = 0;
 
     /**
     ODx registers
     */
 
 
+    /**
+    IOCx registers 
+    */
+    //interrupt on change for group IOCA - flag
+    IOCAbits.IOCA4 = 1;
 
 
 
+    // register default IOC callback functions at runtime; use these methods to register a custom function
+    IOCA4_SetInterruptHandler(IOCA4_DefaultInterruptHandler);
    
+    // Enable RABI interrupt 
+    INTCONbits.RABIE = 1; 
     
 }
   
 void PIN_MANAGER_IOC(void)
 {   
+	// interrupt on change for pin IOCA4
+    if(IOCAbits.IOCA4 == 1)
+    {
+        IOCA4_ISR();  
+    }	
 	// Clear global Interrupt-On-Change flag
     INTCONbits.RABIF = 0;
+}
+
+/**
+   IOCA4 Interrupt Service Routine
+*/
+void IOCA4_ISR(void) {
+
+    // Add custom IOCA4 code
+
+    // Call the interrupt handler for the callback registered at runtime
+    if(IOCA4_InterruptHandler)
+    {
+        IOCA4_InterruptHandler();
+    }
+}
+
+/**
+  Allows selecting an interrupt handler for IOCA4 at application runtime
+*/
+void IOCA4_SetInterruptHandler(void (* InterruptHandler)(void)){
+    IOCA4_InterruptHandler = InterruptHandler;
+}
+
+/**
+  Default interrupt handler for IOCA4
+*/
+void IOCA4_DefaultInterruptHandler(void){
+    // add your IOCA4 interrupt custom code
+    // or set custom function using IOCA4_SetInterruptHandler()
 }
 
 /**
