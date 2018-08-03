@@ -28,7 +28,8 @@ void logger_initialize(void)
     IOCA4_SetInterruptHandler(_IOC_Ready); //Redirect IOC in A4 to custom function
     IOC_state = IOC_IDLE;
     IOC_value = 1; // R4 has pull-up resistor enabled;
-        
+    
+    ESP_Set_application_handler(process_message); // Redirect ESP RX messages to logger process_message(unsigned char);
 }
 
 void bt_message_handler(void)

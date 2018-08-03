@@ -53,7 +53,7 @@ void main(void)
     unsigned char message[6];
     // Initialize the device
     SYSTEM_Initialize();
-    
+    ESP_initialize();
     //custom initialization
     logger_initialize();
 
@@ -101,6 +101,11 @@ void main(void)
         
         if (ADC_state == ADC_READY) {
             read_analog();        
+        }
+        
+        if (ESP_wait_exception) {
+            ESP_wait_exception = 0;            
+            process_message('S');
         }
         
         /*

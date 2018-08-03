@@ -40,7 +40,7 @@
 // TODO Insert declarations
 typedef enum
 {
-    ESP_OTHER,
+    ESP_OTHER = 0,
     ESP_SEND_OK,
     ESP_OK,
     ESP_EOL,
@@ -53,8 +53,9 @@ typedef enum
 } esp_mess;
 
 extern volatile unsigned char esp_channel;
+extern volatile unsigned char ESP_wait_exception;
 
-#define ESP_BUFFER_SIZE 32
+#define ESP_BUFFER_SIZE 16
 
 // Comment a function and leverage automatic documentation with slash star star
 /**
@@ -90,6 +91,8 @@ unsigned char ESP_read(void);
 
 unsigned char ESP_process_message(void);
 
+void ESP_initialize(void);
+
 void ESP_config(void);
 
 void ESP_wait_for(unsigned char esp_mess);
@@ -97,7 +100,12 @@ void ESP_wait_for(unsigned char esp_mess);
 void ESP_message_handler(void);
 
 void ESP_write(unsigned char *pt, unsigned char lenght);
+
+void ESP_default_application_handler(unsigned char data);
     
+void ESP_Set_application_handler(void (* InterruptHandler)(unsigned char));
+
+void ESP_process_rx_data(void);
     
 #ifdef	__cplusplus
 }

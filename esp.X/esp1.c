@@ -8,7 +8,19 @@
 volatile unsigned char esp_read_data[ESP_BUFFER_SIZE];
 volatile unsigned char esp_read_data_index;
 volatile unsigned char esp_channel;
-volatile unsigned char esp_counter;
+volatile unsigned char ESP_wait_exception;
+//volatile unsigned char esp_counter;
+
+void (*ESP_external_message_handler)(unsigned char);
+
+void ESP_initialize(void)
+{
+    esp_channel = 0;    
+    ESP_wait_exception = ESP_OTHER; 
+  //  esp_counter = 0;
+
+    ESP_Set_application_handler(ESP_default_application_handler);
+}
 
 unsigned char ESP_read(void)
 {
@@ -67,8 +79,8 @@ unsigned char ESP_process_message(void) {
 
 void ESP_config(void)
 {
-    esp_channel = 0;    
-    esp_counter = 0;
+    
+    
     //Check that ESP is there
     __delay_ms(250);    
     while(EUSART_is_rx_ready())
@@ -103,6 +115,7 @@ void ESP_wait_for(unsigned char esp_mess)
     
     do {
         ret = ESP_read();
+        //There are a number of exceptions that must to be attended while waiting!
         if (ret != esp_mess) { //escape exceptions
             if (ret == ESP_SEND_FAIL) return;
             if (ret == ESP_CLOSED) {
@@ -110,8 +123,28 @@ void ESP_wait_for(unsigned char esp_mess)
                 return;
             }
             if (ret == ESP_ERROR) return;
+            if (ret == ESP_RX) {
+                //ESP_process_rx_data();
+                ESP_wait_exception = ESP_RX;
+                return;
+            }
         }
     } while (ret != esp_mess);
+}
+
+void ESP_process_rx_data(void)
+{
+    char *index;
+    unsigned char aux;
+           
+    esp_channel = esp_read_data[5]; //Update the current channel
+    index = strstr(esp_read_data,":");            
+    aux = *(++index); 
+                        
+            //HERE call to an application message handler to consume the data
+            //In this case this is function pointer that must be pointing to an external function
+            //Note that only the first byte is sent (external command)
+    ESP_external_message_handler(aux);
 }
 
 void ESP_message_handler(void)
@@ -126,12 +159,7 @@ void ESP_message_handler(void)
             break;
             
         case ESP_RX: // Data received from the client/channel
-            esp_channel = esp_read_data[5]; //Update the current channel
-            index = strstr(esp_read_data,":");            
-            aux = *(++index); 
-                        
-            //HERE call to an application message handler to consume the data
-            process_message(aux);
+            ESP_process_rx_data();
             break;
             
         case ESP_CONNECT: // A new connection is available
@@ -178,3 +206,14 @@ void ESP_write(unsigned char *pt, unsigned char length)
     _puts("\r\n");   
     
 }
+
+void ESP_default_application_handler(unsigned char data)
+{
+    
+}
+
+void ESP_Set_application_handler(void (* applicationHandler)(unsigned char))
+{
+    ESP_external_message_handler = applicationHandler;
+}
+

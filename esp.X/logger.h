@@ -39,6 +39,9 @@
 
 // TODO Insert declarations
 
+//#define BT
+#define WIFI
+
 typedef enum
 {
     MESSAGE_BINARY = 0,
