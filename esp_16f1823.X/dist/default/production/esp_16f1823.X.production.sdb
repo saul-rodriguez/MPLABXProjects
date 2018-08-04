@@ -1,0 +1,915 @@
+[p LITE_MODE AUTOSTATIC IEEE_DBL IEEE_FLT PIC14 PIC14E ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16F1823 ]
+[d frameptr 6 ]
+"85 /home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/adc.c
+[e E2157 . `uc
+channel_AN2 2
+channel_Temp 29
+channel_DAC 30
+channel_FVR 31
+]
+"78 /home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/interrupt_manager.c
+[e E2235 . `uc
+ADC_IDLE 0
+ADC_READY 1
+]
+"92 /home/saul/MPLABXProjects/esp_16f1823.X/main.c
+[e E2268 . `uc
+ADC_IDLE 0
+ADC_READY 1
+]
+"21 /home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
+[e E2130 . `uc
+ESP_OTHER 0
+ESP_SEND_OK 1
+ESP_OK 2
+ESP_EOL 3
+ESP_RX 4
+ESP_PROMPT 5
+ESP_CONNECT 6
+ESP_SEND_FAIL 7
+ESP_CLOSED 8
+ESP_ERROR 9
+]
+"19 /home/saul/MPLABXProjects/esp_16f1823.X/logger.c
+[e E2130 . `uc
+MESSAGE_BINARY 0
+MESSAGE_TEXT 1
+]
+"21
+[e E2213 . `uc
+channel_AN2 2
+channel_Temp 29
+channel_DAC 30
+channel_FVR 31
+]
+"22
+[e E2138 . `uc
+ADC_IDLE 0
+ADC_READY 1
+]
+"27
+[e E2134 . `uc
+TMR1_STOP 0
+TMR1_RUNNING 1
+]
+"32
+[e E2142 . `uc
+IOC_IDLE 0
+IOC_READY 1
+]
+"126
+[e E2255 . `uc
+ESP_OTHER 0
+ESP_SEND_OK 1
+ESP_OK 2
+ESP_EOL 3
+ESP_RX 4
+ESP_PROMPT 5
+ESP_CONNECT 6
+ESP_SEND_FAIL 7
+ESP_CLOSED 8
+ESP_ERROR 9
+]
+"5 /pkg/microchip/xc8/v2.00/pic/sources/c99/common/awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+"5 /pkg/microchip/xc8/v2.00/pic/sources/c99/common/awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
+"5 /pkg/microchip/xc8/v2.00/pic/sources/c99/common/lwdiv.c
+[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
+"5 /pkg/microchip/xc8/v2.00/pic/sources/c99/common/lwmod.c
+[v ___lwmod __lwmod `(ui  1 e 2 0 ]
+"10 /pkg/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"7 /pkg/microchip/xc8/v2.00/pic/sources/c99/common/strchr.c
+[v _strchr strchr `(*.4uc  1 e 1 0 ]
+"12 /pkg/microchip/xc8/v2.00/pic/sources/c99/common/strlen.c
+[v _strlen strlen `(ui  1 e 2 0 ]
+"3 /pkg/microchip/xc8/v2.00/pic/sources/c99/common/strncmp.c
+[v _strncmp strncmp `(i  1 e 2 0 ]
+"143 /pkg/microchip/xc8/v2.00/pic/sources/c99/common/strstr.c
+[v _strstr strstr `(*.4uc  1 e 1 0 ]
+"4 /pkg/microchip/xc8/v2.00/pic/sources/c99/common/Umul8_16.c
+[v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
+"6 /pkg/microchip/xc8/v2.00/pic/sources/c99/pic/__eeprom.c
+[v ___eecpymem __eecpymem `(v  1 e 1 0 ]
+"39
+[v ___memcpyee __memcpyee `(v  1 e 1 0 ]
+"5 /home/saul/MPLABXProjects/esp_16f1823.X/comm.c
+[v __puts _puts `(v  1 e 1 0 ]
+"15
+[v _write write `(v  1 e 1 0 ]
+"18 /home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
+[v _ESP_initialize ESP_initialize `(v  1 e 1 0 ]
+"27
+[v _ESP_read ESP_read `(uc  1 e 1 0 ]
+"55
+[v _ESP_process_message ESP_process_message `(uc  1 e 1 0 ]
+"82
+[v _ESP_config ESP_config `(v  1 e 1 0 ]
+"113
+[v _ESP_wait_for ESP_wait_for `(v  1 e 1 0 ]
+"137
+[v _ESP_process_rx_data ESP_process_rx_data `(v  1 e 1 0 ]
+"152
+[v _ESP_message_handler ESP_message_handler `(v  1 e 1 0 ]
+"180
+[v _ESP_write ESP_write `(v  1 e 1 0 ]
+"212
+[v _ESP_default_application_handler ESP_default_application_handler `(v  1 e 1 0 ]
+"217
+[v _ESP_Set_application_handler ESP_Set_application_handler `(v  1 e 1 0 ]
+"17 /home/saul/MPLABXProjects/esp_16f1823.X/logger.c
+[v _logger_initialize logger_initialize `(v  1 e 1 0 ]
+"45
+[v _process_message process_message `(v  1 e 1 0 ]
+"96
+[v _read_analog read_analog `(v  1 e 1 0 ]
+"152
+[v _toggle_format toggle_format `(v  1 e 1 0 ]
+"171
+[v __TMR1_Ready _TMR1_Ready `(v  1 e 1 0 ]
+"189
+[v __IOC_Ready _IOC_Ready `(v  1 e 1 0 ]
+"52 /home/saul/MPLABXProjects/esp_16f1823.X/main.c
+[v _main main `(v  1 e 1 0 ]
+"65 /home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/adc.c
+[v _ADC_Initialize ADC_Initialize `(v  1 e 1 0 ]
+"85
+[v _ADC_SelectChannel ADC_SelectChannel `(v  1 e 1 0 ]
+"93
+[v _ADC_StartConversion ADC_StartConversion `(v  1 e 1 0 ]
+"106
+[v _ADC_GetConversionResult ADC_GetConversionResult `(us  1 e 2 0 ]
+"112
+[v _ADC_GetConversion ADC_GetConversion `(us  1 e 2 0 ]
+"140
+[v _ADC_ISR ADC_ISR `(v  1 e 1 0 ]
+"75 /home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
+[v _EUSART_Initialize EUSART_Initialize `(v  1 e 1 0 ]
+"113
+[v _EUSART_is_tx_ready EUSART_is_tx_ready `(uc  1 e 1 0 ]
+"118
+[v _EUSART_is_rx_ready EUSART_is_rx_ready `(uc  1 e 1 0 ]
+"128
+[v _EUSART_Read EUSART_Read `(uc  1 e 1 0 ]
+"148
+[v _EUSART_Write EUSART_Write `(v  1 e 1 0 ]
+"172
+[v _EUSART_Transmit_ISR EUSART_Transmit_ISR `(v  1 e 1 0 ]
+"191
+[v _EUSART_Receive_ISR EUSART_Receive_ISR `(v  1 e 1 0 ]
+"211
+[v _EUSART_SetTxInterruptHandler EUSART_SetTxInterruptHandler `(v  1 e 1 0 ]
+"215
+[v _EUSART_SetRxInterruptHandler EUSART_SetRxInterruptHandler `(v  1 e 1 0 ]
+"55 /home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/interrupt_manager.c
+[v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `II(v  1 e 1 0 ]
+"50 /home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/mcc.c
+[v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
+"61
+[v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
+"75
+[v _WDT_Initialize WDT_Initialize `(v  1 e 1 0 ]
+"59 /home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/pin_manager.c
+[v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
+"115
+[v _PIN_MANAGER_IOC PIN_MANAGER_IOC `(v  1 e 1 0 ]
+"127
+[v _IOCAF4_ISR IOCAF4_ISR `(v  1 e 1 0 ]
+"142
+[v _IOCAF4_SetInterruptHandler IOCAF4_SetInterruptHandler `(v  1 e 1 0 ]
+"149
+[v _IOCAF4_DefaultInterruptHandler IOCAF4_DefaultInterruptHandler `(v  1 e 1 0 ]
+"64 /home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/tmr1.c
+[v _TMR1_Initialize TMR1_Initialize `(v  1 e 1 0 ]
+"93
+[v _TMR1_StartTimer TMR1_StartTimer `(v  1 e 1 0 ]
+"99
+[v _TMR1_StopTimer TMR1_StopTimer `(v  1 e 1 0 ]
+"120
+[v _TMR1_WriteTimer TMR1_WriteTimer `(v  1 e 1 0 ]
+"157
+[v _TMR1_ISR TMR1_ISR `(v  1 e 1 0 ]
+"171
+[v _TMR1_SetInterruptHandler TMR1_SetInterruptHandler `(v  1 e 1 0 ]
+"175
+[v _TMR1_DefaultInterruptHandler TMR1_DefaultInterruptHandler `(v  1 e 1 0 ]
+"85 /home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.h
+[v _EUSART_TxDefaultInterruptHandler EUSART_TxDefaultInterruptHandler `*.37(v  1 e 2 0 ]
+"86
+[v _EUSART_RxDefaultInterruptHandler EUSART_RxDefaultInterruptHandler `*.37(v  1 e 2 0 ]
+[s S163 . 1 `uc 1 IOCIF 1 0 :1:0 
+`uc 1 INTF 1 0 :1:1 
+`uc 1 TMR0IF 1 0 :1:2 
+`uc 1 IOCIE 1 0 :1:3 
+`uc 1 INTE 1 0 :1:4 
+`uc 1 TMR0IE 1 0 :1:5 
+`uc 1 PEIE 1 0 :1:6 
+`uc 1 GIE 1 0 :1:7 
+]
+"374 /pkg/microchip/xc8/v2.00/pic/include/pic16f1823.h
+[s S172 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 T0IF 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 T0IE 1 0 :1:5 
+]
+[u S177 . 1 `S163 1 . 1 0 `S172 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES177  1 e 1 @11 ]
+[s S1000 . 1 `uc 1 RA0 1 0 :1:0 
+`uc 1 RA1 1 0 :1:1 
+`uc 1 RA2 1 0 :1:2 
+`uc 1 RA3 1 0 :1:3 
+`uc 1 RA4 1 0 :1:4 
+`uc 1 RA5 1 0 :1:5 
+]
+"494
+[s S1007 . 1 `uc 1 AN0 1 0 :1:0 
+`uc 1 AN1 1 0 :1:1 
+`uc 1 AN2 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 AN3 1 0 :1:4 
+]
+[s S1013 . 1 `uc 1 CPS0 1 0 :1:0 
+`uc 1 CPS1 1 0 :1:1 
+`uc 1 CPS2 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 CPS3 1 0 :1:4 
+]
+[s S1019 . 1 `uc 1 C1INP 1 0 :1:0 
+`uc 1 C12IN0N 1 0 :1:1 
+`uc 1 C1OUT 1 0 :1:2 
+`uc 1 nSS 1 0 :1:3 
+`uc 1 SDO 1 0 :1:4 
+]
+[s S1025 . 1 `uc 1 TX 1 0 :1:0 
+`uc 1 RX 1 0 :1:1 
+`uc 1 T0CKI 1 0 :1:2 
+`uc 1 nMCLR 1 0 :1:3 
+`uc 1 CLKR 1 0 :1:4 
+`uc 1 T1OSI 1 0 :1:5 
+]
+[s S1032 . 1 `uc 1 CK 1 0 :1:0 
+`uc 1 DT 1 0 :1:1 
+`uc 1 FLT0 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 T1OSO 1 0 :1:4 
+`uc 1 T1CKI 1 0 :1:5 
+]
+[s S1039 . 1 `uc 1 DACOUT 1 0 :1:0 
+`uc 1 SRI 1 0 :1:1 
+`uc 1 SRQ 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 OSC2 1 0 :1:4 
+`uc 1 OSC1 1 0 :1:5 
+]
+[s S1046 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 CLKOUT 1 0 :1:4 
+`uc 1 CLKIN 1 0 :1:5 
+]
+[u S1050 . 1 `S1000 1 . 1 0 `S1007 1 . 1 0 `S1013 1 . 1 0 `S1019 1 . 1 0 `S1025 1 . 1 0 `S1032 1 . 1 0 `S1039 1 . 1 0 `S1046 1 . 1 0 ]
+[v _PORTAbits PORTAbits `VES1050  1 e 1 @12 ]
+[s S102 . 1 `uc 1 TMR1IF 1 0 :1:0 
+`uc 1 TMR2IF 1 0 :1:1 
+`uc 1 CCP1IF 1 0 :1:2 
+`uc 1 SSP1IF 1 0 :1:3 
+`uc 1 TXIF 1 0 :1:4 
+`uc 1 RCIF 1 0 :1:5 
+`uc 1 ADIF 1 0 :1:6 
+`uc 1 TMR1GIF 1 0 :1:7 
+]
+"968
+[u S111 . 1 `S102 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES111  1 e 1 @17 ]
+"1085
+[v _TMR1L TMR1L `VEuc  1 e 1 @22 ]
+"1105
+[v _TMR1H TMR1H `VEuc  1 e 1 @23 ]
+"1125
+[v _T1CON T1CON `VEuc  1 e 1 @24 ]
+[s S451 . 1 `uc 1 TMR1ON 1 0 :1:0 
+`uc 1 . 1 0 :1:1 
+`uc 1 nT1SYNC 1 0 :1:2 
+`uc 1 T1OSCEN 1 0 :1:3 
+`uc 1 T1CKPS0 1 0 :1:4 
+`uc 1 T1CKPS1 1 0 :1:5 
+`uc 1 TMR1CS0 1 0 :1:6 
+`uc 1 TMR1CS1 1 0 :1:7 
+]
+"1147
+[s S460 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 T1CKPS 1 0 :2:4 
+`uc 1 TMR1CS 1 0 :2:6 
+]
+[u S464 . 1 `S451 1 . 1 0 `S460 1 . 1 0 ]
+[v _T1CONbits T1CONbits `VES464  1 e 1 @24 ]
+"1197
+[v _T1GCON T1GCON `VEuc  1 e 1 @25 ]
+[s S481 . 1 `uc 1 T1GSS0 1 0 :1:0 
+`uc 1 T1GSS1 1 0 :1:1 
+`uc 1 T1GVAL 1 0 :1:2 
+`uc 1 T1GGO_nDONE 1 0 :1:3 
+`uc 1 T1GSPM 1 0 :1:4 
+`uc 1 T1GTM 1 0 :1:5 
+`uc 1 T1GPOL 1 0 :1:6 
+`uc 1 TMR1GE 1 0 :1:7 
+]
+"1219
+[s S490 . 1 `uc 1 T1GSS 1 0 :2:0 
+`uc 1 . 1 0 :1:2 
+`uc 1 T1GGO 1 0 :1:3 
+]
+[u S494 . 1 `S481 1 . 1 0 `S490 1 . 1 0 ]
+[v _T1GCONbits T1GCONbits `VES494  1 e 1 @25 ]
+"1491
+[v _TRISA TRISA `VEuc  1 e 1 @140 ]
+"1541
+[v _TRISC TRISC `VEuc  1 e 1 @142 ]
+[s S28 . 1 `uc 1 TMR1IE 1 0 :1:0 
+`uc 1 TMR2IE 1 0 :1:1 
+`uc 1 CCP1IE 1 0 :1:2 
+`uc 1 SSP1IE 1 0 :1:3 
+`uc 1 TXIE 1 0 :1:4 
+`uc 1 RCIE 1 0 :1:5 
+`uc 1 ADIE 1 0 :1:6 
+`uc 1 TMR1GIE 1 0 :1:7 
+]
+"1608
+[u S37 . 1 `S28 1 . 1 0 ]
+[v _PIE1bits PIE1bits `VES37  1 e 1 @145 ]
+[s S566 . 1 `uc 1 PS0 1 0 :1:0 
+`uc 1 PS1 1 0 :1:1 
+`uc 1 PS2 1 0 :1:2 
+`uc 1 PSA 1 0 :1:3 
+`uc 1 TMR0SE 1 0 :1:4 
+`uc 1 TMR0CS 1 0 :1:5 
+`uc 1 INTEDG 1 0 :1:6 
+`uc 1 nWPUEN 1 0 :1:7 
+]
+"1721
+[s S575 . 1 `uc 1 PS 1 0 :3:0 
+`uc 1 . 1 0 :1:3 
+`uc 1 T0SE 1 0 :1:4 
+`uc 1 T0CS 1 0 :1:5 
+]
+[u S580 . 1 `S566 1 . 1 0 `S575 1 . 1 0 ]
+[v _OPTION_REGbits OPTION_REGbits `VES580  1 e 1 @149 ]
+"1832
+[v _WDTCON WDTCON `VEuc  1 e 1 @151 ]
+"1891
+[v _OSCTUNE OSCTUNE `VEuc  1 e 1 @152 ]
+"1949
+[v _OSCCON OSCCON `VEuc  1 e 1 @153 ]
+"2090
+[v _ADRESL ADRESL `VEuc  1 e 1 @155 ]
+"2110
+[v _ADRESH ADRESH `VEuc  1 e 1 @156 ]
+"2130
+[v _ADCON0 ADCON0 `VEuc  1 e 1 @157 ]
+[s S54 . 1 `uc 1 ADON 1 0 :1:0 
+`uc 1 GO_nDONE 1 0 :1:1 
+`uc 1 CHS0 1 0 :1:2 
+`uc 1 CHS1 1 0 :1:3 
+`uc 1 CHS2 1 0 :1:4 
+`uc 1 CHS3 1 0 :1:5 
+`uc 1 CHS4 1 0 :1:6 
+]
+"2159
+[s S62 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 ADGO 1 0 :1:1 
+`uc 1 CHS 1 0 :5:2 
+]
+[s S66 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 GO 1 0 :1:1 
+]
+[s S69 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 nDONE 1 0 :1:1 
+]
+[u S72 . 1 `S54 1 . 1 0 `S62 1 . 1 0 `S66 1 . 1 0 `S69 1 . 1 0 ]
+[v _ADCON0bits ADCON0bits `VES72  1 e 1 @157 ]
+"2219
+[v _ADCON1 ADCON1 `VEuc  1 e 1 @158 ]
+"2285
+[v _LATA LATA `VEuc  1 e 1 @268 ]
+[s S970 . 1 `uc 1 LATA0 1 0 :1:0 
+`uc 1 LATA1 1 0 :1:1 
+`uc 1 LATA2 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 LATA4 1 0 :1:4 
+`uc 1 LATA5 1 0 :1:5 
+]
+"2300
+[u S977 . 1 `S970 1 . 1 0 ]
+[v _LATAbits LATAbits `VES977  1 e 1 @268 ]
+"2330
+[v _LATC LATC `VEuc  1 e 1 @270 ]
+"2652
+[v _BORCON BORCON `VEuc  1 e 1 @278 ]
+"2995
+[v _APFCON APFCON `VEuc  1 e 1 @285 ]
+"3115
+[v _ANSELA ANSELA `VEuc  1 e 1 @396 ]
+"3162
+[v _ANSELC ANSELC `VEuc  1 e 1 @398 ]
+"3402
+[v _RCREG RCREG `VEuc  1 e 1 @409 ]
+"3422
+[v _TXREG TXREG `VEuc  1 e 1 @410 ]
+"3458
+[v _SPBRGL SPBRGL `VEuc  1 e 1 @411 ]
+"3508
+[v _SPBRGH SPBRGH `VEuc  1 e 1 @412 ]
+"3541
+[v _RCSTA RCSTA `VEuc  1 e 1 @413 ]
+[s S314 . 1 `uc 1 RX9D 1 0 :1:0 
+`uc 1 OERR 1 0 :1:1 
+`uc 1 FERR 1 0 :1:2 
+`uc 1 ADDEN 1 0 :1:3 
+`uc 1 CREN 1 0 :1:4 
+`uc 1 SREN 1 0 :1:5 
+`uc 1 RX9 1 0 :1:6 
+`uc 1 SPEN 1 0 :1:7 
+]
+"3558
+[u S323 . 1 `S314 1 . 1 0 ]
+[v _RCSTAbits RCSTAbits `VES323  1 e 1 @413 ]
+"3603
+[v _TXSTA TXSTA `VEuc  1 e 1 @414 ]
+[s S292 . 1 `uc 1 TX9D 1 0 :1:0 
+`uc 1 TRMT 1 0 :1:1 
+`uc 1 BRGH 1 0 :1:2 
+`uc 1 SENDB 1 0 :1:3 
+`uc 1 SYNC 1 0 :1:4 
+`uc 1 TXEN 1 0 :1:5 
+`uc 1 TX9 1 0 :1:6 
+`uc 1 CSRC 1 0 :1:7 
+]
+"3620
+[u S301 . 1 `S292 1 . 1 0 ]
+[v _TXSTAbits TXSTAbits `VES301  1 e 1 @414 ]
+"3665
+[v _BAUDCON BAUDCON `VEuc  1 e 1 @415 ]
+"3717
+[v _WPUA WPUA `VEuc  1 e 1 @524 ]
+"3775
+[v _WPUC WPUC `VEuc  1 e 1 @526 ]
+[s S643 . 1 `uc 1 IOCAP0 1 0 :1:0 
+`uc 1 IOCAP1 1 0 :1:1 
+`uc 1 IOCAP2 1 0 :1:2 
+`uc 1 IOCAP3 1 0 :1:3 
+`uc 1 IOCAP4 1 0 :1:4 
+`uc 1 IOCAP5 1 0 :1:5 
+]
+"4940
+[s S650 . 1 `uc 1 IOCAP 1 0 :6:0 
+]
+[u S652 . 1 `S643 1 . 1 0 `S650 1 . 1 0 ]
+[v _IOCAPbits IOCAPbits `VES652  1 e 1 @913 ]
+[s S621 . 1 `uc 1 IOCAN0 1 0 :1:0 
+`uc 1 IOCAN1 1 0 :1:1 
+`uc 1 IOCAN2 1 0 :1:2 
+`uc 1 IOCAN3 1 0 :1:3 
+`uc 1 IOCAN4 1 0 :1:4 
+`uc 1 IOCAN5 1 0 :1:5 
+]
+"4998
+[s S628 . 1 `uc 1 IOCAN 1 0 :6:0 
+]
+[u S630 . 1 `S621 1 . 1 0 `S628 1 . 1 0 ]
+[v _IOCANbits IOCANbits `VES630  1 e 1 @914 ]
+[s S599 . 1 `uc 1 IOCAF0 1 0 :1:0 
+`uc 1 IOCAF1 1 0 :1:1 
+`uc 1 IOCAF2 1 0 :1:2 
+`uc 1 IOCAF3 1 0 :1:3 
+`uc 1 IOCAF4 1 0 :1:4 
+`uc 1 IOCAF5 1 0 :1:5 
+]
+"5056
+[s S606 . 1 `uc 1 IOCAF 1 0 :6:0 
+]
+[u S608 . 1 `S599 1 . 1 0 `S606 1 . 1 0 ]
+[v _IOCAFbits IOCAFbits `VES608  1 e 1 @915 ]
+"6424
+[v _PLLR PLLR `VEb  1 e 0 @1238 ]
+"8 /home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
+[v _esp_read_data esp_read_data `VE[16]uc  1 e 16 0 ]
+"9
+[v _esp_read_data_index esp_read_data_index `VEuc  1 e 1 0 ]
+"10
+[v _esp_channel esp_channel `VEuc  1 e 1 0 ]
+"11
+[v _ESP_wait_exception ESP_wait_exception `VEuc  1 e 1 0 ]
+"16
+[v _ESP_external_message_handler ESP_external_message_handler `*.37(v  1 e 2 0 ]
+"6 /home/saul/MPLABXProjects/esp_16f1823.X/logger.c
+[v _message_format message_format `VEuc  1 e 1 0 ]
+"8
+[v _ADC_value ADC_value `VEus  1 e 2 0 ]
+"9
+[v _ADC_state ADC_state `VEuc  1 e 1 0 ]
+"12
+[v _TMR1_state TMR1_state `VEuc  1 e 1 0 ]
+"14
+[v _IOC_state IOC_state `VEuc  1 e 1 0 ]
+"15
+[v _IOC_value IOC_value `VEuc  1 e 1 0 ]
+"62 /home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
+[v _eusartTxHead eusartTxHead `VEuc  1 e 1 0 ]
+"63
+[v _eusartTxTail eusartTxTail `VEuc  1 e 1 0 ]
+"64
+[v _eusartTxBuffer eusartTxBuffer `VE[8]uc  1 e 8 0 ]
+"65
+[v _eusartTxBufferRemaining eusartTxBufferRemaining `VEuc  1 e 1 0 ]
+"67
+[v _eusartRxHead eusartRxHead `VEuc  1 e 1 0 ]
+"68
+[v _eusartRxTail eusartRxTail `VEuc  1 e 1 0 ]
+"69
+[v _eusartRxBuffer eusartRxBuffer `VE[8]uc  1 e 8 0 ]
+"70
+[v _eusartRxCount eusartRxCount `VEuc  1 e 1 0 ]
+"56 /home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/pin_manager.c
+[v _IOCAF4_InterruptHandler IOCAF4_InterruptHandler `*.37(v  1 e 2 0 ]
+"57 /home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/tmr1.c
+[v _timer1ReloadVal timer1ReloadVal `VEus  1 e 2 0 ]
+"58
+[v _TMR1_InterruptHandler TMR1_InterruptHandler `*.37(v  1 e 2 0 ]
+"52 /home/saul/MPLABXProjects/esp_16f1823.X/main.c
+[v _main main `(v  1 e 1 0 ]
+{
+"103
+} 0
+"17 /home/saul/MPLABXProjects/esp_16f1823.X/logger.c
+[v _logger_initialize logger_initialize `(v  1 e 1 0 ]
+{
+"36
+} 0
+"85 /home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/adc.c
+[v _ADC_SelectChannel ADC_SelectChannel `(v  1 e 1 0 ]
+{
+[v ADC_SelectChannel@channel channel `E2157  1 a 1 wreg ]
+[v ADC_SelectChannel@channel channel `E2157  1 a 1 wreg ]
+"88
+[v ADC_SelectChannel@channel channel `E2157  1 a 1 4 ]
+"91
+} 0
+"50 /home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/mcc.c
+[v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
+{
+"59
+} 0
+"75
+[v _WDT_Initialize WDT_Initialize `(v  1 e 1 0 ]
+{
+"79
+} 0
+"64 /home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/tmr1.c
+[v _TMR1_Initialize TMR1_Initialize `(v  1 e 1 0 ]
+{
+"91
+} 0
+"171
+[v _TMR1_SetInterruptHandler TMR1_SetInterruptHandler `(v  1 e 1 0 ]
+{
+[v TMR1_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 3 ]
+"173
+} 0
+"59 /home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/pin_manager.c
+[v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
+{
+"113
+} 0
+"142
+[v _IOCAF4_SetInterruptHandler IOCAF4_SetInterruptHandler `(v  1 e 1 0 ]
+{
+[v IOCAF4_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 3 ]
+"144
+} 0
+"61 /home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/mcc.c
+[v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
+{
+"73
+} 0
+"75 /home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
+[v _EUSART_Initialize EUSART_Initialize `(v  1 e 1 0 ]
+{
+"111
+} 0
+"211
+[v _EUSART_SetTxInterruptHandler EUSART_SetTxInterruptHandler `(v  1 e 1 0 ]
+{
+[v EUSART_SetTxInterruptHandler@interruptHandler interruptHandler `*.37(v  1 p 2 3 ]
+"213
+} 0
+"215
+[v _EUSART_SetRxInterruptHandler EUSART_SetRxInterruptHandler `(v  1 e 1 0 ]
+{
+[v EUSART_SetRxInterruptHandler@interruptHandler interruptHandler `*.37(v  1 p 2 3 ]
+"217
+} 0
+"65 /home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/adc.c
+[v _ADC_Initialize ADC_Initialize `(v  1 e 1 0 ]
+{
+"83
+} 0
+"152 /home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
+[v _ESP_message_handler ESP_message_handler `(v  1 e 1 0 ]
+{
+"154
+[v ESP_message_handler@ret ret `uc  1 a 1 45 ]
+"178
+} 0
+"137
+[v _ESP_process_rx_data ESP_process_rx_data `(v  1 e 1 0 ]
+{
+"140
+[v ESP_process_rx_data@aux aux `uc  1 a 1 42 ]
+"139
+[v ESP_process_rx_data@index index `*.4uc  1 a 1 41 ]
+"150
+} 0
+"212
+[v _ESP_default_application_handler ESP_default_application_handler `(v  1 e 1 0 ]
+{
+[v ESP_default_application_handler@data data `uc  1 p 1 36 ]
+"215
+} 0
+"45 /home/saul/MPLABXProjects/esp_16f1823.X/logger.c
+[v _process_message process_message `(v  1 e 1 0 ]
+{
+[v process_message@message message `uc  1 p 1 36 ]
+"94
+} 0
+"152
+[v _toggle_format toggle_format `(v  1 e 1 0 ]
+{
+"169
+} 0
+"96
+[v _read_analog read_analog `(v  1 e 1 0 ]
+{
+"101
+[v read_analog@mess mess `[6]uc  1 a 6 28 ]
+"98
+[v read_analog@adc_val adc_val `us  1 a 2 34 ]
+"150
+} 0
+"180 /home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
+[v _ESP_write ESP_write `(v  1 e 1 0 ]
+{
+"182
+[v ESP_write@aux aux `uc  1 a 1 26 ]
+[v ESP_write@res res `uc  1 a 1 25 ]
+"180
+[v ESP_write@pt pt `*.26uc  1 p 2 19 ]
+[v ESP_write@length length `uc  1 p 1 21 ]
+"210
+} 0
+"15 /home/saul/MPLABXProjects/esp_16f1823.X/comm.c
+[v _write write `(v  1 e 1 0 ]
+{
+"17
+[v write@i i `uc  1 a 1 8 ]
+"15
+[v write@pt pt `*.26uc  1 p 2 5 ]
+[v write@lenght lenght `uc  1 p 1 7 ]
+"23
+} 0
+"5 /pkg/microchip/xc8/v2.00/pic/sources/c99/common/awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
+{
+"10
+[v ___awmod@sign sign `uc  1 a 1 1 ]
+[v ___awmod@counter counter `uc  1 a 1 0 ]
+"5
+[v ___awmod@divisor divisor `i  1 p 2 3 ]
+[v ___awmod@dividend dividend `i  1 p 2 5 ]
+"34
+} 0
+"5 /pkg/microchip/xc8/v2.00/pic/sources/c99/common/awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+{
+"10
+[v ___awdiv@quotient quotient `i  1 a 2 2 ]
+"11
+[v ___awdiv@sign sign `uc  1 a 1 1 ]
+[v ___awdiv@counter counter `uc  1 a 1 0 ]
+"5
+[v ___awdiv@divisor divisor `i  1 p 2 3 ]
+[v ___awdiv@dividend dividend `i  1 p 2 5 ]
+"41
+} 0
+"99 /home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/tmr1.c
+[v _TMR1_StopTimer TMR1_StopTimer `(v  1 e 1 0 ]
+{
+"103
+} 0
+"93
+[v _TMR1_StartTimer TMR1_StartTimer `(v  1 e 1 0 ]
+{
+"97
+} 0
+"112 /home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/adc.c
+[v _ADC_GetConversion ADC_GetConversion `(us  1 e 2 0 ]
+{
+[v ADC_GetConversion@channel channel `E2157  1 a 1 wreg ]
+[v ADC_GetConversion@channel channel `E2157  1 a 1 wreg ]
+"115
+[v ADC_GetConversion@channel channel `E2157  1 a 1 6 ]
+"133
+} 0
+"18 /home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
+[v _ESP_initialize ESP_initialize `(v  1 e 1 0 ]
+{
+"25
+} 0
+"217
+[v _ESP_Set_application_handler ESP_Set_application_handler `(v  1 e 1 0 ]
+{
+[v ESP_Set_application_handler@applicationHandler applicationHandler `*.37(v  1 p 2 3 ]
+"220
+} 0
+"82
+[v _ESP_config ESP_config `(v  1 e 1 0 ]
+{
+"111
+} 0
+"5 /home/saul/MPLABXProjects/esp_16f1823.X/comm.c
+[v __puts _puts `(v  1 e 1 0 ]
+{
+"7
+[v __puts@index index `uc  1 a 1 7 ]
+"5
+[v __puts@pt pt `*.25uc  1 p 2 5 ]
+"13
+} 0
+"113 /home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
+[v _EUSART_is_tx_ready EUSART_is_tx_ready `(uc  1 e 1 0 ]
+{
+"116
+} 0
+"148
+[v _EUSART_Write EUSART_Write `(v  1 e 1 0 ]
+{
+[v EUSART_Write@txData txData `uc  1 a 1 wreg ]
+[v EUSART_Write@txData txData `uc  1 a 1 wreg ]
+[v EUSART_Write@txData txData `uc  1 a 1 4 ]
+"169
+} 0
+"118
+[v _EUSART_is_rx_ready EUSART_is_rx_ready `(uc  1 e 1 0 ]
+{
+"121
+} 0
+"113 /home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
+[v _ESP_wait_for ESP_wait_for `(v  1 e 1 0 ]
+{
+[v ESP_wait_for@esp_mess esp_mess `uc  1 a 1 wreg ]
+"115
+[v ESP_wait_for@ret ret `uc  1 a 1 18 ]
+"113
+[v ESP_wait_for@esp_mess esp_mess `uc  1 a 1 wreg ]
+[v ESP_wait_for@esp_mess esp_mess `uc  1 a 1 17 ]
+"135
+} 0
+"27
+[v _ESP_read ESP_read `(uc  1 e 1 0 ]
+{
+"29
+[v ESP_read@ret ret `uc  1 a 1 15 ]
+"53
+} 0
+"128 /home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
+[v _EUSART_Read EUSART_Read `(uc  1 e 1 0 ]
+{
+"130
+[v EUSART_Read@readValue readValue `uc  1 a 1 4 ]
+"146
+} 0
+"55 /home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
+[v _ESP_process_message ESP_process_message `(uc  1 e 1 0 ]
+{
+"56
+[v ESP_process_message@aux aux `*.4uc  1 a 1 13 ]
+"80
+} 0
+"143 /pkg/microchip/xc8/v2.00/pic/sources/c99/common/strstr.c
+[v _strstr strstr `(*.4uc  1 e 1 0 ]
+{
+[v strstr@h h `*.4DCuc  1 a 1 wreg ]
+"147
+[v strstr@nl nl `ui  1 a 2 9 ]
+"143
+[v strstr@h h `*.4DCuc  1 a 1 wreg ]
+[v strstr@n n `*.25DCuc  1 p 2 4 ]
+"146
+[v strstr@h h `*.4DCuc  1 a 1 11 ]
+"171
+} 0
+"3 /pkg/microchip/xc8/v2.00/pic/sources/c99/common/strncmp.c
+[v _strncmp strncmp `(i  1 e 2 0 ]
+{
+[v strncmp@_l _l `*.4DCuc  1 a 1 wreg ]
+"5
+[v strncmp@r r `*.25DCuc  1 a 2 1 ]
+[v strncmp@l l `*.4DCuc  1 a 1 3 ]
+"3
+[v strncmp@_l _l `*.4DCuc  1 a 1 wreg ]
+[v strncmp@_r _r `*.25DCuc  1 p 2 3 ]
+[v strncmp@n n `ui  1 p 2 5 ]
+"5
+[v strncmp@_l _l `*.4DCuc  1 a 1 0 ]
+"9
+} 0
+"12 /pkg/microchip/xc8/v2.00/pic/sources/c99/common/strlen.c
+[v _strlen strlen `(ui  1 e 2 0 ]
+{
+"14
+[v strlen@a a `*.25DCuc  1 a 2 7 ]
+"12
+[v strlen@s s `*.25DCuc  1 p 2 3 ]
+"26
+} 0
+"7 /pkg/microchip/xc8/v2.00/pic/sources/c99/common/strchr.c
+[v _strchr strchr `(*.4uc  1 e 1 0 ]
+{
+[v strchr@s s `*.4DCuc  1 a 1 wreg ]
+[v strchr@s s `*.4DCuc  1 a 1 wreg ]
+[v strchr@c c `i  1 p 2 3 ]
+[v strchr@s s `*.4DCuc  1 a 1 5 ]
+"20
+} 0
+"55 /home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/interrupt_manager.c
+[v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `II(v  1 e 1 0 ]
+{
+"99
+} 0
+"157 /home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/tmr1.c
+[v _TMR1_ISR TMR1_ISR `(v  1 e 1 0 ]
+{
+"168
+} 0
+"175
+[v _TMR1_DefaultInterruptHandler TMR1_DefaultInterruptHandler `(v  1 e 1 0 ]
+{
+"178
+} 0
+"171 /home/saul/MPLABXProjects/esp_16f1823.X/logger.c
+[v __TMR1_Ready _TMR1_Ready `(v  1 e 1 0 ]
+{
+"187
+} 0
+"93 /home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/adc.c
+[v _ADC_StartConversion ADC_StartConversion `(v  1 e 1 0 ]
+{
+"97
+} 0
+"120 /home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/tmr1.c
+[v _TMR1_WriteTimer TMR1_WriteTimer `(v  1 e 1 0 ]
+{
+[v TMR1_WriteTimer@timerVal timerVal `us  1 p 2 0 ]
+"140
+} 0
+"115 /home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/pin_manager.c
+[v _PIN_MANAGER_IOC PIN_MANAGER_IOC `(v  1 e 1 0 ]
+{
+"122
+} 0
+"127
+[v _IOCAF4_ISR IOCAF4_ISR `(v  1 e 1 0 ]
+{
+"137
+} 0
+"149
+[v _IOCAF4_DefaultInterruptHandler IOCAF4_DefaultInterruptHandler `(v  1 e 1 0 ]
+{
+"152
+} 0
+"189 /home/saul/MPLABXProjects/esp_16f1823.X/logger.c
+[v __IOC_Ready _IOC_Ready `(v  1 e 1 0 ]
+{
+"194
+} 0
+"172 /home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
+[v _EUSART_Transmit_ISR EUSART_Transmit_ISR `(v  1 e 1 0 ]
+{
+"189
+} 0
+"191
+[v _EUSART_Receive_ISR EUSART_Receive_ISR `(v  1 e 1 0 ]
+{
+"209
+} 0
+"140 /home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/adc.c
+[v _ADC_ISR ADC_ISR `(v  1 e 1 0 ]
+{
+"144
+} 0
+"106
+[v _ADC_GetConversionResult ADC_GetConversionResult `(us  1 e 2 0 ]
+{
+"110
+} 0
