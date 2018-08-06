@@ -56,8 +56,9 @@ void process_message(unsigned char message)
             break; 
             
         case 'a': //Ask analog value             
-            ADC_value = ADC_GetConversion(channel_AN2); 
-            read_analog();
+            //ADC_value = ADC_GetConversion(channel_AN2); 
+            ADC_StartConversion();
+            //read_analog();
             break;
             
         case 'T': //toggle between binary data or text mode           
@@ -101,7 +102,7 @@ void read_analog()
     unsigned char mess[6];
       
     adc_val = ADC_value;
-    //ADC_state = ADC_IDLE; //Reset flag!
+    ADC_state = ADC_IDLE; //Reset flag!
     
     if (message_format == MESSAGE_BINARY) {    
         mess[0] = (unsigned char)(adc_val & 0xff);
@@ -109,8 +110,7 @@ void read_analog()
     
         #ifdef BT
         write((unsigned char*)mess,2);
-        #else   
-     
+        #else       
         /*
         ESP_tx_buf[ESP_tx_buf_ind++] = mess[0];
         ESP_tx_buf[ESP_tx_buf_ind++] = mess[1];
@@ -127,26 +127,24 @@ void read_analog()
         #endif
     
     } else {
-        #ifdef BT   
-            //val_mv = ((unsigned long)adc_val*3300UL/1024UL); 
+        
+        //val_mv = ((unsigned long)adc_val*3300UL/1024UL); 
             aux1 = (unsigned long)adc_val*3300UL;
             adc_val = (unsigned short)(aux1 >> 10); //divides by 1024. Result is in mV
     
             _sprintf(mess,adc_val); // Takes a value in mV and returns a string in V with 3 decimals
-            //mess[5] = '\n';
-        
-            _puts(mess);        
-            _puts("\n");
-        #else     
-            //mess[5] = '\n';
-            //ESP_write(mess,6);
-            //ESP_wait_for(ESP_SEND_OK);
+            mess[5] = '\n';
+        #ifdef BT                       
+            write(mess,6);                    
+        #else                 
+            ESP_write(mess,6);
+            ESP_wait_for(ESP_SEND_OK);
        
         #endif
         
     }    
     
-    ADC_state = ADC_IDLE; //Reset flag!
+    //ADC_state = ADC_IDLE; //Reset flag!
 }
 
 void toggle_format() 

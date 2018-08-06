@@ -54,7 +54,7 @@ typedef enum
 
 
 
-#define ESP_BUFFER_SIZE 16
+#define ESP_BUFFER_SIZE 20
 
 //#define ESP_TX_BUFFER_SIZE 64
 
