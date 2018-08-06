@@ -79,6 +79,9 @@ extern volatile unsigned char ADC_state;
 //TIMER1 related
 extern volatile unsigned char TMR1_state;
 
+extern volatile unsigned char IOC_state;
+extern volatile unsigned char IOC_value;
+
 // Comment a function and leverage automatic documentation with slash star star
 /**
     <p><b>Function prototype:</b></p>
@@ -116,6 +119,8 @@ void read_analog(void);
 void _TMR1_Ready(void);
 
 void _IOC_Ready(void);
+
+void process_ioc(void);
 
 
 #ifdef	__cplusplus

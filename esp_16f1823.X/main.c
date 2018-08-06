@@ -93,10 +93,16 @@ void main(void)
             read_analog();        
         }
          
+        #ifdef WIFI         
         if (ESP_wait_exception) {
             ESP_wait_exception = 0;            
             process_message('S');
         }
+        #endif
+         
+        if (IOC_state == IOC_READY) {
+            process_ioc();
+        }        
 
 
     }

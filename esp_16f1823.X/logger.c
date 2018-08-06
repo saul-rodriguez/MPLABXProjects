@@ -47,18 +47,17 @@ void process_message(unsigned char message)
        
     //Message handler
     switch (message) {
-        case 't': //Test communications
+       /* case 't': //Test communications
             #ifdef BT
             _puts("Ok\n");            
             #else
             ESP_write("Ok\n",3);
             #endif
             break; 
+        */
             
-        case 'a': //Ask analog value             
-            //ADC_value = ADC_GetConversion(channel_AN2); 
-            ADC_StartConversion();
-            //read_analog();
+        case 'a': //Ask analog value                         
+            ADC_StartConversion();            
             break;
             
         case 'T': //toggle between binary data or text mode           
@@ -69,23 +68,19 @@ void process_message(unsigned char message)
             if (TMR1_state == TMR1_RUNNING)
                 return;                     
             TMR1_StartTimer();
-            TMR1_state = TMR1_RUNNING;
-            
+            TMR1_state = TMR1_RUNNING;            
             break;
             
-        case 'S': //stop continuous analog sampling              
-                    
+        case 'S': //stop continuous analog sampling
             TMR1_StopTimer();
             TMR1_state = TMR1_STOP;
             break;
                            
-        case 'o': // Change digital output to low 
-            
+        case 'o': // Change digital output to low             
             IO_RA5_SetLow();
             break;
             
-        case 'O': // Change digital output to high
-            
+        case 'O': // Change digital output to high            
             IO_RA5_SetHigh();
             break;
                       
@@ -111,17 +106,7 @@ void read_analog()
         #ifdef BT
         write((unsigned char*)mess,2);
         #else       
-        /*
-        ESP_tx_buf[ESP_tx_buf_ind++] = mess[0];
-        ESP_tx_buf[ESP_tx_buf_ind++] = mess[1];
-        
-        if (ESP_tx_buf_ind == ESP_TX_BUFFER_SIZE) {
-            ESP_write(ESP_tx_buf,ESP_TX_BUFFER_SIZE);
-            ESP_wait_for(ESP_SEND_OK);
-            ESP_tx_buf_ind = 0;
-        } 
-        */
-        
+              
         ESP_write(mess,2);
         ESP_wait_for(ESP_SEND_OK);
         #endif
@@ -154,14 +139,14 @@ void toggle_format()
         #ifdef BT
             _puts("tmode\n");
         #else
-            ESP_write("tmode\n",6);
+            //ESP_write("t\n",1);
         #endif
     } else {
         message_format = MESSAGE_BINARY;
         #ifdef BT
             _puts("bmode\n");
         #else
-            ESP_write("bmode\n",6);
+            //ESP_write("b\n",1);
         #endif
     }
 }
@@ -169,18 +154,7 @@ void toggle_format()
 void _TMR1_Ready(void)
 {   
     if (TMR1_state == TMR1_RUNNING) {
-                
-#ifdef BT
-        //if (ADC_state == ADC_IDLE) 
-        //    ADC_state = ADC_READY; 
         ADC_StartConversion();
-#else
-        //if (ADC_state == ADC_IDLE) 
-        //    ADC_state = ADC_READY;         
-        ADC_StartConversion();
-#endif
-        
-        
     }    
 }
 
@@ -195,8 +169,19 @@ void process_ioc(void)
 {
     IOC_state = IOC_IDLE;
      if (IOC_value) {
-        _puts("CH");
+        #ifdef BT
+            _puts("CH\n");
+        #else
+            ESP_write("CH",2);
+            ESP_wait_for(ESP_SEND_OK); 
+        #endif        
     } else {
-        _puts("CL");    
+        #ifdef BT
+            _puts("CL\n");
+        #else
+            ESP_write("CL",2);
+            ESP_wait_for(ESP_SEND_OK); 
+        #endif
+        //_puts("CL");    
     }
 }

@@ -11,98 +11,96 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$/tmp/xcXdOrCMK.o
-reset_vec CODE 0 0 0 1 2
-end_init CODE 0 40 40 1 2
-config CONFIG 0 8007 8007 2 2
 $dist/default/production/esp_16f1823.X.production.o
 cinit CODE 0 41 41 11 2
 text1 CODE 0 1BC 1BC 60 2
 text2 CODE 0 52 52 86 2
-text3 CODE 0 45D 45D 2C 2
-text4 CODE 0 3C9 3C9 35 2
-text5 CODE 0 3FE 3FE 30 2
-text6 CODE 0 5AD 5AD 1F 2
-text7 CODE 0 710 710 D 2
-text8 CODE 0 78B 78B 7 2
-text9 CODE 0 7DB 7DB 4 2
-text10 CODE 0 696 696 16 2
-text11 CODE 0 79E 79E 6 2
-text12 CODE 0 58D 58D 20 2
-text13 CODE 0 7A4 7A4 6 2
-text14 CODE 0 740 740 A 2
-text15 CODE 0 500 500 25 2
-text16 CODE 0 7AA 7AA 6 2
-text17 CODE 0 7B0 7B0 6 2
-text18 CODE 0 754 754 9 2
-text19 CODE 0 489 489 28 2
-text20 CODE 0 525 525 25 2
-text21 CODE 0 7FD 7FD 1 2
-text22 CODE 0 2C6 2C6 46 2
-text23 CODE 0 5CC 5CC 1E 2
-text24 CODE 0 D8 D8 78 2
-text25 CODE 0 626 626 1D 2
-text26 CODE 0 30C 30C 46 2
-text27 CODE 0 274 274 52 2
-text28 CODE 0 7E5 7E5 3 2
-text29 CODE 0 7E8 7E8 3 2
-text30 CODE 0 7EB 7EB 3 2
-text31 CODE 0 75D 75D 9 2
-text32 CODE 0 7B6 7B6 6 2
-text33 CODE 0 392 392 37 2
-text34 CODE 0 4B1 4B1 28 2
-text35 CODE 0 7FB 7FB 2 2
-text36 CODE 0 56C 56C 21 2
-text37 CODE 0 7EE 7EE 3 2
-text38 CODE 0 4D9 4D9 27 2
-text39 CODE 0 42E 42E 2F 2
-text40 CODE 0 5EA 5EA 1E 2
-text41 CODE 0 150 150 6C 2
-text42 CODE 0 352 352 40 2
-text43 CODE 0 21C 21C 58 2
-text44 CODE 0 608 608 1E 2
-text45 CODE 0 6C0 6C0 13 2
-text47 CODE 0 6D3 6D3 12 2
-text48 CODE 0 7FE 7FE 1 2
-text49 CODE 0 7BC 7BC 6 2
-text50 CODE 0 7F1 7F1 3 2
-text51 CODE 0 6E5 6E5 F 2
-text52 CODE 0 7D2 7D2 5 2
-text53 CODE 0 71D 71D D 2
-text54 CODE 0 7FF 7FF 1 2
-text55 CODE 0 74A 74A A 2
-text56 CODE 0 643 643 1D 2
-text57 CODE 0 67B 67B 1B 2
-text58 CODE 0 7F4 7F4 3 2
-text59 CODE 0 7C2 7C2 6 2
+text3 CODE 0 44E 44E 2C 2
+text4 CODE 0 3BA 3BA 35 2
+text5 CODE 0 3EF 3EF 30 2
+text6 CODE 0 5DD 5DD 1E 2
+text7 CODE 0 D8 D8 78 2
+text8 CODE 0 637 637 1D 2
+text9 CODE 0 2C6 2C6 46 2
+text10 CODE 0 274 274 52 2
+text11 CODE 0 5BE 5BE 1F 2
+text12 CODE 0 706 706 D 2
+text13 CODE 0 77E 77E 7 2
+text14 CODE 0 7CA 7CA 4 2
+text15 CODE 0 68C 68C 16 2
+text16 CODE 0 791 791 6 2
+text17 CODE 0 59E 59E 20 2
+text18 CODE 0 797 797 6 2
+text19 CODE 0 741 741 A 2
+text20 CODE 0 4F1 4F1 25 2
+text21 CODE 0 79D 79D 6 2
+text22 CODE 0 7A3 7A3 6 2
+text23 CODE 0 755 755 9 2
+text24 CODE 0 47A 47A 28 2
+text25 CODE 0 516 516 25 2
+text26 CODE 0 7EC 7EC 1 2
+text27 CODE 0 34C 34C 37 2
+text28 CODE 0 72C 72C B 2
+text29 CODE 0 7D4 7D4 3 2
+text30 CODE 0 7D7 7D7 3 2
+text31 CODE 0 7DA 7DA 3 2
+text32 CODE 0 75E 75E 9 2
+text33 CODE 0 7A9 7A9 6 2
+text34 CODE 0 383 383 37 2
+text35 CODE 0 4A2 4A2 28 2
+text36 CODE 0 7EA 7EA 2 2
+text37 CODE 0 55D 55D 21 2
+text38 CODE 0 7DD 7DD 3 2
+text39 CODE 0 4CA 4CA 27 2
+text40 CODE 0 41F 41F 2F 2
+text41 CODE 0 5FB 5FB 1E 2
+text42 CODE 0 150 150 6C 2
+text43 CODE 0 30C 30C 40 2
+text44 CODE 0 21C 21C 58 2
+text45 CODE 0 619 619 1E 2
+text46 CODE 0 6B6 6B6 13 2
+text48 CODE 0 6C9 6C9 12 2
+text49 CODE 0 7ED 7ED 1 2
+text50 CODE 0 7AF 7AF 6 2
+text51 CODE 0 7E0 7E0 3 2
+text52 CODE 0 6DB 6DB F 2
+text53 CODE 0 7C5 7C5 5 2
+text54 CODE 0 713 713 D 2
+text55 CODE 0 7EE 7EE 1 2
+text56 CODE 0 74B 74B A 2
+text57 CODE 0 654 654 1D 2
+text58 CODE 0 671 671 1B 2
+text59 CODE 0 7E3 7E3 3 2
+text60 CODE 0 7B5 7B5 6 2
 nvBANK0 BANK0 1 6E 6E 2 1
-maintext CODE 0 660 660 1B 2
+maintext CODE 0 57E 57E 20 2
 cstackCOMMON COMMON 1 70 70 9 1
 cstackBANK0 BANK0 1 20 20 2C 1
-stringtext1 STRCODE 0 54A 54A 22 2
-stringtext2 STRCODE 0 6AC 6AC 14 2
-stringtext3 STRCODE 0 6F4 6F4 E 2
-stringtext4 STRCODE 0 702 702 E 2
-stringtext5 STRCODE 0 72A 72A C 2
-stringtext6 STRCODE 0 736 736 A 2
-stringtext7 STRCODE 0 766 766 8 2
-stringtext8 STRCODE 0 76E 76E 8 2
-stringtext9 STRCODE 0 776 776 7 2
+stringtext1 STRCODE 0 53B 53B 22 2
+stringtext2 STRCODE 0 6A2 6A2 14 2
+stringtext3 STRCODE 0 6EA 6EA E 2
+stringtext4 STRCODE 0 6F8 6F8 E 2
+stringtext5 STRCODE 0 720 720 C 2
+stringtext6 STRCODE 0 737 737 A 2
+stringtext7 STRCODE 0 767 767 8 2
+stringtext8 STRCODE 0 76F 76F 8 2
+stringtext9 STRCODE 0 777 777 7 2
 intentry CODE 0 4 4 3C 2
 bssBANK0 BANK0 1 4C 4C 22 1
 bssBANK1 BANK1 1 A0 A0 20 1
-clrtext CODE 0 798 798 6 2
+clrtext CODE 0 78B 78B 6 2
 bssCOMMON COMMON 1 79 79 2 1
-stringtext10 STRCODE 0 77D 77D 7 2
-stringtext11 STRCODE 0 784 784 7 2
-stringtext12 STRCODE 0 792 792 6 2
-stringtext13 STRCODE 0 7C8 7C8 5 2
-stringtext14 STRCODE 0 7CD 7CD 5 2
-stringtext15 STRCODE 0 7D7 7D7 4 2
-stringtext16 STRCODE 0 7DF 7DF 3 2
-stringtext17 STRCODE 0 7E2 7E2 3 2
-stringtext18 STRCODE 0 7F7 7F7 2 2
-stringtext19 STRCODE 0 7F9 7F9 2 2
+stringtext10 STRCODE 0 785 785 6 2
+stringtext11 STRCODE 0 7BB 7BB 5 2
+stringtext12 STRCODE 0 7C0 7C0 5 2
+stringtext13 STRCODE 0 7CE 7CE 3 2
+stringtext14 STRCODE 0 7D1 7D1 3 2
+stringtext15 STRCODE 0 7E6 7E6 2 2
+stringtext16 STRCODE 0 7E8 7E8 2 2
+$/tmp/xcXQOqJsH.o
+reset_vec CODE 0 0 0 1 2
+end_init CODE 0 40 40 1 2
+config CONFIG 0 8007 8007 2 2
 # %UNUSED Section
 # This section enumerates the unused ranges of each CLASS. Each entry
 # is described on a single line as follows:
@@ -110,7 +108,9 @@ stringtext19 STRCODE 0 7F9 7F9 2 2
 # Addresses given in the range are in hexadecimal and units of delta.
 %UNUSED
 CONST 1-3 2
+CONST 7EF-7FF 2
 ENTRY 1-3 2
+ENTRY 7EF-7FF 2
 IDLOC 8000-8003 2
 SFR10 500-56F 1
 SFR11 580-5EF 1
@@ -136,6 +136,7 @@ SFR30 F00-F6F 1
 SFR31 F80-FEF 1
 STACK 0-0 1
 CODE 1-3 2
+CODE 7EF-7FF 2
 SFR0 0-1F 1
 SFR1 80-9F 1
 SFR2 100-16F 1
@@ -150,7 +151,9 @@ BIGRAM 2000-206F 1
 COMMON 7B-7D 1
 EEDATA F000-F0FF 2
 STRCODE 1-3 2
+STRCODE 7EF-7FF 2
 STRING 1-3 2
+STRING 7EF-7FF 2
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
 # The beginning of the section is indicated by %LINETAB.
@@ -165,26 +168,26 @@ STRING 1-3 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production/esp_16f1823.X.production.o
-41 cinit CODE >3301:/tmp/xcXyo1Nhb
-41 cinit CODE >3304:/tmp/xcXyo1Nhb
-41 cinit CODE >3400:/tmp/xcXyo1Nhb
-42 cinit CODE >3401:/tmp/xcXyo1Nhb
-43 cinit CODE >3405:/tmp/xcXyo1Nhb
-44 cinit CODE >3406:/tmp/xcXyo1Nhb
-45 cinit CODE >3407:/tmp/xcXyo1Nhb
-46 cinit CODE >3408:/tmp/xcXyo1Nhb
-47 cinit CODE >3409:/tmp/xcXyo1Nhb
-48 cinit CODE >3410:/tmp/xcXyo1Nhb
-49 cinit CODE >3414:/tmp/xcXyo1Nhb
-4A cinit CODE >3415:/tmp/xcXyo1Nhb
-4B cinit CODE >3416:/tmp/xcXyo1Nhb
-4C cinit CODE >3417:/tmp/xcXyo1Nhb
-4D cinit CODE >3418:/tmp/xcXyo1Nhb
-4E cinit CODE >3419:/tmp/xcXyo1Nhb
-4F cinit CODE >3425:/tmp/xcXyo1Nhb
-4F cinit CODE >3427:/tmp/xcXyo1Nhb
-50 cinit CODE >3428:/tmp/xcXyo1Nhb
-51 cinit CODE >3429:/tmp/xcXyo1Nhb
+41 cinit CODE >3269:/tmp/xcXHqx2xG
+41 cinit CODE >3272:/tmp/xcXHqx2xG
+41 cinit CODE >3368:/tmp/xcXHqx2xG
+42 cinit CODE >3369:/tmp/xcXHqx2xG
+43 cinit CODE >3373:/tmp/xcXHqx2xG
+44 cinit CODE >3374:/tmp/xcXHqx2xG
+45 cinit CODE >3375:/tmp/xcXHqx2xG
+46 cinit CODE >3376:/tmp/xcXHqx2xG
+47 cinit CODE >3377:/tmp/xcXHqx2xG
+48 cinit CODE >3378:/tmp/xcXHqx2xG
+49 cinit CODE >3382:/tmp/xcXHqx2xG
+4A cinit CODE >3383:/tmp/xcXHqx2xG
+4B cinit CODE >3384:/tmp/xcXHqx2xG
+4C cinit CODE >3385:/tmp/xcXHqx2xG
+4D cinit CODE >3386:/tmp/xcXHqx2xG
+4E cinit CODE >3387:/tmp/xcXHqx2xG
+4F cinit CODE >3393:/tmp/xcXHqx2xG
+4F cinit CODE >3395:/tmp/xcXHqx2xG
+50 cinit CODE >3396:/tmp/xcXHqx2xG
+51 cinit CODE >3397:/tmp/xcXHqx2xG
 4 intentry CODE >20:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/strchr.c
 4 intentry CODE >55:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/interrupt_manager.c
 6 intentry CODE >58:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/interrupt_manager.c
@@ -205,446 +208,450 @@ D intentry CODE >64:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/
 33 intentry CODE >86:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/interrupt_manager.c
 39 intentry CODE >88:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/interrupt_manager.c
 3E intentry CODE >99:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/interrupt_manager.c
-7C2 text59 CODE >106:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/adc.c
-7C2 text59 CODE >109:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/adc.c
-7F4 text58 CODE >140:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/adc.c
-7F4 text58 CODE >143:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/adc.c
-7F6 text58 CODE >144:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/adc.c
-67B text57 CODE >191:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
-67B text57 CODE >194:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
-67E text57 CODE >198:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
-67F text57 CODE >199:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
-680 text57 CODE >203:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
-68D text57 CODE >204:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
-690 text57 CODE >206:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
-691 text57 CODE >208:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
-695 text57 CODE >209:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
-643 text56 CODE >172:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
-643 text56 CODE >176:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
-647 text56 CODE >178:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
-654 text56 CODE >179:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
-657 text56 CODE >181:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
-658 text56 CODE >183:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
-65C text56 CODE >184:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
-65D text56 CODE >185:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
-65D text56 CODE >187:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
-74A text55 CODE >187:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
-74A text55 CODE >190:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
-74F text55 CODE >191:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
-753 text55 CODE >192:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
-7FF text54 CODE >149:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/pin_manager.c
-7FF text54 CODE >152:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/pin_manager.c
-71D text53 CODE >127:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/pin_manager.c
-71D text53 CODE >132:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/pin_manager.c
-722 text53 CODE >134:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/pin_manager.c
-727 text53 CODE >136:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/pin_manager.c
-729 text53 CODE >137:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/pin_manager.c
-7D2 text52 CODE >115:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/pin_manager.c
-7D2 text52 CODE >118:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/pin_manager.c
-7D5 text52 CODE >120:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/pin_manager.c
-6E5 text51 CODE >120:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/tmr1.c
-6E5 text51 CODE >122:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/tmr1.c
-6E8 text51 CODE >125:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/tmr1.c
-6E9 text51 CODE >128:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/tmr1.c
-6EB text51 CODE >129:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/tmr1.c
-6ED text51 CODE >132:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/tmr1.c
-6EE text51 CODE >133:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/tmr1.c
-6EF text51 CODE >137:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/tmr1.c
-6F1 text51 CODE >138:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/tmr1.c
-7F1 text50 CODE >93:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/adc.c
-7F1 text50 CODE >96:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/adc.c
-7F3 text50 CODE >97:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/adc.c
-7BC text49 CODE >169:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
-7BC text49 CODE >171:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
-7C0 text49 CODE >180:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
-7FE text48 CODE >175:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/tmr1.c
-7FE text48 CODE >178:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/tmr1.c
-6D3 text47 CODE >157:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/tmr1.c
-6D3 text47 CODE >161:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/tmr1.c
-6D5 text47 CODE >162:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/tmr1.c
-6DA text47 CODE >164:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/tmr1.c
-6DF text47 CODE >166:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/tmr1.c
-6C0 text45 CODE >7:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/strchr.c
-6C1 text45 CODE >13:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/strchr.c
-6C1 text45 CODE >14:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/strchr.c
-6C8 text45 CODE >15:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/strchr.c
-6CA text45 CODE >17:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/strchr.c
-6D1 text45 CODE >18:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/strchr.c
-608 text44 CODE >12:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/strlen.c
-608 text44 CODE >14:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/strlen.c
-60C text44 CODE >16:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/strlen.c
-613 text44 CODE >17:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/strlen.c
-617 text44 CODE >16:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/strlen.c
-618 text44 CODE >25:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/strlen.c
-21C text43 CODE >3:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/strncmp.c
-21E text43 CODE >5:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/strncmp.c
-226 text43 CODE >6:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/strncmp.c
-233 text43 CODE >7:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/strncmp.c
-25D text43 CODE >8:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/strncmp.c
-352 text42 CODE >143:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/strstr.c
-354 text42 CODE >146:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/strstr.c
-358 text42 CODE >147:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/strstr.c
-362 text42 CODE >148:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/strstr.c
-363 text42 CODE >149:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/strstr.c
-371 text42 CODE >150:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/strstr.c
-374 text42 CODE >151:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/strstr.c
-387 text42 CODE >148:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/strstr.c
-390 text42 CODE >154:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/strstr.c
-150 text41 CODE >55:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
-150 text41 CODE >58:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
-15B text41 CODE >59:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
-160 text41 CODE >61:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
-16A text41 CODE >62:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
-16F text41 CODE >64:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
-179 text41 CODE >65:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
-17E text41 CODE >67:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
-188 text41 CODE >68:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
-18D text41 CODE >70:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
-197 text41 CODE >71:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
-19C text41 CODE >73:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
-1A6 text41 CODE >74:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
-1AB text41 CODE >76:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
-1B5 text41 CODE >77:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
-1BA text41 CODE >79:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
-5EA text40 CODE >128:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
-5EA text40 CODE >130:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
-5EB text40 CODE >132:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
-5EF text40 CODE >136:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
-5FB text40 CODE >137:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
-5FE text40 CODE >139:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
-5FF text40 CODE >141:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
-601 text40 CODE >142:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
-604 text40 CODE >143:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
-606 text40 CODE >145:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
-42E text39 CODE >27:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
-42E text39 CODE >31:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
-437 text39 CODE >34:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
-43F text39 CODE >36:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
-443 text39 CODE >37:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
-445 text39 CODE >39:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
-44B text39 CODE >40:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
-450 text39 CODE >43:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
-451 text39 CODE >44:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
-453 text39 CODE >47:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
-457 text39 CODE >48:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
-45A text39 CODE >49:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
-45B text39 CODE >51:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
-4D9 text38 CODE >113:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
-4DB text38 CODE >118:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
-4DB text38 CODE >119:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
-4E0 text38 CODE >121:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
-4E4 text38 CODE >122:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
-4E8 text38 CODE >123:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
-4EC text38 CODE >124:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
-4ED text38 CODE >125:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
-4EE text38 CODE >127:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
-4F2 text38 CODE >128:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
-4F6 text38 CODE >130:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
-4FA text38 CODE >131:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
-4FB text38 CODE >134:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
-7EE text37 CODE >118:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
-7EE text37 CODE >120:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
-56C text36 CODE >148:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
-56D text36 CODE >150:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
-570 text36 CODE >154:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
-573 text36 CODE >156:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
-576 text36 CODE >157:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
-577 text36 CODE >158:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
-577 text36 CODE >160:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
-578 text36 CODE >161:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
-584 text36 CODE >162:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
-587 text36 CODE >164:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
-588 text36 CODE >166:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
-58A text36 CODE >168:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
-58C text36 CODE >169:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
-7FB text35 CODE >113:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
-7FB text35 CODE >115:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
-4B1 text34 CODE >5:/home/saul/MPLABXProjects/esp_16f1823.X/comm.c
-4B1 text34 CODE >8:/home/saul/MPLABXProjects/esp_16f1823.X/comm.c
-4B2 text34 CODE >9:/home/saul/MPLABXProjects/esp_16f1823.X/comm.c
-4C1 text34 CODE >10:/home/saul/MPLABXProjects/esp_16f1823.X/comm.c
-4C5 text34 CODE >11:/home/saul/MPLABXProjects/esp_16f1823.X/comm.c
-4D8 text34 CODE >9:/home/saul/MPLABXProjects/esp_16f1823.X/comm.c
-392 text33 CODE >82:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
-392 text33 CODE >87:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
-39F text33 CODE >88:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
-3A3 text33 CODE >89:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
-3A4 text33 CODE >88:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
-3A5 text33 CODE >91:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
-3AA text33 CODE >92:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
-3AC text33 CODE >95:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
-3B1 text33 CODE >96:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
-3B3 text33 CODE >99:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
-3B8 text33 CODE >100:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
-3BA text33 CODE >103:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
-3BF text33 CODE >104:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
-3C1 text33 CODE >107:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
-3C6 text33 CODE >108:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
-3C8 text33 CODE >111:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
-7B6 text32 CODE >217:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
-7B6 text32 CODE >219:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
-7BB text32 CODE >220:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
-75D text31 CODE >18:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
-75D text31 CODE >20:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
-75F text31 CODE >21:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
-760 text31 CODE >24:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
-765 text31 CODE >25:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
-7EB text30 CODE >93:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/adc.c
-7EB text30 CODE >96:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/adc.c
-7ED text30 CODE >97:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/adc.c
-7E8 text29 CODE >93:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/tmr1.c
-7E8 text29 CODE >96:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/tmr1.c
-7EA text29 CODE >97:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/tmr1.c
-7E5 text28 CODE >99:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/tmr1.c
-7E5 text28 CODE >102:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/tmr1.c
-7E7 text28 CODE >103:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/tmr1.c
-274 text27 CODE >5:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/awdiv.c
-274 text27 CODE >13:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/awdiv.c
-276 text27 CODE >14:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/awdiv.c
-278 text27 CODE >15:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/awdiv.c
-27D text27 CODE >16:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/awdiv.c
-27F text27 CODE >18:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/awdiv.c
-281 text27 CODE >19:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/awdiv.c
-286 text27 CODE >20:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/awdiv.c
-28A text27 CODE >22:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/awdiv.c
-28C text27 CODE >23:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/awdiv.c
-290 text27 CODE >24:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/awdiv.c
-292 text27 CODE >25:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/awdiv.c
-294 text27 CODE >26:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/awdiv.c
-299 text27 CODE >27:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/awdiv.c
-29D text27 CODE >25:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/awdiv.c
-29E text27 CODE >30:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/awdiv.c
-2A3 text27 CODE >31:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/awdiv.c
-2AB text27 CODE >32:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/awdiv.c
-2AF text27 CODE >33:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/awdiv.c
-2B0 text27 CODE >35:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/awdiv.c
-2B5 text27 CODE >36:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/awdiv.c
-2B9 text27 CODE >38:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/awdiv.c
-2BC text27 CODE >39:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/awdiv.c
-2C1 text27 CODE >40:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/awdiv.c
-30C text26 CODE >5:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/awmod.c
-30C text26 CODE >12:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/awmod.c
-30E text26 CODE >13:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/awmod.c
-310 text26 CODE >14:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/awmod.c
-315 text26 CODE >15:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/awmod.c
-317 text26 CODE >17:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/awmod.c
-319 text26 CODE >18:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/awmod.c
-31E text26 CODE >19:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/awmod.c
-322 text26 CODE >20:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/awmod.c
-324 text26 CODE >21:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/awmod.c
-326 text26 CODE >22:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/awmod.c
-32B text26 CODE >23:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/awmod.c
-32F text26 CODE >21:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/awmod.c
-330 text26 CODE >26:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/awmod.c
-338 text26 CODE >27:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/awmod.c
-33C text26 CODE >28:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/awmod.c
-341 text26 CODE >29:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/awmod.c
-345 text26 CODE >31:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/awmod.c
-348 text26 CODE >32:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/awmod.c
-34D text26 CODE >33:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/awmod.c
-626 text25 CODE >15:/home/saul/MPLABXProjects/esp_16f1823.X/comm.c
-626 text25 CODE >19:/home/saul/MPLABXProjects/esp_16f1823.X/comm.c
-627 text25 CODE >22:/home/saul/MPLABXProjects/esp_16f1823.X/comm.c
-62B text25 CODE >20:/home/saul/MPLABXProjects/esp_16f1823.X/comm.c
-62F text25 CODE >21:/home/saul/MPLABXProjects/esp_16f1823.X/comm.c
-63D text25 CODE >22:/home/saul/MPLABXProjects/esp_16f1823.X/comm.c
-D8 text24 CODE >180:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
-D8 text24 CODE >184:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
-DD text24 CODE >185:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
-E2 text24 CODE >186:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
-E9 text24 CODE >187:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
-EE text24 CODE >189:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
-F3 text24 CODE >190:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
-F7 text24 CODE >191:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
-108 text24 CODE >192:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
-10C text24 CODE >193:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
-11D text24 CODE >194:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
-121 text24 CODE >195:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
-128 text24 CODE >196:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
-12C text24 CODE >199:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
-132 text24 CODE >200:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
-139 text24 CODE >203:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
-13E text24 CODE >205:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
-140 text24 CODE >207:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
-14A text24 CODE >208:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
-14F text24 CODE >210:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
-5CC text23 CODE >150:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
-5CC text23 CODE >152:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
-5D0 text23 CODE >153:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
-5D4 text23 CODE >157:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
-5DD text23 CODE >159:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
-5DE text23 CODE >160:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
-5E0 text23 CODE >164:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
-2C6 text22 CODE >45:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
-2C6 text22 CODE >49:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
-2C7 text22 CODE >54:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
-2D1 text22 CODE >56:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
-2D2 text22 CODE >60:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
-2D3 text22 CODE >62:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
-2D4 text22 CODE >65:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
-2D5 text22 CODE >66:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
-2D6 text22 CODE >69:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
-2DA text22 CODE >71:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
-2DB text22 CODE >72:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
-2E0 text22 CODE >74:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
-2E1 text22 CODE >78:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
-2E2 text22 CODE >79:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
-2E4 text22 CODE >80:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
-2E5 text22 CODE >84:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
-2E7 text22 CODE >85:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
-2E8 text22 CODE >89:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
-2EA text22 CODE >94:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
-30B text22 CODE >95:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
-7FD text21 CODE >212:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
-7FD text21 CODE >215:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
-525 text20 CODE >137:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
-525 text20 CODE >142:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
-52B text20 CODE >143:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
-535 text20 CODE >144:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
-540 text20 CODE >149:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
-549 text20 CODE >150:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
-489 text19 CODE >152:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
-489 text19 CODE >157:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
-48E text19 CODE >159:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
-48F text19 CODE >164:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
-490 text19 CODE >165:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
-491 text19 CODE >168:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
-497 text19 CODE >169:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
-498 text19 CODE >172:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
-499 text19 CODE >177:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
-4B0 text19 CODE >178:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
-754 text18 CODE >65:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/adc.c
-754 text18 CODE >70:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/adc.c
-757 text18 CODE >73:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/adc.c
-759 text18 CODE >76:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/adc.c
-75A text18 CODE >79:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/adc.c
-75B text18 CODE >82:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/adc.c
-75C text18 CODE >83:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/adc.c
-7B0 text17 CODE >215:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
-7B0 text17 CODE >216:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
-7B5 text17 CODE >217:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
-7AA text16 CODE >211:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
-7AA text16 CODE >212:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
-7AF text16 CODE >213:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
-500 text15 CODE >75:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
-500 text15 CODE >78:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
-502 text15 CODE >79:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
-507 text15 CODE >80:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
-509 text15 CODE >81:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
-50E text15 CODE >85:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
-511 text15 CODE >88:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
-513 text15 CODE >91:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
-515 text15 CODE >94:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
-517 text15 CODE >97:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
-518 text15 CODE >101:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
-519 text15 CODE >102:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
-51B text15 CODE >103:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
-51F text15 CODE >105:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
-520 text15 CODE >106:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
-521 text15 CODE >107:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
-522 text15 CODE >110:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
-524 text15 CODE >111:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
-740 text14 CODE >61:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/mcc.c
-740 text14 CODE >64:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/mcc.c
-743 text14 CODE >66:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/mcc.c
-744 text14 CODE >68:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/mcc.c
-746 text14 CODE >70:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/mcc.c
-746 text14 CODE >72:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/mcc.c
-7A4 text13 CODE >142:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/pin_manager.c
-7A4 text13 CODE >143:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/pin_manager.c
-7A9 text13 CODE >144:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/pin_manager.c
-58D text12 CODE >59:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/pin_manager.c
-58D text12 CODE >64:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/pin_manager.c
-58F text12 CODE >65:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/pin_manager.c
-590 text12 CODE >70:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/pin_manager.c
-593 text12 CODE >71:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/pin_manager.c
-595 text12 CODE >76:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/pin_manager.c
-598 text12 CODE >77:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/pin_manager.c
-59A text12 CODE >82:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/pin_manager.c
-59D text12 CODE >83:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/pin_manager.c
-59E text12 CODE >84:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/pin_manager.c
-5A0 text12 CODE >93:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/pin_manager.c
-5A2 text12 CODE >99:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/pin_manager.c
-5A4 text12 CODE >101:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/pin_manager.c
-5A5 text12 CODE >103:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/pin_manager.c
-5A6 text12 CODE >108:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/pin_manager.c
-5AB text12 CODE >111:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/pin_manager.c
-5AC text12 CODE >113:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/pin_manager.c
-79E text11 CODE >171:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/tmr1.c
-79E text11 CODE >172:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/tmr1.c
-7A3 text11 CODE >173:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/tmr1.c
-696 text10 CODE >64:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/tmr1.c
-696 text10 CODE >69:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/tmr1.c
-698 text10 CODE >72:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/tmr1.c
-69A text10 CODE >75:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/tmr1.c
-69C text10 CODE >78:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/tmr1.c
-6A0 text10 CODE >81:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/tmr1.c
-6A1 text10 CODE >84:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/tmr1.c
-6A3 text10 CODE >87:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/tmr1.c
-6A8 text10 CODE >90:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/tmr1.c
-6AB text10 CODE >91:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/tmr1.c
-7DB text9 CODE >75:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/mcc.c
-7DB text9 CODE >78:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/mcc.c
-7DE text9 CODE >79:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/mcc.c
-78B text8 CODE >50:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/mcc.c
-78B text8 CODE >53:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/mcc.c
-78C text8 CODE >54:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/mcc.c
-78D text8 CODE >55:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/mcc.c
-78E text8 CODE >56:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/mcc.c
-78F text8 CODE >57:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/mcc.c
-790 text8 CODE >58:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/mcc.c
-791 text8 CODE >59:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/mcc.c
-710 text7 CODE >85:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/adc.c
-711 text7 CODE >88:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/adc.c
-71B text7 CODE >90:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/adc.c
-71C text7 CODE >91:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/adc.c
-5AD text6 CODE >17:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
-5AD text6 CODE >19:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
-5AF text6 CODE >21:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
-5B1 text6 CODE >22:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
-5B3 text6 CODE >26:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
-5B4 text6 CODE >27:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
-5B6 text6 CODE >28:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
-5BB text6 CODE >31:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
-5C0 text6 CODE >32:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
-5C2 text6 CODE >33:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
-5C6 text6 CODE >35:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
-5CB text6 CODE >36:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
-3FE text5 CODE >15:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/Umul32.c
-3FE text5 CODE >119:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/Umul32.c
-406 text5 CODE >121:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/Umul32.c
-409 text5 CODE >122:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/Umul32.c
-411 text5 CODE >123:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/Umul32.c
-418 text5 CODE >124:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/Umul32.c
-41F text5 CODE >125:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/Umul32.c
-425 text5 CODE >128:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/Umul32.c
-3C9 text4 CODE >5:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/lwdiv.c
-3C9 text4 CODE >13:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/lwdiv.c
-3CC text4 CODE >14:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/lwdiv.c
-3D0 text4 CODE >15:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/lwdiv.c
-3D2 text4 CODE >16:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/lwdiv.c
-3D4 text4 CODE >17:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/lwdiv.c
-3D9 text4 CODE >18:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/lwdiv.c
-3DD text4 CODE >16:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/lwdiv.c
-3DE text4 CODE >21:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/lwdiv.c
-3E3 text4 CODE >22:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/lwdiv.c
-3EB text4 CODE >23:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/lwdiv.c
-3EF text4 CODE >24:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/lwdiv.c
-3F0 text4 CODE >26:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/lwdiv.c
-3F5 text4 CODE >27:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/lwdiv.c
-3F9 text4 CODE >29:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/lwdiv.c
-45D text3 CODE >5:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/lwmod.c
-45D text3 CODE >12:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/lwmod.c
-461 text3 CODE >13:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/lwmod.c
-463 text3 CODE >14:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/lwmod.c
-465 text3 CODE >15:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/lwmod.c
-46A text3 CODE >16:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/lwmod.c
-46E text3 CODE >14:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/lwmod.c
-46F text3 CODE >19:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/lwmod.c
-477 text3 CODE >20:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/lwmod.c
-47B text3 CODE >21:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/lwmod.c
-480 text3 CODE >22:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/lwmod.c
-484 text3 CODE >24:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/lwmod.c
+7B5 text60 CODE >106:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/adc.c
+7B5 text60 CODE >109:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/adc.c
+7E3 text59 CODE >140:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/adc.c
+7E3 text59 CODE >143:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/adc.c
+7E5 text59 CODE >144:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/adc.c
+671 text58 CODE >191:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
+671 text58 CODE >194:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
+674 text58 CODE >198:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
+675 text58 CODE >199:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
+676 text58 CODE >203:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
+683 text58 CODE >204:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
+686 text58 CODE >206:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
+687 text58 CODE >208:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
+68B text58 CODE >209:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
+654 text57 CODE >172:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
+654 text57 CODE >176:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
+658 text57 CODE >178:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
+665 text57 CODE >179:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
+668 text57 CODE >181:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
+669 text57 CODE >183:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
+66D text57 CODE >184:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
+66E text57 CODE >185:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
+66E text57 CODE >187:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
+74B text56 CODE >161:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
+74B text56 CODE >164:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
+750 text56 CODE >165:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
+754 text56 CODE >166:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
+7EE text55 CODE >149:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/pin_manager.c
+7EE text55 CODE >152:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/pin_manager.c
+713 text54 CODE >127:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/pin_manager.c
+713 text54 CODE >132:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/pin_manager.c
+718 text54 CODE >134:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/pin_manager.c
+71D text54 CODE >136:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/pin_manager.c
+71F text54 CODE >137:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/pin_manager.c
+7C5 text53 CODE >115:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/pin_manager.c
+7C5 text53 CODE >118:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/pin_manager.c
+7C8 text53 CODE >120:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/pin_manager.c
+6DB text52 CODE >120:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/tmr1.c
+6DB text52 CODE >122:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/tmr1.c
+6DE text52 CODE >125:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/tmr1.c
+6DF text52 CODE >128:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/tmr1.c
+6E1 text52 CODE >129:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/tmr1.c
+6E3 text52 CODE >132:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/tmr1.c
+6E4 text52 CODE >133:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/tmr1.c
+6E5 text52 CODE >137:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/tmr1.c
+6E7 text52 CODE >138:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/tmr1.c
+7E0 text51 CODE >93:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/adc.c
+7E0 text51 CODE >96:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/adc.c
+7E2 text51 CODE >97:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/adc.c
+7AF text50 CODE >154:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
+7AF text50 CODE >156:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
+7B3 text50 CODE >157:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
+7ED text49 CODE >175:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/tmr1.c
+7ED text49 CODE >178:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/tmr1.c
+6C9 text48 CODE >157:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/tmr1.c
+6C9 text48 CODE >161:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/tmr1.c
+6CB text48 CODE >162:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/tmr1.c
+6D0 text48 CODE >164:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/tmr1.c
+6D5 text48 CODE >166:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/tmr1.c
+6B6 text46 CODE >7:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/strchr.c
+6B7 text46 CODE >13:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/strchr.c
+6B7 text46 CODE >14:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/strchr.c
+6BE text46 CODE >15:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/strchr.c
+6C0 text46 CODE >17:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/strchr.c
+6C7 text46 CODE >18:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/strchr.c
+619 text45 CODE >12:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/strlen.c
+619 text45 CODE >14:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/strlen.c
+61D text45 CODE >16:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/strlen.c
+624 text45 CODE >17:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/strlen.c
+628 text45 CODE >16:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/strlen.c
+629 text45 CODE >25:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/strlen.c
+21C text44 CODE >3:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/strncmp.c
+21E text44 CODE >5:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/strncmp.c
+226 text44 CODE >6:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/strncmp.c
+233 text44 CODE >7:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/strncmp.c
+25D text44 CODE >8:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/strncmp.c
+30C text43 CODE >143:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/strstr.c
+30E text43 CODE >146:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/strstr.c
+312 text43 CODE >147:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/strstr.c
+31C text43 CODE >148:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/strstr.c
+31D text43 CODE >149:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/strstr.c
+32B text43 CODE >150:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/strstr.c
+32E text43 CODE >151:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/strstr.c
+341 text43 CODE >148:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/strstr.c
+34A text43 CODE >154:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/strstr.c
+150 text42 CODE >55:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
+150 text42 CODE >58:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
+15B text42 CODE >59:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
+160 text42 CODE >61:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
+16A text42 CODE >62:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
+16F text42 CODE >64:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
+179 text42 CODE >65:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
+17E text42 CODE >67:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
+188 text42 CODE >68:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
+18D text42 CODE >70:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
+197 text42 CODE >71:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
+19C text42 CODE >73:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
+1A6 text42 CODE >74:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
+1AB text42 CODE >76:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
+1B5 text42 CODE >77:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
+1BA text42 CODE >79:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
+5FB text41 CODE >128:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
+5FB text41 CODE >130:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
+5FC text41 CODE >132:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
+600 text41 CODE >136:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
+60C text41 CODE >137:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
+60F text41 CODE >139:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
+610 text41 CODE >141:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
+612 text41 CODE >142:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
+615 text41 CODE >143:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
+617 text41 CODE >145:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
+41F text40 CODE >27:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
+41F text40 CODE >31:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
+428 text40 CODE >34:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
+430 text40 CODE >36:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
+434 text40 CODE >37:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
+436 text40 CODE >39:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
+43C text40 CODE >40:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
+441 text40 CODE >43:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
+442 text40 CODE >44:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
+444 text40 CODE >47:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
+448 text40 CODE >48:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
+44B text40 CODE >49:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
+44C text40 CODE >51:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
+4CA text39 CODE >113:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
+4CC text39 CODE >118:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
+4CC text39 CODE >119:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
+4D1 text39 CODE >121:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
+4D5 text39 CODE >122:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
+4D9 text39 CODE >123:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
+4DD text39 CODE >124:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
+4DE text39 CODE >125:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
+4DF text39 CODE >127:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
+4E3 text39 CODE >128:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
+4E7 text39 CODE >130:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
+4EB text39 CODE >131:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
+4EC text39 CODE >134:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
+7DD text38 CODE >118:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
+7DD text38 CODE >120:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
+55D text37 CODE >148:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
+55E text37 CODE >150:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
+561 text37 CODE >154:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
+564 text37 CODE >156:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
+567 text37 CODE >157:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
+568 text37 CODE >158:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
+568 text37 CODE >160:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
+569 text37 CODE >161:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
+575 text37 CODE >162:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
+578 text37 CODE >164:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
+579 text37 CODE >166:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
+57B text37 CODE >168:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
+57D text37 CODE >169:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
+7EA text36 CODE >113:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
+7EA text36 CODE >115:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
+4A2 text35 CODE >5:/home/saul/MPLABXProjects/esp_16f1823.X/comm.c
+4A2 text35 CODE >8:/home/saul/MPLABXProjects/esp_16f1823.X/comm.c
+4A3 text35 CODE >9:/home/saul/MPLABXProjects/esp_16f1823.X/comm.c
+4B2 text35 CODE >10:/home/saul/MPLABXProjects/esp_16f1823.X/comm.c
+4B6 text35 CODE >11:/home/saul/MPLABXProjects/esp_16f1823.X/comm.c
+4C9 text35 CODE >9:/home/saul/MPLABXProjects/esp_16f1823.X/comm.c
+383 text34 CODE >82:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
+383 text34 CODE >87:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
+390 text34 CODE >88:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
+394 text34 CODE >89:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
+395 text34 CODE >88:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
+396 text34 CODE >91:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
+39B text34 CODE >92:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
+39D text34 CODE >95:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
+3A2 text34 CODE >96:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
+3A4 text34 CODE >99:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
+3A9 text34 CODE >100:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
+3AB text34 CODE >103:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
+3B0 text34 CODE >104:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
+3B2 text34 CODE >107:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
+3B7 text34 CODE >108:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
+3B9 text34 CODE >111:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
+7A9 text33 CODE >217:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
+7A9 text33 CODE >219:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
+7AE text33 CODE >220:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
+75E text32 CODE >18:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
+75E text32 CODE >20:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
+760 text32 CODE >21:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
+761 text32 CODE >24:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
+766 text32 CODE >25:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
+7DA text31 CODE >93:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/adc.c
+7DA text31 CODE >96:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/adc.c
+7DC text31 CODE >97:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/adc.c
+7D7 text30 CODE >93:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/tmr1.c
+7D7 text30 CODE >96:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/tmr1.c
+7D9 text30 CODE >97:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/tmr1.c
+7D4 text29 CODE >99:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/tmr1.c
+7D4 text29 CODE >102:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/tmr1.c
+7D6 text29 CODE >103:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/tmr1.c
+72C text28 CODE >135:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
+72C text28 CODE >137:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
+730 text28 CODE >138:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
+734 text28 CODE >144:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
+735 text28 CODE >145:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
+34C text27 CODE >45:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
+34C text27 CODE >49:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
+34D text27 CODE >60:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
+34E text27 CODE >61:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
+34F text27 CODE >64:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
+350 text27 CODE >65:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
+351 text27 CODE >68:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
+355 text27 CODE >70:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
+356 text27 CODE >71:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
+35B text27 CODE >72:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
+35C text27 CODE >75:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
+35D text27 CODE >76:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
+35F text27 CODE >77:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
+360 text27 CODE >80:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
+362 text27 CODE >81:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
+363 text27 CODE >84:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
+365 text27 CODE >89:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
+382 text27 CODE >90:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
+7EC text26 CODE >212:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
+7EC text26 CODE >215:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
+516 text25 CODE >137:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
+516 text25 CODE >142:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
+51C text25 CODE >143:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
+526 text25 CODE >144:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
+531 text25 CODE >149:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
+53A text25 CODE >150:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
+47A text24 CODE >152:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
+47A text24 CODE >157:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
+47F text24 CODE >159:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
+480 text24 CODE >164:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
+481 text24 CODE >165:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
+482 text24 CODE >168:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
+488 text24 CODE >169:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
+489 text24 CODE >172:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
+48A text24 CODE >177:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
+4A1 text24 CODE >178:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
+755 text23 CODE >65:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/adc.c
+755 text23 CODE >70:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/adc.c
+758 text23 CODE >73:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/adc.c
+75A text23 CODE >76:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/adc.c
+75B text23 CODE >79:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/adc.c
+75C text23 CODE >82:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/adc.c
+75D text23 CODE >83:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/adc.c
+7A3 text22 CODE >215:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
+7A3 text22 CODE >216:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
+7A8 text22 CODE >217:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
+79D text21 CODE >211:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
+79D text21 CODE >212:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
+7A2 text21 CODE >213:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
+4F1 text20 CODE >75:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
+4F1 text20 CODE >78:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
+4F3 text20 CODE >79:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
+4F8 text20 CODE >80:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
+4FA text20 CODE >81:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
+4FF text20 CODE >85:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
+502 text20 CODE >88:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
+504 text20 CODE >91:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
+506 text20 CODE >94:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
+508 text20 CODE >97:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
+509 text20 CODE >101:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
+50A text20 CODE >102:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
+50C text20 CODE >103:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
+510 text20 CODE >105:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
+511 text20 CODE >106:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
+512 text20 CODE >107:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
+513 text20 CODE >110:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
+515 text20 CODE >111:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
+741 text19 CODE >61:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/mcc.c
+741 text19 CODE >64:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/mcc.c
+744 text19 CODE >66:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/mcc.c
+745 text19 CODE >68:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/mcc.c
+747 text19 CODE >70:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/mcc.c
+747 text19 CODE >72:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/mcc.c
+797 text18 CODE >142:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/pin_manager.c
+797 text18 CODE >143:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/pin_manager.c
+79C text18 CODE >144:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/pin_manager.c
+59E text17 CODE >59:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/pin_manager.c
+59E text17 CODE >64:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/pin_manager.c
+5A0 text17 CODE >65:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/pin_manager.c
+5A1 text17 CODE >70:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/pin_manager.c
+5A4 text17 CODE >71:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/pin_manager.c
+5A6 text17 CODE >76:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/pin_manager.c
+5A9 text17 CODE >77:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/pin_manager.c
+5AB text17 CODE >82:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/pin_manager.c
+5AE text17 CODE >83:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/pin_manager.c
+5AF text17 CODE >84:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/pin_manager.c
+5B1 text17 CODE >93:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/pin_manager.c
+5B3 text17 CODE >99:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/pin_manager.c
+5B5 text17 CODE >101:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/pin_manager.c
+5B6 text17 CODE >103:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/pin_manager.c
+5B7 text17 CODE >108:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/pin_manager.c
+5BC text17 CODE >111:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/pin_manager.c
+5BD text17 CODE >113:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/pin_manager.c
+791 text16 CODE >171:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/tmr1.c
+791 text16 CODE >172:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/tmr1.c
+796 text16 CODE >173:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/tmr1.c
+68C text15 CODE >64:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/tmr1.c
+68C text15 CODE >69:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/tmr1.c
+68E text15 CODE >72:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/tmr1.c
+690 text15 CODE >75:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/tmr1.c
+692 text15 CODE >78:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/tmr1.c
+696 text15 CODE >81:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/tmr1.c
+697 text15 CODE >84:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/tmr1.c
+699 text15 CODE >87:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/tmr1.c
+69E text15 CODE >90:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/tmr1.c
+6A1 text15 CODE >91:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/tmr1.c
+7CA text14 CODE >75:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/mcc.c
+7CA text14 CODE >78:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/mcc.c
+7CD text14 CODE >79:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/mcc.c
+77E text13 CODE >50:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/mcc.c
+77E text13 CODE >53:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/mcc.c
+77F text13 CODE >54:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/mcc.c
+780 text13 CODE >55:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/mcc.c
+781 text13 CODE >56:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/mcc.c
+782 text13 CODE >57:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/mcc.c
+783 text13 CODE >58:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/mcc.c
+784 text13 CODE >59:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/mcc.c
+706 text12 CODE >85:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/adc.c
+707 text12 CODE >88:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/adc.c
+711 text12 CODE >90:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/adc.c
+712 text12 CODE >91:/home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/adc.c
+5BE text11 CODE >17:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
+5BE text11 CODE >19:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
+5C0 text11 CODE >21:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
+5C2 text11 CODE >22:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
+5C4 text11 CODE >26:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
+5C5 text11 CODE >27:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
+5C7 text11 CODE >28:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
+5CC text11 CODE >31:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
+5D1 text11 CODE >32:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
+5D3 text11 CODE >33:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
+5D7 text11 CODE >35:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
+5DC text11 CODE >36:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
+274 text10 CODE >5:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/awdiv.c
+274 text10 CODE >13:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/awdiv.c
+276 text10 CODE >14:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/awdiv.c
+278 text10 CODE >15:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/awdiv.c
+27D text10 CODE >16:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/awdiv.c
+27F text10 CODE >18:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/awdiv.c
+281 text10 CODE >19:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/awdiv.c
+286 text10 CODE >20:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/awdiv.c
+28A text10 CODE >22:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/awdiv.c
+28C text10 CODE >23:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/awdiv.c
+290 text10 CODE >24:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/awdiv.c
+292 text10 CODE >25:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/awdiv.c
+294 text10 CODE >26:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/awdiv.c
+299 text10 CODE >27:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/awdiv.c
+29D text10 CODE >25:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/awdiv.c
+29E text10 CODE >30:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/awdiv.c
+2A3 text10 CODE >31:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/awdiv.c
+2AB text10 CODE >32:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/awdiv.c
+2AF text10 CODE >33:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/awdiv.c
+2B0 text10 CODE >35:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/awdiv.c
+2B5 text10 CODE >36:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/awdiv.c
+2B9 text10 CODE >38:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/awdiv.c
+2BC text10 CODE >39:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/awdiv.c
+2C1 text10 CODE >40:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/awdiv.c
+2C6 text9 CODE >5:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/awmod.c
+2C6 text9 CODE >12:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/awmod.c
+2C8 text9 CODE >13:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/awmod.c
+2CA text9 CODE >14:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/awmod.c
+2CF text9 CODE >15:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/awmod.c
+2D1 text9 CODE >17:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/awmod.c
+2D3 text9 CODE >18:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/awmod.c
+2D8 text9 CODE >19:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/awmod.c
+2DC text9 CODE >20:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/awmod.c
+2DE text9 CODE >21:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/awmod.c
+2E0 text9 CODE >22:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/awmod.c
+2E5 text9 CODE >23:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/awmod.c
+2E9 text9 CODE >21:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/awmod.c
+2EA text9 CODE >26:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/awmod.c
+2F2 text9 CODE >27:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/awmod.c
+2F6 text9 CODE >28:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/awmod.c
+2FB text9 CODE >29:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/awmod.c
+2FF text9 CODE >31:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/awmod.c
+302 text9 CODE >32:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/awmod.c
+307 text9 CODE >33:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/awmod.c
+637 text8 CODE >15:/home/saul/MPLABXProjects/esp_16f1823.X/comm.c
+637 text8 CODE >19:/home/saul/MPLABXProjects/esp_16f1823.X/comm.c
+638 text8 CODE >22:/home/saul/MPLABXProjects/esp_16f1823.X/comm.c
+63C text8 CODE >20:/home/saul/MPLABXProjects/esp_16f1823.X/comm.c
+640 text8 CODE >21:/home/saul/MPLABXProjects/esp_16f1823.X/comm.c
+64E text8 CODE >22:/home/saul/MPLABXProjects/esp_16f1823.X/comm.c
+D8 text7 CODE >180:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
+D8 text7 CODE >184:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
+DD text7 CODE >185:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
+E2 text7 CODE >186:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
+E9 text7 CODE >187:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
+EE text7 CODE >189:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
+F3 text7 CODE >190:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
+F7 text7 CODE >191:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
+108 text7 CODE >192:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
+10C text7 CODE >193:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
+11D text7 CODE >194:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
+121 text7 CODE >195:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
+128 text7 CODE >196:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
+12C text7 CODE >199:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
+132 text7 CODE >200:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
+139 text7 CODE >203:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
+13E text7 CODE >205:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
+140 text7 CODE >207:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
+14A text7 CODE >208:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
+14F text7 CODE >210:/home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
+5DD text6 CODE >168:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
+5DD text6 CODE >170:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
+5DF text6 CODE >171:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
+5E2 text6 CODE >175:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
+5EB text6 CODE >176:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
+5ED text6 CODE >178:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
+5EE text6 CODE >182:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
+5F8 text6 CODE >183:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
+3EF text5 CODE >15:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/Umul32.c
+3EF text5 CODE >119:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/Umul32.c
+3F7 text5 CODE >121:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/Umul32.c
+3FA text5 CODE >122:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/Umul32.c
+402 text5 CODE >123:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/Umul32.c
+409 text5 CODE >124:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/Umul32.c
+410 text5 CODE >125:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/Umul32.c
+416 text5 CODE >128:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/Umul32.c
+3BA text4 CODE >5:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/lwdiv.c
+3BA text4 CODE >13:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/lwdiv.c
+3BD text4 CODE >14:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/lwdiv.c
+3C1 text4 CODE >15:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/lwdiv.c
+3C3 text4 CODE >16:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/lwdiv.c
+3C5 text4 CODE >17:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/lwdiv.c
+3CA text4 CODE >18:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/lwdiv.c
+3CE text4 CODE >16:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/lwdiv.c
+3CF text4 CODE >21:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/lwdiv.c
+3D4 text4 CODE >22:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/lwdiv.c
+3DC text4 CODE >23:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/lwdiv.c
+3E0 text4 CODE >24:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/lwdiv.c
+3E1 text4 CODE >26:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/lwdiv.c
+3E6 text4 CODE >27:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/lwdiv.c
+3EA text4 CODE >29:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/lwdiv.c
+44E text3 CODE >5:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/lwmod.c
+44E text3 CODE >12:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/lwmod.c
+452 text3 CODE >13:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/lwmod.c
+454 text3 CODE >14:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/lwmod.c
+456 text3 CODE >15:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/lwmod.c
+45B text3 CODE >16:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/lwmod.c
+45F text3 CODE >14:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/lwmod.c
+460 text3 CODE >19:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/lwmod.c
+468 text3 CODE >20:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/lwmod.c
+46C text3 CODE >21:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/lwmod.c
+471 text3 CODE >22:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/lwmod.c
+475 text3 CODE >24:/pkg/microchip/xc8/v2.00/pic/sources/c99/common/lwmod.c
 52 text2 CODE >25:/home/saul/MPLABXProjects/esp_16f1823.X/comm.c
 54 text2 CODE >31:/home/saul/MPLABXProjects/esp_16f1823.X/comm.c
 62 text2 CODE >32:/home/saul/MPLABXProjects/esp_16f1823.X/comm.c
@@ -659,44 +666,46 @@ BF text2 CODE >46:/home/saul/MPLABXProjects/esp_16f1823.X/comm.c
 C8 text2 CODE >47:/home/saul/MPLABXProjects/esp_16f1823.X/comm.c
 CF text2 CODE >48:/home/saul/MPLABXProjects/esp_16f1823.X/comm.c
 D7 text2 CODE >49:/home/saul/MPLABXProjects/esp_16f1823.X/comm.c
-1BC text1 CODE >97:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
-1BC text1 CODE >104:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
-1C1 text1 CODE >105:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
-1C2 text1 CODE >107:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
-1C5 text1 CODE >108:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
-1C9 text1 CODE >109:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
-1CD text1 CODE >125:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
-1D6 text1 CODE >126:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
-1D8 text1 CODE >129:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
-1D9 text1 CODE >132:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
-1F2 text1 CODE >133:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
-205 text1 CODE >135:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
-20B text1 CODE >136:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
-210 text1 CODE >140:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
-219 text1 CODE >141:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
-660 maintext CODE >52:/home/saul/MPLABXProjects/esp_16f1823.X/main.c
-660 maintext CODE >55:/home/saul/MPLABXProjects/esp_16f1823.X/main.c
-661 maintext CODE >58:/home/saul/MPLABXProjects/esp_16f1823.X/main.c
-662 maintext CODE >61:/home/saul/MPLABXProjects/esp_16f1823.X/main.c
-663 maintext CODE >66:/home/saul/MPLABXProjects/esp_16f1823.X/main.c
-664 maintext CODE >69:/home/saul/MPLABXProjects/esp_16f1823.X/main.c
-665 maintext CODE >77:/home/saul/MPLABXProjects/esp_16f1823.X/main.c
-666 maintext CODE >84:/home/saul/MPLABXProjects/esp_16f1823.X/main.c
-66A maintext CODE >88:/home/saul/MPLABXProjects/esp_16f1823.X/main.c
-66B maintext CODE >92:/home/saul/MPLABXProjects/esp_16f1823.X/main.c
-66F maintext CODE >93:/home/saul/MPLABXProjects/esp_16f1823.X/main.c
-670 maintext CODE >96:/home/saul/MPLABXProjects/esp_16f1823.X/main.c
-674 maintext CODE >97:/home/saul/MPLABXProjects/esp_16f1823.X/main.c
-675 maintext CODE >98:/home/saul/MPLABXProjects/esp_16f1823.X/main.c
-67A maintext CODE >102:/home/saul/MPLABXProjects/esp_16f1823.X/main.c
-798 clrtext CODE >3389:/tmp/xcXyo1Nhb
-798 clrtext CODE >3390:/tmp/xcXyo1Nhb
-799 clrtext CODE >3391:/tmp/xcXyo1Nhb
-799 clrtext CODE >3392:/tmp/xcXyo1Nhb
-79A clrtext CODE >3393:/tmp/xcXyo1Nhb
-79B clrtext CODE >3394:/tmp/xcXyo1Nhb
-79C clrtext CODE >3395:/tmp/xcXyo1Nhb
-79D clrtext CODE >3396:/tmp/xcXyo1Nhb
+1BC text1 CODE >92:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
+1BC text1 CODE >99:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
+1C1 text1 CODE >100:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
+1C2 text1 CODE >102:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
+1C5 text1 CODE >103:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
+1C9 text1 CODE >104:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
+1CD text1 CODE >110:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
+1D6 text1 CODE >111:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
+1D8 text1 CODE >114:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
+1D9 text1 CODE >117:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
+1F2 text1 CODE >118:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
+205 text1 CODE >120:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
+20B text1 CODE >121:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
+210 text1 CODE >125:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
+219 text1 CODE >126:/home/saul/MPLABXProjects/esp_16f1823.X/logger.c
+57E maintext CODE >52:/home/saul/MPLABXProjects/esp_16f1823.X/main.c
+57E maintext CODE >55:/home/saul/MPLABXProjects/esp_16f1823.X/main.c
+57F maintext CODE >58:/home/saul/MPLABXProjects/esp_16f1823.X/main.c
+580 maintext CODE >61:/home/saul/MPLABXProjects/esp_16f1823.X/main.c
+581 maintext CODE >66:/home/saul/MPLABXProjects/esp_16f1823.X/main.c
+582 maintext CODE >69:/home/saul/MPLABXProjects/esp_16f1823.X/main.c
+583 maintext CODE >77:/home/saul/MPLABXProjects/esp_16f1823.X/main.c
+584 maintext CODE >84:/home/saul/MPLABXProjects/esp_16f1823.X/main.c
+588 maintext CODE >88:/home/saul/MPLABXProjects/esp_16f1823.X/main.c
+589 maintext CODE >92:/home/saul/MPLABXProjects/esp_16f1823.X/main.c
+58D maintext CODE >93:/home/saul/MPLABXProjects/esp_16f1823.X/main.c
+58E maintext CODE >97:/home/saul/MPLABXProjects/esp_16f1823.X/main.c
+592 maintext CODE >98:/home/saul/MPLABXProjects/esp_16f1823.X/main.c
+593 maintext CODE >99:/home/saul/MPLABXProjects/esp_16f1823.X/main.c
+598 maintext CODE >103:/home/saul/MPLABXProjects/esp_16f1823.X/main.c
+59C maintext CODE >104:/home/saul/MPLABXProjects/esp_16f1823.X/main.c
+59D maintext CODE >108:/home/saul/MPLABXProjects/esp_16f1823.X/main.c
+78B clrtext CODE >3357:/tmp/xcXHqx2xG
+78B clrtext CODE >3358:/tmp/xcXHqx2xG
+78C clrtext CODE >3359:/tmp/xcXHqx2xG
+78C clrtext CODE >3360:/tmp/xcXHqx2xG
+78D clrtext CODE >3361:/tmp/xcXHqx2xG
+78E clrtext CODE >3362:/tmp/xcXHqx2xG
+78F clrtext CODE >3363:/tmp/xcXHqx2xG
+790 clrtext CODE >3364:/tmp/xcXHqx2xG
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -710,16 +719,16 @@ D7 text2 CODE >49:/home/saul/MPLABXProjects/esp_16f1823.X/comm.c
 # is the name of the object file in which the symbol was defined.
 %SYMTAB
 ___latbits 0 0 ABS 0 - dist/default/production/esp_16f1823.X.production.o
-_EUSART_Read BD4 0 CODE 0 text40 dist/default/production/esp_16f1823.X.production.o
+_EUSART_Read BF6 0 CODE 0 text41 dist/default/production/esp_16f1823.X.production.o
 ___awdiv@counter 20 0 BANK0 1 cstackBANK0 dist/default/production/esp_16f1823.X.production.o
 __size_of_TMR1_StopTimer 0 0 ABS 0 - dist/default/production/esp_16f1823.X.production.o
 ___lwmod@counter 78 0 COMMON 1 cstackCOMMON dist/default/production/esp_16f1823.X.production.o
-ESP_default_application_handler@data 3C 0 BANK0 1 cstackBANK0 dist/default/production/esp_16f1823.X.production.o
+ESP_default_application_handler@data 74 0 COMMON 1 cstackCOMMON dist/default/production/esp_16f1823.X.production.o
 __Hspace_0 8009 0 ABS 0 - -
 __Hspace_1 C0 0 ABS 0 - -
 __Hspace_2 0 0 ABS 0 - -
 __Hspace_3 0 0 ABS 0 - -
-_ESP_process_message 2A0 0 CODE 0 text41 dist/default/production/esp_16f1823.X.production.o
+_ESP_process_message 2A0 0 CODE 0 text42 dist/default/production/esp_16f1823.X.production.o
 __size_of_ADC_StartConversion 0 0 ABS 0 - dist/default/production/esp_16f1823.X.production.o
 strncmp@_l 20 0 BANK0 1 cstackBANK0 dist/default/production/esp_16f1823.X.production.o
 strncmp@_r 73 0 COMMON 1 cstackCOMMON dist/default/production/esp_16f1823.X.production.o
@@ -728,29 +737,29 @@ ESP_process_message@aux 2D 0 BANK0 1 cstackBANK0 dist/default/production/esp_16f
 __CFG_MCLRE$ON 0 0 ABS 0 - dist/default/production/esp_16f1823.X.production.o
 __size_of_ESP_config 0 0 ABS 0 - dist/default/production/esp_16f1823.X.production.o
 _T1CONbits 18 0 ABS 0 - dist/default/production/esp_16f1823.X.production.o
-__end_of_PIN_MANAGER_IOC FAE 0 CODE 0 text52 dist/default/production/esp_16f1823.X.production.o
+__end_of_PIN_MANAGER_IOC F94 0 CODE 0 text53 dist/default/production/esp_16f1823.X.production.o
 __size_of_ADC_GetConversionResult 0 0 ABS 0 - dist/default/production/esp_16f1823.X.production.o
 read_analog@adc_val 49 0 BANK0 1 cstackBANK0 dist/default/production/esp_16f1823.X.production.o
-__end_of_WDT_Initialize FBE 0 CODE 0 text9 dist/default/production/esp_16f1823.X.production.o
+__end_of_WDT_Initialize F9C 0 CODE 0 text14 dist/default/production/esp_16f1823.X.production.o
 __Hstrings 0 0 ABS 0 strings -
 _EUSART_RxDefaultInterruptHandler 5E 0 BANK0 1 bssBANK0 dist/default/production/esp_16f1823.X.production.o
 ESP_wait_for@ret 32 0 BANK0 1 cstackBANK0 dist/default/production/esp_16f1823.X.production.o
-__end_of_EUSART_is_tx_ready FFA 0 CODE 0 text35 dist/default/production/esp_16f1823.X.production.o
+__end_of_EUSART_is_tx_ready FD8 0 CODE 0 text36 dist/default/production/esp_16f1823.X.production.o
 _LATA 10C 0 ABS 0 - dist/default/production/esp_16f1823.X.production.o
 _LATC 10E 0 ABS 0 - dist/default/production/esp_16f1823.X.production.o
 _PLLR 4D6 0 ABS 0 - dist/default/production/esp_16f1823.X.production.o
 _WPUA 20C 0 ABS 0 - dist/default/production/esp_16f1823.X.production.o
 _WPUC 20E 0 ABS 0 - dist/default/production/esp_16f1823.X.production.o
-___sp 0 0 STACK 2 stack /tmp/xcXdOrCMK.o
-_main CC0 0 CODE 0 maintext dist/default/production/esp_16f1823.X.production.o
+___sp 0 0 STACK 2 stack /tmp/xcXQOqJsH.o
+_main AFC 0 CODE 0 maintext dist/default/production/esp_16f1823.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production/esp_16f1823.X.production.o
-__end_of__TMR1_Ready F84 0 CODE 0 text49 dist/default/production/esp_16f1823.X.production.o
-start 80 0 CODE 0 init /tmp/xcXdOrCMK.o
-_EUSART_Write AD8 0 CODE 0 text36 dist/default/production/esp_16f1823.X.production.o
+__end_of__TMR1_Ready F6A 0 CODE 0 text50 dist/default/production/esp_16f1823.X.production.o
+start 80 0 CODE 0 init /tmp/xcXQOqJsH.o
+_EUSART_Write ABA 0 CODE 0 text37 dist/default/production/esp_16f1823.X.production.o
 __size_of___awdiv 0 0 ABS 0 - dist/default/production/esp_16f1823.X.production.o
 __size_of___awmod 0 0 ABS 0 - dist/default/production/esp_16f1823.X.production.o
 _ESP_wait_exception 68 0 BANK0 1 bssBANK0 dist/default/production/esp_16f1823.X.production.o
-__IOC_Ready E94 0 CODE 0 text55 dist/default/production/esp_16f1823.X.production.o
+__IOC_Ready E96 0 CODE 0 text56 dist/default/production/esp_16f1823.X.production.o
 __size_of_main 0 0 ABS 0 - dist/default/production/esp_16f1823.X.production.o
 __size_of_read_analog 0 0 ABS 0 - dist/default/production/esp_16f1823.X.production.o
 __size_of___lwdiv 0 0 ABS 0 - dist/default/production/esp_16f1823.X.production.o
@@ -763,47 +772,44 @@ __Hstringtext14 0 0 ABS 0 stringtext14 -
 __Hstringtext15 0 0 ABS 0 stringtext15 -
 __Hstringtext16 0 0 ABS 0 stringtext16 -
 __Hstringtext17 0 0 ABS 0 stringtext17 -
-__Hstringtext18 0 0 ABS 0 stringtext18 -
-__Hstringtext19 0 0 ABS 0 stringtext19 -
-__Hstringtext20 0 0 ABS 0 stringtext20 -
 __HbssCOMMON 0 0 ABS 0 bssCOMMON -
-_TMR1_state 64 0 BANK0 1 bssBANK0 dist/default/production/esp_16f1823.X.production.o
+_TMR1_state 63 0 BANK0 1 bssBANK0 dist/default/production/esp_16f1823.X.production.o
 ?___lmul 20 0 BANK0 1 cstackBANK0 dist/default/production/esp_16f1823.X.production.o
 _ADC_state 6D 0 BANK0 1 bssBANK0 dist/default/production/esp_16f1823.X.production.o
 _ADC_value 5C 0 BANK0 1 bssBANK0 dist/default/production/esp_16f1823.X.production.o
 _OPTION_REGbits 95 0 ABS 0 - dist/default/production/esp_16f1823.X.production.o
-_ADC_SelectChannel E20 0 CODE 0 text7 dist/default/production/esp_16f1823.X.production.o
+_ADC_SelectChannel E0C 0 CODE 0 text12 dist/default/production/esp_16f1823.X.production.o
 __size_of_ESP_message_handler 0 0 ABS 0 - dist/default/production/esp_16f1823.X.production.o
-__end_of_EUSART_Initialize A4A 0 CODE 0 text15 dist/default/production/esp_16f1823.X.production.o
+__end_of_EUSART_Initialize A2C 0 CODE 0 text20 dist/default/production/esp_16f1823.X.production.o
 __Hpowerup 0 0 CODE 0 powerup -
 __size_of_TMR1_Initialize 0 0 ABS 0 - dist/default/production/esp_16f1823.X.production.o
 __size_of_TMR1_StartTimer 0 0 ABS 0 - dist/default/production/esp_16f1823.X.production.o
 __size_of_TMR1_WriteTimer 0 0 ABS 0 - dist/default/production/esp_16f1823.X.production.o
 ___awmod@sign 21 0 BANK0 1 cstackBANK0 dist/default/production/esp_16f1823.X.production.o
-ESP_process_rx_data@aux 42 0 BANK0 1 cstackBANK0 dist/default/production/esp_16f1823.X.production.o
-_ADC_StartConversion FD6 0 CODE 0 text30 dist/default/production/esp_16f1823.X.production.o
+ESP_process_rx_data@aux 2F 0 BANK0 1 cstackBANK0 dist/default/production/esp_16f1823.X.production.o
+_ADC_StartConversion FB4 0 CODE 0 text31 dist/default/production/esp_16f1823.X.production.o
 __size_of_SYSTEM_Initialize 0 0 ABS 0 - dist/default/production/esp_16f1823.X.production.o
-__end_of_ESP_default_application_handler FFC 0 CODE 0 text21 dist/default/production/esp_16f1823.X.production.o
-intlevel0 0 0 ENTRY 0 functab /tmp/xcXdOrCMK.o
-intlevel1 0 0 ENTRY 0 functab /tmp/xcXdOrCMK.o
-intlevel2 0 0 ENTRY 0 functab /tmp/xcXdOrCMK.o
-intlevel3 0 0 ENTRY 0 functab /tmp/xcXdOrCMK.o
-intlevel4 0 0 ENTRY 0 functab /tmp/xcXdOrCMK.o
-intlevel5 0 0 ENTRY 0 functab /tmp/xcXdOrCMK.o
+__end_of_ESP_default_application_handler FDA 0 CODE 0 text26 dist/default/production/esp_16f1823.X.production.o
+intlevel0 0 0 ENTRY 0 functab /tmp/xcXQOqJsH.o
+intlevel1 0 0 ENTRY 0 functab /tmp/xcXQOqJsH.o
+intlevel2 0 0 ENTRY 0 functab /tmp/xcXQOqJsH.o
+intlevel3 0 0 ENTRY 0 functab /tmp/xcXQOqJsH.o
+intlevel4 0 0 ENTRY 0 functab /tmp/xcXQOqJsH.o
+intlevel5 0 0 ENTRY 0 functab /tmp/xcXQOqJsH.o
 __LbssCOMMON 0 0 ABS 0 bssCOMMON -
 __size_of_ADC_Initialize 0 0 ABS 0 - dist/default/production/esp_16f1823.X.production.o
-_EUSART_is_tx_ready FF6 0 CODE 0 text35 dist/default/production/esp_16f1823.X.production.o
+_EUSART_is_tx_ready FD4 0 CODE 0 text36 dist/default/production/esp_16f1823.X.production.o
 wtemp0 7E 0 ABS 0 - dist/default/production/esp_16f1823.X.production.o
 __Hfunctab 0 0 ENTRY 0 functab -
-_ESP_initialize EBA 0 CODE 0 text31 dist/default/production/esp_16f1823.X.production.o
-_PIN_MANAGER_IOC FA4 0 CODE 0 text52 dist/default/production/esp_16f1823.X.production.o
+_ESP_initialize EBC 0 CODE 0 text32 dist/default/production/esp_16f1823.X.production.o
+_PIN_MANAGER_IOC F8A 0 CODE 0 text53 dist/default/production/esp_16f1823.X.production.o
 __size_of_TMR1_DefaultInterruptHandler 0 0 ABS 0 - dist/default/production/esp_16f1823.X.production.o
 __size_of_EUSART_Write 0 0 ABS 0 - dist/default/production/esp_16f1823.X.production.o
-__end_of_EUSART_Transmit_ISR CC0 0 CODE 0 text56 dist/default/production/esp_16f1823.X.production.o
+__end_of_EUSART_Transmit_ISR CE2 0 CODE 0 text57 dist/default/production/esp_16f1823.X.production.o
 __size_of_logger_initialize 0 0 ABS 0 - dist/default/production/esp_16f1823.X.production.o
 ___awdiv@sign 21 0 BANK0 1 cstackBANK0 dist/default/production/esp_16f1823.X.production.o
 __Hclrtext 0 0 ABS 0 clrtext -
-__end_of_TMR1_DefaultInterruptHandler FFE 0 CODE 0 text48 dist/default/production/esp_16f1823.X.production.o
+__end_of_TMR1_DefaultInterruptHandler FDC 0 CODE 0 text49 dist/default/production/esp_16f1823.X.production.o
 _eusartTxBuffer 4C 0 BANK0 1 bssBANK0 dist/default/production/esp_16f1823.X.production.o
 _ADCON0 9D 0 ABS 0 - dist/default/production/esp_16f1823.X.production.o
 _ADCON1 9E 0 ABS 0 - dist/default/production/esp_16f1823.X.production.o
@@ -813,41 +819,41 @@ _ANSELA 18C 0 ABS 0 - dist/default/production/esp_16f1823.X.production.o
 _ANSELC 18E 0 ABS 0 - dist/default/production/esp_16f1823.X.production.o
 _APFCON 11D 0 ABS 0 - dist/default/production/esp_16f1823.X.production.o
 ___awdiv@dividend 75 0 COMMON 1 cstackCOMMON dist/default/production/esp_16f1823.X.production.o
-__end_of__IOC_Ready EA8 0 CODE 0 text55 dist/default/production/esp_16f1823.X.production.o
+__end_of__IOC_Ready EAA 0 CODE 0 text56 dist/default/production/esp_16f1823.X.production.o
 _BORCON 116 0 ABS 0 - dist/default/production/esp_16f1823.X.production.o
-_ESP_message_handler 912 0 CODE 0 text19 dist/default/production/esp_16f1823.X.production.o
-__end_of_EUSART_is_rx_ready FE2 0 CODE 0 text37 dist/default/production/esp_16f1823.X.production.o
+_ESP_message_handler 8F4 0 CODE 0 text24 dist/default/production/esp_16f1823.X.production.o
+__end_of_EUSART_is_rx_ready FC0 0 CODE 0 text38 dist/default/production/esp_16f1823.X.production.o
 __end_of_INTERRUPT_InterruptManager 80 0 CODE 0 intentry dist/default/production/esp_16f1823.X.production.o
-__end_of_ESP_process_message 378 0 CODE 0 text41 dist/default/production/esp_16f1823.X.production.o
+__end_of_ESP_process_message 378 0 CODE 0 text42 dist/default/production/esp_16f1823.X.production.o
 __size_of_TMR1_SetInterruptHandler 0 0 ABS 0 - dist/default/production/esp_16f1823.X.production.o
-__end_of___lmul 85C 0 CODE 0 text5 dist/default/production/esp_16f1823.X.production.o
+__end_of___lmul 83E 0 CODE 0 text5 dist/default/production/esp_16f1823.X.production.o
 EUSART_SetRxInterruptHandler@interruptHandler 73 0 COMMON 1 cstackCOMMON dist/default/production/esp_16f1823.X.production.o
 __size_of_IOCAF4_DefaultInterruptHandler 0 0 ABS 0 - dist/default/production/esp_16f1823.X.production.o
-__end_of_EUSART_Write B1A 0 CODE 0 text36 dist/default/production/esp_16f1823.X.production.o
+__end_of_EUSART_Write AFC 0 CODE 0 text37 dist/default/production/esp_16f1823.X.production.o
 __Lmaintext 0 0 ABS 0 maintext -
 __size_of_ESP_Set_application_handler 0 0 ABS 0 - dist/default/production/esp_16f1823.X.production.o
 __LnvBANK0 0 0 ABS 0 nvBANK0 -
 ___awdiv@divisor 73 0 COMMON 1 cstackCOMMON dist/default/production/esp_16f1823.X.production.o
 ___lwmod@divisor 73 0 COMMON 1 cstackCOMMON dist/default/production/esp_16f1823.X.production.o
-__end_of___awdiv 58C 0 CODE 0 text27 dist/default/production/esp_16f1823.X.production.o
-__end_of___awmod 6A4 0 CODE 0 text26 dist/default/production/esp_16f1823.X.production.o
+__end_of___awdiv 58C 0 CODE 0 text10 dist/default/production/esp_16f1823.X.production.o
+__end_of___awmod 618 0 CODE 0 text9 dist/default/production/esp_16f1823.X.production.o
 __puts@index 77 0 COMMON 1 cstackCOMMON dist/default/production/esp_16f1823.X.production.o
-__end_of___lwdiv 7FC 0 CODE 0 text4 dist/default/production/esp_16f1823.X.production.o
-__end_of___lwmod 912 0 CODE 0 text3 dist/default/production/esp_16f1823.X.production.o
+__end_of___lwdiv 7DE 0 CODE 0 text4 dist/default/production/esp_16f1823.X.production.o
+__end_of___lwmod 8F4 0 CODE 0 text3 dist/default/production/esp_16f1823.X.production.o
 ?_strlen 73 0 COMMON 1 cstackCOMMON dist/default/production/esp_16f1823.X.production.o
-__end_of_ESP_initialize ECC 0 CODE 0 text31 dist/default/production/esp_16f1823.X.production.o
+__end_of_ESP_initialize ECE 0 CODE 0 text32 dist/default/production/esp_16f1823.X.production.o
 ESP_wait_for@esp_mess 31 0 BANK0 1 cstackBANK0 dist/default/production/esp_16f1823.X.production.o
 __size_of_strncmp 0 0 ABS 0 - dist/default/production/esp_16f1823.X.production.o
-__end_ofi1_ADC_StartConversion FE8 0 CODE 0 text50 dist/default/production/esp_16f1823.X.production.o
-_EUSART_Initialize A00 0 CODE 0 text15 dist/default/production/esp_16f1823.X.production.o
+__end_ofi1_ADC_StartConversion FC6 0 CODE 0 text51 dist/default/production/esp_16f1823.X.production.o
+_EUSART_Initialize 9E2 0 CODE 0 text20 dist/default/production/esp_16f1823.X.production.o
 __size_of__puts 0 0 ABS 0 - dist/default/production/esp_16f1823.X.production.o
 ___lwdiv@quotient 21 0 BANK0 1 cstackBANK0 dist/default/production/esp_16f1823.X.production.o
-_EUSART_is_rx_ready FDC 0 CODE 0 text37 dist/default/production/esp_16f1823.X.production.o
+_EUSART_is_rx_ready FBA 0 CODE 0 text38 dist/default/production/esp_16f1823.X.production.o
 __size_of_write 0 0 ABS 0 - dist/default/production/esp_16f1823.X.production.o
 _IOCAF4_InterruptHandler 6E 0 BANK0 1 nvBANK0 dist/default/production/esp_16f1823.X.production.o
-__end_of_ESP_Set_application_handler F78 0 CODE 0 text32 dist/default/production/esp_16f1823.X.production.o
+__end_of_ESP_Set_application_handler F5E 0 CODE 0 text33 dist/default/production/esp_16f1823.X.production.o
 ___lwmod@dividend 75 0 COMMON 1 cstackCOMMON dist/default/production/esp_16f1823.X.production.o
-_PIN_MANAGER_Initialize B1A 0 CODE 0 text12 dist/default/production/esp_16f1823.X.production.o
+_PIN_MANAGER_Initialize B3C 0 CODE 0 text17 dist/default/production/esp_16f1823.X.production.o
 __Lstringtext10 0 0 ABS 0 stringtext10 -
 __Lstringtext11 0 0 ABS 0 stringtext11 -
 __Lstringtext12 0 0 ABS 0 stringtext12 -
@@ -856,38 +862,36 @@ __Lstringtext14 0 0 ABS 0 stringtext14 -
 __Lstringtext15 0 0 ABS 0 stringtext15 -
 __Lstringtext16 0 0 ABS 0 stringtext16 -
 __Lstringtext17 0 0 ABS 0 stringtext17 -
-__Lstringtext18 0 0 ABS 0 stringtext18 -
-__Lstringtext19 0 0 ABS 0 stringtext19 -
-__Lstringtext20 0 0 ABS 0 stringtext20 -
 ?_ADC_GetConversionResult 70 0 COMMON 1 cstackCOMMON dist/default/production/esp_16f1823.X.production.o
 start_initialization 82 0 CODE 0 cinit dist/default/production/esp_16f1823.X.production.o
-__end_of_ADC_StartConversion FDC 0 CODE 0 text30 dist/default/production/esp_16f1823.X.production.o
-_esp_channel 66 0 BANK0 1 bssBANK0 dist/default/production/esp_16f1823.X.production.o
+__end_of_ADC_StartConversion FBA 0 CODE 0 text31 dist/default/production/esp_16f1823.X.production.o
+_esp_channel 65 0 BANK0 1 bssBANK0 dist/default/production/esp_16f1823.X.production.o
 _OSCCON 99 0 ABS 0 - dist/default/production/esp_16f1823.X.production.o
-i1_ADC_StartConversion FE2 0 CODE 0 text50 dist/default/production/esp_16f1823.X.production.o
+i1_ADC_StartConversion FC0 0 CODE 0 text51 dist/default/production/esp_16f1823.X.production.o
 __size_of__TMR1_Ready 0 0 ABS 0 - dist/default/production/esp_16f1823.X.production.o
 _eusartRxBuffer A0 0 BANK1 1 bssBANK1 dist/default/production/esp_16f1823.X.production.o
-_ADC_ISR FE8 0 CODE 0 text58 dist/default/production/esp_16f1823.X.production.o
+_ADC_ISR FC6 0 CODE 0 text59 dist/default/production/esp_16f1823.X.production.o
 __size_of_PIN_MANAGER_IOC 0 0 ABS 0 - dist/default/production/esp_16f1823.X.production.o
-__end_of_SYSTEM_Initialize F24 0 CODE 0 text8 dist/default/production/esp_16f1823.X.production.o
+__end_of_SYSTEM_Initialize F0A 0 CODE 0 text13 dist/default/production/esp_16f1823.X.production.o
 __size_of__sprintf 0 0 ABS 0 - dist/default/production/esp_16f1823.X.production.o
-clear_ram0 F30 0 CODE 0 clrtext dist/default/production/esp_16f1823.X.production.o
+clear_ram0 F16 0 CODE 0 clrtext dist/default/production/esp_16f1823.X.production.o
 _SPBRGH 19C 0 ABS 0 - dist/default/production/esp_16f1823.X.production.o
 _SPBRGL 19B 0 ABS 0 - dist/default/production/esp_16f1823.X.production.o
 __pcstackBANK0 20 0 BANK0 1 cstackBANK0 dist/default/production/esp_16f1823.X.production.o
 ESP_write@pt 33 0 BANK0 1 cstackBANK0 dist/default/production/esp_16f1823.X.production.o
 _T1GCON 19 0 ABS 0 - dist/default/production/esp_16f1823.X.production.o
 _esp_read_data AC 0 BANK1 1 bssBANK1 dist/default/production/esp_16f1823.X.production.o
-_toggle_format B98 0 CODE 0 text23 dist/default/production/esp_16f1823.X.production.o
-__end_of_TMR1_SetInterruptHandler F48 0 CODE 0 text11 dist/default/production/esp_16f1823.X.production.o
+__end_of_process_ioc BF6 0 CODE 0 text6 dist/default/production/esp_16f1823.X.production.o
+_toggle_format E58 0 CODE 0 text28 dist/default/production/esp_16f1823.X.production.o
+__end_of_TMR1_SetInterruptHandler F2E 0 CODE 0 text16 dist/default/production/esp_16f1823.X.production.o
 _WDTCON 97 0 ABS 0 - dist/default/production/esp_16f1823.X.production.o
 write@lenght 77 0 COMMON 1 cstackCOMMON dist/default/production/esp_16f1823.X.production.o
-__end_of_logger_initialize B98 0 CODE 0 text6 dist/default/production/esp_16f1823.X.production.o
+__end_of_logger_initialize BBA 0 CODE 0 text11 dist/default/production/esp_16f1823.X.production.o
 _EUSART_TxDefaultInterruptHandler 60 0 BANK0 1 bssBANK0 dist/default/production/esp_16f1823.X.production.o
 _read_analog 378 0 CODE 0 text1 dist/default/production/esp_16f1823.X.production.o
-___int_sp 0 0 STACK 2 stack /tmp/xcXdOrCMK.o
-__end_of_EUSART_Read C10 0 CODE 0 text40 dist/default/production/esp_16f1823.X.production.o
-__end_of_ESP_message_handler 962 0 CODE 0 text19 dist/default/production/esp_16f1823.X.production.o
+___int_sp 0 0 STACK 2 stack /tmp/xcXQOqJsH.o
+__end_of_EUSART_Read C32 0 CODE 0 text41 dist/default/production/esp_16f1823.X.production.o
+__end_of_ESP_message_handler 944 0 CODE 0 text24 dist/default/production/esp_16f1823.X.production.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 BANK2 1 bank2 -
@@ -899,9 +903,9 @@ __Hbank7 0 0 BANK7 1 bank7 -
 __Hbank8 0 0 BANK8 1 bank8 -
 __Hbank9 0 0 BANK9 1 bank9 -
 __Hcinit A4 0 CODE 0 cinit -
-__end_of_strchr DA6 0 CODE 0 text45 dist/default/production/esp_16f1823.X.production.o
-__end_of_strlen C4C 0 CODE 0 text44 dist/default/production/esp_16f1823.X.production.o
-__end_of_strstr 724 0 CODE 0 text42 dist/default/production/esp_16f1823.X.production.o
+__end_of_strchr D92 0 CODE 0 text46 dist/default/production/esp_16f1823.X.production.o
+__end_of_strlen C6E 0 CODE 0 text45 dist/default/production/esp_16f1823.X.production.o
+__end_of_strstr 698 0 CODE 0 text43 dist/default/production/esp_16f1823.X.production.o
 __Hidloc 0 0 IDLOC 0 idloc -
 __size_of_OSCILLATOR_Initialize 0 0 ABS 0 - dist/default/production/esp_16f1823.X.production.o
 __Hsfr10 0 0 ABS 0 sfr10 -
@@ -992,10 +996,10 @@ __Lsfr29 0 0 ABS 0 sfr29 -
 __Lsfr30 0 0 ABS 0 sfr30 -
 __Lsfr31 0 0 ABS 0 sfr31 -
 __Lstack 0 0 STACK 2 stack -
-__end_of_IOCAF4_DefaultInterruptHandler 1000 0 CODE 0 text54 dist/default/production/esp_16f1823.X.production.o
-_TMR1_StopTimer FCA 0 CODE 0 text28 dist/default/production/esp_16f1823.X.production.o
+__end_of_IOCAF4_DefaultInterruptHandler FDE 0 CODE 0 text55 dist/default/production/esp_16f1823.X.production.o
+_TMR1_StopTimer FA8 0 CODE 0 text29 dist/default/production/esp_16f1823.X.production.o
 _PORTAbits C 0 ABS 0 - dist/default/production/esp_16f1823.X.production.o
-__end_of_strncmp 4E8 0 CODE 0 text43 dist/default/production/esp_16f1823.X.production.o
+__end_of_strncmp 4E8 0 CODE 0 text44 dist/default/production/esp_16f1823.X.production.o
 _INTCONbits B 0 ABS 0 - dist/default/production/esp_16f1823.X.production.o
 __Habs1 0 0 ABS 0 abs1 -
 __Hcode 0 0 ABS 0 code -
@@ -1025,33 +1029,30 @@ __Lsfr7 0 0 ABS 0 sfr7 -
 __Lsfr8 0 0 ABS 0 sfr8 -
 __Lsfr9 0 0 ABS 0 sfr9 -
 __Ltext 0 0 ABS 0 text -
-__pstringtext1 A94 0 STRCODE 0 stringtext1 dist/default/production/esp_16f1823.X.production.o
-__pstringtext2 D58 0 STRCODE 0 stringtext2 dist/default/production/esp_16f1823.X.production.o
-__pstringtext3 DE8 0 STRCODE 0 stringtext3 dist/default/production/esp_16f1823.X.production.o
-__pstringtext4 E04 0 STRCODE 0 stringtext4 dist/default/production/esp_16f1823.X.production.o
-__pstringtext5 E54 0 STRCODE 0 stringtext5 dist/default/production/esp_16f1823.X.production.o
-__pstringtext6 E6C 0 STRCODE 0 stringtext6 dist/default/production/esp_16f1823.X.production.o
-__pstringtext7 ECC 0 STRCODE 0 stringtext7 dist/default/production/esp_16f1823.X.production.o
-__pstringtext8 EDC 0 STRCODE 0 stringtext8 dist/default/production/esp_16f1823.X.production.o
-__pstringtext9 EEC 0 STRCODE 0 stringtext9 dist/default/production/esp_16f1823.X.production.o
+__pstringtext1 A76 0 STRCODE 0 stringtext1 dist/default/production/esp_16f1823.X.production.o
+__pstringtext2 D44 0 STRCODE 0 stringtext2 dist/default/production/esp_16f1823.X.production.o
+__pstringtext3 DD4 0 STRCODE 0 stringtext3 dist/default/production/esp_16f1823.X.production.o
+__pstringtext4 DF0 0 STRCODE 0 stringtext4 dist/default/production/esp_16f1823.X.production.o
+__pstringtext5 E40 0 STRCODE 0 stringtext5 dist/default/production/esp_16f1823.X.production.o
+__pstringtext6 E6E 0 STRCODE 0 stringtext6 dist/default/production/esp_16f1823.X.production.o
+__pstringtext7 ECE 0 STRCODE 0 stringtext7 dist/default/production/esp_16f1823.X.production.o
+__pstringtext8 EDE 0 STRCODE 0 stringtext8 dist/default/production/esp_16f1823.X.production.o
+__pstringtext9 EEE 0 STRCODE 0 stringtext9 dist/default/production/esp_16f1823.X.production.o
 __pnvBANK0 6E 0 BANK0 1 nvBANK0 dist/default/production/esp_16f1823.X.production.o
-__pstringtext10 EFA 0 STRCODE 0 stringtext10 dist/default/production/esp_16f1823.X.production.o
-__pstringtext11 F08 0 STRCODE 0 stringtext11 dist/default/production/esp_16f1823.X.production.o
-__pstringtext12 F24 0 STRCODE 0 stringtext12 dist/default/production/esp_16f1823.X.production.o
-__pstringtext13 F90 0 STRCODE 0 stringtext13 dist/default/production/esp_16f1823.X.production.o
-__pstringtext14 F9A 0 STRCODE 0 stringtext14 dist/default/production/esp_16f1823.X.production.o
-__pstringtext15 FAE 0 STRCODE 0 stringtext15 dist/default/production/esp_16f1823.X.production.o
-__pstringtext16 FBE 0 STRCODE 0 stringtext16 dist/default/production/esp_16f1823.X.production.o
-__pstringtext17 FC4 0 STRCODE 0 stringtext17 dist/default/production/esp_16f1823.X.production.o
-__pstringtext18 FEE 0 STRCODE 0 stringtext18 dist/default/production/esp_16f1823.X.production.o
-__pstringtext19 FF2 0 STRCODE 0 stringtext19 dist/default/production/esp_16f1823.X.production.o
-__pstringtext20 0 0 STRCODE 0 stringtext20 dist/default/production/esp_16f1823.X.production.o
-___lmul 7FC 0 CODE 0 text5 dist/default/production/esp_16f1823.X.production.o
+__pstringtext10 F0A 0 STRCODE 0 stringtext10 dist/default/production/esp_16f1823.X.production.o
+__pstringtext11 F76 0 STRCODE 0 stringtext11 dist/default/production/esp_16f1823.X.production.o
+__pstringtext12 F80 0 STRCODE 0 stringtext12 dist/default/production/esp_16f1823.X.production.o
+__pstringtext13 F9C 0 STRCODE 0 stringtext13 dist/default/production/esp_16f1823.X.production.o
+__pstringtext14 FA2 0 STRCODE 0 stringtext14 dist/default/production/esp_16f1823.X.production.o
+__pstringtext15 FCC 0 STRCODE 0 stringtext15 dist/default/production/esp_16f1823.X.production.o
+__pstringtext16 FD0 0 STRCODE 0 stringtext16 dist/default/production/esp_16f1823.X.production.o
+__pstringtext17 0 0 STRCODE 0 stringtext17 dist/default/production/esp_16f1823.X.production.o
+___lmul 7DE 0 CODE 0 text5 dist/default/production/esp_16f1823.X.production.o
 __LcstackBANK0 0 0 ABS 0 cstackBANK0 -
 int$flags 7E 0 ABS 0 - dist/default/production/esp_16f1823.X.production.o
 __sprintf A4 0 CODE 0 text2 dist/default/production/esp_16f1823.X.production.o
 __HcstackCOMMON 0 0 ABS 0 cstackCOMMON -
-__end_of_process_message 618 0 CODE 0 text22 dist/default/production/esp_16f1823.X.production.o
+__end_of_process_message 706 0 CODE 0 text27 dist/default/production/esp_16f1823.X.production.o
 __size_of_INTERRUPT_InterruptManager 0 0 ABS 0 - dist/default/production/esp_16f1823.X.production.o
 __size_of_WDT_Initialize 0 0 ABS 0 - dist/default/production/esp_16f1823.X.production.o
 __S0 8009 0 ABS 0 - -
@@ -1061,37 +1062,37 @@ __S3 0 0 ABS 0 - -
 __size_of_TMR1_ISR 0 0 ABS 0 - dist/default/production/esp_16f1823.X.production.o
 __size_of_EUSART_is_tx_ready 0 0 ABS 0 - dist/default/production/esp_16f1823.X.production.o
 __end_of__sprintf 1B0 0 CODE 0 text2 dist/default/production/esp_16f1823.X.production.o
-_ESP_default_application_handler FFA 0 CODE 0 text21 dist/default/production/esp_16f1823.X.production.o
+_ESP_default_application_handler FD8 0 CODE 0 text26 dist/default/production/esp_16f1823.X.production.o
 __CFG_PLLEN$ON 0 0 ABS 0 - dist/default/production/esp_16f1823.X.production.o
 __size_of__IOC_Ready 0 0 ABS 0 - dist/default/production/esp_16f1823.X.production.o
-_esp_read_data_index 67 0 BANK0 1 bssBANK0 dist/default/production/esp_16f1823.X.production.o
-__end_of_EUSART_Receive_ISR D2C 0 CODE 0 text57 dist/default/production/esp_16f1823.X.production.o
-_SYSTEM_Initialize F16 0 CODE 0 text8 dist/default/production/esp_16f1823.X.production.o
-_IOCAF4_ISR E3A 0 CODE 0 text53 dist/default/production/esp_16f1823.X.production.o
-_EUSART_SetTxInterruptHandler F54 0 CODE 0 text16 dist/default/production/esp_16f1823.X.production.o
-__end_of_IOCAF4_SetInterruptHandler F54 0 CODE 0 text13 dist/default/production/esp_16f1823.X.production.o
+_esp_read_data_index 66 0 BANK0 1 bssBANK0 dist/default/production/esp_16f1823.X.production.o
+__end_of_EUSART_Receive_ISR D18 0 CODE 0 text58 dist/default/production/esp_16f1823.X.production.o
+_SYSTEM_Initialize EFC 0 CODE 0 text13 dist/default/production/esp_16f1823.X.production.o
+_IOCAF4_ISR E26 0 CODE 0 text54 dist/default/production/esp_16f1823.X.production.o
+_EUSART_SetTxInterruptHandler F3A 0 CODE 0 text21 dist/default/production/esp_16f1823.X.production.o
+__end_of_IOCAF4_SetInterruptHandler F3A 0 CODE 0 text18 dist/default/production/esp_16f1823.X.production.o
 __CFG_BOREN$ON 0 0 ABS 0 - dist/default/production/esp_16f1823.X.production.o
-_ADC_GetConversionResult F84 0 CODE 0 text59 dist/default/production/esp_16f1823.X.production.o
+_ADC_GetConversionResult F6A 0 CODE 0 text60 dist/default/production/esp_16f1823.X.production.o
 __HnvBANK0 0 0 ABS 0 nvBANK0 -
 __Lintentry 8 0 CODE 0 intentry -
 strchr@c 73 0 COMMON 1 cstackCOMMON dist/default/production/esp_16f1823.X.production.o
 strchr@s 75 0 COMMON 1 cstackCOMMON dist/default/production/esp_16f1823.X.production.o
-reset_vec 0 0 CODE 0 reset_vec /tmp/xcXdOrCMK.o
+reset_vec 0 0 CODE 0 reset_vec /tmp/xcXQOqJsH.o
 EUSART_Read@readValue 74 0 COMMON 1 cstackCOMMON dist/default/production/esp_16f1823.X.production.o
 strlen@a 77 0 COMMON 1 cstackCOMMON dist/default/production/esp_16f1823.X.production.o
 strlen@s 73 0 COMMON 1 cstackCOMMON dist/default/production/esp_16f1823.X.production.o
-__end_of_ADC_GetConversionResult F90 0 CODE 0 text59 dist/default/production/esp_16f1823.X.production.o
-_ESP_read 85C 0 CODE 0 text39 dist/default/production/esp_16f1823.X.production.o
+__end_of_ADC_GetConversionResult F76 0 CODE 0 text60 dist/default/production/esp_16f1823.X.production.o
+_ESP_read 83E 0 CODE 0 text40 dist/default/production/esp_16f1823.X.production.o
 strstr@h 2B 0 BANK0 1 cstackBANK0 dist/default/production/esp_16f1823.X.production.o
 strstr@n 24 0 BANK0 1 cstackBANK0 dist/default/production/esp_16f1823.X.production.o
-ESP_process_rx_data@index 41 0 BANK0 1 cstackBANK0 dist/default/production/esp_16f1823.X.production.o
-__end_of_TMR1_StopTimer FD0 0 CODE 0 text28 dist/default/production/esp_16f1823.X.production.o
+ESP_process_rx_data@index 2E 0 BANK0 1 cstackBANK0 dist/default/production/esp_16f1823.X.production.o
+__end_of_TMR1_StopTimer FAE 0 CODE 0 text29 dist/default/production/esp_16f1823.X.production.o
 write@pt 75 0 COMMON 1 cstackCOMMON dist/default/production/esp_16f1823.X.production.o
 __size_of___lmul 0 0 ABS 0 - dist/default/production/esp_16f1823.X.production.o
 __LbssBANK0 0 0 ABS 0 bssBANK0 -
 __LbssBANK1 0 0 ABS 0 bssBANK1 -
 __size_of_ESP_process_rx_data 0 0 ABS 0 - dist/default/production/esp_16f1823.X.production.o
-_logger_initialize B5A 0 CODE 0 text6 dist/default/production/esp_16f1823.X.production.o
+_logger_initialize B7C 0 CODE 0 text11 dist/default/production/esp_16f1823.X.production.o
 __CFG_FCMEN$ON 0 0 ABS 0 - dist/default/production/esp_16f1823.X.production.o
 __Lstringtext1 0 0 ABS 0 stringtext1 -
 __Lstringtext2 0 0 ABS 0 stringtext2 -
@@ -1104,76 +1105,77 @@ __Lstringtext8 0 0 ABS 0 stringtext8 -
 __Lstringtext9 0 0 ABS 0 stringtext9 -
 __size_of_toggle_format 0 0 ABS 0 - dist/default/production/esp_16f1823.X.production.o
 _INTERRUPT_InterruptManager 8 0 CODE 0 intentry dist/default/production/esp_16f1823.X.production.o
-_ADC_Initialize EA8 0 CODE 0 text18 dist/default/production/esp_16f1823.X.production.o
+_ADC_Initialize EAA 0 CODE 0 text23 dist/default/production/esp_16f1823.X.production.o
 _IOCAFbits 393 0 ABS 0 - dist/default/production/esp_16f1823.X.production.o
-__end_of_ESP_read 8BA 0 CODE 0 text39 dist/default/production/esp_16f1823.X.production.o
+__end_of_ESP_read 89C 0 CODE 0 text40 dist/default/production/esp_16f1823.X.production.o
 _IOCANbits 392 0 ABS 0 - dist/default/production/esp_16f1823.X.production.o
 ___awmod@counter 20 0 BANK0 1 cstackBANK0 dist/default/production/esp_16f1823.X.production.o
 _IOCAPbits 391 0 ABS 0 - dist/default/production/esp_16f1823.X.production.o
-_ESP_config 724 0 CODE 0 text33 dist/default/production/esp_16f1823.X.production.o
+_ESP_config 706 0 CODE 0 text34 dist/default/production/esp_16f1823.X.production.o
 _RCSTAbits 19D 0 ABS 0 - dist/default/production/esp_16f1823.X.production.o
 _PIE1bits 91 0 ABS 0 - dist/default/production/esp_16f1823.X.production.o
-_process_message 58C 0 CODE 0 text22 dist/default/production/esp_16f1823.X.production.o
-__end_of_ESP_write 2A0 0 CODE 0 text24 dist/default/production/esp_16f1823.X.production.o
-_TMR1_ISR DA6 0 CODE 0 text47 dist/default/production/esp_16f1823.X.production.o
-__ptext10 D2C 0 CODE 0 text10 dist/default/production/esp_16f1823.X.production.o
-__ptext11 F3C 0 CODE 0 text11 dist/default/production/esp_16f1823.X.production.o
-__ptext12 B1A 0 CODE 0 text12 dist/default/production/esp_16f1823.X.production.o
-__ptext13 F48 0 CODE 0 text13 dist/default/production/esp_16f1823.X.production.o
-__ptext14 E80 0 CODE 0 text14 dist/default/production/esp_16f1823.X.production.o
-__ptext15 A00 0 CODE 0 text15 dist/default/production/esp_16f1823.X.production.o
-__ptext16 F54 0 CODE 0 text16 dist/default/production/esp_16f1823.X.production.o
-__ptext17 F60 0 CODE 0 text17 dist/default/production/esp_16f1823.X.production.o
-__ptext18 EA8 0 CODE 0 text18 dist/default/production/esp_16f1823.X.production.o
-__ptext19 912 0 CODE 0 text19 dist/default/production/esp_16f1823.X.production.o
-__ptext20 A4A 0 CODE 0 text20 dist/default/production/esp_16f1823.X.production.o
-__ptext21 FFA 0 CODE 0 text21 dist/default/production/esp_16f1823.X.production.o
-__ptext22 58C 0 CODE 0 text22 dist/default/production/esp_16f1823.X.production.o
-__ptext23 B98 0 CODE 0 text23 dist/default/production/esp_16f1823.X.production.o
-__ptext24 1B0 0 CODE 0 text24 dist/default/production/esp_16f1823.X.production.o
-__ptext25 C4C 0 CODE 0 text25 dist/default/production/esp_16f1823.X.production.o
-__ptext26 618 0 CODE 0 text26 dist/default/production/esp_16f1823.X.production.o
-__ptext27 4E8 0 CODE 0 text27 dist/default/production/esp_16f1823.X.production.o
-__ptext28 FCA 0 CODE 0 text28 dist/default/production/esp_16f1823.X.production.o
-__ptext29 FD0 0 CODE 0 text29 dist/default/production/esp_16f1823.X.production.o
-__ptext30 FD6 0 CODE 0 text30 dist/default/production/esp_16f1823.X.production.o
-__ptext31 EBA 0 CODE 0 text31 dist/default/production/esp_16f1823.X.production.o
-__ptext32 F6C 0 CODE 0 text32 dist/default/production/esp_16f1823.X.production.o
-__ptext33 724 0 CODE 0 text33 dist/default/production/esp_16f1823.X.production.o
-__ptext34 962 0 CODE 0 text34 dist/default/production/esp_16f1823.X.production.o
-__ptext35 FF6 0 CODE 0 text35 dist/default/production/esp_16f1823.X.production.o
-__ptext36 AD8 0 CODE 0 text36 dist/default/production/esp_16f1823.X.production.o
-__ptext37 FDC 0 CODE 0 text37 dist/default/production/esp_16f1823.X.production.o
-__ptext38 9B2 0 CODE 0 text38 dist/default/production/esp_16f1823.X.production.o
-__ptext39 85C 0 CODE 0 text39 dist/default/production/esp_16f1823.X.production.o
-__ptext40 BD4 0 CODE 0 text40 dist/default/production/esp_16f1823.X.production.o
-__ptext41 2A0 0 CODE 0 text41 dist/default/production/esp_16f1823.X.production.o
-__ptext42 6A4 0 CODE 0 text42 dist/default/production/esp_16f1823.X.production.o
-__ptext43 438 0 CODE 0 text43 dist/default/production/esp_16f1823.X.production.o
-__ptext44 C10 0 CODE 0 text44 dist/default/production/esp_16f1823.X.production.o
-__ptext45 D80 0 CODE 0 text45 dist/default/production/esp_16f1823.X.production.o
-__ptext47 DA6 0 CODE 0 text47 dist/default/production/esp_16f1823.X.production.o
-__ptext48 FFC 0 CODE 0 text48 dist/default/production/esp_16f1823.X.production.o
-__ptext49 F78 0 CODE 0 text49 dist/default/production/esp_16f1823.X.production.o
-__ptext50 FE2 0 CODE 0 text50 dist/default/production/esp_16f1823.X.production.o
-__ptext51 DCA 0 CODE 0 text51 dist/default/production/esp_16f1823.X.production.o
-__ptext52 FA4 0 CODE 0 text52 dist/default/production/esp_16f1823.X.production.o
-__ptext53 E3A 0 CODE 0 text53 dist/default/production/esp_16f1823.X.production.o
-__ptext54 FFE 0 CODE 0 text54 dist/default/production/esp_16f1823.X.production.o
-__ptext55 E94 0 CODE 0 text55 dist/default/production/esp_16f1823.X.production.o
-__ptext56 C86 0 CODE 0 text56 dist/default/production/esp_16f1823.X.production.o
-__ptext57 CF6 0 CODE 0 text57 dist/default/production/esp_16f1823.X.production.o
-__ptext58 FE8 0 CODE 0 text58 dist/default/production/esp_16f1823.X.production.o
-__ptext59 F84 0 CODE 0 text59 dist/default/production/esp_16f1823.X.production.o
-_EUSART_Receive_ISR CF6 0 CODE 0 text57 dist/default/production/esp_16f1823.X.production.o
+_process_message 698 0 CODE 0 text27 dist/default/production/esp_16f1823.X.production.o
+__end_of_ESP_write 2A0 0 CODE 0 text7 dist/default/production/esp_16f1823.X.production.o
+_TMR1_ISR D92 0 CODE 0 text48 dist/default/production/esp_16f1823.X.production.o
+__ptext10 4E8 0 CODE 0 text10 dist/default/production/esp_16f1823.X.production.o
+__ptext11 B7C 0 CODE 0 text11 dist/default/production/esp_16f1823.X.production.o
+__ptext12 E0C 0 CODE 0 text12 dist/default/production/esp_16f1823.X.production.o
+__ptext13 EFC 0 CODE 0 text13 dist/default/production/esp_16f1823.X.production.o
+__ptext14 F94 0 CODE 0 text14 dist/default/production/esp_16f1823.X.production.o
+__ptext15 D18 0 CODE 0 text15 dist/default/production/esp_16f1823.X.production.o
+__ptext16 F22 0 CODE 0 text16 dist/default/production/esp_16f1823.X.production.o
+__ptext17 B3C 0 CODE 0 text17 dist/default/production/esp_16f1823.X.production.o
+__ptext18 F2E 0 CODE 0 text18 dist/default/production/esp_16f1823.X.production.o
+__ptext19 E82 0 CODE 0 text19 dist/default/production/esp_16f1823.X.production.o
+__ptext20 9E2 0 CODE 0 text20 dist/default/production/esp_16f1823.X.production.o
+__ptext21 F3A 0 CODE 0 text21 dist/default/production/esp_16f1823.X.production.o
+__ptext22 F46 0 CODE 0 text22 dist/default/production/esp_16f1823.X.production.o
+__ptext23 EAA 0 CODE 0 text23 dist/default/production/esp_16f1823.X.production.o
+__ptext24 8F4 0 CODE 0 text24 dist/default/production/esp_16f1823.X.production.o
+__ptext25 A2C 0 CODE 0 text25 dist/default/production/esp_16f1823.X.production.o
+__ptext26 FD8 0 CODE 0 text26 dist/default/production/esp_16f1823.X.production.o
+__ptext27 698 0 CODE 0 text27 dist/default/production/esp_16f1823.X.production.o
+__ptext28 E58 0 CODE 0 text28 dist/default/production/esp_16f1823.X.production.o
+__ptext29 FA8 0 CODE 0 text29 dist/default/production/esp_16f1823.X.production.o
+__ptext30 FAE 0 CODE 0 text30 dist/default/production/esp_16f1823.X.production.o
+__ptext31 FB4 0 CODE 0 text31 dist/default/production/esp_16f1823.X.production.o
+__ptext32 EBC 0 CODE 0 text32 dist/default/production/esp_16f1823.X.production.o
+__ptext33 F52 0 CODE 0 text33 dist/default/production/esp_16f1823.X.production.o
+__ptext34 706 0 CODE 0 text34 dist/default/production/esp_16f1823.X.production.o
+__ptext35 944 0 CODE 0 text35 dist/default/production/esp_16f1823.X.production.o
+__ptext36 FD4 0 CODE 0 text36 dist/default/production/esp_16f1823.X.production.o
+__ptext37 ABA 0 CODE 0 text37 dist/default/production/esp_16f1823.X.production.o
+__ptext38 FBA 0 CODE 0 text38 dist/default/production/esp_16f1823.X.production.o
+__ptext39 994 0 CODE 0 text39 dist/default/production/esp_16f1823.X.production.o
+__ptext40 83E 0 CODE 0 text40 dist/default/production/esp_16f1823.X.production.o
+__ptext41 BF6 0 CODE 0 text41 dist/default/production/esp_16f1823.X.production.o
+__ptext42 2A0 0 CODE 0 text42 dist/default/production/esp_16f1823.X.production.o
+__ptext43 618 0 CODE 0 text43 dist/default/production/esp_16f1823.X.production.o
+__ptext44 438 0 CODE 0 text44 dist/default/production/esp_16f1823.X.production.o
+__ptext45 C32 0 CODE 0 text45 dist/default/production/esp_16f1823.X.production.o
+__ptext46 D6C 0 CODE 0 text46 dist/default/production/esp_16f1823.X.production.o
+__ptext48 D92 0 CODE 0 text48 dist/default/production/esp_16f1823.X.production.o
+__ptext49 FDA 0 CODE 0 text49 dist/default/production/esp_16f1823.X.production.o
+__ptext50 F5E 0 CODE 0 text50 dist/default/production/esp_16f1823.X.production.o
+__ptext51 FC0 0 CODE 0 text51 dist/default/production/esp_16f1823.X.production.o
+__ptext52 DB6 0 CODE 0 text52 dist/default/production/esp_16f1823.X.production.o
+__ptext53 F8A 0 CODE 0 text53 dist/default/production/esp_16f1823.X.production.o
+__ptext54 E26 0 CODE 0 text54 dist/default/production/esp_16f1823.X.production.o
+__ptext55 FDC 0 CODE 0 text55 dist/default/production/esp_16f1823.X.production.o
+__ptext56 E96 0 CODE 0 text56 dist/default/production/esp_16f1823.X.production.o
+__ptext57 CA8 0 CODE 0 text57 dist/default/production/esp_16f1823.X.production.o
+__ptext58 CE2 0 CODE 0 text58 dist/default/production/esp_16f1823.X.production.o
+__ptext59 FC6 0 CODE 0 text59 dist/default/production/esp_16f1823.X.production.o
+__ptext60 F6A 0 CODE 0 text60 dist/default/production/esp_16f1823.X.production.o
+_EUSART_Receive_ISR CE2 0 CODE 0 text58 dist/default/production/esp_16f1823.X.production.o
 __size_of_ESP_write 0 0 ABS 0 - dist/default/production/esp_16f1823.X.production.o
-__end_of_PIN_MANAGER_Initialize B5A 0 CODE 0 text12 dist/default/production/esp_16f1823.X.production.o
-___awdiv 4E8 0 CODE 0 text27 dist/default/production/esp_16f1823.X.production.o
-___awmod 618 0 CODE 0 text26 dist/default/production/esp_16f1823.X.production.o
-process_message@message 3C 0 BANK0 1 cstackBANK0 dist/default/production/esp_16f1823.X.production.o
+__end_of_PIN_MANAGER_Initialize B7C 0 CODE 0 text17 dist/default/production/esp_16f1823.X.production.o
+___awdiv 4E8 0 CODE 0 text10 dist/default/production/esp_16f1823.X.production.o
+___awmod 58C 0 CODE 0 text9 dist/default/production/esp_16f1823.X.production.o
+process_message@message 74 0 COMMON 1 cstackCOMMON dist/default/production/esp_16f1823.X.production.o
 _BAUDCON 19F 0 ABS 0 - dist/default/production/esp_16f1823.X.production.o
-___lwdiv 792 0 CODE 0 text4 dist/default/production/esp_16f1823.X.production.o
-___lwmod 8BA 0 CODE 0 text3 dist/default/production/esp_16f1823.X.production.o
+___lwdiv 774 0 CODE 0 text4 dist/default/production/esp_16f1823.X.production.o
+___lwmod 89C 0 CODE 0 text3 dist/default/production/esp_16f1823.X.production.o
 __Lbank10 0 0 BANK10 1 bank10 -
 __Lbank11 0 0 BANK11 1 bank11 -
 __Lbank12 0 0 BANK12 1 bank12 -
@@ -1196,7 +1198,7 @@ __Lbank28 0 0 BANK28 1 bank28 -
 __Lbank29 0 0 BANK29 1 bank29 -
 __Lbank30 0 0 BANK30 1 bank30 -
 __Lbank31 0 0 BANK31 1 bank31 -
-__pmaintext CC0 0 CODE 0 maintext dist/default/production/esp_16f1823.X.production.o
+__pmaintext AFC 0 CODE 0 maintext dist/default/production/esp_16f1823.X.production.o
 __Lbigram 0 0 ABS 0 bigram -
 __CFG_BORV$LO 0 0 ABS 0 - dist/default/production/esp_16f1823.X.production.o
 __puts@pt 75 0 COMMON 1 cstackCOMMON dist/default/production/esp_16f1823.X.production.o
@@ -1211,27 +1213,28 @@ strncmp@l 23 0 BANK0 1 cstackBANK0 dist/default/production/esp_16f1823.X.product
 strncmp@n 75 0 COMMON 1 cstackCOMMON dist/default/production/esp_16f1823.X.production.o
 strncmp@r 21 0 BANK0 1 cstackBANK0 dist/default/production/esp_16f1823.X.production.o
 __CFG_WDTE$OFF 0 0 ABS 0 - dist/default/production/esp_16f1823.X.production.o
-__end_of_TMR1_ISR DCA 0 CODE 0 text47 dist/default/production/esp_16f1823.X.production.o
+__end_of_TMR1_ISR DB6 0 CODE 0 text48 dist/default/production/esp_16f1823.X.production.o
 _LATAbits 10C 0 ABS 0 - dist/default/production/esp_16f1823.X.production.o
+__size_of_process_ioc 0 0 ABS 0 - dist/default/production/esp_16f1823.X.production.o
 __size_of_EUSART_is_rx_ready 0 0 ABS 0 - dist/default/production/esp_16f1823.X.production.o
 ___lwdiv@divisor 73 0 COMMON 1 cstackCOMMON dist/default/production/esp_16f1823.X.production.o
 __sprintf@aux 26 0 BANK0 1 cstackBANK0 dist/default/production/esp_16f1823.X.production.o
 __sprintf@val 23 0 BANK0 1 cstackBANK0 dist/default/production/esp_16f1823.X.production.o
-_ESP_write 1B0 0 CODE 0 text24 dist/default/production/esp_16f1823.X.production.o
-_strchr D80 0 CODE 0 text45 dist/default/production/esp_16f1823.X.production.o
-_strlen C10 0 CODE 0 text44 dist/default/production/esp_16f1823.X.production.o
-_strstr 6A4 0 CODE 0 text42 dist/default/production/esp_16f1823.X.production.o
-__TMR1_Ready F78 0 CODE 0 text49 dist/default/production/esp_16f1823.X.production.o
-__end_of_toggle_format BD4 0 CODE 0 text23 dist/default/production/esp_16f1823.X.production.o
+_ESP_write 1B0 0 CODE 0 text7 dist/default/production/esp_16f1823.X.production.o
+_strchr D6C 0 CODE 0 text46 dist/default/production/esp_16f1823.X.production.o
+_strlen C32 0 CODE 0 text45 dist/default/production/esp_16f1823.X.production.o
+_strstr 618 0 CODE 0 text43 dist/default/production/esp_16f1823.X.production.o
+__TMR1_Ready F5E 0 CODE 0 text50 dist/default/production/esp_16f1823.X.production.o
+__end_of_toggle_format E6E 0 CODE 0 text28 dist/default/production/esp_16f1823.X.production.o
 __size_of_EUSART_Read 0 0 ABS 0 - dist/default/production/esp_16f1823.X.production.o
-_IOCAF4_DefaultInterruptHandler FFE 0 CODE 0 text54 dist/default/production/esp_16f1823.X.production.o
-__end_of_IOCAF4_ISR E54 0 CODE 0 text53 dist/default/production/esp_16f1823.X.production.o
-stackhi 0 0 ABS 0 - /tmp/xcXdOrCMK.o
-stacklo 0 0 ABS 0 - /tmp/xcXdOrCMK.o
+_IOCAF4_DefaultInterruptHandler FDC 0 CODE 0 text55 dist/default/production/esp_16f1823.X.production.o
+__end_of_IOCAF4_ISR E40 0 CODE 0 text54 dist/default/production/esp_16f1823.X.production.o
+stackhi 0 0 ABS 0 - /tmp/xcXQOqJsH.o
+stacklo 0 0 ABS 0 - /tmp/xcXQOqJsH.o
 _ESP_external_message_handler 56 0 BANK0 1 bssBANK0 dist/default/production/esp_16f1823.X.production.o
-_EUSART_SetRxInterruptHandler F60 0 CODE 0 text17 dist/default/production/esp_16f1823.X.production.o
+_EUSART_SetRxInterruptHandler F46 0 CODE 0 text22 dist/default/production/esp_16f1823.X.production.o
 __size_of_ADC_SelectChannel 0 0 ABS 0 - dist/default/production/esp_16f1823.X.production.o
-_ESP_process_rx_data A4A 0 CODE 0 text20 dist/default/production/esp_16f1823.X.production.o
+_ESP_process_rx_data A2C 0 CODE 0 text25 dist/default/production/esp_16f1823.X.production.o
 _OSCTUNE 98 0 ABS 0 - dist/default/production/esp_16f1823.X.production.o
 strstr@nl 29 0 BANK0 1 cstackBANK0 dist/default/production/esp_16f1823.X.production.o
 _ADCON0bits 9D 0 ABS 0 - dist/default/production/esp_16f1823.X.production.o
@@ -1241,14 +1244,14 @@ __Lspace_1 0 0 ABS 0 - -
 __Lspace_2 0 0 ABS 0 - -
 __Lspace_3 0 0 ABS 0 - -
 __pbssCOMMON 79 0 COMMON 1 bssCOMMON dist/default/production/esp_16f1823.X.production.o
-__end_of_ADC_Initialize EBA 0 CODE 0 text18 dist/default/production/esp_16f1823.X.production.o
+__end_of_ADC_Initialize EBC 0 CODE 0 text23 dist/default/production/esp_16f1823.X.production.o
 __size_of_ESP_initialize 0 0 ABS 0 - dist/default/production/esp_16f1823.X.production.o
 EUSART_SetTxInterruptHandler@interruptHandler 73 0 COMMON 1 cstackCOMMON dist/default/production/esp_16f1823.X.production.o
 __HcstackBANK0 0 0 ABS 0 cstackBANK0 -
 _PIR1bits 11 0 ABS 0 - dist/default/production/esp_16f1823.X.production.o
 __Lend_init 80 0 CODE 0 end_init -
 __LcstackCOMMON 0 0 ABS 0 cstackCOMMON -
-__end_of_ESP_config 792 0 CODE 0 text33 dist/default/production/esp_16f1823.X.production.o
+__end_of_ESP_config 774 0 CODE 0 text34 dist/default/production/esp_16f1823.X.production.o
 end_of_initialization 9E 0 CODE 0 cinit dist/default/production/esp_16f1823.X.production.o
 __Hintentry 80 0 CODE 0 intentry -
 __size_of_ESP_default_application_handler 0 0 ABS 0 - dist/default/production/esp_16f1823.X.production.o
@@ -1263,7 +1266,7 @@ ___lwdiv@dividend 75 0 COMMON 1 cstackCOMMON dist/default/production/esp_16f1823
 __sprintf@mess 28 0 BANK0 1 cstackBANK0 dist/default/production/esp_16f1823.X.production.o
 ?___lwdiv 73 0 COMMON 1 cstackCOMMON dist/default/production/esp_16f1823.X.production.o
 ?___lwmod 73 0 COMMON 1 cstackCOMMON dist/default/production/esp_16f1823.X.production.o
-_ESP_Set_application_handler F6C 0 CODE 0 text32 dist/default/production/esp_16f1823.X.production.o
+_ESP_Set_application_handler F52 0 CODE 0 text33 dist/default/production/esp_16f1823.X.production.o
 __Hreset_vec 2 0 CODE 0 reset_vec -
 TMR1_SetInterruptHandler@InterruptHandler 73 0 COMMON 1 cstackCOMMON dist/default/production/esp_16f1823.X.production.o
 ESP_read@ret 2F 0 BANK0 1 cstackBANK0 dist/default/production/esp_16f1823.X.production.o
@@ -1273,28 +1276,28 @@ ___awmod@dividend 75 0 COMMON 1 cstackCOMMON dist/default/production/esp_16f1823
 __size_of_strchr 0 0 ABS 0 - dist/default/production/esp_16f1823.X.production.o
 __size_of_strlen 0 0 ABS 0 - dist/default/production/esp_16f1823.X.production.o
 __size_of_strstr 0 0 ABS 0 - dist/default/production/esp_16f1823.X.production.o
-_message_format 65 0 BANK0 1 bssBANK0 dist/default/production/esp_16f1823.X.production.o
-ESP_message_handler@ret 45 0 BANK0 1 cstackBANK0 dist/default/production/esp_16f1823.X.production.o
+_message_format 64 0 BANK0 1 bssBANK0 dist/default/production/esp_16f1823.X.production.o
+ESP_message_handler@ret 32 0 BANK0 1 cstackBANK0 dist/default/production/esp_16f1823.X.production.o
 __ptext1 378 0 CODE 0 text1 dist/default/production/esp_16f1823.X.production.o
 __ptext2 A4 0 CODE 0 text2 dist/default/production/esp_16f1823.X.production.o
-__ptext3 8BA 0 CODE 0 text3 dist/default/production/esp_16f1823.X.production.o
-__ptext4 792 0 CODE 0 text4 dist/default/production/esp_16f1823.X.production.o
-__ptext5 7FC 0 CODE 0 text5 dist/default/production/esp_16f1823.X.production.o
-__ptext6 B5A 0 CODE 0 text6 dist/default/production/esp_16f1823.X.production.o
-__ptext7 E20 0 CODE 0 text7 dist/default/production/esp_16f1823.X.production.o
-__ptext8 F16 0 CODE 0 text8 dist/default/production/esp_16f1823.X.production.o
-__ptext9 FB6 0 CODE 0 text9 dist/default/production/esp_16f1823.X.production.o
+__ptext3 89C 0 CODE 0 text3 dist/default/production/esp_16f1823.X.production.o
+__ptext4 774 0 CODE 0 text4 dist/default/production/esp_16f1823.X.production.o
+__ptext5 7DE 0 CODE 0 text5 dist/default/production/esp_16f1823.X.production.o
+__ptext6 BBA 0 CODE 0 text6 dist/default/production/esp_16f1823.X.production.o
+__ptext7 1B0 0 CODE 0 text7 dist/default/production/esp_16f1823.X.production.o
+__ptext8 C6E 0 CODE 0 text8 dist/default/production/esp_16f1823.X.production.o
+__ptext9 58C 0 CODE 0 text9 dist/default/production/esp_16f1823.X.production.o
 _eusartTxBufferRemaining 79 0 COMMON 1 bssCOMMON dist/default/production/esp_16f1823.X.production.o
-_ESP_wait_for 9B2 0 CODE 0 text38 dist/default/production/esp_16f1823.X.production.o
+_ESP_wait_for 994 0 CODE 0 text39 dist/default/production/esp_16f1823.X.production.o
 __size_of_process_message 0 0 ABS 0 - dist/default/production/esp_16f1823.X.production.o
 __size_of_ADC_ISR 0 0 ABS 0 - dist/default/production/esp_16f1823.X.production.o
 __Lpowerup 0 0 CODE 0 powerup -
 __end_of_read_analog 438 0 CODE 0 text1 dist/default/production/esp_16f1823.X.production.o
 __Leeprom_data 0 0 EEDATA 3 eeprom_data -
 TMR1_WriteTimer@timerVal 70 0 COMMON 1 cstackCOMMON dist/default/production/esp_16f1823.X.production.o
-__end_of_TMR1_Initialize D58 0 CODE 0 text10 dist/default/production/esp_16f1823.X.production.o
-__end_of_TMR1_StartTimer FD6 0 CODE 0 text29 dist/default/production/esp_16f1823.X.production.o
-__end_of_TMR1_WriteTimer DE8 0 CODE 0 text51 dist/default/production/esp_16f1823.X.production.o
+__end_of_TMR1_Initialize D44 0 CODE 0 text15 dist/default/production/esp_16f1823.X.production.o
+__end_of_TMR1_StartTimer FB4 0 CODE 0 text30 dist/default/production/esp_16f1823.X.production.o
+__end_of_TMR1_WriteTimer DD4 0 CODE 0 text52 dist/default/production/esp_16f1823.X.production.o
 __size_of_IOCAF4_SetInterruptHandler 0 0 ABS 0 - dist/default/production/esp_16f1823.X.production.o
 __Lreset_vec 0 0 CODE 0 reset_vec -
 __Hstringtext1 0 0 ABS 0 stringtext1 -
@@ -1307,7 +1310,7 @@ __Hstringtext7 0 0 ABS 0 stringtext7 -
 __Hstringtext8 0 0 ABS 0 stringtext8 -
 __Hstringtext9 0 0 ABS 0 stringtext9 -
 ADC_SelectChannel@channel 74 0 COMMON 1 cstackCOMMON dist/default/production/esp_16f1823.X.production.o
-_strncmp 438 0 CODE 0 text43 dist/default/production/esp_16f1823.X.production.o
+_strncmp 438 0 CODE 0 text44 dist/default/production/esp_16f1823.X.production.o
 __size_of_EUSART_SetTxInterruptHandler 0 0 ABS 0 - dist/default/production/esp_16f1823.X.production.o
 __CFG_CLKOUTEN$OFF 0 0 ABS 0 - dist/default/production/esp_16f1823.X.production.o
 EUSART_Write@txData 74 0 COMMON 1 cstackCOMMON dist/default/production/esp_16f1823.X.production.o
@@ -1315,32 +1318,32 @@ IOCAF4_SetInterruptHandler@InterruptHandler 73 0 COMMON 1 cstackCOMMON dist/defa
 __end_of__initialization 9E 0 CODE 0 cinit dist/default/production/esp_16f1823.X.production.o
 ___awmod@divisor 73 0 COMMON 1 cstackCOMMON dist/default/production/esp_16f1823.X.production.o
 __Lfunctab 0 0 ENTRY 0 functab -
-__end_of_EUSART_SetTxInterruptHandler F60 0 CODE 0 text16 dist/default/production/esp_16f1823.X.production.o
+__end_of_EUSART_SetTxInterruptHandler F46 0 CODE 0 text21 dist/default/production/esp_16f1823.X.production.o
 _eusartRxCount 69 0 BANK0 1 bssBANK0 dist/default/production/esp_16f1823.X.production.o
 __size_of_EUSART_Transmit_ISR 0 0 ABS 0 - dist/default/production/esp_16f1823.X.production.o
 __Lclrtext 0 0 ABS 0 clrtext -
 _timer1ReloadVal 5A 0 BANK0 1 bssBANK0 dist/default/production/esp_16f1823.X.production.o
 write@i 78 0 COMMON 1 cstackCOMMON dist/default/production/esp_16f1823.X.production.o
 ___lmul@product 73 0 COMMON 1 cstackCOMMON dist/default/production/esp_16f1823.X.production.o
-_TMR1_DefaultInterruptHandler FFC 0 CODE 0 text48 dist/default/production/esp_16f1823.X.production.o
+_TMR1_DefaultInterruptHandler FDA 0 CODE 0 text49 dist/default/production/esp_16f1823.X.production.o
 __size_of_EUSART_Initialize 0 0 ABS 0 - dist/default/production/esp_16f1823.X.production.o
 ___lmul@multiplicand 24 0 BANK0 1 cstackBANK0 dist/default/production/esp_16f1823.X.production.o
-_IOC_state 63 0 BANK0 1 bssBANK0 dist/default/production/esp_16f1823.X.production.o
+_IOC_state 67 0 BANK0 1 bssBANK0 dist/default/production/esp_16f1823.X.production.o
 __size_of_ESP_wait_for 0 0 ABS 0 - dist/default/production/esp_16f1823.X.production.o
 _IOC_value 62 0 BANK0 1 bssBANK0 dist/default/production/esp_16f1823.X.production.o
 ESP_write@aux 3A 0 BANK0 1 cstackBANK0 dist/default/production/esp_16f1823.X.production.o
 ESP_write@res 39 0 BANK0 1 cstackBANK0 dist/default/production/esp_16f1823.X.production.o
 __pcstackCOMMON 70 0 COMMON 1 cstackCOMMON dist/default/production/esp_16f1823.X.production.o
-__end_of_ESP_process_rx_data A94 0 CODE 0 text20 dist/default/production/esp_16f1823.X.production.o
+__end_of_ESP_process_rx_data A76 0 CODE 0 text25 dist/default/production/esp_16f1823.X.production.o
 _TXSTAbits 19E 0 ABS 0 - dist/default/production/esp_16f1823.X.production.o
 __Hend_init 82 0 CODE 0 end_init -
-__end_of_main CF6 0 CODE 0 maintext dist/default/production/esp_16f1823.X.production.o
+__end_of_main B3C 0 CODE 0 maintext dist/default/production/esp_16f1823.X.production.o
 __size_of_ESP_process_message 0 0 ABS 0 - dist/default/production/esp_16f1823.X.production.o
-__end_of_ADC_SelectChannel E3A 0 CODE 0 text7 dist/default/production/esp_16f1823.X.production.o
-__end_of__puts 9B2 0 CODE 0 text34 dist/default/production/esp_16f1823.X.production.o
+__end_of_ADC_SelectChannel E26 0 CODE 0 text12 dist/default/production/esp_16f1823.X.production.o
+__end_of__puts 994 0 CODE 0 text35 dist/default/production/esp_16f1823.X.production.o
 _RCREG 199 0 ABS 0 - dist/default/production/esp_16f1823.X.production.o
 _RCSTA 19D 0 ABS 0 - dist/default/production/esp_16f1823.X.production.o
-_IOCAF4_SetInterruptHandler F48 0 CODE 0 text13 dist/default/production/esp_16f1823.X.production.o
+_IOCAF4_SetInterruptHandler F2E 0 CODE 0 text18 dist/default/production/esp_16f1823.X.production.o
 _T1CON 18 0 ABS 0 - dist/default/production/esp_16f1823.X.production.o
 _TMR1H 17 0 ABS 0 - dist/default/production/esp_16f1823.X.production.o
 _TMR1L 16 0 ABS 0 - dist/default/production/esp_16f1823.X.production.o
@@ -1348,40 +1351,41 @@ _TRISA 8C 0 ABS 0 - dist/default/production/esp_16f1823.X.production.o
 _TRISC 8E 0 ABS 0 - dist/default/production/esp_16f1823.X.production.o
 _TXREG 19A 0 ABS 0 - dist/default/production/esp_16f1823.X.production.o
 _TXSTA 19E 0 ABS 0 - dist/default/production/esp_16f1823.X.production.o
-__end_of_write C86 0 CODE 0 text25 dist/default/production/esp_16f1823.X.production.o
+__end_of_write CA8 0 CODE 0 text8 dist/default/production/esp_16f1823.X.production.o
 __Hram 0 0 ABS 0 ram -
 __Lram 0 0 ABS 0 ram -
-__puts 962 0 CODE 0 text34 dist/default/production/esp_16f1823.X.production.o
-_TMR1_Initialize D2C 0 CODE 0 text10 dist/default/production/esp_16f1823.X.production.o
-_TMR1_StartTimer FD0 0 CODE 0 text29 dist/default/production/esp_16f1823.X.production.o
-_TMR1_WriteTimer DCA 0 CODE 0 text51 dist/default/production/esp_16f1823.X.production.o
+__puts 944 0 CODE 0 text35 dist/default/production/esp_16f1823.X.production.o
+_TMR1_Initialize D18 0 CODE 0 text15 dist/default/production/esp_16f1823.X.production.o
+_TMR1_StartTimer FAE 0 CODE 0 text30 dist/default/production/esp_16f1823.X.production.o
+_TMR1_WriteTimer DB6 0 CODE 0 text52 dist/default/production/esp_16f1823.X.production.o
 __CFG_CPD$OFF 0 0 ABS 0 - dist/default/production/esp_16f1823.X.production.o
-_write C4C 0 CODE 0 text25 dist/default/production/esp_16f1823.X.production.o
+_write C6E 0 CODE 0 text8 dist/default/production/esp_16f1823.X.production.o
 __size_of_PIN_MANAGER_Initialize 0 0 ABS 0 - dist/default/production/esp_16f1823.X.production.o
-_WDT_Initialize FB6 0 CODE 0 text9 dist/default/production/esp_16f1823.X.production.o
+_WDT_Initialize F94 0 CODE 0 text14 dist/default/production/esp_16f1823.X.production.o
 __pintentry 8 0 CODE 0 intentry dist/default/production/esp_16f1823.X.production.o
-__end_of_ESP_wait_for A00 0 CODE 0 text38 dist/default/production/esp_16f1823.X.production.o
-__end_of_OSCILLATOR_Initialize E94 0 CODE 0 text14 dist/default/production/esp_16f1823.X.production.o
+__end_of_ESP_wait_for 9E2 0 CODE 0 text39 dist/default/production/esp_16f1823.X.production.o
+__end_of_OSCILLATOR_Initialize E96 0 CODE 0 text19 dist/default/production/esp_16f1823.X.production.o
 ?_strncmp 73 0 COMMON 1 cstackCOMMON dist/default/production/esp_16f1823.X.production.o
 __initialization 82 0 CODE 0 cinit dist/default/production/esp_16f1823.X.production.o
 __CFG_PWRTE$OFF 0 0 ABS 0 - dist/default/production/esp_16f1823.X.production.o
 __pbssBANK0 4C 0 BANK0 1 bssBANK0 dist/default/production/esp_16f1823.X.production.o
 __pbssBANK1 A0 0 BANK1 1 bssBANK1 dist/default/production/esp_16f1823.X.production.o
-_EUSART_Transmit_ISR C86 0 CODE 0 text56 dist/default/production/esp_16f1823.X.production.o
+_EUSART_Transmit_ISR CA8 0 CODE 0 text57 dist/default/production/esp_16f1823.X.production.o
 __CFG_WRT$OFF 0 0 ABS 0 - dist/default/production/esp_16f1823.X.production.o
 _eusartRxHead 6B 0 BANK0 1 bssBANK0 dist/default/production/esp_16f1823.X.production.o
 _eusartRxTail 6A 0 BANK0 1 bssBANK0 dist/default/production/esp_16f1823.X.production.o
 __size_of_EUSART_Receive_ISR 0 0 ABS 0 - dist/default/production/esp_16f1823.X.production.o
 __size_of_EUSART_SetRxInterruptHandler 0 0 ABS 0 - dist/default/production/esp_16f1823.X.production.o
-__end_of_ADC_ISR FEE 0 CODE 0 text58 dist/default/production/esp_16f1823.X.production.o
-_TMR1_SetInterruptHandler F3C 0 CODE 0 text11 dist/default/production/esp_16f1823.X.production.o
+__end_of_ADC_ISR FCC 0 CODE 0 text59 dist/default/production/esp_16f1823.X.production.o
+_TMR1_SetInterruptHandler F22 0 CODE 0 text16 dist/default/production/esp_16f1823.X.production.o
+_process_ioc BBA 0 CODE 0 text6 dist/default/production/esp_16f1823.X.production.o
 _eusartTxHead 7A 0 COMMON 1 bssCOMMON dist/default/production/esp_16f1823.X.production.o
 _eusartTxTail 6C 0 BANK0 1 bssBANK0 dist/default/production/esp_16f1823.X.production.o
 __size_of_IOCAF4_ISR 0 0 ABS 0 - dist/default/production/esp_16f1823.X.production.o
 ESP_write@length 35 0 BANK0 1 cstackBANK0 dist/default/production/esp_16f1823.X.production.o
-__end_of_EUSART_SetRxInterruptHandler F6C 0 CODE 0 text17 dist/default/production/esp_16f1823.X.production.o
+__end_of_EUSART_SetRxInterruptHandler F52 0 CODE 0 text22 dist/default/production/esp_16f1823.X.production.o
 _TMR1_InterruptHandler 58 0 BANK0 1 bssBANK0 dist/default/production/esp_16f1823.X.production.o
-_OSCILLATOR_Initialize E80 0 CODE 0 text14 dist/default/production/esp_16f1823.X.production.o
+_OSCILLATOR_Initialize E82 0 CODE 0 text19 dist/default/production/esp_16f1823.X.production.o
 # %SPLITSTAB Section
 # This section enumerates all the psect splits performed by the assembler.
 # The beginning of the section is indicated by %SPLITSTAB.
@@ -1407,29 +1411,29 @@ _OSCILLATOR_Initialize E80 0 CODE 0 text14 dist/default/production/esp_16f1823.X
 # and size are in units of delta. The file address is in units of bytes.
 # All other numeric quantities are in decimal.
 %SEGMENTS
-text7 0 710 E20 1A 2
-text8 0 78B F16 7 2
-text9 0 7DB FB6 4 2
-text14 0 740 E80 26 2
-text28 0 7E5 FCA 12 2
-text35 0 7FB FF6 5 2
-text36 0 56C AD8 140 2
-text45 0 6C0 D80 34 2
-text52 0 7D2 FA4 5 2
+text12 0 706 E0C 1A 2
+text13 0 77E EFC 7 2
+text19 0 741 E82 26 2
+text28 0 72C E58 B 2
+text29 0 7D4 FA8 12 2
+text36 0 7EA FD4 5 2
+text37 0 55D ABA 145 2
+text46 0 6B6 D6C 34 2
+text53 0 7C5 F8A 9 2
 cstackCOMMON 1 70 70 B 1
 cstackBANK0 1 20 20 50 1
-stringtext1 0 54A A94 22 2
-stringtext2 0 6AC D58 14 2
-stringtext3 0 6F4 DE8 1C 2
-stringtext5 0 72A E54 16 2
-stringtext7 0 766 ECC 25 2
-intentry 0 4 8 546 2
+stringtext1 0 53B A76 22 2
+stringtext2 0 6A2 D44 14 2
+stringtext3 0 6EA DD4 1C 2
+stringtext5 0 720 E40 C 2
+stringtext6 0 737 E6E A 2
+stringtext7 0 767 ECE 17 2
+intentry 0 4 8 537 2
 reset_vec 0 0 0 1 2
 bssBANK1 1 A0 A0 20 1
-clrtext 0 798 F30 30 2
-stringtext12 0 792 F24 6 2
-stringtext13 0 7C8 F90 A 2
-stringtext15 0 7D7 FAE 4 2
-stringtext16 0 7DF FBE 6 2
-stringtext18 0 7F7 FEE 4 2
+clrtext 0 78B F16 30 2
+stringtext10 0 785 F0A 6 2
+stringtext11 0 7BB F76 A 2
+stringtext13 0 7CE F9C 6 2
+stringtext15 0 7E6 FCC 4 2
 config 0 8007 1000E 2 2
