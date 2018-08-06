@@ -79,6 +79,16 @@ extern volatile unsigned char ADC_count;
 //TIMER1 related
 extern volatile unsigned char TMR1_state;
 
+//IOC
+extern volatile unsigned char IOC_state;
+extern volatile unsigned char IOC_value;
+
+//WIFI RELATED
+#define WIFI_TX_BUFFER_SIZE 64
+extern volatile unsigned char WIFI_tx_buf[WIFI_TX_BUFFER_SIZE];
+extern volatile unsigned char WIFI_tx_buf_ind;
+
+
 // Comment a function and leverage automatic documentation with slash star star
 /**
     <p><b>Function prototype:</b></p>
@@ -116,6 +126,8 @@ void read_analog(void);
 void _TMR1_Ready(void);
 
 void _IOC_Ready(void);
+
+void process_ioc(void);
 
 
 #ifdef	__cplusplus

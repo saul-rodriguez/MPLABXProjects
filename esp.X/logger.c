@@ -14,6 +14,9 @@ volatile unsigned char TMR1_state;
 volatile unsigned char IOC_state;
 volatile unsigned char IOC_value;
 
+volatile unsigned char WIFI_tx_buf[WIFI_TX_BUFFER_SIZE];
+volatile unsigned char WIFI_tx_buf_ind;
+
 void logger_initialize(void)
 {
     message_format = MESSAGE_BINARY; //ADC transmitted values default to binary
@@ -27,7 +30,6 @@ void logger_initialize(void)
     TMR1_state = TMR1_STOP;
     TMR1_SetInterruptHandler(_TMR1_Ready); //Redirect TMR1_ISR_handler to custom function
    
-    //IOCA4_SetInterruptHandler()
     IOCA4_SetInterruptHandler(_IOC_Ready); //Redirect IOC in A4 to custom function
     IOC_state = IOC_IDLE;
     IOC_value = 1; // R4 has pull-up resistor enabled;
@@ -49,15 +51,14 @@ void process_message(unsigned char message)
     switch (message) {
         case 't': //Test communications
             #ifdef BT
-            _puts("Ok\n");            
+                _puts("Ok\n");            
             #else
-            ESP_write("Ok\n",3);
+                ESP_write("Ok\n",3);
             #endif
             break;
             
-        case 'a': //Ask analog value             
-            ADC_value = ADC1_GetConversion(channel_AN2); 
-            read_analog();
+        case 'a': //Ask analog value     
+            ADC1_StartConversion();           
             break;
             
         case 'T': //toggle between binary data or text mode           
@@ -101,27 +102,23 @@ void read_analog()
     unsigned char mess[6];
       
     adc_val = ADC_value;
-    //ADC_state = ADC_IDLE; //Reset flag!
+    ADC_state = ADC_IDLE; //Reset flag!
     
     if (message_format == MESSAGE_BINARY) {    
         mess[0] = (unsigned char)(adc_val & 0xff);
         mess[1] = (unsigned char)((adc_val >> 8) & 0xff);
     
         #ifdef BT
-        write((unsigned char*)mess,2);
-        #else   
+            write((unsigned char*)mess,2);
+        #else           
+            WIFI_tx_buf[WIFI_tx_buf_ind++] = mess[0];
+            WIFI_tx_buf[WIFI_tx_buf_ind++] = mess[1];
         
-        ESP_tx_buf[ESP_tx_buf_ind++] = mess[0];
-        ESP_tx_buf[ESP_tx_buf_ind++] = mess[1];
-        
-        if (ESP_tx_buf_ind == ESP_TX_BUFFER_SIZE) {
-            ESP_write(ESP_tx_buf,ESP_TX_BUFFER_SIZE);
-            ESP_wait_for(ESP_SEND_OK);
-            ESP_tx_buf_ind = 0;
-        }
-        
-        //ESP_write(mess,2);
-        //ESP_wait_for(ESP_SEND_OK);
+            if (WIFI_tx_buf_ind == WIFI_TX_BUFFER_SIZE) {
+                ESP_write(WIFI_tx_buf,WIFI_TX_BUFFER_SIZE);
+                ESP_wait_for(ESP_SEND_OK);
+                WIFI_tx_buf_ind = 0;
+            }              
         #endif
     
     } else {
@@ -132,18 +129,15 @@ void read_analog()
         _sprintf(mess,adc_val); // Takes a value in mV and returns a string in V with 3 decimals
         mess[5] = '\n';
         #ifdef BT
-            _puts(mess);        
-            _puts("\n");
-        #else
-     
+            write(mess,6);           
+        #else     
             ESP_write(mess,6);
-            ESP_wait_for(ESP_SEND_OK);
-       
+            ESP_wait_for(ESP_SEND_OK);       
         #endif
         
     }    
     
-    ADC_state = ADC_IDLE; //Reset flag!
+    //ADC_state = ADC_IDLE; //Reset flag!
 }
 
 void toggle_format() 
@@ -168,18 +162,7 @@ void toggle_format()
 void _TMR1_Ready(void)
 {   
     if (TMR1_state == TMR1_RUNNING) {
-                
-#ifdef BT
-        //if (ADC_state == ADC_IDLE) 
-        //    ADC_state = ADC_READY; 
-        ADC1_StartConversion();
-#else
-        //if (ADC_state == ADC_IDLE) 
-        //    ADC_state = ADC_READY;         
-        ADC1_StartConversion();
-#endif
-        
-        
+         ADC1_StartConversion();
     }    
 }
 
@@ -194,8 +177,18 @@ void process_ioc(void)
 {
     IOC_state = IOC_IDLE;
      if (IOC_value) {
-        _puts("CH");
+        #ifdef BT 
+            _puts("CH");
+        #else
+            ESP_write("CH",2);
+            ESP_wait_for(ESP_SEND_OK); 
+        #endif
     } else {
-        _puts("CL");    
+        #ifdef BT 
+            _puts("CL");    
+        #else
+            ESP_write("CL",2);
+            ESP_wait_for(ESP_SEND_OK); 
+        #endif
     }
 }

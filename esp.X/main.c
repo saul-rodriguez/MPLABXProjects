@@ -49,8 +49,7 @@
                          Main application
  */
 void main(void)
-{
-    unsigned char message[6];
+{   
     // Initialize the device
     SYSTEM_Initialize();
     ESP_initialize();
@@ -78,13 +77,6 @@ void main(void)
     IO_RA5_SetLow();
     __delay_ms(200);
     
-    message[0] = '0';
-    message[1] = '1';
-    message[2] = '2';
-    message[3] = '4';
-    message[4] = '5';
-    message[5] = '6';
-    
     ESP_config();
     
     while (1)
@@ -103,17 +95,16 @@ void main(void)
             read_analog();        
         }
         
+        if (IOC_state == IOC_READY) {
+            process_ioc();
+        }
+        
+    #ifdef WIFI        
         if (ESP_wait_exception) {
             ESP_wait_exception = 0;            
             process_message('S');
         }
-        
-        /*
-        if(esp_channel) {
-            ESP_write(message,2);
-            ESP_wait_for(ESP_SEND_OK);
-        }*/
-        
+    #endif
         
         CLRWDT();
         
