@@ -184,3 +184,88 @@ void process_ioc(void)
         //_puts("CL");    
     }
 }
+
+void config_wifi_settings(void)
+{
+    unsigned char line[16];
+    unsigned char len, address, i;
+        
+    _puts("Logger V1.0\n");
+    _puts("enter wlan name:\n");
+        
+    len = _gets(line,16);
+    
+    if (!len) {
+        _puts("buffer error");
+        return;
+    }
+            
+    address = 0;
+    DATAEE_WriteByte(address,len); //Save size of word
+    address++;
+    for (i=0; i < len; i++) {        
+        DATAEE_WriteByte(address,line[i]);
+        address++;
+    }
+    
+    _puts("enter wlan password:\n");
+    
+    len = _gets(line,16);
+    
+    if (!len) {
+        _puts("buffer error");
+        return;
+    }
+    
+    address = 20;
+    DATAEE_WriteByte(address,len); //Save size of word
+    address++;
+    for (i=0; i < len; i++) {        
+        DATAEE_WriteByte(address,line[i]);
+        address++;
+    }
+    
+    //Check 
+    /*
+    address = 0;
+    for (i=0; i<14 ; i++) {
+        line[i] = DATAEE_ReadByte(address);
+        address++;
+    }    
+    write(line,14);
+    */    
+}
+
+void read_wifi_settings(void)
+{   unsigned char wifi[10],pass[14];    
+    unsigned char i,len_wifi,len_pass,add;
+    
+    
+    add = 0;
+    len_wifi = DATAEE_ReadByte(add);
+    add++;
+    for (i = 0; i < len_wifi; i++) {
+        wifi[i] = DATAEE_ReadByte(add);
+        add++;
+    }
+    
+    add = 20;
+    len_pass = DATAEE_ReadByte(add);
+    add++;
+    for (i = 0; i < len_pass; i++) {
+        pass[i] = DATAEE_ReadByte(add);
+        add++;
+    } 
+      
+    /*
+    write(wifi,len_wifi);
+    _puts("\n");
+    write(pass,len_pass);
+    _puts("\n");
+    */
+    
+    ESP_config(wifi,len_wifi,pass,len_pass);
+    
+}
+
+

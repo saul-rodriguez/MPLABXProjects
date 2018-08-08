@@ -52,6 +52,7 @@
 #include <stdbool.h>
 #include "interrupt_manager.h"
 #include "tmr1.h"
+#include "memory.h"
 #include "adc.h"
 #include "eusart.h"
 

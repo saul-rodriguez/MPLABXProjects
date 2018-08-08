@@ -122,6 +122,10 @@ void _IOC_Ready(void);
 
 void process_ioc(void);
 
+void config_wifi_settings(void);
+
+void read_wifi_settings(void);
+
 
 #ifdef	__cplusplus
 extern "C" {

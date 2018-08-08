@@ -51,6 +51,7 @@
  */
 void main(void)
 {
+    //unsigned char wifi[14];
     // initialize the device
     SYSTEM_Initialize();
     
@@ -74,7 +75,13 @@ void main(void)
     // Disable the Peripheral Interrupts
     //INTERRUPT_PeripheralInterruptDisable();
 #ifdef WIFI
-    ESP_config();
+    if (!IO_RA4_GetValue()) { //Enter in config mode
+        config_wifi_settings();        
+    }
+    
+    read_wifi_settings();
+    
+    //ESP_config();
 #endif
 
     while (1)

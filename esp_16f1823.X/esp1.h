@@ -54,7 +54,7 @@ typedef enum
 
 
 
-#define ESP_BUFFER_SIZE 20
+#define ESP_BUFFER_SIZE 24
 
 //#define ESP_TX_BUFFER_SIZE 64
 
@@ -102,7 +102,7 @@ unsigned char ESP_process_message(void);
 
 void ESP_initialize(void);
 
-void ESP_config(void);
+void ESP_config(unsigned char *wifi, unsigned char len_wifi, unsigned char *pass, unsigned char len_pass);
 
 void ESP_wait_for(unsigned char esp_mess);
 
