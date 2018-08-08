@@ -52,7 +52,10 @@ void main(void)
 {   
     // Initialize the device
     SYSTEM_Initialize();
+    
+#ifdef WIFI
     ESP_initialize();
+#endif
     //custom initialization
     logger_initialize();
 
@@ -77,8 +80,9 @@ void main(void)
     IO_RA5_SetLow();
     __delay_ms(200);
     
+#ifdef WIFI
     ESP_config();
-    
+#endif
     while (1)
     {
          //EUSART_Write(a++);

@@ -47,14 +47,13 @@ void process_message(unsigned char message)
        
     //Message handler
     switch (message) {
-       /* case 't': //Test communications
+        case 't': //Test communications
             #ifdef BT
             _puts("Ok\n");            
             #else
             ESP_write("Ok\n",3);
             #endif
-            break; 
-        */
+            break;
             
         case 'a': //Ask analog value                         
             ADC_StartConversion();            
@@ -139,14 +138,14 @@ void toggle_format()
         #ifdef BT
             _puts("tmode\n");
         #else
-            //ESP_write("t\n",1);
+            ESP_write("tmode\n",6);
         #endif
     } else {
         message_format = MESSAGE_BINARY;
         #ifdef BT
             _puts("bmode\n");
         #else
-            //ESP_write("b\n",1);
+            ESP_write("bmode\n",6);
         #endif
     }
 }
