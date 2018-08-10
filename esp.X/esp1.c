@@ -96,7 +96,7 @@ void ESP_config(void)
     ESP_wait_for(ESP_OK);
     
     //connect to AP
-    _puts("AT+CWJAP=\"saul2\",\"rickhunter02\"\r\n");
+    _puts("AT+CWJAP=\"delta\",\"514Snbya\"\r\n");
     ESP_wait_for(ESP_OK);
     
     //Activate multiple connections

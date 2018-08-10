@@ -76,7 +76,7 @@ void main(void)
     //INTERRUPT_PeripheralInterruptDisable();
    
     IO_RA5_SetHigh();
-        __delay_ms(200);
+    __delay_ms(200);
     IO_RA5_SetLow();
     __delay_ms(200);
     
@@ -108,10 +108,8 @@ void main(void)
             ESP_wait_exception = 0;            
             process_message('S');
         }
-    #endif
-        
-        CLRWDT();
-        
+    #endif        
+        CLRWDT();        
     }
 }
 /**
