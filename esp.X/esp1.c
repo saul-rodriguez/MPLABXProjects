@@ -79,11 +79,11 @@ unsigned char ESP_process_message(void) {
     return ESP_OTHER;
 }
 
-void ESP_config(void)
+void ESP_config(unsigned char *wifi, unsigned char len_wifi,  unsigned char *pass, unsigned char len_pass)
 {
-    
-    
+        
     //Check that ESP is there
+    __delay_ms(250);    
     __delay_ms(250);    
     while(EUSART_is_rx_ready())
         EUSART_Read();
@@ -96,7 +96,13 @@ void ESP_config(void)
     ESP_wait_for(ESP_OK);
     
     //connect to AP
-    _puts("AT+CWJAP=\"delta\",\"514Snbya\"\r\n");
+    //_puts("AT+CWJAP=\"saul2\",\"rickhunter02\"\r\n");
+    _puts("AT+CWJAP=\"");
+    write(wifi,len_wifi);        
+    _puts("\",\"");
+    write(pass,len_pass);
+    _puts("\"\r\n");
+    
     ESP_wait_for(ESP_OK);
     
     //Activate multiple connections
@@ -109,6 +115,7 @@ void ESP_config(void)
     
     
 }
+
 
 void ESP_wait_for(unsigned char esp_mess)
 {

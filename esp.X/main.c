@@ -80,9 +80,17 @@ void main(void)
     IO_RA5_SetLow();
     __delay_ms(200);
     
-#ifdef WIFI
-    ESP_config();
-#endif
+    #ifdef WIFI
+    if (!IO_RA4_GetValue()) { //Enter in config mode
+        config_wifi_settings();        
+    }
+    
+    read_wifi_settings();
+    
+    //ESP_config();
+    #endif
+    
+    
     while (1)
     {
          //EUSART_Write(a++);
