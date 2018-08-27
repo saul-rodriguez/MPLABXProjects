@@ -105,22 +105,18 @@ void read_analog()
     ADC_state = ADC_IDLE; //Reset flag!
     
     if (message_format == MESSAGE_BINARY) {    
-        mess[0] = (unsigned char)(adc_val & 0xff);
-        mess[1] = (unsigned char)((adc_val >> 8) & 0xff);
-    
-        #ifdef BT
-            write((unsigned char*)mess,2);
-        #else           
-            WIFI_tx_buf[WIFI_tx_buf_ind++] = mess[0];
-            WIFI_tx_buf[WIFI_tx_buf_ind++] = mess[1];
-        
-            if (WIFI_tx_buf_ind == WIFI_TX_BUFFER_SIZE) {
+       WIFI_tx_buf[WIFI_tx_buf_ind++] = (unsigned char)(adc_val & 0xff);
+       WIFI_tx_buf[WIFI_tx_buf_ind++] = (unsigned char)((adc_val >> 8) & 0xff);
+            
+       if (WIFI_tx_buf_ind == WIFI_TX_BUFFER_SIZE) {
+            #ifdef BT
+                write(WIFI_tx_buf,WIFI_TX_BUFFER_SIZE);                
+            #else
                 ESP_write(WIFI_tx_buf,WIFI_TX_BUFFER_SIZE);
                 ESP_wait_for(ESP_SEND_OK);
-                WIFI_tx_buf_ind = 0;
-            }              
-        #endif
-    
+            #endif
+            WIFI_tx_buf_ind = 0;
+       }
     } else {
         //val_mv = ((unsigned long)adc_val*3300UL/1024UL); 
         aux1 = (unsigned long)adc_val*3300UL;
