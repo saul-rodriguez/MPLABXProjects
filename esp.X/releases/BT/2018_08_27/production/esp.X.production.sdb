@@ -1,0 +1,920 @@
+[p PRO_MODE GLOBOPT AUTOSTATIC IEEE_FLT IEEE_DBL LFSROK SPEEDOPT EMI_WORD ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 18LF14K22 ]
+[d frameptr 4065 ]
+"82 /home/saul/MPLABXProjects/esp.X/mcc_generated_files/interrupt_manager.c
+[e E2535 . `uc
+ADC_IDLE 0
+ADC_READY 1
+]
+"83 /home/saul/MPLABXProjects/esp.X/mcc_generated_files/adc1.c
+[e E2441 . `uc
+channel_AN2 2
+channel_DAC 14
+channel_FVR 15
+]
+"106 /home/saul/MPLABXProjects/esp.X/main.c
+[e E2572 . `uc
+ADC_IDLE 0
+ADC_READY 1
+]
+"110
+[e E2576 . `uc
+IOC_IDLE 0
+IOC_READY 1
+]
+"21 /home/saul/MPLABXProjects/esp.X/esp1.c
+[e E2408 . `uc
+ESP_OTHER 0
+ESP_SEND_OK 1
+ESP_OK 2
+ESP_EOL 3
+ESP_RX 4
+ESP_PROMPT 5
+ESP_CONNECT 6
+ESP_SEND_FAIL 7
+ESP_CLOSED 8
+ESP_ERROR 9
+]
+"22 /home/saul/MPLABXProjects/esp.X/logger.c
+[e E2408 . `uc
+MESSAGE_BINARY 0
+MESSAGE_TEXT 1
+]
+"24
+[e E2523 . `uc
+channel_AN2 2
+channel_DAC 14
+channel_FVR 15
+]
+"25
+[e E2416 . `uc
+ADC_IDLE 0
+ADC_READY 1
+]
+"30
+[e E2412 . `uc
+TMR1_STOP 0
+TMR1_RUNNING 1
+]
+"34
+[e E2420 . `uc
+IOC_IDLE 0
+IOC_READY 1
+]
+"7 /opt/microchip/xc8/v2.00/pic/sources/c99/common/awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+"4 /opt/microchip/xc8/v2.00/pic/sources/c99/common/fleq.c
+[v ___fleq __fleq `(b  1 e 0 0 ]
+"62 /opt/microchip/xc8/v2.00/pic/sources/c99/common/float.c
+[v ___ftpack __ftpack `(f  1 e 4 0 ]
+"86 /opt/microchip/xc8/v2.00/pic/sources/c99/common/ftadd.c
+[v ___ftadd __ftadd `(f  1 e 4 0 ]
+"54 /opt/microchip/xc8/v2.00/pic/sources/c99/common/ftdiv.c
+[v ___ftdiv __ftdiv `(f  1 e 4 0 ]
+"62 /opt/microchip/xc8/v2.00/pic/sources/c99/common/ftmul.c
+[v ___ftmul __ftmul `(f  1 e 4 0 ]
+"19 /opt/microchip/xc8/v2.00/pic/sources/c99/common/ftsub.c
+[v ___ftsub __ftsub `(f  1 e 4 0 ]
+"4 /opt/microchip/xc8/v2.00/pic/sources/c99/common/lbmod.c
+[v ___lbmod __lbmod `(uc  1 e 1 0 ]
+"7 /opt/microchip/xc8/v2.00/pic/sources/c99/common/lwdiv.c
+[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
+"7 /opt/microchip/xc8/v2.00/pic/sources/c99/common/lwmod.c
+[v ___lwmod __lwmod `(ui  1 e 2 0 ]
+"10 /opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"245
+[v ___flsub __flsub `(d  1 e 4 0 ]
+"11 /opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 4 0 ]
+"8 /opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcmul.c
+[v ___flmul __flmul `(d  1 e 4 0 ]
+"7 /opt/microchip/xc8/v2.00/pic/sources/c99/common/strchr.c
+[v _strchr strchr `(*.39uc  1 e 2 0 ]
+"12 /opt/microchip/xc8/v2.00/pic/sources/c99/common/strlen.c
+[v _strlen strlen `(ui  1 e 2 0 ]
+"3 /opt/microchip/xc8/v2.00/pic/sources/c99/common/strncmp.c
+[v _strncmp strncmp `(i  1 e 2 0 ]
+"143 /opt/microchip/xc8/v2.00/pic/sources/c99/common/strstr.c
+[v _strstr strstr `(*.39uc  1 e 2 0 ]
+"15 /opt/microchip/xc8/v2.00/pic/sources/c99/common/Umul32.c
+[v ___lmul __lmul `(ul  1 e 4 0 ]
+"91 /opt/microchip/xc8/v2.00/pic/sources/c99/common/Umul64.c
+[v ___omul __omul `(uo  1 e 8 0 ]
+"5 /home/saul/MPLABXProjects/esp.X/comm.c
+[v __puts _puts `(v  1 e 1 0 ]
+"15
+[v _write write `(v  1 e 1 0 ]
+"25
+[v __sprintf _sprintf `(v  1 e 1 0 ]
+"51
+[v __gets _gets `(uc  1 e 1 0 ]
+"27 /home/saul/MPLABXProjects/esp.X/esp1.c
+[v _ESP_read ESP_read `(uc  1 e 1 0 ]
+"55
+[v _ESP_process_message ESP_process_message `(uc  1 e 1 0 ]
+"82
+[v _ESP_config ESP_config `(v  1 e 1 0 ]
+"120
+[v _ESP_wait_for ESP_wait_for `(v  1 e 1 0 ]
+"144
+[v _ESP_process_rx_data ESP_process_rx_data `(v  1 e 1 0 ]
+"219
+[v _ESP_default_application_handler ESP_default_application_handler `(v  1 e 1 0 ]
+"224
+[v _ESP_Set_application_handler ESP_Set_application_handler `(v  1 e 1 0 ]
+"20 /home/saul/MPLABXProjects/esp.X/logger.c
+[v _logger_initialize logger_initialize `(v  1 e 1 0 ]
+"40
+[v _bt_message_handler bt_message_handler `(v  1 e 1 0 ]
+"47
+[v _process_message process_message `(v  1 e 1 0 ]
+"97
+[v _read_analog read_analog `(v  1 e 1 0 ]
+"139
+[v _toggle_format toggle_format `(v  1 e 1 0 ]
+"158
+[v __TMR1_Ready _TMR1_Ready `(v  1 e 1 0 ]
+"165
+[v __IOC_Ready _IOC_Ready `(v  1 e 1 0 ]
+"172
+[v _process_ioc process_ioc `(v  1 e 1 0 ]
+"51 /home/saul/MPLABXProjects/esp.X/main.c
+[v _main main `(v  1 e 1 0 ]
+"60 /home/saul/MPLABXProjects/esp.X/mcc_generated_files/adc1.c
+[v _ADC1_Initialize ADC1_Initialize `(v  1 e 1 0 ]
+"83
+[v _ADC1_SelectChannel ADC1_SelectChannel `(v  1 e 1 0 ]
+"91
+[v _ADC1_StartConversion ADC1_StartConversion `(v  1 e 1 0 ]
+[v i2_ADC1_StartConversion ADC1_StartConversion `(v  1 e 1 0 ]
+"104
+[v _ADC1_GetConversionResult ADC1_GetConversionResult `(us  1 e 2 0 ]
+"135
+[v _ADC1_ISR ADC1_ISR `(v  1 e 1 0 ]
+"75 /home/saul/MPLABXProjects/esp.X/mcc_generated_files/eusart.c
+[v _EUSART_Initialize EUSART_Initialize `(v  1 e 1 0 ]
+"113
+[v _EUSART_is_tx_ready EUSART_is_tx_ready `(uc  1 e 1 0 ]
+"118
+[v _EUSART_is_rx_ready EUSART_is_rx_ready `(uc  1 e 1 0 ]
+"128
+[v _EUSART_Read EUSART_Read `(uc  1 e 1 0 ]
+"148
+[v _EUSART_Write EUSART_Write `(v  1 e 1 0 ]
+"172
+[v _EUSART_Transmit_ISR EUSART_Transmit_ISR `(v  1 e 1 0 ]
+"191
+[v _EUSART_Receive_ISR EUSART_Receive_ISR `(v  1 e 1 0 ]
+"211
+[v _EUSART_SetTxInterruptHandler EUSART_SetTxInterruptHandler `(v  1 e 1 0 ]
+"215
+[v _EUSART_SetRxInterruptHandler EUSART_SetRxInterruptHandler `(v  1 e 1 0 ]
+"53 /home/saul/MPLABXProjects/esp.X/mcc_generated_files/interrupt_manager.c
+[v _INTERRUPT_Initialize INTERRUPT_Initialize `(v  1 e 1 0 ]
+"59
+[v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `IIH(v  1 e 1 0 ]
+"50 /home/saul/MPLABXProjects/esp.X/mcc_generated_files/mcc.c
+[v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
+"61
+[v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
+"59 /home/saul/MPLABXProjects/esp.X/mcc_generated_files/memory.c
+[v _FLASH_ReadByte FLASH_ReadByte `(uc  1 e 1 0 ]
+"94
+[v _FLASH_WriteBlock FLASH_WriteBlock `(c  1 e 1 0 ]
+"150
+[v _FLASH_EraseBlock FLASH_EraseBlock `(v  1 e 1 0 ]
+"173
+[v _DATAEE_WriteByte DATAEE_WriteByte `(v  1 e 1 0 ]
+"195
+[v _DATAEE_ReadByte DATAEE_ReadByte `(uc  1 e 1 0 ]
+"59 /home/saul/MPLABXProjects/esp.X/mcc_generated_files/pin_manager.c
+[v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
+"110
+[v _PIN_MANAGER_IOC PIN_MANAGER_IOC `(v  1 e 1 0 ]
+"124
+[v _IOCA4_ISR IOCA4_ISR `(v  1 e 1 0 ]
+"138
+[v _IOCA4_SetInterruptHandler IOCA4_SetInterruptHandler `(v  1 e 1 0 ]
+"145
+[v _IOCA4_DefaultInterruptHandler IOCA4_DefaultInterruptHandler `(v  1 e 1 0 ]
+"64 /home/saul/MPLABXProjects/esp.X/mcc_generated_files/tmr1.c
+[v _TMR1_Initialize TMR1_Initialize `(v  1 e 1 0 ]
+"90
+[v _TMR1_StartTimer TMR1_StartTimer `(v  1 e 1 0 ]
+"96
+[v _TMR1_StopTimer TMR1_StopTimer `(v  1 e 1 0 ]
+"118
+[v _TMR1_WriteTimer TMR1_WriteTimer `(v  1 e 1 0 ]
+"145
+[v _TMR1_ISR TMR1_ISR `(v  1 e 1 0 ]
+"159
+[v _TMR1_SetInterruptHandler TMR1_SetInterruptHandler `(v  1 e 1 0 ]
+"163
+[v _TMR1_DefaultInterruptHandler TMR1_DefaultInterruptHandler `(v  1 e 1 0 ]
+"85 /home/saul/MPLABXProjects/esp.X/mcc_generated_files/eusart.h
+[v _EUSART_TxDefaultInterruptHandler EUSART_TxDefaultInterruptHandler `*.37(v  1 e 2 0 ]
+"86
+[v _EUSART_RxDefaultInterruptHandler EUSART_RxDefaultInterruptHandler `*.37(v  1 e 2 0 ]
+"557 /opt/microchip/xc8/v2.00/pic/include/pic18lf14k22.h
+[v _WPUA WPUA `VEuc  1 e 1 @3959 ]
+"615
+[v _WPUB WPUB `VEuc  1 e 1 @3960 ]
+[s S158 . 1 `uc 1 IOCA 1 0 :6:0 
+]
+"681
+[s S160 . 1 `uc 1 IOCA0 1 0 :1:0 
+`uc 1 IOCA1 1 0 :1:1 
+`uc 1 IOCA2 1 0 :1:2 
+`uc 1 IOCA3 1 0 :1:3 
+`uc 1 IOCA4 1 0 :1:4 
+`uc 1 IOCA5 1 0 :1:5 
+]
+[u S167 . 1 `S158 1 . 1 0 `S160 1 . 1 0 ]
+[v _IOCAbits IOCAbits `VES167  1 e 1 @3961 ]
+[s S60 . 1 `uc 1 ANSEL 1 0 :8:0 
+]
+"799
+[s S62 . 1 `uc 1 ANS0 1 0 :1:0 
+`uc 1 ANS1 1 0 :1:1 
+`uc 1 ANS2 1 0 :1:2 
+`uc 1 ANS3 1 0 :1:3 
+`uc 1 ANS4 1 0 :1:4 
+`uc 1 ANS5 1 0 :1:5 
+`uc 1 ANS6 1 0 :1:6 
+`uc 1 ANS7 1 0 :1:7 
+]
+[s S71 . 1 `uc 1 ANSEL0 1 0 :1:0 
+`uc 1 ANSEL1 1 0 :1:1 
+`uc 1 ANSEL2 1 0 :1:2 
+`uc 1 ANSEL3 1 0 :1:3 
+`uc 1 ANSEL4 1 0 :1:4 
+`uc 1 ANSEL5 1 0 :1:5 
+`uc 1 ANSEL6 1 0 :1:6 
+`uc 1 ANSEL7 1 0 :1:7 
+]
+[u S80 . 1 `S60 1 . 1 0 `S62 1 . 1 0 `S71 1 . 1 0 ]
+[v _ANSELbits ANSELbits `VES80  1 e 1 @3966 ]
+[s S31 . 1 `uc 1 ANSELH 1 0 :4:0 
+]
+"911
+[s S33 . 1 `uc 1 ANS8 1 0 :1:0 
+`uc 1 ANS9 1 0 :1:1 
+`uc 1 ANS10 1 0 :1:2 
+`uc 1 ANS11 1 0 :1:3 
+]
+[s S38 . 1 `uc 1 ANSEL8 1 0 :1:0 
+`uc 1 ANSEL9 1 0 :1:1 
+`uc 1 ANSEL10 1 0 :1:2 
+`uc 1 ANSEL11 1 0 :1:3 
+]
+[u S43 . 1 `S31 1 . 1 0 `S33 1 . 1 0 `S38 1 . 1 0 ]
+[v _ANSELHbits ANSELHbits `VES43  1 e 1 @3967 ]
+[s S1464 . 1 `uc 1 RA0 1 0 :1:0 
+`uc 1 RA1 1 0 :1:1 
+`uc 1 RA2 1 0 :1:2 
+`uc 1 RA3 1 0 :1:3 
+`uc 1 RA4 1 0 :1:4 
+`uc 1 RA5 1 0 :1:5 
+]
+"1025
+[s S1471 . 1 `uc 1 AN0 1 0 :1:0 
+`uc 1 AN1 1 0 :1:1 
+`uc 1 AN2 1 0 :1:2 
+`uc 1 MCLR 1 0 :1:3 
+`uc 1 AN3 1 0 :1:4 
+`uc 1 T13CKI 1 0 :1:5 
+]
+[s S1478 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 NOT_MCLR 1 0 :1:3 
+]
+[s S1481 . 1 `uc 1 CVREF 1 0 :1:0 
+`uc 1 C12IN0M 1 0 :1:1 
+`uc 1 C1OUT 1 0 :1:2 
+`uc 1 nMCLR 1 0 :1:3 
+`uc 1 OSC2 1 0 :1:4 
+`uc 1 OSC1 1 0 :1:5 
+]
+[s S1488 . 1 `uc 1 VREFM 1 0 :1:0 
+`uc 1 VREFP 1 0 :1:1 
+`uc 1 T0CKI 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 CLKOUT 1 0 :1:4 
+`uc 1 CLKIN 1 0 :1:5 
+]
+[s S1495 . 1 `uc 1 INT0 1 0 :1:0 
+`uc 1 INT1 1 0 :1:1 
+`uc 1 INT2 1 0 :1:2 
+]
+[s S1499 . 1 `uc 1 PGD 1 0 :1:0 
+`uc 1 PGC 1 0 :1:1 
+`uc 1 . 1 0 :1:2 
+`uc 1 VPP 1 0 :1:3 
+]
+[s S1504 . 1 `uc 1 C1INP 1 0 :1:0 
+`uc 1 . 1 0 :1:1 
+`uc 1 SRQ 1 0 :1:2 
+]
+[s S1508 . 1 `uc 1 ULPWUIN 1 0 :1:0 
+`uc 1 . 1 0 :4:1 
+`uc 1 LVDIN 1 0 :1:5 
+]
+[u S1512 . 1 `S1464 1 . 1 0 `S1471 1 . 1 0 `S1478 1 . 1 0 `S1481 1 . 1 0 `S1488 1 . 1 0 `S1495 1 . 1 0 `S1499 1 . 1 0 `S1504 1 . 1 0 `S1508 1 . 1 0 ]
+[v _PORTAbits PORTAbits `VES1512  1 e 1 @3968 ]
+"1546
+[v _LATA LATA `VEuc  1 e 1 @3977 ]
+[s S1186 . 1 `uc 1 LATA0 1 0 :1:0 
+`uc 1 LATA1 1 0 :1:1 
+`uc 1 LATA2 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 LATA4 1 0 :1:4 
+`uc 1 LATA5 1 0 :1:5 
+]
+"1569
+[s S1193 . 1 `uc 1 LA0 1 0 :1:0 
+`uc 1 LA1 1 0 :1:1 
+`uc 1 LA2 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 LA4 1 0 :1:4 
+`uc 1 LA5 1 0 :1:5 
+]
+[u S1200 . 1 `S1186 1 . 1 0 `S1193 1 . 1 0 ]
+[v _LATAbits LATAbits `VES1200  1 e 1 @3977 ]
+"1624
+[v _LATB LATB `VEuc  1 e 1 @3978 ]
+"1690
+[v _LATC LATC `VEuc  1 e 1 @3979 ]
+"1802
+[v _TRISA TRISA `VEuc  1 e 1 @3986 ]
+"1956
+[v _TRISB TRISB `VEuc  1 e 1 @3987 ]
+"2086
+[v _TRISC TRISC `VEuc  1 e 1 @3988 ]
+"2308
+[v _OSCTUNE OSCTUNE `VEuc  1 e 1 @3995 ]
+[s S425 . 1 `uc 1 TMR1IE 1 0 :1:0 
+`uc 1 TMR2IE 1 0 :1:1 
+`uc 1 CCP1IE 1 0 :1:2 
+`uc 1 SSPIE 1 0 :1:3 
+`uc 1 TXIE 1 0 :1:4 
+`uc 1 RCIE 1 0 :1:5 
+`uc 1 ADIE 1 0 :1:6 
+]
+"2399
+[s S433 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 TX1IE 1 0 :1:4 
+`uc 1 RC1IE 1 0 :1:5 
+]
+[u S437 . 1 `S425 1 . 1 0 `S433 1 . 1 0 ]
+[v _PIE1bits PIE1bits `VES437  1 e 1 @3997 ]
+[s S453 . 1 `uc 1 TMR1IF 1 0 :1:0 
+`uc 1 TMR2IF 1 0 :1:1 
+`uc 1 CCP1IF 1 0 :1:2 
+`uc 1 SSPIF 1 0 :1:3 
+`uc 1 TXIF 1 0 :1:4 
+`uc 1 RCIF 1 0 :1:5 
+`uc 1 ADIF 1 0 :1:6 
+]
+"2470
+[s S461 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 TX1IF 1 0 :1:4 
+`uc 1 RC1IF 1 0 :1:5 
+]
+[u S465 . 1 `S453 1 . 1 0 `S461 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES465  1 e 1 @3998 ]
+"2916
+[v _RCSTA RCSTA `VEuc  1 e 1 @4011 ]
+[s S636 . 1 `uc 1 RX9D 1 0 :1:0 
+`uc 1 OERR 1 0 :1:1 
+`uc 1 FERR 1 0 :1:2 
+`uc 1 ADDEN 1 0 :1:3 
+`uc 1 CREN 1 0 :1:4 
+`uc 1 SREN 1 0 :1:5 
+`uc 1 RX9 1 0 :1:6 
+`uc 1 SPEN 1 0 :1:7 
+]
+"2957
+[s S645 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 ADEN 1 0 :1:3 
+]
+[s S648 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 SRENA 1 0 :1:5 
+]
+[s S651 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 RC8_9 1 0 :1:6 
+]
+[s S654 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 RC9 1 0 :1:6 
+]
+[s S657 . 1 `uc 1 RCD8 1 0 :1:0 
+]
+[u S659 . 1 `S636 1 . 1 0 `S645 1 . 1 0 `S648 1 . 1 0 `S651 1 . 1 0 `S654 1 . 1 0 `S657 1 . 1 0 ]
+[v _RCSTAbits RCSTAbits `VES659  1 e 1 @4011 ]
+"3126
+[v _TXSTA TXSTA `VEuc  1 e 1 @4012 ]
+"3382
+[v _TXREG TXREG `VEuc  1 e 1 @4013 ]
+"3394
+[v _RCREG RCREG `VEuc  1 e 1 @4014 ]
+"3406
+[v _SPBRG SPBRG `VEuc  1 e 1 @4015 ]
+"3418
+[v _SPBRGH SPBRGH `VEuc  1 e 1 @4016 ]
+"3705
+[v _BAUDCON BAUDCON `VEuc  1 e 1 @4024 ]
+"4330
+[v _ADCON2 ADCON2 `VEuc  1 e 1 @4032 ]
+"4401
+[v _ADCON1 ADCON1 `VEuc  1 e 1 @4033 ]
+"4462
+[v _ADCON0 ADCON0 `VEuc  1 e 1 @4034 ]
+[s S762 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 GO_NOT_DONE 1 0 :1:1 
+]
+"4506
+[s S765 . 1 `uc 1 ADON 1 0 :1:0 
+`uc 1 GO_nDONE 1 0 :1:1 
+`uc 1 CHS 1 0 :4:2 
+]
+[s S769 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 DONE 1 0 :1:1 
+`uc 1 CHS0 1 0 :1:2 
+`uc 1 CHS1 1 0 :1:3 
+`uc 1 CHS2 1 0 :1:4 
+`uc 1 CHS3 1 0 :1:5 
+]
+[s S776 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 NOT_DONE 1 0 :1:1 
+]
+[s S779 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 nDONE 1 0 :1:1 
+]
+[s S782 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 GO_DONE 1 0 :1:1 
+]
+[s S785 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 GO 1 0 :1:1 
+]
+[s S788 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 GODONE 1 0 :1:1 
+]
+[u S791 . 1 `S762 1 . 1 0 `S765 1 . 1 0 `S769 1 . 1 0 `S776 1 . 1 0 `S779 1 . 1 0 `S782 1 . 1 0 `S785 1 . 1 0 `S788 1 . 1 0 ]
+[v _ADCON0bits ADCON0bits `VES791  1 e 1 @4034 ]
+"4588
+[v _ADRESL ADRESL `VEuc  1 e 1 @4035 ]
+"4595
+[v _ADRESH ADRESH `VEuc  1 e 1 @4036 ]
+"5157
+[v _T1CON T1CON `VEuc  1 e 1 @4045 ]
+[s S914 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 NOT_T1SYNC 1 0 :1:2 
+]
+"5190
+[s S917 . 1 `uc 1 TMR1ON 1 0 :1:0 
+`uc 1 TMR1CS 1 0 :1:1 
+`uc 1 nT1SYNC 1 0 :1:2 
+`uc 1 T1OSCEN 1 0 :1:3 
+`uc 1 T1CKPS 1 0 :2:4 
+`uc 1 T1RUN 1 0 :1:6 
+`uc 1 RD16 1 0 :1:7 
+]
+[s S925 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 T1SYNC 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 T1CKPS0 1 0 :1:4 
+`uc 1 T1CKPS1 1 0 :1:5 
+]
+[s S931 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 SOSCEN 1 0 :1:3 
+`uc 1 . 1 0 :3:4 
+`uc 1 T1RD16 1 0 :1:7 
+]
+[u S936 . 1 `S914 1 . 1 0 `S917 1 . 1 0 `S925 1 . 1 0 `S931 1 . 1 0 ]
+[v _T1CONbits T1CONbits `VES936  1 e 1 @4045 ]
+"5260
+[v _TMR1 TMR1 `VEus  1 e 2 @4046 ]
+"5267
+[v _TMR1L TMR1L `VEuc  1 e 1 @4046 ]
+"5274
+[v _TMR1H TMR1H `VEuc  1 e 1 @4047 ]
+[s S326 . 1 `uc 1 NOT_BOR 1 0 :1:0 
+]
+"5324
+[s S328 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 NOT_POR 1 0 :1:1 
+]
+[s S331 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 NOT_PD 1 0 :1:2 
+]
+[s S334 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 NOT_TO 1 0 :1:3 
+]
+[s S337 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 NOT_RI 1 0 :1:4 
+]
+[s S340 . 1 `uc 1 nBOR 1 0 :1:0 
+`uc 1 nPOR 1 0 :1:1 
+`uc 1 nPD 1 0 :1:2 
+`uc 1 nTO 1 0 :1:3 
+`uc 1 nRI 1 0 :1:4 
+`uc 1 . 1 0 :1:5 
+`uc 1 SBOREN 1 0 :1:6 
+`uc 1 IPEN 1 0 :1:7 
+]
+[s S349 . 1 `uc 1 BOR 1 0 :1:0 
+`uc 1 POR 1 0 :1:1 
+`uc 1 PD 1 0 :1:2 
+`uc 1 TO 1 0 :1:3 
+`uc 1 RI 1 0 :1:4 
+]
+[u S355 . 1 `S326 1 . 1 0 `S328 1 . 1 0 `S331 1 . 1 0 `S334 1 . 1 0 `S337 1 . 1 0 `S340 1 . 1 0 `S349 1 . 1 0 ]
+[v _RCONbits RCONbits `VES355  1 e 1 @4048 ]
+"5442
+[v _OSCCON2 OSCCON2 `VEuc  1 e 1 @4050 ]
+"5474
+[v _OSCCON OSCCON `VEuc  1 e 1 @4051 ]
+[s S107 . 1 `uc 1 . 1 0 :7:0 
+`uc 1 NOT_RABPU 1 0 :1:7 
+]
+"6032
+[s S110 . 1 `uc 1 RABIP 1 0 :1:0 
+`uc 1 . 1 0 :1:1 
+`uc 1 TMR0IP 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 INTEDG2 1 0 :1:4 
+`uc 1 INTEDG1 1 0 :1:5 
+`uc 1 INTEDG0 1 0 :1:6 
+`uc 1 nRABPU 1 0 :1:7 
+]
+[s S119 . 1 `uc 1 RBIP 1 0 :1:0 
+`uc 1 . 1 0 :6:1 
+`uc 1 RABPU 1 0 :1:7 
+]
+[s S123 . 1 `uc 1 . 1 0 :7:0 
+`uc 1 NOT_RBPU 1 0 :1:7 
+]
+[s S126 . 1 `uc 1 . 1 0 :7:0 
+`uc 1 nRBPU 1 0 :1:7 
+]
+[u S129 . 1 `S107 1 . 1 0 `S110 1 . 1 0 `S119 1 . 1 0 `S123 1 . 1 0 `S126 1 . 1 0 ]
+[v _INTCON2bits INTCON2bits `VES129  1 e 1 @4081 ]
+[s S190 . 1 `uc 1 RABIF 1 0 :1:0 
+`uc 1 INT0IF 1 0 :1:1 
+`uc 1 TMR0IF 1 0 :1:2 
+`uc 1 RABIE 1 0 :1:3 
+`uc 1 INT0IE 1 0 :1:4 
+`uc 1 TMR0IE 1 0 :1:5 
+`uc 1 PEIE_GIEL 1 0 :1:6 
+`uc 1 GIE_GIEH 1 0 :1:7 
+]
+"6128
+[s S199 . 1 `uc 1 RBIF 1 0 :1:0 
+`uc 1 INT0F 1 0 :1:1 
+`uc 1 T0IF 1 0 :1:2 
+`uc 1 RBIE 1 0 :1:3 
+`uc 1 INT0E 1 0 :1:4 
+`uc 1 T0IE 1 0 :1:5 
+`uc 1 PEIE 1 0 :1:6 
+`uc 1 GIE 1 0 :1:7 
+]
+[s S208 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 GIEL 1 0 :1:6 
+`uc 1 GIEH 1 0 :1:7 
+]
+[s S212 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 PIE 1 0 :1:6 
+]
+[u S215 . 1 `S190 1 . 1 0 `S199 1 . 1 0 `S208 1 . 1 0 `S212 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES215  1 e 1 @4082 ]
+"8 /home/saul/MPLABXProjects/esp.X/esp1.c
+[v _esp_read_data esp_read_data `VE[16]uc  1 e 16 0 ]
+"9
+[v _esp_read_data_index esp_read_data_index `VEuc  1 e 1 0 ]
+"10
+[v _esp_channel esp_channel `VEuc  1 e 1 0 ]
+"11
+[v _ESP_wait_exception ESP_wait_exception `VEuc  1 e 1 0 ]
+"6 /home/saul/MPLABXProjects/esp.X/logger.c
+[v _message_format message_format `VEuc  1 e 1 0 ]
+"8
+[v _ADC_value ADC_value `VEus  1 e 2 0 ]
+"9
+[v _ADC_state ADC_state `VEuc  1 e 1 0 ]
+"10
+[v _ADC_count ADC_count `VEuc  1 e 1 0 ]
+"12
+[v _TMR1_state TMR1_state `VEuc  1 e 1 0 ]
+"14
+[v _IOC_state IOC_state `VEuc  1 e 1 0 ]
+"15
+[v _IOC_value IOC_value `VEuc  1 e 1 0 ]
+"17
+[v _WIFI_tx_buf WIFI_tx_buf `VE[64]uc  1 e 64 0 ]
+"18
+[v _WIFI_tx_buf_ind WIFI_tx_buf_ind `VEuc  1 e 1 0 ]
+"62 /home/saul/MPLABXProjects/esp.X/mcc_generated_files/eusart.c
+[v _eusartTxHead eusartTxHead `VEuc  1 e 1 0 ]
+"63
+[v _eusartTxTail eusartTxTail `VEuc  1 e 1 0 ]
+"64
+[v _eusartTxBuffer eusartTxBuffer `VE[64]uc  1 e 64 0 ]
+"65
+[v _eusartTxBufferRemaining eusartTxBufferRemaining `VEuc  1 e 1 0 ]
+"67
+[v _eusartRxHead eusartRxHead `VEuc  1 e 1 0 ]
+"68
+[v _eusartRxTail eusartRxTail `VEuc  1 e 1 0 ]
+"69
+[v _eusartRxBuffer eusartRxBuffer `VE[64]uc  1 e 64 0 ]
+"70
+[v _eusartRxCount eusartRxCount `VEuc  1 e 1 0 ]
+"56 /home/saul/MPLABXProjects/esp.X/mcc_generated_files/pin_manager.c
+[v _IOCA4_InterruptHandler IOCA4_InterruptHandler `*.37(v  1 e 2 0 ]
+"57 /home/saul/MPLABXProjects/esp.X/mcc_generated_files/tmr1.c
+[v _timer1ReloadVal timer1ReloadVal `VEus  1 e 2 0 ]
+"58
+[v _TMR1_InterruptHandler TMR1_InterruptHandler `*.37(v  1 e 2 0 ]
+"51 /home/saul/MPLABXProjects/esp.X/main.c
+[v _main main `(v  1 e 1 0 ]
+{
+"122
+} 0
+"97 /home/saul/MPLABXProjects/esp.X/logger.c
+[v _read_analog read_analog `(v  1 e 1 0 ]
+{
+"102
+[v read_analog@mess mess `[6]uc  1 a 6 28 ]
+"101
+[v read_analog@aux1 aux1 `ul  1 a 4 34 ]
+"99
+[v read_analog@adc_val adc_val `us  1 a 2 38 ]
+"137
+} 0
+"15 /home/saul/MPLABXProjects/esp.X/comm.c
+[v _write write `(v  1 e 1 0 ]
+{
+"17
+[v write@i i `uc  1 a 1 11 ]
+"15
+[v write@pt pt `*.30uc  1 p 1 9 ]
+[v write@lenght lenght `uc  1 p 1 10 ]
+"23
+} 0
+"25
+[v __sprintf _sprintf `(v  1 e 1 0 ]
+{
+"27
+[v __sprintf@aux aux `us  1 a 2 18 ]
+"25
+[v __sprintf@mess mess `*.30uc  1 p 1 15 ]
+[v __sprintf@val val `us  1 p 2 16 ]
+"49
+} 0
+"7 /opt/microchip/xc8/v2.00/pic/sources/c99/common/lwmod.c
+[v ___lwmod __lwmod `(ui  1 e 2 0 ]
+{
+"10
+[v ___lwmod@counter counter `uc  1 a 1 12 ]
+"7
+[v ___lwmod@dividend dividend `ui  1 p 2 8 ]
+[v ___lwmod@divisor divisor `ui  1 p 2 10 ]
+"25
+} 0
+"7 /opt/microchip/xc8/v2.00/pic/sources/c99/common/lwdiv.c
+[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
+{
+"10
+[v ___lwdiv@quotient quotient `ui  1 a 2 12 ]
+"11
+[v ___lwdiv@counter counter `uc  1 a 1 14 ]
+"7
+[v ___lwdiv@dividend dividend `ui  1 p 2 8 ]
+[v ___lwdiv@divisor divisor `ui  1 p 2 10 ]
+"30
+} 0
+"172 /home/saul/MPLABXProjects/esp.X/logger.c
+[v _process_ioc process_ioc `(v  1 e 1 0 ]
+{
+"190
+} 0
+"20
+[v _logger_initialize logger_initialize `(v  1 e 1 0 ]
+{
+"38
+} 0
+"224 /home/saul/MPLABXProjects/esp.X/esp1.c
+[v _ESP_Set_application_handler ESP_Set_application_handler `(v  1 e 1 0 ]
+{
+[v ESP_Set_application_handler@applicationHandler applicationHandler `*.37(v  1 p 2 8 ]
+"227
+} 0
+"83 /home/saul/MPLABXProjects/esp.X/mcc_generated_files/adc1.c
+[v _ADC1_SelectChannel ADC1_SelectChannel `(v  1 e 1 0 ]
+{
+[v ADC1_SelectChannel@channel channel `E2441  1 a 1 wreg ]
+[v ADC1_SelectChannel@channel channel `E2441  1 a 1 wreg ]
+"86
+[v ADC1_SelectChannel@channel channel `E2441  1 a 1 9 ]
+"89
+} 0
+"40 /home/saul/MPLABXProjects/esp.X/logger.c
+[v _bt_message_handler bt_message_handler `(v  1 e 1 0 ]
+{
+"42
+[v bt_message_handler@message message `uc  1 a 1 15 ]
+"45
+} 0
+"47
+[v _process_message process_message `(v  1 e 1 0 ]
+{
+[v process_message@message message `uc  1 a 1 wreg ]
+[v process_message@message message `uc  1 a 1 wreg ]
+[v process_message@message message `uc  1 a 1 14 ]
+"95
+} 0
+"139
+[v _toggle_format toggle_format `(v  1 e 1 0 ]
+{
+"156
+} 0
+"5 /home/saul/MPLABXProjects/esp.X/comm.c
+[v __puts _puts `(v  1 e 1 0 ]
+{
+"7
+[v __puts@index index `uc  1 a 1 11 ]
+"5
+[v __puts@pt pt `*.31uc  1 p 1 9 ]
+"13
+} 0
+"113 /home/saul/MPLABXProjects/esp.X/mcc_generated_files/eusart.c
+[v _EUSART_is_tx_ready EUSART_is_tx_ready `(uc  1 e 1 0 ]
+{
+"116
+} 0
+"148
+[v _EUSART_Write EUSART_Write `(v  1 e 1 0 ]
+{
+[v EUSART_Write@txData txData `uc  1 a 1 wreg ]
+[v EUSART_Write@txData txData `uc  1 a 1 wreg ]
+[v EUSART_Write@txData txData `uc  1 a 1 8 ]
+"169
+} 0
+"96 /home/saul/MPLABXProjects/esp.X/mcc_generated_files/tmr1.c
+[v _TMR1_StopTimer TMR1_StopTimer `(v  1 e 1 0 ]
+{
+"100
+} 0
+"90
+[v _TMR1_StartTimer TMR1_StartTimer `(v  1 e 1 0 ]
+{
+"94
+} 0
+"91 /home/saul/MPLABXProjects/esp.X/mcc_generated_files/adc1.c
+[v _ADC1_StartConversion ADC1_StartConversion `(v  1 e 1 0 ]
+{
+"95
+} 0
+"128 /home/saul/MPLABXProjects/esp.X/mcc_generated_files/eusart.c
+[v _EUSART_Read EUSART_Read `(uc  1 e 1 0 ]
+{
+"130
+[v EUSART_Read@readValue readValue `uc  1 a 1 8 ]
+"146
+} 0
+"50 /home/saul/MPLABXProjects/esp.X/mcc_generated_files/mcc.c
+[v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
+{
+"59
+} 0
+"64 /home/saul/MPLABXProjects/esp.X/mcc_generated_files/tmr1.c
+[v _TMR1_Initialize TMR1_Initialize `(v  1 e 1 0 ]
+{
+"88
+} 0
+"159
+[v _TMR1_SetInterruptHandler TMR1_SetInterruptHandler `(v  1 e 1 0 ]
+{
+[v TMR1_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 8 ]
+"161
+} 0
+"59 /home/saul/MPLABXProjects/esp.X/mcc_generated_files/pin_manager.c
+[v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
+{
+"108
+} 0
+"138
+[v _IOCA4_SetInterruptHandler IOCA4_SetInterruptHandler `(v  1 e 1 0 ]
+{
+[v IOCA4_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 8 ]
+"140
+} 0
+"61 /home/saul/MPLABXProjects/esp.X/mcc_generated_files/mcc.c
+[v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
+{
+"69
+} 0
+"53 /home/saul/MPLABXProjects/esp.X/mcc_generated_files/interrupt_manager.c
+[v _INTERRUPT_Initialize INTERRUPT_Initialize `(v  1 e 1 0 ]
+{
+"57
+} 0
+"75 /home/saul/MPLABXProjects/esp.X/mcc_generated_files/eusart.c
+[v _EUSART_Initialize EUSART_Initialize `(v  1 e 1 0 ]
+{
+"111
+} 0
+"211
+[v _EUSART_SetTxInterruptHandler EUSART_SetTxInterruptHandler `(v  1 e 1 0 ]
+{
+[v EUSART_SetTxInterruptHandler@interruptHandler interruptHandler `*.37(v  1 p 2 8 ]
+"213
+} 0
+"215
+[v _EUSART_SetRxInterruptHandler EUSART_SetRxInterruptHandler `(v  1 e 1 0 ]
+{
+[v EUSART_SetRxInterruptHandler@interruptHandler interruptHandler `*.37(v  1 p 2 8 ]
+"217
+} 0
+"60 /home/saul/MPLABXProjects/esp.X/mcc_generated_files/adc1.c
+[v _ADC1_Initialize ADC1_Initialize `(v  1 e 1 0 ]
+{
+"81
+} 0
+"118 /home/saul/MPLABXProjects/esp.X/mcc_generated_files/eusart.c
+[v _EUSART_is_rx_ready EUSART_is_rx_ready `(uc  1 e 1 0 ]
+{
+"121
+} 0
+"59 /home/saul/MPLABXProjects/esp.X/mcc_generated_files/interrupt_manager.c
+[v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `IIH(v  1 e 1 0 ]
+{
+"94
+} 0
+"145 /home/saul/MPLABXProjects/esp.X/mcc_generated_files/tmr1.c
+[v _TMR1_ISR TMR1_ISR `(v  1 e 1 0 ]
+{
+"156
+} 0
+"163
+[v _TMR1_DefaultInterruptHandler TMR1_DefaultInterruptHandler `(v  1 e 1 0 ]
+{
+"166
+} 0
+"158 /home/saul/MPLABXProjects/esp.X/logger.c
+[v __TMR1_Ready _TMR1_Ready `(v  1 e 1 0 ]
+{
+"163
+} 0
+"91 /home/saul/MPLABXProjects/esp.X/mcc_generated_files/adc1.c
+[v i2_ADC1_StartConversion ADC1_StartConversion `(v  1 e 1 0 ]
+{
+"95
+} 0
+"118 /home/saul/MPLABXProjects/esp.X/mcc_generated_files/tmr1.c
+[v _TMR1_WriteTimer TMR1_WriteTimer `(v  1 e 1 0 ]
+{
+[v TMR1_WriteTimer@timerVal timerVal `us  1 p 2 0 ]
+"138
+} 0
+"110 /home/saul/MPLABXProjects/esp.X/mcc_generated_files/pin_manager.c
+[v _PIN_MANAGER_IOC PIN_MANAGER_IOC `(v  1 e 1 0 ]
+{
+"119
+} 0
+"124
+[v _IOCA4_ISR IOCA4_ISR `(v  1 e 1 0 ]
+{
+"133
+} 0
+"145
+[v _IOCA4_DefaultInterruptHandler IOCA4_DefaultInterruptHandler `(v  1 e 1 0 ]
+{
+"148
+} 0
+"165 /home/saul/MPLABXProjects/esp.X/logger.c
+[v __IOC_Ready _IOC_Ready `(v  1 e 1 0 ]
+{
+"170
+} 0
+"172 /home/saul/MPLABXProjects/esp.X/mcc_generated_files/eusart.c
+[v _EUSART_Transmit_ISR EUSART_Transmit_ISR `(v  1 e 1 0 ]
+{
+"189
+} 0
+"191
+[v _EUSART_Receive_ISR EUSART_Receive_ISR `(v  1 e 1 0 ]
+{
+"209
+} 0
+"135 /home/saul/MPLABXProjects/esp.X/mcc_generated_files/adc1.c
+[v _ADC1_ISR ADC1_ISR `(v  1 e 1 0 ]
+{
+"139
+} 0
+"104
+[v _ADC1_GetConversionResult ADC1_GetConversionResult `(us  1 e 2 0 ]
+{
+"108
+} 0

@@ -39,8 +39,8 @@
 
 // TODO Insert declarations
 
-#define BT
-//#define WIFI
+//#define BT
+#define WIFI
 
 typedef enum
 {
