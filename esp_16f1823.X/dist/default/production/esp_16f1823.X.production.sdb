@@ -15,7 +15,7 @@ channel_FVR 31
 ADC_IDLE 0
 ADC_READY 1
 ]
-"99 /home/saul/MPLABXProjects/esp_16f1823.X/main.c
+"106 /home/saul/MPLABXProjects/esp_16f1823.X/main.c
 [e E2288 . `uc
 ADC_IDLE 0
 ADC_READY 1
@@ -38,45 +38,32 @@ ESP_SEND_FAIL 7
 ESP_CLOSED 8
 ESP_ERROR 9
 ]
-"19 /home/saul/MPLABXProjects/esp_16f1823.X/logger.c
+"22 /home/saul/MPLABXProjects/esp_16f1823.X/logger.c
 [e E2130 . `uc
 MESSAGE_BINARY 0
 MESSAGE_TEXT 1
 ]
-"21
-[e E2234 . `uc
+"24
+[e E2237 . `uc
 channel_AN2 2
 channel_Temp 29
 channel_DAC 30
 channel_FVR 31
 ]
-"22
+"25
 [e E2138 . `uc
 ADC_IDLE 0
 ADC_READY 1
 ]
-"27
+"30
 [e E2134 . `uc
 TMR1_STOP 0
 TMR1_RUNNING 1
 ]
-"32
+"34
 [e E2142 . `uc
 IOC_IDLE 0
 IOC_READY 1
-]
-"110
-[e E2276 . `uc
-ESP_OTHER 0
-ESP_SEND_OK 1
-ESP_OK 2
-ESP_EOL 3
-ESP_RX 4
-ESP_PROMPT 5
-ESP_CONNECT 6
-ESP_SEND_FAIL 7
-ESP_CLOSED 8
-ESP_ERROR 9
 ]
 "5 /pkg/microchip/xc8/v2.00/pic/sources/c99/common/awdiv.c
 [v ___awdiv __awdiv `(i  1 e 2 0 ]
@@ -112,45 +99,37 @@ ESP_ERROR 9
 [v __sprintf _sprintf `(v  1 e 1 0 ]
 "51
 [v __gets _gets `(uc  1 e 1 0 ]
-"18 /home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
-[v _ESP_initialize ESP_initialize `(v  1 e 1 0 ]
-"27
+"27 /home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
 [v _ESP_read ESP_read `(uc  1 e 1 0 ]
 "55
 [v _ESP_process_message ESP_process_message `(uc  1 e 1 0 ]
-"83
+"82
 [v _ESP_config ESP_config `(v  1 e 1 0 ]
 "120
 [v _ESP_wait_for ESP_wait_for `(v  1 e 1 0 ]
 "144
 [v _ESP_process_rx_data ESP_process_rx_data `(v  1 e 1 0 ]
-"159
-[v _ESP_message_handler ESP_message_handler `(v  1 e 1 0 ]
-"187
-[v _ESP_write ESP_write `(v  1 e 1 0 ]
 "219
 [v _ESP_default_application_handler ESP_default_application_handler `(v  1 e 1 0 ]
 "224
 [v _ESP_Set_application_handler ESP_Set_application_handler `(v  1 e 1 0 ]
-"17 /home/saul/MPLABXProjects/esp_16f1823.X/logger.c
+"20 /home/saul/MPLABXProjects/esp_16f1823.X/logger.c
 [v _logger_initialize logger_initialize `(v  1 e 1 0 ]
-"45
+"40
+[v _bt_message_handler bt_message_handler `(v  1 e 1 0 ]
+"47
 [v _process_message process_message `(v  1 e 1 0 ]
-"91
+"97
 [v _read_analog read_analog `(v  1 e 1 0 ]
-"134
+"139
 [v _toggle_format toggle_format `(v  1 e 1 0 ]
-"153
+"158
 [v __TMR1_Ready _TMR1_Ready `(v  1 e 1 0 ]
-"160
+"165
 [v __IOC_Ready _IOC_Ready `(v  1 e 1 0 ]
-"167
+"172
 [v _process_ioc process_ioc `(v  1 e 1 0 ]
-"188
-[v _config_wifi_settings config_wifi_settings `(v  1 e 1 0 ]
-"239
-[v _read_wifi_settings read_wifi_settings `(v  1 e 1 0 ]
-"52 /home/saul/MPLABXProjects/esp_16f1823.X/main.c
+"51 /home/saul/MPLABXProjects/esp_16f1823.X/main.c
 [v _main main `(v  1 e 1 0 ]
 "65 /home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/adc.c
 [v _ADC_Initialize ADC_Initialize `(v  1 e 1 0 ]
@@ -244,7 +223,7 @@ ESP_ERROR 9
 ]
 [u S177 . 1 `S163 1 . 1 0 `S172 1 . 1 0 ]
 [v _INTCONbits INTCONbits `VES177  1 e 1 @11 ]
-[s S763 . 1 `uc 1 RA0 1 0 :1:0 
+[s S1015 . 1 `uc 1 RA0 1 0 :1:0 
 `uc 1 RA1 1 0 :1:1 
 `uc 1 RA2 1 0 :1:2 
 `uc 1 RA3 1 0 :1:3 
@@ -252,51 +231,51 @@ ESP_ERROR 9
 `uc 1 RA5 1 0 :1:5 
 ]
 "494
-[s S770 . 1 `uc 1 AN0 1 0 :1:0 
+[s S1022 . 1 `uc 1 AN0 1 0 :1:0 
 `uc 1 AN1 1 0 :1:1 
 `uc 1 AN2 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
 `uc 1 AN3 1 0 :1:4 
 ]
-[s S776 . 1 `uc 1 CPS0 1 0 :1:0 
+[s S1028 . 1 `uc 1 CPS0 1 0 :1:0 
 `uc 1 CPS1 1 0 :1:1 
 `uc 1 CPS2 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
 `uc 1 CPS3 1 0 :1:4 
 ]
-[s S782 . 1 `uc 1 C1INP 1 0 :1:0 
+[s S1034 . 1 `uc 1 C1INP 1 0 :1:0 
 `uc 1 C12IN0N 1 0 :1:1 
 `uc 1 C1OUT 1 0 :1:2 
 `uc 1 nSS 1 0 :1:3 
 `uc 1 SDO 1 0 :1:4 
 ]
-[s S788 . 1 `uc 1 TX 1 0 :1:0 
+[s S1040 . 1 `uc 1 TX 1 0 :1:0 
 `uc 1 RX 1 0 :1:1 
 `uc 1 T0CKI 1 0 :1:2 
 `uc 1 nMCLR 1 0 :1:3 
 `uc 1 CLKR 1 0 :1:4 
 `uc 1 T1OSI 1 0 :1:5 
 ]
-[s S795 . 1 `uc 1 CK 1 0 :1:0 
+[s S1047 . 1 `uc 1 CK 1 0 :1:0 
 `uc 1 DT 1 0 :1:1 
 `uc 1 FLT0 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
 `uc 1 T1OSO 1 0 :1:4 
 `uc 1 T1CKI 1 0 :1:5 
 ]
-[s S802 . 1 `uc 1 DACOUT 1 0 :1:0 
+[s S1054 . 1 `uc 1 DACOUT 1 0 :1:0 
 `uc 1 SRI 1 0 :1:1 
 `uc 1 SRQ 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
 `uc 1 OSC2 1 0 :1:4 
 `uc 1 OSC1 1 0 :1:5 
 ]
-[s S809 . 1 `uc 1 . 1 0 :4:0 
+[s S1061 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 CLKOUT 1 0 :1:4 
 `uc 1 CLKIN 1 0 :1:5 
 ]
-[u S813 . 1 `S763 1 . 1 0 `S770 1 . 1 0 `S776 1 . 1 0 `S782 1 . 1 0 `S788 1 . 1 0 `S795 1 . 1 0 `S802 1 . 1 0 `S809 1 . 1 0 ]
-[v _PORTAbits PORTAbits `VES813  1 e 1 @12 ]
+[u S1065 . 1 `S1015 1 . 1 0 `S1022 1 . 1 0 `S1028 1 . 1 0 `S1034 1 . 1 0 `S1040 1 . 1 0 `S1047 1 . 1 0 `S1054 1 . 1 0 `S1061 1 . 1 0 ]
+[v _PORTAbits PORTAbits `VES1065  1 e 1 @12 ]
 [s S102 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 CCP1IF 1 0 :1:2 
@@ -403,7 +382,7 @@ ESP_ERROR 9
 [v _ADCON1 ADCON1 `VEuc  1 e 1 @158 ]
 "2285
 [v _LATA LATA `VEuc  1 e 1 @268 ]
-[s S1108 . 1 `uc 1 LATA0 1 0 :1:0 
+[s S759 . 1 `uc 1 LATA0 1 0 :1:0 
 `uc 1 LATA1 1 0 :1:1 
 `uc 1 LATA2 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -411,8 +390,8 @@ ESP_ERROR 9
 `uc 1 LATA5 1 0 :1:5 
 ]
 "2300
-[u S1115 . 1 `S1108 1 . 1 0 ]
-[v _LATAbits LATAbits `VES1115  1 e 1 @268 ]
+[u S766 . 1 `S759 1 . 1 0 ]
+[v _LATAbits LATAbits `VES766  1 e 1 @268 ]
 "2330
 [v _LATC LATC `VEuc  1 e 1 @270 ]
 "2652
@@ -423,24 +402,6 @@ ESP_ERROR 9
 [v _ANSELA ANSELA `VEuc  1 e 1 @396 ]
 "3162
 [v _ANSELC ANSELC `VEuc  1 e 1 @398 ]
-"3215
-[v _EEADRL EEADRL `VEuc  1 e 1 @401 ]
-"3262
-[v _EEDATL EEDATL `VEuc  1 e 1 @403 ]
-[s S1289 . 1 `uc 1 RD 1 0 :1:0 
-`uc 1 WR 1 0 :1:1 
-`uc 1 WREN 1 0 :1:2 
-`uc 1 WRERR 1 0 :1:3 
-`uc 1 FREE 1 0 :1:4 
-`uc 1 LWLO 1 0 :1:5 
-`uc 1 CFGS 1 0 :1:6 
-`uc 1 EEPGD 1 0 :1:7 
-]
-"3337
-[u S1298 . 1 `S1289 1 . 1 0 ]
-[v _EECON1bits EECON1bits `VES1298  1 e 1 @405 ]
-"3382
-[v _EECON2 EECON2 `VEuc  1 e 1 @406 ]
 "3402
 [v _RCREG RCREG `VEuc  1 e 1 @409 ]
 "3422
@@ -510,33 +471,37 @@ ESP_ERROR 9
 "6424
 [v _PLLR PLLR `VEb  1 e 0 @1238 ]
 "8 /home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
-[v _esp_read_data esp_read_data `VE[24]uc  1 e 24 0 ]
+[v _esp_read_data esp_read_data `VE[16]uc  1 e 16 0 ]
 "9
 [v _esp_read_data_index esp_read_data_index `VEuc  1 e 1 0 ]
 "10
 [v _esp_channel esp_channel `VEuc  1 e 1 0 ]
 "11
 [v _ESP_wait_exception ESP_wait_exception `VEuc  1 e 1 0 ]
-"16
-[v _ESP_external_message_handler ESP_external_message_handler `*.37(v  1 e 2 0 ]
 "6 /home/saul/MPLABXProjects/esp_16f1823.X/logger.c
 [v _message_format message_format `VEuc  1 e 1 0 ]
 "8
 [v _ADC_value ADC_value `VEus  1 e 2 0 ]
 "9
 [v _ADC_state ADC_state `VEuc  1 e 1 0 ]
+"10
+[v _ADC_count ADC_count `VEuc  1 e 1 0 ]
 "12
 [v _TMR1_state TMR1_state `VEuc  1 e 1 0 ]
 "14
 [v _IOC_state IOC_state `VEuc  1 e 1 0 ]
 "15
 [v _IOC_value IOC_value `VEuc  1 e 1 0 ]
+"17
+[v _WIFI_tx_buf WIFI_tx_buf `VE[16]uc  1 e 16 0 ]
+"18
+[v _WIFI_tx_buf_ind WIFI_tx_buf_ind `VEuc  1 e 1 0 ]
 "62 /home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
 [v _eusartTxHead eusartTxHead `VEuc  1 e 1 0 ]
 "63
 [v _eusartTxTail eusartTxTail `VEuc  1 e 1 0 ]
 "64
-[v _eusartTxBuffer eusartTxBuffer `VE[8]uc  1 e 8 0 ]
+[v _eusartTxBuffer eusartTxBuffer `VE[16]uc  1 e 16 0 ]
 "65
 [v _eusartTxBufferRemaining eusartTxBufferRemaining `VEuc  1 e 1 0 ]
 "67
@@ -553,62 +518,36 @@ ESP_ERROR 9
 [v _timer1ReloadVal timer1ReloadVal `VEus  1 e 2 0 ]
 "58
 [v _TMR1_InterruptHandler TMR1_InterruptHandler `*.37(v  1 e 2 0 ]
-"52 /home/saul/MPLABXProjects/esp_16f1823.X/main.c
+"51 /home/saul/MPLABXProjects/esp_16f1823.X/main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"116
+"122
 } 0
-"239 /home/saul/MPLABXProjects/esp_16f1823.X/logger.c
-[v _read_wifi_settings read_wifi_settings `(v  1 e 1 0 ]
-{
-"240
-[v read_wifi_settings@pass pass `[14]uc  1 a 14 17 ]
-[v read_wifi_settings@wifi wifi `[10]uc  1 a 10 31 ]
-"241
-[v read_wifi_settings@add add `uc  1 a 1 44 ]
-[v read_wifi_settings@i i `uc  1 a 1 43 ]
-[v read_wifi_settings@len_pass len_pass `uc  1 a 1 42 ]
-[v read_wifi_settings@len_wifi len_wifi `uc  1 a 1 41 ]
-"269
-} 0
-"83 /home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
-[v _ESP_config ESP_config `(v  1 e 1 0 ]
-{
-[v ESP_config@wifi wifi `*.4uc  1 a 1 wreg ]
-[v ESP_config@wifi wifi `*.4uc  1 a 1 wreg ]
-[v ESP_config@len_wifi len_wifi `uc  1 p 1 11 ]
-[v ESP_config@pass pass `*.4uc  1 p 1 12 ]
-[v ESP_config@len_pass len_pass `uc  1 p 1 13 ]
-"87
-[v ESP_config@wifi wifi `*.4uc  1 a 1 16 ]
-"118
-} 0
-"118 /home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
-[v _EUSART_is_rx_ready EUSART_is_rx_ready `(uc  1 e 1 0 ]
-{
-"121
-} 0
-"211 /home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/memory.c
-[v _DATAEE_ReadByte DATAEE_ReadByte `(uc  1 e 1 0 ]
-{
-[v DATAEE_ReadByte@bAdd bAdd `uc  1 a 1 wreg ]
-[v DATAEE_ReadByte@bAdd bAdd `uc  1 a 1 wreg ]
-"213
-[v DATAEE_ReadByte@bAdd bAdd `uc  1 a 1 2 ]
-"221
-} 0
-"91 /home/saul/MPLABXProjects/esp_16f1823.X/logger.c
+"97 /home/saul/MPLABXProjects/esp_16f1823.X/logger.c
 [v _read_analog read_analog `(v  1 e 1 0 ]
 {
-"96
-[v read_analog@mess mess `[6]uc  1 a 6 24 ]
-"95
-[v read_analog@aux1 aux1 `ul  1 a 4 20 ]
-"93
-[v read_analog@adc_val adc_val `us  1 a 2 30 ]
-"132
+"102
+[v read_analog@mess mess `[6]uc  1 a 6 9 ]
+"101
+[v read_analog@aux1 aux1 `ul  1 a 4 15 ]
+"99
+[v read_analog@adc_val adc_val `us  1 a 2 19 ]
+"137
 } 0
-"25 /home/saul/MPLABXProjects/esp_16f1823.X/comm.c
+"15 /home/saul/MPLABXProjects/esp_16f1823.X/comm.c
+[v _write write `(v  1 e 1 0 ]
+{
+[v write@pt pt `*.4uc  1 a 1 wreg ]
+"17
+[v write@i i `uc  1 a 1 5 ]
+"15
+[v write@pt pt `*.4uc  1 a 1 wreg ]
+[v write@lenght lenght `uc  1 p 1 3 ]
+"19
+[v write@pt pt `*.4uc  1 a 1 6 ]
+"23
+} 0
+"25
 [v __sprintf _sprintf `(v  1 e 1 0 ]
 {
 [v __sprintf@mess mess `*.4uc  1 a 1 wreg ]
@@ -653,15 +592,21 @@ ESP_ERROR 9
 [v ___lmul@multiplicand multiplicand `ul  1 p 4 6 ]
 "129
 } 0
-"167 /home/saul/MPLABXProjects/esp_16f1823.X/logger.c
+"172 /home/saul/MPLABXProjects/esp_16f1823.X/logger.c
 [v _process_ioc process_ioc `(v  1 e 1 0 ]
 {
-"186
+"190
 } 0
-"17
+"20
 [v _logger_initialize logger_initialize `(v  1 e 1 0 ]
 {
-"36
+"38
+} 0
+"224 /home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
+[v _ESP_Set_application_handler ESP_Set_application_handler `(v  1 e 1 0 ]
+{
+[v ESP_Set_application_handler@applicationHandler applicationHandler `*.37(v  1 p 2 2 ]
+"227
 } 0
 "85 /home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/adc.c
 [v _ADC_SelectChannel ADC_SelectChannel `(v  1 e 1 0 ]
@@ -672,41 +617,67 @@ ESP_ERROR 9
 [v ADC_SelectChannel@channel channel `E2157  1 a 1 3 ]
 "91
 } 0
-"188 /home/saul/MPLABXProjects/esp_16f1823.X/logger.c
-[v _config_wifi_settings config_wifi_settings `(v  1 e 1 0 ]
+"40 /home/saul/MPLABXProjects/esp_16f1823.X/logger.c
+[v _bt_message_handler bt_message_handler `(v  1 e 1 0 ]
 {
-"190
-[v config_wifi_settings@line line `[16]uc  1 a 16 0 ]
-"191
-[v config_wifi_settings@len len `uc  1 a 1 18 ]
-[v config_wifi_settings@address address `uc  1 a 1 17 ]
-[v config_wifi_settings@i i `uc  1 a 1 16 ]
-"237
+"42
+[v bt_message_handler@message message `uc  1 a 1 2 ]
+"45
 } 0
-"51 /home/saul/MPLABXProjects/esp_16f1823.X/comm.c
-[v __gets _gets `(uc  1 e 1 0 ]
+"47
+[v _process_message process_message `(v  1 e 1 0 ]
 {
-[v __gets@pt pt `*.4uc  1 a 1 wreg ]
-"53
-[v __gets@index index `uc  1 a 1 7 ]
-"51
-[v __gets@pt pt `*.4uc  1 a 1 wreg ]
-[v __gets@length length `uc  1 p 1 3 ]
-"55
-[v __gets@pt pt `*.4uc  1 a 1 6 ]
-"67
+[v process_message@message message `uc  1 p 1 9 ]
+"95
 } 0
-"187 /home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/memory.c
-[v _DATAEE_WriteByte DATAEE_WriteByte `(v  1 e 1 0 ]
+"139
+[v _toggle_format toggle_format `(v  1 e 1 0 ]
 {
-[v DATAEE_WriteByte@bAdd bAdd `uc  1 a 1 wreg ]
-"189
-[v DATAEE_WriteByte@GIEBitValue GIEBitValue `uc  1 a 1 4 ]
-"187
-[v DATAEE_WriteByte@bAdd bAdd `uc  1 a 1 wreg ]
-[v DATAEE_WriteByte@bData bData `uc  1 p 1 2 ]
-[v DATAEE_WriteByte@bAdd bAdd `uc  1 a 1 3 ]
-"209
+"156
+} 0
+"5 /home/saul/MPLABXProjects/esp_16f1823.X/comm.c
+[v __puts _puts `(v  1 e 1 0 ]
+{
+"7
+[v __puts@index index `uc  1 a 1 8 ]
+"5
+[v __puts@pt pt `*.25uc  1 p 2 3 ]
+"13
+} 0
+"113 /home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
+[v _EUSART_is_tx_ready EUSART_is_tx_ready `(uc  1 e 1 0 ]
+{
+"116
+} 0
+"148
+[v _EUSART_Write EUSART_Write `(v  1 e 1 0 ]
+{
+[v EUSART_Write@txData txData `uc  1 a 1 wreg ]
+[v EUSART_Write@txData txData `uc  1 a 1 wreg ]
+[v EUSART_Write@txData txData `uc  1 a 1 2 ]
+"169
+} 0
+"99 /home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/tmr1.c
+[v _TMR1_StopTimer TMR1_StopTimer `(v  1 e 1 0 ]
+{
+"103
+} 0
+"93
+[v _TMR1_StartTimer TMR1_StartTimer `(v  1 e 1 0 ]
+{
+"97
+} 0
+"93 /home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/adc.c
+[v _ADC_StartConversion ADC_StartConversion `(v  1 e 1 0 ]
+{
+"97
+} 0
+"128 /home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
+[v _EUSART_Read EUSART_Read `(uc  1 e 1 0 ]
+{
+"130
+[v EUSART_Read@readValue readValue `uc  1 a 1 2 ]
+"146
 } 0
 "50 /home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
@@ -767,213 +738,10 @@ ESP_ERROR 9
 {
 "83
 } 0
-"159 /home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
-[v _ESP_message_handler ESP_message_handler `(v  1 e 1 0 ]
+"118 /home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
+[v _EUSART_is_rx_ready EUSART_is_rx_ready `(uc  1 e 1 0 ]
 {
-"161
-[v ESP_message_handler@ret ret `uc  1 a 1 23 ]
-"185
-} 0
-"144
-[v _ESP_process_rx_data ESP_process_rx_data `(v  1 e 1 0 ]
-{
-"147
-[v ESP_process_rx_data@aux aux `uc  1 a 1 20 ]
-"146
-[v ESP_process_rx_data@index index `*.4uc  1 a 1 19 ]
-"157
-} 0
-"219
-[v _ESP_default_application_handler ESP_default_application_handler `(v  1 e 1 0 ]
-{
-[v ESP_default_application_handler@data data `uc  1 p 1 16 ]
-"222
-} 0
-"45 /home/saul/MPLABXProjects/esp_16f1823.X/logger.c
-[v _process_message process_message `(v  1 e 1 0 ]
-{
-[v process_message@message message `uc  1 p 1 16 ]
-"89
-} 0
-"134
-[v _toggle_format toggle_format `(v  1 e 1 0 ]
-{
-"151
-} 0
-"187 /home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
-[v _ESP_write ESP_write `(v  1 e 1 0 ]
-{
-"189
-[v ESP_write@aux aux `uc  1 a 1 15 ]
-[v ESP_write@res res `uc  1 a 1 14 ]
-"187
-[v ESP_write@pt pt `*.26uc  1 p 2 11 ]
-[v ESP_write@length length `uc  1 p 1 13 ]
-"217
-} 0
-"15 /home/saul/MPLABXProjects/esp_16f1823.X/comm.c
-[v _write write `(v  1 e 1 0 ]
-{
-"17
-[v write@i i `uc  1 a 1 8 ]
-"15
-[v write@pt pt `*.26uc  1 p 2 3 ]
-[v write@lenght lenght `uc  1 p 1 5 ]
-"23
-} 0
-"5
-[v __puts _puts `(v  1 e 1 0 ]
-{
-"7
-[v __puts@index index `uc  1 a 1 8 ]
-"5
-[v __puts@pt pt `*.25uc  1 p 2 3 ]
-"13
-} 0
-"113 /home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
-[v _EUSART_is_tx_ready EUSART_is_tx_ready `(uc  1 e 1 0 ]
-{
-"116
-} 0
-"148
-[v _EUSART_Write EUSART_Write `(v  1 e 1 0 ]
-{
-[v EUSART_Write@txData txData `uc  1 a 1 wreg ]
-[v EUSART_Write@txData txData `uc  1 a 1 wreg ]
-[v EUSART_Write@txData txData `uc  1 a 1 2 ]
-"169
-} 0
-"4 /pkg/microchip/xc8/v2.00/pic/sources/c99/common/lbmod.c
-[v ___lbmod __lbmod `(uc  1 e 1 0 ]
-{
-[v ___lbmod@dividend dividend `uc  1 a 1 wreg ]
-"6
-[v ___lbmod@rem rem `uc  1 a 1 6 ]
-"7
-[v ___lbmod@counter counter `uc  1 a 1 5 ]
-"4
-[v ___lbmod@dividend dividend `uc  1 a 1 wreg ]
-[v ___lbmod@divisor divisor `uc  1 p 1 2 ]
-"9
-[v ___lbmod@dividend dividend `uc  1 a 1 4 ]
-"18
-} 0
-"5 /pkg/microchip/xc8/v2.00/pic/sources/c99/common/awdiv.c
-[v ___awdiv __awdiv `(i  1 e 2 0 ]
-{
-"10
-[v ___awdiv@quotient quotient `i  1 a 2 8 ]
-"11
-[v ___awdiv@sign sign `uc  1 a 1 7 ]
-[v ___awdiv@counter counter `uc  1 a 1 6 ]
-"5
-[v ___awdiv@divisor divisor `i  1 p 2 2 ]
-[v ___awdiv@dividend dividend `i  1 p 2 4 ]
-"41
-} 0
-"120 /home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
-[v _ESP_wait_for ESP_wait_for `(v  1 e 1 0 ]
-{
-[v ESP_wait_for@esp_mess esp_mess `uc  1 a 1 wreg ]
-"122
-[v ESP_wait_for@ret ret `uc  1 a 1 10 ]
-"120
-[v ESP_wait_for@esp_mess esp_mess `uc  1 a 1 wreg ]
-[v ESP_wait_for@esp_mess esp_mess `uc  1 a 1 9 ]
-"142
-} 0
-"27
-[v _ESP_read ESP_read `(uc  1 e 1 0 ]
-{
-"29
-[v ESP_read@ret ret `uc  1 a 1 8 ]
-"53
-} 0
-"128 /home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
-[v _EUSART_Read EUSART_Read `(uc  1 e 1 0 ]
-{
-"130
-[v EUSART_Read@readValue readValue `uc  1 a 1 2 ]
-"146
-} 0
-"55 /home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
-[v _ESP_process_message ESP_process_message `(uc  1 e 1 0 ]
-{
-"56
-[v ESP_process_message@aux aux `*.4uc  1 a 1 6 ]
-"80
-} 0
-"143 /pkg/microchip/xc8/v2.00/pic/sources/c99/common/strstr.c
-[v _strstr strstr `(*.4uc  1 e 1 0 ]
-{
-[v strstr@h h `*.4DCuc  1 a 1 wreg ]
-"147
-[v strstr@nl nl `ui  1 a 2 7 ]
-"143
-[v strstr@h h `*.4DCuc  1 a 1 wreg ]
-[v strstr@n n `*.25DCuc  1 p 2 4 ]
-"146
-[v strstr@h h `*.4DCuc  1 a 1 9 ]
-"171
-} 0
-"3 /pkg/microchip/xc8/v2.00/pic/sources/c99/common/strncmp.c
-[v _strncmp strncmp `(i  1 e 2 0 ]
-{
-[v strncmp@_l _l `*.4DCuc  1 a 1 wreg ]
-"5
-[v strncmp@r r `*.25DCuc  1 a 2 1 ]
-[v strncmp@l l `*.4DCuc  1 a 1 3 ]
-"3
-[v strncmp@_l _l `*.4DCuc  1 a 1 wreg ]
-[v strncmp@_r _r `*.25DCuc  1 p 2 2 ]
-[v strncmp@n n `ui  1 p 2 4 ]
-"5
-[v strncmp@_l _l `*.4DCuc  1 a 1 0 ]
-"9
-} 0
-"12 /pkg/microchip/xc8/v2.00/pic/sources/c99/common/strlen.c
-[v _strlen strlen `(ui  1 e 2 0 ]
-{
-"14
-[v strlen@a a `*.25DCuc  1 a 2 5 ]
-"12
-[v strlen@s s `*.25DCuc  1 p 2 2 ]
-"26
-} 0
-"7 /pkg/microchip/xc8/v2.00/pic/sources/c99/common/strchr.c
-[v _strchr strchr `(*.4uc  1 e 1 0 ]
-{
-[v strchr@s s `*.4DCuc  1 a 1 wreg ]
-[v strchr@s s `*.4DCuc  1 a 1 wreg ]
-[v strchr@c c `i  1 p 2 2 ]
-[v strchr@s s `*.4DCuc  1 a 1 4 ]
-"20
-} 0
-"99 /home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/tmr1.c
-[v _TMR1_StopTimer TMR1_StopTimer `(v  1 e 1 0 ]
-{
-"103
-} 0
-"93
-[v _TMR1_StartTimer TMR1_StartTimer `(v  1 e 1 0 ]
-{
-"97
-} 0
-"93 /home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/adc.c
-[v _ADC_StartConversion ADC_StartConversion `(v  1 e 1 0 ]
-{
-"97
-} 0
-"18 /home/saul/MPLABXProjects/esp_16f1823.X/esp1.c
-[v _ESP_initialize ESP_initialize `(v  1 e 1 0 ]
-{
-"25
-} 0
-"224
-[v _ESP_Set_application_handler ESP_Set_application_handler `(v  1 e 1 0 ]
-{
-[v ESP_Set_application_handler@applicationHandler applicationHandler `*.37(v  1 p 2 2 ]
-"227
+"121
 } 0
 "55 /home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/interrupt_manager.c
 [v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `II(v  1 e 1 0 ]
@@ -990,10 +758,10 @@ ESP_ERROR 9
 {
 "178
 } 0
-"153 /home/saul/MPLABXProjects/esp_16f1823.X/logger.c
+"158 /home/saul/MPLABXProjects/esp_16f1823.X/logger.c
 [v __TMR1_Ready _TMR1_Ready `(v  1 e 1 0 ]
 {
-"158
+"163
 } 0
 "93 /home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/adc.c
 [v i1_ADC_StartConversion ADC_StartConversion `(v  1 e 1 0 ]
@@ -1021,10 +789,10 @@ ESP_ERROR 9
 {
 "152
 } 0
-"160 /home/saul/MPLABXProjects/esp_16f1823.X/logger.c
+"165 /home/saul/MPLABXProjects/esp_16f1823.X/logger.c
 [v __IOC_Ready _IOC_Ready `(v  1 e 1 0 ]
 {
-"165
+"170
 } 0
 "172 /home/saul/MPLABXProjects/esp_16f1823.X/mcc_generated_files/eusart.c
 [v _EUSART_Transmit_ISR EUSART_Transmit_ISR `(v  1 e 1 0 ]

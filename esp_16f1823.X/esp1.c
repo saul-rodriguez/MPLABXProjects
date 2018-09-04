@@ -79,7 +79,6 @@ unsigned char ESP_process_message(void) {
     return ESP_OTHER;
 }
 
-//void ESP_config(void)
 void ESP_config(unsigned char *wifi, unsigned char len_wifi,  unsigned char *pass, unsigned char len_pass)
 {
         
@@ -116,6 +115,7 @@ void ESP_config(unsigned char *wifi, unsigned char len_wifi,  unsigned char *pas
     
     
 }
+
 
 void ESP_wait_for(unsigned char esp_mess)
 {

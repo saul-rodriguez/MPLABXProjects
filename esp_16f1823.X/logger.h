@@ -39,8 +39,8 @@
 
 // TODO Insert declarations
 
-//#define BT
-#define WIFI
+#define BT
+//#define WIFI
 
 typedef enum
 {
@@ -74,13 +74,20 @@ extern volatile unsigned char message_format;
 //ADC related
 extern volatile unsigned short ADC_value;
 extern volatile unsigned char ADC_state;
-//extern volatile unsigned char ADC_count;
+extern volatile unsigned char ADC_count;
 
 //TIMER1 related
 extern volatile unsigned char TMR1_state;
 
+//IOC
 extern volatile unsigned char IOC_state;
 extern volatile unsigned char IOC_value;
+
+//WIFI RELATED
+#define WIFI_TX_BUFFER_SIZE 16
+extern volatile unsigned char WIFI_tx_buf[WIFI_TX_BUFFER_SIZE];
+extern volatile unsigned char WIFI_tx_buf_ind;
+
 
 // Comment a function and leverage automatic documentation with slash star star
 /**
@@ -125,7 +132,6 @@ void process_ioc(void);
 void config_wifi_settings(void);
 
 void read_wifi_settings(void);
-
 
 #ifdef	__cplusplus
 extern "C" {
