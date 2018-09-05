@@ -157,8 +157,10 @@ void toggle_format()
 
 void _TMR1_Ready(void)
 {   
-    if (TMR1_state == TMR1_RUNNING) {
-         ADC_StartConversion();
+    if (TMR1_state == TMR1_RUNNING) {  
+        ADCON0bits.ADON = 0; //turn off the ADC
+        ADCON0bits.ADON = 1; //turn on the ADC 
+        ADC_StartConversion();
     }    
 }
 
