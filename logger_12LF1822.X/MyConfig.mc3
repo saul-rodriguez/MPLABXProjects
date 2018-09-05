@@ -1,4 +1,4 @@
-<config configVersion="1.1" device="PIC12LF1822" coreVersion="4.45">
+<config configVersion="1.1" device="PIC12LF1822" coreVersion="4.45.7">
    <usedClasses class="java.util.HashMap">
       <entry>
          <string>System Module</string>
@@ -151,7 +151,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="EUSART" registerAlias="SPBRGH" settingAlias="SPBRGH"/>
-         <value>3</value>
+         <value>0</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="Pin Module" registerAlias="OPTION_REG" settingAlias="nWPUEN"/>
@@ -887,7 +887,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="EUSART" registerAlias="SPBRGL" settingAlias="SPBRGL"/>
-         <value>64</value>
+         <value>68</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="Pin Module" registerAlias="WPUA" settingAlias="WPUA3"/>
@@ -995,7 +995,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="EUSART" name="baudRateComboBox"/>
-         <value>9600</value>
+         <value>115200</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="EUSART" name="EUSART_TXIISRFunction"/>
@@ -1123,7 +1123,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="EUSART" name="baudRateErrorLabel"/>
-         <value>Error: 0.040 %</value>
+         <value>Error: 0.644 %</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="System Module" registerAlias="CONFIG1" settingAlias="CPD" alias="ON"/>
@@ -1463,7 +1463,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="EUSART" registerAlias="SPBRGH"/>
-         <value>3</value>
+         <value>0</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="Pin Module" registerAlias="WPUA" settingAlias="WPUA4" alias="clear"/>
@@ -1719,7 +1719,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="EUSART" registerAlias="SPBRGL"/>
-         <value>64</value>
+         <value>68</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="INTERNAL OSCILLATOR" registerAlias="BORCON" settingAlias="BORRDY" alias="BOR Circuit is active"/>
@@ -2059,7 +2059,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="EUSART" name="useStdio"/>
-         <value>enabled</value>
+         <value>disabled</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="INTERNAL OSCILLATOR" registerAlias="OSCCON" settingAlias="SCS" alias="FOSC"/>
@@ -2301,7 +2301,7 @@
       </entry>
       <entry>
          <file>mcc_generated_files/eusart.c</file>
-         <hash>e47c0aec1c1455f1de4ee8087a74b4255f4f3d212f9eb700c1f3978861040712</hash>
+         <hash>43ef908c84da17a5552f3a236253d2128a78f7e8d81e9511bbb3a051c9ec57e8</hash>
       </entry>
       <entry>
          <file>mcc_generated_files/tmr1.h</file>
@@ -2324,12 +2324,12 @@
          <hash>e869e632841ec8982c955d6df823581e818474356e9707e145acf0d8ab15fa3f</hash>
       </entry>
       <entry>
-         <file>mcc_generated_files/interrupt_manager.c</file>
-         <hash>79f4c49353e9273886eef2424497e30f14e66e5f15e93d0a0f05fd1fdb64e55f</hash>
+         <file>mcc_generated_files/eusart.h</file>
+         <hash>c96deeed26aeb81a71879187ade544065a2c33b0c976f8882447a6aa448e9942</hash>
       </entry>
       <entry>
-         <file>mcc_generated_files/eusart.h</file>
-         <hash>44266ad6b90a07cebb7306d9c6a2e39bf1bd8cb60b2e610c421237580e0e9003</hash>
+         <file>mcc_generated_files/interrupt_manager.c</file>
+         <hash>79f4c49353e9273886eef2424497e30f14e66e5f15e93d0a0f05fd1fdb64e55f</hash>
       </entry>
       <entry>
          <file>mcc_generated_files/mcc.c</file>

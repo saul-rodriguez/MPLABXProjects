@@ -140,7 +140,7 @@ void write(unsigned char *pt, unsigned char lenght);
  */
 void _sprintf(char *mess, unsigned short val);
 
-
+unsigned char _gets(unsigned char *pt, unsigned char length);
 
 #ifdef	__cplusplus
 }

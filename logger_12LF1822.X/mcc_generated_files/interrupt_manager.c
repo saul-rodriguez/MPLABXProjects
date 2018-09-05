@@ -48,6 +48,8 @@
 
 #include "interrupt_manager.h"
 #include "mcc.h"
+#include "../logger.h"
+
 
 void __interrupt() INTERRUPT_InterruptManager (void)
 {
@@ -64,6 +66,9 @@ void __interrupt() INTERRUPT_InterruptManager (void)
         } 
         else if(PIE1bits.ADIE == 1 && PIR1bits.ADIF == 1)
         {
+            ADC_value = ADC_GetConversionResult();            
+            ADC_state = ADC_READY;
+
             ADC_ISR();
         } 
         else if(PIE1bits.RCIE == 1 && PIR1bits.RCIF == 1)

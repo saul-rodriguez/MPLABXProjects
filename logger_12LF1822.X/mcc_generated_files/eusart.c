@@ -53,7 +53,7 @@
   Section: Macro Declarations
 */
 
-#define EUSART_TX_BUFFER_SIZE 8
+#define EUSART_TX_BUFFER_SIZE 16
 #define EUSART_RX_BUFFER_SIZE 8
 
 /**
@@ -90,11 +90,11 @@ void EUSART_Initialize(void)
     // TX9 8-bit; TX9D 0; SENDB sync_break_complete; TXEN enabled; SYNC asynchronous; BRGH hi_speed; CSRC slave; 
     TXSTA = 0x24;
 
-    // SPBRGL 64; 
-    SPBRGL = 0x40;
+    // SPBRGL 68; 
+    SPBRGL = 0x44;
 
-    // SPBRGH 3; 
-    SPBRGH = 0x03;
+    // SPBRGH 0; 
+    SPBRGH = 0x00;
 
 
     // initializing the driver state
@@ -168,15 +168,6 @@ void EUSART_Write(uint8_t txData)
     PIE1bits.TXIE = 1;
 }
 
-char getch(void)
-{
-    return EUSART_Read();
-}
-
-void putch(char txData)
-{
-    EUSART_Write(txData);
-}
 
 void EUSART_Transmit_ISR(void)
 {

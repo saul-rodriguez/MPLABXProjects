@@ -14,7 +14,7 @@
     This header file provides implementations for driver APIs for all modules selected in the GUI.
     Generation Information :
         Product Revision  :  PIC10 / PIC12 / PIC16 / PIC18 MCUs - 1.65.2
-        Device            :  PIC12LF1822
+        Device            :  PIC18LF14K22
         Driver Version    :  2.00
 */
 
@@ -42,50 +42,82 @@
 */
 
 #include "mcc_generated_files/mcc.h"
-#include "comm.h"
+#include "esp1.h"
 #include "logger.h"
 
 /*
                          Main application
  */
 void main(void)
-{
-    // initialize the device
+{   
+    // Initialize the device
     SYSTEM_Initialize();
     
-     //custom initialization 
+#ifdef WIFI
+    ESP_initialize();
+#endif
+    //custom initialization
     logger_initialize();
-    
-    // When using interrupts, you need to set the Global and Peripheral Interrupt Enable bits
+
+    // If using interrupts in PIC18 High/Low Priority Mode you need to enable the Global High and Low Interrupts
+    // If using interrupts in PIC Mid-Range Compatibility Mode you need to enable the Global and Peripheral Interrupts
     // Use the following macros to:
 
     // Enable the Global Interrupts
     INTERRUPT_GlobalInterruptEnable();
 
-    // Enable the Peripheral Interrupts
-    INTERRUPT_PeripheralInterruptEnable();
-
     // Disable the Global Interrupts
     //INTERRUPT_GlobalInterruptDisable();
 
+    // Enable the Peripheral Interrupts
+    INTERRUPT_PeripheralInterruptEnable();
+
     // Disable the Peripheral Interrupts
     //INTERRUPT_PeripheralInterruptDisable();
-
+   
+    IO_RA5_SetHigh();
+    __delay_ms(200);
+    IO_RA5_SetLow();
+    __delay_ms(200);
+    
+    #ifdef WIFI
+    if (!IO_RA4_GetValue()) { //Enter in config mode
+        config_wifi_settings();        
+    }
+    
+    read_wifi_settings();
+    
+    //ESP_config();
+    #endif
+    
+    
     while (1)
     {
+         //EUSART_Write(a++);
         // Add your application code
         if (EUSART_is_rx_ready()) {
-            process_message();
+            #ifdef BT
+                bt_message_handler();
+            #else
+                ESP_message_handler();        
+            #endif      
         }
-                
-       //ADC-TMR1 
+        
         if (ADC_state == ADC_READY) {
-            read_analog();
+            read_analog();        
         }
         
         if (IOC_state == IOC_READY) {
             process_ioc();
         }
+        
+    #ifdef WIFI        
+        if (ESP_wait_exception) {
+            ESP_wait_exception = 0;            
+            process_message('S');
+        }
+    #endif        
+        CLRWDT();        
     }
 }
 /**

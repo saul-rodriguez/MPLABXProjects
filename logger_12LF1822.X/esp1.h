@@ -28,8 +28,8 @@
 
 // This is a guard condition so that contents of this file are not included
 // more than once.  
-#ifndef XC_LOGGER_H
-#define	XC_LOGGER_H
+#ifndef XC_ESP1_H
+#define	XC_ESP1_H
 
 #include <xc.h> // include processor files - each processor file is guarded.  
 
@@ -38,55 +38,25 @@
 // TODO Insert C++ class definitions if appropriate
 
 // TODO Insert declarations
-
-#define BT
-//#define WIFI
-
 typedef enum
 {
-    MESSAGE_BINARY = 0,
-    MESSAGE_TEXT = 1
-} mess_format;
+    ESP_OTHER = 0,
+    ESP_SEND_OK,
+    ESP_OK,
+    ESP_EOL,
+    ESP_RX,
+    ESP_PROMPT,
+    ESP_CONNECT,
+    ESP_SEND_FAIL,
+    ESP_CLOSED,
+    ESP_ERROR
+} esp_mess;
 
-typedef enum
-{
-    TMR1_STOP = 0,
-    TMR1_RUNNING = 1  
-} tmr1_state;
-
-typedef enum 
-{
-    ADC_IDLE = 0,    
-    ADC_READY = 1        
-} adc_state;
-
-typedef enum
-{
-    IOC_IDLE = 0,
-    IOC_READY = 1
-} ioc_state;
+#define ESP_BUFFER_SIZE 16
 
 
- 
-//serial comm. related
-extern volatile unsigned char message_format;
-
-//ADC related
-extern volatile unsigned short ADC_value;
-extern volatile unsigned char ADC_state;
-extern volatile unsigned char ADC_count;
-
-//TIMER1 related
-extern volatile unsigned char TMR1_state;
-
-//IOC
-extern volatile unsigned char IOC_state;
-extern volatile unsigned char IOC_value;
-
-//WIFI RELATED
-#define WIFI_TX_BUFFER_SIZE 16
-extern volatile unsigned char WIFI_tx_buf[WIFI_TX_BUFFER_SIZE];
-extern volatile unsigned char WIFI_tx_buf_ind;
+extern volatile unsigned char esp_channel;
+extern volatile unsigned char ESP_wait_exception;
 
 
 // Comment a function and leverage automatic documentation with slash star star
@@ -113,33 +83,32 @@ extern volatile unsigned char WIFI_tx_buf_ind;
 // TODO Insert declarations or function prototypes (right here) to leverage 
 // live documentation
 
-void logger_initialize(void);
-
-void bt_message_handler(void);
-
-void process_message(unsigned char message);
-
-void toggle_format(void);
-
-void read_analog(void);
-
-void _TMR1_Ready(void);
-
-void _IOC_Ready(void);
-
-void process_ioc(void);
-
-void config_wifi_settings(void);
-
-void read_wifi_settings(void);
-
 #ifdef	__cplusplus
 extern "C" {
 #endif /* __cplusplus */
 
     // TODO If C++ is being used, regular C code needs function names to have C 
     // linkage so the functions can be used by the c code. 
+unsigned char ESP_read(void);
 
+unsigned char ESP_process_message(void);
+
+void ESP_initialize(void);
+
+void ESP_config(unsigned char *wifi, unsigned char len_wifi, unsigned char *pass, unsigned char len_pass);
+
+void ESP_wait_for(unsigned char esp_mess);
+
+void ESP_message_handler(void);
+
+void ESP_write(unsigned char *pt, unsigned char lenght);
+
+void ESP_default_application_handler(unsigned char data);
+    
+void ESP_Set_application_handler(void (* InterruptHandler)(unsigned char));
+
+void ESP_process_rx_data(void);
+    
 #ifdef	__cplusplus
 }
 #endif /* __cplusplus */
