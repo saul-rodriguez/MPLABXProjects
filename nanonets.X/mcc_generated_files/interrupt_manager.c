@@ -1,24 +1,26 @@
 /**
-  @Generated PIC10 / PIC12 / PIC16 / PIC18 MCUs Header File
+  Generated Interrupt Manager Source File
 
   @Company:
     Microchip Technology Inc.
 
   @File Name:
-    mcc.c
+    interrupt_manager.c
 
   @Summary:
-    This is the device_config.h file generated using PIC10 / PIC12 / PIC16 / PIC18 MCUs
+    This is the Interrupt Manager file generated using PIC10 / PIC12 / PIC16 / PIC18 MCUs
 
   @Description:
-    This header file provides implementations for driver APIs for all modules selected in the GUI.
+    This header file provides implementations for global interrupt handling.
+    For individual peripheral handlers please see the peripheral driver for
+    all modules selected in the GUI.
     Generation Information :
         Product Revision  :  PIC10 / PIC12 / PIC16 / PIC18 MCUs - 1.65.2
         Device            :  PIC16LF1823
-        Driver Version    :  2.00
+        Driver Version    :  2.03
     The generated drivers are tested against the following:
         Compiler          :  XC8 1.45 or later
-        MPLAB             :  MPLAB X 4.15
+        MPLAB 	          :  MPLAB X 4.15
 */
 
 /*
@@ -44,12 +46,32 @@
     SOFTWARE.
 */
 
-#ifndef DEVICE_CONFIG_H
-#define	DEVICE_CONFIG_H
+#include "interrupt_manager.h"
+#include "mcc.h"
 
-#define _XTAL_FREQ 32000000
-
-#endif	/* DEVICE_CONFIG_H */
+void __interrupt() INTERRUPT_InterruptManager (void)
+{
+    // interrupt handler
+    if(INTCONbits.PEIE == 1)
+    {
+        if(PIE1bits.TXIE == 1 && PIR1bits.TXIF == 1)
+        {
+            EUSART_TxDefaultInterruptHandler();
+        } 
+        else if(PIE1bits.RCIE == 1 && PIR1bits.RCIF == 1)
+        {
+            EUSART_RxDefaultInterruptHandler();
+        } 
+        else
+        {
+            //Unhandled Interrupt
+        }
+    }      
+    else
+    {
+        //Unhandled Interrupt
+    }
+}
 /**
  End of File
 */

@@ -62,10 +62,10 @@ void main(void)
     // Use the following macros to:
 
     // Enable the Global Interrupts
-    //INTERRUPT_GlobalInterruptEnable();
+    INTERRUPT_GlobalInterruptEnable();
 
     // Enable the Peripheral Interrupts
-    //INTERRUPT_PeripheralInterruptEnable();
+    INTERRUPT_PeripheralInterruptEnable();
 
     // Disable the Global Interrupts
     //INTERRUPT_GlobalInterruptDisable();
@@ -78,12 +78,8 @@ void main(void)
     while (1)
     {
       
-        
-        for (i = 0; i < 12; i ++) {
-            NN2SENSE_setDAC(i); 
-            NN2SENSE_config(nn2s);
-            __delay_ms(100);
-        }
+      NN2SENSE_selftest();  
+      
         
     }
 }

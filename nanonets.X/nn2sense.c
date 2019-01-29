@@ -70,3 +70,14 @@ void NN2SENSE_setSEL(unsigned char sel)
     nn2s.bits.SEL3 = aux.bits.SEL3;        
     nn2s.bits.SEL4 = aux.bits.SEL4;            
 }
+
+void NN2SENSE_selftest(void)
+{
+    unsigned char i;
+    
+    for (i = 0; i < 12; i ++) {
+            NN2SENSE_setDAC(i); 
+            NN2SENSE_config(nn2s);
+            __delay_ms(SETTLE_DELAY_MS);
+    }
+}

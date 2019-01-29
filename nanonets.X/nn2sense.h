@@ -117,10 +117,14 @@ extern "C" {
     
     extern volatile NN2SENSE nn2s;
     
+    #define SETTLE_DELAY_MS 100
+    
     void NN2SENSE_setup(void);
     void NN2SENSE_config(NN2SENSE conf);
     void NN2SENSE_setDAC(unsigned char dac);
     void NN2SENSE_setSEL(unsigned char sel);
+    void NN2SENSE_selftest(void);
+    
     
     
     
