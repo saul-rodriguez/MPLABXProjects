@@ -58,11 +58,11 @@
         <targetPluginBoard></targetPluginBoard>
         <platformTool>PICkit3PlatformTool</platformTool>
         <languageToolchain>XC8</languageToolchain>
-        <languageToolchainVersion>2.00</languageToolchainVersion>
+        <languageToolchainVersion>2.05</languageToolchainVersion>
         <platform>2</platform>
       </toolsSet>
       <packs>
-        <pack name="PIC12-16F1xxx_DFP" vendor="Microchip" version="0.1.7"/>
+        <pack name="PIC12-16F1xxx_DFP" vendor="Microchip" version="1.0.21"/>
       </packs>
       <compileType>
         <linkerTool>
@@ -88,6 +88,39 @@
         <makeCustomizationEnableLongLines>false</makeCustomizationEnableLongLines>
         <makeCustomizationNormalizeHexFile>false</makeCustomizationNormalizeHexFile>
       </makeCustomizationType>
+      <HI-TECH-COMP>
+        <property key="additional-warnings" value="true"/>
+        <property key="asmlist" value="true"/>
+        <property key="default-bitfield-type" value="true"/>
+        <property key="default-char-type" value="true"/>
+        <property key="define-macros" value=""/>
+        <property key="disable-optimizations" value="false"/>
+        <property key="extra-include-directories" value=""/>
+        <property key="favor-optimization-for" value="-speed,+space"/>
+        <property key="garbage-collect-data" value="true"/>
+        <property key="garbage-collect-functions" value="true"/>
+        <property key="identifier-length" value="255"/>
+        <property key="local-generation" value="false"/>
+        <property key="operation-mode" value="pro"/>
+        <property key="opt-xc8-compiler-strict_ansi" value="false"/>
+        <property key="optimization-assembler" value="true"/>
+        <property key="optimization-assembler-files" value="true"/>
+        <property key="optimization-debug" value="false"/>
+        <property key="optimization-invariant-enable" value="false"/>
+        <property key="optimization-invariant-value" value="16"/>
+        <property key="optimization-level" value="-O3"/>
+        <property key="optimization-speed" value="true"/>
+        <property key="optimization-stable-enable" value="false"/>
+        <property key="pack-struct" value="true"/>
+        <property key="preprocess-assembler" value="true"/>
+        <property key="short-enums" value="true"/>
+        <property key="undefine-macros" value=""/>
+        <property key="use-cci" value="false"/>
+        <property key="use-iar" value="false"/>
+        <property key="verbose" value="false"/>
+        <property key="warning-level" value="-3"/>
+        <property key="what-to-do" value="ignore"/>
+      </HI-TECH-COMP>
       <HI-TECH-LINK>
         <property key="additional-options-checksum" value=""/>
         <property key="additional-options-code-offset" value=""/>
@@ -132,6 +165,7 @@
         <property key="opt-xc8-linker-link_startup" value="false"/>
         <property key="opt-xc8-linker-serial" value=""/>
         <property key="program-the-device-with-default-config-words" value="true"/>
+        <property key="remove-unused-sections" value="true"/>
       </HI-TECH-LINK>
       <PICkit3PlatformTool>
         <property key="AutoSelectMemRanges" value="auto"/>
@@ -505,11 +539,16 @@
       </Simulator>
       <XC8-config-global>
         <property key="advanced-elf" value="true"/>
+        <property key="gcc-opt-driver-new" value="true"/>
+        <property key="gcc-opt-std" value="-std=c90"/>
+        <property key="gcc-output-file-format" value="dwarf-3"/>
+        <property key="omit-pack-options" value="false"/>
         <property key="output-file-format" value="-mcof,+elf"/>
         <property key="stack-size-high" value="auto"/>
         <property key="stack-size-low" value="auto"/>
         <property key="stack-size-main" value="auto"/>
         <property key="stack-type" value="compiled"/>
+        <property key="user-pack-device-support" value=""/>
       </XC8-config-global>
     </conf>
   </confs>
