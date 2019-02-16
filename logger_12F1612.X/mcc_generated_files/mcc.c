@@ -1,24 +1,24 @@
 /**
-  @Generated PIC10 / PIC12 / PIC16 / PIC18 MCUs Header File
+  @Generated PIC10 / PIC12 / PIC16 / PIC18 MCUs Source File
 
   @Company:
     Microchip Technology Inc.
 
   @File Name:
-    mcc.h
+    mcc.c
 
   @Summary:
-    This is the mcc.h file generated using PIC10 / PIC12 / PIC16 / PIC18 MCUs
+    This is the mcc.c file generated using PIC10 / PIC12 / PIC16 / PIC18 MCUs
 
   @Description:
     This header file provides implementations for driver APIs for all modules selected in the GUI.
     Generation Information :
-        Product Revision  :  PIC10 / PIC12 / PIC16 / PIC18 MCUs - 1.76
-        Device            :  PIC16LF18426
+        Product Revision  :  PIC10 / PIC12 / PIC16 / PIC18 MCUs - 1.65.2
+        Device            :  PIC12F1612
         Driver Version    :  2.00
     The generated drivers are tested against the following:
-        Compiler          :  XC8 2.00 or later
-        MPLAB             :  MPLAB X 5.10
+        Compiler          :  XC8 1.45 or later
+        MPLAB             :  MPLAB X 4.15
 */
 
 /*
@@ -44,61 +44,31 @@
     SOFTWARE.
 */
 
-#ifndef MCC_H
-#define	MCC_H
-#include <xc.h>
-#include "device_config.h"
-#include "pin_manager.h"
-#include <stdint.h>
-#include <stdbool.h>
-#include "interrupt_manager.h"
-#include "adcc.h"
-#include "eusart1.h"
-#include "clkref.h"
+#include "mcc.h"
+
+
+void SYSTEM_Initialize(void)
+{
+    PIN_MANAGER_Initialize();
+    OSCILLATOR_Initialize();
+}
+
+void OSCILLATOR_Initialize(void)
+{
+    // SCS FOSC; SPLLEN disabled; IRCF 16MHz_HF; 
+    OSCCON = 0x78;
+    // TUN 0; 
+    OSCTUNE = 0x00;
+    // SBOREN disabled; BORFS disabled; 
+    BORCON = 0x00;
+    // Wait for PLL to stabilize
+    while(PLLR == 0)
+    {
+    }
+}
 
 
 
-/**
- * @Param
-    none
- * @Returns
-    none
- * @Description
-    Initializes the device to the default states configured in the
- *                  MCC GUI
- * @Example
-    SYSTEM_Initialize(void);
- */
-void SYSTEM_Initialize(void);
-
-/**
- * @Param
-    none
- * @Returns
-    none
- * @Description
-    Initializes the oscillator to the default states configured in the
- *                  MCC GUI
- * @Example
-    OSCILLATOR_Initialize(void);
- */
-void OSCILLATOR_Initialize(void);
-
-/**
- * @Param
-    none
- * @Returns
-    none
- * @Description
-    Initializes the PMD module to the default states configured in the
- *                  MCC GUI
- * @Example
-    PMD_Initialize(void);
- */
-void PMD_Initialize(void);
-
-
-#endif	/* MCC_H */
 /**
  End of File
 */

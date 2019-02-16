@@ -3,24 +3,14 @@
     <type>com.microchip.mplab.nbide.embedded.makeproject</type>
     <configuration>
         <data xmlns="http://www.netbeans.org/ns/make-project/1">
-            <name>driver_bio4</name>
-            <creation-uuid>acfd49b0-19dd-4e99-b435-20716fafb04d</creation-uuid>
+            <name>logger_12F1612</name>
+            <creation-uuid>5e59131b-2f0e-4197-bd6c-c2d560a89aeb</creation-uuid>
             <make-project-type>0</make-project-type>
             <c-extensions>c</c-extensions>
             <cpp-extensions/>
             <header-extensions>h</header-extensions>
             <asminc-extensions/>
             <sourceEncoding>ISO-8859-1</sourceEncoding>
-            <sourceRootList/>
-            <confList>
-                <confElem>
-                    <name>default</name>
-                    <type>2</type>
-                </confElem>
-            </confList>
-            <formatting>
-                <project-formatting-style>false</project-formatting-style>
-            </formatting>
             <make-dep-projects/>
         </data>
     </configuration>

@@ -1,24 +1,24 @@
 /**
-  @Generated PIC10 / PIC12 / PIC16 / PIC18 MCUs Header File
+  @Generated Pin Manager Header File
 
   @Company:
     Microchip Technology Inc.
 
   @File Name:
-    mcc.h
+    pin_manager.h
 
   @Summary:
-    This is the mcc.h file generated using PIC10 / PIC12 / PIC16 / PIC18 MCUs
+    This is the Pin Manager file generated using PIC10 / PIC12 / PIC16 / PIC18 MCUs
 
-  @Description:
-    This header file provides implementations for driver APIs for all modules selected in the GUI.
+  @Description
+    This header file provides APIs for driver for .
     Generation Information :
-        Product Revision  :  PIC10 / PIC12 / PIC16 / PIC18 MCUs - 1.76
-        Device            :  PIC16LF18426
-        Driver Version    :  2.00
+        Product Revision  :  PIC10 / PIC12 / PIC16 / PIC18 MCUs - 1.65.2
+        Device            :  PIC12F1612
+        Driver Version    :  2.11
     The generated drivers are tested against the following:
-        Compiler          :  XC8 2.00 or later
-        MPLAB             :  MPLAB X 5.10
+        Compiler          :  XC8 1.45
+        MPLAB 	          :  MPLAB X 4.15	
 */
 
 /*
@@ -44,19 +44,32 @@
     SOFTWARE.
 */
 
-#ifndef MCC_H
-#define	MCC_H
-#include <xc.h>
-#include "device_config.h"
-#include "pin_manager.h"
-#include <stdint.h>
-#include <stdbool.h>
-#include "interrupt_manager.h"
-#include "adcc.h"
-#include "eusart1.h"
-#include "clkref.h"
+#ifndef PIN_MANAGER_H
+#define PIN_MANAGER_H
 
+#define INPUT   1
+#define OUTPUT  0
 
+#define HIGH    1
+#define LOW     0
+
+#define ANALOG      1
+#define DIGITAL     0
+
+#define PULL_UP_ENABLED      1
+#define PULL_UP_DISABLED     0
+
+/**
+   @Param
+    none
+   @Returns
+    none
+   @Description
+    GPIO and peripheral I/O initialization
+   @Example
+    PIN_MANAGER_Initialize();
+ */
+void PIN_MANAGER_Initialize (void);
 
 /**
  * @Param
@@ -64,41 +77,15 @@
  * @Returns
     none
  * @Description
-    Initializes the device to the default states configured in the
- *                  MCC GUI
+    Interrupt on Change Handling routine
  * @Example
-    SYSTEM_Initialize(void);
+    PIN_MANAGER_IOC();
  */
-void SYSTEM_Initialize(void);
-
-/**
- * @Param
-    none
- * @Returns
-    none
- * @Description
-    Initializes the oscillator to the default states configured in the
- *                  MCC GUI
- * @Example
-    OSCILLATOR_Initialize(void);
- */
-void OSCILLATOR_Initialize(void);
-
-/**
- * @Param
-    none
- * @Returns
-    none
- * @Description
-    Initializes the PMD module to the default states configured in the
- *                  MCC GUI
- * @Example
-    PMD_Initialize(void);
- */
-void PMD_Initialize(void);
+void PIN_MANAGER_IOC(void);
 
 
-#endif	/* MCC_H */
+
+#endif // PIN_MANAGER_H
 /**
  End of File
 */

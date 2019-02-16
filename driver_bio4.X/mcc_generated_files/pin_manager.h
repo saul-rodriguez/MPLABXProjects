@@ -65,6 +65,26 @@
 #define PULL_UP_ENABLED      1
 #define PULL_UP_DISABLED     0
 
+// get/set VOUT_SE aliases
+#define VOUT_SE_TRIS                 TRISCbits.TRISC1
+#define VOUT_SE_LAT                  LATCbits.LATC1
+#define VOUT_SE_PORT                 PORTCbits.RC1
+#define VOUT_SE_WPU                  WPUCbits.WPUC1
+#define VOUT_SE_OD                   ODCONCbits.ODCC1
+#define VOUT_SE_ANS                  ANSELCbits.ANSC1
+#define VOUT_SE_SetHigh()            do { LATCbits.LATC1 = 1; } while(0)
+#define VOUT_SE_SetLow()             do { LATCbits.LATC1 = 0; } while(0)
+#define VOUT_SE_Toggle()             do { LATCbits.LATC1 = ~LATCbits.LATC1; } while(0)
+#define VOUT_SE_GetValue()           PORTCbits.RC1
+#define VOUT_SE_SetDigitalInput()    do { TRISCbits.TRISC1 = 1; } while(0)
+#define VOUT_SE_SetDigitalOutput()   do { TRISCbits.TRISC1 = 0; } while(0)
+#define VOUT_SE_SetPullup()          do { WPUCbits.WPUC1 = 1; } while(0)
+#define VOUT_SE_ResetPullup()        do { WPUCbits.WPUC1 = 0; } while(0)
+#define VOUT_SE_SetPushPull()        do { ODCONCbits.ODCC1 = 0; } while(0)
+#define VOUT_SE_SetOpenDrain()       do { ODCONCbits.ODCC1 = 1; } while(0)
+#define VOUT_SE_SetAnalogMode()      do { ANSELCbits.ANSC1 = 1; } while(0)
+#define VOUT_SE_SetDigitalMode()     do { ANSELCbits.ANSC1 = 0; } while(0)
+
 // get/set RC4 procedures
 #define RC4_SetHigh()            do { LATCbits.LATC4 = 1; } while(0)
 #define RC4_SetLow()             do { LATCbits.LATC4 = 0; } while(0)
