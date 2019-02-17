@@ -65,6 +65,26 @@
 #define PULL_UP_ENABLED      1
 #define PULL_UP_DISABLED     0
 
+// get/set RESETN aliases
+#define RESETN_TRIS                 TRISAbits.TRISA5
+#define RESETN_LAT                  LATAbits.LATA5
+#define RESETN_PORT                 PORTAbits.RA5
+#define RESETN_WPU                  WPUAbits.WPUA5
+#define RESETN_OD                   ODCONAbits.ODCA5
+#define RESETN_ANS                  ANSELAbits.ANSA5
+#define RESETN_SetHigh()            do { LATAbits.LATA5 = 1; } while(0)
+#define RESETN_SetLow()             do { LATAbits.LATA5 = 0; } while(0)
+#define RESETN_Toggle()             do { LATAbits.LATA5 = ~LATAbits.LATA5; } while(0)
+#define RESETN_GetValue()           PORTAbits.RA5
+#define RESETN_SetDigitalInput()    do { TRISAbits.TRISA5 = 1; } while(0)
+#define RESETN_SetDigitalOutput()   do { TRISAbits.TRISA5 = 0; } while(0)
+#define RESETN_SetPullup()          do { WPUAbits.WPUA5 = 1; } while(0)
+#define RESETN_ResetPullup()        do { WPUAbits.WPUA5 = 0; } while(0)
+#define RESETN_SetPushPull()        do { ODCONAbits.ODCA5 = 0; } while(0)
+#define RESETN_SetOpenDrain()       do { ODCONAbits.ODCA5 = 1; } while(0)
+#define RESETN_SetAnalogMode()      do { ANSELAbits.ANSA5 = 1; } while(0)
+#define RESETN_SetDigitalMode()     do { ANSELAbits.ANSA5 = 0; } while(0)
+
 // get/set VOUT_SE aliases
 #define VOUT_SE_TRIS                 TRISCbits.TRISC1
 #define VOUT_SE_LAT                  LATCbits.LATC1
@@ -84,6 +104,46 @@
 #define VOUT_SE_SetOpenDrain()       do { ODCONCbits.ODCC1 = 1; } while(0)
 #define VOUT_SE_SetAnalogMode()      do { ANSELCbits.ANSC1 = 1; } while(0)
 #define VOUT_SE_SetDigitalMode()     do { ANSELCbits.ANSC1 = 0; } while(0)
+
+// get/set DAT aliases
+#define DAT_TRIS                 TRISCbits.TRISC2
+#define DAT_LAT                  LATCbits.LATC2
+#define DAT_PORT                 PORTCbits.RC2
+#define DAT_WPU                  WPUCbits.WPUC2
+#define DAT_OD                   ODCONCbits.ODCC2
+#define DAT_ANS                  ANSELCbits.ANSC2
+#define DAT_SetHigh()            do { LATCbits.LATC2 = 1; } while(0)
+#define DAT_SetLow()             do { LATCbits.LATC2 = 0; } while(0)
+#define DAT_Toggle()             do { LATCbits.LATC2 = ~LATCbits.LATC2; } while(0)
+#define DAT_GetValue()           PORTCbits.RC2
+#define DAT_SetDigitalInput()    do { TRISCbits.TRISC2 = 1; } while(0)
+#define DAT_SetDigitalOutput()   do { TRISCbits.TRISC2 = 0; } while(0)
+#define DAT_SetPullup()          do { WPUCbits.WPUC2 = 1; } while(0)
+#define DAT_ResetPullup()        do { WPUCbits.WPUC2 = 0; } while(0)
+#define DAT_SetPushPull()        do { ODCONCbits.ODCC2 = 0; } while(0)
+#define DAT_SetOpenDrain()       do { ODCONCbits.ODCC2 = 1; } while(0)
+#define DAT_SetAnalogMode()      do { ANSELCbits.ANSC2 = 1; } while(0)
+#define DAT_SetDigitalMode()     do { ANSELCbits.ANSC2 = 0; } while(0)
+
+// get/set CLK aliases
+#define CLK_TRIS                 TRISCbits.TRISC3
+#define CLK_LAT                  LATCbits.LATC3
+#define CLK_PORT                 PORTCbits.RC3
+#define CLK_WPU                  WPUCbits.WPUC3
+#define CLK_OD                   ODCONCbits.ODCC3
+#define CLK_ANS                  ANSELCbits.ANSC3
+#define CLK_SetHigh()            do { LATCbits.LATC3 = 1; } while(0)
+#define CLK_SetLow()             do { LATCbits.LATC3 = 0; } while(0)
+#define CLK_Toggle()             do { LATCbits.LATC3 = ~LATCbits.LATC3; } while(0)
+#define CLK_GetValue()           PORTCbits.RC3
+#define CLK_SetDigitalInput()    do { TRISCbits.TRISC3 = 1; } while(0)
+#define CLK_SetDigitalOutput()   do { TRISCbits.TRISC3 = 0; } while(0)
+#define CLK_SetPullup()          do { WPUCbits.WPUC3 = 1; } while(0)
+#define CLK_ResetPullup()        do { WPUCbits.WPUC3 = 0; } while(0)
+#define CLK_SetPushPull()        do { ODCONCbits.ODCC3 = 0; } while(0)
+#define CLK_SetOpenDrain()       do { ODCONCbits.ODCC3 = 1; } while(0)
+#define CLK_SetAnalogMode()      do { ANSELCbits.ANSC3 = 1; } while(0)
+#define CLK_SetDigitalMode()     do { ANSELCbits.ANSC3 = 0; } while(0)
 
 // get/set RC4 procedures
 #define RC4_SetHigh()            do { LATCbits.LATC4 = 1; } while(0)
