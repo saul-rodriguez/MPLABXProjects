@@ -29,10 +29,17 @@ extern "C" {
 //Here uncomment one of the ASICs to use
 #define BIOASIC
 //#define VINASIC  
+    
+// linear range for 10 bits ADC
+//#define MEAS_MAX 370
+//#define MEAS_MIN  86
+
+//linear range for 12 bit ADC
+#define MEAS_MAX 1480
+//#define MEAS_MIN  344
+#define MEAS_MIN  172
 
 //Demodulator transient delay after a valid configuration
-//#define CONF_DELAY 60
-
 //vinnova 
 #ifdef VINASIC
 #define CONF_DELAY 15
@@ -275,13 +282,7 @@ const unsigned long filt[11] = {
 //void BIO_config(BIO3 conf);
 //void VIN_config(VIN conf);
 
-// linear range for 10 bits ADC
-//#define MEAS_MAX 370
-//#define MEAS_MIN  86
 
-//linear range for 12 bit ADC
-#define MEAS_MAX 1480
-#define MEAS_MIN  344
 
 //Common VIN and BIO
 void BIO_sweep(void);
@@ -296,6 +297,7 @@ void BIO_setFreq(BIO3* asic, unsigned char freq_index);
 unsigned char BIO_measure(short* I, short* Q, BIO3 asic);
 unsigned char BIO_calculate_checksum(unsigned char* data, unsigned char num);
 void BIO_calibrate_reader(void);
+void BIO_changeTxPolarity(void);
 
 #else
 //TODO: All these names should be changed to BIO_ 

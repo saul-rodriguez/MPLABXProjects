@@ -7,8 +7,8 @@ void _puts(char *pt)
     unsigned char index;
     index = 0;
     while(pt[index]) {
-        while(!EUSART_is_tx_ready());
-        EUSART_Write(pt[index++]);        
+        while(!EUSART1_is_tx_ready());
+        EUSART1_Write(pt[index++]);        
     }
 }
 
@@ -17,8 +17,8 @@ void write(unsigned char *pt, unsigned char lenght)
     unsigned char i;
     
     for (i=0; i<lenght; i++) {
-        while(!EUSART_is_tx_ready());
-        EUSART_Write(pt[i]); 
+        while(!EUSART1_is_tx_ready());
+        EUSART1_Write(pt[i]); 
     }    
 }
 
@@ -54,7 +54,7 @@ unsigned char _gets(unsigned char *pt, unsigned char length)
  //read a line
     index = 0;
     while (index < length) {
-        pt[index] = EUSART_Read();
+        pt[index] = EUSART1_Read();
         if (pt[index] == 0x0a) {
             index --; //uncommented only if CR+LN
             return index; 

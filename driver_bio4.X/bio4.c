@@ -7,63 +7,6 @@
 #define WAIT __delay_us(5)
 //#define WAIT ;
 
-#ifdef BIOASIC 
-
-void BIO_config(BIO3 conf)
-{
-    unsigned char i, out;
-    
-    CLK_SetLow();
-    WAIT;
-    
-    RESETN_SetLow();
-    WAIT;
-    
-    RESETN_SetHigh();
-        
-    for(i = 0; i < BIO3_LENGTH; i++) {
-        if (conf.datashort & 0x0001) { //DATA to H    
-            DAT_SetHigh();
-        } else { //DATA to L            
-            DAT_SetLow();
-        }        
-        conf.datashort >>= 1;
-        
-        WAIT;
-                
-        CLK_SetHigh();
-        WAIT;                
-        CLK_SetLow();
-        
-    }    
-}
-
-
-void BIO_setGain(BIO3* asic, unsigned char gain_index)
-{
-    RADIO_gain aux;
-    aux.data = gains[gain_index];
-    
-    asic->data_bits.GD0 = aux.data_bits.GD0;
-    asic->data_bits.GD1 = aux.data_bits.GD1;
-    asic->data_bits.GD2 = aux.data_bits.GD2;
-    asic->data_bits.GS0 = aux.data_bits.GS0;
-    asic->data_bits.GS1 = aux.data_bits.GS1;
-    asic->data_bits.GS2 = aux.data_bits.GS2;
-    asic->data_bits.GS3 = aux.data_bits.GS3;
-}
-
-void BIO_setFreq(BIO3* asic, unsigned char freq_index)
-{
-    RADIO_freq aux;
-    aux.data = freqs[freq_index];
-    
-    asic->data_bits.F0 = aux.data_bits.F0;
-    asic->data_bits.F1 = aux.data_bits.F1;
-    asic->data_bits.F2 = aux.data_bits.F2;
-    asic->data_bits.F3 = aux.data_bits.F3;
-        
-}
 
 void BIO_turnOffADC(void)
 {
@@ -72,105 +15,59 @@ void BIO_turnOffADC(void)
 
 void BIO_messageHandler(void)
 {
-
-}
-
-#ifdef BIOASIC
-unsigned char BIO_measure(short* I, short* Q, BIO3 asic)
-#else
-unsigned char BIO_measure(short* I, short* Q, VIN asic)
-#endif
-{
-    unsigned short offset, value;
-    short aux1,aux2;
-    //Measurements done using Single Ended output
+    unsigned char message;
+    
+    message = EUSART1_Read();
+    switch (message) {        
+        case 't': //test comm
+            //write(message,mess_rec_size);
+            _puts("Ok");
+            break;
         
-    //Extract DC offset (expected value around 512 ~ 0.9V)
-    asic.data_bits.CE = 0; //Disable the signal generator
-    BIO_config(asic); 
-     __delay_ms(CONF_DELAY);
-     
-    offset = ADCC_GetSingleConversion(VOUT_SE);
-            //ADC_5(); //read channel 5 (VOUT_SE)   
-    
-    //extract I
-    asic.data_bits.CE = 1; //Enable the signal generator
-    asic.data_bits.IQ = 0; //Select I reference
-    
-    BIO_config(asic); 
-     __delay_ms(CONF_DELAY);
-     
-    value = ADCC_GetSingleConversion(VOUT_SE); //read channel 5 (VOUT_SE)   
-    *I = (value - offset);
-    aux1 = *I;
+        case 'f': //single shot sweep measurement SE no offset, crc
+            BIO_sweep();
+            break;
+        /*     
+        case 'c': //config            
+            config_ASIC();
+            break;
+            
+        case 'm': //Measure ADC channels
+            read_ADC_channels();
+            break;
         
-    if (aux1 < 0) {
-        aux1 = -aux1;
+        case 'z': //Impedance Measurement
+            measure_Impedance();
+            break; 
+            
+        case 'y': //Impedance without offset
+            measure_Impedance_no_offset();
+            break;
+            
+        case 'o': //Offset measurement
+            measure_Offset();
+            break;
+            
+        case 's': //impedance Measurement Single Ended 
+            measure_Impedance_SE();
+            break;
+        */
+        #ifdef INDUCTIVE_POW
+        case '&': //Tx loop to calibrate the reader
+            calibrate_reader();
+            break;
+        #endif
+                  
+            
+        default: 
+            break;
     }
-      
-    
-      //extract Q
-    //asic.data_bits.CE = 1; //Enable the signal generator
-    asic.data_bits.IQ = 1; //Select I reference
-    
-    BIO_config(asic); 
-     __delay_ms(CONF_DELAY);
-     
-    value = ADCC_GetSingleConversion(VOUT_SE); //read channel 5 (VOUT_SE)   
-    *Q = (value - offset);
-    aux2 = *Q;
-    
-    if (aux2 < 0) {
-        aux2 = -aux2;
-    }
-    
-    if (aux2 > aux1) {
-        aux1 = aux2;
-    }
-    
-    if (aux1 > MEAS_MAX) {
-        return 2;
-    } else if (aux1 < MEAS_MIN) {
-        return 1;
-    }
-         
-    return 0;    
 
 }
 
-unsigned char BIO_calculate_checksum(unsigned char* data, unsigned char num)
+void BIO_changeTxPolarity(void)
 {
-    unsigned char check, i;
-    
-    check = 0;
-    for (i = 0; i < num; i++) {
-        check ^= data[i];
-    }
-    
-    return check;        
-}
-
-void BIO_calibrate_reader(void)
-{
- unsigned char aux[8];
-    
-    aux[0] = 'h';
-    aux[1] = 'o';
-    aux[2] = 'l';
-    aux[3] = 'a';
-    aux[4] = 0x00;
-    aux[5] = 0xaa;
-    aux[6] = 0xfe;
-    aux[7] = '@';
-    
-    while (1) {
-        CLRWDT();
-         __delay_ms(250);
-         __delay_ms(250);
-         __delay_ms(250);
-         __delay_ms(250);
-         write(aux,8);        
-    }
+    BAUD1CONbits.SCKP = 1;
 }
 
 void BIO_sweep(void)
@@ -280,6 +177,162 @@ void BIO_sweep(void)
     }
    
 }
+
+
+#ifdef BIOASIC 
+void BIO_config(BIO3 conf)
+{
+    unsigned char i, out;
+    
+    CLK_SetLow();
+    WAIT;
+    
+    RESETN_SetLow();
+    WAIT;
+    
+    RESETN_SetHigh();
+        
+    for(i = 0; i < BIO3_LENGTH; i++) {
+        if (conf.datashort & 0x0001) { //DATA to H    
+            DAT_SetHigh();
+        } else { //DATA to L            
+            DAT_SetLow();
+        }        
+        conf.datashort >>= 1;
+        
+        WAIT;
+                
+        CLK_SetHigh();
+        WAIT;                
+        CLK_SetLow();
+        
+    }    
+}
+
+void BIO_setGain(BIO3* asic, unsigned char gain_index)
+{
+    RADIO_gain aux;
+    aux.data = gains[gain_index];
+    
+    asic->data_bits.GD0 = aux.data_bits.GD0;
+    asic->data_bits.GD1 = aux.data_bits.GD1;
+    asic->data_bits.GD2 = aux.data_bits.GD2;
+    asic->data_bits.GS0 = aux.data_bits.GS0;
+    asic->data_bits.GS1 = aux.data_bits.GS1;
+    asic->data_bits.GS2 = aux.data_bits.GS2;
+    asic->data_bits.GS3 = aux.data_bits.GS3;
+}
+
+void BIO_setFreq(BIO3* asic, unsigned char freq_index)
+{
+    RADIO_freq aux;
+    aux.data = freqs[freq_index];
+    
+    asic->data_bits.F0 = aux.data_bits.F0;
+    asic->data_bits.F1 = aux.data_bits.F1;
+    asic->data_bits.F2 = aux.data_bits.F2;
+    asic->data_bits.F3 = aux.data_bits.F3;
+        
+}
+
+#ifdef BIOASIC
+unsigned char BIO_measure(short* I, short* Q, BIO3 asic)
+#else
+unsigned char BIO_measure(short* I, short* Q, VIN asic)
+#endif
+{
+    unsigned short offset, value;
+    short aux1,aux2;
+    //Measurements done using Single Ended output
+        
+    //Extract DC offset (expected value around 512 ~ 0.9V)
+    asic.data_bits.CE = 0; //Disable the signal generator
+    BIO_config(asic); 
+     __delay_ms(CONF_DELAY);
+     
+    offset = ADCC_GetSingleConversion(VOUT_SE);
+            //ADC_5(); //read channel 5 (VOUT_SE)   
+    
+    //extract I
+    asic.data_bits.CE = 1; //Enable the signal generator
+    asic.data_bits.IQ = 0; //Select I reference
+    
+    BIO_config(asic); 
+     __delay_ms(CONF_DELAY);
+     
+    value = ADCC_GetSingleConversion(VOUT_SE); //read channel 5 (VOUT_SE)   
+    *I = (value - offset);
+    aux1 = *I;
+        
+    if (aux1 < 0) {
+        aux1 = -aux1;
+    }
+      
+    
+      //extract Q
+    //asic.data_bits.CE = 1; //Enable the signal generator
+    asic.data_bits.IQ = 1; //Select I reference
+    
+    BIO_config(asic); 
+     __delay_ms(CONF_DELAY);
+     
+    value = ADCC_GetSingleConversion(VOUT_SE); //read channel 5 (VOUT_SE)   
+    *Q = (value - offset);
+    aux2 = *Q;
+    
+    if (aux2 < 0) {
+        aux2 = -aux2;
+    }
+    
+    if (aux2 > aux1) {
+        aux1 = aux2;
+    }
+    
+    if (aux1 > MEAS_MAX) {
+        return 2;
+    } else if (aux1 < MEAS_MIN) {
+        return 1;
+    }
+         
+    return 0;    
+
+}
+
+unsigned char BIO_calculate_checksum(unsigned char* data, unsigned char num)
+{
+    unsigned char check, i;
+    
+    check = 0;
+    for (i = 0; i < num; i++) {
+        check ^= data[i];
+    }
+    
+    return check;        
+}
+
+void BIO_calibrate_reader(void)
+{
+ unsigned char aux[8];
+    
+    aux[0] = 'h';
+    aux[1] = 'o';
+    aux[2] = 'l';
+    aux[3] = 'a';
+    aux[4] = 0x00;
+    aux[5] = 0xaa;
+    aux[6] = 0xfe;
+    aux[7] = '@';
+    
+    while (1) {
+        CLRWDT();
+         __delay_ms(250);
+         __delay_ms(250);
+         __delay_ms(250);
+         __delay_ms(250);
+         write(aux,8);        
+    }
+}
+
 
 #else
 

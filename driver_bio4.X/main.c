@@ -54,6 +54,10 @@ void main(void)
     SYSTEM_Initialize();
     
     BIO_turnOffADC();
+    #ifdef INDUCTIVE_POW
+    BIO_changeTxPolarity();
+    #endif
+    
 
     // When using interrupts, you need to set the Global and Peripheral Interrupt Enable bits
     // Use the following macros to:
@@ -76,7 +80,7 @@ void main(void)
         
          if(EUSART1_is_rx_ready())
             {
-             
+             BIO_messageHandler();
              /*
                 rxData = EUSART1_Read();
                 if(EUSART1_is_tx_ready())
