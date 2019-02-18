@@ -42,6 +42,7 @@
 */
 
 #include "mcc_generated_files/mcc.h"
+#include "bio4.h"
 
 /*
                          Main application
@@ -51,6 +52,8 @@ void main(void)
     unsigned char rxData;
     // initialize the device
     SYSTEM_Initialize();
+    
+    BIO_turnOffADC();
 
     // When using interrupts, you need to set the Global and Peripheral Interrupt Enable bits
     // Use the following macros to:
@@ -73,11 +76,14 @@ void main(void)
         
          if(EUSART1_is_rx_ready())
             {
+             
+             /*
                 rxData = EUSART1_Read();
                 if(EUSART1_is_tx_ready())
                 {
                     EUSART1_Write(rxData);
                 }
+              */
             }
         
     }

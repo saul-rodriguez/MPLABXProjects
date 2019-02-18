@@ -23,6 +23,8 @@ extern "C" {
 
 #include "mcc_generated_files/mcc.h"
     
+//uncomment if inductive coupling is used for power and communications
+//#define INDUCTIVE_POW
     
 //Here uncomment one of the ASICs to use
 #define BIOASIC
@@ -273,15 +275,35 @@ const unsigned long filt[11] = {
 //void BIO_config(BIO3 conf);
 //void VIN_config(VIN conf);
 
+// linear range for 10 bits ADC
+//#define MEAS_MAX 370
+//#define MEAS_MIN  86
+
+//linear range for 12 bit ADC
+#define MEAS_MAX 1480
+#define MEAS_MIN  344
+
+//Common VIN and BIO
+void BIO_sweep(void);
+void BIO_turnOffADC(void);
+void BIO_messageHandler(void);
+
 #ifdef BIOASIC
-void config(BIO3 conf);
-void setGain(BIO3* asic, unsigned char gain_index);
-void setFreq(BIO3* asic, unsigned char freq_index);
+void BIO_config(BIO3 conf);
+void BIO_setGain(BIO3* asic, unsigned char gain_index);
+void BIO_setFreq(BIO3* asic, unsigned char freq_index);
+
+unsigned char BIO_measure(short* I, short* Q, BIO3 asic);
+unsigned char BIO_calculate_checksum(unsigned char* data, unsigned char num);
+void BIO_calibrate_reader(void);
+
 #else
+//TODO: All these names should be changed to BIO_ 
 void config(VIN conf);
 void setGain(VIN* asic, unsigned char gain_index);
 void setFreq(VIN* asic, unsigned char freq_index);
 void setFilt(VIN* asic, unsigned char freq_index);
+unsigned char BIO_measure(short* I, short* Q, VIN asic);
 #endif
 
 #ifdef	__cplusplus
