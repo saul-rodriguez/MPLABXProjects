@@ -35,9 +35,9 @@ extern "C" {
 //#define MEAS_MIN  86
 
 //linear range for 12 bit ADC
-#define MEAS_MAX 1480
+#define MEAS_MAX 1500
 //#define MEAS_MIN  344
-#define MEAS_MIN  172
+#define MEAS_MIN  500
 
 //Demodulator transient delay after a valid configuration
 //vinnova 

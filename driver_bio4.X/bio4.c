@@ -169,6 +169,7 @@ void BIO_sweep(void)
         
         //This delay is to avoid to start a new measurement when 
         //the BT transmitter is sending.
+        //__delay_ms(100);
         #ifndef BIOASIC
         __delay_ms(50);
         #endif              
@@ -246,12 +247,12 @@ unsigned char BIO_measure(short* I, short* Q, VIN asic)
     //Measurements done using Single Ended output
         
     //Extract DC offset (expected value around 512 ~ 0.9V)
+    asic.data_bits.IQ = 0; //Select I reference
     asic.data_bits.CE = 0; //Disable the signal generator
     BIO_config(asic); 
      __delay_ms(CONF_DELAY);
      
-    offset = ADCC_GetSingleConversion(VOUT_SE);
-            //ADC_5(); //read channel 5 (VOUT_SE)   
+    offset = ADCC_GetSingleConversion(VOUT_SE);            
     
     //extract I
     asic.data_bits.CE = 1; //Enable the signal generator
@@ -267,11 +268,13 @@ unsigned char BIO_measure(short* I, short* Q, VIN asic)
     if (aux1 < 0) {
         aux1 = -aux1;
     }
-      
+          
+    //extract Q
     
-      //extract Q
+    //Extract DC offset (expected value around 512 ~ 0.9V)
+      
     //asic.data_bits.CE = 1; //Enable the signal generator
-    asic.data_bits.IQ = 1; //Select I reference
+    asic.data_bits.IQ = 1; //Select Q reference
     
     BIO_config(asic); 
      __delay_ms(CONF_DELAY);
