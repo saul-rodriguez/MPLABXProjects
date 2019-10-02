@@ -24,7 +24,7 @@ extern "C" {
 #include "mcc_generated_files/mcc.h"
     
 //uncomment if inductive coupling is used for power and communications
-//#define INDUCTIVE_POW
+#define INDUCTIVE_POW
     
 //Here uncomment one of the ASICs to use
 #define BIOASIC

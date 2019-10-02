@@ -54,7 +54,7 @@ void BIO_messageHandler(void)
         */
         #ifdef INDUCTIVE_POW
         case '&': //Tx loop to calibrate the reader
-            calibrate_reader();
+            BIO_calibrate_reader();
             break;
         #endif
                   
@@ -165,7 +165,17 @@ void BIO_sweep(void)
         //TODO Here is a good idea to disable the ADC
         BIO_turnOffADC();
         
+        //Disable the RX USART
+        PIE3bits.RC1IE = 0;
+        RC1STAbits.CREN = 0;
+    
         write(aux,7);
+        __delay_ms(10);
+        
+        //Enable the RX USART
+        RC1STAbits.CREN = 1;
+        PIE3bits.RC1IE = 1;
+        
         
         //This delay is to avoid to start a new measurement when 
         //the BT transmitter is sending.
