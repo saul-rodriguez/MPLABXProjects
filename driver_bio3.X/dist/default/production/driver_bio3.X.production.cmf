@@ -43,7 +43,7 @@ intentry CODE 0 4 4 44 2
 bssBANK0 BANK0 1 20 20 28 1
 clrtext CODE 0 29B 29B 6 2
 bssCOMMON COMMON 1 78 78 4 1
-$/tmp/xcXoM2Gcw.o
+$/tmp/xcX3mDUFG.o
 reset_vec CODE 0 0 0 1 2
 end_init CODE 0 48 48 1 2
 config CONFIG 0 8007 8007 2 2
@@ -118,22 +118,22 @@ STRING 2BF-7FF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production/driver_bio3.X.production.o
-49 cinit CODE >2762:/tmp/xcXfz0Ywv
-49 cinit CODE >2765:/tmp/xcXfz0Ywv
-49 cinit CODE >2829:/tmp/xcXfz0Ywv
-4A cinit CODE >2822:/tmp/xcXfz0Ywv
-4B cinit CODE >2823:/tmp/xcXfz0Ywv
-4C cinit CODE >2824:/tmp/xcXfz0Ywv
-4D cinit CODE >2825:/tmp/xcXfz0Ywv
-4E cinit CODE >2830:/tmp/xcXfz0Ywv
-4F cinit CODE >2831:/tmp/xcXfz0Ywv
-50 cinit CODE >2832:/tmp/xcXfz0Ywv
-51 cinit CODE >2833:/tmp/xcXfz0Ywv
-52 cinit CODE >2834:/tmp/xcXfz0Ywv
-53 cinit CODE >2840:/tmp/xcXfz0Ywv
-53 cinit CODE >2842:/tmp/xcXfz0Ywv
-54 cinit CODE >2843:/tmp/xcXfz0Ywv
-55 cinit CODE >2844:/tmp/xcXfz0Ywv
+49 cinit CODE >2762:/tmp/xcXPTW1gG.s
+49 cinit CODE >2765:/tmp/xcXPTW1gG.s
+49 cinit CODE >2829:/tmp/xcXPTW1gG.s
+4A cinit CODE >2822:/tmp/xcXPTW1gG.s
+4B cinit CODE >2823:/tmp/xcXPTW1gG.s
+4C cinit CODE >2824:/tmp/xcXPTW1gG.s
+4D cinit CODE >2825:/tmp/xcXPTW1gG.s
+4E cinit CODE >2830:/tmp/xcXPTW1gG.s
+4F cinit CODE >2831:/tmp/xcXPTW1gG.s
+50 cinit CODE >2832:/tmp/xcXPTW1gG.s
+51 cinit CODE >2833:/tmp/xcXPTW1gG.s
+52 cinit CODE >2834:/tmp/xcXPTW1gG.s
+53 cinit CODE >2840:/tmp/xcXPTW1gG.s
+53 cinit CODE >2842:/tmp/xcXPTW1gG.s
+54 cinit CODE >2843:/tmp/xcXPTW1gG.s
+55 cinit CODE >2844:/tmp/xcXPTW1gG.s
 4 intentry CODE >152:/home/saul/MPLABXProjects/driver_bio3.X/main.c
 6 intentry CODE >156:/home/saul/MPLABXProjects/driver_bio3.X/main.c
 9 intentry CODE >158:/home/saul/MPLABXProjects/driver_bio3.X/main.c
@@ -393,14 +393,14 @@ FF text1 CODE >485:/home/saul/MPLABXProjects/driver_bio3.X/comm.c
 1A5 maintext CODE >134:/home/saul/MPLABXProjects/driver_bio3.X/main.c
 1A7 maintext CODE >135:/home/saul/MPLABXProjects/driver_bio3.X/main.c
 1A8 maintext CODE >140:/home/saul/MPLABXProjects/driver_bio3.X/main.c
-29B clrtext CODE >2811:/tmp/xcXfz0Ywv
-29B clrtext CODE >2812:/tmp/xcXfz0Ywv
-29C clrtext CODE >2813:/tmp/xcXfz0Ywv
-29C clrtext CODE >2814:/tmp/xcXfz0Ywv
-29D clrtext CODE >2815:/tmp/xcXfz0Ywv
-29E clrtext CODE >2816:/tmp/xcXfz0Ywv
-29F clrtext CODE >2817:/tmp/xcXfz0Ywv
-2A0 clrtext CODE >2818:/tmp/xcXfz0Ywv
+29B clrtext CODE >2811:/tmp/xcXPTW1gG.s
+29B clrtext CODE >2812:/tmp/xcXPTW1gG.s
+29C clrtext CODE >2813:/tmp/xcXPTW1gG.s
+29C clrtext CODE >2814:/tmp/xcXPTW1gG.s
+29D clrtext CODE >2815:/tmp/xcXPTW1gG.s
+29E clrtext CODE >2816:/tmp/xcXPTW1gG.s
+29F clrtext CODE >2817:/tmp/xcXPTW1gG.s
+2A0 clrtext CODE >2818:/tmp/xcXPTW1gG.s
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -443,10 +443,10 @@ _TXIE 48C 0 ABS 0 - dist/default/production/driver_bio3.X.production.o
 _TXIF 8C 0 ABS 0 - dist/default/production/driver_bio3.X.production.o
 _WPUA 20C 0 ABS 0 - dist/default/production/driver_bio3.X.production.o
 _WPUC 20E 0 ABS 0 - dist/default/production/driver_bio3.X.production.o
-___sp 0 0 STACK 2 stack /tmp/xcXoM2Gcw.o
+___sp 0 0 STACK 2 stack /tmp/xcX3mDUFG.o
 _main 306 0 CODE 0 maintext dist/default/production/driver_bio3.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production/driver_bio3.X.production.o
-start 90 0 CODE 0 init /tmp/xcXoM2Gcw.o
+start 90 0 CODE 0 init /tmp/xcX3mDUFG.o
 __CFG_BOREN$OFF 0 0 ABS 0 - dist/default/production/driver_bio3.X.production.o
 i1_start_RX_USART_ISR 48E 0 CODE 0 text20 dist/default/production/driver_bio3.X.production.o
 __size_of_main 0 0 ABS 0 - dist/default/production/driver_bio3.X.production.o
@@ -457,12 +457,12 @@ __Hpowerup 0 0 CODE 0 powerup -
 __size_of_close_RX_USART 0 0 ABS 0 - dist/default/production/driver_bio3.X.production.o
 __size_of_SYSTEM_Initialize 0 0 ABS 0 - dist/default/production/driver_bio3.X.production.o
 _stop_TMR0_ISR 574 0 CODE 0 text21 dist/default/production/driver_bio3.X.production.o
-intlevel0 0 0 ENTRY 0 functab /tmp/xcXoM2Gcw.o
-intlevel1 0 0 ENTRY 0 functab /tmp/xcXoM2Gcw.o
-intlevel2 0 0 ENTRY 0 functab /tmp/xcXoM2Gcw.o
-intlevel3 0 0 ENTRY 0 functab /tmp/xcXoM2Gcw.o
-intlevel4 0 0 ENTRY 0 functab /tmp/xcXoM2Gcw.o
-intlevel5 0 0 ENTRY 0 functab /tmp/xcXoM2Gcw.o
+intlevel0 0 0 ENTRY 0 functab /tmp/xcX3mDUFG.o
+intlevel1 0 0 ENTRY 0 functab /tmp/xcX3mDUFG.o
+intlevel2 0 0 ENTRY 0 functab /tmp/xcX3mDUFG.o
+intlevel3 0 0 ENTRY 0 functab /tmp/xcX3mDUFG.o
+intlevel4 0 0 ENTRY 0 functab /tmp/xcX3mDUFG.o
+intlevel5 0 0 ENTRY 0 functab /tmp/xcX3mDUFG.o
 __LbssCOMMON 0 0 ABS 0 bssCOMMON -
 sweep@freq_index 5C 0 BANK0 1 cstackBANK0 dist/default/production/driver_bio3.X.production.o
 __size_of_setFreq 0 0 ABS 0 - dist/default/production/driver_bio3.X.production.o
@@ -498,8 +498,8 @@ measure@offset 4B 0 BANK0 1 cstackBANK0 dist/default/production/driver_bio3.X.pr
 calculate_checksum@num 71 0 COMMON 1 cstackCOMMON dist/default/production/driver_bio3.X.production.o
 __size_of_USARTX_change_pol 0 0 ABS 0 - dist/default/production/driver_bio3.X.production.o
 __end_of_start_RCM 56E 0 CODE 0 text12 dist/default/production/driver_bio3.X.production.o
-___stackhi 206F 0 ABS 0 - /tmp/xcXoM2Gcw.o
-___stacklo 2047 0 ABS 0 - /tmp/xcXoM2Gcw.o
+___stackhi 206F 0 ABS 0 - /tmp/xcX3mDUFG.o
+___stacklo 2047 0 ABS 0 - /tmp/xcX3mDUFG.o
 __size_of_ADC_5 0 0 ABS 0 - dist/default/production/driver_bio3.X.production.o
 __size_of_start_RCM 0 0 ABS 0 - dist/default/production/driver_bio3.X.production.o
 __size_of_sweep 0 0 ABS 0 - dist/default/production/driver_bio3.X.production.o
@@ -527,7 +527,7 @@ _TMR0CS 4AD 0 ABS 0 - dist/default/production/driver_bio3.X.production.o
 _TMR0IE 5D 0 ABS 0 - dist/default/production/driver_bio3.X.production.o
 _TMR0IF 5A 0 ABS 0 - dist/default/production/driver_bio3.X.production.o
 calculate_checksum@i 75 0 COMMON 1 cstackCOMMON dist/default/production/driver_bio3.X.production.o
-___int_sp 0 0 STACK 2 stack /tmp/xcXoM2Gcw.o
+___int_sp 0 0 STACK 2 stack /tmp/xcX3mDUFG.o
 __end_of_stop_TMR0_ISR 57A 0 CODE 0 text21 dist/default/production/driver_bio3.X.production.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
@@ -687,7 +687,7 @@ __end_of_measure 1DE 0 CODE 0 text4 dist/default/production/driver_bio3.X.produc
 _SYSTEM_Initialize 57A 0 CODE 0 text16 dist/default/production/driver_bio3.X.production.o
 __end_of_isr 90 0 CODE 0 intentry dist/default/production/driver_bio3.X.production.o
 __Lintentry 8 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec /tmp/xcXoM2Gcw.o
+reset_vec 0 0 CODE 0 reset_vec /tmp/xcX3mDUFG.o
 _close_RX_USART 542 0 CODE 0 text8 dist/default/production/driver_bio3.X.production.o
 _start_RX_USART_ISR 4B0 0 CODE 0 text11 dist/default/production/driver_bio3.X.production.o
 __LbssBANK0 0 0 ABS 0 bssBANK0 -
@@ -873,3 +873,11 @@ intentry 0 4 8 273 2
 reset_vec 0 0 0 1 2
 bssBANK0 1 20 20 47 1
 config 0 8007 1000E 2 2
+# %NOTES Section
+# This section contains data of all the note-psects.  The beginning of the section
+# is indicated by %NOTES. The first line indicates the name and decimal
+# byte-length of the first note-psect, e.g.
+#   $codecov_info_hdr 16
+# Each line that follows contains the byte-data of the psect in hexadecimal as a
+# space-separated list. These lines are limited to 16 bytes of data.
+%NOTES

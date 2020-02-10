@@ -1,5 +1,5 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"5770 /opt/microchip/xc8/v2.05/pic/include/pic16lf1823.h
+"5770 /opt/microchip/xc8/v2.10/pic/include/pic16lf1823.h
 [v _BRGH `Vb ~T0 @X0 0 e@3314 ]
 "5767
 [v _BRG16 `Vb ~T0 @X0 0 e@3323 ]
@@ -35,7 +35,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;xc.h: 20: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
 [; ;pic16lf1823.h: 52: extern volatile unsigned char INDF0 __at(0x000);
-"54 /opt/microchip/xc8/v2.05/pic/include/pic16lf1823.h
+"54 /opt/microchip/xc8/v2.10/pic/include/pic16lf1823.h
 [; ;pic16lf1823.h: 54: asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
 [; ;pic16lf1823.h: 57: typedef union {

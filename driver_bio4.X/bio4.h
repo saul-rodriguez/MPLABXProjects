@@ -24,7 +24,7 @@ extern "C" {
 #include "mcc_generated_files/mcc.h"
     
 //uncomment if inductive coupling is used for power and communications
-#define INDUCTIVE_POW
+//#define INDUCTIVE_POW
     
 //Here uncomment one of the ASICs to use
 #define BIOASIC
@@ -99,7 +99,7 @@ typedef union {
 } RADIO_gain;
 
 
-
+/*
 #ifdef BIOASIC
 //Radio gain bit states (GAIN0 is lowest gain, GAIN7 is highest gain) Demodulator gain first!
 #define GAIN0 0b00000100
@@ -122,6 +122,18 @@ typedef union {
 #define GAIN7 0b01111011
 
 #endif
+*/
+
+//Radio gain bit states (GAIN0 is lowest gain, GAIN7 is highest gain) Generator gain first!
+/*ONLY FOR SKIN TESTS USING BIO ASIC*/
+#define GAIN0 0b00000100
+#define GAIN1 0b00100100
+#define GAIN2 0b01100100
+#define GAIN3 0b01101100
+#define GAIN4 0b01111100
+#define GAIN5 0b01111101
+#define GAIN6 0b01111111
+#define GAIN7 0b01111011
 
 
 const unsigned char gains[8] = {

@@ -1,12 +1,12 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"2219 /opt/microchip/xc8/v2.05/pic/include/pic16lf1823.h
+"2219 /opt/microchip/xc8/v2.10/pic/include/pic16lf1823.h
 [v _ADCON1 `Vuc ~T0 @X0 0 e@158 ]
 "2130
 [v _ADCON0 `Vuc ~T0 @X0 0 e@157 ]
-"31 /opt/microchip/xc8/v2.05/pic/include/pic.h
+"31 /opt/microchip/xc8/v2.10/pic/include/pic.h
 [v ___nop `(v ~T0 @X0 0 ef ]
 [p i ___nop ]
-"5683 /opt/microchip/xc8/v2.05/pic/include/pic16lf1823.h
+"5683 /opt/microchip/xc8/v2.10/pic/include/pic16lf1823.h
 [v _ADGO `Vb ~T0 @X0 0 e@1257 ]
 "2110
 [v _ADRESH `Vuc ~T0 @X0 0 e@156 ]
@@ -16,7 +16,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;xc.h: 20: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
 [; ;pic16lf1823.h: 52: extern volatile unsigned char INDF0 __at(0x000);
-"54 /opt/microchip/xc8/v2.05/pic/include/pic16lf1823.h
+"54 /opt/microchip/xc8/v2.10/pic/include/pic16lf1823.h
 [; ;pic16lf1823.h: 54: asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
 [; ;pic16lf1823.h: 57: typedef union {

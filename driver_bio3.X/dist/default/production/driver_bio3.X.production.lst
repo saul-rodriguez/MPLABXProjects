@@ -1,9 +1,9 @@
 
 
-Microchip MPLAB XC8 Assembler V2.05 build -831301201 
-                                                                                               Fri Feb 15 13:36:12 2019
+Microchip MPLAB XC8 Assembler V2.10 build 88905656 
+                                                                                               Wed Nov  6 10:51:31 2019
 
-Microchip MPLAB XC8 C Compiler v2.05 (Pro license) build 20181220022703 Og9f 
+Microchip MPLAB XC8 C Compiler v2.10 (Pro license) build 20190730164152 Og9f 
      1                           	processor	16LF1823
      2                           	opt	pw 120
      3                           	opt	plic
@@ -40,10 +40,10 @@ Microchip MPLAB XC8 C Compiler v2.05 (Pro license) build 20181220022703 Og9f
     34                           	psect	text22,local,class=CODE,merge=1,delta=2
     35                           	dabs	1,0x7E,2
     36  0000                     
-    37                           ; Version 2.05
-    38                           ; Generated 20/12/2018 GMT
+    37                           ; Version 2.10
+    38                           ; Generated 31/07/2019 GMT
     39                           ; 
-    40                           ; Copyright © 2018, Microchip Technology Inc. and its subsidiaries ("Microchip")
+    40                           ; Copyright © 2019, Microchip Technology Inc. and its subsidiaries ("Microchip")
     41                           ; All rights reserved.
     42                           ; 
     43                           ; This software is developed by Microchip Technology Inc. and its subsidiaries ("Microch
@@ -4091,8 +4091,8 @@ BITSFR31             0      0       0      32        0.0%
 SFR31                0      0       0      32        0.0%
 
 
-Microchip Technology PIC Macro Assembler V2.05 build -831301201 
-Symbol Table                                                                                   Fri Feb 15 13:36:12 2019
+Microchip Technology PIC Macro Assembler V2.10 build 88905656 
+Symbol Table                                                                                   Wed Nov  6 10:51:31 2019
 
                     __CFG_CP$OFF 0000                    _USART_rx_data 002F                    _USART_rx_flag 0078  
                   _USART_tx_data 0020                    _USART_tx_flag 0079                              l121 0196  

@@ -1,17 +1,17 @@
 
 # 1 "comm.c"
 
-# 18 "/opt/microchip/xc8/v2.05/pic/include/xc.h"
+# 18 "/opt/microchip/xc8/v2.10/pic/include/xc.h"
 extern const char __xc8_OPTIM_SPEED;
 
 extern double __fpnormalize(double);
 
 
-# 13 "/opt/microchip/xc8/v2.05/pic/include/c90/xc8debug.h"
+# 13 "/opt/microchip/xc8/v2.10/pic/include/c90/xc8debug.h"
 #pragma intrinsic(__builtin_software_breakpoint)
 extern void __builtin_software_breakpoint(void);
 
-# 52 "/opt/microchip/xc8/v2.05/pic/include/pic16lf1823.h"
+# 52 "/opt/microchip/xc8/v2.10/pic/include/pic16lf1823.h"
 extern volatile unsigned char INDF0 __at(0x000);
 
 asm("INDF0 equ 00h");
@@ -3618,7 +3618,7 @@ extern volatile __bit nTO __at(0x1C);
 extern volatile __bit nWPUEN __at(0x4AF);
 
 
-# 30 "/opt/microchip/xc8/v2.05/pic/include/pic.h"
+# 30 "/opt/microchip/xc8/v2.10/pic/include/pic.h"
 #pragma intrinsic(__nop)
 extern void __nop(void);
 
@@ -3629,12 +3629,12 @@ __attribute__((__unsupported__("The " "FLASH_WRITE" " macro function is no longe
 
 __attribute__((__unsupported__("The " "FLASH_ERASE" " macro function is no longer supported. Please use the MPLAB X MCC."))) void __flash_erase(unsigned short addr);
 
-# 114 "/opt/microchip/xc8/v2.05/pic/include/eeprom_routines.h"
+# 114 "/opt/microchip/xc8/v2.10/pic/include/eeprom_routines.h"
 extern void eeprom_write(unsigned char addr, unsigned char value);
 extern unsigned char eeprom_read(unsigned char addr);
 
 
-# 91 "/opt/microchip/xc8/v2.05/pic/include/pic.h"
+# 91 "/opt/microchip/xc8/v2.10/pic/include/pic.h"
 #pragma intrinsic(_delay)
 extern __nonreentrant void _delay(unsigned long);
 #pragma intrinsic(_delaywdt)
@@ -3651,7 +3651,7 @@ extern __bank0 __bit __timeout;
 # 82 "mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
 
-# 13 "/opt/microchip/xc8/v2.05/pic/include/c90/stdint.h"
+# 13 "/opt/microchip/xc8/v2.10/pic/include/c90/stdint.h"
 typedef signed char int8_t;
 
 # 20
@@ -3737,7 +3737,7 @@ typedef int16_t intptr_t;
 
 typedef uint16_t uintptr_t;
 
-# 15 "/opt/microchip/xc8/v2.05/pic/include/c90/stdbool.h"
+# 15 "/opt/microchip/xc8/v2.10/pic/include/c90/stdbool.h"
 typedef unsigned char bool;
 
 # 66 "mcc_generated_files/mcc.h"

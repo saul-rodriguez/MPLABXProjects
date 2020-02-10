@@ -3,11 +3,11 @@
 [d edition pro ]
 [d chip 16LF1823 ]
 [d frameptr 6 ]
-"10 /opt/microchip/xc8/v2.05/pic/sources/c90/common/sprcadd.c
+"10 /opt/microchip/xc8/v2.10/pic/sources/c90/common/sprcadd.c
 [v ___fladd __fladd `(d  1 e 4 0 ]
-"4 /opt/microchip/xc8/v2.05/pic/sources/c90/common/Umul8_16.c
+"4 /opt/microchip/xc8/v2.10/pic/sources/c90/common/Umul8_16.c
 [v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
-"6 /opt/microchip/xc8/v2.05/pic/sources/c90/pic/__eeprom.c
+"6 /opt/microchip/xc8/v2.10/pic/sources/c90/pic/__eeprom.c
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
@@ -76,7 +76,7 @@
 [v _start_TX_USART_ISR start_TX_USART_ISR `(v  1 e 1 0 ]
 "132
 [v _lputs_ISR lputs_ISR `(v  1 e 1 0 ]
-"684 /opt/microchip/xc8/v2.05/pic/include/pic16lf1823.h
+"684 /opt/microchip/xc8/v2.10/pic/include/pic16lf1823.h
 [v _PORTC PORTC `VEuc  1 e 1 @14 ]
 "1058
 [v _TMR0 TMR0 `VEuc  1 e 1 @21 ]

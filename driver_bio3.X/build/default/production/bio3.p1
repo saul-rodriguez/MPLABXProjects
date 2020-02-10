@@ -5,13 +5,13 @@ Version 3.2 HI-TECH Software Intermediate Code
 "65
 [u S293 `us 1 `uc -> 2 `i `S292 1 ]
 [n S293 . datashort data data_bits ]
-"684 /opt/microchip/xc8/v2.05/pic/include/pic16lf1823.h
+"684 /opt/microchip/xc8/v2.10/pic/include/pic16lf1823.h
 [v _PORTC `Vuc ~T0 @X0 0 e@14 ]
 [v F1980 `(v ~T0 @X0 1 tf1`ul ]
-"92 /opt/microchip/xc8/v2.05/pic/include/pic.h
+"92 /opt/microchip/xc8/v2.10/pic/include/pic.h
 [v __delay `JF1980 ~T0 @X0 0 e ]
 [p i __delay ]
-"6466 /opt/microchip/xc8/v2.05/pic/include/pic16lf1823.h
+"6466 /opt/microchip/xc8/v2.10/pic/include/pic16lf1823.h
 [v _RA5 `Vb ~T0 @X0 0 e@101 ]
 "75 bio3.h
 [s S294 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -29,7 +29,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;xc.h: 20: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
 [; ;pic16lf1823.h: 52: extern volatile unsigned char INDF0 __at(0x000);
-"54 /opt/microchip/xc8/v2.05/pic/include/pic16lf1823.h
+"54 /opt/microchip/xc8/v2.10/pic/include/pic16lf1823.h
 [; ;pic16lf1823.h: 54: asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
 [; ;pic16lf1823.h: 57: typedef union {

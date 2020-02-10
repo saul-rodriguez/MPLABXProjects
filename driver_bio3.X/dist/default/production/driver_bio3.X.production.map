@@ -1,11 +1,11 @@
-Microchip MPLAB XC8 Compiler V2.05 ()
+Microchip MPLAB XC8 Compiler V2.10 ()
 
 Linker command line:
 
--W-3 --edf=/opt/microchip/xc8/v2.05/pic/dat/en_msgs.txt -cs \
+-W-3 --edf=/opt/microchip/xc8/v2.10/pic/dat/en_msgs.txt -cs \
   -h+dist/default/production/driver_bio3.X.production.sym \
   --cmf=dist/default/production/driver_bio3.X.production.cmf -z -Q16LF1823 \
-  -o/tmp/xcXdzS5b5 --defsym=__MPLAB_BUILD=1 \
+  -o/tmp/xcX9BQTH0 --defsym=__MPLAB_BUILD=1 \
   -Mdist/default/production/driver_bio3.X.production.map -E1 -ver=XC8 \
   --acfsm=1493 -ASTACK=02047h-0206Fh -pstack=STACK -ACODE=00h-07FFh \
   -ASTRCODE=00h-07FFh -ASTRING=00h-0FFhx8 -ACONST=00h-0FFhx8 \
@@ -26,7 +26,7 @@ Linker command line:
   -pfunctab=ENTRY -ACONFIG=08007h-08008h -pconfig=CONFIG -DCONFIG=2 \
   -AIDLOC=08000h-08003h -pidloc=IDLOC -DIDLOC=2 -AEEDATA=00h-0FFh/0F000h \
   -peeprom_data=EEDATA -DEEDATA=2 -DCODE=2 -DSTRCODE=2 -DSTRING=2 -DCONST=2 \
-  -DENTRY=2 -k /tmp/xcXoM2Gcw.o \
+  -DENTRY=2 -k /tmp/xcX3mDUFG.o \
   dist/default/production/driver_bio3.X.production.o 
 
 Object code version is 3.11
@@ -36,7 +36,7 @@ Machine type is 16LF1823
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-/tmp/xcXoM2Gcw.o
+/tmp/xcX3mDUFG.o
                 end_init                             48       48        1        8       0
                 reset_vec                             0        0        1        0       0
                 config                             8007     8007        2    1000E       0
