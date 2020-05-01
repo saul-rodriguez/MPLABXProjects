@@ -70,21 +70,23 @@ typedef struct {
 extern volatile NEMS_program program;
 
 typedef struct {
-    unsigned short frequency_num_pulses; //number clock cycles before a pulse is sent    
-    unsigned short frequency_index; // clock counter
-    unsigned short clk_index;  // auxiliar clock counter
+    unsigned short num_clocks_per_pulse; //number clock cycles before a pulse is sent    
+    unsigned short clock_index; // clock counter 
+    unsigned short pulse_index;  // pulse index
+    unsigned short current_pulse_index;
     
-    unsigned short ON_num_pulses; // Number of pulses during ON_time
-    unsigned short 
-    unsigned short OFF_num_pulses; // Number of ulses during OFF_time
+    unsigned short ON_time; // Number of pulses during ON_time    
+    unsigned short OFF_time; // Number of ulses during OFF_time
     
     unsigned char current_amplitude; // current used amplitude
     
-    unsigned char ramp_amplitude[50];
+    unsigned char ramp_up_amplitude[50];
     unsigned short ramp_up_pulses; //Number of pulses for ramp up
+    unsigned short ramp_up_time;
     
-    
+    unsigned char ramp_down_amplitude[50];
     unsigned short ramp_down_pulses; //Number of pulses for ramp down
+    unsigned short ramp_down_time;
     //unsigned char ramp_up_steps; //Size of the ramp up step
     //unsigned char ramp_down_steps; //Size of the ramp down step
     //unsigned char ramp_amp_limited;
@@ -140,7 +142,7 @@ void NEMS_start_program(void);
 void NEMS_stop_program(void);
 
 void NEMS_timer(void);
-void NEMS_pulse(void);
+void NEMS_waveform_state(void);
 
 #ifdef	__cplusplus
 }

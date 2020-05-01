@@ -40,6 +40,8 @@ void NEMS_initialize(void)
     */
     //Redirect the interrupt handler
     TMR0_SetInterruptHandler(NEMS_timer);
+    
+    DAC1_SetOutput(0);
         
 }
 
@@ -298,25 +300,26 @@ void NEMS_load_program(void)
 
 void NEMS_recalculate_program(void)
 {
-    waveform.frequency_num_pulses = (unsigned short)NEMS_TIMER_FREQUENCY/program.frequency;
+    waveform.num_clocks_per_pulse = (unsigned short)NEMS_TIMER_FREQUENCY/program.frequency;
+    waveform.clock_index = 0;
+    waveform.pulse_index = 0;
     
-    waveform.ON_num_pulses = program.ON_time*program.frequency;
-    waveform.OFF_num_pulses = program.OFF_time*program.frequency;        
-    
-    waveform.ramp_up_pulses = (program.ramp_up*program.frequency)/10;
+    waveform.ramp_up_pulses = (program.ramp_up*program.frequency)/10;  
     waveform.ramp_down_pulses = (program.ramp_down*program.frequency)/10;
     
-    //waveform.ramp_up_steps = waveform.ramp_up_pulses/program.amplitude;    
-    //waveform.ramp_down_steps = waveform.ramp_down_pulses/program.amplitude;
+    waveform.ramp_up_time = waveform.ramp_up_pulses;
+    
+    waveform.ON_time = program.ON_time*program.frequency + waveform.ramp_up_time;    
+    waveform.ramp_down_time = waveform.ramp_down_pulses + waveform.ON_time;    
+    waveform.OFF_time = program.OFF_time*program.frequency + waveform.ON_time;       
+    
     waveform.current_amplitude = 0;
     
     waveform.ramp_index = 0;
    // waveform.ramp_amplitude = 0;
     
-    waveform.frequency_index = 0;    
+  //  waveform.frequency_index = 0;    
     waveform.contractions_index = 0;
-    
-    waveform.clk_index = 0;
     
     NEMS_calculate_ramp();
     
@@ -330,77 +333,57 @@ void NEMS_calculate_ramp(void)
     unsigned char i;
     
     for (i = 0; i < waveform.ramp_up_pulses; i++) {
-        waveform.ramp_amplitude[i] = (unsigned short)(i*program.amplitude)/waveform.ramp_up_pulses;
+        waveform.ramp_up_amplitude[i] = (unsigned short)(i*program.amplitude)/waveform.ramp_up_pulses;
+    }
+    
+    for (i = 0; i < waveform.ramp_down_pulses; i++) {
+        waveform.ramp_down_amplitude[i] = (unsigned short)((waveform.ramp_down_pulses-i-1)*program.amplitude)/waveform.ramp_down_pulses;
     }
 }
 
 void NEMS_timer(void)
 {
     DAC1_SetOutput(waveform.current_amplitude);
-    //LED_Toggle();    
-    waveform.frequency_index++;
+  
+    waveform.clock_index++;
     
-    if (waveform.frequency_index >= waveform.frequency_num_pulses)  { //Time to trigger a pulse
-        waveform.frequency_index = 0;  
+    if (waveform.clock_index >= waveform.num_clocks_per_pulse)  { //New Pulse Counted
+        waveform.clock_index = 0;  
         
-        waveform.ramp_index++;
-        
-        //NEMS_pulse_states = NEMS_RAMP_UP;
-        if (NEMS_pulse_states == NEMS_PULSE_OFF) {
-            NEMS_pulse_states = NEMS_RAMP_UP;
+        waveform.pulse_index++;
+    
+        if (waveform.pulse_index < waveform.ramp_up_time) {
+            waveform.current_amplitude = waveform.ramp_up_amplitude[waveform.pulse_index];
+            LED_SetHigh();
+        } else if (waveform.pulse_index < waveform.ON_time) {
+            waveform.current_amplitude = program.amplitude;
+            LED_SetHigh();
+        } else if (waveform.pulse_index < waveform.ramp_down_time) {
+            waveform.current_amplitude = waveform.ramp_down_amplitude[waveform.pulse_index - waveform.ON_time];
+        } else if (waveform.pulse_index < waveform.OFF_time) {
+            waveform.current_amplitude = 0;
+        } else {
+            waveform.pulse_index = 0;
         }
     }
+      
     
-    waveform.clk_index++;  
+    if (waveform.clock_index >= program.phase_duration) {
+        waveform.current_amplitude = 0;
+        LED_SetLow();
+        
+    }
     
-    NEMS_pulse();      
+    //NEMS_waveform_state();      
 }
 
-void NEMS_pulse()
+void NEMS_waveform_state()
 {
-    
-    switch (NEMS_pulse_states) {
+    if (waveform.clock_index >= program.phase_duration) {
+        waveform.current_amplitude = 0;
+        LED_SetLow();
         
-        case NEMS_PULSE_OFF:
-                    waveform.current_amplitude = 0; 
-                    waveform.ramp_index = 0;
-                    waveform.clk_index = 0;
-                    LED_SetLow();
-                    break;
-            
-        case NEMS_RAMP_UP:                                
-                    LED_SetHigh();
-                    if (waveform.ramp_index >= waveform.ramp_up_pulses) { //Finished ramping up!
-                        waveform.current_amplitude = program.amplitude;
-                        NEMS_pulse_states = NEMS_PULSE_UP;                
-                        waveform.ramp_index=0;
-                        waveform.clk_index=0; 
-                        break;                
-                    } 
-                    
-                    if (waveform.clk_index >= program.phase_duration) {
-                        NEMS_pulse_states = NEMS_PULSE_OFF;                        
-                        waveform.current_amplitude = 0;
-                    }
-                    
-                    waveform.current_amplitude = waveform.ramp_amplitude[waveform.ramp_index];
-                    //waveform.ramp_index++;            
-                    break;                   
-            
-        case NEMS_PULSE_UP:
-                    LED_SetHigh();            
-                    if (waveform.clk_index >= program.phase_duration) {
-                        waveform.clk_index = 0;
-                        NEMS_pulse_states = NEMS_PULSE_OFF;
-                        //LED_SetLow();
-                        waveform.current_amplitude = 0;
-                    } 
-                    break;
-        default:
-            break;
-         
     }
-   
     
 }
 
@@ -414,6 +397,7 @@ void NEMS_start_program()
 
 void NEMS_stop_program()
 {
-    NEMS_states = NEMS_DISABLED;
+    NEMS_states = NEMS_DISABLED;    
     TMR0_StopTimer();   
+    DAC1_SetOutput(0);
 }
