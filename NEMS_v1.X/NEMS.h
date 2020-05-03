@@ -87,9 +87,7 @@ typedef struct {
     unsigned char ramp_down_amplitude[50];
     unsigned short ramp_down_pulses; //Number of pulses for ramp down
     unsigned short ramp_down_time;
-    //unsigned char ramp_up_steps; //Size of the ramp up step
-    //unsigned char ramp_down_steps; //Size of the ramp down step
-    //unsigned char ramp_amp_limited;
+  
     unsigned char ramp_index;
     unsigned char contractions_index;
     
@@ -142,7 +140,6 @@ void NEMS_start_program(void);
 void NEMS_stop_program(void);
 
 void NEMS_timer(void);
-void NEMS_waveform_state(void);
 
 #ifdef	__cplusplus
 }

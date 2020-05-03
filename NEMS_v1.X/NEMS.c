@@ -108,7 +108,8 @@ void NEMS_message_handler(void)
             NEMS_stop_program();
             break;
             
-        default: break;
+        default: //Unknown header
+            break; 
     }
     
 }
@@ -343,10 +344,12 @@ void NEMS_calculate_ramp(void)
 
 void NEMS_timer(void)
 {
+    //UPDATE OUTPUTS
     DAC1_SetOutput(waveform.current_amplitude);
   
     waveform.clock_index++;
     
+    //PULSE STATES
     if (waveform.clock_index >= waveform.num_clocks_per_pulse)  { //New Pulse Counted
         waveform.clock_index = 0;  
         
@@ -367,24 +370,13 @@ void NEMS_timer(void)
         }
     }
       
-    
+    //WAVEFORM STATES
     if (waveform.clock_index >= program.phase_duration) {
         waveform.current_amplitude = 0;
         LED_SetLow();
         
     }
-    
-    //NEMS_waveform_state();      
-}
-
-void NEMS_waveform_state()
-{
-    if (waveform.clock_index >= program.phase_duration) {
-        waveform.current_amplitude = 0;
-        LED_SetLow();
-        
-    }
-    
+          
 }
 
 void NEMS_start_program()

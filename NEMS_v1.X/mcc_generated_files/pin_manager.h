@@ -97,6 +97,46 @@
 #define LED_SetAnalogMode()      do { ANSELAbits.ANSA5 = 1; } while(0)
 #define LED_SetDigitalMode()     do { ANSELAbits.ANSA5 = 0; } while(0)
 
+// get/set NMES_PLUS aliases
+#define NMES_PLUS_TRIS                 TRISCbits.TRISC1
+#define NMES_PLUS_LAT                  LATCbits.LATC1
+#define NMES_PLUS_PORT                 PORTCbits.RC1
+#define NMES_PLUS_WPU                  WPUCbits.WPUC1
+#define NMES_PLUS_OD                   ODCONCbits.ODCC1
+#define NMES_PLUS_ANS                  ANSELCbits.ANSC1
+#define NMES_PLUS_SetHigh()            do { LATCbits.LATC1 = 1; } while(0)
+#define NMES_PLUS_SetLow()             do { LATCbits.LATC1 = 0; } while(0)
+#define NMES_PLUS_Toggle()             do { LATCbits.LATC1 = ~LATCbits.LATC1; } while(0)
+#define NMES_PLUS_GetValue()           PORTCbits.RC1
+#define NMES_PLUS_SetDigitalInput()    do { TRISCbits.TRISC1 = 1; } while(0)
+#define NMES_PLUS_SetDigitalOutput()   do { TRISCbits.TRISC1 = 0; } while(0)
+#define NMES_PLUS_SetPullup()          do { WPUCbits.WPUC1 = 1; } while(0)
+#define NMES_PLUS_ResetPullup()        do { WPUCbits.WPUC1 = 0; } while(0)
+#define NMES_PLUS_SetPushPull()        do { ODCONCbits.ODCC1 = 0; } while(0)
+#define NMES_PLUS_SetOpenDrain()       do { ODCONCbits.ODCC1 = 1; } while(0)
+#define NMES_PLUS_SetAnalogMode()      do { ANSELCbits.ANSC1 = 1; } while(0)
+#define NMES_PLUS_SetDigitalMode()     do { ANSELCbits.ANSC1 = 0; } while(0)
+
+// get/set NMES_MINUS aliases
+#define NMES_MINUS_TRIS                 TRISCbits.TRISC2
+#define NMES_MINUS_LAT                  LATCbits.LATC2
+#define NMES_MINUS_PORT                 PORTCbits.RC2
+#define NMES_MINUS_WPU                  WPUCbits.WPUC2
+#define NMES_MINUS_OD                   ODCONCbits.ODCC2
+#define NMES_MINUS_ANS                  ANSELCbits.ANSC2
+#define NMES_MINUS_SetHigh()            do { LATCbits.LATC2 = 1; } while(0)
+#define NMES_MINUS_SetLow()             do { LATCbits.LATC2 = 0; } while(0)
+#define NMES_MINUS_Toggle()             do { LATCbits.LATC2 = ~LATCbits.LATC2; } while(0)
+#define NMES_MINUS_GetValue()           PORTCbits.RC2
+#define NMES_MINUS_SetDigitalInput()    do { TRISCbits.TRISC2 = 1; } while(0)
+#define NMES_MINUS_SetDigitalOutput()   do { TRISCbits.TRISC2 = 0; } while(0)
+#define NMES_MINUS_SetPullup()          do { WPUCbits.WPUC2 = 1; } while(0)
+#define NMES_MINUS_ResetPullup()        do { WPUCbits.WPUC2 = 0; } while(0)
+#define NMES_MINUS_SetPushPull()        do { ODCONCbits.ODCC2 = 0; } while(0)
+#define NMES_MINUS_SetOpenDrain()       do { ODCONCbits.ODCC2 = 1; } while(0)
+#define NMES_MINUS_SetAnalogMode()      do { ANSELCbits.ANSC2 = 1; } while(0)
+#define NMES_MINUS_SetDigitalMode()     do { ANSELCbits.ANSC2 = 0; } while(0)
+
 // get/set RC4 procedures
 #define RC4_SetHigh()            do { LATCbits.LATC4 = 1; } while(0)
 #define RC4_SetLow()             do { LATCbits.LATC4 = 0; } while(0)
