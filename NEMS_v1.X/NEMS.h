@@ -60,6 +60,7 @@ typedef struct {
     unsigned char amplitude;  // [mA] 1 mA - 31 mA or higher (pp. 31, Chap 3)
     unsigned char frequency;  // [Hz] 15 - 50 (pp. 32, Chap 3))
     unsigned char phase_duration; // [us/100] ( 200us - 400us --> 20 - 40) (pp. 83, Chap 6)
+    unsigned char symmetry_factor; // symmetric = 1, asymmetric = phase_negative/ phase_duration ~ 2,3,4,.. 
     unsigned char ON_time;  // [s] 2s-4s (pp. 86, Chap 6) ON/OFF ~ 4:12, 1:3 
     unsigned char OFF_time; // [s] ON/OFF 1/3 to 1/5  over 10-15 contractions
     unsigned char contractions; // number of contractions depends on the program's total time (Total time/(ON_time+OFF_time))
@@ -75,16 +76,17 @@ typedef struct {
     unsigned short pulse_index;  // pulse index
     unsigned short current_pulse_index;
     
+    unsigned char  minus_phase_duration;
     unsigned short ON_time; // Number of pulses during ON_time    
     unsigned short OFF_time; // Number of ulses during OFF_time
     
     unsigned char current_amplitude; // current used amplitude
     
-    unsigned char ramp_up_amplitude[50];
+    unsigned char ramp_up_amplitude[100];
     unsigned short ramp_up_pulses; //Number of pulses for ramp up
     unsigned short ramp_up_time;
     
-    unsigned char ramp_down_amplitude[50];
+    unsigned char ramp_down_amplitude[100];
     unsigned short ramp_down_pulses; //Number of pulses for ramp down
     unsigned short ramp_down_time;
   
@@ -109,11 +111,20 @@ typedef enum {
 
 extern volatile NEMS_wave_state NEMS_wave_states;
 
+/*
 typedef enum {
     NEMS_PULSE_OFF,
     NEMS_RAMP_UP,    
     NEMS_PULSE_UP,
     NEMS_RAMP_DOWN
+} NEMS_pulse_state;
+*/
+  
+typedef enum {
+    NEMS_PULSE_OFF = 0,
+    NEMS_PLUS_UP,    
+    NEMS_REST,
+    NEMS_MINUS_UP
 } NEMS_pulse_state;
 
 extern volatile NEMS_pulse_state NEMS_pulse_states;
@@ -125,6 +136,7 @@ unsigned char NEMS_get_packet(unsigned char* pt);
 void NEMS_set_amplitude(void);
 void NEMS_set_frequency(void);
 void NEMS_set_phase_duration(void);
+void NEMS_set_symmetry_factor(void);
 void NEMS_set_ON_time(void);
 void NEMS_set_OFF_time(void);
 void NEMS_set_contractions(void);

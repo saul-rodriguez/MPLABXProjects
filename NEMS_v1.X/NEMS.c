@@ -26,6 +26,7 @@ void NEMS_initialize(void)
     program.contractions = 5;
     program.ramp_up = 10;
     program.ramp_down = 10;
+    program.symmetry_factor = 1;
     
     //Clear all program variables
     /*
@@ -64,8 +65,12 @@ void NEMS_message_handler(void)
             NEMS_set_frequency();
             break;
             
-        case 'd': // Set phase duration [us/10] ( 200us - 400us --> 20 - 40) (pp. 83, Chap 6)
+        case 'd': // Set phase duration [us/100] ( 200us - 400us --> 20 - 40) (pp. 83, Chap 6)
             NEMS_set_phase_duration();
+            break;
+            
+        case 'k': // Set symmetry factor
+            NEMS_set_symmetry_factor();
             break;
             
         case 'o': // Set ON time [s] 2s-4s (pp. 86, Chap 6) ON/OFF ~ 4:12, 1:3 
@@ -164,6 +169,17 @@ void NEMS_set_phase_duration(void)
     }
 }
 
+void NEMS_set_symmetry_factor(void)
+{
+    if(NEMS_get_packet(&program.symmetry_factor)) {
+        _puts("k-ok ");
+        
+    } else {
+        _puts("k-err ");
+    }
+
+}
+
 void NEMS_set_ON_time(void)
 {
     if(NEMS_get_packet(&program.ON_time)) {
@@ -236,6 +252,11 @@ void NEMS_get_program(void)
     _puts(aux);
     _puts("\n");
     
+     _sprintf_u8b(aux,program.symmetry_factor);
+    _puts("Symmetry factor: ");
+    _puts(aux);
+    _puts("\n");
+    
     _sprintf_u8b(aux,program.ON_time);
     _puts("ON time (s) : ");
     _puts(aux);
@@ -271,6 +292,7 @@ void NEMS_save_program(void)
     eeprom_write(addr++,program.amplitude);
     eeprom_write(addr++,program.frequency);
     eeprom_write(addr++,program.phase_duration);
+    eeprom_write(addr++,program.symmetry_factor);
     eeprom_write(addr++,program.ON_time);
     eeprom_write(addr++,program.OFF_time);
     eeprom_write(addr++,program.ramp_up);
@@ -290,13 +312,14 @@ void NEMS_load_program(void)
     program.amplitude = eeprom_read(addr++);
     program.frequency = eeprom_read(addr++);
     program.phase_duration = eeprom_read(addr++);
+    program.symmetry_factor = eeprom_read(addr++);
     program.ON_time = eeprom_read(addr++);
     program.OFF_time = eeprom_read(addr++);
     program.ramp_up = eeprom_read(addr++);
     program.ramp_down = eeprom_read(addr++);
     program.contractions = eeprom_read(addr);
     
-    _puts("l-ok");
+    _puts("l-ok ");
 }
 
 void NEMS_recalculate_program(void)
@@ -315,6 +338,9 @@ void NEMS_recalculate_program(void)
     waveform.OFF_time = program.OFF_time*program.frequency + waveform.ON_time;       
     
     waveform.current_amplitude = 0;
+    
+    waveform.minus_phase_duration = program.phase_duration*program.symmetry_factor + program.phase_duration;
+    
     
     waveform.ramp_index = 0;
    // waveform.ramp_amplitude = 0;
@@ -346,35 +372,74 @@ void NEMS_timer(void)
 {
     //UPDATE OUTPUTS
     DAC1_SetOutput(waveform.current_amplitude);
-  
-    waveform.clock_index++;
     
+    switch(NEMS_pulse_states) {
+        case NEMS_PULSE_OFF:
+            NMES_MINUS_SetLow();
+            NMES_PLUS_SetLow();                    
+            break;
+        case NEMS_PLUS_UP:
+            NMES_MINUS_SetLow();
+            NMES_PLUS_SetHigh();            
+            break;
+        case NEMS_MINUS_UP:
+            NMES_PLUS_SetLow();
+            NMES_MINUS_SetHigh();
+            break;
+        case NEMS_REST:
+            break;
+        default:
+            break;
+    }
+  
     //PULSE STATES
-    if (waveform.clock_index >= waveform.num_clocks_per_pulse)  { //New Pulse Counted
+    waveform.clock_index++;
+        
+    if (waveform.clock_index >= waveform.num_clocks_per_pulse)  { //New Pulse should start 
         waveform.clock_index = 0;  
         
         waveform.pulse_index++;
+        
+        NEMS_pulse_states = NEMS_PLUS_UP;
     
         if (waveform.pulse_index < waveform.ramp_up_time) {
             waveform.current_amplitude = waveform.ramp_up_amplitude[waveform.pulse_index];
-            LED_SetHigh();
+            //LED_SetHigh();
+        
         } else if (waveform.pulse_index < waveform.ON_time) {
             waveform.current_amplitude = program.amplitude;
-            LED_SetHigh();
+            //LED_SetHigh();
+        
         } else if (waveform.pulse_index < waveform.ramp_down_time) {
             waveform.current_amplitude = waveform.ramp_down_amplitude[waveform.pulse_index - waveform.ON_time];
+        
         } else if (waveform.pulse_index < waveform.OFF_time) {
             waveform.current_amplitude = 0;
-        } else {
+            NEMS_pulse_states = NEMS_PULSE_OFF;
+        
+        } else { //single repetition finished
             waveform.pulse_index = 0;
+        
         }
+        
     }
       
     //WAVEFORM STATES
-    if (waveform.clock_index >= program.phase_duration) {
+    /*if (waveform.clock_index >= program.phase_duration) {
         waveform.current_amplitude = 0;
-        LED_SetLow();
+        //LED_SetLow();
         
+    }*/
+    
+    if (NEMS_pulse_states != NEMS_PULSE_OFF) {
+        if (waveform.clock_index < program.phase_duration) {        
+            NEMS_pulse_states = NEMS_PLUS_UP;
+        } else if (waveform.clock_index < waveform.minus_phase_duration) {
+            NEMS_pulse_states = NEMS_MINUS_UP;
+        } else {
+            NEMS_pulse_states = NEMS_PULSE_OFF;
+            waveform.current_amplitude = 0;
+        }
     }
           
 }
@@ -385,6 +450,8 @@ void NEMS_start_program()
     
     NEMS_states = NEMS_ENABLED;
     TMR0_StartTimer();
+    
+    _puts("n-ok ");
 }
 
 void NEMS_stop_program()
@@ -392,4 +459,6 @@ void NEMS_stop_program()
     NEMS_states = NEMS_DISABLED;    
     TMR0_StopTimer();   
     DAC1_SetOutput(0);
+    
+    _puts("N-ok ");
 }
