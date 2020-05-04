@@ -54,7 +54,8 @@ extern "C" {
     // TODO If C++ is being used, regular C code needs function names to have C 
     // linkage so the functions can be used by the c code. 
 
-#define NEMS_TIMER_FREQUENCY 10000
+#define NEMS_TIMER_FREQUENCY 20000
+#define SILENCE_PERIOD 1    // 1 CYCKE if NEMS_TIMER_FREQUENCY
     
 typedef struct {
     unsigned char amplitude;  // [mA] 1 mA - 31 mA or higher (pp. 31, Chap 3)
@@ -76,6 +77,7 @@ typedef struct {
     unsigned short pulse_index;  // pulse index
     unsigned short current_pulse_index;
     
+    unsigned char  silence_phase_duration;
     unsigned char  minus_phase_duration;
     unsigned short ON_time; // Number of pulses during ON_time    
     unsigned short OFF_time; // Number of ulses during OFF_time
@@ -110,21 +112,12 @@ typedef enum {
 } NEMS_wave_state;
 
 extern volatile NEMS_wave_state NEMS_wave_states;
-
-/*
-typedef enum {
-    NEMS_PULSE_OFF,
-    NEMS_RAMP_UP,    
-    NEMS_PULSE_UP,
-    NEMS_RAMP_DOWN
-} NEMS_pulse_state;
-*/
   
 typedef enum {
-    NEMS_PULSE_OFF = 0,
-    NEMS_PLUS_UP,    
-    NEMS_REST,
-    NEMS_MINUS_UP
+    NEMS_PULSE_OFF = 0b00000000,
+    NEMS_PLUS_UP = 0b00000010,  
+    NEMS_REST = 0b00000001,
+    NEMS_MINUS_UP = 0b0000100
 } NEMS_pulse_state;
 
 extern volatile NEMS_pulse_state NEMS_pulse_states;

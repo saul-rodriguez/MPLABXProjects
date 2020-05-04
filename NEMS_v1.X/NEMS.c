@@ -339,13 +339,11 @@ void NEMS_recalculate_program(void)
     
     waveform.current_amplitude = 0;
     
-    waveform.minus_phase_duration = program.phase_duration*program.symmetry_factor + program.phase_duration;
+    waveform.silence_phase_duration = program.phase_duration + SILENCE_PERIOD;
+    waveform.minus_phase_duration = program.phase_duration*program.symmetry_factor + program.phase_duration + SILENCE_PERIOD;
     
     
     waveform.ramp_index = 0;
-   // waveform.ramp_amplitude = 0;
-    
-  //  waveform.frequency_index = 0;    
     waveform.contractions_index = 0;
     
     NEMS_calculate_ramp();
@@ -369,29 +367,11 @@ void NEMS_calculate_ramp(void)
 }
 
 void NEMS_timer(void)
-{
+{   
     //UPDATE OUTPUTS
     DAC1_SetOutput(waveform.current_amplitude);
-    
-    switch(NEMS_pulse_states) {
-        case NEMS_PULSE_OFF:
-            NMES_MINUS_SetLow();
-            NMES_PLUS_SetLow();                    
-            break;
-        case NEMS_PLUS_UP:
-            NMES_MINUS_SetLow();
-            NMES_PLUS_SetHigh();            
-            break;
-        case NEMS_MINUS_UP:
-            NMES_PLUS_SetLow();
-            NMES_MINUS_SetHigh();
-            break;
-        case NEMS_REST:
-            break;
-        default:
-            break;
-    }
-  
+    LATC = NEMS_pulse_states;
+   
     //PULSE STATES
     waveform.clock_index++;
         
@@ -404,12 +384,10 @@ void NEMS_timer(void)
     
         if (waveform.pulse_index < waveform.ramp_up_time) {
             waveform.current_amplitude = waveform.ramp_up_amplitude[waveform.pulse_index];
-            //LED_SetHigh();
-        
+                    
         } else if (waveform.pulse_index < waveform.ON_time) {
             waveform.current_amplitude = program.amplitude;
-            //LED_SetHigh();
-        
+                    
         } else if (waveform.pulse_index < waveform.ramp_down_time) {
             waveform.current_amplitude = waveform.ramp_down_amplitude[waveform.pulse_index - waveform.ON_time];
         
@@ -418,22 +396,16 @@ void NEMS_timer(void)
             NEMS_pulse_states = NEMS_PULSE_OFF;
         
         } else { //single repetition finished
-            waveform.pulse_index = 0;
-        
+            waveform.pulse_index = 0;        
         }
         
     }
-      
-    //WAVEFORM STATES
-    /*if (waveform.clock_index >= program.phase_duration) {
-        waveform.current_amplitude = 0;
-        //LED_SetLow();
-        
-    }*/
     
     if (NEMS_pulse_states != NEMS_PULSE_OFF) {
         if (waveform.clock_index < program.phase_duration) {        
             NEMS_pulse_states = NEMS_PLUS_UP;
+        }  else if (waveform.clock_index < waveform.silence_phase_duration) {
+            NEMS_pulse_states = NEMS_REST;
         } else if (waveform.clock_index < waveform.minus_phase_duration) {
             NEMS_pulse_states = NEMS_MINUS_UP;
         } else {
