@@ -5,6 +5,7 @@
         <group>
             <file>file:/home/saul/MPLABXProjects/NEMS_v1.X/mcc_generated_files/interrupt_manager.c</file>
             <file>file:/home/saul/MPLABXProjects/NEMS_v1.X/NEMS.h</file>
+            <file>file:/home/saul/MPLABXProjects/NEMS_v1.X/mcc_generated_files/eusart1.c</file>
             <file>file:/home/saul/MPLABXProjects/NEMS_v1.X/NEMS.c</file>
             <file>file:/home/saul/MPLABXProjects/NEMS_v1.X/mcc_generated_files/pin_manager.c</file>
             <file>file:/home/saul/MPLABXProjects/NEMS_v1.X/mcc_generated_files/tmr0.c</file>

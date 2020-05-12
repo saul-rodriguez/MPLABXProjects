@@ -82,6 +82,8 @@ typedef struct {
     unsigned short ON_time; // Number of pulses during ON_time    
     unsigned short OFF_time; // Number of ulses during OFF_time
     
+    unsigned char program_amplitude;
+    unsigned char pulse_amplitude;
     unsigned char current_amplitude; // current used amplitude
     
     unsigned char ramp_up_amplitude[100];

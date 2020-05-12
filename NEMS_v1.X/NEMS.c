@@ -18,9 +18,9 @@ void NEMS_initialize(void)
            
     
     //Only for testing purposes
-    program.amplitude = 31;
-    program.frequency = 50;
-    program.phase_duration = 10;
+    program.amplitude = 1;
+    program.frequency = 35;
+    program.phase_duration = 1;
     program.ON_time = 2;
     program.OFF_time = 6;
     program.contractions = 5;
@@ -248,7 +248,7 @@ void NEMS_get_program(void)
     _puts("\n");
     
     _sprintf_u8b(aux,program.phase_duration);
-    _puts("Phase duration (us/100): ");
+    _puts("Phase duration (us/50): ");
     _puts(aux);
     _puts("\n");
     
@@ -337,7 +337,9 @@ void NEMS_recalculate_program(void)
     waveform.ramp_down_time = waveform.ramp_down_pulses + waveform.ON_time;    
     waveform.OFF_time = program.OFF_time*program.frequency + waveform.ON_time;       
     
+    waveform.pulse_amplitude = 0;
     waveform.current_amplitude = 0;
+    waveform.program_amplitude = program.amplitude;
     
     waveform.silence_phase_duration = program.phase_duration + SILENCE_PERIOD;
     waveform.minus_phase_duration = program.phase_duration*program.symmetry_factor + program.phase_duration + SILENCE_PERIOD;
@@ -358,11 +360,11 @@ void NEMS_calculate_ramp(void)
     unsigned char i;
     
     for (i = 0; i < waveform.ramp_up_pulses; i++) {
-        waveform.ramp_up_amplitude[i] = (unsigned short)(i*program.amplitude)/waveform.ramp_up_pulses;
+        waveform.ramp_up_amplitude[i] = (unsigned short)(i*waveform.program_amplitude)/waveform.ramp_up_pulses;
     }
     
     for (i = 0; i < waveform.ramp_down_pulses; i++) {
-        waveform.ramp_down_amplitude[i] = (unsigned short)((waveform.ramp_down_pulses-i-1)*program.amplitude)/waveform.ramp_down_pulses;
+        waveform.ramp_down_amplitude[i] = (unsigned short)((waveform.ramp_down_pulses-i-1)*waveform.program_amplitude)/waveform.ramp_down_pulses;
     }
 }
 
@@ -383,16 +385,16 @@ void NEMS_timer(void)
         NEMS_pulse_states = NEMS_PLUS_UP;
     
         if (waveform.pulse_index < waveform.ramp_up_time) {
-            waveform.current_amplitude = waveform.ramp_up_amplitude[waveform.pulse_index];
+            waveform.pulse_amplitude = waveform.ramp_up_amplitude[waveform.pulse_index];
                     
         } else if (waveform.pulse_index < waveform.ON_time) {
-            waveform.current_amplitude = program.amplitude;
+            waveform.pulse_amplitude = waveform.program_amplitude;
                     
         } else if (waveform.pulse_index < waveform.ramp_down_time) {
-            waveform.current_amplitude = waveform.ramp_down_amplitude[waveform.pulse_index - waveform.ON_time];
+            waveform.pulse_amplitude = waveform.ramp_down_amplitude[waveform.pulse_index - waveform.ON_time];
         
         } else if (waveform.pulse_index < waveform.OFF_time) {
-            waveform.current_amplitude = 0;
+            waveform.pulse_amplitude = 0;
             NEMS_pulse_states = NEMS_PULSE_OFF;
         
         } else { //single repetition finished
@@ -402,12 +404,18 @@ void NEMS_timer(void)
     }
     
     if (NEMS_pulse_states != NEMS_PULSE_OFF) {
-        if (waveform.clock_index < program.phase_duration) {        
+        if (waveform.clock_index < program.phase_duration) {               
             NEMS_pulse_states = NEMS_PLUS_UP;
+            waveform.current_amplitude = waveform.pulse_amplitude;
+            
         }  else if (waveform.clock_index < waveform.silence_phase_duration) {
             NEMS_pulse_states = NEMS_REST;
+            waveform.current_amplitude = 0;
+            
         } else if (waveform.clock_index < waveform.minus_phase_duration) {
             NEMS_pulse_states = NEMS_MINUS_UP;
+            waveform.current_amplitude = waveform.pulse_amplitude;
+            
         } else {
             NEMS_pulse_states = NEMS_PULSE_OFF;
             waveform.current_amplitude = 0;
