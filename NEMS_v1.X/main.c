@@ -80,7 +80,20 @@ void main(void)
     __delay_ms(200);
     LED_SetLow();
     
-   
+    //ONLY FOR FINE TIMING TESTS, DELETE OR COMMENT THIS CODE
+    /*
+    NEMS_recalculate_program();
+    NEMS_start_program();
+    
+    while (1) {
+        NEMS_timer();  // 22.25 us running at 32 MHz (8 Mcycles/s)
+        LED_SetHigh();
+        __delay_ms(200);
+        LED_SetLow();
+    }
+    //ONLY FOR TIMING TEST ENDS HERE
+   */
+    
     while (1)  {
         if(EUSART1_is_rx_ready()) {
             NEMS_message_handler();            
