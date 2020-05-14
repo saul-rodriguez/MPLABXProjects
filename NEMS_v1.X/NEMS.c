@@ -65,11 +65,11 @@ void NEMS_message_handler(void)
             NEMS_set_frequency();
             break;
             
-        case 'd': // Set phase duration [us/100] ( 200us - 400us --> 20 - 40) (pp. 83, Chap 6)
+        case 'd': // Set phase duration [us/50] ( 200us - 400us --> 4 - 8) (pp. 83, Chap 6)
             NEMS_set_phase_duration();
             break;
             
-        case 'k': // Set symmetry factor
+        case 'k': // // symmetric = 1, asymmetric = phase_negative/ phase_duration = [2,4,8]
             NEMS_set_symmetry_factor();
             break;
             
@@ -341,6 +341,15 @@ void NEMS_recalculate_program(void)
     waveform.current_amplitude = 0;
     waveform.program_amplitude = program.amplitude;
     
+    switch (program.symmetry_factor) {
+        case 1: waveform.symmetry_divider = 0; break;
+        case 2: waveform.symmetry_divider = 1; break;
+        case 4: waveform.symmetry_divider = 2; break;
+        case 8: waveform.symmetry_divider = 3; break;
+        default: waveform.symmetry_divider = 0;
+    }
+    
+        
     waveform.silence_phase_duration = program.phase_duration + SILENCE_PERIOD;
     waveform.minus_phase_duration = program.phase_duration*program.symmetry_factor + program.phase_duration + SILENCE_PERIOD;
     
@@ -414,7 +423,7 @@ void NEMS_timer(void)
             
         } else if (waveform.clock_index < waveform.minus_phase_duration) {
             NEMS_pulse_states = NEMS_MINUS_UP;
-            waveform.current_amplitude = waveform.pulse_amplitude;
+            waveform.current_amplitude = waveform.pulse_amplitude >> waveform.symmetry_divider;
             
         } else {
             NEMS_pulse_states = NEMS_PULSE_OFF;

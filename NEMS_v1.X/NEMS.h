@@ -60,8 +60,8 @@ extern "C" {
 typedef struct {
     unsigned char amplitude;  // [mA] 1 mA - 31 mA or higher (pp. 31, Chap 3)
     unsigned char frequency;  // [Hz] 15 - 50 (pp. 32, Chap 3))
-    unsigned char phase_duration; // [us/100] ( 200us - 400us --> 20 - 40) (pp. 83, Chap 6)
-    unsigned char symmetry_factor; // symmetric = 1, asymmetric = phase_negative/ phase_duration ~ 2,3,4,.. 
+    unsigned char phase_duration; // [us/50] ( 200us - 400us --> 4 - 8) (pp. 83, Chap 6)
+    unsigned char symmetry_factor; // symmetric = 1, asymmetric = phase_negative/ phase_duration = [2,4,8]
     unsigned char ON_time;  // [s] 2s-4s (pp. 86, Chap 6) ON/OFF ~ 4:12, 1:3 
     unsigned char OFF_time; // [s] ON/OFF 1/3 to 1/5  over 10-15 contractions
     unsigned char contractions; // number of contractions depends on the program's total time (Total time/(ON_time+OFF_time))
@@ -84,6 +84,7 @@ typedef struct {
     
     unsigned char program_amplitude;
     unsigned char pulse_amplitude;
+    unsigned char symmetry_divider;
     unsigned char current_amplitude; // current used amplitude
     
     unsigned char ramp_up_amplitude[100];
