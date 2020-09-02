@@ -34,4 +34,4 @@ MP_AS_DIR="/pkg/microchip/xc8/v2.10/bin"
 MP_LD_DIR="/pkg/microchip/xc8/v2.10/bin"
 MP_AR_DIR="/pkg/microchip/xc8/v2.10/bin"
 # MP_BC_DIR is not defined
-DFP_DIR="/home/saul/.mchp_packs/Microchip/PIC12-16F1xxx_DFP/1.0.42"
+DFP_DIR="/pkg/microchip/mplabx/v5.35/packs/Microchip/PIC16F1xxxx_DFP/1.3.117"
