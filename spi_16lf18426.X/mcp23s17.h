@@ -41,9 +41,20 @@ extern "C" {
     
 extern unsigned char SPI_address;
 
+extern volatile unsigned char SPI_write_val;
+
+typedef enum {
+    IDLE,
+    SEND1,
+    SEND2,
+    SEND3
+} MCP23S17_COMMAND; 
+extern volatile MCP23S17_COMMAND mcp23s17_command;
+
 void setAddress(unsigned char add);
 void setTrisA(unsigned char tris); 
 void writePortA(unsigned char val);
+void writePortA_nowait(void);
 
 
 #ifdef	__cplusplus

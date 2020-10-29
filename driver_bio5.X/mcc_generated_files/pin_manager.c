@@ -13,11 +13,11 @@
   Description:
     This header file provides implementations for pin APIs for all pins selected in the GUI.
     Generation Information :
-        Product Revision  :  PIC10 / PIC12 / PIC16 / PIC18 MCUs - 1.81.4
-        Device            :  PIC16LF18426
+        Product Revision  :  PIC10 / PIC12 / PIC16 / PIC18 MCUs - 1.81.6
+        Device            :  PIC16LF1823
         Driver Version    :  2.11
     The generated drivers are tested against the following:
-        Compiler          :  XC8 2.20 and above
+        Compiler          :  XC8 2.30 and above
         MPLAB             :  MPLAB X 5.40
 
     Copyright (c) 2013 - 2015 released Microchip Technology Inc.  All rights reserved.
@@ -63,52 +63,33 @@ void PIN_MANAGER_Initialize(void)
     /**
     TRISx registers
     */
-    TRISA = 0x1B;
-    TRISC = 0x2C;
+    TRISA = 0x1F;
+    TRISC = 0x33;
 
     /**
     ANSELx registers
     */
-    ANSELC = 0x1A;
-    ANSELA = 0x37;
+    ANSELC = 0x0F;
+    ANSELA = 0x17;
 
     /**
     WPUx registers
     */
     WPUA = 0x00;
     WPUC = 0x00;
+    OPTION_REGbits.nWPUEN = 1;
+
 
     /**
-    ODx registers
+    APFCONx registers
     */
-    ODCONA = 0x00;
-    ODCONC = 0x00;
-
-    /**
-    SLRCONx registers
-    */
-    SLRCONA = 0x37;
-    SLRCONC = 0x3F;
-
-    /**
-    INLVLx registers
-    */
-    INLVLA = 0x3F;
-    INLVLC = 0x3F;
-
+    APFCON = 0x00;
 
 
 
 
    
     
-	
-    RC0PPS = 0x13;   //RC0->MSSP1:SCK1;    
-    SSP1CLKPPS = 0x10;   //RC0->MSSP1:SCK1;    
-    RC1PPS = 0x14;   //RC1->MSSP1:SDO1;    
-    RC4PPS = 0x0F;   //RC4->EUSART1:TX1;    
-    SSP1DATPPS = 0x12;   //RC2->MSSP1:SDI1;    
-    RX1DTPPS = 0x15;   //RC5->EUSART1:RX1;    
 }
   
 void PIN_MANAGER_IOC(void)

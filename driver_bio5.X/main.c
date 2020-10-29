@@ -14,7 +14,7 @@
     This header file provides implementations for driver APIs for all modules selected in the GUI.
     Generation Information :
         Product Revision  :  PIC10 / PIC12 / PIC16 / PIC18 MCUs - 1.81.4
-        Device            :  PIC16LF18426
+        Device            :  PIC16LF1823
         Driver Version    :  2.00
 */
 
@@ -42,19 +42,23 @@
 */
 
 #include "mcc_generated_files/mcc.h"
-#include "mcp23s17.h"
-#include "spi_nowait.h"
+#include "bio4.h"
+
 
 /*
                          Main application
  */
 void main(void)
 {
-    unsigned char serial_command;
     // initialize the device
     SYSTEM_Initialize();
     
-    
+    BIO_turnOffADC();
+    #ifdef INDUCTIVE_POW
+    BIO_changeTxPolarity();
+    #endif
+ 
+
     // When using interrupts, you need to set the Global and Peripheral Interrupt Enable bits
     // Use the following macros to:
 
@@ -69,59 +73,35 @@ void main(void)
 
     // Disable the Peripheral Interrupts
     //INTERRUPT_PeripheralInterruptDisable();
-
-    LED_SetHigh();
-    __delay_ms(100);
-    LED_SetLow();
-         
-    SPI1_Open(SPI1_DEFAULT);
-    setAddress(0x20);    
-    
-    setTrisA(0x00);
-    
-    
-    //Setup no wait mode state flags
-    SPI_nowait_initialize();
-    mcp23s17_command = IDLE;
-    
+/*
     while (1)
     {
+        
+        __delay_ms(100);
+        RESETN_SetHigh();
+        __delay_ms(100);
+        RESETN_SetLow();
+        
         // Add your application code
-        /*
-         __delay_ms(100);
-         writePortA(0xff);         
-         __delay_ms(100);
-         writePortA(0x00);               
-         */
+    }
+ */
+     while (1)
+    {
+        // Add your application code   
         
-        if (SPI_state == SPI_EXCHANGE) {
-            if (PIR3bits.SSP1IF) { 
-                 PIR3bits.SSP1IF = 0;    
-                 SPI_state = SPI_IDLE;
-                 writePortA_nowait();                 
+         if(EUSART_is_rx_ready())   {
+             BIO_messageHandler();
+             /*
+                rxData = EUSART1_Read();
+                if(EUSART1_is_tx_ready())
+                {
+                    EUSART1_Write(rxData);
+                }
+              */
             }
-        }
-        
-        if(EUSART1_is_rx_ready()) {
-            serial_command = EUSART1_Read();
-            
-            switch (serial_command) {
-                case 'f':
-                        SPI_write_val = 0xff;
-                        writePortA_nowait(); 
-                        break;
-                case '0':
-                        SPI_write_val = 0x00;
-                        writePortA_nowait();
-                        break;
-                default:
-                        break;                                
-            }
-            
-            
-        }
         
     }
+
 }
 /**
  End of File
