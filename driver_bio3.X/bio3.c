@@ -3,7 +3,8 @@
 //#define WAIT __delay_ms(1)
 //#define WAIT __delay_ms(2)
 //#define WAIT __delay_us(2)
-#define WAIT __delay_us(5)
+//#define WAIT __delay_us(5)
+#define WAIT __delay_us(50)
 //#define WAIT ;
 
 
