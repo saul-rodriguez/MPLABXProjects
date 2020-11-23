@@ -1,18 +1,18 @@
-Microchip MPLAB XC8 Compiler V2.31
+Microchip MPLAB XC8 Compiler V2.10 ()
 
 Linker command line:
 
--W-3 --edf=/opt/microchip/xc8/v2.31/pic/dat/en_msgs.txt -cn \
+-W-3 --edf=/pkg/microchip/xc8/v2.10/pic/dat/en_msgs.txt -cs \
   -h+dist/default/production/driver_bio3.X.production.sym \
   --cmf=dist/default/production/driver_bio3.X.production.cmf -z -Q16LF1823 \
-  -o/tmp/xcXpMlGmm --defsym=__MPLAB_BUILD=1 \
-  -Mdist/default/production/driver_bio3.X.production.map -E1 \
-  -ver=XC8 Compiler --acfsm=1493 -ASTACK=02050h-0206Fh -pstack=STACK \
-  -ACODE=00h-07FFh -ASTRCODE=00h-07FFh -ASTRING=00h-0FFhx8 \
-  -ACONST=00h-0FFhx8 -AENTRY=00h-0FFhx8 -ACOMMON=070h-07Fh \
-  -ABANK0=020h-06Fh -ABANK1=0A0h-0BFh -ABIGRAM=02000h-0206Fh \
-  -ARAM=020h-06Fh,0A0h-0BFh -AABS1=020h-07Fh,0A0h-0BFh -ASFR0=00h-01Fh \
-  -ASFR1=080h-09Fh -ASFR2=0100h-016Fh -ASFR3=0180h-01EFh -ASFR4=0200h-026Fh \
+  -o/tmp/xcXev4Jir --defsym=__MPLAB_BUILD=1 \
+  -Mdist/default/production/driver_bio3.X.production.map -E1 -ver=XC8 \
+  --acfsm=1493 -ASTACK=02050h-0206Fh -pstack=STACK -ACODE=00h-07FFh \
+  -ASTRCODE=00h-07FFh -ASTRING=00h-0FFhx8 -ACONST=00h-0FFhx8 \
+  -AENTRY=00h-0FFhx8 -ACOMMON=070h-07Fh -ABANK0=020h-06Fh -ABANK1=0A0h-0BFh \
+  -ABIGRAM=02000h-0206Fh -ARAM=020h-06Fh,0A0h-0BFh \
+  -AABS1=020h-07Fh,0A0h-0BFh -ASFR0=00h-01Fh -ASFR1=080h-09Fh \
+  -ASFR2=0100h-016Fh -ASFR3=0180h-01EFh -ASFR4=0200h-026Fh \
   -ASFR5=0280h-02EFh -ASFR6=0300h-036Fh -ASFR7=0380h-03EFh \
   -ASFR8=0400h-046Fh -ASFR9=0480h-04EFh -ASFR10=0500h-056Fh \
   -ASFR11=0580h-05EFh -ASFR12=0600h-066Fh -ASFR13=0680h-06EFh \
@@ -22,11 +22,11 @@ Linker command line:
   -ASFR23=0B80h-0BEFh -ASFR24=0C00h-0C6Fh -ASFR25=0C80h-0CEFh \
   -ASFR26=0D00h-0D6Fh -ASFR27=0D80h-0DEFh -ASFR28=0E00h-0E6Fh \
   -ASFR29=0E80h-0EEFh -ASFR30=0F00h-0F6Fh -ASFR31=0F80h-0FEFh \
-  -ACONFIG=08007h-08008h -DCONFIG=2 -AIDLOC=08000h-08003h -DIDLOC=2 \
-  -AEEDATA=00h-0FFh/0F000h -peeprom_data=EEDATA -DEEDATA=2 -DCODE=2 \
-  -DSTRCODE=2 -DSTRING=2 -DCONST=2 -DENTRY=2 \
   -preset_vec=00h,intentry=04h,init,end_init -ppowerup=CODE -pcinit=CODE \
-  -pfunctab=ENTRY -k /tmp/xcXJKnKDK.o \
+  -pfunctab=ENTRY -ACONFIG=08007h-08008h -pconfig=CONFIG -DCONFIG=2 \
+  -AIDLOC=08000h-08003h -pidloc=IDLOC -DIDLOC=2 -AEEDATA=00h-0FFh/0F000h \
+  -peeprom_data=EEDATA -DEEDATA=2 -DCODE=2 -DSTRCODE=2 -DSTRING=2 -DCONST=2 \
+  -DENTRY=2 -k /tmp/xcXGxA69W.o \
   dist/default/production/driver_bio3.X.production.o 
 
 Object code version is 3.11
@@ -36,14 +36,13 @@ Machine type is 16LF1823
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-/tmp/xcXJKnKDK.o
+/tmp/xcXGxA69W.o
                 end_init                             52       52        1        8       0
                 reset_vec                             0        0        1        0       0
-                config                             8007     8007        2        0       4
+                config                             8007     8007        2    1000E       0
 dist/default/production/driver_bio3.X.production.o
                 cinit                                53       53        D        8       0
                 intentry                              4        4       4E        8       0
-                config                             8007     8007        2        0       4
                 text21                              33F      33F        F      482       0
                 text20                              387      387        3      6C2       0
                 text19                              30F      30F       11      482       0
@@ -198,7 +197,7 @@ TOTAL           Name                               Link     Load   Length     Sp
         CLASS   SFR31          
 
         CLASS   CONFIG         
-                config                             8007     8007        2         4
+                config                             8007     8007        2         0
 
         CLASS   IDLOC          
 
@@ -269,13 +268,14 @@ TOTAL           Name                               Link     Load   Length     Sp
 SEGMENTS        Name                           Load    Length   Top    Selector   Space  Class     Delta
 
                 reset_vec                      000000  000001  000001         0       0  CODE        2
-                stringtext1                    000215  00002C  000241       42A       0  STRCODE     2
-                maintext                       000241  00010D  00034E       482       0  CODE        2
-                text8                          000361  000029  00038A       6C2       0  CODE        2
-                stringtext2                    00034E  000013  000361       69C       0  STRCODE     2
-                cstackCOMMON                   000070  00000A  00007A        70       1  COMMON      1
                 intentry                       000004  000211  000215         8       0  CODE        2
                 bssBANK0                       000020  000050  000070        20       1  BANK0       1
+                cstackCOMMON                   000070  00000A  00007A        70       1  COMMON      1
+                stringtext1                    000215  00002C  000241       42A       0  STRCODE     2
+                maintext                       000241  00010D  00034E       482       0  CODE        2
+                stringtext2                    00034E  000013  000361       69C       0  STRCODE     2
+                text8                          000361  000029  00038A       6C2       0  CODE        2
+                config                         008007  000002  008009     1000E       0  CONFIG      2
 
 
 UNUSED ADDRESS RANGES
@@ -396,6 +396,21 @@ _USART_tx_index                  bssCOMMON    00079
 _USART_tx_length                 bssCOMMON    00078
 _WPUA                            (abs)        0020C
 _WPUC                            (abs)        0020E
+__CFG_BOREN$OFF                  (abs)        00000
+__CFG_BORV$HI                    (abs)        00000
+__CFG_CLKOUTEN$OFF               (abs)        00000
+__CFG_CP$OFF                     (abs)        00000
+__CFG_CPD$OFF                    (abs)        00000
+__CFG_FCMEN$OFF                  (abs)        00000
+__CFG_FOSC$INTOSC                (abs)        00000
+__CFG_IESO$ON                    (abs)        00000
+__CFG_LVP$OFF                    (abs)        00000
+__CFG_MCLRE$ON                   (abs)        00000
+__CFG_PLLEN$OFF                  (abs)        00000
+__CFG_PWRTE$OFF                  (abs)        00000
+__CFG_STVREN$ON                  (abs)        00000
+__CFG_WDTE$ON                    (abs)        00000
+__CFG_WRT$OFF                    (abs)        00000
 __Habs1                          abs1         00000
 __Hbank0                         bank0        00000
 __Hbank1                         bank1        00000
@@ -442,6 +457,7 @@ __HcstackCOMMON                  cstackCOMMON 00000
 __Heeprom_data                   eeprom_data  00000
 __Hend_init                      end_init     00053
 __Hfunctab                       functab      00000
+__Hidloc                         idloc        00000
 __Hinit                          init         00052
 __Hintentry                      intentry     00052
 __Hmaintext                      maintext     00000
@@ -480,11 +496,10 @@ __Hsfr6                          sfr6         00000
 __Hsfr7                          sfr7         00000
 __Hsfr8                          sfr8         00000
 __Hsfr9                          sfr9         00000
-__Hspace_0                       (abs)        0038A
+__Hspace_0                       (abs)        08009
 __Hspace_1                       (abs)        0007A
 __Hspace_2                       (abs)        00000
 __Hspace_3                       (abs)        00000
-__Hspace_4                       (abs)        10010
 __Hstack                         stack        00000
 __Hstrings                       strings      00000
 __Hstringtext1                   stringtext1  00000
@@ -531,12 +546,13 @@ __Lcinit                         cinit        00053
 __Lclrtext                       clrtext      00000
 __Lcode                          code         00000
 __Lcommon                        common       00000
-__Lconfig                        config       00000
+__Lconfig                        config       08007
 __LcstackBANK0                   cstackBANK0  00000
 __LcstackCOMMON                  cstackCOMMON 00000
 __Leeprom_data                   eeprom_data  00000
 __Lend_init                      end_init     00052
 __Lfunctab                       functab      00000
+__Lidloc                         idloc        00000
 __Linit                          init         00052
 __Lintentry                      intentry     00004
 __Lmaintext                      maintext     00000
@@ -579,14 +595,13 @@ __Lspace_0                       (abs)        00000
 __Lspace_1                       (abs)        00000
 __Lspace_2                       (abs)        00000
 __Lspace_3                       (abs)        00000
-__Lspace_4                       (abs)        00000
 __Lstack                         stack        00000
 __Lstrings                       strings      00000
 __Lstringtext1                   stringtext1  00000
 __Lstringtext2                   stringtext2  00000
 __Lstringtext3                   stringtext3  00000
 __Ltext                          text         00000
-__S0                             (abs)        0038A
+__S0                             (abs)        08009
 __S1                             (abs)        0007A
 __S2                             (abs)        00000
 __S3                             (abs)        00000
@@ -1460,68 +1475,68 @@ MODULE INFORMATION
 
 Module		Function		Class		Link	Load	Size
 bio3.c
-		_setGain       		CODE           	019E	0000	61
-		_config        		CODE           	01DB	0000	58
-		_setFreq       		CODE           	0293	0000	40
+		_setGain       		CODE           	019E	0000	62
+		_config        		CODE           	01DB	0000	59
+		_setFreq       		CODE           	0293	0000	41
 
-bio3.c estimated size: 159
+bio3.c estimated size: 162
 
 ADC1823.c
-		_setup_ADC     		CODE           	0374	0000	6
-		_ADC_5         		CODE           	02BB	0000	35
+		_setup_ADC     		CODE           	0374	0000	7
+		_ADC_5         		CODE           	02BB	0000	36
 
-ADC1823.c estimated size: 41
+ADC1823.c estimated size: 43
 
 mcc_generated_files/pin_manager.c
-		_PIN_MANAGER_Initialize		CODE           	02DE	0000	25
+		_PIN_MANAGER_Initialize		CODE           	02DE	0000	26
 
-mcc_generated_files/pin_manager.c estimated size: 25
+mcc_generated_files/pin_manager.c estimated size: 26
 
 USART1823.c
-		_lputs_ISR     		CODE           	026A	0000	41
-		_start_RX_USART_ISR		CODE           	0320	0000	16
-		_start_TX_USART_ISR		CODE           	0330	0000	15
-		_close_RX_USART		CODE           	0361	0000	7
+		_lputs_ISR     		CODE           	026A	0000	42
+		_start_RX_USART_ISR		CODE           	0320	0000	17
+		_start_TX_USART_ISR		CODE           	0330	0000	16
+		_close_RX_USART		CODE           	0361	0000	8
 
-USART1823.c estimated size: 79
+USART1823.c estimated size: 83
 
 RCM1823.c
-		_start_RCM     		CODE           	0380	0000	4
+		_start_RCM     		CODE           	0380	0000	5
 
-RCM1823.c estimated size: 4
+RCM1823.c estimated size: 5
 
 TMR0.c
-		_setup_TMR0    		CODE           	036E	0000	6
-		_start_TMR0_ISR		CODE           	033F	0000	15
-		_stop_TMR0_ISR 		CODE           	0387	0000	3
+		_setup_TMR0    		CODE           	036E	0000	7
+		_start_TMR0_ISR		CODE           	033F	0000	16
+		_stop_TMR0_ISR 		CODE           	0387	0000	4
 
-TMR0.c estimated size: 24
+TMR0.c estimated size: 27
 
 shared
-		_gains         		STRCODE        	0359	0000	8
+		_gains         		STRCODE        	0359	0000	9
 		_filt          		STRCODE        	0000	0000	0
-		i1_start_RX_USART_ISR		CODE           	030F	0000	17
-		_freqs         		STRCODE        	034E	0000	11
-		__initialization		CODE           	0053	0000	10
+		i1_start_RX_USART_ISR		CODE           	030F	0000	18
+		_freqs         		STRCODE        	034E	0000	12
+		__initialization		CODE           	0053	0000	11
 
-shared estimated size: 46
+shared estimated size: 50
 
 mcc_generated_files/mcc.c
-		_OSCILLATOR_Initialize		CODE           	037A	0000	6
-		_SYSTEM_Initialize		CODE           	0384	0000	3
+		_OSCILLATOR_Initialize		CODE           	037A	0000	7
+		_SYSTEM_Initialize		CODE           	0384	0000	4
 
-mcc_generated_files/mcc.c estimated size: 9
+mcc_generated_files/mcc.c estimated size: 11
 
 main.c
-		_main          		CODE           	0241	0000	41
-		_isr           		CODE           	0004	0000	78
+		_main          		CODE           	0241	0000	42
+		_isr           		CODE           	0004	0000	79
 
-main.c estimated size: 119
+main.c estimated size: 121
 
 comm.c
-		_sweep         		CODE           	0103	0000	155
-		_calculate_checksum		CODE           	02F7	0000	24
-		_measure       		CODE           	0060	0000	163
+		_sweep         		CODE           	0103	0000	156
+		_calculate_checksum		CODE           	02F7	0000	25
+		_measure       		CODE           	0060	0000	164
 
-comm.c estimated size: 342
+comm.c estimated size: 345
 

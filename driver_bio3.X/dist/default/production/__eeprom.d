@@ -1,2 +1,2 @@
 dist/default/production/__eeprom.p1: \
-  /opt/microchip/xc8/v2.31/pic/sources/c99/pic/__eeprom.c
+  /pkg/microchip/xc8/v2.10/pic/sources/c99/pic/__eeprom.c
