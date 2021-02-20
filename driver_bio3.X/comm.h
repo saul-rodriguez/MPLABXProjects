@@ -15,7 +15,7 @@ extern "C" {
 #include "bio3.h"
     
 //uncomment if inductive coupling is used for power and communications
-//#define INDUCTIVE_POW
+#define INDUCTIVE_POW
 
     
 #define BUFF_SIZE 10

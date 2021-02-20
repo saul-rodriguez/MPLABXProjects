@@ -31,10 +31,11 @@ void main(void) {
     
     unsigned char i;
     
-    SYSTEM_Initialize();
     #ifdef INDUCTIVE_POW
         USARTX_change_pol();
-    #endif
+    #endif    
+    SYSTEM_Initialize();
+    
     setup_TMR0(); 
     start_TX_USART_ISR(); 
     start_RX_USART_ISR(); 
