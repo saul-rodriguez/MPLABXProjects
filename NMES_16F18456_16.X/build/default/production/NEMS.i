@@ -21300,8 +21300,8 @@ void NEMS_save_program(void)
     eeprom_write(addr++,program.OFF_time);
     eeprom_write(addr++,program.ramp_up);
     eeprom_write(addr++,program.ramp_down);
-    eeprom_write(addr,program.contractions);
-    eeprom_write(addr,program.channel1);
+    eeprom_write(addr++,program.contractions);
+    eeprom_write(addr++,program.channel1);
     eeprom_write(addr,program.channel2);
 
 

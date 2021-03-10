@@ -2623,11 +2623,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;NEMS.c: 370:     eeprom_write(addr++,program.ramp_down);
 [e ( _eeprom_write (2 , ++ _addr -> -> 1 `i `uc . _program 8 ]
 "371
-[; ;NEMS.c: 371:     eeprom_write(addr,program.contractions);
-[e ( _eeprom_write (2 , _addr . _program 6 ]
+[; ;NEMS.c: 371:     eeprom_write(addr++,program.contractions);
+[e ( _eeprom_write (2 , ++ _addr -> -> 1 `i `uc . _program 6 ]
 "372
-[; ;NEMS.c: 372:     eeprom_write(addr,program.channel1);
-[e ( _eeprom_write (2 , _addr . _program 9 ]
+[; ;NEMS.c: 372:     eeprom_write(addr++,program.channel1);
+[e ( _eeprom_write (2 , ++ _addr -> -> 1 `i `uc . _program 9 ]
 "373
 [; ;NEMS.c: 373:     eeprom_write(addr,program.channel2);
 [e ( _eeprom_write (2 , _addr . _program 10 ]
