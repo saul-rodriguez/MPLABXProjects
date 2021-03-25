@@ -1,4 +1,4 @@
-# 1 "comm.c"
+# 1 "/opt/microchip/xc8/v2.31/pic/sources/c99/pic/__eeprom.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,13 +6,7 @@
 # 1 "<built-in>" 2
 # 1 "/home/saul/.mchp_packs/Microchip/PIC12-16F1xxx_DFP/1.0.42/xc8/pic/include/proc/language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "comm.c" 2
-# 1 "./comm.h" 1
-# 15 "./comm.h"
-# 1 "./bio3.h" 1
-# 24 "./bio3.h"
-# 1 "./mcc_generated_files/mcc.h" 1
-# 48 "./mcc_generated_files/mcc.h"
+# 1 "/opt/microchip/xc8/v2.31/pic/sources/c99/pic/__eeprom.c" 2
 # 1 "/home/saul/.mchp_packs/Microchip/PIC12-16F1xxx_DFP/1.0.42/xc8/pic/include/proc/xc.h" 1 3
 # 18 "/home/saul/.mchp_packs/Microchip/PIC12-16F1xxx_DFP/1.0.42/xc8/pic/include/proc/xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -3710,871 +3704,175 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 28 "/home/saul/.mchp_packs/Microchip/PIC12-16F1xxx_DFP/1.0.42/xc8/pic/include/proc/xc.h" 2 3
-# 48 "./mcc_generated_files/mcc.h" 2
+# 2 "/opt/microchip/xc8/v2.31/pic/sources/c99/pic/__eeprom.c" 2
 
-# 1 "./mcc_generated_files/pin_manager.h" 1
-# 82 "./mcc_generated_files/pin_manager.h"
-void PIN_MANAGER_Initialize (void);
-# 49 "./mcc_generated_files/mcc.h" 2
 
-# 1 "/opt/microchip/xc8/v2.31/pic/include/c99/stdint.h" 1 3
-# 22 "/opt/microchip/xc8/v2.31/pic/include/c99/stdint.h" 3
-# 1 "/opt/microchip/xc8/v2.31/pic/include/c99/bits/alltypes.h" 1 3
-# 127 "/opt/microchip/xc8/v2.31/pic/include/c99/bits/alltypes.h" 3
-typedef unsigned long uintptr_t;
-# 142 "/opt/microchip/xc8/v2.31/pic/include/c99/bits/alltypes.h" 3
-typedef long intptr_t;
-# 158 "/opt/microchip/xc8/v2.31/pic/include/c99/bits/alltypes.h" 3
-typedef signed char int8_t;
 
-
-
-
-typedef short int16_t;
-# 173 "/opt/microchip/xc8/v2.31/pic/include/c99/bits/alltypes.h" 3
-typedef long int32_t;
-
-
-
-
-
-typedef long long int64_t;
-# 188 "/opt/microchip/xc8/v2.31/pic/include/c99/bits/alltypes.h" 3
-typedef long long intmax_t;
-
-
-
-
-
-typedef unsigned char uint8_t;
-
-
-
-
-typedef unsigned short uint16_t;
-# 209 "/opt/microchip/xc8/v2.31/pic/include/c99/bits/alltypes.h" 3
-typedef unsigned long uint32_t;
-
-
-
-
-
-typedef unsigned long long uint64_t;
-# 229 "/opt/microchip/xc8/v2.31/pic/include/c99/bits/alltypes.h" 3
-typedef unsigned long long uintmax_t;
-# 23 "/opt/microchip/xc8/v2.31/pic/include/c99/stdint.h" 2 3
-
-typedef int8_t int_fast8_t;
-
-typedef int64_t int_fast64_t;
-
-
-typedef int8_t int_least8_t;
-typedef int16_t int_least16_t;
-
-typedef int24_t int_least24_t;
-typedef int24_t int_fast24_t;
-
-typedef int32_t int_least32_t;
-
-typedef int64_t int_least64_t;
-
-
-typedef uint8_t uint_fast8_t;
-
-typedef uint64_t uint_fast64_t;
-
-
-typedef uint8_t uint_least8_t;
-typedef uint16_t uint_least16_t;
-
-typedef uint24_t uint_least24_t;
-typedef uint24_t uint_fast24_t;
-
-typedef uint32_t uint_least32_t;
-
-typedef uint64_t uint_least64_t;
-# 144 "/opt/microchip/xc8/v2.31/pic/include/c99/stdint.h" 3
-# 1 "/opt/microchip/xc8/v2.31/pic/include/c99/bits/stdint.h" 1 3
-typedef int16_t int_fast16_t;
-typedef int32_t int_fast32_t;
-typedef uint16_t uint_fast16_t;
-typedef uint32_t uint_fast32_t;
-# 145 "/opt/microchip/xc8/v2.31/pic/include/c99/stdint.h" 2 3
-# 50 "./mcc_generated_files/mcc.h" 2
-
-# 1 "/opt/microchip/xc8/v2.31/pic/include/c99/stdbool.h" 1 3
-# 51 "./mcc_generated_files/mcc.h" 2
-# 66 "./mcc_generated_files/mcc.h"
-void SYSTEM_Initialize(void);
-# 79 "./mcc_generated_files/mcc.h"
-void OSCILLATOR_Initialize(void);
-void USARTX_change_pol(void);
-# 25 "./bio3.h" 2
-# 45 "./bio3.h"
-typedef struct BIO3_bits_stuct {
-    unsigned RE :1;
-    unsigned FS :1;
-    unsigned GD0 :1;
-    unsigned GD1 :1;
-    unsigned GD2 :1;
-    unsigned NS :1;
-    unsigned CE :1;
-    unsigned GS0 :1;
-
-    unsigned GS1 :1;
-    unsigned GS2 :1;
-    unsigned GS3 :1;
-    unsigned IQ :1;
-    unsigned F0 :1;
-    unsigned F1 :1;
-    unsigned F2 :1;
-    unsigned F3 :1;
-} BIO3_bits;
-
-typedef union {
-    unsigned short datashort;
-    unsigned char data[2];
-    BIO3_bits data_bits;
-} BIO3;
-
-
-
-
-
-typedef struct RADIO_gain_bits_struct {
-    unsigned GD0 :1;
-    unsigned GD1 :1;
-    unsigned GD2 :1;
-    unsigned GS0 :1;
-    unsigned GS1 :1;
-    unsigned GS2 :1;
-    unsigned GS3 :1;
-    unsigned NOTUSED :1;
-
-} RADIO_gain_bits;
-
-typedef union {
-    unsigned char data;
-    RADIO_gain_bits data_bits;
-} RADIO_gain;
-# 118 "./bio3.h"
-const unsigned char gains[8] = {
-    0b00000100,
-    0b00000101,
-    0b00000111,
-    0b00000011,
-    0b00100011,
-    0b01100011,
-    0b01101011,
-    0b01111011
-};
-
-typedef struct RADIO_freq_bits_struct {
-    unsigned F0 :1;
-    unsigned F1 :1;
-    unsigned F2 :1;
-    unsigned F3 :1;
-} RADIO_freq_bits;
-
-typedef union {
-    unsigned char data;
-    RADIO_freq_bits data_bits;
-} RADIO_freq;
-# 154 "./bio3.h"
-const unsigned char freqs[11] = {
-    0b00000000,
-    0b00000001,
-    0b00000010,
-    0b00000011,
-    0b00000100,
-    0b00000101,
-    0b00000110,
-    0b00000111,
-    0b00001000,
-    0b00001001,
-    0b00001010
-};
-
-
-typedef struct VIN_bits_stuct {
-    unsigned RE :1;
-    unsigned FS :1;
-    unsigned GD0 :1;
-    unsigned GD1 :1;
-    unsigned GD2 :1;
-    unsigned NS :1;
-    unsigned CE :1;
-    unsigned GS0 :1;
-
-    unsigned GS1 :1;
-    unsigned GS2 :1;
-    unsigned GS3 :1;
-    unsigned IQ :1;
-    unsigned F0 :1;
-    unsigned F1 :1;
-    unsigned F2 :1;
-    unsigned F3 :1;
-
-    unsigned CapSel0 :1;
-    unsigned CapSel1 :1;
-    unsigned CapSel2 :1;
-    unsigned CapSel3 :1;
-    unsigned CcompSel0 :1;
-    unsigned CcompSel1 :1;
-    unsigned EnRdegHF0 :1;
-    unsigned EnRdegHF1 :1;
-
-    unsigned EnRdeg :1;
-    unsigned DP0 :1;
-    unsigned DP1 :1;
-    unsigned DP2 :1;
-    unsigned DN0 :1;
-    unsigned DN1 :1;
-    unsigned EnHF :1;
-    unsigned EnMF :1;
-
-    unsigned EnLF :1;
-} VIN_bits;
-
-typedef union {
-    unsigned short datas[3];
-    unsigned char data[5];
-    VIN_bits data_bits;
-} VIN;
-# 230 "./bio3.h"
-typedef struct VINfilt_bits_struct {
-    unsigned CapSel0 :1;
-    unsigned CapSel1 :1;
-    unsigned CapSel2 :1;
-    unsigned CapSel3 :1;
-    unsigned CcompSel0 :1;
-    unsigned CcompSel1 :1;
-    unsigned EnRdegHF0 :1;
-    unsigned EnRdegHF1 :1;
-
-    unsigned EnRdeg :1;
-    unsigned DP0 :1;
-    unsigned DP1 :1;
-    unsigned DP2 :1;
-    unsigned DN0 :1;
-    unsigned DN1 :1;
-    unsigned EnHF :1;
-    unsigned EnMF :1;
-
-    unsigned EnLF :1;
-} VINfilt_bits;
-
-typedef union {
-    unsigned long datal;
-    unsigned char data[3];
-    VINfilt_bits data_bits;
-} VINfilt;
-
-const unsigned long filt[11] = {
-    0b00100000011000111,
-    0b00100000011001111,
-    0b00100000001101111,
-    0b00100000000111111,
-    0b01000100100001111,
-    0b01000100000001111,
-    0b01010010000001111,
-    0b10000100100001111,
-    0b10000100000001111,
-    0b10010010000001111,
-    0b10011001000001111
-};
-
-
-
-
-
-
-void config(BIO3 conf);
-void setGain(BIO3* asic, unsigned char gain_index);
-void setFreq(BIO3* asic, unsigned char freq_index);
-# 16 "./comm.h" 2
-
-
-
-
-
-
-extern volatile unsigned char mess_rec[10];
-extern volatile unsigned char mess_rec_size;
-# 32 "./comm.h"
-void mess_handler();
-void config_ASIC();
-void read_ADC_channels();
-void measure_Impedance();
-void measure_Impedance_no_offset();
-void measure_Offset();
-void measure_Impedance_SE();
-unsigned char calculate_checksum(unsigned char* data, unsigned char num);
-void calibrate_reader();
-void sweep();
-
-
-unsigned char measure(short* I, short* Q, BIO3 asic);
-# 2 "comm.c" 2
-# 1 "./USART1823.h" 1
-# 50 "./USART1823.h"
-extern volatile unsigned char USART_rx_flag;
-extern volatile unsigned char USART_rx_index;
-
-
-extern volatile unsigned char USART_rx_data[10];
-
-extern volatile unsigned char USART_tx_flag;
-extern volatile unsigned char USART_tx_data[15];
-extern volatile unsigned char USART_tx_index;
-extern volatile unsigned char USART_tx_length;
-
-
-void start_TX_USART(void);
-void start_RX_USART();
-void close_USART();
-void close_RX_USART();
-void putch(unsigned char byte);
-int putch_ISR(unsigned char byte);
-unsigned char getch();
-void lputs(unsigned char* data, unsigned char length);
-void lputs_ISR(unsigned char* data, unsigned char length);
-
-void start_RX_USART_ISR(void);
-void start_TX_USART_ISR(void);
-# 3 "comm.c" 2
-
-# 1 "./ADC1823.h" 1
-# 21 "./ADC1823.h"
-void setup_ADC();
-unsigned short ADC_2();
-unsigned short ADC_4();
-unsigned short ADC_5();
-unsigned short ADC_6();
-# 5 "comm.c" 2
-
-volatile unsigned char mess_rec[10];
-volatile unsigned char mess_rec_size;
-
-
-
-void mess_handler()
+void
+__eecpymem(volatile unsigned char *to, __eeprom unsigned char * from, unsigned char size)
 {
+ volatile unsigned char *cp = to;
 
+ while (EECON1bits.WR) continue;
+ EEADR = (unsigned char)from;
+ while(size--) {
+  while (EECON1bits.WR) continue;
 
+  EECON1 &= 0x7F;
 
-    switch (mess_rec[0]) {
-        case 't':
-            lputs_ISR(mess_rec,mess_rec_size);
-            break;
-
-        case 'f':
-            sweep();
-            break;
-
-        case 'c':
-            config_ASIC();
-            break;
-
-        case 'm':
-            read_ADC_channels();
-            break;
-
-        case 'z':
-            measure_Impedance();
-            break;
-
-        case 'y':
-            measure_Impedance_no_offset();
-            break;
-
-        case 'o':
-            measure_Offset();
-            break;
-
-        case 's':
-            measure_Impedance_SE();
-            break;
-# 56 "comm.c"
-        default:
-            break;
-    }
+  EECON1bits.RD = 1;
+  *cp++ = EEDATA;
+  ++EEADR;
+ }
+# 36 "/opt/microchip/xc8/v2.31/pic/sources/c99/pic/__eeprom.c"
 }
 
-void config_ASIC()
+void
+__memcpyee(__eeprom unsigned char * to, const unsigned char *from, unsigned char size)
 {
+ const unsigned char *ptr =from;
 
-    BIO3 asic;
+ while (EECON1bits.WR) continue;
+ EEADR = (unsigned char)to - 1U;
 
+ EECON1 &= 0x7F;
 
-
-
-
-    asic.data[0] = mess_rec[1];
-    asic.data[1] = mess_rec[2];
-
-    lputs_ISR(mess_rec,mess_rec_size);
-
-    config(asic);
-# 89 "comm.c"
+ while(size--) {
+  while (EECON1bits.WR) {
+   continue;
+  }
+  EEDATA = *ptr++;
+  ++EEADR;
+  STATUSbits.CARRY = 0;
+  if (INTCONbits.GIE) {
+   STATUSbits.CARRY = 1;
+  }
+  INTCONbits.GIE = 0;
+  EECON1bits.WREN = 1;
+  EECON2 = 0x55;
+  EECON2 = 0xAA;
+  EECON1bits.WR = 1;
+  EECON1bits.WREN = 0;
+  if (STATUSbits.CARRY) {
+   INTCONbits.GIE = 1;
+  }
+ }
+# 101 "/opt/microchip/xc8/v2.31/pic/sources/c99/pic/__eeprom.c"
 }
 
-void read_ADC_channels()
+unsigned char
+__eetoc(__eeprom void *addr)
 {
-     unsigned char aux[7];
-     unsigned short value1,value2,value3;
-
-
-     value1 = ADC_2();
-
-     value2 = ADC_4();
-
-     value3 = ADC_5();
-     { ADCON0 = 0b00100100;};
-
-     aux[0] = 'm';
-     aux[1] = (unsigned char)(value1 & 0xff);
-     aux[2] = (unsigned char)((value1 >> 8) & 0xff);
-     aux[3] = (unsigned char)(value2 & 0xff);
-     aux[4] = (unsigned char)((value2 >> 8) & 0xff);
-     aux[5] = (unsigned char)(value3 & 0xff);
-     aux[6] = (unsigned char)((value3 >> 8) & 0xff);
-
-      lputs_ISR(aux,7);
+ unsigned char data;
+ __eecpymem((unsigned char *) &data,addr,1);
+ return data;
 }
 
-void measure_Impedance()
+unsigned int
+__eetoi(__eeprom void *addr)
 {
-    unsigned char aux[13];
-    unsigned short value1,value2,value3;
-
-
-        BIO3 asic;
-
-
-
-
-
-    aux[0] = 'z';
-
-
-
-    asic.data[0] = (unsigned short)(mess_rec[1]);
-    asic.data[1] = (unsigned short)(mess_rec[2]);
-
-
-    asic.data_bits.CE = 0;
-    config(asic);
-# 149 "comm.c"
-    _delay((unsigned long)((20)*(500000/4000.0)));
-
-    value1 = ADC_2();
-    value2 = ADC_4();
-
-    aux[1] = (unsigned char)(value1 & 0xff);
-    aux[2] = (unsigned char)((value1 >> 8) & 0xff);
-    aux[3] = (unsigned char)(value2 & 0xff);
-    aux[4] = (unsigned char)((value2 >> 8) & 0xff);
-
-
-     asic.data_bits.CE = 1;
-     asic.data_bits.IQ = 0;
-
-
-     config(asic);
-
-
-
-    _delay((unsigned long)((20)*(500000/4000.0)));
-
-    value1 = ADC_2();
-    value2 = ADC_4();
-
-    aux[5] = (unsigned char)(value1 & 0xff);
-    aux[6] = (unsigned char)((value1 >> 8) & 0xff);
-    aux[7] = (unsigned char)(value2 & 0xff);
-    aux[8] = (unsigned char)((value2 >> 8) & 0xff);
-
-
-    asic.data_bits.IQ = 1;
-
-
-     config(asic);
-
-
-
-    _delay((unsigned long)((20)*(500000/4000.0)));
-
-    value1 = ADC_2();
-    value2 = ADC_4();
-
-    aux[9] = (unsigned char)(value1 & 0xff);
-    aux[10] = (unsigned char)((value1 >> 8) & 0xff);
-    aux[11] = (unsigned char)(value2 & 0xff);
-    aux[12] = (unsigned char)((value2 >> 8) & 0xff);
-
-
-    lputs_ISR(aux,13);
+ unsigned int data;
+ __eecpymem((unsigned char *) &data,addr,2);
+ return data;
 }
 
-void measure_Impedance_no_offset()
+#pragma warning push
+#pragma warning disable 2040
+__uint24
+__eetom(__eeprom void *addr)
 {
- unsigned char aux[13];
-    unsigned short value1,value2,value3;
+ __uint24 data;
+ __eecpymem((unsigned char *) &data,addr,3);
+ return data;
+}
+#pragma warning pop
 
-
-        BIO3 asic;
-
-
-
-
-    aux[0] = 'y';
-
-
-        asic.data[0] = (unsigned short)(mess_rec[1]);
-        asic.data[1] = (unsigned short)(mess_rec[2]);
-# 225 "comm.c"
-     asic.data_bits.CE = 1;
-     asic.data_bits.IQ = 0;
-
-
-        config(asic);
-
-
-
-    _delay((unsigned long)((20)*(500000/4000.0)));
-
-    value1 = ADC_2();
-    value2 = ADC_4();
-
-    aux[1] = (unsigned char)(value1 & 0xff);
-    aux[2] = (unsigned char)((value1 >> 8) & 0xff);
-    aux[3] = (unsigned char)(value2 & 0xff);
-    aux[4] = (unsigned char)((value2 >> 8) & 0xff);
-
-
-    asic.data_bits.IQ = 1;
-
-
-        config(asic);
-
-
-
-    _delay((unsigned long)((20)*(500000/4000.0)));
-
-    value1 = ADC_2();
-    value2 = ADC_4();
-
-    aux[5] = (unsigned char)(value1 & 0xff);
-    aux[6] = (unsigned char)((value1 >> 8) & 0xff);
-    aux[7] = (unsigned char)(value2 & 0xff);
-    aux[8] = (unsigned char)((value2 >> 8) & 0xff);
-
-
-    lputs_ISR(aux,9);
+unsigned long
+__eetol(__eeprom void *addr)
+{
+ unsigned long data;
+ __eecpymem((unsigned char *) &data,addr,4);
+ return data;
 }
 
-void measure_Offset()
+#pragma warning push
+#pragma warning disable 1516
+unsigned long long
+__eetoo(__eeprom void *addr)
 {
-    unsigned char aux[5];
-    unsigned short value1,value2;
+ unsigned long long data;
+ __eecpymem((unsigned char *) &data,addr,8);
+ return data;
+}
+#pragma warning pop
 
-
-        BIO3 asic;
-
-
-
-
-
-    aux[0] = 'o';
-
-
-    asic.data[0] = (unsigned short)(mess_rec[1]);
-    asic.data[1] = (unsigned short)(mess_rec[2]);
-
-
-    asic.data_bits.CE = 0;
-    config(asic);
-# 298 "comm.c"
-    _delay((unsigned long)((20)*(500000/4000.0)));
-
-    value1 = ADC_2();
-    value2 = ADC_4();
-
-    aux[1] = (unsigned char)(value1 & 0xff);
-    aux[2] = (unsigned char)((value1 >> 8) & 0xff);
-    aux[3] = (unsigned char)(value2 & 0xff);
-    aux[4] = (unsigned char)((value2 >> 8) & 0xff);
-
-
-    lputs_ISR(aux,5);
-
+unsigned char
+__ctoee(__eeprom void *addr, unsigned char data)
+{
+ __memcpyee(addr,(unsigned char *) &data,1);
+ return data;
 }
 
-
-void measure_Impedance_SE()
+unsigned int
+__itoee(__eeprom void *addr, unsigned int data)
 {
-     unsigned char aux[8], check;
-
-     unsigned short value1;
-
-
-        BIO3 asic;
-# 336 "comm.c"
-    aux[0] = 's';
-
-
-    asic.data[0] = (unsigned short)(mess_rec[1]);
-    asic.data[1] = (unsigned short)(mess_rec[2]);
-
-
-    asic.data_bits.CE = 0;
-    config(asic);
-# 357 "comm.c"
-    _delay((unsigned long)((20)*(500000/4000.0)));
-
-    value1 = ADC_5();
-
-    aux[1] = (unsigned char)(value1 & 0xff);
-    aux[2] = (unsigned char)((value1 >> 8) & 0xff);
-
-
-     asic.data_bits.CE = 1;
-     asic.data_bits.IQ = 0;
-
-
-     config(asic);
-
-
-
-    _delay((unsigned long)((20)*(500000/4000.0)));
-
-    value1 = ADC_5();
-
-    aux[3] = (unsigned char)(value1 & 0xff);
-    aux[4] = (unsigned char)((value1 >> 8) & 0xff);
-
-
-    asic.data_bits.IQ = 1;
-
-
-     config(asic);
-
-
-
-    _delay((unsigned long)((20)*(500000/4000.0)));
-
-    value1 = ADC_5();
-
-    aux[5] = (unsigned char)(value1 & 0xff);
-    aux[6] = (unsigned char)((value1 >> 8) & 0xff);
-
-
-
-
-
-
-
-    lputs_ISR(aux,7);
-
-
-
+ __memcpyee(addr,(unsigned char *) &data,2);
+ return data;
 }
 
-unsigned char calculate_checksum(unsigned char* data, unsigned char num)
+#pragma warning push
+#pragma warning disable 2040
+__uint24
+__mtoee(__eeprom void *addr, __uint24 data)
 {
-    unsigned char check, i;
+ __memcpyee(addr,(unsigned char *) &data,3);
+ return data;
+}
+#pragma warning pop
 
-    check = 0;
-    for (i = 0; i < num; i++) {
-        check ^= data[i];
-    }
-
-    return check;
+unsigned long
+__ltoee(__eeprom void *addr, unsigned long data)
+{
+ __memcpyee(addr,(unsigned char *) &data,4);
+ return data;
 }
 
-void calibrate_reader()
+#pragma warning push
+#pragma warning disable 1516
+unsigned long long
+__otoee(__eeprom void *addr, unsigned long long data)
 {
-    unsigned char aux[8];
+ __memcpyee(addr,(unsigned char *) &data,8);
+ return data;
+}
+#pragma warning pop
 
-    aux[0] = 'h';
-    aux[1] = 'o';
-    aux[2] = 'l';
-    aux[3] = 'a';
-    aux[4] = 0x00;
-    aux[5] = 0xaa;
-    aux[6] = 0xfe;
-    aux[7] = '@';
-
-    while (1) {
-        __asm("clrwdt");
-         _delay((unsigned long)((250)*(500000/4000.0)));
-         _delay((unsigned long)((250)*(500000/4000.0)));
-         _delay((unsigned long)((250)*(500000/4000.0)));
-         _delay((unsigned long)((250)*(500000/4000.0)));
-         lputs_ISR(aux,8);
-
-    }
-
+float
+__eetoft(__eeprom void *addr)
+{
+ float data;
+ __eecpymem((unsigned char *) &data,addr,3);
+ return data;
 }
 
-void sweep()
+double
+__eetofl(__eeprom void *addr)
 {
-    unsigned char gain_index;
-    unsigned char freq_index;
-    unsigned char i, ret, count;
-    short I,Q;
-    unsigned char aux[7], check;
-
-
-    BIO3 asic;
-    asic.datashort = 0;
-# 465 "comm.c"
-    freq_index = 10;
-    gain_index = 0;
-    setGain(&asic,gain_index);
-
-
-    for (i = 0; i < 11; i++) {
-
-
-        setFreq(&asic,freq_index);
-
-
-
-
-
-
-        count = 0;
-        ret = 0;
-
-        do {
-
-            ret = measure(&I,&Q,asic);
-
-            if (ret == 1) {
-
-                if (count == 2) break;
-                count = ret;
-
-
-                if (gain_index < 7) {
-
-
-
-                    gain_index++;
-                    setGain(&asic,gain_index);
-                } else {
-                    break;
-                }
-
-                continue;
-
-            } else if (ret == 2) {
-
-                if (count == 1) break;
-                count = ret;
-
-                if (gain_index > 0) {
-                    gain_index--;
-                    setGain(&asic,gain_index);
-                } else {
-                    break;
-                }
-
-                continue;
-            }
-
-        } while (ret);
-
-
-
-
-
-        ret = (freq_index << 4) & 0xf0;
-        ret |= (gain_index & 0xff);
-
-        aux[0] = 'f';
-        aux[1] = (unsigned char)(I & 0xff);
-        aux[2] = (unsigned char)((I >> 8) & 0xff);
-        aux[3] = (unsigned char)(Q & 0xff);
-        aux[4] = (unsigned char)((Q >> 8) & 0xff);
-        aux[5] = ret;
-
-        check = calculate_checksum(aux,6);
-        aux[6] = check;
-
-
-        { ADCON0 = 0b00100100;};
-
-        lputs_ISR(aux,7);
-# 552 "comm.c"
-        freq_index--;
-    }
-
+ double data;
+ __eecpymem((unsigned char *) &data,addr,4);
+ return data;
 }
 
-
-
-
-
-unsigned char measure(short* I, short* Q, BIO3 asic)
-
-
-
+float
+__fttoee(__eeprom void *addr, float data)
 {
-    unsigned short offset, value;
-    short aux1,aux2;
+ __memcpyee(addr,(unsigned char *) &data,3);
+ return data;
+}
 
-
-
-    asic.data_bits.CE = 0;
-    config(asic);
-     _delay((unsigned long)((20)*(500000/4000.0)));
-
-    offset = ADC_5();
-
-
-    asic.data_bits.CE = 1;
-    asic.data_bits.IQ = 0;
-
-    config(asic);
-     _delay((unsigned long)((20)*(500000/4000.0)));
-
-    value = ADC_5();
-    *I = (value - offset);
-    aux1 = *I;
-
-    if (aux1 < 0) {
-        aux1 = -aux1;
-    }
-
-
-
-
-    asic.data_bits.IQ = 1;
-
-    config(asic);
-     _delay((unsigned long)((20)*(500000/4000.0)));
-
-    value = ADC_5();
-    *Q = (value - offset);
-    aux2 = *Q;
-
-    if (aux2 < 0) {
-        aux2 = -aux2;
-    }
-
-    if (aux2 > aux1) {
-        aux1 = aux2;
-    }
-
-    if (aux1 > 370) {
-        return 2;
-    } else if (aux1 < 86) {
-        return 1;
-    }
-
-    return 0;
+double
+__fltoee(__eeprom void *addr, double data)
+{
+ __memcpyee(addr,(unsigned char *) &data,4);
+ return data;
 }

@@ -4077,7 +4077,7 @@ void main(void) {
     unsigned char i;
 
 
-        USARTX_change_pol();
+
 
     SYSTEM_Initialize();
 
