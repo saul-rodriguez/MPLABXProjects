@@ -149,7 +149,7 @@ void NEMS_message_handler(void)
             NEMS_set_channel1();
             break;
             
-        case 'm': // set multiplexer channel 1
+        case 'm': // set multiplexer channel 2
             NEMS_set_channel2();
             break;
            
