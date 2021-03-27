@@ -4,45 +4,45 @@
 [d chip 16F18456 ]
 [d frameptr 6 ]
 "10 /home/saul/MPLABXProjects/NMES_16F18456_16.X/NEMS.c
-[e E12632 . `uc
+[e E12589 . `uc
 NEMS_DISABLED 0
 NEMS_ENABLED 1
 ]
 "11
-[e E12637 . `uc
+[e E12594 . `uc
 NEMS_ON_TIME 0
 NEMS_OFF_TIME 1
 ]
 "12
-[e E12642 . `uc
+[e E12599 . `uc
 NEMS_PULSE_OFF 0
 NEMS_PLUS_UP 2
 NEMS_REST 1
 NEMS_MINUS_UP 4
 ]
-"5 /pkg/microchip/xc8/v2.10/pic/sources/c99/common/awdiv.c
+"5 /opt/microchip/xc8/v2.32/pic/sources/c99/common/awdiv.c
 [v ___awdiv __awdiv `(i  1 e 2 0 ]
-"4 /pkg/microchip/xc8/v2.10/pic/sources/c99/common/lbmod.c
+"4 /opt/microchip/xc8/v2.32/pic/sources/c99/common/lbmod.c
 [v ___lbmod __lbmod `(uc  1 e 1 0 ]
-"5 /pkg/microchip/xc8/v2.10/pic/sources/c99/common/lwdiv.c
+"5 /opt/microchip/xc8/v2.32/pic/sources/c99/common/lwdiv.c
 [v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
-"5 /pkg/microchip/xc8/v2.10/pic/sources/c99/common/lwmod.c
+"5 /opt/microchip/xc8/v2.32/pic/sources/c99/common/lwmod.c
 [v ___lwmod __lwmod `(ui  1 e 2 0 ]
-"10 /pkg/microchip/xc8/v2.10/pic/sources/c99/common/sprcadd.c
+"10 /opt/microchip/xc8/v2.32/pic/sources/c99/common/sprcadd.c
 [v ___fladd __fladd `(d  1 e 4 0 ]
-"15 /pkg/microchip/xc8/v2.10/pic/sources/c99/common/Umul16.c
+"15 /opt/microchip/xc8/v2.32/pic/sources/c99/common/Umul16.c
 [v ___wmul __wmul `(ui  1 e 2 0 ]
-"4 /pkg/microchip/xc8/v2.10/pic/sources/c99/common/Umul8.c
+"4 /opt/microchip/xc8/v2.32/pic/sources/c99/common/Umul8.c
 [v ___bmul __bmul `(uc  1 e 1 0 ]
-"4 /pkg/microchip/xc8/v2.10/pic/sources/c99/common/Umul8_16.c
+"4 /opt/microchip/xc8/v2.32/pic/sources/c99/common/Umul8_16.c
 [v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
-"6 /pkg/microchip/xc8/v2.10/pic/sources/c99/pic/__eeprom.c
+"6 /opt/microchip/xc8/v2.32/pic/sources/c99/pic/__eeprom.c
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
-"6 /pkg/microchip/xc8/v2.10/pic/sources/c99/pic/__eeread.c
+"6 /opt/microchip/xc8/v2.32/pic/sources/c99/pic/__eeread.c
 [v _eeprom_read eeprom_read `(uc  1 e 1 0 ]
-"6 /pkg/microchip/xc8/v2.10/pic/sources/c99/pic/__eewrite.c
+"6 /opt/microchip/xc8/v2.32/pic/sources/c99/pic/__eewrite.c
 [v _eeprom_write eeprom_write `(v  1 e 1 0 ]
 "5 /home/saul/MPLABXProjects/NMES_16F18456_16.X/comm.c
 [v __puts _puts `(v  1 e 1 0 ]
@@ -161,7 +161,7 @@ NEMS_MINUS_UP 4
 `uc 1 nPD 1 0 :1:3 
 `uc 1 nTO 1 0 :1:4 
 ]
-"187 /pkg/microchip/xc8/v2.10/pic/include/pic16f18456.h
+"188 /opt/microchip/xc8/v2.32/pic/include/proc/pic16f18456.h
 [s S959 . 1 `uc 1 CARRY 1 0 :1:0 
 `uc 1 . 1 0 :1:1 
 `uc 1 ZERO 1 0 :1:2 
@@ -173,18 +173,18 @@ NEMS_MINUS_UP 4
 `uc 1 PEIE 1 0 :1:6 
 `uc 1 GIE 1 0 :1:7 
 ]
-"426
+"427
 [u S502 . 1 `S497 1 . 1 0 ]
 [v _INTCONbits INTCONbits `VES502  1 e 1 @11 ]
-"653
+"654
 [v _TRISA TRISA `VEuc  1 e 1 @18 ]
-"715
+"716
 [v _TRISB TRISB `VEuc  1 e 1 @19 ]
-"777
+"778
 [v _TRISC TRISC `VEuc  1 e 1 @20 ]
-"839
+"840
 [v _TRISE TRISE `VEuc  1 e 1 @22 ]
-"860
+"861
 [v _LATA LATA `VEuc  1 e 1 @24 ]
 [s S580 . 1 `uc 1 LATA0 1 0 :1:0 
 `uc 1 LATA1 1 0 :1:1 
@@ -195,24 +195,24 @@ NEMS_MINUS_UP 4
 `uc 1 LATA6 1 0 :1:6 
 `uc 1 LATA7 1 0 :1:7 
 ]
-"877
+"878
 [u S589 . 1 `S580 1 . 1 0 ]
 [v _LATAbits LATAbits `VES589  1 e 1 @24 ]
-"922
+"923
 [v _LATB LATB `VEuc  1 e 1 @25 ]
-"984
+"985
 [v _LATC LATC `VEuc  1 e 1 @26 ]
-"1046
+"1047
 [v _LATE LATE `VEuc  1 e 1 @28 ]
-"5210
+"5181
 [v _RC1REG RC1REG `VEuc  1 e 1 @281 ]
-"5264
+"5235
 [v _TX1REG TX1REG `VEuc  1 e 1 @282 ]
-"5325
+"5296
 [v _SP1BRGL SP1BRGL `VEuc  1 e 1 @283 ]
-"5395
+"5366
 [v _SP1BRGH SP1BRGH `VEuc  1 e 1 @284 ]
-"5449
+"5420
 [v _RC1STA RC1STA `VEuc  1 e 1 @285 ]
 [s S205 . 1 `uc 1 RX9D 1 0 :1:0 
 `uc 1 OERR 1 0 :1:1 
@@ -223,18 +223,18 @@ NEMS_MINUS_UP 4
 `uc 1 RX9 1 0 :1:6 
 `uc 1 SPEN 1 0 :1:7 
 ]
-"5475
+"5446
 [u S214 . 1 `S205 1 . 1 0 ]
 [v _RC1STAbits RC1STAbits `VES214  1 e 1 @285 ]
-"5629
+"5600
 [v _TX1STA TX1STA `VEuc  1 e 1 @286 ]
-"5809
+"5780
 [v _BAUD1CON BAUD1CON `VEuc  1 e 1 @287 ]
-"19496
+"19404
 [v _TMR0L TMR0L `VEuc  1 e 1 @1436 ]
-"19634
+"19542
 [v _TMR0H TMR0H `VEuc  1 e 1 @1437 ]
-"19888
+"19796
 [v _T0CON0 T0CON0 `VEuc  1 e 1 @1438 ]
 [s S402 . 1 `uc 1 OUTPS 1 0 :4:0 
 `uc 1 MD16 1 0 :1:4 
@@ -242,7 +242,7 @@ NEMS_MINUS_UP 4
 `uc 1 . 1 0 :1:6 
 `uc 1 EN 1 0 :1:7 
 ]
-"19916
+"19824
 [s S408 . 1 `uc 1 T0OUTPS 1 0 :4:0 
 `uc 1 T0MD16 1 0 :1:4 
 `uc 1 T0OUT 1 0 :1:5 
@@ -257,14 +257,14 @@ NEMS_MINUS_UP 4
 ]
 [u S420 . 1 `S402 1 . 1 0 `S408 1 . 1 0 `S414 1 . 1 0 ]
 [v _T0CON0bits T0CON0bits `VES420  1 e 1 @1438 ]
-"19986
+"19894
 [v _T0CON1 T0CON1 `VEuc  1 e 1 @1439 ]
 [s S365 . 1 `uc 1 INTF 1 0 :1:0 
 `uc 1 . 1 0 :3:1 
 `uc 1 IOCIF 1 0 :1:4 
 `uc 1 TMR0IF 1 0 :1:5 
 ]
-"22516
+"22424
 [u S370 . 1 `S365 1 . 1 0 ]
 [v _PIR0bits PIR0bits `VES370  1 e 1 @1804 ]
 [s S522 . 1 `uc 1 SSP1IF 1 0 :1:0 
@@ -276,7 +276,7 @@ NEMS_MINUS_UP 4
 `uc 1 TX2IF 1 0 :1:6 
 `uc 1 RC2IF 1 0 :1:7 
 ]
-"22625
+"22533
 [u S531 . 1 `S522 1 . 1 0 ]
 [v _PIR3bits PIR3bits `VES531  1 e 1 @1807 ]
 [s S378 . 1 `uc 1 INTE 1 0 :1:0 
@@ -284,7 +284,7 @@ NEMS_MINUS_UP 4
 `uc 1 IOCIE 1 0 :1:4 
 `uc 1 TMR0IE 1 0 :1:5 
 ]
-"22929
+"22837
 [u S383 . 1 `S378 1 . 1 0 ]
 [v _PIE0bits PIE0bits `VES383  1 e 1 @1814 ]
 [s S107 . 1 `uc 1 SSP1IE 1 0 :1:0 
@@ -296,32 +296,32 @@ NEMS_MINUS_UP 4
 `uc 1 TX2IE 1 0 :1:6 
 `uc 1 RC2IE 1 0 :1:7 
 ]
-"23038
+"22946
 [u S116 . 1 `S107 1 . 1 0 ]
 [v _PIE3bits PIE3bits `VES116  1 e 1 @1817 ]
-"23338
+"23246
 [v _PMD0 PMD0 `VEuc  1 e 1 @1942 ]
-"23383
+"23291
 [v _PMD1 PMD1 `VEuc  1 e 1 @1943 ]
-"23439
+"23347
 [v _PMD2 PMD2 `VEuc  1 e 1 @1944 ]
-"23460
+"23368
 [v _PMD3 PMD3 `VEuc  1 e 1 @1945 ]
-"23505
+"23413
 [v _PMD4 PMD4 `VEuc  1 e 1 @1946 ]
-"23561
+"23469
 [v _PMD5 PMD5 `VEuc  1 e 1 @1947 ]
-"23594
+"23502
 [v _PMD6 PMD6 `VEuc  1 e 1 @1948 ]
-"23633
+"23541
 [v _PMD7 PMD7 `VEuc  1 e 1 @1949 ]
-"24343
+"24251
 [v _NVMADRL NVMADRL `VEuc  1 e 1 @2074 ]
-"24405
+"24313
 [v _NVMADRH NVMADRH `VEuc  1 e 1 @2075 ]
-"24468
+"24376
 [v _NVMDATL NVMDATL `VEuc  1 e 1 @2076 ]
-"24530
+"24438
 [v _NVMDATH NVMDATH `VEuc  1 e 1 @2077 ]
 [s S930 . 1 `uc 1 RD 1 0 :1:0 
 `uc 1 WR 1 0 :1:1 
@@ -331,66 +331,66 @@ NEMS_MINUS_UP 4
 `uc 1 LWLO 1 0 :1:5 
 `uc 1 NVMREGS 1 0 :1:6 
 ]
-"24596
+"24504
 [u S938 . 1 `S930 1 . 1 0 ]
 [v _NVMCON1bits NVMCON1bits `VES938  1 e 1 @2078 ]
-"24636
+"24544
 [v _NVMCON2 NVMCON2 `VEuc  1 e 1 @2079 ]
-"24721
+"24629
 [v _OSCCON1 OSCCON1 `VEuc  1 e 1 @2189 ]
-"24861
+"24769
 [v _OSCCON3 OSCCON3 `VEuc  1 e 1 @2191 ]
-"24901
+"24809
 [v _OSCSTAT OSCSTAT `VEuc  1 e 1 @2192 ]
-"24958
+"24866
 [v _OSCEN OSCEN `VEuc  1 e 1 @2193 ]
-"25009
+"24917
 [v _OSCTUNE OSCTUNE `VEuc  1 e 1 @2194 ]
-"25067
+"24975
 [v _OSCFRQ OSCFRQ `VEuc  1 e 1 @2195 ]
-"25604
+"25512
 [v _FVRCON FVRCON `VEuc  1 e 1 @2316 ]
-"25680
+"25588
 [v _DAC1CON0 DAC1CON0 `VEuc  1 e 1 @2318 ]
-"25781
+"25689
 [v _DAC1CON1 DAC1CON1 `VEuc  1 e 1 @2319 ]
-"33723
+"33631
 [v _RX1DTPPS RX1DTPPS `VEuc  1 e 1 @7883 ]
-"35718
+"35626
 [v _RC6PPS RC6PPS `VEuc  1 e 1 @7974 ]
-"35834
+"35742
 [v _ANSELA ANSELA `VEuc  1 e 1 @7992 ]
-"35896
+"35804
 [v _WPUA WPUA `VEuc  1 e 1 @7993 ]
-"35958
+"35866
 [v _ODCONA ODCONA `VEuc  1 e 1 @7994 ]
-"36020
+"35928
 [v _SLRCONA SLRCONA `VEuc  1 e 1 @7995 ]
-"36082
+"35990
 [v _INLVLA INLVLA `VEuc  1 e 1 @7996 ]
-"36330
+"36238
 [v _ANSELB ANSELB `VEuc  1 e 1 @8003 ]
-"36392
+"36300
 [v _WPUB WPUB `VEuc  1 e 1 @8004 ]
-"36454
+"36362
 [v _ODCONB ODCONB `VEuc  1 e 1 @8005 ]
-"36516
+"36424
 [v _SLRCONB SLRCONB `VEuc  1 e 1 @8006 ]
-"36578
+"36486
 [v _INLVLB INLVLB `VEuc  1 e 1 @8007 ]
-"36826
+"36734
 [v _ANSELC ANSELC `VEuc  1 e 1 @8014 ]
-"36888
+"36796
 [v _WPUC WPUC `VEuc  1 e 1 @8015 ]
-"36950
+"36858
 [v _ODCONC ODCONC `VEuc  1 e 1 @8016 ]
-"37012
+"36920
 [v _SLRCONC SLRCONC `VEuc  1 e 1 @8017 ]
-"37074
+"36982
 [v _INLVLC INLVLC `VEuc  1 e 1 @8018 ]
-"37322
+"37230
 [v _WPUE WPUE `VEuc  1 e 1 @8037 ]
-"37343
+"37251
 [v _ODCONE ODCONE `VEuc  1 e 1 @8038 ]
 "62 /home/saul/MPLABXProjects/NMES_16F18456_16.X/mcc_generated_files/eusart1.c
 [v _eusart1TxHead eusart1TxHead `VEuc  1 e 1 0 ]
@@ -439,11 +439,11 @@ NEMS_MINUS_UP 4
 "8
 [v _waveform waveform `VES639  1 e 230 @9994 ]
 "10
-[v _NEMS_states NEMS_states `VEE12632  1 e 1 0 ]
+[v _NEMS_states NEMS_states `VEE12589  1 e 1 0 ]
 "11
-[v _NEMS_wave_states NEMS_wave_states `VEE12637  1 e 1 0 ]
+[v _NEMS_wave_states NEMS_wave_states `VEE12594  1 e 1 0 ]
 "12
-[v _NEMS_pulse_states NEMS_pulse_states `VEE12642  1 e 1 0 ]
+[v _NEMS_pulse_states NEMS_pulse_states `VEE12599  1 e 1 0 ]
 "14
 [v _NEMS_nmux1 NEMS_nmux1 `uc  1 e 1 0 ]
 "15
@@ -559,7 +559,7 @@ NEMS_MINUS_UP 4
 [v NEMS_calculate_ramp@i i `uc  1 a 1 27 ]
 "458
 } 0
-"15 /pkg/microchip/xc8/v2.10/pic/sources/c99/common/Umul16.c
+"15 /opt/microchip/xc8/v2.32/pic/sources/c99/common/Umul16.c
 [v ___wmul __wmul `(ui  1 e 2 0 ]
 {
 "17
@@ -569,7 +569,7 @@ NEMS_MINUS_UP 4
 [v ___wmul@multiplicand multiplicand `ui  1 p 2 2 ]
 "53
 } 0
-"5 /pkg/microchip/xc8/v2.10/pic/sources/c99/common/lwdiv.c
+"5 /opt/microchip/xc8/v2.32/pic/sources/c99/common/lwdiv.c
 [v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
 {
 "10
@@ -648,7 +648,7 @@ NEMS_MINUS_UP 4
 [v NEMS_get_packet@pt pt `*.4uc  1 a 1 8 ]
 "181
 } 0
-"4 /pkg/microchip/xc8/v2.10/pic/sources/c99/common/Umul8.c
+"4 /opt/microchip/xc8/v2.32/pic/sources/c99/common/Umul8.c
 [v ___bmul __bmul `(uc  1 e 1 0 ]
 {
 [v ___bmul@multiplier multiplier `uc  1 a 1 wreg ]
@@ -675,7 +675,7 @@ NEMS_MINUS_UP 4
 [v NEMS_save_program@addr addr `uc  1 a 1 9 ]
 "378
 } 0
-"6 /pkg/microchip/xc8/v2.10/pic/sources/c99/pic/__eewrite.c
+"6 /opt/microchip/xc8/v2.32/pic/sources/c99/pic/__eewrite.c
 [v _eeprom_write eeprom_write `(v  1 e 1 0 ]
 {
 [v eeprom_write@addr addr `uc  1 a 1 wreg ]
@@ -691,7 +691,7 @@ NEMS_MINUS_UP 4
 [v NEMS_load_program@addr addr `us  1 a 2 9 ]
 "400
 } 0
-"6 /pkg/microchip/xc8/v2.10/pic/sources/c99/pic/__eeread.c
+"6 /opt/microchip/xc8/v2.32/pic/sources/c99/pic/__eeread.c
 [v _eeprom_read eeprom_read `(uc  1 e 1 0 ]
 {
 [v eeprom_read@addr addr `uc  1 a 1 wreg ]
@@ -722,7 +722,7 @@ NEMS_MINUS_UP 4
 [v __sprintf_u8b@mess mess `*.4uc  1 a 1 23 ]
 "86
 } 0
-"4 /pkg/microchip/xc8/v2.10/pic/sources/c99/common/lbmod.c
+"4 /opt/microchip/xc8/v2.32/pic/sources/c99/common/lbmod.c
 [v ___lbmod __lbmod `(uc  1 e 1 0 ]
 {
 [v ___lbmod@dividend dividend `uc  1 a 1 wreg ]
@@ -737,7 +737,7 @@ NEMS_MINUS_UP 4
 [v ___lbmod@dividend dividend `uc  1 a 1 3 ]
 "18
 } 0
-"5 /pkg/microchip/xc8/v2.10/pic/sources/c99/common/awdiv.c
+"5 /opt/microchip/xc8/v2.32/pic/sources/c99/common/awdiv.c
 [v ___awdiv __awdiv `(i  1 e 2 0 ]
 {
 "10

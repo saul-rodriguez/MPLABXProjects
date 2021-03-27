@@ -1,24 +1,24 @@
-Microchip MPLAB XC8 Compiler V2.10 ()
+Microchip MPLAB XC8 Compiler V2.32
 
 Linker command line:
 
--W-3 --edf=/pkg/microchip/xc8/v2.10/pic/dat/en_msgs.txt -cs \
+-W-3 --edf=/opt/microchip/xc8/v2.32/pic/dat/en_msgs.txt -cn \
   -h+dist/default/production/NMES_16F18456_16.X.production.sym \
   --cmf=dist/default/production/NMES_16F18456_16.X.production.cmf -z \
-  -Q16F18456 -o/tmp/xcXu6Zhmn --defsym=__MPLAB_BUILD=1 \
-  -Mdist/default/production/NMES_16F18456_16.X.production.map -E1 -ver=XC8 \
-  --acfsm=1493 -ASTACK=02060h-02709h -pstack=STACK -ACODE=00h-07FFhx8 \
-  -ASTRCODE=00h-03FFFh -ASTRING=00h-0FFhx64 -ACONST=00h-0FFhx64 \
-  -AENTRY=00h-0FFhx64 -ACOMMON=070h-07Fh -ABANK0=020h-06Fh \
-  -ABANK1=0A0h-0EFh -ABANK2=0120h-016Fh -ABANK3=01A0h-01EFh \
-  -ABANK4=0220h-026Fh -ABANK5=02A0h-02EFh -ABANK6=0320h-036Fh \
-  -ABANK7=03A0h-03EFh -ABANK8=0420h-046Fh -ABANK9=04A0h-04EFh \
-  -ABANK10=0520h-056Fh -ABANK11=05A0h-05EFh -ABANK12=0620h-066Fh \
-  -ABANK13=06A0h-06EFh -ABANK14=0720h-076Fh -ABANK15=07A0h-07EFh \
-  -ABANK16=0820h-086Fh -ABANK17=08A0h-08EFh -ABANK18=0920h-096Fh \
-  -ABANK19=09A0h-09EFh -ABANK20=0A20h-0A6Fh -ABANK21=0AA0h-0AEFh \
-  -ABANK22=0B20h-0B6Fh -ABANK23=0BA0h-0BEFh -ABANK24=0C20h-0C6Fh \
-  -ABANK25=0CA0h-0CBFh -ABIGRAM=02000h-027EFh \
+  -Q16F18456 -o/tmp/xcXofdoLi --defsym=__MPLAB_BUILD=1 \
+  -Mdist/default/production/NMES_16F18456_16.X.production.map -E1 \
+  -ver=XC8 Compiler --acfsm=1493 -ASTACK=02060h-02709h -pstack=STACK \
+  -ACODE=00h-07FFhx8 -ASTRCODE=00h-03FFFh -ASTRING=00h-0FFhx64 \
+  -ACONST=00h-0FFhx64 -AENTRY=00h-0FFhx64 -ACOMMON=070h-07Fh \
+  -ABANK0=020h-06Fh -ABANK1=0A0h-0EFh -ABANK2=0120h-016Fh \
+  -ABANK3=01A0h-01EFh -ABANK4=0220h-026Fh -ABANK5=02A0h-02EFh \
+  -ABANK6=0320h-036Fh -ABANK7=03A0h-03EFh -ABANK8=0420h-046Fh \
+  -ABANK9=04A0h-04EFh -ABANK10=0520h-056Fh -ABANK11=05A0h-05EFh \
+  -ABANK12=0620h-066Fh -ABANK13=06A0h-06EFh -ABANK14=0720h-076Fh \
+  -ABANK15=07A0h-07EFh -ABANK16=0820h-086Fh -ABANK17=08A0h-08EFh \
+  -ABANK18=0920h-096Fh -ABANK19=09A0h-09EFh -ABANK20=0A20h-0A6Fh \
+  -ABANK21=0AA0h-0AEFh -ABANK22=0B20h-0B6Fh -ABANK23=0BA0h-0BEFh \
+  -ABANK24=0C20h-0C6Fh -ABANK25=0CA0h-0CBFh -ABIGRAM=02000h-027EFh \
   -ARAM=020h-06Fh,0A0h-0EFh,0120h-016Fh,01A0h-01EFh,0220h-026Fh,02A0h-02EFh,0320h-036Fh,03A0h-03EFh,0420h-046Fh,04A0h-04EFh,0520h-056Fh,05A0h-05EFh,0620h-066Fh,06A0h-06EFh,0720h-076Fh,07A0h-07EFh,0820h-086Fh,08A0h-08EFh,0920h-096Fh,09A0h-09EFh,0A20h-0A6Fh,0AA0h-0AEFh,0B20h-0B6Fh,0BA0h-0BEFh,0C20h-0C6Fh,0CA0h-0CBFh \
   -AABS1=020h-07Fh,0A0h-0EFh,0120h-016Fh,01A0h-01EFh,0220h-026Fh,02A0h-02EFh,0320h-036Fh,03A0h-03EFh,0420h-046Fh,04A0h-04EFh,0520h-056Fh,05A0h-05EFh,0620h-066Fh,06A0h-06EFh,0720h-076Fh,07A0h-07EFh,0820h-086Fh,08A0h-08EFh,0920h-096Fh,09A0h-09EFh,0A20h-0A6Fh,0AA0h-0AEFh,0B20h-0B6Fh,0BA0h-0BEFh,0C20h-0C6Fh,0CA0h-0CBFh \
   -ASFR0=00h-01Fh -ASFR1=080h-09Fh -ASFR2=0100h-011Fh -ASFR3=0180h-019Fh \
@@ -42,11 +42,11 @@ Linker command line:
   -ASFR55=01B80h-01BEFh -ASFR56=01C00h-01C6Fh -ASFR57=01C80h-01CEFh \
   -ASFR58=01D00h-01D6Fh -ASFR59=01D80h-01DEFh -ASFR60=01E00h-01E6Fh \
   -ASFR61=01E80h-01EEFh -ASFR62=01F00h-01F6Fh -ASFR63=01F80h-01FEFh \
+  -ACONFIG=08007h-0800Bh -DCONFIG=2 -AIDLOC=08000h-08003h -DIDLOC=2 \
+  -AEEDATA=00h-0FFh/0F000h -peeprom_data=EEDATA -DEEDATA=2 -DCODE=2 \
+  -DSTRCODE=2 -DSTRING=2 -DCONST=2 -DENTRY=2 \
   -preset_vec=00h,intentry=04h,init,end_init -ppowerup=CODE -pcinit=CODE \
-  -pfunctab=ENTRY -ACONFIG=08007h-0800Bh -pconfig=CONFIG -DCONFIG=2 \
-  -AIDLOC=08000h-08003h -pidloc=IDLOC -DIDLOC=2 -AEEDATA=00h-0FFh/0F000h \
-  -peeprom_data=EEDATA -DEEDATA=2 -DCODE=2 -DSTRCODE=2 -DSTRING=2 -DCONST=2 \
-  -DENTRY=2 -k /tmp/xcXk9b6LA.o \
+  -pfunctab=ENTRY -k /tmp/xcXaEMIeH.o \
   dist/default/production/NMES_16F18456_16.X.production.o 
 
 Object code version is 3.11
@@ -56,13 +56,14 @@ Machine type is 16F18456
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-/tmp/xcXk9b6LA.o
+/tmp/xcXaEMIeH.o
                 end_init                             25       25        2        8       0
                 reset_vec                             0        0        2        0       0
-                config                             8007     8007        5    1000E       0
+                config                             8007     8007        5        0       4
 dist/default/production/NMES_16F18456_16.X.production.o
                 cinit                                27       27       28        8       0
                 intentry                              4        4       21        8       0
+                config                             8007     8007        5        0       4
                 text62                              C54      C54       16     18A8       0
                 text61                              B98      B98        3     1730       0
                 text60                                2        2        1        0       0
@@ -500,7 +501,7 @@ TOTAL           Name                               Link     Load   Length     Sp
         CLASS   SFR63          
 
         CLASS   CONFIG         
-                config                             8007     8007        5         0
+                config                             8007     8007        5         4
 
         CLASS   IDLOC          
 
@@ -586,65 +587,64 @@ TOTAL           Name                               Link     Load   Length     Sp
 
 SEGMENTS        Name                           Load    Length   Top    Selector   Space  Class     Delta
 
+                text53                         000C40  000014  000C54      1880       0  CODE        2
+                text62                         000C54  000016  000C6A      18A8       0  CODE        2
                 reset_vec                      000000  000003  000003         0       0  CODE        2
-                text55                         000003  000001  000004         6       0  CODE        2
-                intentry                       000004  0007FC  000800         8       0  CODE        2
-                cstackBANK0                    000020  00004F  00006F        20       1  BANK0       1
-                bssCOMMON                      000070  00000C  00007C        70       1  COMMON      1
-                bssBANK1                       0000A0  000010  0000B0        A0       1  BANK1       1
-                text61                         000B98  000003  000B9B      1730       0  CODE        2
-                text48                         000B9B  000003  000B9E      1736       0  CODE        2
-                text17                         000B9E  000003  000BA1      173C       0  CODE        2
-                text59                         000BA1  000004  000BA5      1742       0  CODE        2
-                text13                         000BA5  000004  000BA9      174A       0  CODE        2
-                text6                          000BA9  000004  000BAD      1752       0  CODE        2
-                text56                         000BAD  000005  000BB2      175A       0  CODE        2
-                text49                         000BB2  000005  000BB7      1764       0  CODE        2
-                text9                          000BB7  000005  000BBC      176E       0  CODE        2
-                text8                          000BBC  000005  000BC1      1778       0  CODE        2
-                text50                         000BC1  000006  000BC7      1782       0  CODE        2
-                text51                         000BC7  000007  000BCE      178E       0  CODE        2
-                text45                         000BCE  000007  000BD5      179C       0  CODE        2
-                text12                         000BD5  000008  000BDD      17AA       0  CODE        2
-                text11                         000BDD  000008  000BE5      17BA       0  CODE        2
-                text10                         000BE5  000008  000BED      17CA       0  CODE        2
+                text15                         000C2F  000011  000C40      185E       0  CODE        2
+                text32                         000C6A  000017  000C81      18D4       0  CODE        2
+                text31                         000C81  000017  000C98      1902       0  CODE        2
+                text34                         000C1E  000011  000C2F      183C       0  CODE        2
+                text39                         000C0D  000011  000C1E      181A       0  CODE        2
+                text30                         000C98  000017  000CAF      1930       0  CODE        2
+                text29                         000CAF  000017  000CC6      195E       0  CODE        2
                 text5                          000BED  00000A  000BF7      17DA       0  CODE        2
                 text3                          000BF7  00000A  000C01      17EE       0  CODE        2
                 clrtext                        000C01  00000C  000C0D      1802       0  CODE        2
-                text39                         000C0D  000011  000C1E      181A       0  CODE        2
-                text34                         000C1E  000011  000C2F      183C       0  CODE        2
-                text15                         000C2F  000011  000C40      185E       0  CODE        2
-                text53                         000C40  000014  000C54      1880       0  CODE        2
-                text62                         000C54  000016  000C6A      18A8       0  CODE        2
-                text32                         000C6A  000017  000C81      18D4       0  CODE        2
-                text31                         000C81  000017  000C98      1902       0  CODE        2
-                text30                         000C98  000017  000CAF      1930       0  CODE        2
-                text29                         000CAF  000017  000CC6      195E       0  CODE        2
-                text28                         000CC6  000017  000CDD      198C       0  CODE        2
-                text27                         000CDD  000017  000CF4      19BA       0  CODE        2
                 text26                         000CF4  000017  000D0B      19E8       0  CODE        2
                 text25                         000D0B  000017  000D22      1A16       0  CODE        2
+                text27                         000CDD  000017  000CF4      19BA       0  CODE        2
+                text28                         000CC6  000017  000CDD      198C       0  CODE        2
+                text10                         000BE5  000008  000BED      17CA       0  CODE        2
+                text8                          000BBC  000005  000BC1      1778       0  CODE        2
+                text50                         000BC1  000006  000BC7      1782       0  CODE        2
+                text12                         000BD5  000008  000BDD      17AA       0  CODE        2
+                text11                         000BDD  000008  000BE5      17BA       0  CODE        2
+                text51                         000BC7  000007  000BCE      178E       0  CODE        2
+                text45                         000BCE  000007  000BD5      179C       0  CODE        2
                 text24                         000D22  000017  000D39      1A44       0  CODE        2
-                text23                         000D39  000017  000D50      1A72       0  CODE        2
+                text57                         000D82  00001C  000D9E      1B04       0  CODE        2
+                text16                         000DBA  00001E  000DD8      1B74       0  CODE        2
+                text2                          000D9E  00001C  000DBA      1B3C       0  CODE        2
+                stringtext2                    001000  0001AF  0011AF      2000       0  STRCODE     2
                 text22                         000D50  000017  000D67      1AA0       0  CODE        2
                 text20                         000D67  00001B  000D82      1ACE       0  CODE        2
-                text57                         000D82  00001C  000D9E      1B04       0  CODE        2
-                text2                          000D9E  00001C  000DBA      1B3C       0  CODE        2
-                text16                         000DBA  00001E  000DD8      1B74       0  CODE        2
+                text23                         000D39  000017  000D50      1A72       0  CODE        2
+                text55                         000003  000001  000004         6       0  CODE        2
+                text17                         000B9E  000003  000BA1      173C       0  CODE        2
+                text61                         000B98  000003  000B9B      1730       0  CODE        2
+                text48                         000B9B  000003  000B9E      1736       0  CODE        2
+                text56                         000BAD  000005  000BB2      175A       0  CODE        2
+                text49                         000BB2  000005  000BB7      1764       0  CODE        2
+                text6                          000BA9  000004  000BAD      1752       0  CODE        2
+                text9                          000BB7  000005  000BBC      176E       0  CODE        2
+                text13                         000BA5  000004  000BA9      174A       0  CODE        2
+                text59                         000BA1  000004  000BA5      1742       0  CODE        2
+                intentry                       000004  0007FC  000800         8       0  CODE        2
+                bssBANK1                       0000A0  000010  0000B0        A0       1  BANK1       1
+                cstackBANK0                    000020  00004F  00006F        20       1  BANK0       1
+                bssCOMMON                      000070  00000C  00007C        70       1  COMMON      1
+                text44                         000E81  00002A  000EAB      1D02       0  CODE        2
+                text35                         000E5D  000024  000E81      1CBA       0  CODE        2
+                text4                          000EAB  00002E  000ED9      1D56       0  CODE        2
+                text21                         000F0B  000034  000F3F      1E16       0  CODE        2
+                text58                         000ED9  000032  000F0B      1DB2       0  CODE        2
                 text42                         000DD8  00001F  000DF7      1BB0       0  CODE        2
                 text37                         000DF7  000021  000E18      1BEE       0  CODE        2
-                maintext                       000E18  000022  000E3A      1C30       0  CODE        2
                 text46                         000E3A  000023  000E5D      1C74       0  CODE        2
-                text35                         000E5D  000024  000E81      1CBA       0  CODE        2
-                text44                         000E81  00002A  000EAB      1D02       0  CODE        2
-                text4                          000EAB  00002E  000ED9      1D56       0  CODE        2
-                text58                         000ED9  000032  000F0B      1DB2       0  CODE        2
-                text21                         000F0B  000034  000F3F      1E16       0  CODE        2
+                maintext                       000E18  000022  000E3A      1C30       0  CODE        2
                 text47                         000F3F  00003F  000F7E      1E7E       0  CODE        2
                 text33                         000F7E  00003F  000FBD      1EFC       0  CODE        2
                 text7                          000FBD  000043  001000      1F7A       0  CODE        2
-                stringtext2                    001000  0001AF  0011AF      2000       0  STRCODE     2
-                config                         008007  000005  00800C     1000E       0  CONFIG      2
 
 
 UNUSED ADDRESS RANGES
@@ -930,33 +930,6 @@ _WPUA                                           (abs)        01F39
 _WPUB                                           (abs)        01F44
 _WPUC                                           (abs)        01F4F
 _WPUE                                           (abs)        01F65
-__CFG_BBEN$OFF                                  (abs)        00000
-__CFG_BBSIZE$BB512                              (abs)        00000
-__CFG_BOREN$ON                                  (abs)        00000
-__CFG_BORV$LO                                   (abs)        00000
-__CFG_CLKOUTEN$OFF                              (abs)        00000
-__CFG_CP$OFF                                    (abs)        00000
-__CFG_CSWEN$ON                                  (abs)        00000
-__CFG_FCMEN$ON                                  (abs)        00000
-__CFG_FEXTOSC$OFF                               (abs)        00000
-__CFG_LPBOREN$OFF                               (abs)        00000
-__CFG_LVP$ON                                    (abs)        00000
-__CFG_MCLRE$ON                                  (abs)        00000
-__CFG_PPS1WAY$ON                                (abs)        00000
-__CFG_PWRTS$OFF                                 (abs)        00000
-__CFG_RSTOSC$HFINT1                             (abs)        00000
-__CFG_SAFEN$OFF                                 (abs)        00000
-__CFG_STVREN$ON                                 (abs)        00000
-__CFG_WDTCCS$SC                                 (abs)        00000
-__CFG_WDTCPS$WDTCPS_31                          (abs)        00000
-__CFG_WDTCWS$WDTCWS_7                           (abs)        00000
-__CFG_WDTE$OFF                                  (abs)        00000
-__CFG_WRTAPP$OFF                                (abs)        00000
-__CFG_WRTB$OFF                                  (abs)        00000
-__CFG_WRTC$OFF                                  (abs)        00000
-__CFG_WRTD$OFF                                  (abs)        00000
-__CFG_WRTSAF$OFF                                (abs)        00000
-__CFG_ZCDDIS$OFF                                (abs)        00000
 __Habs1                                         abs1         00000
 __Hbank0                                        bank0        00000
 __Hbank1                                        bank1        00000
@@ -1037,7 +1010,6 @@ __HcstackCOMMON                                 cstackCOMMON 00000
 __Heeprom_data                                  eeprom_data  00000
 __Hend_init                                     end_init     00027
 __Hfunctab                                      functab      00000
-__Hidloc                                        idloc        00000
 __Hinit                                         init         00025
 __Hintentry                                     intentry     00025
 __Hmaintext                                     maintext     00000
@@ -1110,10 +1082,11 @@ __Hsfr63                                        sfr63        00000
 __Hsfr7                                         sfr7         00000
 __Hsfr8                                         sfr8         00000
 __Hsfr9                                         sfr9         00000
-__Hspace_0                                      (abs)        0800C
+__Hspace_0                                      (abs)        011AF
 __Hspace_1                                      (abs)        000B0
 __Hspace_2                                      (abs)        00000
 __Hspace_3                                      (abs)        00000
+__Hspace_4                                      (abs)        10013
 __Hstack                                        stack        00000
 __Hstrings                                      strings      00000
 __Hstringtext1                                  stringtext1  00000
@@ -1232,14 +1205,13 @@ __Lcinit                                        cinit        00027
 __Lclrtext                                      clrtext      00000
 __Lcode                                         code         00000
 __Lcommon                                       common       00000
-__Lconfig                                       config       08007
+__Lconfig                                       config       00000
 __LcstackBANK0                                  cstackBANK0  00000
 __LcstackBANK1                                  cstackBANK1  00000
 __LcstackCOMMON                                 cstackCOMMON 00000
 __Leeprom_data                                  eeprom_data  00000
 __Lend_init                                     end_init     00025
 __Lfunctab                                      functab      00000
-__Lidloc                                        idloc        00000
 __Linit                                         init         00025
 __Lintentry                                     intentry     00004
 __Lmaintext                                     maintext     00000
@@ -1316,6 +1288,7 @@ __Lspace_0                                      (abs)        00000
 __Lspace_1                                      (abs)        00000
 __Lspace_2                                      (abs)        00000
 __Lspace_3                                      (abs)        00000
+__Lspace_4                                      (abs)        00000
 __Lstack                                        stack        00000
 __Lstrings                                      strings      00000
 __Lstringtext1                                  stringtext1  00000
@@ -1361,7 +1334,7 @@ __Lstringtext7                                  stringtext7  00000
 __Lstringtext8                                  stringtext8  00000
 __Lstringtext9                                  stringtext9  00000
 __Ltext                                         text         00000
-__S0                                            (abs)        0800C
+__S0                                            (abs)        011AF
 __S1                                            (abs)        000B0
 __S2                                            (abs)        00000
 __S3                                            (abs)        00000
@@ -1683,2181 +1656,143 @@ start_initialization                            cinit        00027
 wtemp0                                          (abs)        0007E
 
 
-FUNCTION INFORMATION:
-
- *************** function _main *****************
- Defined at:
-		line 52 in file "main.c"
- Parameters:    Size  Location     Type
-		None
- Auto vars:     Size  Location     Type
-		None
- Return value:  Size  Location     Type
-                  1    wreg      void 
- Registers used:
-		wreg, fsr0l, fsr0h, fsr1l, fsr1h, status,2, status,0, pclath, cstack
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
-      Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          0       0       2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         0       0       2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        2 bytes
- Hardware stack levels required when called:    9
- This function calls:
-		_EUSART1_is_rx_ready
-		_NEMS_initialize
-		_NEMS_message_handler
-		_SYSTEM_Initialize
- This function is called by:
-		Startup code after reset
- This function uses a non-reentrant model
-
-
- *************** function _SYSTEM_Initialize *****************
- Defined at:
-		line 50 in file "mcc_generated_files/mcc.c"
- Parameters:    Size  Location     Type
-		None
- Auto vars:     Size  Location     Type
-		None
- Return value:  Size  Location     Type
-                  1    wreg      void 
- Registers used:
-		wreg, status,2, status,0, pclath, cstack
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
-      Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        0 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    6
- This function calls:
-		_DAC1_Initialize
-		_EUSART1_Initialize
-		_FVR_Initialize
-		_OSCILLATOR_Initialize
-		_PIN_MANAGER_Initialize
-		_PMD_Initialize
-		_TMR0_Initialize
- This function is called by:
-		_main
- This function uses a non-reentrant model
-
-
- *************** function _TMR0_Initialize *****************
- Defined at:
-		line 66 in file "mcc_generated_files/tmr0.c"
- Parameters:    Size  Location     Type
-		None
- Auto vars:     Size  Location     Type
-		None
- Return value:  Size  Location     Type
-                  1    wreg      void 
- Registers used:
-		wreg, status,2, status,0, pclath, cstack
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
-      Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        0 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    5
- This function calls:
-		_TMR0_SetInterruptHandler
- This function is called by:
-		_SYSTEM_Initialize
- This function uses a non-reentrant model
-
-
- *************** function _PMD_Initialize *****************
- Defined at:
-		line 77 in file "mcc_generated_files/mcc.c"
- Parameters:    Size  Location     Type
-		None
- Auto vars:     Size  Location     Type
-		None
- Return value:  Size  Location     Type
-                  1    wreg      void 
- Registers used:
-		status,2
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
-      Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        0 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    4
- This function calls:
-		Nothing
- This function is called by:
-		_SYSTEM_Initialize
- This function uses a non-reentrant model
-
-
- *************** function _PIN_MANAGER_Initialize *****************
- Defined at:
-		line 55 in file "mcc_generated_files/pin_manager.c"
- Parameters:    Size  Location     Type
-		None
- Auto vars:     Size  Location     Type
-		None
- Return value:  Size  Location     Type
-                  1    wreg      void 
- Registers used:
-		wreg, status,2
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
-      Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        0 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    4
- This function calls:
-		Nothing
- This function is called by:
-		_SYSTEM_Initialize
- This function uses a non-reentrant model
-
-
- *************** function _OSCILLATOR_Initialize *****************
- Defined at:
-		line 61 in file "mcc_generated_files/mcc.c"
- Parameters:    Size  Location     Type
-		None
- Auto vars:     Size  Location     Type
-		None
- Return value:  Size  Location     Type
-                  1    wreg      void 
- Registers used:
-		wreg, status,2
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
-      Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        0 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    4
- This function calls:
-		Nothing
- This function is called by:
-		_SYSTEM_Initialize
- This function uses a non-reentrant model
-
-
- *************** function _FVR_Initialize *****************
- Defined at:
-		line 58 in file "mcc_generated_files/fvr.c"
- Parameters:    Size  Location     Type
-		None
- Auto vars:     Size  Location     Type
-		None
- Return value:  Size  Location     Type
-                  1    wreg      void 
- Registers used:
-		wreg
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
-      Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        0 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    4
- This function calls:
-		Nothing
- This function is called by:
-		_SYSTEM_Initialize
- This function uses a non-reentrant model
-
-
- *************** function _EUSART1_Initialize *****************
- Defined at:
-		line 88 in file "mcc_generated_files/eusart1.c"
- Parameters:    Size  Location     Type
-		None
- Auto vars:     Size  Location     Type
-		None
- Return value:  Size  Location     Type
-                  1    wreg      void 
- Registers used:
-		wreg, status,2, status,0, pclath, cstack
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
-      Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          0       1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         0       1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        1 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    5
- This function calls:
-		_EUSART1_SetErrorHandler
-		_EUSART1_SetFramingErrorHandler
-		_EUSART1_SetOverrunErrorHandler
-		_EUSART1_SetRxInterruptHandler
-		_EUSART1_SetTxInterruptHandler
- This function is called by:
-		_SYSTEM_Initialize
- This function uses a non-reentrant model
-
-
- *************** function _EUSART1_SetTxInterruptHandler *****************
- Defined at:
-		line 276 in file "mcc_generated_files/eusart1.c"
- Parameters:    Size  Location     Type
-  interruptHan    2    0[BANK0 ] PTR FTN()void 
-		 -> EUSART1_Transmit_ISR(1), 
- Auto vars:     Size  Location     Type
-		None
- Return value:  Size  Location     Type
-                  1    wreg      void 
- Registers used:
-		wreg
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
-      Params:         0       2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         0       2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        2 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    4
- This function calls:
-		Nothing
- This function is called by:
-		_EUSART1_Initialize
- This function uses a non-reentrant model
-
-
- *************** function _EUSART1_SetRxInterruptHandler *****************
- Defined at:
-		line 280 in file "mcc_generated_files/eusart1.c"
- Parameters:    Size  Location     Type
-  interruptHan    2    0[BANK0 ] PTR FTN()void 
-		 -> EUSART1_Receive_ISR(1), 
- Auto vars:     Size  Location     Type
-		None
- Return value:  Size  Location     Type
-                  1    wreg      void 
- Registers used:
-		wreg
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
-      Params:         0       2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         0       2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        2 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    4
- This function calls:
-		Nothing
- This function is called by:
-		_EUSART1_Initialize
- This function uses a non-reentrant model
-
-
- *************** function _EUSART1_SetOverrunErrorHandler *****************
- Defined at:
-		line 268 in file "mcc_generated_files/eusart1.c"
- Parameters:    Size  Location     Type
-  interruptHan    2    0[BANK0 ] PTR FTN()void 
-		 -> EUSART1_DefaultOverrunErrorHandler(1), 
- Auto vars:     Size  Location     Type
-		None
- Return value:  Size  Location     Type
-                  1    wreg      void 
- Registers used:
-		wreg
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
-      Params:         0       2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         0       2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        2 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    4
- This function calls:
-		Nothing
- This function is called by:
-		_EUSART1_Initialize
- This function uses a non-reentrant model
-
-
- *************** function _EUSART1_SetFramingErrorHandler *****************
- Defined at:
-		line 264 in file "mcc_generated_files/eusart1.c"
- Parameters:    Size  Location     Type
-  interruptHan    2    0[BANK0 ] PTR FTN()void 
-		 -> EUSART1_DefaultFramingErrorHandler(1), 
- Auto vars:     Size  Location     Type
-		None
- Return value:  Size  Location     Type
-                  1    wreg      void 
- Registers used:
-		wreg
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
-      Params:         0       2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         0       2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        2 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    4
- This function calls:
-		Nothing
- This function is called by:
-		_EUSART1_Initialize
- This function uses a non-reentrant model
-
-
- *************** function _EUSART1_SetErrorHandler *****************
- Defined at:
-		line 272 in file "mcc_generated_files/eusart1.c"
- Parameters:    Size  Location     Type
-  interruptHan    2    0[BANK0 ] PTR FTN()void 
-		 -> EUSART1_DefaultErrorHandler(1), 
- Auto vars:     Size  Location     Type
-		None
- Return value:  Size  Location     Type
-                  1    wreg      void 
- Registers used:
-		wreg
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
-      Params:         0       2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         0       2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        2 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    4
- This function calls:
-		Nothing
- This function is called by:
-		_EUSART1_Initialize
- This function uses a non-reentrant model
-
-
- *************** function _DAC1_Initialize *****************
- Defined at:
-		line 58 in file "mcc_generated_files/dac1.c"
- Parameters:    Size  Location     Type
-		None
- Auto vars:     Size  Location     Type
-		None
- Return value:  Size  Location     Type
-                  1    wreg      void 
- Registers used:
-		wreg, status,2
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
-      Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        0 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    4
- This function calls:
-		Nothing
- This function is called by:
-		_SYSTEM_Initialize
- This function uses a non-reentrant model
-
-
- *************** function _NEMS_message_handler *****************
- Defined at:
-		line 81 in file "NEMS.c"
- Parameters:    Size  Location     Type
-		None
- Auto vars:     Size  Location     Type
-  header          1   37[BANK0 ] unsigned char 
- Return value:  Size  Location     Type
-                  1    wreg      void 
- Registers used:
-		wreg, fsr0l, fsr0h, fsr1l, fsr1h, status,2, status,0, pclath, cstack
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
-      Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         0       1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          0       2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         0       3       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        3 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    8
- This function calls:
-		_EUSART1_Read
-		_NEMS_get_program
-		_NEMS_load_program
-		_NEMS_save_program
-		_NEMS_set_OFF_time
-		_NEMS_set_ON_time
-		_NEMS_set_amplitude
-		_NEMS_set_channel1
-		_NEMS_set_channel2
-		_NEMS_set_contractions
-		_NEMS_set_frequency
-		_NEMS_set_phase_duration
-		_NEMS_set_ramp_down
-		_NEMS_set_ramp_up
-		_NEMS_set_symmetry_factor
-		_NEMS_start_program
-		_NEMS_stop_program
-		__puts
- This function is called by:
-		_main
- This function uses a non-reentrant model
-
-
- *************** function _NEMS_stop_program *****************
- Defined at:
-		line 560 in file "NEMS.c"
- Parameters:    Size  Location     Type
-		None
- Auto vars:     Size  Location     Type
-		None
- Return value:  Size  Location     Type
-                  1    wreg      void 
- Registers used:
-		wreg, fsr0l, fsr0h, fsr1l, fsr1h, status,2, status,0, pclath, cstack
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
-      Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        0 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    6
- This function calls:
-		_DAC1_SetOutput
-		_TMR0_StopTimer
-		__puts
- This function is called by:
-		_NEMS_message_handler
- This function uses a non-reentrant model
-
-
- *************** function _NEMS_start_program *****************
- Defined at:
-		line 542 in file "NEMS.c"
- Parameters:    Size  Location     Type
-		None
- Auto vars:     Size  Location     Type
-		None
- Return value:  Size  Location     Type
-                  1    wreg      void 
- Registers used:
-		wreg, fsr0l, fsr0h, fsr1l, fsr1h, status,2, status,0, pclath, cstack
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
-      Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          0       1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         0       1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        1 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    7
- This function calls:
-		_NEMS_recalculate_program
-		_TMR0_StartTimer
-		__puts
- This function is called by:
-		_NEMS_message_handler
- This function uses a non-reentrant model
-
-
- *************** function _TMR0_StartTimer *****************
- Defined at:
-		line 95 in file "mcc_generated_files/tmr0.c"
- Parameters:    Size  Location     Type
-		None
- Auto vars:     Size  Location     Type
-		None
- Return value:  Size  Location     Type
-                  1    wreg      void 
- Registers used:
-		None
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
-      Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        0 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    4
- This function calls:
-		Nothing
- This function is called by:
-		_NEMS_start_program
- This function uses a non-reentrant model
-
-
- *************** function _NEMS_recalculate_program *****************
- Defined at:
-		line 402 in file "NEMS.c"
- Parameters:    Size  Location     Type
-		None
- Auto vars:     Size  Location     Type
-		None
- Return value:  Size  Location     Type
-                  1    wreg      void 
- Registers used:
-		wreg, fsr0l, fsr0h, fsr1l, fsr1h, status,2, status,0, pclath, cstack
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
-      Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          0       6       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         0       6       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        6 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    6
- This function calls:
-		_NEMS_calculate_ramp
-		___awdiv
-		___bmul
-		___lwdiv
-		___wmul
- This function is called by:
-		_NEMS_start_program
- This function uses a non-reentrant model
-
-
- *************** function _NEMS_calculate_ramp *****************
- Defined at:
-		line 447 in file "NEMS.c"
- Parameters:    Size  Location     Type
-		None
- Auto vars:     Size  Location     Type
-  i               1   27[BANK0 ] unsigned char 
- Return value:  Size  Location     Type
-                  1    wreg      void 
- Registers used:
-		wreg, fsr1l, fsr1h, status,2, status,0, pclath, cstack
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
-      Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         0       1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          0      13       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         0      14       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:       14 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    5
- This function calls:
-		___lwdiv
-		___wmul
- This function is called by:
-		_NEMS_recalculate_program
- This function uses a non-reentrant model
-
-
- *************** function ___wmul *****************
- Defined at:
-		line 15 in file "/pkg/microchip/xc8/v2.10/pic/sources/c99/common/Umul16.c"
- Parameters:    Size  Location     Type
-  multiplier      2    0[BANK0 ] unsigned int 
-  multiplicand    2    2[BANK0 ] unsigned int 
- Auto vars:     Size  Location     Type
-  product         2    4[BANK0 ] unsigned int 
- Return value:  Size  Location     Type
-                  2    0[BANK0 ] unsigned int 
- Registers used:
-		wreg, status,2, status,0
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
-      Params:         0       4       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         0       2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         0       6       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        6 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    4
- This function calls:
-		Nothing
- This function is called by:
-		_NEMS_recalculate_program
-		_NEMS_calculate_ramp
- This function uses a non-reentrant model
-
-
- *************** function ___lwdiv *****************
- Defined at:
-		line 5 in file "/pkg/microchip/xc8/v2.10/pic/sources/c99/common/lwdiv.c"
- Parameters:    Size  Location     Type
-  divisor         2    6[BANK0 ] unsigned int 
-  dividend        2    8[BANK0 ] unsigned int 
- Auto vars:     Size  Location     Type
-  quotient        2   11[BANK0 ] unsigned int 
-  counter         1   13[BANK0 ] unsigned char 
- Return value:  Size  Location     Type
-                  2    6[BANK0 ] unsigned int 
- Registers used:
-		wreg, status,2, status,0
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
-      Params:         0       4       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         0       3       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          0       1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         0       8       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        8 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    4
- This function calls:
-		Nothing
- This function is called by:
-		_NEMS_recalculate_program
-		_NEMS_calculate_ramp
- This function uses a non-reentrant model
-
-
- *************** function _NEMS_set_symmetry_factor *****************
- Defined at:
-		line 213 in file "NEMS.c"
- Parameters:    Size  Location     Type
-		None
- Auto vars:     Size  Location     Type
-		None
- Return value:  Size  Location     Type
-                  1    wreg      void 
- Registers used:
-		wreg, fsr0l, fsr0h, fsr1l, fsr1h, status,2, status,0, pclath, cstack
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
-      Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        0 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    6
- This function calls:
-		_NEMS_get_packet
-		__puts
- This function is called by:
-		_NEMS_message_handler
- This function uses a non-reentrant model
-
-
- *************** function _NEMS_set_ramp_up *****************
- Defined at:
-		line 254 in file "NEMS.c"
- Parameters:    Size  Location     Type
-		None
- Auto vars:     Size  Location     Type
-		None
- Return value:  Size  Location     Type
-                  1    wreg      void 
- Registers used:
-		wreg, fsr0l, fsr0h, fsr1l, fsr1h, status,2, status,0, pclath, cstack
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
-      Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        0 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    6
- This function calls:
-		_NEMS_get_packet
-		__puts
- This function is called by:
-		_NEMS_message_handler
- This function uses a non-reentrant model
-
-
- *************** function _NEMS_set_ramp_down *****************
- Defined at:
-		line 265 in file "NEMS.c"
- Parameters:    Size  Location     Type
-		None
- Auto vars:     Size  Location     Type
-		None
- Return value:  Size  Location     Type
-                  1    wreg      void 
- Registers used:
-		wreg, fsr0l, fsr0h, fsr1l, fsr1h, status,2, status,0, pclath, cstack
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
-      Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        0 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    6
- This function calls:
-		_NEMS_get_packet
-		__puts
- This function is called by:
-		_NEMS_message_handler
- This function uses a non-reentrant model
-
-
- *************** function _NEMS_set_phase_duration *****************
- Defined at:
-		line 203 in file "NEMS.c"
- Parameters:    Size  Location     Type
-		None
- Auto vars:     Size  Location     Type
-		None
- Return value:  Size  Location     Type
-                  1    wreg      void 
- Registers used:
-		wreg, fsr0l, fsr0h, fsr1l, fsr1h, status,2, status,0, pclath, cstack
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
-      Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        0 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    6
- This function calls:
-		_NEMS_get_packet
-		__puts
- This function is called by:
-		_NEMS_message_handler
- This function uses a non-reentrant model
-
-
- *************** function _NEMS_set_frequency *****************
- Defined at:
-		line 193 in file "NEMS.c"
- Parameters:    Size  Location     Type
-		None
- Auto vars:     Size  Location     Type
-		None
- Return value:  Size  Location     Type
-                  1    wreg      void 
- Registers used:
-		wreg, fsr0l, fsr0h, fsr1l, fsr1h, status,2, status,0, pclath, cstack
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
-      Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        0 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    6
- This function calls:
-		_NEMS_get_packet
-		__puts
- This function is called by:
-		_NEMS_message_handler
- This function uses a non-reentrant model
-
-
- *************** function _NEMS_set_contractions *****************
- Defined at:
-		line 244 in file "NEMS.c"
- Parameters:    Size  Location     Type
-		None
- Auto vars:     Size  Location     Type
-		None
- Return value:  Size  Location     Type
-                  1    wreg      void 
- Registers used:
-		wreg, fsr0l, fsr0h, fsr1l, fsr1h, status,2, status,0, pclath, cstack
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
-      Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        0 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    6
- This function calls:
-		_NEMS_get_packet
-		__puts
- This function is called by:
-		_NEMS_message_handler
- This function uses a non-reentrant model
-
-
- *************** function _NEMS_set_channel2 *****************
- Defined at:
-		line 348 in file "NEMS.c"
- Parameters:    Size  Location     Type
-		None
- Auto vars:     Size  Location     Type
-		None
- Return value:  Size  Location     Type
-                  1    wreg      void 
- Registers used:
-		wreg, fsr0l, fsr0h, fsr1l, fsr1h, status,2, status,0, pclath, cstack
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
-      Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        0 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    6
- This function calls:
-		_NEMS_get_packet
-		__puts
- This function is called by:
-		_NEMS_message_handler
- This function uses a non-reentrant model
-
-
- *************** function _NEMS_set_channel1 *****************
- Defined at:
-		line 338 in file "NEMS.c"
- Parameters:    Size  Location     Type
-		None
- Auto vars:     Size  Location     Type
-		None
- Return value:  Size  Location     Type
-                  1    wreg      void 
- Registers used:
-		wreg, fsr0l, fsr0h, fsr1l, fsr1h, status,2, status,0, pclath, cstack
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
-      Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        0 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    6
- This function calls:
-		_NEMS_get_packet
-		__puts
- This function is called by:
-		_NEMS_message_handler
- This function uses a non-reentrant model
-
-
- *************** function _NEMS_set_amplitude *****************
- Defined at:
-		line 183 in file "NEMS.c"
- Parameters:    Size  Location     Type
-		None
- Auto vars:     Size  Location     Type
-		None
- Return value:  Size  Location     Type
-                  1    wreg      void 
- Registers used:
-		wreg, fsr0l, fsr0h, fsr1l, fsr1h, status,2, status,0, pclath, cstack
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
-      Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        0 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    6
- This function calls:
-		_NEMS_get_packet
-		__puts
- This function is called by:
-		_NEMS_message_handler
- This function uses a non-reentrant model
-
-
- *************** function _NEMS_set_ON_time *****************
- Defined at:
-		line 224 in file "NEMS.c"
- Parameters:    Size  Location     Type
-		None
- Auto vars:     Size  Location     Type
-		None
- Return value:  Size  Location     Type
-                  1    wreg      void 
- Registers used:
-		wreg, fsr0l, fsr0h, fsr1l, fsr1h, status,2, status,0, pclath, cstack
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
-      Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        0 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    6
- This function calls:
-		_NEMS_get_packet
-		__puts
- This function is called by:
-		_NEMS_message_handler
- This function uses a non-reentrant model
-
-
- *************** function _NEMS_set_OFF_time *****************
- Defined at:
-		line 234 in file "NEMS.c"
- Parameters:    Size  Location     Type
-		None
- Auto vars:     Size  Location     Type
-		None
- Return value:  Size  Location     Type
-                  1    wreg      void 
- Registers used:
-		wreg, fsr0l, fsr0h, fsr1l, fsr1h, status,2, status,0, pclath, cstack
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
-      Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        0 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    6
- This function calls:
-		_NEMS_get_packet
-		__puts
- This function is called by:
-		_NEMS_message_handler
- This function uses a non-reentrant model
-
-
- *************** function _NEMS_get_packet *****************
- Defined at:
-		line 163 in file "NEMS.c"
- Parameters:    Size  Location     Type
-  pt              1    wreg     PTR unsigned char 
-		 -> program.channel2(1), program.channel1(1), program.symmetry_factor(1), program.ramp_down(1), 
-		 -> program.ramp_up(1), program.contractions(1), program.OFF_time(1), program.ON_time(1), 
-		 -> program.phase_duration(1), program.frequency(1), program.amplitude(1), program(11), 
- Auto vars:     Size  Location     Type
-  pt              1    8[BANK0 ] PTR unsigned char 
-		 -> program.channel2(1), program.channel1(1), program.symmetry_factor(1), program.ramp_down(1), 
-		 -> program.ramp_up(1), program.contractions(1), program.OFF_time(1), program.ON_time(1), 
-		 -> program.phase_duration(1), program.frequency(1), program.amplitude(1), program(11), 
-  message         2    6[BANK0 ] unsigned char [2]
- Return value:  Size  Location     Type
-                  1    wreg      unsigned char 
- Registers used:
-		wreg, fsr1l, fsr1h, status,2, status,0, pclath, cstack
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
-      Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         0       3       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          0       2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         0       5       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        5 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    5
- This function calls:
-		_EUSART1_Read
-		___bmul
- This function is called by:
-		_NEMS_set_amplitude
-		_NEMS_set_frequency
-		_NEMS_set_phase_duration
-		_NEMS_set_symmetry_factor
-		_NEMS_set_ON_time
-		_NEMS_set_OFF_time
-		_NEMS_set_contractions
-		_NEMS_set_ramp_up
-		_NEMS_set_ramp_down
-		_NEMS_set_channel1
-		_NEMS_set_channel2
- This function uses a non-reentrant model
-
-
- *************** function ___bmul *****************
- Defined at:
-		line 4 in file "/pkg/microchip/xc8/v2.10/pic/sources/c99/common/Umul8.c"
- Parameters:    Size  Location     Type
-  multiplier      1    wreg     unsigned char 
-  multiplicand    1    0[BANK0 ] unsigned char 
- Auto vars:     Size  Location     Type
-  multiplier      1    3[BANK0 ] unsigned char 
-  product         1    2[BANK0 ] unsigned char 
- Return value:  Size  Location     Type
-                  1    wreg      unsigned char 
- Registers used:
-		wreg, status,2, status,0
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
-      Params:         0       1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         0       2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          0       1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         0       4       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        4 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    4
- This function calls:
-		Nothing
- This function is called by:
-		_NEMS_get_packet
-		_NEMS_recalculate_program
- This function uses a non-reentrant model
-
-
- *************** function _EUSART1_Read *****************
- Defined at:
-		line 151 in file "mcc_generated_files/eusart1.c"
- Parameters:    Size  Location     Type
-		None
- Auto vars:     Size  Location     Type
-  readValue       1    1[BANK0 ] unsigned char 
- Return value:  Size  Location     Type
-                  1    wreg      unsigned char 
- Registers used:
-		wreg, fsr1l, fsr1h, status,2, status,0
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
-      Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         0       1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          0       1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         0       2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        2 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    4
- This function calls:
-		Nothing
- This function is called by:
-		_NEMS_message_handler
-		_NEMS_get_packet
- This function uses a non-reentrant model
-
-
- *************** function _NEMS_save_program *****************
- Defined at:
-		line 358 in file "NEMS.c"
- Parameters:    Size  Location     Type
-		None
- Auto vars:     Size  Location     Type
-  addr            1    9[BANK0 ] unsigned char 
- Return value:  Size  Location     Type
-                  1    wreg      void 
- Registers used:
-		wreg, fsr0l, fsr0h, fsr1l, fsr1h, status,2, status,0, pclath, cstack
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
-      Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         0       1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          0       1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         0       2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        2 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    6
- This function calls:
-		__puts
-		_eeprom_write
- This function is called by:
-		_NEMS_message_handler
- This function uses a non-reentrant model
-
-
- *************** function _eeprom_write *****************
- Defined at:
-		line 6 in file "/pkg/microchip/xc8/v2.10/pic/sources/c99/pic/__eewrite.c"
- Parameters:    Size  Location     Type
-  addr            1    wreg     unsigned char 
-  value           1    0[BANK0 ] unsigned char 
- Auto vars:     Size  Location     Type
-  addr            1    1[BANK0 ] unsigned char 
- Return value:  Size  Location     Type
-                  1    wreg      void 
- Registers used:
-		wreg, status,2
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
-      Params:         0       1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         0       1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         0       2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        2 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    4
- This function calls:
-		Nothing
- This function is called by:
-		_NEMS_save_program
- This function uses a non-reentrant model
-
-
- *************** function _NEMS_load_program *****************
- Defined at:
-		line 380 in file "NEMS.c"
- Parameters:    Size  Location     Type
-		None
- Auto vars:     Size  Location     Type
-  addr            2    9[BANK0 ] unsigned short 
- Return value:  Size  Location     Type
-                  1    wreg      void 
- Registers used:
-		wreg, fsr0l, fsr0h, fsr1l, fsr1h, status,2, status,0, pclath, cstack
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
-      Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         0       2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          0       1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         0       3       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        3 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    6
- This function calls:
-		__puts
-		_eeprom_read
- This function is called by:
-		_NEMS_message_handler
- This function uses a non-reentrant model
-
-
- *************** function _eeprom_read *****************
- Defined at:
-		line 6 in file "/pkg/microchip/xc8/v2.10/pic/sources/c99/pic/__eeread.c"
- Parameters:    Size  Location     Type
-  addr            1    wreg     unsigned char 
- Auto vars:     Size  Location     Type
-  addr            1    0[BANK0 ] unsigned char 
- Return value:  Size  Location     Type
-                  1    wreg      unsigned char 
- Registers used:
-		wreg
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
-      Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         0       1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         0       1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        1 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    4
- This function calls:
-		Nothing
- This function is called by:
-		_NEMS_load_program
- This function uses a non-reentrant model
-
-
- *************** function _NEMS_get_program *****************
- Defined at:
-		line 275 in file "NEMS.c"
- Parameters:    Size  Location     Type
-		None
- Auto vars:     Size  Location     Type
-  aux             4   25[BANK0 ] unsigned char [4]
- Return value:  Size  Location     Type
-                  1    wreg      void 
- Registers used:
-		wreg, fsr0l, fsr0h, fsr1l, fsr1h, status,2, status,0, pclath, cstack
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
-      Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         0       4       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          0       1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         0       5       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        5 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    6
- This function calls:
-		__puts
-		__sprintf_u8b
- This function is called by:
-		_NEMS_message_handler
- This function uses a non-reentrant model
-
-
- *************** function __sprintf_u8b *****************
- Defined at:
-		line 52 in file "comm.c"
- Parameters:    Size  Location     Type
-  mess            1    wreg     PTR unsigned char 
-		 -> NEMS_get_program@aux(4), 
-  val             1   15[BANK0 ] unsigned char 
- Auto vars:     Size  Location     Type
-  mess            1   23[BANK0 ] PTR unsigned char 
-		 -> NEMS_get_program@aux(4), 
-  buf             3   20[BANK0 ] unsigned char [3]
-  aux             1   19[BANK0 ] unsigned char 
- Return value:  Size  Location     Type
-                  1    wreg      void 
- Registers used:
-		wreg, fsr1l, fsr1h, status,2, status,0, pclath, cstack
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
-      Params:         0       1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         0       5       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          0       3       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         0       9       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        9 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    5
- This function calls:
-		___awdiv
-		___lbmod
- This function is called by:
-		_NEMS_get_program
- This function uses a non-reentrant model
-
-
- *************** function ___lbmod *****************
- Defined at:
-		line 4 in file "/pkg/microchip/xc8/v2.10/pic/sources/c99/common/lbmod.c"
- Parameters:    Size  Location     Type
-  dividend        1    wreg     unsigned char 
-  divisor         1    0[BANK0 ] unsigned char 
- Auto vars:     Size  Location     Type
-  dividend        1    3[BANK0 ] unsigned char 
-  rem             1    5[BANK0 ] unsigned char 
-  counter         1    4[BANK0 ] unsigned char 
- Return value:  Size  Location     Type
-                  1    wreg      unsigned char 
- Registers used:
-		wreg, status,2, status,0
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
-      Params:         0       1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         0       3       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          0       2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         0       6       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        6 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    4
- This function calls:
-		Nothing
- This function is called by:
-		__sprintf_u8b
- This function uses a non-reentrant model
-
-
- *************** function ___awdiv *****************
- Defined at:
-		line 5 in file "/pkg/microchip/xc8/v2.10/pic/sources/c99/common/awdiv.c"
- Parameters:    Size  Location     Type
-  divisor         2    6[BANK0 ] int 
-  dividend        2    8[BANK0 ] int 
- Auto vars:     Size  Location     Type
-  quotient        2   13[BANK0 ] int 
-  sign            1   12[BANK0 ] unsigned char 
-  counter         1   11[BANK0 ] unsigned char 
- Return value:  Size  Location     Type
-                  2    6[BANK0 ] int 
- Registers used:
-		wreg, status,2, status,0
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
-      Params:         0       4       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         0       4       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          0       1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         0       9       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        9 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    4
- This function calls:
-		Nothing
- This function is called by:
-		_NEMS_recalculate_program
-		__sprintf_u8b
- This function uses a non-reentrant model
-
-
- *************** function __puts *****************
- Defined at:
-		line 5 in file "comm.c"
- Parameters:    Size  Location     Type
-  pt              2    2[BANK0 ] PTR unsigned char 
-		 -> STR_51(6), STR_50(6), STR_49(28), STR_48(6), 
-		 -> STR_47(6), STR_46(7), STR_45(6), STR_44(7), 
-		 -> STR_43(6), STR_42(2), STR_41(12), STR_40(2), 
-		 -> STR_39(12), STR_38(2), STR_37(25), STR_36(2), 
-		 -> STR_35(23), STR_34(2), STR_33(21), STR_32(2), 
-		 -> STR_31(16), STR_30(2), STR_29(15), STR_28(2), 
-		 -> STR_27(18), STR_26(2), STR_25(25), STR_24(2), 
-		 -> STR_23(17), STR_22(2), STR_21(17), NEMS_get_program@aux(4), 
-		 -> STR_20(15), STR_19(7), STR_18(6), STR_17(7), 
-		 -> STR_16(6), STR_15(7), STR_14(6), STR_13(7), 
-		 -> STR_12(6), STR_11(7), STR_10(6), STR_9(7), 
-		 -> STR_8(6), STR_7(7), STR_6(6), STR_5(7), 
-		 -> STR_4(6), STR_3(7), STR_2(6), STR_1(4), 
- Auto vars:     Size  Location     Type
-  index           1    7[BANK0 ] unsigned char 
- Return value:  Size  Location     Type
-                  1    wreg      void 
- Registers used:
-		wreg, fsr0l, fsr0h, fsr1l, fsr1h, status,2, status,0, pclath, cstack
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
-      Params:         0       2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         0       1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          0       3       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         0       6       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        6 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    5
- This function calls:
-		_EUSART1_Write
-		_EUSART1_is_tx_ready
- This function is called by:
-		_NEMS_message_handler
-		_NEMS_set_amplitude
-		_NEMS_set_frequency
-		_NEMS_set_phase_duration
-		_NEMS_set_symmetry_factor
-		_NEMS_set_ON_time
-		_NEMS_set_OFF_time
-		_NEMS_set_contractions
-		_NEMS_set_ramp_up
-		_NEMS_set_ramp_down
-		_NEMS_get_program
-		_NEMS_set_channel1
-		_NEMS_set_channel2
-		_NEMS_save_program
-		_NEMS_load_program
-		_NEMS_start_program
-		_NEMS_stop_program
- This function uses a non-reentrant model
-
-
- *************** function _EUSART1_is_tx_ready *****************
- Defined at:
-		line 132 in file "mcc_generated_files/eusart1.c"
- Parameters:    Size  Location     Type
-		None
- Auto vars:     Size  Location     Type
-		None
- Return value:  Size  Location     Type
-                  1    wreg      _Bool 
- Registers used:
-		wreg, status,2, status,0
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
-      Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        0 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    4
- This function calls:
-		Nothing
- This function is called by:
-		__puts
- This function uses a non-reentrant model
-
-
- *************** function _EUSART1_Write *****************
- Defined at:
-		line 173 in file "mcc_generated_files/eusart1.c"
- Parameters:    Size  Location     Type
-  txData          1    wreg     unsigned char 
- Auto vars:     Size  Location     Type
-  txData          1    1[BANK0 ] unsigned char 
- Return value:  Size  Location     Type
-                  1    wreg      void 
- Registers used:
-		wreg, fsr1l, fsr1h, status,2, status,0
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
-      Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         0       1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          0       1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         0       2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        2 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    4
- This function calls:
-		Nothing
- This function is called by:
-		__puts
- This function uses a non-reentrant model
-
-
- *************** function _NEMS_initialize *****************
- Defined at:
-		line 38 in file "NEMS.c"
- Parameters:    Size  Location     Type
-		None
- Auto vars:     Size  Location     Type
-		None
- Return value:  Size  Location     Type
-                  1    wreg      void 
- Registers used:
-		wreg, status,2, status,0, pclath, cstack
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
-      Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          0       1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         0       1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        1 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    5
- This function calls:
-		_DAC1_SetOutput
-		_TMR0_SetInterruptHandler
-		_TMR0_StopTimer
- This function is called by:
-		_main
- This function uses a non-reentrant model
-
-
- *************** function _TMR0_StopTimer *****************
- Defined at:
-		line 101 in file "mcc_generated_files/tmr0.c"
- Parameters:    Size  Location     Type
-		None
- Auto vars:     Size  Location     Type
-		None
- Return value:  Size  Location     Type
-                  1    wreg      void 
- Registers used:
-		None
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
-      Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        0 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    4
- This function calls:
-		Nothing
- This function is called by:
-		_NEMS_initialize
-		_NEMS_stop_program
- This function uses a non-reentrant model
-
-
- *************** function _TMR0_SetInterruptHandler *****************
- Defined at:
-		line 151 in file "mcc_generated_files/tmr0.c"
- Parameters:    Size  Location     Type
-  InterruptHan    2    0[BANK0 ] PTR FTN()void 
-		 -> NEMS_timer(1), TMR0_DefaultInterruptHandler(1), 
- Auto vars:     Size  Location     Type
-		None
- Return value:  Size  Location     Type
-                  1    wreg      void 
- Registers used:
-		wreg
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
-      Params:         0       2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         0       2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        2 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    4
- This function calls:
-		Nothing
- This function is called by:
-		_TMR0_Initialize
-		_NEMS_initialize
- This function uses a non-reentrant model
-
-
- *************** function _DAC1_SetOutput *****************
- Defined at:
-		line 66 in file "mcc_generated_files/dac1.c"
- Parameters:    Size  Location     Type
-  inputData       1    wreg     unsigned char 
- Auto vars:     Size  Location     Type
-  inputData       1    0[BANK0 ] unsigned char 
- Return value:  Size  Location     Type
-                  1    wreg      void 
- Registers used:
-		wreg
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
-      Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         0       1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         0       1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        1 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    4
- This function calls:
-		Nothing
- This function is called by:
-		_NEMS_initialize
-		_NEMS_stop_program
- This function uses a non-reentrant model
-
-
- *************** function _EUSART1_is_rx_ready *****************
- Defined at:
-		line 137 in file "mcc_generated_files/eusart1.c"
- Parameters:    Size  Location     Type
-		None
- Auto vars:     Size  Location     Type
-		None
- Return value:  Size  Location     Type
-                  1    wreg      _Bool 
- Registers used:
-		wreg, status,2, status,0
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
-      Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        0 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    4
- This function calls:
-		Nothing
- This function is called by:
-		_main
- This function uses a non-reentrant model
-
-
- *************** function _INTERRUPT_InterruptManager *****************
- Defined at:
-		line 52 in file "mcc_generated_files/interrupt_manager.c"
- Parameters:    Size  Location     Type
-		None
- Auto vars:     Size  Location     Type
-		None
- Return value:  Size  Location     Type
-                  1    wreg      void 
- Registers used:
-		wreg, fsr0l, fsr0h, fsr1l, fsr1h, status,2, status,0, pclath, cstack
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
-      Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        0 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    3
- This function calls:
-		Absolute function
-		_EUSART1_Receive_ISR
-		_EUSART1_Transmit_ISR
-		_TMR0_ISR
- This function is called by:
-		Interrupt level 1
- This function uses a non-reentrant model
-
-
- *************** function _TMR0_ISR *****************
- Defined at:
-		line 134 in file "mcc_generated_files/tmr0.c"
- Parameters:    Size  Location     Type
-		None
- Auto vars:     Size  Location     Type
-		None
- Return value:  Size  Location     Type
-                  1    wreg      void 
- Registers used:
-		wreg, fsr0l, fsr0h, fsr1l, fsr1h, status,2, status,0, pclath, cstack
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
-      Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        0 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    2
- This function calls:
-		Absolute function
-		_NEMS_timer
-		_TMR0_DefaultInterruptHandler
- This function is called by:
-		_INTERRUPT_InterruptManager
- This function uses a non-reentrant model
-
-
- *************** function _NEMS_timer *****************
- Defined at:
-		line 460 in file "NEMS.c"
- Parameters:    Size  Location     Type
-		None
- Auto vars:     Size  Location     Type
-		None
- Return value:  Size  Location     Type
-                  1    wreg      void 
- Registers used:
-		wreg, fsr0l, fsr0h, fsr1l, fsr1h, status,2, status,0, pclath, cstack
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
-      Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          5       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         5       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        5 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    1
- This function calls:
-		i1_DAC1_SetOutput
- This function is called by:
-		_NEMS_initialize
-		_TMR0_ISR
- This function uses a non-reentrant model
-
-
- *************** function _TMR0_DefaultInterruptHandler *****************
- Defined at:
-		line 155 in file "mcc_generated_files/tmr0.c"
- Parameters:    Size  Location     Type
-		None
- Auto vars:     Size  Location     Type
-		None
- Return value:  Size  Location     Type
-                  1    wreg      void 
- Registers used:
-		None
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
-      Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        0 bytes
- Hardware stack levels used:    1
- This function calls:
-		Nothing
- This function is called by:
-		_TMR0_Initialize
-		_TMR0_ISR
- This function uses a non-reentrant model
-
-
- *************** function i1_DAC1_SetOutput *****************
- Defined at:
-		line 66 in file "mcc_generated_files/dac1.c"
- Parameters:    Size  Location     Type
-  inputData       1    wreg     unsigned char 
- Auto vars:     Size  Location     Type
-  inputData       1    0[COMMON] unsigned char 
- Return value:  Size  Location     Type
-                  1    wreg      void 
- Registers used:
-		wreg
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
-      Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        1 bytes
- Hardware stack levels used:    1
- This function calls:
-		Nothing
- This function is called by:
-		_NEMS_timer
- This function uses a non-reentrant model
-
-
- *************** function _EUSART1_Transmit_ISR *****************
- Defined at:
-		line 197 in file "mcc_generated_files/eusart1.c"
- Parameters:    Size  Location     Type
-		None
- Auto vars:     Size  Location     Type
-		None
- Return value:  Size  Location     Type
-                  1    wreg      void 
- Registers used:
-		wreg, fsr1l, fsr1h, status,2, status,0
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
-      Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        1 bytes
- Hardware stack levels used:    1
- This function calls:
-		Nothing
- This function is called by:
-		_EUSART1_Initialize
-		_INTERRUPT_InterruptManager
- This function uses a non-reentrant model
-
-
- *************** function _EUSART1_Receive_ISR *****************
- Defined at:
-		line 216 in file "mcc_generated_files/eusart1.c"
- Parameters:    Size  Location     Type
-		None
- Auto vars:     Size  Location     Type
-		None
- Return value:  Size  Location     Type
-                  1    wreg      void 
- Registers used:
-		wreg, fsr1l, fsr1h, status,2, status,0, pclath, cstack
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
-      Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        0 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    2
- This function calls:
-		Absolute function
-		_EUSART1_DefaultErrorHandler
-		_EUSART1_DefaultFramingErrorHandler
-		_EUSART1_DefaultOverrunErrorHandler
-		_EUSART1_RxDataHandler
- This function is called by:
-		_EUSART1_Initialize
-		_INTERRUPT_InterruptManager
- This function uses a non-reentrant model
-
-
- *************** function _EUSART1_DefaultOverrunErrorHandler *****************
- Defined at:
-		line 252 in file "mcc_generated_files/eusart1.c"
- Parameters:    Size  Location     Type
-		None
- Auto vars:     Size  Location     Type
-		None
- Return value:  Size  Location     Type
-                  1    wreg      void 
- Registers used:
-		None
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
-      Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        0 bytes
- Hardware stack levels used:    1
- This function calls:
-		Nothing
- This function is called by:
-		_EUSART1_Initialize
-		_EUSART1_Receive_ISR
- This function uses a non-reentrant model
-
-
- *************** function _EUSART1_DefaultFramingErrorHandler *****************
- Defined at:
-		line 250 in file "mcc_generated_files/eusart1.c"
- Parameters:    Size  Location     Type
-		None
- Auto vars:     Size  Location     Type
-		None
- Return value:  Size  Location     Type
-                  1    wreg      void 
- Registers used:
-		None
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
-      Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        0 bytes
- Hardware stack levels used:    1
- This function calls:
-		Nothing
- This function is called by:
-		_EUSART1_Initialize
-		_EUSART1_Receive_ISR
- This function uses a non-reentrant model
-
-
- *************** function _EUSART1_DefaultErrorHandler *****************
- Defined at:
-		line 260 in file "mcc_generated_files/eusart1.c"
- Parameters:    Size  Location     Type
-		None
- Auto vars:     Size  Location     Type
-		None
- Return value:  Size  Location     Type
-                  1    wreg      void 
- Registers used:
-		wreg, fsr1l, fsr1h, status,2, status,0, pclath, cstack
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
-      Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        0 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    1
- This function calls:
-		_EUSART1_RxDataHandler
- This function is called by:
-		_EUSART1_Initialize
-		_EUSART1_Receive_ISR
- This function uses a non-reentrant model
-
-
- *************** function _EUSART1_RxDataHandler *****************
- Defined at:
-		line 240 in file "mcc_generated_files/eusart1.c"
- Parameters:    Size  Location     Type
-		None
- Auto vars:     Size  Location     Type
-		None
- Return value:  Size  Location     Type
-                  1    wreg      void 
- Registers used:
-		wreg, fsr1l, fsr1h, status,2, status,0
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
-      Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        1 bytes
- Hardware stack levels used:    1
- This function calls:
-		Nothing
- This function is called by:
-		_EUSART1_Receive_ISR
-		_EUSART1_DefaultErrorHandler
- This function uses a non-reentrant model
-
-
-
 MODULE INFORMATION
 
 Module		Function		Class		Link	Load	Size
-mcc_generated_files/fvr.c
-		_FVR_Initialize		CODE           	0BA9	0000	5
+/opt/microchip/xc8/v2.32/pic/sources/c99/common/lbmod.c
+		___lbmod       		CODE           	0DD8	0000	31
 
-mcc_generated_files/fvr.c estimated size: 5
+/opt/microchip/xc8/v2.32/pic/sources/c99/common/lbmod.c estimated size: 31
+
+/opt/microchip/xc8/v2.32/pic/sources/c99/common/Umul16.c
+		___wmul        		CODE           	0D67	0000	27
+
+/opt/microchip/xc8/v2.32/pic/sources/c99/common/Umul16.c estimated size: 27
+
+/opt/microchip/xc8/v2.32/pic/sources/c99/common/Umul8.c
+		___bmul        		CODE           	0C1E	0000	17
+
+/opt/microchip/xc8/v2.32/pic/sources/c99/common/Umul8.c estimated size: 17
+
+mcc_generated_files/fvr.c
+		_FVR_Initialize		CODE           	0BA9	0000	4
+
+mcc_generated_files/fvr.c estimated size: 4
+
+/opt/microchip/xc8/v2.32/pic/sources/c99/common/awdiv.c
+		___awdiv       		CODE           	079A	0000	81
+
+/opt/microchip/xc8/v2.32/pic/sources/c99/common/awdiv.c estimated size: 81
 
 mcc_generated_files/interrupt_manager.c
-		_INTERRUPT_InterruptManager		CODE           	0004	0000	34
+		_INTERRUPT_InterruptManager		CODE           	0004	0000	33
 
-mcc_generated_files/interrupt_manager.c estimated size: 34
+mcc_generated_files/interrupt_manager.c estimated size: 33
 
 mcc_generated_files/tmr0.c
-		_TMR0_SetInterruptHandler		CODE           	0BB2	0000	6
-		_TMR0_StopTimer		CODE           	0B9B	0000	4
-		_TMR0_DefaultInterruptHandler		CODE           	0003	0000	2
-		_TMR0_StartTimer		CODE           	0B9E	0000	4
-		_TMR0_ISR      		CODE           	0C40	0000	21
-		_TMR0_Initialize		CODE           	0D9E	0000	29
+		_TMR0_SetInterruptHandler		CODE           	0BB2	0000	5
+		_TMR0_StopTimer		CODE           	0B9B	0000	3
+		_TMR0_DefaultInterruptHandler		CODE           	0003	0000	1
+		_TMR0_StartTimer		CODE           	0B9E	0000	3
+		_TMR0_ISR      		CODE           	0C40	0000	20
+		_TMR0_Initialize		CODE           	0D9E	0000	28
 
-mcc_generated_files/tmr0.c estimated size: 66
-
-/pkg/microchip/xc8/v2.10/pic/sources/c99/pic/__eewrite.c
-		_eeprom_write  		CODE           	0DF7	0000	34
-
-/pkg/microchip/xc8/v2.10/pic/sources/c99/pic/__eewrite.c estimated size: 34
+mcc_generated_files/tmr0.c estimated size: 60
 
 mcc_generated_files/pin_manager.c
-		_PIN_MANAGER_Initialize		CODE           	0EAB	0000	47
+		_PIN_MANAGER_Initialize		CODE           	0EAB	0000	46
 
-mcc_generated_files/pin_manager.c estimated size: 47
+mcc_generated_files/pin_manager.c estimated size: 46
 
 NEMS.c
-		_NEMS_set_ramp_down		CODE           	0D22	0000	24
-		_NEMS_set_frequency		CODE           	0CF4	0000	24
-		_NEMS_set_phase_duration		CODE           	0D0B	0000	24
-		_NEMS_start_program		CODE           	0DBA	0000	31
-		_NEMS_get_program		CODE           	0376	0000	328
-		_NEMS_calculate_ramp		CODE           	04BD	0000	181
-		_NEMS_timer    		CODE           	004F	0000	447
-		_NEMS_set_ON_time		CODE           	0C81	0000	24
-		_NEMS_set_ramp_up		CODE           	0D39	0000	24
-		_NEMS_set_OFF_time		CODE           	0C6A	0000	24
-		_NEMS_initialize		CODE           	0F3F	0000	64
-		_NEMS_recalculate_program		CODE           	020D	0000	362
-		_NEMS_get_packet		CODE           	0F7E	0000	64
-		_NEMS_set_amplitude		CODE           	0C98	0000	24
-		_NEMS_save_program		CODE           	0571	0000	149
-		_NEMS_set_symmetry_factor		CODE           	0D50	0000	24
-		_NEMS_message_handler		CODE           	071E	0000	125
-		_NEMS_stop_program		CODE           	0C2F	0000	18
-		_NEMS_set_contractions		CODE           	0CDD	0000	24
-		_NEMS_set_channel1		CODE           	0CAF	0000	24
-		_NEMS_set_channel2		CODE           	0CC6	0000	24
-		_NEMS_load_program		CODE           	0694	0000	139
+		_NEMS_set_ramp_down		CODE           	0D22	0000	23
+		_NEMS_set_frequency		CODE           	0CF4	0000	23
+		_NEMS_set_phase_duration		CODE           	0D0B	0000	23
+		_NEMS_start_program		CODE           	0DBA	0000	30
+		_NEMS_get_program		CODE           	0376	0000	327
+		_NEMS_calculate_ramp		CODE           	04BD	0000	180
+		_NEMS_timer    		CODE           	004F	0000	446
+		_NEMS_set_ON_time		CODE           	0C81	0000	23
+		_NEMS_set_ramp_up		CODE           	0D39	0000	23
+		_NEMS_set_OFF_time		CODE           	0C6A	0000	23
+		_NEMS_initialize		CODE           	0F3F	0000	63
+		_NEMS_recalculate_program		CODE           	020D	0000	361
+		_NEMS_get_packet		CODE           	0F7E	0000	63
+		_NEMS_set_amplitude		CODE           	0C98	0000	23
+		_NEMS_save_program		CODE           	0571	0000	148
+		_NEMS_set_symmetry_factor		CODE           	0D50	0000	23
+		_NEMS_message_handler		CODE           	071E	0000	124
+		_NEMS_stop_program		CODE           	0C2F	0000	17
+		_NEMS_set_contractions		CODE           	0CDD	0000	23
+		_NEMS_set_channel1		CODE           	0CAF	0000	23
+		_NEMS_set_channel2		CODE           	0CC6	0000	23
+		_NEMS_load_program		CODE           	0694	0000	138
 
-NEMS.c estimated size: 2172
+NEMS.c estimated size: 2150
 
-/pkg/microchip/xc8/v2.10/pic/sources/c99/common/lwdiv.c
-		___lwdiv       		CODE           	0F0B	0000	53
+/opt/microchip/xc8/v2.32/pic/sources/c99/pic/__eeread.c
+		_eeprom_read   		CODE           	0C0D	0000	17
 
-/pkg/microchip/xc8/v2.10/pic/sources/c99/common/lwdiv.c estimated size: 53
-
-/pkg/microchip/xc8/v2.10/pic/sources/c99/common/awdiv.c
-		___awdiv       		CODE           	079A	0000	82
-
-/pkg/microchip/xc8/v2.10/pic/sources/c99/common/awdiv.c estimated size: 82
-
-/pkg/microchip/xc8/v2.10/pic/sources/c99/common/Umul16.c
-		___wmul        		CODE           	0D67	0000	28
-
-/pkg/microchip/xc8/v2.10/pic/sources/c99/common/Umul16.c estimated size: 28
-
-/pkg/microchip/xc8/v2.10/pic/sources/c99/common/lbmod.c
-		___lbmod       		CODE           	0DD8	0000	32
-
-/pkg/microchip/xc8/v2.10/pic/sources/c99/common/lbmod.c estimated size: 32
-
-/pkg/microchip/xc8/v2.10/pic/sources/c99/common/Umul8.c
-		___bmul        		CODE           	0C1E	0000	18
-
-/pkg/microchip/xc8/v2.10/pic/sources/c99/common/Umul8.c estimated size: 18
+/opt/microchip/xc8/v2.32/pic/sources/c99/pic/__eeread.c estimated size: 17
 
 shared
-		i1_DAC1_SetOutput		CODE           	0BAD	0000	6
-		__initialization		CODE           	0027	0000	37
-		_mux           		STRCODE        	10AE	0000	17
+		i1_DAC1_SetOutput		CODE           	0BAD	0000	5
+		__initialization		CODE           	0027	0000	36
+		_mux           		STRCODE        	10AE	0000	16
 
-shared estimated size: 60
+shared estimated size: 57
 
 mcc_generated_files/eusart1.c
-		_EUSART1_SetRxInterruptHandler		CODE           	0BB7	0000	6
-		_EUSART1_SetTxInterruptHandler		CODE           	0BBC	0000	6
-		_EUSART1_is_rx_ready		CODE           	0BC7	0000	8
-		_EUSART1_is_tx_ready		CODE           	0BCE	0000	8
-		_EUSART1_Initialize		CODE           	0FBD	0000	68
-		_EUSART1_DefaultErrorHandler		CODE           	0B98	0000	4
-		_EUSART1_SetFramingErrorHandler		CODE           	0BDD	0000	9
-		_EUSART1_Read  		CODE           	0E5D	0000	37
-		_EUSART1_SetOverrunErrorHandler		CODE           	0BE5	0000	9
-		_EUSART1_SetErrorHandler		CODE           	0BD5	0000	9
-		_EUSART1_Write 		CODE           	0E3A	0000	36
-		_EUSART1_Receive_ISR		CODE           	0ED9	0000	51
-		_EUSART1_RxDataHandler		CODE           	0C54	0000	23
-		_EUSART1_DefaultOverrunErrorHandler		CODE           	0BA1	0000	5
-		_EUSART1_Transmit_ISR		CODE           	0D82	0000	29
-		_EUSART1_DefaultFramingErrorHandler		CODE           	0002	0000	2
+		_EUSART1_SetRxInterruptHandler		CODE           	0BB7	0000	5
+		_EUSART1_SetTxInterruptHandler		CODE           	0BBC	0000	5
+		_EUSART1_is_rx_ready		CODE           	0BC7	0000	7
+		_EUSART1_is_tx_ready		CODE           	0BCE	0000	7
+		_EUSART1_Initialize		CODE           	0FBD	0000	67
+		_EUSART1_DefaultErrorHandler		CODE           	0B98	0000	3
+		_EUSART1_SetFramingErrorHandler		CODE           	0BDD	0000	8
+		_EUSART1_Read  		CODE           	0E5D	0000	36
+		_EUSART1_SetOverrunErrorHandler		CODE           	0BE5	0000	8
+		_EUSART1_SetErrorHandler		CODE           	0BD5	0000	8
+		_EUSART1_Write 		CODE           	0E3A	0000	35
+		_EUSART1_Receive_ISR		CODE           	0ED9	0000	50
+		_EUSART1_RxDataHandler		CODE           	0C54	0000	22
+		_EUSART1_DefaultOverrunErrorHandler		CODE           	0BA1	0000	4
+		_EUSART1_Transmit_ISR		CODE           	0D82	0000	28
+		_EUSART1_DefaultFramingErrorHandler		CODE           	0002	0000	1
 
-mcc_generated_files/eusart1.c estimated size: 310
+mcc_generated_files/eusart1.c estimated size: 294
 
 mcc_generated_files/mcc.c
-		_PMD_Initialize		CODE           	0BF7	0000	11
-		_OSCILLATOR_Initialize		CODE           	0BED	0000	11
-		_SYSTEM_Initialize		CODE           	07EB	0000	22
+		_PMD_Initialize		CODE           	0BF7	0000	10
+		_OSCILLATOR_Initialize		CODE           	0BED	0000	10
+		_SYSTEM_Initialize		CODE           	07EB	0000	21
 
-mcc_generated_files/mcc.c estimated size: 44
+mcc_generated_files/mcc.c estimated size: 41
+
+/opt/microchip/xc8/v2.32/pic/sources/c99/pic/__eewrite.c
+		_eeprom_write  		CODE           	0DF7	0000	33
+
+/opt/microchip/xc8/v2.32/pic/sources/c99/pic/__eewrite.c estimated size: 33
 
 mcc_generated_files/dac1.c
-		_DAC1_SetOutput		CODE           	0BC1	0000	7
-		_DAC1_Initialize		CODE           	0BA5	0000	5
+		_DAC1_SetOutput		CODE           	0BC1	0000	6
+		_DAC1_Initialize		CODE           	0BA5	0000	4
 
-mcc_generated_files/dac1.c estimated size: 12
-
-/pkg/microchip/xc8/v2.10/pic/sources/c99/pic/__eeread.c
-		_eeprom_read   		CODE           	0C0D	0000	18
-
-/pkg/microchip/xc8/v2.10/pic/sources/c99/pic/__eeread.c estimated size: 18
+mcc_generated_files/dac1.c estimated size: 10
 
 main.c
-		_main          		CODE           	0E18	0000	35
+		_main          		CODE           	0E18	0000	34
 
-main.c estimated size: 35
+main.c estimated size: 34
+
+/opt/microchip/xc8/v2.32/pic/sources/c99/common/lwdiv.c
+		___lwdiv       		CODE           	0F0B	0000	52
+
+/opt/microchip/xc8/v2.32/pic/sources/c99/common/lwdiv.c estimated size: 52
 
 comm.c
-		__puts         		CODE           	0E81	0000	43
-		__sprintf_u8b  		CODE           	0605	0000	144
+		__puts         		CODE           	0E81	0000	42
+		__sprintf_u8b  		CODE           	0605	0000	143
 
-comm.c estimated size: 187
+comm.c estimated size: 185
 
