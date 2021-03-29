@@ -132,7 +132,7 @@ typedef enum {
 
 extern volatile NEMS_pulse_state NEMS_pulse_states;
 
-extern const unsigned char mux[16]; 
+extern const unsigned char mux[17]; 
 //extern const unsigned char pmux[16]; 
 
 void NEMS_initialize(void);

@@ -14,10 +14,14 @@ volatile NEMS_pulse_state NEMS_pulse_states;
 unsigned char NEMS_nmux1;
 unsigned char NEMS_pmux1;
 
+//channel selector 
+//         bit4  bit3 bit2 bit1 bit0
+//MAX 306  EN1    A3   A2   A1   A0
 
-const unsigned char mux[16] = {
-    0b00010000,
-    0b00010001,
+const unsigned char mux[17] = {
+    0b00000000, // No electrode selected !
+    0b00010000, // electrode 1
+    0b00010001, // electrode 2
     0b00010010,
     0b00010011,
     0b00010100,
@@ -30,8 +34,8 @@ const unsigned char mux[16] = {
     0b00011011,
     0b00011100,
     0b00011101,
-    0b00011110,
-    0b00011111
+    0b00011110, // electrode 15
+    0b00011111  // electrode 16 
 };
 
 
@@ -51,8 +55,8 @@ void NEMS_initialize(void)
     program.ramp_up = 10;
     program.ramp_down = 10;
     program.symmetry_factor = 1;
-    program.channel1 = 0;
-    program.channel2 = 1;
+    program.channel1 = 0; // no channel selected
+    program.channel2 = 0; // no channel selected
     
     //Clear all program variables
     /*
@@ -71,9 +75,8 @@ void NEMS_initialize(void)
     DAC1_SetOutput(0); //Current source set to 0
     
     NEMS_nmux1 = 0; // bottom switches deactivated
-    LATC = NEMS_nmux1;
-    
     NEMS_pmux1 = 0; // top switches deactivated
+    LATC = NEMS_nmux1;
     LATB = NEMS_pmux1;
         
 }
@@ -542,12 +545,12 @@ void NEMS_timer(void)
 void NEMS_start_program()
 {
     //Check that channel1 != channel2
-    
-    if (program.channel1 == program.channel2) {
-        _puts("Error: channel1 = channel2\n");     
-        return;
+    if (program.channel1 != 0 && program.channel2 != 0 ) {
+        if (program.channel1 == program.channel2) {
+            _puts("Error: channel1 = channel2\n");     
+            return;
+        }    
     }
-    
     
     NEMS_recalculate_program();
     
@@ -561,7 +564,12 @@ void NEMS_stop_program()
 {
     NEMS_states = NEMS_DISABLED;    
     TMR0_StopTimer();   
+        
     DAC1_SetOutput(0);
+    NEMS_nmux1 = 0; // bottom switches deactivated
+    NEMS_pmux1 = 0; // top switches deactivated
+    LATC = NEMS_nmux1;
+    LATB = NEMS_pmux1;
     
     _puts("N-ok ");
 }
