@@ -69,6 +69,8 @@ typedef struct {
     unsigned char ramp_down; // [ds]
     unsigned char channel1;
     unsigned char channel2;
+    unsigned char channel3;
+    unsigned char channel4;
 } NEMS_program;
 
 extern volatile NEMS_program program;
@@ -103,6 +105,8 @@ typedef struct {
     unsigned char channel1;
     unsigned char channel2;
     
+    unsigned char channel3;
+    unsigned char channel4;
    
     
 } NEMS_waveform;
@@ -150,6 +154,8 @@ void NEMS_set_ramp_up(void);
 void NEMS_set_ramp_down(void);
 void NEMS_set_channel1(void);
 void NEMS_set_channel2(void);
+void NEMS_set_channel3(void);
+void NEMS_set_channel4(void);
 
 
 void NEMS_get_program(void);

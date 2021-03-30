@@ -155,6 +155,14 @@ void NEMS_message_handler(void)
         case 'm': // set multiplexer channel 2
             NEMS_set_channel2();
             break;
+            
+        case 'Q': // set multiplexer channel 3
+            NEMS_set_channel3();
+            break;
+            
+        case 'q': // set multiplexer channel 4
+            NEMS_set_channel4();
+            break;
            
             
         default: //Unknown header
@@ -334,6 +342,16 @@ void NEMS_get_program(void)
     _sprintf_u8b(aux,program.channel2);
     _puts("Channel 2: ");
     _puts(aux);
+    _puts("\n");   
+
+    _sprintf_u8b(aux,program.channel3);
+    _puts("Channel 3: ");
+    _puts(aux);
+    _puts("\n");    
+    
+    _sprintf_u8b(aux,program.channel4);
+    _puts("Channel 4: ");
+    _puts(aux);
     _puts("\n");       
     
 }
@@ -358,6 +376,26 @@ void NEMS_set_channel2(void)
     } 
 }
 
+void NEMS_set_channel3(void)
+{
+    if(NEMS_get_packet(&program.channel3)) {
+        _puts("Q-ok ");
+        
+    } else {
+        _puts("Q-err ");
+    } 
+}
+
+void NEMS_set_channel4(void)
+{
+    if(NEMS_get_packet(&program.channel4)) {
+        _puts("q-ok ");
+        
+    } else {
+        _puts("q-err ");
+    } 
+}
+
 void NEMS_save_program(void)
 {
     unsigned char addr;
@@ -373,8 +411,9 @@ void NEMS_save_program(void)
     eeprom_write(addr++,program.ramp_down);
     eeprom_write(addr++,program.contractions);
     eeprom_write(addr++,program.channel1);
-    eeprom_write(addr,program.channel2);
-    
+    eeprom_write(addr++,program.channel2);
+    eeprom_write(addr++,program.channel3);
+    eeprom_write(addr,program.channel4);
         
     _puts("s-ok ");
     
@@ -396,8 +435,9 @@ void NEMS_load_program(void)
     program.ramp_down = eeprom_read(addr++);
     program.contractions = eeprom_read(addr++);
     program.channel1 = eeprom_read(addr++);
-    program.channel2 = eeprom_read(addr);
-    
+    program.channel2 = eeprom_read(addr++);
+    program.channel3 = eeprom_read(addr++);
+    program.channel4 = eeprom_read(addr);
     
     _puts("l-ok ");
 }
@@ -482,8 +522,8 @@ void NEMS_timer(void)
         waveform.pulse_index++;
         
         NEMS_pulse_states = NEMS_PLUS_UP; //start with channel1 (n-) and channel2 (p+);
-        NEMS_nmux1 = waveform.channel1;
-        NEMS_pmux1 = waveform.channel2;
+       // NEMS_nmux1 = waveform.channel1;
+       // NEMS_pmux1 = waveform.channel2;
         
     
         if (waveform.pulse_index < waveform.ramp_up_time) {
