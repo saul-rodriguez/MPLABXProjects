@@ -14,6 +14,8 @@ volatile NEMS_pulse_state NEMS_pulse_states;
 unsigned char NEMS_nmux1;
 unsigned char NEMS_pmux1;
 
+bool channel_control;
+
 //channel selector 
 //         bit4  bit3 bit2 bit1 bit0
 //MAX 306  EN1    A3   A2   A1   A0
@@ -78,6 +80,8 @@ void NEMS_initialize(void)
     NEMS_pmux1 = 0; // top switches deactivated
     LATC = NEMS_nmux1;
     LATB = NEMS_pmux1;
+    
+    channel_control = 0;
         
 }
 
@@ -445,6 +449,10 @@ void NEMS_load_program(void)
 void NEMS_recalculate_program(void)
 {
     waveform.num_clocks_per_pulse = (unsigned short)NEMS_TIMER_FREQUENCY/program.frequency;
+    
+    // the counter will runs at twice frequency for 2 simultaneous channels
+    waveform.num_clocks_per_pulse /= 2; 
+    
     waveform.clock_index = 0;
     waveform.pulse_index = 0;
     
@@ -479,12 +487,16 @@ void NEMS_recalculate_program(void)
     
     waveform.channel1 = mux[program.channel1];
     waveform.channel2 = mux[program.channel2];
+    waveform.channel3 = mux[program.channel3];
+    waveform.channel4 = mux[program.channel4];
     
     NEMS_calculate_ramp();
     
     NEMS_states = NEMS_DISABLED;
     NEMS_wave_states = NEMS_OFF_TIME;    
-    NEMS_pulse_states = NEMS_PULSE_OFF;    
+    NEMS_pulse_states = NEMS_PULSE_OFF;   
+    
+    channel_control = 0;
 }
 
 void NEMS_calculate_ramp(void)
@@ -500,6 +512,8 @@ void NEMS_calculate_ramp(void)
     }
 }
 
+//1 channel version
+/*
 void NEMS_timer(void)
 {   
     //UPDATE OUTPUTS
@@ -581,6 +595,111 @@ void NEMS_timer(void)
     }
           
 }
+*/
+
+//2 channels version
+void NEMS_timer(void)
+{   
+   // LED_SetHigh();
+    
+    //UPDATE OUTPUTS
+    DAC1_SetOutput(waveform.current_amplitude);
+   
+    //Digital outputs controlling the MUX are updated here
+    //LATC = NEMS_pulse_states;
+    LATC = NEMS_nmux1;
+    LATB = NEMS_pmux1;
+            
+    //PULSE STATES
+    waveform.clock_index++;
+   
+    //Check if a new pulse is starting
+    if (waveform.clock_index >= waveform.num_clocks_per_pulse)  { //New Pulse should start 
+        waveform.clock_index = 0;  
+        
+         waveform.pulse_index++;
+        
+        if (channel_control) { //Updates only every other pulse           
+            channel_control = 0;        
+        } else {
+            channel_control = 1;
+        }
+        
+        
+        NEMS_pulse_states = NEMS_PLUS_UP; //start with channel1 (n-) and channel2 (p+);
+     
+        // Logic to control ramp-up, ON, ramp-down, OFF
+        if (waveform.pulse_index < waveform.ramp_up_time) {
+            waveform.pulse_amplitude = waveform.ramp_up_amplitude[waveform.pulse_index];
+                    
+        } else if (waveform.pulse_index < waveform.ON_time) {
+            waveform.pulse_amplitude = waveform.program_amplitude;
+                    
+        } else if (waveform.pulse_index < waveform.ramp_down_time) {
+            waveform.pulse_amplitude = waveform.ramp_down_amplitude[waveform.pulse_index - waveform.ON_time];
+        
+        } else if (waveform.pulse_index < waveform.OFF_time) {
+            waveform.pulse_amplitude = 0;
+            NEMS_pulse_states = NEMS_PULSE_OFF;            
+            NEMS_nmux1 = 0;
+            NEMS_pmux1 = 0;
+        } else { //single repetition finished
+            waveform.pulse_index = 0;        
+        }
+        
+    }
+    
+        
+    // Logic to control pulse shape
+    if (NEMS_pulse_states != NEMS_PULSE_OFF) {
+        if (waveform.clock_index < program.phase_duration) {               
+            NEMS_pulse_states = NEMS_PLUS_UP;
+            
+            if (channel_control) {
+                NEMS_nmux1 = waveform.channel3;
+                NEMS_pmux1 = waveform.channel4;            
+            } else {
+                NEMS_nmux1 = waveform.channel1;
+                NEMS_pmux1 = waveform.channel2;
+            }            
+            
+            waveform.current_amplitude = waveform.pulse_amplitude;
+            
+        }  else if (waveform.clock_index < waveform.silence_phase_duration) {
+            NEMS_pulse_states = NEMS_REST;
+            NEMS_nmux1 = 0;
+            NEMS_pmux1 = 0;
+            
+            waveform.current_amplitude = 0;
+            
+        } else if (waveform.clock_index < waveform.minus_phase_duration) {
+            NEMS_pulse_states = NEMS_MINUS_UP;
+            
+            if (channel_control) {
+                NEMS_nmux1 = waveform.channel4;
+                NEMS_pmux1 = waveform.channel3; 
+            } else {
+                NEMS_nmux1 = waveform.channel2;
+                NEMS_pmux1 = waveform.channel1;            
+            }
+            
+            
+            waveform.current_amplitude = waveform.pulse_amplitude >> waveform.symmetry_divider;
+            
+        } else {
+            NEMS_pulse_states = NEMS_PULSE_OFF;
+            NEMS_nmux1 = 0;
+            NEMS_pmux1 = 0;
+            
+            waveform.current_amplitude = 0;
+        }
+    }
+    
+    
+    
+  //  LED_SetLow();      
+}
+
 
 void NEMS_start_program()
 {
