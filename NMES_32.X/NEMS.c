@@ -49,6 +49,7 @@ void NEMS_initialize(void)
     
     //Only for testing purposes
     program.amplitude = 1;
+    program.amplitude2 = 1;
     program.frequency = 35;
     program.phase_duration = 1;
     program.ON_time = 2;
@@ -59,6 +60,8 @@ void NEMS_initialize(void)
     program.symmetry_factor = 1;
     program.channel1 = 0; // no channel selected
     program.channel2 = 0; // no channel selected
+    program.channel3 = 0; // no channel selected
+    program.channel4 = 0; // no channel selected
     
     //Clear all program variables
     /*
@@ -98,6 +101,10 @@ void NEMS_message_handler(void)
             
         case 'a': // Set current amplitude [mA] 1 mA - 32 mA or higher (pp. 31, Chap 3)
             NEMS_set_amplitude();
+            break;
+            
+        case 'A': // Set current amplitude [mA] 1 mA - 32 mA or higher (pp. 31, Chap 3)
+            NEMS_set_amplitude2();
             break;
             
         case 'f': // Set frequency [Hz] 15 - 50 (pp. 32, Chap 3))
@@ -167,8 +174,7 @@ void NEMS_message_handler(void)
         case 'q': // set multiplexer channel 4
             NEMS_set_channel4();
             break;
-           
-            
+                       
         default: //Unknown header
             break; 
     }
@@ -203,6 +209,16 @@ void NEMS_set_amplitude(void)
     } else {
         _puts("a-err ");
     }        
+}
+
+void NEMS_set_amplitude2(void)
+{
+    if(NEMS_get_packet(&program.amplitude2)) {
+        _puts("A-ok ");
+        
+    } else {
+        _puts("A-err ");
+    }  
 }
 
 void NEMS_set_frequency(void)
@@ -294,7 +310,12 @@ void NEMS_get_program(void)
     _puts("\nNEMS program\n");    
     
     _sprintf_u8b(aux,program.amplitude);    
-    _puts("Amplitude (mA): ");
+    _puts("Amplitude1 (mA): ");
+    _puts(aux);
+    _puts("\n");
+    
+    _sprintf_u8b(aux,program.amplitude2);    
+    _puts("Amplitude2 (mA): ");
     _puts(aux);
     _puts("\n");
     
@@ -406,6 +427,7 @@ void NEMS_save_program(void)
     
     addr = 0;
     eeprom_write(addr++,program.amplitude);
+    eeprom_write(addr++,program.amplitude2);
     eeprom_write(addr++,program.frequency);
     eeprom_write(addr++,program.phase_duration);
     eeprom_write(addr++,program.symmetry_factor);
@@ -430,6 +452,7 @@ void NEMS_load_program(void)
     addr = 0;
     
     program.amplitude = eeprom_read(addr++);
+    program.amplitude2 = eeprom_read(addr++);
     program.frequency = eeprom_read(addr++);
     program.phase_duration = eeprom_read(addr++);
     program.symmetry_factor = eeprom_read(addr++);
@@ -469,6 +492,8 @@ void NEMS_recalculate_program(void)
     waveform.current_amplitude = 0;
     waveform.program_amplitude = program.amplitude;
     
+    waveform.program_amplitude2 = program.amplitude2;
+    
     switch (program.symmetry_factor) {
         case 1: waveform.symmetry_divider = 0; break;
         case 2: waveform.symmetry_divider = 1; break;
@@ -504,12 +529,15 @@ void NEMS_calculate_ramp(void)
     unsigned char i;
     
     for (i = 0; i < waveform.ramp_up_pulses; i++) {
-        waveform.ramp_up_amplitude[i] = (unsigned short)(i*waveform.program_amplitude)/waveform.ramp_up_pulses;
+        waveform.ramp_up_amplitude[i] = (unsigned short)(i*waveform.program_amplitude)/waveform.ramp_up_pulses;        
+        waveform.ramp_up_amplitude2[i] = (unsigned short)(i*waveform.program_amplitude2)/waveform.ramp_up_pulses;        
     }
     
     for (i = 0; i < waveform.ramp_down_pulses; i++) {
         waveform.ramp_down_amplitude[i] = (unsigned short)((waveform.ramp_down_pulses-i-1)*waveform.program_amplitude)/waveform.ramp_down_pulses;
-    }
+        waveform.ramp_down_amplitude2[i] = (unsigned short)((waveform.ramp_down_pulses-i-1)*waveform.program_amplitude2)/waveform.ramp_down_pulses;        
+    }    
+    
 }
 
 //1 channel version
@@ -618,34 +646,74 @@ void NEMS_timer(void)
         waveform.clock_index = 0;  
         
          waveform.pulse_index++;
+         
+         NEMS_pulse_states = NEMS_PLUS_UP; //start with channel1 (n-) and channel2 (p+);
         
         if (channel_control) { //Updates only every other pulse           
-            channel_control = 0;        
+            channel_control = 0;  
+            
+            // Logic to control ramp-up, ON, ramp-down, OFF
+            if (waveform.pulse_index < waveform.ramp_up_time) {
+                waveform.pulse_amplitude = waveform.ramp_up_amplitude[waveform.pulse_index];
+
+            } else if (waveform.pulse_index < waveform.ON_time) {
+                waveform.pulse_amplitude = waveform.program_amplitude;
+
+            } else if (waveform.pulse_index < waveform.ramp_down_time) {
+                waveform.pulse_amplitude = waveform.ramp_down_amplitude[waveform.pulse_index - waveform.ON_time];
+
+            } else if (waveform.pulse_index < waveform.OFF_time) {
+                waveform.pulse_amplitude = 0;
+                NEMS_pulse_states = NEMS_PULSE_OFF;            
+                NEMS_nmux1 = 0;
+                NEMS_pmux1 = 0;
+            } else { //single repetition finished
+                waveform.pulse_index = 0;        
+            }
         } else {
             channel_control = 1;
-        }
+            
+                 // Logic to control ramp-up, ON, ramp-down, OFF
+            if (waveform.pulse_index < waveform.ramp_up_time) {
+                waveform.pulse_amplitude = waveform.ramp_up_amplitude2[waveform.pulse_index];
+
+            } else if (waveform.pulse_index < waveform.ON_time) {
+                waveform.pulse_amplitude = waveform.program_amplitude2;
+
+            } else if (waveform.pulse_index < waveform.ramp_down_time) {
+                waveform.pulse_amplitude = waveform.ramp_down_amplitude2[waveform.pulse_index - waveform.ON_time];
+
+            } else if (waveform.pulse_index < waveform.OFF_time) {
+                waveform.pulse_amplitude = 0;
+                NEMS_pulse_states = NEMS_PULSE_OFF;            
+                NEMS_nmux1 = 0;
+                NEMS_pmux1 = 0;
+            } else { //single repetition finished
+                waveform.pulse_index = 0;        
+            }
+        }        
         
-        
-        NEMS_pulse_states = NEMS_PLUS_UP; //start with channel1 (n-) and channel2 (p+);
+        //NEMS_pulse_states = NEMS_PLUS_UP; //start with channel1 (n-) and channel2 (p+);
      
-        // Logic to control ramp-up, ON, ramp-down, OFF
-        if (waveform.pulse_index < waveform.ramp_up_time) {
-            waveform.pulse_amplitude = waveform.ramp_up_amplitude[waveform.pulse_index];
-                    
-        } else if (waveform.pulse_index < waveform.ON_time) {
-            waveform.pulse_amplitude = waveform.program_amplitude;
-                    
-        } else if (waveform.pulse_index < waveform.ramp_down_time) {
-            waveform.pulse_amplitude = waveform.ramp_down_amplitude[waveform.pulse_index - waveform.ON_time];
-        
-        } else if (waveform.pulse_index < waveform.OFF_time) {
-            waveform.pulse_amplitude = 0;
-            NEMS_pulse_states = NEMS_PULSE_OFF;            
-            NEMS_nmux1 = 0;
-            NEMS_pmux1 = 0;
-        } else { //single repetition finished
-            waveform.pulse_index = 0;        
-        }
+        /*
+            // Logic to control ramp-up, ON, ramp-down, OFF
+            if (waveform.pulse_index < waveform.ramp_up_time) {
+                waveform.pulse_amplitude = waveform.ramp_up_amplitude[waveform.pulse_index];
+
+            } else if (waveform.pulse_index < waveform.ON_time) {
+                waveform.pulse_amplitude = waveform.program_amplitude;
+
+            } else if (waveform.pulse_index < waveform.ramp_down_time) {
+                waveform.pulse_amplitude = waveform.ramp_down_amplitude[waveform.pulse_index - waveform.ON_time];
+
+            } else if (waveform.pulse_index < waveform.OFF_time) {
+                waveform.pulse_amplitude = 0;
+                NEMS_pulse_states = NEMS_PULSE_OFF;            
+                NEMS_nmux1 = 0;
+                NEMS_pmux1 = 0;
+            } else { //single repetition finished
+                waveform.pulse_index = 0;        
+            } */
         
     }
     
@@ -658,12 +726,14 @@ void NEMS_timer(void)
             if (channel_control) {
                 NEMS_nmux1 = waveform.channel3;
                 NEMS_pmux1 = waveform.channel4;            
+                waveform.current_amplitude = waveform.pulse_amplitude;
             } else {
                 NEMS_nmux1 = waveform.channel1;
                 NEMS_pmux1 = waveform.channel2;
+                waveform.current_amplitude = waveform.pulse_amplitude;
             }            
             
-            waveform.current_amplitude = waveform.pulse_amplitude;
+            //waveform.current_amplitude = waveform.pulse_amplitude;
             
         }  else if (waveform.clock_index < waveform.silence_phase_duration) {
             NEMS_pulse_states = NEMS_REST;
@@ -678,13 +748,13 @@ void NEMS_timer(void)
             if (channel_control) {
                 NEMS_nmux1 = waveform.channel4;
                 NEMS_pmux1 = waveform.channel3; 
+                waveform.current_amplitude = waveform.pulse_amplitude >> waveform.symmetry_divider;
             } else {
                 NEMS_nmux1 = waveform.channel2;
                 NEMS_pmux1 = waveform.channel1;            
+                waveform.current_amplitude = waveform.pulse_amplitude >> waveform.symmetry_divider;
             }
-            
-            
-            waveform.current_amplitude = waveform.pulse_amplitude >> waveform.symmetry_divider;
+           // waveform.current_amplitude = waveform.pulse_amplitude >> waveform.symmetry_divider;
             
         } else {
             NEMS_pulse_states = NEMS_PULSE_OFF;

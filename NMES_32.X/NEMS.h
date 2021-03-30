@@ -59,6 +59,7 @@ extern "C" {
     
 typedef struct {
     unsigned char amplitude;  // [mA] 1 mA - 31 mA or higher (pp. 31, Chap 3)
+    unsigned char amplitude2;
     unsigned char frequency;  // [Hz] 15 - 50 (pp. 32, Chap 3))
     unsigned char phase_duration; // [us/50] ( 200us - 400us --> 4 - 8) (pp. 83, Chap 6)
     unsigned char symmetry_factor; // symmetric = 1, asymmetric = phase_negative/ phase_duration = [2,4,8]
@@ -91,11 +92,16 @@ typedef struct {
     unsigned char symmetry_divider;
     unsigned char current_amplitude; // current used amplitude
     
+    unsigned char program_amplitude2;
+    unsigned char pulse_amplitude2;
+    
     unsigned char ramp_up_amplitude[100];
+    unsigned char ramp_up_amplitude2[100];
     unsigned short ramp_up_pulses; //Number of pulses for ramp up
     unsigned short ramp_up_time;
     
     unsigned char ramp_down_amplitude[100];
+    unsigned char ramp_down_amplitude2[100];
     unsigned short ramp_down_pulses; //Number of pulses for ramp down
     unsigned short ramp_down_time;
   
@@ -107,6 +113,7 @@ typedef struct {
     
     unsigned char channel3;
     unsigned char channel4;
+    
    
     
 } NEMS_waveform;
@@ -144,6 +151,7 @@ void NEMS_message_handler(void);
 
 unsigned char NEMS_get_packet(unsigned char* pt);
 void NEMS_set_amplitude(void);
+void NEMS_set_amplitude2(void);
 void NEMS_set_frequency(void);
 void NEMS_set_phase_duration(void);
 void NEMS_set_symmetry_factor(void);
