@@ -80,6 +80,7 @@ typedef struct {
     unsigned short num_clocks_per_pulse; //number clock cycles before a pulse is sent    
     unsigned short clock_index; // clock counter 
     unsigned short pulse_index;  // pulse index
+    unsigned short pulse_index2;
     unsigned short current_pulse_index;
     
     unsigned char  silence_phase_duration;

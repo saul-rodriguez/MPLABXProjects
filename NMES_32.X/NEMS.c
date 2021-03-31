@@ -479,6 +479,8 @@ void NEMS_recalculate_program(void)
     waveform.clock_index = 0;
     waveform.pulse_index = 0;
     
+    waveform.pulse_index2 = 0;
+    
     waveform.ramp_up_pulses = (program.ramp_up*program.frequency)/10;  
     waveform.ramp_down_pulses = (program.ramp_down*program.frequency)/10;
     
@@ -644,13 +646,14 @@ void NEMS_timer(void)
     //Check if a new pulse is starting
     if (waveform.clock_index >= waveform.num_clocks_per_pulse)  { //New Pulse should start 
         waveform.clock_index = 0;  
-        
-         waveform.pulse_index++;
+     
          
          NEMS_pulse_states = NEMS_PLUS_UP; //start with channel1 (n-) and channel2 (p+);
         
         if (channel_control) { //Updates only every other pulse           
             channel_control = 0;  
+            
+            waveform.pulse_index++;
             
             // Logic to control ramp-up, ON, ramp-down, OFF
             if (waveform.pulse_index < waveform.ramp_up_time) {
@@ -673,47 +676,27 @@ void NEMS_timer(void)
         } else {
             channel_control = 1;
             
+            waveform.pulse_index2++;
+            
                  // Logic to control ramp-up, ON, ramp-down, OFF
-            if (waveform.pulse_index < waveform.ramp_up_time) {
-                waveform.pulse_amplitude = waveform.ramp_up_amplitude2[waveform.pulse_index];
+            if (waveform.pulse_index2 < waveform.ramp_up_time) {
+                waveform.pulse_amplitude = waveform.ramp_up_amplitude2[waveform.pulse_index2];
 
-            } else if (waveform.pulse_index < waveform.ON_time) {
+            } else if (waveform.pulse_index2 < waveform.ON_time) {
                 waveform.pulse_amplitude = waveform.program_amplitude2;
 
-            } else if (waveform.pulse_index < waveform.ramp_down_time) {
-                waveform.pulse_amplitude = waveform.ramp_down_amplitude2[waveform.pulse_index - waveform.ON_time];
+            } else if (waveform.pulse_index2 < waveform.ramp_down_time) {
+                waveform.pulse_amplitude = waveform.ramp_down_amplitude2[waveform.pulse_index2 - waveform.ON_time];
 
-            } else if (waveform.pulse_index < waveform.OFF_time) {
+            } else if (waveform.pulse_index2 < waveform.OFF_time) {
                 waveform.pulse_amplitude = 0;
                 NEMS_pulse_states = NEMS_PULSE_OFF;            
                 NEMS_nmux1 = 0;
                 NEMS_pmux1 = 0;
             } else { //single repetition finished
-                waveform.pulse_index = 0;        
+                waveform.pulse_index2 = 0;        
             }
         }        
-        
-        //NEMS_pulse_states = NEMS_PLUS_UP; //start with channel1 (n-) and channel2 (p+);
-     
-        /*
-            // Logic to control ramp-up, ON, ramp-down, OFF
-            if (waveform.pulse_index < waveform.ramp_up_time) {
-                waveform.pulse_amplitude = waveform.ramp_up_amplitude[waveform.pulse_index];
-
-            } else if (waveform.pulse_index < waveform.ON_time) {
-                waveform.pulse_amplitude = waveform.program_amplitude;
-
-            } else if (waveform.pulse_index < waveform.ramp_down_time) {
-                waveform.pulse_amplitude = waveform.ramp_down_amplitude[waveform.pulse_index - waveform.ON_time];
-
-            } else if (waveform.pulse_index < waveform.OFF_time) {
-                waveform.pulse_amplitude = 0;
-                NEMS_pulse_states = NEMS_PULSE_OFF;            
-                NEMS_nmux1 = 0;
-                NEMS_pmux1 = 0;
-            } else { //single repetition finished
-                waveform.pulse_index = 0;        
-            } */
         
     }
     
