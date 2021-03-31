@@ -85,8 +85,8 @@ void TMR1_Initialize(void)
     // Load the TMR value to reload variable
     timer1ReloadVal=(uint16_t)((TMR1H << 8) | TMR1L);
 
-    // CKPS 1:4; NOT_SYNC synchronize; TMR1ON enabled; T1RD16 disabled; 
-    T1CON = 0x21;
+    // CKPS 1:4; NOT_SYNC synchronize; TMR1ON disabled; T1RD16 disabled; 
+    T1CON = 0x20;
 }
 
 void TMR1_StartTimer(void)

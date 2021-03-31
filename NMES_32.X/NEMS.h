@@ -145,7 +145,13 @@ typedef enum {
 extern volatile NEMS_pulse_state NEMS_pulse_states;
 
 extern const unsigned char mux[17]; 
-//extern const unsigned char pmux[16]; 
+
+#define SENSOR_SAMPLES 16
+#define SENSOR_BUFFER_SIZE 2*SENSOR_SAMPLES
+extern volatile unsigned short sens_buf[SENSOR_BUFFER_SIZE];
+extern volatile unsigned char sensor_ind;
+
+
 
 void NEMS_initialize(void);
 void NEMS_message_handler(void);

@@ -16,6 +16,9 @@ unsigned char NEMS_pmux1;
 
 bool channel_control;
 
+volatile unsigned short sens_buf[SENSOR_BUFFER_SIZE];
+volatile unsigned char sensor_ind;
+
 //channel selector 
 //         bit4  bit3 bit2 bit1 bit0
 //MAX 306  EN1    A3   A2   A1   A0
@@ -85,6 +88,8 @@ void NEMS_initialize(void)
     LATB = NEMS_pmux1;
     
     channel_control = 0;
+    
+    sensor_ind = 0;
         
 }
 
@@ -802,6 +807,17 @@ void NEMS_stop_sensors(void)
 
 void NEMS_read_sensors(void)
 {
+    unsigned short aux;
+    unsigned char i;
+      
+    aux = ADCC_GetSingleConversion(SENSOR1);
     
+    sens_buf[sensor_ind++] = (unsigned char)(aux & 0xff);
+    sens_buf[sensor_ind++] = (unsigned char)((aux >> 8) & 0xff);
+            
+    if (sensor_ind >= SENSOR_BUFFER_SIZE) {
+        write(sens_buf,SENSOR_BUFFER_SIZE);        
+        sensor_ind = 0;
+    } 
 
 }
