@@ -749,7 +749,6 @@ void NEMS_timer(void)
     }
     
     
-    
   //  LED_SetLow();      
 }
 
@@ -769,6 +768,8 @@ void NEMS_start_program()
     NEMS_states = NEMS_ENABLED;
     TMR0_StartTimer();
     
+    NEMS_start_sensors();
+    
     _puts("n-ok ");
 }
 
@@ -783,5 +784,24 @@ void NEMS_stop_program()
     LATC = NEMS_nmux1;
     LATB = NEMS_pmux1;
     
+    NEMS_stop_sensors();
+    
     _puts("N-ok ");
+}
+
+void NEMS_start_sensors(void)
+{
+    TMR1_Reload();
+    TMR1_StartTimer(); 
+}
+
+void NEMS_stop_sensors(void)
+{
+    TMR1_StopTimer();
+}
+
+void NEMS_read_sensors(void)
+{
+    
+
 }

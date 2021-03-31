@@ -51,6 +51,8 @@
  */
 void main(void)
 {
+    unsigned short aux;
+    
     // initialize the device
     SYSTEM_Initialize();
     NEMS_initialize();
@@ -74,7 +76,31 @@ void main(void)
         __delay_ms(200);
     LED_SetLow();
     
-
+    //Test ADC
+    /*
+    while (1) {
+         __delay_ms(200);
+         aux = ADCC_GetSingleConversion(SENSOR1);
+         EUSART1_Write((unsigned char)(aux & 0xff));
+         EUSART1_Write((unsigned char)((aux >> 8) & 0xff));
+    }
+    */
+    
+    //Test Timer1
+    /*
+    TMR1_Reload();
+    TMR1_StartTimer();    
+    
+    while (1) {
+        if (TMR1_HasOverflowOccured()) {
+            TMR1IF = 0;
+            TMR1_Reload();        
+            LED_Toggle();
+        }
+    }
+    */
+    
+    //Main loop
     while (1)
     {
         // Add your application code
@@ -82,7 +108,13 @@ void main(void)
         if(EUSART1_is_rx_ready()) {
             NEMS_message_handler();            
             //EUSART1_Write(EUSART1_Read());
-        }    
+        }  
+        
+        if(TMR1_HasOverflowOccured()) {
+            TMR1IF = 0;
+            TMR1_Reload();
+            NEMS_read_sensors();
+        }
         
     }
 }

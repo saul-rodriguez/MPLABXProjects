@@ -178,6 +178,11 @@ void NEMS_stop_program(void);
 
 void NEMS_timer(void);
 
+void NEMS_start_sensors(void);
+void NEMS_stop_sensors(void);
+void NEMS_read_sensors(void);
+
+
 #ifdef	__cplusplus
 }
 #endif /* __cplusplus */
