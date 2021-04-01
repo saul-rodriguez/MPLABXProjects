@@ -148,7 +148,7 @@ extern const unsigned char mux[17];
 
 #define SENSOR_SAMPLES 16
 #define SENSOR_BUFFER_SIZE 2*SENSOR_SAMPLES
-extern volatile unsigned short sens_buf[SENSOR_BUFFER_SIZE];
+extern volatile unsigned char sens_buf[SENSOR_BUFFER_SIZE];
 extern volatile unsigned char sensor_ind;
 
 

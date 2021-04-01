@@ -16,7 +16,7 @@ unsigned char NEMS_pmux1;
 
 bool channel_control;
 
-volatile unsigned short sens_buf[SENSOR_BUFFER_SIZE];
+volatile unsigned char sens_buf[SENSOR_BUFFER_SIZE];
 volatile unsigned char sensor_ind;
 
 //channel selector 
