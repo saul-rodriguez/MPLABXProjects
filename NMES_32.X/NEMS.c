@@ -807,14 +807,17 @@ void NEMS_stop_sensors(void)
 
 void NEMS_read_sensors(void)
 {
-    unsigned short aux;
+    unsigned short aux,aux2;
     unsigned char i;
       
     aux = ADCC_GetSingleConversion(SENSOR1);
+    aux2 = ADCC_GetSingleConversion(SENSOR2);
     
     sens_buf[sensor_ind++] = (unsigned char)(aux & 0xff);
     sens_buf[sensor_ind++] = (unsigned char)((aux >> 8) & 0xff);
-            
+    sens_buf[sensor_ind++] = (unsigned char)(aux2 & 0xff);
+    sens_buf[sensor_ind++] = (unsigned char)((aux2 >> 8) & 0xff);
+                
     if (sensor_ind >= SENSOR_BUFFER_SIZE) {
         write(sens_buf,SENSOR_BUFFER_SIZE);        
         sensor_ind = 0;

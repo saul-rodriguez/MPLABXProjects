@@ -146,8 +146,9 @@ extern volatile NEMS_pulse_state NEMS_pulse_states;
 
 extern const unsigned char mux[17]; 
 
-#define SENSOR_SAMPLES 16
-#define SENSOR_BUFFER_SIZE 2*SENSOR_SAMPLES
+//Sampling rate is set to 20ms
+#define SENSOR_SAMPLES 8
+#define SENSOR_BUFFER_SIZE 4*SENSOR_SAMPLES
 extern volatile unsigned char sens_buf[SENSOR_BUFFER_SIZE];
 extern volatile unsigned char sensor_ind;
 
