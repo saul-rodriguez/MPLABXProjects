@@ -179,6 +179,14 @@ void NEMS_message_handler(void)
         case 'q': // set multiplexer channel 4
             NEMS_set_channel4();
             break;
+            
+        case 'b': // activate sensors 
+            NEMS_start_sensors();
+            break;
+        
+        case 'B': // deactivate sensors
+            NEMS_stop_sensors();
+            break;
                        
         default: //Unknown header
             break; 
@@ -773,7 +781,7 @@ void NEMS_start_program()
     NEMS_states = NEMS_ENABLED;
     TMR0_StartTimer();
     
-    NEMS_start_sensors();
+    //NEMS_start_sensors();
     
     _puts("n-ok ");
 }
@@ -789,7 +797,7 @@ void NEMS_stop_program()
     LATC = NEMS_nmux1;
     LATB = NEMS_pmux1;
     
-    NEMS_stop_sensors();
+    //NEMS_stop_sensors();
     
     _puts("N-ok ");
 }
