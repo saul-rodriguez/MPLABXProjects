@@ -773,8 +773,18 @@ void NEMS_start_program()
         if (program.channel1 == program.channel2) {
             _puts("Error: channel1 = channel2\n");     
             return;
-        }    
+        }
     }
+    
+                                                                             
+    if (program.channel3 != 0 && program.channel4 != 0 ) {
+        if (program.channel3 == program.channel4) {
+            _puts("Error: channel3 = channel4\n");     
+            return;
+        }
+    }
+    
+    
     
     NEMS_recalculate_program();
     
