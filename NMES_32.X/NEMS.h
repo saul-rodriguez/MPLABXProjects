@@ -144,7 +144,8 @@ typedef enum {
 
 extern volatile NEMS_pulse_state NEMS_pulse_states;
 
-extern const unsigned char mux[17]; 
+//extern const unsigned char mux[17]; 
+extern const unsigned char mux[33]; 
 
 //Sampling rate is set to 20ms
 #define SENSOR_SAMPLES 8

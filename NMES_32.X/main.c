@@ -72,9 +72,9 @@ void main(void)
     // Disable the Peripheral Interrupts
     //INTERRUPT_PeripheralInterruptDisable();
     
-    LED_SetHigh();
-        __delay_ms(200);
     LED_SetLow();
+        __delay_ms(200);
+    LED_SetHigh();
     
     //Test ADC
     /*

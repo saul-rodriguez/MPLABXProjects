@@ -23,7 +23,7 @@ volatile unsigned char sensor_ind;
 //         bit4  bit3 bit2 bit1 bit0
 //MAX 306  EN1    A3   A2   A1   A0
 
-const unsigned char mux[17] = {
+const unsigned char mux[33] = {
     0b00000000, // No electrode selected !
     0b00010000, // electrode 1
     0b00010001, // electrode 2
@@ -40,7 +40,24 @@ const unsigned char mux[17] = {
     0b00011100,
     0b00011101,
     0b00011110, // electrode 15
-    0b00011111  // electrode 16 
+    0b00011111, // electrode 16 
+    
+    0b00100000, // electrode 17
+    0b00100001,
+    0b00100010,
+    0b00100011,
+    0b00100100,
+    0b00100101,
+    0b00100110,
+    0b00100111,
+    0b00101000,
+    0b00101001,
+    0b00101010,
+    0b00101011,
+    0b00101100,
+    0b00101101,
+    0b00101110, // electrode 31
+    0b00101111 // electrode 32    
 };
 
 
