@@ -121,6 +121,10 @@ void NEMS_message_handler(void)
             _puts("Ok ");
             break;
             
+        case 'e': // binary program channel1,2 and start/stop
+            NEMS_binary_command();
+            break;
+            
         case 'a': // Set current amplitude [mA] 1 mA - 32 mA or higher (pp. 31, Chap 3)
             NEMS_set_amplitude();
             break;
@@ -209,6 +213,30 @@ void NEMS_message_handler(void)
             break; 
     }
     
+}
+
+void NEMS_binary_command(void)
+{
+    unsigned char chan1,chan2,go_stop;    
+    
+    NEMS_stop_program(); 
+    
+    __delay_ms(10);
+    
+    if (eusart1RxCount == 3) { //Valid packet size
+        chan1 = EUSART1_Read();
+        chan2 = EUSART1_Read();
+        go_stop = EUSART1_Read();
+            
+        program.channel1 = chan1;
+        program.channel2 = chan2;
+        
+        if (go_stop) {
+            NEMS_start_program();
+        } 
+        
+    }
+
 }
 
 unsigned char NEMS_get_packet(unsigned char* pt)
@@ -859,3 +887,5 @@ void NEMS_read_sensors(void)
     } 
 
 }
+
+

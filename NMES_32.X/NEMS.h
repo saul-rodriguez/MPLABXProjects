@@ -173,6 +173,7 @@ void NEMS_set_channel1(void);
 void NEMS_set_channel2(void);
 void NEMS_set_channel3(void);
 void NEMS_set_channel4(void);
+void NEMS_binary_command(void);
 
 
 void NEMS_get_program(void);
