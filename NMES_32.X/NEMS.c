@@ -219,7 +219,7 @@ void NEMS_binary_command(void)
 {
     unsigned char chan1,chan2,go_stop;    
     
-    NEMS_stop_program(); 
+    NEMS_stop_program_nack(); 
     
     __delay_ms(10);
     
@@ -232,7 +232,7 @@ void NEMS_binary_command(void)
         program.channel2 = chan2;
         
         if (go_stop) {
-            NEMS_start_program();
+            NEMS_start_program_nack();
         } 
         
     }
@@ -813,6 +813,12 @@ void NEMS_timer(void)
 
 void NEMS_start_program()
 {
+    NEMS_start_program_nack();
+    _puts("n-ok ");
+}
+
+void NEMS_start_program_nack(void)
+{
     //Check that channel1 != channel2
     if (program.channel1 != 0 && program.channel2 != 0 ) {
         if (program.channel1 == program.channel2) {
@@ -829,19 +835,22 @@ void NEMS_start_program()
         }
     }
     
-    
-    
     NEMS_recalculate_program();
     
     NEMS_states = NEMS_ENABLED;
     TMR0_StartTimer();
     
     //NEMS_start_sensors();
-    
-    _puts("n-ok ");
 }
 
 void NEMS_stop_program()
+{
+    NEMS_stop_program_nack();
+    _puts("N-ok ");
+}
+
+
+void NEMS_stop_program_nack(void)
 {
     NEMS_states = NEMS_DISABLED;    
     TMR0_StopTimer();   
@@ -853,9 +862,9 @@ void NEMS_stop_program()
     LATB = NEMS_pmux1;
     
     //NEMS_stop_sensors();
-    
-    _puts("N-ok ");
+
 }
+
 
 void NEMS_start_sensors(void)
 {

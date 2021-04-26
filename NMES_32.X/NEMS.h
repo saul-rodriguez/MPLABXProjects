@@ -185,6 +185,9 @@ void NEMS_calculate_ramp(void);
 void NEMS_start_program(void);
 void NEMS_stop_program(void);
 
+void NEMS_start_program_nack(void);
+void NEMS_stop_program_nack(void);
+
 void NEMS_timer(void);
 
 void NEMS_start_sensors(void);
