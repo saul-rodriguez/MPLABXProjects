@@ -189,6 +189,7 @@ void NEMS_start_program_nack(void);
 void NEMS_stop_program_nack(void);
 
 void NEMS_timer(void);
+void NEMS_timer_SE(void);
 
 void NEMS_start_sensors(void);
 void NEMS_stop_sensors(void);

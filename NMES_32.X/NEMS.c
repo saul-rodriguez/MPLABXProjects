@@ -14,7 +14,14 @@ volatile NEMS_pulse_state NEMS_pulse_states;
 unsigned char NEMS_nmux1;
 unsigned char NEMS_pmux1;
 
+unsigned char NMES_freq_multiplier;
+
 bool channel_control;
+
+bool NMES_se_control;
+
+unsigned char se_index;
+unsigned char se_channel;
 
 volatile unsigned char sens_buf[SENSOR_BUFFER_SIZE];
 volatile unsigned char sensor_ind;
@@ -95,7 +102,11 @@ void NEMS_initialize(void)
     program.ramp_down = 0;
     */
     //Redirect the interrupt handler
+   
     TMR0_SetInterruptHandler(NEMS_timer);
+    
+    /*****ONLY FOR TEST*******/
+    //TMR0_SetInterruptHandler(NEMS_timer_SE);
     
     DAC1_SetOutput(0); //Current source set to 0
     
@@ -104,9 +115,14 @@ void NEMS_initialize(void)
     LATC = NEMS_nmux1;
     LATB = NEMS_pmux1;
     
+    NMES_freq_multiplier = 4; // Defaults to 4 channel NMES
+    
+    NMES_se_control = 0; // defaults to 2 channels NMES
     channel_control = 0;
     
     sensor_ind = 0;
+    se_index = 0;
+    se_channel = 0;
         
 }
 
@@ -217,19 +233,33 @@ void NEMS_message_handler(void)
 
 void NEMS_binary_command(void)
 {
-    unsigned char chan1,chan2,go_stop;    
+    unsigned char amp,chan1,chan2,go_stop,super_electrode;    
     
     NEMS_stop_program_nack(); 
     
     __delay_ms(10);
     
-    if (eusart1RxCount == 3) { //Valid packet size
+    if (eusart1RxCount == 5) { //Valid packet size
+        
+        amp = EUSART1_Read();
         chan1 = EUSART1_Read();
         chan2 = EUSART1_Read();
         go_stop = EUSART1_Read();
+        super_electrode = EUSART1_Read();
+        
             
+        program.amplitude = amp;
         program.channel1 = chan1;
         program.channel2 = chan2;
+        
+        if (super_electrode) {
+            NMES_se_control = 1;
+            TMR0_SetInterruptHandler(NEMS_timer_SE);
+            
+        } else {
+            NMES_se_control = 0;
+            TMR0_SetInterruptHandler(NEMS_timer);
+        }
         
         if (go_stop) {
             NEMS_start_program_nack();
@@ -529,10 +559,46 @@ void NEMS_load_program(void)
 
 void NEMS_recalculate_program(void)
 {
+    unsigned char se_frequency;
+    
+    
+    if (NMES_se_control) {
+        se_frequency = program.frequency*NMES_freq_multiplier;
+        waveform.num_clocks_per_pulse = (unsigned short)NEMS_TIMER_FREQUENCY/se_frequency;
+    } else {
+        se_frequency = program.frequency;
+        waveform.num_clocks_per_pulse = (unsigned short)NEMS_TIMER_FREQUENCY/se_frequency;
+        waveform.num_clocks_per_pulse /= 2; 
+    }
+    
+    
+    //waveform.num_clocks_per_pulse = (unsigned short)NEMS_TIMER_FREQUENCY/se_frequency;
+    
+    // the counter will runs at twice frequency for 2 simultaneous channels
+    //waveform.num_clocks_per_pulse /= 2; 
+    //waveform.num_clocks_per_pulse /= se_factor; 
+    
+    waveform.clock_index = 0;
+    waveform.pulse_index = 0;
+    
+    waveform.pulse_index2 = 0;
+    
+    waveform.ramp_up_pulses = (program.ramp_up*se_frequency)/10;  
+    waveform.ramp_down_pulses = (program.ramp_down*se_frequency)/10;
+    
+    waveform.ramp_up_time = waveform.ramp_up_pulses;
+    
+    waveform.ON_time = program.ON_time*se_frequency + waveform.ramp_up_time;    
+    waveform.ramp_down_time = waveform.ramp_down_pulses + waveform.ON_time;    
+    waveform.OFF_time = program.OFF_time*se_frequency + waveform.ON_time;  
+        
+    
+   /* 
     waveform.num_clocks_per_pulse = (unsigned short)NEMS_TIMER_FREQUENCY/program.frequency;
     
     // the counter will runs at twice frequency for 2 simultaneous channels
-    waveform.num_clocks_per_pulse /= 2; 
+    //waveform.num_clocks_per_pulse /= 2; 
+    //waveform.num_clocks_per_pulse /= se_factor; 
     
     waveform.clock_index = 0;
     waveform.pulse_index = 0;
@@ -547,6 +613,8 @@ void NEMS_recalculate_program(void)
     waveform.ON_time = program.ON_time*program.frequency + waveform.ramp_up_time;    
     waveform.ramp_down_time = waveform.ramp_down_pulses + waveform.ON_time;    
     waveform.OFF_time = program.OFF_time*program.frequency + waveform.ON_time;       
+        
+    */
     
     waveform.pulse_amplitude = 0;
     waveform.current_amplitude = 0;
@@ -582,6 +650,9 @@ void NEMS_recalculate_program(void)
     NEMS_pulse_states = NEMS_PULSE_OFF;   
     
     channel_control = 0;
+    
+    se_index = 0;
+    se_channel = waveform.channel1;
 }
 
 void NEMS_calculate_ramp(void)
@@ -811,8 +882,100 @@ void NEMS_timer(void)
 }
 
 
+void NEMS_timer_SE(void)
+{   
+    //UPDATE OUTPUTS
+    DAC1_SetOutput(waveform.current_amplitude);
+   
+    //Digital outputs controlling the MUX are updated here
+    //LATC = NEMS_pulse_states;
+    LATC = NEMS_nmux1;
+    LATB = NEMS_pmux1;
+            
+    //PULSE STATES
+    waveform.clock_index++;
+   
+    //Check if a new pulse is starting
+    if (waveform.clock_index >= waveform.num_clocks_per_pulse)  { //New Pulse should start 
+        waveform.clock_index = 0;       
+         
+        NEMS_pulse_states = NEMS_PLUS_UP; //start with channel1 (n-) and channel2 (p+);
+            
+        waveform.pulse_index++;
+
+        // Logic to control ramp-up, ON, ramp-down, OFF
+        if (waveform.pulse_index < waveform.ramp_up_time) {
+            waveform.pulse_amplitude = waveform.ramp_up_amplitude[waveform.pulse_index];
+
+        } else if (waveform.pulse_index < waveform.ON_time) {
+            waveform.pulse_amplitude = waveform.program_amplitude;
+
+        } else if (waveform.pulse_index < waveform.ramp_down_time) {
+            waveform.pulse_amplitude = waveform.ramp_down_amplitude[waveform.pulse_index - waveform.ON_time];
+
+        } else if (waveform.pulse_index < waveform.OFF_time) {
+            waveform.pulse_amplitude = 0;
+            NEMS_pulse_states = NEMS_PULSE_OFF;            
+            NEMS_nmux1 = 0;
+            NEMS_pmux1 = 0;
+        } else { //single repetition finished
+            waveform.pulse_index = 0;        
+        }
+        
+        //Logic to select the right electrode
+        se_channel = waveform.channel2 + se_index; 
+        if (se_index < 3) { /******* ONLY FOR TEST*******/
+            se_index++;
+        } else {
+            se_index = 0;
+        }            
+                 
+    }
+            
+    // Logic to control pulse shape
+    if (NEMS_pulse_states != NEMS_PULSE_OFF) { //New pulse must start now
+        if (waveform.clock_index < program.phase_duration) {               
+            NEMS_pulse_states = NEMS_PLUS_UP;
+            
+            NEMS_nmux1 = waveform.channel1;   // NOTE: nmux and pmux may need to be changed if cathode/anode comes in ch1 or ch2
+            NEMS_pmux1 = se_channel;
+            //NEMS_pmux1 = waveform.channel2;
+            
+            waveform.current_amplitude = waveform.pulse_amplitude;
+            
+        }  else if (waveform.clock_index < waveform.silence_phase_duration) {
+            NEMS_pulse_states = NEMS_REST;
+            NEMS_nmux1 = 0;
+            NEMS_pmux1 = 0;
+            
+            waveform.current_amplitude = 0;
+            
+        } else if (waveform.clock_index < waveform.minus_phase_duration) {
+            NEMS_pulse_states = NEMS_MINUS_UP;
+                        
+            NEMS_nmux1 = se_channel;
+            //NEMS_nmux1 = waveform.channel2;
+            NEMS_pmux1 = waveform.channel1;            
+            waveform.current_amplitude = waveform.pulse_amplitude >> waveform.symmetry_divider;
+            
+        } else {
+            NEMS_pulse_states = NEMS_PULSE_OFF;
+            NEMS_nmux1 = 0;
+            NEMS_pmux1 = 0;
+            
+            waveform.current_amplitude = 0;
+        }
+    } 
+}
+
+
+
 void NEMS_start_program()
 {
+    // Default super electrode settings
+    NMES_se_control = 0;
+    TMR0_SetInterruptHandler(NEMS_timer);
+    
     NEMS_start_program_nack();
     _puts("n-ok ");
 }
@@ -834,6 +997,8 @@ void NEMS_start_program_nack(void)
             return;
         }
     }
+    
+    
     
     NEMS_recalculate_program();
     
