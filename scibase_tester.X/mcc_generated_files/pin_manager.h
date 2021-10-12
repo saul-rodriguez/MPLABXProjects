@@ -85,6 +85,26 @@
 #define LED_SetAnalogMode()      do { ANSELAbits.ANSA0 = 1; } while(0)
 #define LED_SetDigitalMode()     do { ANSELAbits.ANSA0 = 0; } while(0)
 
+// get/set VOUT_SE aliases
+#define VOUT_SE_TRIS                 TRISCbits.TRISC0
+#define VOUT_SE_LAT                  LATCbits.LATC0
+#define VOUT_SE_PORT                 PORTCbits.RC0
+#define VOUT_SE_WPU                  WPUCbits.WPUC0
+#define VOUT_SE_OD                   ODCONCbits.ODCC0
+#define VOUT_SE_ANS                  ANSELCbits.ANSC0
+#define VOUT_SE_SetHigh()            do { LATCbits.LATC0 = 1; } while(0)
+#define VOUT_SE_SetLow()             do { LATCbits.LATC0 = 0; } while(0)
+#define VOUT_SE_Toggle()             do { LATCbits.LATC0 = ~LATCbits.LATC0; } while(0)
+#define VOUT_SE_GetValue()           PORTCbits.RC0
+#define VOUT_SE_SetDigitalInput()    do { TRISCbits.TRISC0 = 1; } while(0)
+#define VOUT_SE_SetDigitalOutput()   do { TRISCbits.TRISC0 = 0; } while(0)
+#define VOUT_SE_SetPullup()          do { WPUCbits.WPUC0 = 1; } while(0)
+#define VOUT_SE_ResetPullup()        do { WPUCbits.WPUC0 = 0; } while(0)
+#define VOUT_SE_SetPushPull()        do { ODCONCbits.ODCC0 = 0; } while(0)
+#define VOUT_SE_SetOpenDrain()       do { ODCONCbits.ODCC0 = 1; } while(0)
+#define VOUT_SE_SetAnalogMode()      do { ANSELCbits.ANSC0 = 1; } while(0)
+#define VOUT_SE_SetDigitalMode()     do { ANSELCbits.ANSC0 = 0; } while(0)
+
 // get/set CFG_CLK aliases
 #define CFG_CLK_TRIS                 TRISCbits.TRISC1
 #define CFG_CLK_LAT                  LATCbits.LATC1

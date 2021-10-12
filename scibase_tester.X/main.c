@@ -43,6 +43,7 @@
 
 #include "mcc_generated_files/mcc.h"
 #include "bio3.h"
+#include "tester.h"
 
 /*
                          Main application
@@ -118,7 +119,10 @@ void main(void)
     */
     
     while (1) {
-    
+        CLRWDT();
+        if(EUSART1_is_rx_ready()) {
+            mess_handler();
+        }
     }
     
 }
