@@ -85,6 +85,86 @@
 #define LED_SetAnalogMode()      do { ANSELAbits.ANSA0 = 1; } while(0)
 #define LED_SetDigitalMode()     do { ANSELAbits.ANSA0 = 0; } while(0)
 
+// get/set IOUTN aliases
+#define IOUTN_TRIS                 TRISAbits.TRISA4
+#define IOUTN_LAT                  LATAbits.LATA4
+#define IOUTN_PORT                 PORTAbits.RA4
+#define IOUTN_WPU                  WPUAbits.WPUA4
+#define IOUTN_OD                   ODCONAbits.ODCA4
+#define IOUTN_ANS                  ANSELAbits.ANSA4
+#define IOUTN_SetHigh()            do { LATAbits.LATA4 = 1; } while(0)
+#define IOUTN_SetLow()             do { LATAbits.LATA4 = 0; } while(0)
+#define IOUTN_Toggle()             do { LATAbits.LATA4 = ~LATAbits.LATA4; } while(0)
+#define IOUTN_GetValue()           PORTAbits.RA4
+#define IOUTN_SetDigitalInput()    do { TRISAbits.TRISA4 = 1; } while(0)
+#define IOUTN_SetDigitalOutput()   do { TRISAbits.TRISA4 = 0; } while(0)
+#define IOUTN_SetPullup()          do { WPUAbits.WPUA4 = 1; } while(0)
+#define IOUTN_ResetPullup()        do { WPUAbits.WPUA4 = 0; } while(0)
+#define IOUTN_SetPushPull()        do { ODCONAbits.ODCA4 = 0; } while(0)
+#define IOUTN_SetOpenDrain()       do { ODCONAbits.ODCA4 = 1; } while(0)
+#define IOUTN_SetAnalogMode()      do { ANSELAbits.ANSA4 = 1; } while(0)
+#define IOUTN_SetDigitalMode()     do { ANSELAbits.ANSA4 = 0; } while(0)
+
+// get/set IOUTP aliases
+#define IOUTP_TRIS                 TRISAbits.TRISA5
+#define IOUTP_LAT                  LATAbits.LATA5
+#define IOUTP_PORT                 PORTAbits.RA5
+#define IOUTP_WPU                  WPUAbits.WPUA5
+#define IOUTP_OD                   ODCONAbits.ODCA5
+#define IOUTP_ANS                  ANSELAbits.ANSA5
+#define IOUTP_SetHigh()            do { LATAbits.LATA5 = 1; } while(0)
+#define IOUTP_SetLow()             do { LATAbits.LATA5 = 0; } while(0)
+#define IOUTP_Toggle()             do { LATAbits.LATA5 = ~LATAbits.LATA5; } while(0)
+#define IOUTP_GetValue()           PORTAbits.RA5
+#define IOUTP_SetDigitalInput()    do { TRISAbits.TRISA5 = 1; } while(0)
+#define IOUTP_SetDigitalOutput()   do { TRISAbits.TRISA5 = 0; } while(0)
+#define IOUTP_SetPullup()          do { WPUAbits.WPUA5 = 1; } while(0)
+#define IOUTP_ResetPullup()        do { WPUAbits.WPUA5 = 0; } while(0)
+#define IOUTP_SetPushPull()        do { ODCONAbits.ODCA5 = 0; } while(0)
+#define IOUTP_SetOpenDrain()       do { ODCONAbits.ODCA5 = 1; } while(0)
+#define IOUTP_SetAnalogMode()      do { ANSELAbits.ANSA5 = 1; } while(0)
+#define IOUTP_SetDigitalMode()     do { ANSELAbits.ANSA5 = 0; } while(0)
+
+// get/set VOUTP aliases
+#define VOUTP_TRIS                 TRISAbits.TRISA6
+#define VOUTP_LAT                  LATAbits.LATA6
+#define VOUTP_PORT                 PORTAbits.RA6
+#define VOUTP_WPU                  WPUAbits.WPUA6
+#define VOUTP_OD                   ODCONAbits.ODCA6
+#define VOUTP_ANS                  ANSELAbits.ANSA6
+#define VOUTP_SetHigh()            do { LATAbits.LATA6 = 1; } while(0)
+#define VOUTP_SetLow()             do { LATAbits.LATA6 = 0; } while(0)
+#define VOUTP_Toggle()             do { LATAbits.LATA6 = ~LATAbits.LATA6; } while(0)
+#define VOUTP_GetValue()           PORTAbits.RA6
+#define VOUTP_SetDigitalInput()    do { TRISAbits.TRISA6 = 1; } while(0)
+#define VOUTP_SetDigitalOutput()   do { TRISAbits.TRISA6 = 0; } while(0)
+#define VOUTP_SetPullup()          do { WPUAbits.WPUA6 = 1; } while(0)
+#define VOUTP_ResetPullup()        do { WPUAbits.WPUA6 = 0; } while(0)
+#define VOUTP_SetPushPull()        do { ODCONAbits.ODCA6 = 0; } while(0)
+#define VOUTP_SetOpenDrain()       do { ODCONAbits.ODCA6 = 1; } while(0)
+#define VOUTP_SetAnalogMode()      do { ANSELAbits.ANSA6 = 1; } while(0)
+#define VOUTP_SetDigitalMode()     do { ANSELAbits.ANSA6 = 0; } while(0)
+
+// get/set VOUTN aliases
+#define VOUTN_TRIS                 TRISAbits.TRISA7
+#define VOUTN_LAT                  LATAbits.LATA7
+#define VOUTN_PORT                 PORTAbits.RA7
+#define VOUTN_WPU                  WPUAbits.WPUA7
+#define VOUTN_OD                   ODCONAbits.ODCA7
+#define VOUTN_ANS                  ANSELAbits.ANSA7
+#define VOUTN_SetHigh()            do { LATAbits.LATA7 = 1; } while(0)
+#define VOUTN_SetLow()             do { LATAbits.LATA7 = 0; } while(0)
+#define VOUTN_Toggle()             do { LATAbits.LATA7 = ~LATAbits.LATA7; } while(0)
+#define VOUTN_GetValue()           PORTAbits.RA7
+#define VOUTN_SetDigitalInput()    do { TRISAbits.TRISA7 = 1; } while(0)
+#define VOUTN_SetDigitalOutput()   do { TRISAbits.TRISA7 = 0; } while(0)
+#define VOUTN_SetPullup()          do { WPUAbits.WPUA7 = 1; } while(0)
+#define VOUTN_ResetPullup()        do { WPUAbits.WPUA7 = 0; } while(0)
+#define VOUTN_SetPushPull()        do { ODCONAbits.ODCA7 = 0; } while(0)
+#define VOUTN_SetOpenDrain()       do { ODCONAbits.ODCA7 = 1; } while(0)
+#define VOUTN_SetAnalogMode()      do { ANSELAbits.ANSA7 = 1; } while(0)
+#define VOUTN_SetDigitalMode()     do { ANSELAbits.ANSA7 = 0; } while(0)
+
 // get/set VOUT_SE aliases
 #define VOUT_SE_TRIS                 TRISCbits.TRISC0
 #define VOUT_SE_LAT                  LATCbits.LATC0

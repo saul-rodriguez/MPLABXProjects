@@ -88,6 +88,10 @@ typedef __uint24 uint24_t;
 
 typedef enum
 {
+    IOUTN =  0x4,
+    IOUTP =  0x5,
+    VOUTP =  0x6,
+    VOUTN =  0x7,
     VOUT_SE =  0x10,
     channel_Vss =  0x3B,
     channel_Temp_Sensor =  0x3C,

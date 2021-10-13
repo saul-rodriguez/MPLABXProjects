@@ -18,6 +18,8 @@ void mess_handler()
         
         case 'f': //single shot sweep measurement SE no offset, crc
             sweep();
+            //tester_initialize(); // back to initial state
+            
             break;
             
         case 'a': //test ADC
@@ -58,19 +60,60 @@ void ADC_test()
     unsigned short value;
     //unsigned char aux[3];
     unsigned char num;
-    char sbuf[10];
+    char sbuf[30];
     float aux;
     
-    value = ADCC_GetSingleConversion(VOUT_SE);
+    //value = ADCC_GetSingleConversion(VOUT_SE);
     
-    aux = (float)value*1.8/4096.0;
+    //aux = (float)value*1.8/4096.0;
     
     //aux[0] = (unsigned char)((value >> 8) & 0xff);
     //aux[1] = (unsigned char)(value & 0xff);
     //aux[2] = '\n';
     
-    num = sprintf(sbuf,"Vout = %3.3f V\n", aux);           
+    _puts("****************************\n");
+    __delay_ms(50); // wait until BT sends data before measuring DC
+    _puts("Scibase ASIC Tester V0.1\n");
+    __delay_ms(50); // wait until BT sends data before measuring DC
+    _puts("DC operating point tests\n");
+    __delay_ms(50); // wait until BT sends data before measuring DC
+    _puts("****************************\n");
+    __delay_ms(50); // wait until BT sends data before measuring DC
+    _puts("PIN = measurement (simulation)\n");
+    __delay_ms(50); // wait until BT sends data before measuring DC
+    
+    value = ADCC_GetSingleConversion(VOUT_SE);    
+    aux = (float)value*1.8/4096.0;
+    num = sprintf(sbuf,"VOUT_SE = %3.3f V (0.900 V)\n", aux);           
     write(sbuf,num);
+    __delay_ms(50); // wait until BT sends data before measuring DC    
+    
+    value = ADCC_GetSingleConversion(VOUTP);    
+    aux = (float)value*1.8/4096.0;
+    num = sprintf(sbuf,"VOUTP = %3.3f V (1.168 V)\n ", aux);           
+    write(sbuf,num);
+    __delay_ms(50); // wait until BT sends data before measuring DC
+    
+    value = ADCC_GetSingleConversion(VOUTN);    
+    aux = (float)value*1.8/4096.0;
+    num = sprintf(sbuf,"VOUTN = %3.3f V (1.168 V)\n", aux);           
+    write(sbuf,num);
+    __delay_ms(50); // wait until BT sends data before measuring DC
+    
+    value = ADCC_GetSingleConversion(IOUTP);    
+    aux = (float)value*1.8/4096.0;
+    num = sprintf(sbuf,"IOUTP = %3.3f V (1.002 V)\n", aux);           
+    write(sbuf,num);
+    __delay_ms(50); // wait until BT sends data before measuring DC
+    
+    value = ADCC_GetSingleConversion(IOUTN);    
+    aux = (float)value*1.8/4096.0;
+    num = sprintf(sbuf,"IOUTN = %3.3f V (1.002 V)\n", aux);           
+    write(sbuf,num);
+    __delay_ms(50); // wait until BT sends data before measuring DC
+    
+    //finish selecting VOUT_SE in order not to disturb the inputs
+    value = ADCC_GetSingleConversion(VOUT_SE);    
 
 }
 
@@ -178,6 +221,9 @@ void sweep()
             
         freq_index--;
     }
+    
+    // Gain, freq, and filter set to initial state
+    tester_initialize();
     
 }
     
