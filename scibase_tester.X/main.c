@@ -75,6 +75,7 @@ void main(void)
     
      // Add your application code
     
+    //Reset ASIC
     CFG_RES_SetLow();
     __delay_ms(150);
     CFG_RES_SetHigh();
@@ -83,7 +84,9 @@ void main(void)
     LED_SetHigh();        
     __delay_ms(200);
     LED_SetLow();
-    __delay_ms(200);
+    
+    //config asic to lowest gain, lowest freq, setup filter
+    tester_initialize();
     
     //TEST SERIAL
     /*

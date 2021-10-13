@@ -22,7 +22,7 @@ extern "C" {
 #define MEAS_MAX 370*4
 #define MEAS_MIN  86*4
 
-    
+void tester_initialize();    
 void ADC_test();
 void mess_handler();
 void sweep();

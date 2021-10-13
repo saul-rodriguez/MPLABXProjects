@@ -4,12 +4,8 @@
  *
  * Created on September 15, 2016, 3:53 PM
  * 
- * Pin assignment:
+ *  
  * 
- * 
- * RA5 -> RESETN
- * RC2 -> DATA
- * RC3 -> CLK
  
  * 
  */
@@ -37,11 +33,12 @@ extern "C" {
 #endif
     
 //Tested with bio
-#ifdef BIOASIC    
-#define CONF_DELAY 20
-#endif
+//#ifdef BIOASIC    
+//#define CONF_DELAY 20
+//#endif
 
-//Implantable structure    
+//Implantable structure   
+    /*
 typedef struct BIO3_bits_stuct {
     unsigned RE     :1;
     unsigned FS     :1;
@@ -69,7 +66,7 @@ typedef union {
 } BIO3;
 
 #define BIO3_LENGTH 16
-
+*/
 
 
 typedef struct RADIO_gain_bits_struct {
@@ -91,7 +88,8 @@ typedef union {
 
 
 
-#ifdef BIOASIC
+//#ifdef BIOASIC
+/*
 //Radio gain bit states (GAIN0 is lowest gain, GAIN7 is highest gain) Demodulator gain first!
 #define GAIN0 0b00000100
 #define GAIN1 0b00000101
@@ -101,7 +99,8 @@ typedef union {
 #define GAIN5 0b01100011
 #define GAIN6 0b01101011
 #define GAIN7 0b01111011
-#else
+ */
+//#else
 //Radio gain bit states (GAIN0 is lowest gain, GAIN7 is highest gain) Generator gain first!
 #define GAIN0 0b00000100
 #define GAIN1 0b00100100
@@ -112,7 +111,7 @@ typedef union {
 #define GAIN6 0b01111111
 #define GAIN7 0b01111011
 
-#endif
+//#endif
 
 
 const unsigned char gains[8] = {
@@ -273,16 +272,16 @@ const unsigned long filt[11] = {
 //void BIO_config(BIO3 conf);
 //void VIN_config(VIN conf);
 
-#ifdef BIOASIC
-void config(BIO3 conf);
-void setGain(BIO3* asic, unsigned char gain_index);
-void setFreq(BIO3* asic, unsigned char freq_index);
-#else
+//#ifdef BIOASIC
+//void config(BIO3 conf);
+//void setGain(BIO3* asic, unsigned char gain_index);
+//void setFreq(BIO3* asic, unsigned char freq_index);
+//#else
 void config(VIN conf);
 void setGain(VIN* asic, unsigned char gain_index);
 void setFreq(VIN* asic, unsigned char freq_index);
 void setFilt(VIN* asic, unsigned char freq_index);
-#endif
+//#endif
 
 
 

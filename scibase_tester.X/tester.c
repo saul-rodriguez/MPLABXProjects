@@ -26,6 +26,32 @@ void mess_handler()
     }    
 }
 
+void tester_initialize()
+{
+    unsigned char freq_index;
+    unsigned char gain_index;
+    
+    VIN asic;
+    
+    asic.datas[0] = 0;
+    asic.datas[1] = 0;
+    asic.datas[2] = 0;
+        
+    //Initial ASIC configuration
+    freq_index = 10; // Starts from 1kHz   
+    gain_index = 0; // Starts with lowest gain    
+    
+    // Set initial gain, freq, filter
+    setGain(&asic,gain_index); 
+    setFreq(&asic,freq_index);
+    setFilt(&asic,freq_index);
+    
+    asic.data_bits.IQ = 0; //Select I reference
+    asic.data_bits.CE = 0; //Disable the signal generator
+    config(asic); 
+     __delay_ms(CONF_DELAY);
+    
+}
 
 void ADC_test()
 {
@@ -43,15 +69,8 @@ void ADC_test()
     //aux[1] = (unsigned char)(value & 0xff);
     //aux[2] = '\n';
     
-    num = sprintf(sbuf,"Vout = %3.3f V\n", aux);
-    
-    //write(aux,3);
-    
+    num = sprintf(sbuf,"Vout = %3.3f V\n", aux);           
     write(sbuf,num);
-    
-    
-    
-    
 
 }
 
@@ -63,16 +82,16 @@ void sweep()
     short I,Q;
     unsigned char aux[7], check;
 
-#ifdef BIOASIC
-    BIO3 asic;    
-    asic.datashort = 0; //Clears all bits: NS = 0 (32 steps), CE = 0 (disabled)
-#else
+//#ifdef BIOASIC
+//    BIO3 asic;    
+//    asic.datashort = 0; //Clears all bits: NS = 0 (32 steps), CE = 0 (disabled)
+//#else
     VIN asic;
     asic.datas[0] = 0;
     asic.datas[1] = 0;
     asic.datas[2] = 0;
     
-#endif
+//#endif
     
         
     //Initial ASIC configuration
@@ -82,13 +101,9 @@ void sweep()
        
     //Sweep all frequencies
     for (i = 0; i < 11; i++) {
-        
-        #ifdef BIOASIC
-        setFreq(&asic,freq_index);        
-        #else
+                
         setFreq(&asic,freq_index);
         setFilt(&asic,freq_index);
-        #endif
         
         //Measure and check if it is in range
         count = 0;
@@ -103,11 +118,9 @@ void sweep()
                 if (count == 2) break; // Previous decrease of gain, stops now!
                 count = ret;                
 
-                #ifdef BIOASIC
-                if (gain_index < 7) {
-                #else
-                if (gain_index < 5) {
-                #endif                
+                
+                //if (gain_index < 7) { //for BIOASIC
+                if (gain_index < 5) {  //for VIN              
                     gain_index++;
                     setGain(&asic,gain_index);
                 } else {
@@ -162,19 +175,13 @@ void sweep()
         #ifndef BIOASIC
         __delay_ms(50);
         #endif
-              
-        
+            
         freq_index--;
     }
     
 }
     
-    
-    #ifdef BIOASIC
-unsigned char measure(short* I, short* Q, BIO3 asic)
-#else
 unsigned char measure(short* I, short* Q, VIN asic)
-#endif
 {
     unsigned short offset, value;
     short aux1,aux2;
@@ -234,11 +241,6 @@ unsigned char measure(short* I, short* Q, VIN asic)
          
     return 0;    
 }
-
-
-
-
-
     
 unsigned char calculate_checksum(unsigned char* data, unsigned char num)
 {
