@@ -1,4 +1,4 @@
-<config configName="default" projectName="scibase_tester" configVersion="1.1" device="PIC16LF18456" deviceLibraryClass="com.microchip.mcc.mcu8.Mcu8PeripheralLibrary" coreVersion="5.3.0">
+<config configName="default" projectName="scibase_tester" configVersion="1.1" device="PIC16LF18456" deviceLibraryClass="com.microchip.mcc.mcu8.Mcu8PeripheralLibrary" coreVersion="5.3.3">
    <usedPackages class="java.util.ArrayList"/>
    <usedClasses class="java.util.TreeMap">
       <entry>
@@ -7715,66 +7715,66 @@
          <value>WDT window violation reset has not occurred</value>
       </entry>
    </tokenMap>
-   <generatedFileHashHistoryMap class="java.util.HashMap">
+   <generatedFileHashHistoryMap class="java.util.TreeMap">
       <entry>
-         <file>mcc_generated_files/interrupt_manager.h</file>
-         <hash>3270d7bf594da7c067f9082e83cb8e2aa584761b23852c2648d0f19a0171b13d</hash>
+         <file>main.c</file>
+         <hash>0e6e9d42004f76b6fe61d71d71328f430e1edfbd9188a9020cf9dd846cc5b561</hash>
       </entry>
       <entry>
          <file>mcc_generated_files/adcc.c</file>
          <hash>ed58e5d0777e1f99fde92b7d9086b6d37e291740afffd1e00de13bcc9db7ac26</hash>
       </entry>
       <entry>
-         <file>mcc_generated_files/pin_manager.h</file>
-         <hash>9360f280270b6c6748d0a503046315c2b3a34d77af6087268519422c7f2a063a</hash>
-      </entry>
-      <entry>
          <file>mcc_generated_files/adcc.h</file>
          <hash>832edd9f724b362c8d79310ecde52b7d425b5d9f2acd634ec99320d943f05097</hash>
-      </entry>
-      <entry>
-         <file>main.c</file>
-         <hash>0e6e9d42004f76b6fe61d71d71328f430e1edfbd9188a9020cf9dd846cc5b561</hash>
-      </entry>
-      <entry>
-         <file>mcc_generated_files/eusart1.h</file>
-         <hash>eb662b8d573939998f6e9828c068a022f0e560d7bb31976cec975fbbe62ede95</hash>
       </entry>
       <entry>
          <file>mcc_generated_files/clkref.c</file>
          <hash>e2066c26c8f6613bd5f6b5129cbcb08d6ee7e8e4cb882b96cc6f021e511a28d5</hash>
       </entry>
       <entry>
-         <file>mcc_generated_files/device_config.h</file>
-         <hash>109aa73d2ea9dd88169c3a8b3950c906b95dae29149d56025c2d1c92d779f4db</hash>
-      </entry>
-      <entry>
          <file>mcc_generated_files/clkref.h</file>
          <hash>8bf443d2c323a61189a1cbb627ab86a6423dad57878670579a976788502a4207</hash>
-      </entry>
-      <entry>
-         <file>mcc_generated_files/mcc.h</file>
-         <hash>13958e44f24c8b18e5cf0971920cc9b44abeef651a603b19e8c79b65278bb8e0</hash>
-      </entry>
-      <entry>
-         <file>mcc_generated_files/eusart1.c</file>
-         <hash>a5eaa6c4fb2453360ced39a9cf6bf8d18a1a9677e23b47651823ef64c20360bd</hash>
       </entry>
       <entry>
          <file>mcc_generated_files/device_config.c</file>
          <hash>a42feabc377f634b6c6850b49d0f80646525ab713f0ea15f8922e368828b65f8</hash>
       </entry>
       <entry>
+         <file>mcc_generated_files/device_config.h</file>
+         <hash>109aa73d2ea9dd88169c3a8b3950c906b95dae29149d56025c2d1c92d779f4db</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files/eusart1.c</file>
+         <hash>a5eaa6c4fb2453360ced39a9cf6bf8d18a1a9677e23b47651823ef64c20360bd</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files/eusart1.h</file>
+         <hash>eb662b8d573939998f6e9828c068a022f0e560d7bb31976cec975fbbe62ede95</hash>
+      </entry>
+      <entry>
          <file>mcc_generated_files/interrupt_manager.c</file>
          <hash>0ecb4dcd13ae8582c151c0820259c6c445297c1151ad345fb07fb0f3a200a050</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files/interrupt_manager.h</file>
+         <hash>3270d7bf594da7c067f9082e83cb8e2aa584761b23852c2648d0f19a0171b13d</hash>
       </entry>
       <entry>
          <file>mcc_generated_files/mcc.c</file>
          <hash>39fd20d443d3c4467c0ec4ca7b2bbe662f572f08a4dcc3abe9111378a1760de3</hash>
       </entry>
       <entry>
+         <file>mcc_generated_files/mcc.h</file>
+         <hash>13958e44f24c8b18e5cf0971920cc9b44abeef651a603b19e8c79b65278bb8e0</hash>
+      </entry>
+      <entry>
          <file>mcc_generated_files/pin_manager.c</file>
          <hash>ba6c4a49896435f5b16601d057bb32a499d596e756de681dd83446090b2edcbf</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files/pin_manager.h</file>
+         <hash>9360f280270b6c6748d0a503046315c2b3a34d77af6087268519422c7f2a063a</hash>
       </entry>
    </generatedFileHashHistoryMap>
 </config>
