@@ -1,0 +1,1183 @@
+[p GLOBOPT AUTOSTATIC IEEE_DBL IEEE_FLT PIC14 PIC14E ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16F18456 ]
+[d frameptr 6 ]
+"114 /home/saul/MPLABXProjects/NMES_32.X/mcc_generated_files/adcc.c
+[e E12512 . `uc
+SENSOR1 4
+SENSOR2 5
+channel_Vss 59
+channel_Temp_Sensor 60
+channel_DAC1_Output 61
+channel_FVR_Buffer1 62
+channel_FVR_Buffer2 63
+]
+"10 /home/saul/MPLABXProjects/NMES_32.X/NEMS.c
+[e E12700 . `uc
+NEMS_DISABLED 0
+NEMS_ENABLED 1
+]
+"11
+[e E12705 . `uc
+NEMS_ON_TIME 0
+NEMS_OFF_TIME 1
+]
+"12
+[e E12710 . `uc
+NEMS_PULSE_OFF 0
+NEMS_PLUS_UP 2
+NEMS_REST 1
+NEMS_MINUS_UP 4
+]
+"1050
+[e E12529 . `uc
+SENSOR1 4
+SENSOR2 5
+channel_Vss 59
+channel_Temp_Sensor 60
+channel_DAC1_Output 61
+channel_FVR_Buffer1 62
+channel_FVR_Buffer2 63
+]
+"5 /opt/microchip/xc8/v2.31/pic/sources/c99/common/awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+"4 /opt/microchip/xc8/v2.31/pic/sources/c99/common/lbmod.c
+[v ___lbmod __lbmod `(uc  1 e 1 0 ]
+"5 /opt/microchip/xc8/v2.31/pic/sources/c99/common/lwdiv.c
+[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
+"5 /opt/microchip/xc8/v2.31/pic/sources/c99/common/lwmod.c
+[v ___lwmod __lwmod `(ui  1 e 2 0 ]
+"10 /opt/microchip/xc8/v2.31/pic/sources/c99/common/sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"15 /opt/microchip/xc8/v2.31/pic/sources/c99/common/Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+"4 /opt/microchip/xc8/v2.31/pic/sources/c99/common/Umul8.c
+[v ___bmul __bmul `(uc  1 e 1 0 ]
+"4 /opt/microchip/xc8/v2.31/pic/sources/c99/common/Umul8_16.c
+[v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
+"6 /opt/microchip/xc8/v2.31/pic/sources/c99/pic/__eeprom.c
+[v ___eecpymem __eecpymem `(v  1 e 1 0 ]
+"39
+[v ___memcpyee __memcpyee `(v  1 e 1 0 ]
+"6 /opt/microchip/xc8/v2.31/pic/sources/c99/pic/__eeread.c
+[v _eeprom_read eeprom_read `(uc  1 e 1 0 ]
+"6 /opt/microchip/xc8/v2.31/pic/sources/c99/pic/__eewrite.c
+[v _eeprom_write eeprom_write `(v  1 e 1 0 ]
+"5 /home/saul/MPLABXProjects/NMES_32.X/comm.c
+[v __puts _puts `(v  1 e 1 0 ]
+"15
+[v _write write `(v  1 e 1 0 ]
+"52
+[v __sprintf_u8b _sprintf_u8b `(v  1 e 1 0 ]
+"52 /home/saul/MPLABXProjects/NMES_32.X/main.c
+[v _main main `(v  1 e 1 0 ]
+"63 /home/saul/MPLABXProjects/NMES_32.X/mcc_generated_files/adcc.c
+[v _ADCC_Initialize ADCC_Initialize `(v  1 e 1 0 ]
+"138
+[v _ADCC_GetSingleConversion ADCC_GetSingleConversion `(us  1 e 2 0 ]
+"58 /home/saul/MPLABXProjects/NMES_32.X/mcc_generated_files/dac1.c
+[v _DAC1_Initialize DAC1_Initialize `(v  1 e 1 0 ]
+"66
+[v _DAC1_SetOutput DAC1_SetOutput `(v  1 e 1 0 ]
+[v i1_DAC1_SetOutput DAC1_SetOutput `(v  1 e 1 0 ]
+"88 /home/saul/MPLABXProjects/NMES_32.X/mcc_generated_files/eusart1.c
+[v _EUSART1_Initialize EUSART1_Initialize `(v  1 e 1 0 ]
+"132
+[v _EUSART1_is_tx_ready EUSART1_is_tx_ready `(a  1 e 1 0 ]
+"137
+[v _EUSART1_is_rx_ready EUSART1_is_rx_ready `(a  1 e 1 0 ]
+"151
+[v _EUSART1_Read EUSART1_Read `(uc  1 e 1 0 ]
+"173
+[v _EUSART1_Write EUSART1_Write `(v  1 e 1 0 ]
+"197
+[v _EUSART1_Transmit_ISR EUSART1_Transmit_ISR `(v  1 e 1 0 ]
+"216
+[v _EUSART1_Receive_ISR EUSART1_Receive_ISR `(v  1 e 1 0 ]
+"240
+[v _EUSART1_RxDataHandler EUSART1_RxDataHandler `(v  1 e 1 0 ]
+"250
+[v _EUSART1_DefaultFramingErrorHandler EUSART1_DefaultFramingErrorHandler `(v  1 e 1 0 ]
+"252
+[v _EUSART1_DefaultOverrunErrorHandler EUSART1_DefaultOverrunErrorHandler `(v  1 e 1 0 ]
+"260
+[v _EUSART1_DefaultErrorHandler EUSART1_DefaultErrorHandler `(v  1 e 1 0 ]
+"264
+[v _EUSART1_SetFramingErrorHandler EUSART1_SetFramingErrorHandler `(v  1 e 1 0 ]
+"268
+[v _EUSART1_SetOverrunErrorHandler EUSART1_SetOverrunErrorHandler `(v  1 e 1 0 ]
+"272
+[v _EUSART1_SetErrorHandler EUSART1_SetErrorHandler `(v  1 e 1 0 ]
+"276
+[v _EUSART1_SetTxInterruptHandler EUSART1_SetTxInterruptHandler `(v  1 e 1 0 ]
+"280
+[v _EUSART1_SetRxInterruptHandler EUSART1_SetRxInterruptHandler `(v  1 e 1 0 ]
+"58 /home/saul/MPLABXProjects/NMES_32.X/mcc_generated_files/fvr.c
+[v _FVR_Initialize FVR_Initialize `(v  1 e 1 0 ]
+"52 /home/saul/MPLABXProjects/NMES_32.X/mcc_generated_files/interrupt_manager.c
+[v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `II(v  1 e 1 0 ]
+"50 /home/saul/MPLABXProjects/NMES_32.X/mcc_generated_files/mcc.c
+[v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
+"63
+[v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
+"79
+[v _PMD_Initialize PMD_Initialize `(v  1 e 1 0 ]
+"55 /home/saul/MPLABXProjects/NMES_32.X/mcc_generated_files/pin_manager.c
+[v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
+"66 /home/saul/MPLABXProjects/NMES_32.X/mcc_generated_files/tmr0.c
+[v _TMR0_Initialize TMR0_Initialize `(v  1 e 1 0 ]
+"95
+[v _TMR0_StartTimer TMR0_StartTimer `(v  1 e 1 0 ]
+"101
+[v _TMR0_StopTimer TMR0_StopTimer `(v  1 e 1 0 ]
+"134
+[v _TMR0_ISR TMR0_ISR `(v  1 e 1 0 ]
+"151
+[v _TMR0_SetInterruptHandler TMR0_SetInterruptHandler `(v  1 e 1 0 ]
+"155
+[v _TMR0_DefaultInterruptHandler TMR0_DefaultInterruptHandler `(v  1 e 1 0 ]
+"63 /home/saul/MPLABXProjects/NMES_32.X/mcc_generated_files/tmr1.c
+[v _TMR1_Initialize TMR1_Initialize `(v  1 e 1 0 ]
+"92
+[v _TMR1_StartTimer TMR1_StartTimer `(v  1 e 1 0 ]
+"98
+[v _TMR1_StopTimer TMR1_StopTimer `(v  1 e 1 0 ]
+"120
+[v _TMR1_WriteTimer TMR1_WriteTimer `(v  1 e 1 0 ]
+"142
+[v _TMR1_Reload TMR1_Reload `(v  1 e 1 0 ]
+"157
+[v _TMR1_HasOverflowOccured TMR1_HasOverflowOccured `(a  1 e 1 0 ]
+"71 /home/saul/MPLABXProjects/NMES_32.X/NEMS.c
+[v _NEMS_initialize NEMS_initialize `(v  1 e 1 0 ]
+"129
+[v _NEMS_message_handler NEMS_message_handler `(v  1 e 1 0 ]
+"234
+[v _NEMS_binary_command NEMS_binary_command `(v  1 e 1 0 ]
+"272
+[v _NEMS_get_packet NEMS_get_packet `(uc  1 e 1 0 ]
+"292
+[v _NEMS_set_amplitude NEMS_set_amplitude `(v  1 e 1 0 ]
+"302
+[v _NEMS_set_amplitude2 NEMS_set_amplitude2 `(v  1 e 1 0 ]
+"312
+[v _NEMS_set_frequency NEMS_set_frequency `(v  1 e 1 0 ]
+"322
+[v _NEMS_set_phase_duration NEMS_set_phase_duration `(v  1 e 1 0 ]
+"332
+[v _NEMS_set_symmetry_factor NEMS_set_symmetry_factor `(v  1 e 1 0 ]
+"343
+[v _NEMS_set_ON_time NEMS_set_ON_time `(v  1 e 1 0 ]
+"353
+[v _NEMS_set_OFF_time NEMS_set_OFF_time `(v  1 e 1 0 ]
+"363
+[v _NEMS_set_contractions NEMS_set_contractions `(v  1 e 1 0 ]
+"373
+[v _NEMS_set_ramp_up NEMS_set_ramp_up `(v  1 e 1 0 ]
+"384
+[v _NEMS_set_ramp_down NEMS_set_ramp_down `(v  1 e 1 0 ]
+"394
+[v _NEMS_get_program NEMS_get_program `(v  1 e 1 0 ]
+"472
+[v _NEMS_set_channel1 NEMS_set_channel1 `(v  1 e 1 0 ]
+"482
+[v _NEMS_set_channel2 NEMS_set_channel2 `(v  1 e 1 0 ]
+"492
+[v _NEMS_set_channel3 NEMS_set_channel3 `(v  1 e 1 0 ]
+"502
+[v _NEMS_set_channel4 NEMS_set_channel4 `(v  1 e 1 0 ]
+"512
+[v _NEMS_save_program NEMS_save_program `(v  1 e 1 0 ]
+"536
+[v _NEMS_load_program NEMS_load_program `(v  1 e 1 0 ]
+"560
+[v _NEMS_recalculate_program NEMS_recalculate_program `(v  1 e 1 0 ]
+"658
+[v _NEMS_calculate_ramp NEMS_calculate_ramp `(v  1 e 1 0 ]
+"760
+[v _NEMS_timer NEMS_timer `(v  1 e 1 0 ]
+"885
+[v _NEMS_timer_SE NEMS_timer_SE `(v  1 e 1 0 ]
+"973
+[v _NEMS_start_program NEMS_start_program `(v  1 e 1 0 ]
+"983
+[v _NEMS_start_program_nack NEMS_start_program_nack `(v  1 e 1 0 ]
+"1011
+[v _NEMS_stop_program NEMS_stop_program `(v  1 e 1 0 ]
+"1018
+[v _NEMS_stop_program_nack NEMS_stop_program_nack `(v  1 e 1 0 ]
+"1034
+[v _NEMS_start_sensors NEMS_start_sensors `(v  1 e 1 0 ]
+"1040
+[v _NEMS_stop_sensors NEMS_stop_sensors `(v  1 e 1 0 ]
+"1045
+[v _NEMS_read_sensors NEMS_read_sensors `(v  1 e 1 0 ]
+[s S1660 . 1 `uc 1 C 1 0 :1:0 
+`uc 1 DC 1 0 :1:1 
+`uc 1 Z 1 0 :1:2 
+`uc 1 nPD 1 0 :1:3 
+`uc 1 nTO 1 0 :1:4 
+]
+"188 /opt/microchip/mplabx/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8/pic/include/proc/pic16f18456.h
+[s S1666 . 1 `uc 1 CARRY 1 0 :1:0 
+`uc 1 . 1 0 :1:1 
+`uc 1 ZERO 1 0 :1:2 
+]
+[u S1670 . 1 `S1660 1 . 1 0 `S1666 1 . 1 0 ]
+[v _STATUSbits STATUSbits `VES1670  1 e 1 @3 ]
+[s S1078 . 1 `uc 1 INTEDG 1 0 :1:0 
+`uc 1 . 1 0 :5:1 
+`uc 1 PEIE 1 0 :1:6 
+`uc 1 GIE 1 0 :1:7 
+]
+"427
+[u S1083 . 1 `S1078 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES1083  1 e 1 @11 ]
+"654
+[v _TRISA TRISA `VEuc  1 e 1 @18 ]
+"716
+[v _TRISB TRISB `VEuc  1 e 1 @19 ]
+"778
+[v _TRISC TRISC `VEuc  1 e 1 @20 ]
+"840
+[v _TRISE TRISE `VEuc  1 e 1 @22 ]
+"861
+[v _LATA LATA `VEuc  1 e 1 @24 ]
+[s S1161 . 1 `uc 1 LATA0 1 0 :1:0 
+`uc 1 LATA1 1 0 :1:1 
+`uc 1 LATA2 1 0 :1:2 
+`uc 1 LATA3 1 0 :1:3 
+`uc 1 LATA4 1 0 :1:4 
+`uc 1 LATA5 1 0 :1:5 
+`uc 1 LATA6 1 0 :1:6 
+`uc 1 LATA7 1 0 :1:7 
+]
+"878
+[u S1170 . 1 `S1161 1 . 1 0 ]
+[v _LATAbits LATAbits `VES1170  1 e 1 @24 ]
+"923
+[v _LATB LATB `VEuc  1 e 1 @25 ]
+"985
+[v _LATC LATC `VEuc  1 e 1 @26 ]
+"1047
+[v _LATE LATE `VEuc  1 e 1 @28 ]
+"1075
+[v _ADLTHL ADLTHL `VEuc  1 e 1 @140 ]
+"1203
+[v _ADLTHH ADLTHH `VEuc  1 e 1 @141 ]
+"1338
+[v _ADUTHL ADUTHL `VEuc  1 e 1 @142 ]
+"1466
+[v _ADUTHH ADUTHH `VEuc  1 e 1 @143 ]
+"1864
+[v _ADSTPTL ADSTPTL `VEuc  1 e 1 @146 ]
+"1992
+[v _ADSTPTH ADSTPTH `VEuc  1 e 1 @147 ]
+"2648
+[v _ADACCU ADACCU `VEuc  1 e 1 @152 ]
+"2904
+[v _ADRPT ADRPT `VEuc  1 e 1 @154 ]
+"3302
+[v _ADRESL ADRESL `VEuc  1 e 1 @157 ]
+"3430
+[v _ADRESH ADRESH `VEuc  1 e 1 @158 ]
+"3550
+[v _ADPCH ADPCH `VEuc  1 e 1 @159 ]
+"3661
+[v _ADACQL ADACQL `VEuc  1 e 1 @268 ]
+"3789
+[v _ADACQH ADACQH `VEuc  1 e 1 @269 ]
+"3881
+[v _ADCAP ADCAP `VEuc  1 e 1 @270 ]
+"3980
+[v _ADPREL ADPREL `VEuc  1 e 1 @271 ]
+"4108
+[v _ADPREH ADPREH `VEuc  1 e 1 @272 ]
+"4200
+[v _ADCON0 ADCON0 `VEuc  1 e 1 @273 ]
+[s S678 . 1 `uc 1 GO 1 0 :1:0 
+`uc 1 . 1 0 :1:1 
+`uc 1 FM 1 0 :2:2 
+`uc 1 CS 1 0 :1:4 
+`uc 1 . 1 0 :1:5 
+`uc 1 CONT 1 0 :1:6 
+`uc 1 ON 1 0 :1:7 
+]
+"4241
+[s S686 . 1 `uc 1 ADGO 1 0 :1:0 
+`uc 1 . 1 0 :1:1 
+`uc 1 ADFM 1 0 :2:2 
+`uc 1 ADCS 1 0 :1:4 
+`uc 1 . 1 0 :1:5 
+`uc 1 ADCONT 1 0 :1:6 
+`uc 1 ADON 1 0 :1:7 
+]
+[s S694 . 1 `uc 1 DONE 1 0 :1:0 
+`uc 1 . 1 0 :1:1 
+`uc 1 FM0 1 0 :1:2 
+`uc 1 FM1 1 0 :1:3 
+]
+[s S699 . 1 `uc 1 GO_nDONE 1 0 :1:0 
+`uc 1 . 1 0 :1:1 
+`uc 1 ADFM0 1 0 :1:2 
+`uc 1 ADFM1 1 0 :1:3 
+]
+[s S704 . 1 `uc 1 . 1 0 :7:0 
+`uc 1 ADCAL 1 0 :1:7 
+]
+[u S707 . 1 `S678 1 . 1 0 `S686 1 . 1 0 `S694 1 . 1 0 `S699 1 . 1 0 `S704 1 . 1 0 ]
+[v _ADCON0bits ADCON0bits `VES707  1 e 1 @273 ]
+"4331
+[v _ADCON1 ADCON1 `VEuc  1 e 1 @274 ]
+"4442
+[v _ADCON2 ADCON2 `VEuc  1 e 1 @275 ]
+"4620
+[v _ADCON3 ADCON3 `VEuc  1 e 1 @276 ]
+"4750
+[v _ADSTAT ADSTAT `VEuc  1 e 1 @277 ]
+"4875
+[v _ADREF ADREF `VEuc  1 e 1 @278 ]
+"5015
+[v _ADACT ADACT `VEuc  1 e 1 @279 ]
+"5107
+[v _ADCLK ADCLK `VEuc  1 e 1 @280 ]
+"5211
+[v _RC1REG RC1REG `VEuc  1 e 1 @281 ]
+"5265
+[v _TX1REG TX1REG `VEuc  1 e 1 @282 ]
+"5326
+[v _SP1BRGL SP1BRGL `VEuc  1 e 1 @283 ]
+"5396
+[v _SP1BRGH SP1BRGH `VEuc  1 e 1 @284 ]
+"5450
+[v _RC1STA RC1STA `VEuc  1 e 1 @285 ]
+[s S215 . 1 `uc 1 RX9D 1 0 :1:0 
+`uc 1 OERR 1 0 :1:1 
+`uc 1 FERR 1 0 :1:2 
+`uc 1 ADDEN 1 0 :1:3 
+`uc 1 CREN 1 0 :1:4 
+`uc 1 SREN 1 0 :1:5 
+`uc 1 RX9 1 0 :1:6 
+`uc 1 SPEN 1 0 :1:7 
+]
+"5476
+[u S224 . 1 `S215 1 . 1 0 ]
+[v _RC1STAbits RC1STAbits `VES224  1 e 1 @285 ]
+"5630
+[v _TX1STA TX1STA `VEuc  1 e 1 @286 ]
+"5810
+[v _BAUD1CON BAUD1CON `VEuc  1 e 1 @287 ]
+"7942
+[v _TMR1L TMR1L `VEuc  1 e 1 @524 ]
+"8012
+[v _TMR1H TMR1H `VEuc  1 e 1 @525 ]
+"8082
+[v _T1CON T1CON `VEuc  1 e 1 @526 ]
+[s S351 . 1 `uc 1 ON 1 0 :1:0 
+`uc 1 RD16 1 0 :1:1 
+`uc 1 NOT_SYNC 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 CKPS 1 0 :2:4 
+]
+"8118
+[s S357 . 1 `uc 1 TMR1ON 1 0 :1:0 
+`uc 1 T1RD16 1 0 :1:1 
+`uc 1 NOT_T1SYNC 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 T1CKPS0 1 0 :1:4 
+`uc 1 T1CKPS1 1 0 :1:5 
+]
+[s S364 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 CKPS0 1 0 :1:4 
+`uc 1 CKPS1 1 0 :1:5 
+]
+[s S368 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 RD161 1 0 :1:1 
+]
+[u S371 . 1 `S351 1 . 1 0 `S357 1 . 1 0 `S364 1 . 1 0 `S368 1 . 1 0 ]
+[v _T1CONbits T1CONbits `VES371  1 e 1 @526 ]
+"8272
+[v _T1GCON T1GCON `VEuc  1 e 1 @527 ]
+"8486
+[v _T1GATE T1GATE `VEuc  1 e 1 @528 ]
+"8652
+[v _T1CLK T1CLK `VEuc  1 e 1 @529 ]
+"19497
+[v _TMR0L TMR0L `VEuc  1 e 1 @1436 ]
+"19635
+[v _TMR0H TMR0H `VEuc  1 e 1 @1437 ]
+"19889
+[v _T0CON0 T0CON0 `VEuc  1 e 1 @1438 ]
+[s S527 . 1 `uc 1 OUTPS 1 0 :4:0 
+`uc 1 MD16 1 0 :1:4 
+`uc 1 OUT 1 0 :1:5 
+`uc 1 . 1 0 :1:6 
+`uc 1 EN 1 0 :1:7 
+]
+"19917
+[s S533 . 1 `uc 1 T0OUTPS 1 0 :4:0 
+`uc 1 T0MD16 1 0 :1:4 
+`uc 1 T0OUT 1 0 :1:5 
+`uc 1 . 1 0 :1:6 
+`uc 1 T0EN 1 0 :1:7 
+]
+[s S539 . 1 `uc 1 OUTPS0 1 0 :1:0 
+`uc 1 OUTPS1 1 0 :1:1 
+`uc 1 OUTPS2 1 0 :1:2 
+`uc 1 OUTPS3 1 0 :1:3 
+`uc 1 T016BIT 1 0 :1:4 
+]
+[u S545 . 1 `S527 1 . 1 0 `S533 1 . 1 0 `S539 1 . 1 0 ]
+[v _T0CON0bits T0CON0bits `VES545  1 e 1 @1438 ]
+"19987
+[v _T0CON1 T0CON1 `VEuc  1 e 1 @1439 ]
+[s S490 . 1 `uc 1 INTF 1 0 :1:0 
+`uc 1 . 1 0 :3:1 
+`uc 1 IOCIF 1 0 :1:4 
+`uc 1 TMR0IF 1 0 :1:5 
+]
+"22517
+[u S495 . 1 `S490 1 . 1 0 ]
+[v _PIR0bits PIR0bits `VES495  1 e 1 @1804 ]
+[s S1103 . 1 `uc 1 SSP1IF 1 0 :1:0 
+`uc 1 BCL1IF 1 0 :1:1 
+`uc 1 SSP2IF 1 0 :1:2 
+`uc 1 BCL2IF 1 0 :1:3 
+`uc 1 TX1IF 1 0 :1:4 
+`uc 1 RC1IF 1 0 :1:5 
+`uc 1 TX2IF 1 0 :1:6 
+`uc 1 RC2IF 1 0 :1:7 
+]
+"22626
+[u S1112 . 1 `S1103 1 . 1 0 ]
+[v _PIR3bits PIR3bits `VES1112  1 e 1 @1807 ]
+[s S333 . 1 `uc 1 TMR1IF 1 0 :1:0 
+`uc 1 TMR2IF 1 0 :1:1 
+`uc 1 TMR3IF 1 0 :1:2 
+`uc 1 TMR4IF 1 0 :1:3 
+`uc 1 TMR5IF 1 0 :1:4 
+`uc 1 TMR6IF 1 0 :1:5 
+]
+"22686
+[u S340 . 1 `S333 1 . 1 0 ]
+[v _PIR4bits PIR4bits `VES340  1 e 1 @1808 ]
+[s S503 . 1 `uc 1 INTE 1 0 :1:0 
+`uc 1 . 1 0 :3:1 
+`uc 1 IOCIE 1 0 :1:4 
+`uc 1 TMR0IE 1 0 :1:5 
+]
+"22930
+[u S508 . 1 `S503 1 . 1 0 ]
+[v _PIE0bits PIE0bits `VES508  1 e 1 @1814 ]
+[s S117 . 1 `uc 1 SSP1IE 1 0 :1:0 
+`uc 1 BCL1IE 1 0 :1:1 
+`uc 1 SSP2IE 1 0 :1:2 
+`uc 1 BCL2IE 1 0 :1:3 
+`uc 1 TX1IE 1 0 :1:4 
+`uc 1 RC1IE 1 0 :1:5 
+`uc 1 TX2IE 1 0 :1:6 
+`uc 1 RC2IE 1 0 :1:7 
+]
+"23039
+[u S126 . 1 `S117 1 . 1 0 ]
+[v _PIE3bits PIE3bits `VES126  1 e 1 @1817 ]
+"23339
+[v _PMD0 PMD0 `VEuc  1 e 1 @1942 ]
+"23384
+[v _PMD1 PMD1 `VEuc  1 e 1 @1943 ]
+"23440
+[v _PMD2 PMD2 `VEuc  1 e 1 @1944 ]
+"23461
+[v _PMD3 PMD3 `VEuc  1 e 1 @1945 ]
+"23506
+[v _PMD4 PMD4 `VEuc  1 e 1 @1946 ]
+"23562
+[v _PMD5 PMD5 `VEuc  1 e 1 @1947 ]
+"23595
+[v _PMD6 PMD6 `VEuc  1 e 1 @1948 ]
+"23634
+[v _PMD7 PMD7 `VEuc  1 e 1 @1949 ]
+"24344
+[v _NVMADRL NVMADRL `VEuc  1 e 1 @2074 ]
+"24406
+[v _NVMADRH NVMADRH `VEuc  1 e 1 @2075 ]
+"24469
+[v _NVMDATL NVMDATL `VEuc  1 e 1 @2076 ]
+"24531
+[v _NVMDATH NVMDATH `VEuc  1 e 1 @2077 ]
+[s S1637 . 1 `uc 1 RD 1 0 :1:0 
+`uc 1 WR 1 0 :1:1 
+`uc 1 WREN 1 0 :1:2 
+`uc 1 WRERR 1 0 :1:3 
+`uc 1 FREE 1 0 :1:4 
+`uc 1 LWLO 1 0 :1:5 
+`uc 1 NVMREGS 1 0 :1:6 
+]
+"24597
+[u S1645 . 1 `S1637 1 . 1 0 ]
+[v _NVMCON1bits NVMCON1bits `VES1645  1 e 1 @2078 ]
+"24637
+[v _NVMCON2 NVMCON2 `VEuc  1 e 1 @2079 ]
+"24722
+[v _OSCCON1 OSCCON1 `VEuc  1 e 1 @2189 ]
+"24862
+[v _OSCCON3 OSCCON3 `VEuc  1 e 1 @2191 ]
+"24902
+[v _OSCSTAT OSCSTAT `VEuc  1 e 1 @2192 ]
+"24959
+[v _OSCEN OSCEN `VEuc  1 e 1 @2193 ]
+"25010
+[v _OSCTUNE OSCTUNE `VEuc  1 e 1 @2194 ]
+"25068
+[v _OSCFRQ OSCFRQ `VEuc  1 e 1 @2195 ]
+"25605
+[v _FVRCON FVRCON `VEuc  1 e 1 @2316 ]
+"25681
+[v _DAC1CON0 DAC1CON0 `VEuc  1 e 1 @2318 ]
+"25782
+[v _DAC1CON1 DAC1CON1 `VEuc  1 e 1 @2319 ]
+"33724
+[v _RX1DTPPS RX1DTPPS `VEuc  1 e 1 @7883 ]
+"35719
+[v _RC6PPS RC6PPS `VEuc  1 e 1 @7974 ]
+"35835
+[v _ANSELA ANSELA `VEuc  1 e 1 @7992 ]
+"35897
+[v _WPUA WPUA `VEuc  1 e 1 @7993 ]
+"35959
+[v _ODCONA ODCONA `VEuc  1 e 1 @7994 ]
+"36021
+[v _SLRCONA SLRCONA `VEuc  1 e 1 @7995 ]
+"36083
+[v _INLVLA INLVLA `VEuc  1 e 1 @7996 ]
+"36331
+[v _ANSELB ANSELB `VEuc  1 e 1 @8003 ]
+"36393
+[v _WPUB WPUB `VEuc  1 e 1 @8004 ]
+"36455
+[v _ODCONB ODCONB `VEuc  1 e 1 @8005 ]
+"36517
+[v _SLRCONB SLRCONB `VEuc  1 e 1 @8006 ]
+"36579
+[v _INLVLB INLVLB `VEuc  1 e 1 @8007 ]
+"36827
+[v _ANSELC ANSELC `VEuc  1 e 1 @8014 ]
+"36889
+[v _WPUC WPUC `VEuc  1 e 1 @8015 ]
+"36951
+[v _ODCONC ODCONC `VEuc  1 e 1 @8016 ]
+"37013
+[v _SLRCONC SLRCONC `VEuc  1 e 1 @8017 ]
+"37075
+[v _INLVLC INLVLC `VEuc  1 e 1 @8018 ]
+"37323
+[v _WPUE WPUE `VEuc  1 e 1 @8037 ]
+"37344
+[v _ODCONE ODCONE `VEuc  1 e 1 @8038 ]
+"45110
+"45110
+[v _TMR1IF TMR1IF `VEb  1 e 0 @14464 ]
+"62 /home/saul/MPLABXProjects/NMES_32.X/mcc_generated_files/eusart1.c
+[v _eusart1TxHead eusart1TxHead `VEuc  1 e 1 0 ]
+"63
+[v _eusart1TxTail eusart1TxTail `VEuc  1 e 1 0 ]
+"64
+[v _eusart1TxBuffer eusart1TxBuffer `VE[64]uc  1 e 64 0 ]
+"65
+[v _eusart1TxBufferRemaining eusart1TxBufferRemaining `VEuc  1 e 1 0 ]
+"67
+[v _eusart1RxHead eusart1RxHead `VEuc  1 e 1 0 ]
+"68
+[v _eusart1RxTail eusart1RxTail `VEuc  1 e 1 0 ]
+"69
+[v _eusart1RxBuffer eusart1RxBuffer `VE[64]uc  1 e 64 0 ]
+[s S104 . 1 `uc 1 perr 1 0 :1:0 
+`uc 1 ferr 1 0 :1:1 
+`uc 1 oerr 1 0 :1:2 
+`uc 1 reserved 1 0 :5:3 
+]
+"70
+[u S109 . 1 `S104 1 . 1 0 `uc 1 status 1 0 ]
+[v _eusart1RxStatusBuffer eusart1RxStatusBuffer `VE[64]S109  1 e 64 0 ]
+"71
+[v _eusart1RxCount eusart1RxCount `VEuc  1 e 1 0 ]
+"72
+[v _eusart1RxLastError eusart1RxLastError `VES109  1 e 1 0 ]
+"77
+[v _EUSART1_TxDefaultInterruptHandler EUSART1_TxDefaultInterruptHandler `*.37(v  1 e 2 0 ]
+"78
+[v _EUSART1_RxDefaultInterruptHandler EUSART1_RxDefaultInterruptHandler `*.37(v  1 e 2 0 ]
+"80
+[v _EUSART1_FramingErrorHandler EUSART1_FramingErrorHandler `*.37(v  1 e 2 0 ]
+"81
+[v _EUSART1_OverrunErrorHandler EUSART1_OverrunErrorHandler `*.37(v  1 e 2 0 ]
+"82
+[v _EUSART1_ErrorHandler EUSART1_ErrorHandler `*.37(v  1 e 2 0 ]
+"58 /home/saul/MPLABXProjects/NMES_32.X/mcc_generated_files/tmr0.c
+[v _timer0ReloadVal16bit timer0ReloadVal16bit `VEus  1 e 2 0 ]
+"64
+[v _TMR0_InterruptHandler TMR0_InterruptHandler `*.37(v  1 e 2 0 ]
+"57 /home/saul/MPLABXProjects/NMES_32.X/mcc_generated_files/tmr1.c
+[v _timer1ReloadVal timer1ReloadVal `VEus  1 e 2 0 ]
+[s S1218 . 14 `uc 1 amplitude 1 0 `uc 1 amplitude2 1 1 `uc 1 frequency 1 2 `uc 1 phase_duration 1 3 `uc 1 symmetry_factor 1 4 `uc 1 ON_time 1 5 `uc 1 OFF_time 1 6 `uc 1 contractions 1 7 `uc 1 ramp_up 1 8 `uc 1 ramp_down 1 9 `uc 1 channel1 1 10 `uc 1 channel2 1 11 `uc 1 channel3 1 12 `uc 1 channel4 1 13 ]
+"7 /home/saul/MPLABXProjects/NMES_32.X/NEMS.c
+[v _program program `VES1218  1 e 14 0 ]
+[s S1233 . 436 `us 1 num_clocks_per_pulse 2 0 `us 1 clock_index 2 2 `us 1 pulse_index 2 4 `us 1 pulse_index2 2 6 `us 1 current_pulse_index 2 8 `uc 1 silence_phase_duration 1 10 `uc 1 minus_phase_duration 1 11 `us 1 ON_time 2 12 `us 1 OFF_time 2 14 `uc 1 program_amplitude 1 16 `uc 1 pulse_amplitude 1 17 `uc 1 symmetry_divider 1 18 `uc 1 current_amplitude 1 19 `uc 1 program_amplitude2 1 20 `uc 1 pulse_amplitude2 1 21 `[100]uc 1 ramp_up_amplitude 100 22 `[100]uc 1 ramp_up_amplitude2 100 122 `us 1 ramp_up_pulses 2 222 `us 1 ramp_up_time 2 224 `[100]uc 1 ramp_down_amplitude 100 226 `[100]uc 1 ramp_down_amplitude2 100 326 `us 1 ramp_down_pulses 2 426 `us 1 ramp_down_time 2 428 `uc 1 ramp_index 1 430 `uc 1 contractions_index 1 431 `uc 1 channel1 1 432 `uc 1 channel2 1 433 `uc 1 channel3 1 434 `uc 1 channel4 1 435 ]
+"8
+[v _waveform waveform `VES1233  1 e 436 @9788 ]
+"10
+[v _NEMS_states NEMS_states `VEE12700  1 e 1 0 ]
+"11
+[v _NEMS_wave_states NEMS_wave_states `VEE12705  1 e 1 0 ]
+"12
+[v _NEMS_pulse_states NEMS_pulse_states `VEE12710  1 e 1 0 ]
+"14
+[v _NEMS_nmux1 NEMS_nmux1 `uc  1 e 1 0 ]
+"15
+[v _NEMS_pmux1 NEMS_pmux1 `uc  1 e 1 0 ]
+"17
+[v _NMES_freq_multiplier NMES_freq_multiplier `uc  1 e 1 0 ]
+"19
+[v _channel_control channel_control `a  1 e 1 0 ]
+"21
+[v _NMES_se_control NMES_se_control `a  1 e 1 0 ]
+"23
+[v _se_index se_index `uc  1 e 1 0 ]
+"24
+[v _se_channel se_channel `uc  1 e 1 0 ]
+"26
+[v _sens_buf sens_buf `VE[32]uc  1 e 32 0 ]
+"27
+[v _sensor_ind sensor_ind `VEuc  1 e 1 0 ]
+"33
+[v _mux mux `DC[33]uc  1 e 33 0 ]
+"52 /home/saul/MPLABXProjects/NMES_32.X/main.c
+[v _main main `(v  1 e 1 0 ]
+{
+"120
+} 0
+"157 /home/saul/MPLABXProjects/NMES_32.X/mcc_generated_files/tmr1.c
+[v _TMR1_HasOverflowOccured TMR1_HasOverflowOccured `(a  1 e 1 0 ]
+{
+"161
+} 0
+"50 /home/saul/MPLABXProjects/NMES_32.X/mcc_generated_files/mcc.c
+[v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
+{
+"61
+} 0
+"63 /home/saul/MPLABXProjects/NMES_32.X/mcc_generated_files/tmr1.c
+[v _TMR1_Initialize TMR1_Initialize `(v  1 e 1 0 ]
+{
+"90
+} 0
+"66 /home/saul/MPLABXProjects/NMES_32.X/mcc_generated_files/tmr0.c
+[v _TMR0_Initialize TMR0_Initialize `(v  1 e 1 0 ]
+{
+"93
+} 0
+"79 /home/saul/MPLABXProjects/NMES_32.X/mcc_generated_files/mcc.c
+[v _PMD_Initialize PMD_Initialize `(v  1 e 1 0 ]
+{
+"97
+} 0
+"55 /home/saul/MPLABXProjects/NMES_32.X/mcc_generated_files/pin_manager.c
+[v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
+{
+"119
+} 0
+"63 /home/saul/MPLABXProjects/NMES_32.X/mcc_generated_files/mcc.c
+[v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
+{
+"77
+} 0
+"58 /home/saul/MPLABXProjects/NMES_32.X/mcc_generated_files/fvr.c
+[v _FVR_Initialize FVR_Initialize `(v  1 e 1 0 ]
+{
+"62
+} 0
+"88 /home/saul/MPLABXProjects/NMES_32.X/mcc_generated_files/eusart1.c
+[v _EUSART1_Initialize EUSART1_Initialize `(v  1 e 1 0 ]
+{
+"130
+} 0
+"276
+[v _EUSART1_SetTxInterruptHandler EUSART1_SetTxInterruptHandler `(v  1 e 1 0 ]
+{
+[v EUSART1_SetTxInterruptHandler@interruptHandler interruptHandler `*.37(v  1 p 2 0 ]
+"278
+} 0
+"280
+[v _EUSART1_SetRxInterruptHandler EUSART1_SetRxInterruptHandler `(v  1 e 1 0 ]
+{
+[v EUSART1_SetRxInterruptHandler@interruptHandler interruptHandler `*.37(v  1 p 2 0 ]
+"282
+} 0
+"268
+[v _EUSART1_SetOverrunErrorHandler EUSART1_SetOverrunErrorHandler `(v  1 e 1 0 ]
+{
+[v EUSART1_SetOverrunErrorHandler@interruptHandler interruptHandler `*.37(v  1 p 2 0 ]
+"270
+} 0
+"264
+[v _EUSART1_SetFramingErrorHandler EUSART1_SetFramingErrorHandler `(v  1 e 1 0 ]
+{
+[v EUSART1_SetFramingErrorHandler@interruptHandler interruptHandler `*.37(v  1 p 2 0 ]
+"266
+} 0
+"272
+[v _EUSART1_SetErrorHandler EUSART1_SetErrorHandler `(v  1 e 1 0 ]
+{
+[v EUSART1_SetErrorHandler@interruptHandler interruptHandler `*.37(v  1 p 2 0 ]
+"274
+} 0
+"58 /home/saul/MPLABXProjects/NMES_32.X/mcc_generated_files/dac1.c
+[v _DAC1_Initialize DAC1_Initialize `(v  1 e 1 0 ]
+{
+"64
+} 0
+"63 /home/saul/MPLABXProjects/NMES_32.X/mcc_generated_files/adcc.c
+[v _ADCC_Initialize ADCC_Initialize `(v  1 e 1 0 ]
+{
+"112
+} 0
+"1045 /home/saul/MPLABXProjects/NMES_32.X/NEMS.c
+[v _NEMS_read_sensors NEMS_read_sensors `(v  1 e 1 0 ]
+{
+"1047
+[v NEMS_read_sensors@aux2 aux2 `us  1 a 2 9 ]
+[v NEMS_read_sensors@aux aux `us  1 a 2 7 ]
+"1063
+} 0
+"15 /home/saul/MPLABXProjects/NMES_32.X/comm.c
+[v _write write `(v  1 e 1 0 ]
+{
+[v write@pt pt `*.4uc  1 a 1 wreg ]
+"17
+[v write@i i `uc  1 a 1 5 ]
+"15
+[v write@pt pt `*.4uc  1 a 1 wreg ]
+[v write@lenght lenght `uc  1 p 1 2 ]
+"19
+[v write@pt pt `*.4uc  1 a 1 4 ]
+"23
+} 0
+"138 /home/saul/MPLABXProjects/NMES_32.X/mcc_generated_files/adcc.c
+[v _ADCC_GetSingleConversion ADCC_GetSingleConversion `(us  1 e 2 0 ]
+{
+[v ADCC_GetSingleConversion@channel channel `E12512  1 a 1 wreg ]
+[v ADCC_GetSingleConversion@channel channel `E12512  1 a 1 wreg ]
+"141
+[v ADCC_GetSingleConversion@channel channel `E12512  1 a 1 3 ]
+"161
+} 0
+"129 /home/saul/MPLABXProjects/NMES_32.X/NEMS.c
+[v _NEMS_message_handler NEMS_message_handler `(v  1 e 1 0 ]
+{
+"131
+[v NEMS_message_handler@header header `uc  1 a 1 44 ]
+"232
+} 0
+"1040
+[v _NEMS_stop_sensors NEMS_stop_sensors `(v  1 e 1 0 ]
+{
+"1043
+} 0
+"98 /home/saul/MPLABXProjects/NMES_32.X/mcc_generated_files/tmr1.c
+[v _TMR1_StopTimer TMR1_StopTimer `(v  1 e 1 0 ]
+{
+"102
+} 0
+"1011 /home/saul/MPLABXProjects/NMES_32.X/NEMS.c
+[v _NEMS_stop_program NEMS_stop_program `(v  1 e 1 0 ]
+{
+"1015
+} 0
+"1034
+[v _NEMS_start_sensors NEMS_start_sensors `(v  1 e 1 0 ]
+{
+"1038
+} 0
+"92 /home/saul/MPLABXProjects/NMES_32.X/mcc_generated_files/tmr1.c
+[v _TMR1_StartTimer TMR1_StartTimer `(v  1 e 1 0 ]
+{
+"96
+} 0
+"142
+[v _TMR1_Reload TMR1_Reload `(v  1 e 1 0 ]
+{
+"145
+} 0
+"120
+[v _TMR1_WriteTimer TMR1_WriteTimer `(v  1 e 1 0 ]
+{
+[v TMR1_WriteTimer@timerVal timerVal `us  1 p 2 0 ]
+"140
+} 0
+"973 /home/saul/MPLABXProjects/NMES_32.X/NEMS.c
+[v _NEMS_start_program NEMS_start_program `(v  1 e 1 0 ]
+{
+"981
+} 0
+"332
+[v _NEMS_set_symmetry_factor NEMS_set_symmetry_factor `(v  1 e 1 0 ]
+{
+"341
+} 0
+"373
+[v _NEMS_set_ramp_up NEMS_set_ramp_up `(v  1 e 1 0 ]
+{
+"382
+} 0
+"384
+[v _NEMS_set_ramp_down NEMS_set_ramp_down `(v  1 e 1 0 ]
+{
+"392
+} 0
+"322
+[v _NEMS_set_phase_duration NEMS_set_phase_duration `(v  1 e 1 0 ]
+{
+"330
+} 0
+"312
+[v _NEMS_set_frequency NEMS_set_frequency `(v  1 e 1 0 ]
+{
+"320
+} 0
+"363
+[v _NEMS_set_contractions NEMS_set_contractions `(v  1 e 1 0 ]
+{
+"371
+} 0
+"502
+[v _NEMS_set_channel4 NEMS_set_channel4 `(v  1 e 1 0 ]
+{
+"510
+} 0
+"492
+[v _NEMS_set_channel3 NEMS_set_channel3 `(v  1 e 1 0 ]
+{
+"500
+} 0
+"482
+[v _NEMS_set_channel2 NEMS_set_channel2 `(v  1 e 1 0 ]
+{
+"490
+} 0
+"472
+[v _NEMS_set_channel1 NEMS_set_channel1 `(v  1 e 1 0 ]
+{
+"480
+} 0
+"302
+[v _NEMS_set_amplitude2 NEMS_set_amplitude2 `(v  1 e 1 0 ]
+{
+"310
+} 0
+"292
+[v _NEMS_set_amplitude NEMS_set_amplitude `(v  1 e 1 0 ]
+{
+"300
+} 0
+"343
+[v _NEMS_set_ON_time NEMS_set_ON_time `(v  1 e 1 0 ]
+{
+"351
+} 0
+"353
+[v _NEMS_set_OFF_time NEMS_set_OFF_time `(v  1 e 1 0 ]
+{
+"361
+} 0
+"272
+[v _NEMS_get_packet NEMS_get_packet `(uc  1 e 1 0 ]
+{
+[v NEMS_get_packet@pt pt `*.4uc  1 a 1 wreg ]
+"274
+[v NEMS_get_packet@message message `[2]uc  1 a 2 6 ]
+"272
+[v NEMS_get_packet@pt pt `*.4uc  1 a 1 wreg ]
+"276
+[v NEMS_get_packet@pt pt `*.4uc  1 a 1 8 ]
+"290
+} 0
+"512
+[v _NEMS_save_program NEMS_save_program `(v  1 e 1 0 ]
+{
+"514
+[v NEMS_save_program@addr addr `uc  1 a 1 9 ]
+"534
+} 0
+"6 /opt/microchip/xc8/v2.31/pic/sources/c99/pic/__eewrite.c
+[v _eeprom_write eeprom_write `(v  1 e 1 0 ]
+{
+[v eeprom_write@addr addr `uc  1 a 1 wreg ]
+[v eeprom_write@addr addr `uc  1 a 1 wreg ]
+[v eeprom_write@value value `uc  1 p 1 0 ]
+[v eeprom_write@addr addr `uc  1 a 1 1 ]
+"9
+} 0
+"536 /home/saul/MPLABXProjects/NMES_32.X/NEMS.c
+[v _NEMS_load_program NEMS_load_program `(v  1 e 1 0 ]
+{
+"538
+[v NEMS_load_program@addr addr `us  1 a 2 9 ]
+"558
+} 0
+"6 /opt/microchip/xc8/v2.31/pic/sources/c99/pic/__eeread.c
+[v _eeprom_read eeprom_read `(uc  1 e 1 0 ]
+{
+[v eeprom_read@addr addr `uc  1 a 1 wreg ]
+[v eeprom_read@addr addr `uc  1 a 1 wreg ]
+"9
+[v eeprom_read@addr addr `uc  1 a 1 0 ]
+"19
+} 0
+"394 /home/saul/MPLABXProjects/NMES_32.X/NEMS.c
+[v _NEMS_get_program NEMS_get_program `(v  1 e 1 0 ]
+{
+"396
+[v NEMS_get_program@aux aux `[4]uc  1 a 4 25 ]
+"470
+} 0
+"52 /home/saul/MPLABXProjects/NMES_32.X/comm.c
+[v __sprintf_u8b _sprintf_u8b `(v  1 e 1 0 ]
+{
+[v __sprintf_u8b@mess mess `*.4uc  1 a 1 wreg ]
+"56
+[v __sprintf_u8b@buf buf `[3]uc  1 a 3 20 ]
+"55
+[v __sprintf_u8b@aux aux `uc  1 a 1 19 ]
+"52
+[v __sprintf_u8b@mess mess `*.4uc  1 a 1 wreg ]
+[v __sprintf_u8b@val val `uc  1 p 1 15 ]
+"58
+[v __sprintf_u8b@mess mess `*.4uc  1 a 1 23 ]
+"86
+} 0
+"4 /opt/microchip/xc8/v2.31/pic/sources/c99/common/lbmod.c
+[v ___lbmod __lbmod `(uc  1 e 1 0 ]
+{
+[v ___lbmod@dividend dividend `uc  1 a 1 wreg ]
+"6
+[v ___lbmod@rem rem `uc  1 a 1 5 ]
+"7
+[v ___lbmod@counter counter `uc  1 a 1 4 ]
+"4
+[v ___lbmod@dividend dividend `uc  1 a 1 wreg ]
+[v ___lbmod@divisor divisor `uc  1 p 1 0 ]
+"9
+[v ___lbmod@dividend dividend `uc  1 a 1 3 ]
+"18
+} 0
+"234 /home/saul/MPLABXProjects/NMES_32.X/NEMS.c
+[v _NEMS_binary_command NEMS_binary_command `(v  1 e 1 0 ]
+{
+"236
+[v NEMS_binary_command@super_electrode super_electrode `uc  1 a 1 41 ]
+[v NEMS_binary_command@go_stop go_stop `uc  1 a 1 40 ]
+[v NEMS_binary_command@chan2 chan2 `uc  1 a 1 39 ]
+[v NEMS_binary_command@chan1 chan1 `uc  1 a 1 38 ]
+[v NEMS_binary_command@amp amp `uc  1 a 1 37 ]
+"270
+} 0
+"1018
+[v _NEMS_stop_program_nack NEMS_stop_program_nack `(v  1 e 1 0 ]
+{
+"1031
+} 0
+"983
+[v _NEMS_start_program_nack NEMS_start_program_nack `(v  1 e 1 0 ]
+{
+"1009
+} 0
+"5 /home/saul/MPLABXProjects/NMES_32.X/comm.c
+[v __puts _puts `(v  1 e 1 0 ]
+{
+"7
+[v __puts@index index `uc  1 a 1 7 ]
+"5
+[v __puts@pt pt `*.26uc  1 p 2 2 ]
+"13
+} 0
+"132 /home/saul/MPLABXProjects/NMES_32.X/mcc_generated_files/eusart1.c
+[v _EUSART1_is_tx_ready EUSART1_is_tx_ready `(a  1 e 1 0 ]
+{
+"135
+} 0
+"173
+[v _EUSART1_Write EUSART1_Write `(v  1 e 1 0 ]
+{
+[v EUSART1_Write@txData txData `uc  1 a 1 wreg ]
+[v EUSART1_Write@txData txData `uc  1 a 1 wreg ]
+[v EUSART1_Write@txData txData `uc  1 a 1 1 ]
+"194
+} 0
+"95 /home/saul/MPLABXProjects/NMES_32.X/mcc_generated_files/tmr0.c
+[v _TMR0_StartTimer TMR0_StartTimer `(v  1 e 1 0 ]
+{
+"99
+} 0
+"560 /home/saul/MPLABXProjects/NMES_32.X/NEMS.c
+[v _NEMS_recalculate_program NEMS_recalculate_program `(v  1 e 1 0 ]
+{
+"562
+[v NEMS_recalculate_program@se_frequency se_frequency `uc  1 a 1 34 ]
+"656
+} 0
+"4 /opt/microchip/xc8/v2.31/pic/sources/c99/common/Umul8.c
+[v ___bmul __bmul `(uc  1 e 1 0 ]
+{
+[v ___bmul@multiplier multiplier `uc  1 a 1 wreg ]
+"6
+[v ___bmul@product product `uc  1 a 1 2 ]
+"4
+[v ___bmul@multiplier multiplier `uc  1 a 1 wreg ]
+[v ___bmul@multiplicand multiplicand `uc  1 p 1 0 ]
+"6
+[v ___bmul@multiplier multiplier `uc  1 a 1 3 ]
+"51
+} 0
+"5 /opt/microchip/xc8/v2.31/pic/sources/c99/common/awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+{
+"10
+[v ___awdiv@quotient quotient `i  1 a 2 13 ]
+"11
+[v ___awdiv@sign sign `uc  1 a 1 12 ]
+[v ___awdiv@counter counter `uc  1 a 1 11 ]
+"5
+[v ___awdiv@divisor divisor `i  1 p 2 6 ]
+[v ___awdiv@dividend dividend `i  1 p 2 8 ]
+"41
+} 0
+"658 /home/saul/MPLABXProjects/NMES_32.X/NEMS.c
+[v _NEMS_calculate_ramp NEMS_calculate_ramp `(v  1 e 1 0 ]
+{
+"660
+[v NEMS_calculate_ramp@i i `uc  1 a 1 27 ]
+"672
+} 0
+"15 /opt/microchip/xc8/v2.31/pic/sources/c99/common/Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+{
+"17
+[v ___wmul@product product `ui  1 a 2 4 ]
+"15
+[v ___wmul@multiplier multiplier `ui  1 p 2 0 ]
+[v ___wmul@multiplicand multiplicand `ui  1 p 2 2 ]
+"53
+} 0
+"5 /opt/microchip/xc8/v2.31/pic/sources/c99/common/lwdiv.c
+[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
+{
+"10
+[v ___lwdiv@quotient quotient `ui  1 a 2 11 ]
+"11
+[v ___lwdiv@counter counter `uc  1 a 1 13 ]
+"5
+[v ___lwdiv@divisor divisor `ui  1 p 2 6 ]
+[v ___lwdiv@dividend dividend `ui  1 p 2 8 ]
+"30
+} 0
+"151 /home/saul/MPLABXProjects/NMES_32.X/mcc_generated_files/eusart1.c
+[v _EUSART1_Read EUSART1_Read `(uc  1 e 1 0 ]
+{
+"153
+[v EUSART1_Read@readValue readValue `uc  1 a 1 1 ]
+"171
+} 0
+"71 /home/saul/MPLABXProjects/NMES_32.X/NEMS.c
+[v _NEMS_initialize NEMS_initialize `(v  1 e 1 0 ]
+{
+"127
+} 0
+"101 /home/saul/MPLABXProjects/NMES_32.X/mcc_generated_files/tmr0.c
+[v _TMR0_StopTimer TMR0_StopTimer `(v  1 e 1 0 ]
+{
+"105
+} 0
+"151
+[v _TMR0_SetInterruptHandler TMR0_SetInterruptHandler `(v  1 e 1 0 ]
+{
+[v TMR0_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 0 ]
+"153
+} 0
+"66 /home/saul/MPLABXProjects/NMES_32.X/mcc_generated_files/dac1.c
+[v _DAC1_SetOutput DAC1_SetOutput `(v  1 e 1 0 ]
+{
+[v DAC1_SetOutput@inputData inputData `uc  1 a 1 wreg ]
+[v DAC1_SetOutput@inputData inputData `uc  1 a 1 wreg ]
+"68
+[v DAC1_SetOutput@inputData inputData `uc  1 a 1 0 ]
+"69
+} 0
+"137 /home/saul/MPLABXProjects/NMES_32.X/mcc_generated_files/eusart1.c
+[v _EUSART1_is_rx_ready EUSART1_is_rx_ready `(a  1 e 1 0 ]
+{
+"140
+} 0
+"52 /home/saul/MPLABXProjects/NMES_32.X/mcc_generated_files/interrupt_manager.c
+[v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `II(v  1 e 1 0 ]
+{
+"78
+} 0
+"134 /home/saul/MPLABXProjects/NMES_32.X/mcc_generated_files/tmr0.c
+[v _TMR0_ISR TMR0_ISR `(v  1 e 1 0 ]
+{
+"148
+} 0
+"885 /home/saul/MPLABXProjects/NMES_32.X/NEMS.c
+[v _NEMS_timer_SE NEMS_timer_SE `(v  1 e 1 0 ]
+{
+"969
+} 0
+"760
+[v _NEMS_timer NEMS_timer `(v  1 e 1 0 ]
+{
+"882
+} 0
+"155 /home/saul/MPLABXProjects/NMES_32.X/mcc_generated_files/tmr0.c
+[v _TMR0_DefaultInterruptHandler TMR0_DefaultInterruptHandler `(v  1 e 1 0 ]
+{
+"158
+} 0
+"66 /home/saul/MPLABXProjects/NMES_32.X/mcc_generated_files/dac1.c
+[v i1_DAC1_SetOutput DAC1_SetOutput `(v  1 e 1 0 ]
+{
+[v i1DAC1_SetOutput@inputData inputData `uc  1 a 1 wreg ]
+[v i1DAC1_SetOutput@inputData inputData `uc  1 a 1 wreg ]
+"68
+[v i1DAC1_SetOutput@inputData inputData `uc  1 a 1 0 ]
+"69
+} 0
+"197 /home/saul/MPLABXProjects/NMES_32.X/mcc_generated_files/eusart1.c
+[v _EUSART1_Transmit_ISR EUSART1_Transmit_ISR `(v  1 e 1 0 ]
+{
+"214
+} 0
+"216
+[v _EUSART1_Receive_ISR EUSART1_Receive_ISR `(v  1 e 1 0 ]
+{
+"238
+} 0
+"252
+[v _EUSART1_DefaultOverrunErrorHandler EUSART1_DefaultOverrunErrorHandler `(v  1 e 1 0 ]
+{
+"258
+} 0
+"250
+[v _EUSART1_DefaultFramingErrorHandler EUSART1_DefaultFramingErrorHandler `(v  1 e 1 0 ]
+{
+} 0
+"260
+[v _EUSART1_DefaultErrorHandler EUSART1_DefaultErrorHandler `(v  1 e 1 0 ]
+{
+"262
+} 0
+"240
+[v _EUSART1_RxDataHandler EUSART1_RxDataHandler `(v  1 e 1 0 ]
+{
+"248
+} 0
