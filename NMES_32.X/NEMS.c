@@ -588,9 +588,11 @@ void NEMS_recalculate_program(void)
     
     waveform.ramp_up_time = waveform.ramp_up_pulses;
     
-    waveform.ON_time = program.ON_time*se_frequency + waveform.ramp_up_time;    
+    //waveform.ON_time = program.ON_time*se_frequency + waveform.ramp_up_time;    
+    waveform.ON_time = (program.ON_time*se_frequency)/10 + waveform.ramp_up_time;    // Changed to ds instead of s
     waveform.ramp_down_time = waveform.ramp_down_pulses + waveform.ON_time;    
-    waveform.OFF_time = program.OFF_time*se_frequency + waveform.ON_time;  
+    //waveform.OFF_time = program.OFF_time*se_frequency + waveform.ON_time;  
+    waveform.OFF_time = (program.OFF_time*se_frequency)/10 + waveform.ON_time;  // Changed to ds instead of s
         
     
    /* 
