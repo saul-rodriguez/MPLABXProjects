@@ -83,6 +83,10 @@ int main(void)
     
     ic_add = IC_ADDRESS_0;
     
+    
+    //ASKA_setProgram(ic_add,50,25,10,30,10,1,4,1,2);
+    
+        
     while(1)
     {
         
@@ -94,7 +98,7 @@ int main(void)
         __delay_ms(100);
         LED_SetHigh();
         
-        
+        /*
         ASKA_test1(ic_add);
         __delay_ms(20000);
         ASKA_test2(ic_add);
@@ -103,6 +107,18 @@ int main(void)
         __delay_ms(20000);
         ASKA_test4(ic_add);
         __delay_ms(20000);
+         */
+        
+        ASKA_setProgram(ic_add,50,50,10,30,10,1,4,1,2); //50 Hz, 50mA,1s/3s,ramp 1s, pd 200
+        __delay_ms(10000);
+        ASKA_setProgram(ic_add,10,50,10,10,5,1,4,1,2); //10 Hz, 50mA,1s/1s,ramp 0.5s, pd 200
+        __delay_ms(10000);
+        ASKA_setProgram(ic_add,10,50,10,10,0,1,4,1,2); //10 Hz, 50mA,1s/1s,ramp 0s, pd 200
+        __delay_ms(10000);
+        ASKA_setProgram(ic_add,25,50,10,10,0,1,7,1,2); //25 Hz, 50mA,1s/1s,ramp 0s, pd 200
+        __delay_ms(10000);
+        
+
         
     }    
 }

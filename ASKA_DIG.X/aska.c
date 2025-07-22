@@ -73,3 +73,71 @@ void ASKA_test4(uint8_t ic_add)
         ASKA_write_reg(ic_add, ASKA_ELE1,0x00000001);
 		ASKA_write_reg(ic_add, ASKA_ELE2,0x00000002);
 }
+
+void ASKA_setProgram( 
+        uint8_t ic_add, // 0x00,0x40,0x80,0xc0 (0-3)
+        uint32_t freq, // [Hz] 5 - 50 Hz
+        uint32_t amplitude, // [mA] 0 - 50 mA
+        uint32_t ON_time, // [ds] 0 - 40 ds
+        uint32_t OFF_time, //[ds] 0 - 120 ds
+        uint32_t ramp_time, // ramptime in [ds]
+        uint32_t enable,  // 1 or 0
+        uint32_t phaseDuration, // 50 us (1) - 350 us (7) 
+        uint32_t ele1,
+        uint32_t ele2)
+{
+    ASKA_NMES_struct ASKA;   
+    ASKA_CONF ASIC;
+   
+    
+    // Number of 20 kHz cycles to generate freq
+    ASKA.freq = (uint16_t)(BASE_FREQ/freq); 
+    
+    ASKA.amplitude = amplitude;
+    
+    // number of ON/OFF pulses 
+    ASKA.ON_time = (freq*ON_time)/10;
+    
+    ASKA.OFF_time = (freq*OFF_time)/10;
+    
+    // number of pulses during ramp UP/DOWN 
+    ASKA.ramp = (freq*ramp_time)/10;
+            
+    // ramp_factor
+    ASKA.ramp_factor = ((amplitude*16)/ASKA.ramp);
+    
+    ASKA.enable = enable;    
+    ASKA.phaseDuration = phaseDuration;    
+    ASKA.ele1 = ele1;    
+    ASKA.ele2 = ele2;
+    
+    ASIC.conf0 = 0;
+    ASIC.conf1 = 0;
+    ASIC.ele1 = 0;
+    ASIC.ele2 = 0;
+    
+    ASIC.conf0 |= (ASKA.freq              & 0x00000fff);
+    ASIC.conf0 |= ((ASKA.amplitude << 12) & 0x0003f000);
+    ASIC.conf0 |= ((ASKA.ramp << 18)      & 0x00fc0000);
+    ASIC.conf0 |= ((ASKA.ON_time << 24)   & 0xff000000);
+    
+    ASIC.conf1 |= (ASKA.ramp_factor             & 0x000003ff);
+    ASIC.conf1 |= ((ASKA.OFF_time << 10)        & 0x000ffc00);
+    ASIC.conf1 |= ((ASKA.enable << 20)          & 0x00100000);
+    ASIC.conf1 |= ((ASKA.phaseDuration << 21)   & 0x00e00000);
+    
+    ASIC.ele1 = ASKA.ele1;
+    ASIC.ele2 = ASKA.ele2;
+    
+    
+    //Reprogram asic
+    ASKA_write_reg(ic_add, ASKA_CONF1,0x00000000); 
+    
+    ASKA_write_reg(ic_add, ASKA_CONF0,ASIC.conf0);
+	ASKA_write_reg(ic_add, ASKA_CONF1,ASIC.conf1);
+    ASKA_write_reg(ic_add, ASKA_ELE1,ASIC.ele1);
+	ASKA_write_reg(ic_add, ASKA_ELE2,ASIC.ele2);
+        
+    
+}
+
